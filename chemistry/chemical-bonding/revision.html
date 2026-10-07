@@ -1,0 +1,233 @@
+<title>Chemical Bonding and Molecular Structure revision sheet</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.45;padding:0 14px}
+.wrap{max-width:980px;margin:0 auto;padding-block:20px 60px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,5vw,28px);margin:0 0 2px;text-wrap:balance}
+.subtitle{color:var(--ink-2);font-size:13px;margin:0 0 16px}
+.scan{background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.scan-label{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.scan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 14px;font-family:var(--font-mono);font-size:12.5px;color:var(--accent-ink);font-weight:600}
+.scan-grid span{min-width:0;overflow-wrap:anywhere;line-height:1.4}
+h2{font-family:var(--font-display);font-weight:600;font-size:16px;margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+h2 .n{font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:600}
+h2 a.jump{margin-left:auto;font-size:11px;font-family:var(--font-mono);color:var(--accent);text-decoration:none;border:1px solid var(--accent-line,var(--accent));border-radius:20px;padding:2px 9px;display:inline-flex;align-items:center;gap:4px}
+h2 a.jump:hover{background:var(--accent-bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.grid.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{border-radius:10px;padding:10px 12px;border:1px solid;font-size:13px}
+.card .lbl{font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px;display:block;opacity:.85}
+.card .f{font-family:var(--font-mono);font-size:14.5px;font-weight:600;line-height:1.35}
+.card .m{font-size:11.5px;margin-top:3px;opacity:.85}
+.c-formula{background:var(--formula-bg);border-color:var(--formula-line);color:var(--formula)}
+.c-formula .f{color:var(--formula)}
+.c-exam{background:var(--exam-bg);border-color:var(--exam-line);color:var(--exam)}
+.c-mistake{background:var(--mistake-bg);border-color:var(--mistake-line);color:var(--mistake)}
+.c-check{background:var(--check-bg);border-color:var(--check-line);color:var(--check)}
+.c-neutral{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.c-neutral .f{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:5px 6px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:10.5px}
+td.rl{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2);font-size:11px}
+.tblcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;overflow-x:auto}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px}
+.mini svg{display:block;width:100%;height:auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.two-col{grid-template-columns:1fr}}
+.strip{display:flex;flex-wrap:wrap;gap:6px}
+.pill{background:var(--mistake-bg);border:1px solid var(--mistake-line);color:var(--mistake);border-radius:8px;padding:6px 10px;font-size:12px;flex:1 1 220px}
+.footer-note{text-align:center;color:var(--ink-3);font-size:11px;margin-top:26px}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Chemical Bonding and Molecular Structure — revision sheet</h1>
+<p class="subtitle">11th science · Gujarat board + JEE · one-page quick scan before exam</p>
+
+<div class="scan">
+  <span class="scan-label">10-second must-knows</span>
+  <div class="scan-grid">
+    <span>Octet = noble gas config (8e⁻)</span>
+    <span>U = ΔHf−ΔHsub−IE−½ΔHdiss−EA</span>
+    <span>FC = VE − NBE − ½BE</span>
+    <span>lp-lp &gt; lp-bp &gt; bp-bp repulsion</span>
+    <span>SN = σbond + lone pair</span>
+    <span>BO(MOT) = ½(bonding−antibonding)</span>
+    <span>μ = q×d (vector sum for molecule)</span>
+    <span>H-bond needs H on F/O/N only</span>
+  </div>
+</div>
+
+<h2><span class="n">01</span>Kossel-Lewis / octet <a class="jump" href="notes.html#p1" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="grid">
+<div class="card c-formula"><span class="lbl">rule</span><div class="f">8 e⁻ in valence shell</div><div class="m">= nearest noble gas config</div></div>
+<div class="card c-mistake"><span class="lbl">exceptions</span><div class="f">incomplete / odd e⁻ / expanded</div><div class="m">BF₃,Be / NO,NO₂ / PCl₅,SF₆</div></div>
+<div class="card c-neutral"><span class="lbl">expanded octet</span><div class="f">only period ≥3</div><div class="m">empty d-orbitals needed (N,O,F never)</div></div>
+</div>
+
+<h2><span class="n">02</span>Ionic bonding <a class="jump" href="notes.html#p2" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="two-col">
+<div class="grid">
+<div class="card c-formula"><span class="lbl">Coulomb</span><div class="f">E ∝ −q₁q₂/r</div></div>
+<div class="card c-formula"><span class="lbl">Born-Haber</span><div class="f">ΔHf=ΔHsub+IE+½ΔHdiss+EA+U</div></div>
+</div>
+<div class="tblcard">
+<table><tr><th>factor</th><th>U more negative when</th></tr>
+<tr><td class="rl">charge</td><td>higher (MgO≫NaCl)</td></tr>
+<tr><td class="rl">size</td><td>smaller ion (LiF&gt;NaF&gt;KF)</td></tr></table>
+</div>
+</div>
+
+<h2><span class="n">03</span>Covalent bonding / formal charge <a class="jump" href="notes.html#p3" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="grid">
+<div class="card c-formula"><span class="lbl">formal charge</span><div class="f">FC=VE−NBE−½BE</div></div>
+<div class="card c-neutral"><span class="lbl">best structure</span><div class="f">FC≈0, − on more EN atom</div></div>
+<div class="card c-neutral"><span class="lbl">Lewis steps</span><div class="f">ΣVE→skeleton→bonds→lone pairs→check octet</div></div>
+</div>
+
+<h2><span class="n">04</span>Bond parameters <a class="jump" href="notes.html#p4" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="two-col">
+<div class="tblcard">
+<table><tr><th>N-N</th><td>single</td><td>double</td><td>triple</td></tr>
+<tr><td class="rl">length (Å)</td><td>1.47</td><td>1.24</td><td>1.10</td></tr>
+<tr><td class="rl">order</td><td>1</td><td>2</td><td>3</td></tr></table>
+</div>
+<div class="grid">
+<div class="card c-exam"><span class="lbl">rule</span><div class="f">order↑ ⟹ length↓, energy↑</div></div>
+</div>
+</div>
+
+
+<!-- upd-2026-10-04:bond-backbond -->
+<div class="grid g2"><div class="card c-formula"><span class="lbl">bond length</span><div class="f">ℓ ∝ 1/BO</div><div class="m">BF₃ (back-bond) 130 < BF₄⁻ 140 pm; NO₂⁺ 115 < NO₂⁻ 124 pm</div></div></div>
+<h2><span class="n">05</span>VSEPR shapes <a class="jump" href="notes.html#p5" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="tblcard">
+<table>
+<tr><th>e⁻ pairs</th><th>bp,lp</th><th>shape</th><th>angle</th><th>example</th></tr>
+<tr><td>2</td><td>2,0</td><td class="rl">Linear</td><td>180°</td><td>BeCl₂</td></tr>
+<tr><td>3</td><td>3,0</td><td class="rl">Trigonal planar</td><td>120°</td><td>BF₃</td></tr>
+<tr><td>4</td><td>4,0</td><td class="rl">Tetrahedral</td><td>109.5°</td><td>CH₄</td></tr>
+<tr><td>4</td><td>3,1</td><td class="rl">Pyramidal</td><td>107.5°</td><td>NH₃</td></tr>
+<tr><td>4</td><td>2,2</td><td class="rl">Bent</td><td>104.5°</td><td>H₂O</td></tr>
+<tr><td>5</td><td>5,0</td><td class="rl">Trig. bipyramidal</td><td>90°,120°</td><td>PCl₅</td></tr>
+<tr><td>5</td><td>4,1</td><td class="rl">See-saw</td><td>~89°,~117°</td><td>SF₄</td></tr>
+<tr><td>5</td><td>3,2</td><td class="rl">T-shape</td><td>~87.5°</td><td>ClF₃</td></tr>
+<tr><td>5</td><td>2,3</td><td class="rl">Linear</td><td>180°</td><td>XeF₂</td></tr>
+<tr><td>6</td><td>6,0</td><td class="rl">Octahedral</td><td>90°</td><td>SF₆</td></tr>
+<tr><td>6</td><td>5,1</td><td class="rl">Square pyramidal</td><td>~90°</td><td>BrF₅</td></tr>
+<tr><td>6</td><td>4,2</td><td class="rl">Square planar</td><td>90°</td><td>XeF₄</td></tr>
+</table>
+</div>
+<div class="card c-exam" style="margin-top:8px"><span class="lbl">repulsion order</span><div class="f">lp-lp &gt; lp-bp &gt; bp-bp</div></div>
+
+
+<!-- upd-2026-10-04:bond-xe -->
+<div class="grid g2"><div class="card c-formula"><span class="lbl">steric number</span><div class="f">SN = ½[V + M − c + a]</div><div class="m">O ગણાય નહીં; cation ⟹ −c</div></div><div class="card c-neutral"><span class="lbl">Xe shapes</span><div class="m">XeF₂ linear · XeF₄ sq. planar · XeO₃ pyramidal · XeO₄ tetrahedral · XeOF₄ sq. pyramidal · XeO₂F₂ see-saw; π = O ની સંખ્યા</div></div></div>
+<h2><span class="n">06</span>VBT / hybridization <a class="jump" href="notes.html#p6" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="tblcard">
+<table><tr><th>hybrid</th><th>orbitals</th><th>shape</th><th>angle</th><th>ex.</th></tr>
+<tr><td class="rl">sp</td><td>1s+1p</td><td>Linear</td><td>180°</td><td>BeCl₂</td></tr>
+<tr><td class="rl">sp²</td><td>1s+2p</td><td>Trig. planar</td><td>120°</td><td>BF₃</td></tr>
+<tr><td class="rl">sp³</td><td>1s+3p</td><td>Tetrahedral</td><td>109.5°</td><td>CH₄</td></tr>
+<tr><td class="rl">sp³d</td><td>1s+3p+1d</td><td>Trig. bipyramidal</td><td>90,120°</td><td>PCl₅</td></tr>
+<tr><td class="rl">sp³d²</td><td>1s+3p+2d</td><td>Octahedral</td><td>90°</td><td>SF₆</td></tr>
+</table>
+</div>
+<div class="card c-formula" style="margin-top:8px"><span class="lbl">shortcut</span><div class="f">SN = σ-bonds + lone pairs</div><div class="m">π bonds never counted</div></div>
+
+<h2><span class="n">07</span>Resonance <a class="jump" href="notes.html#p7" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="grid">
+<div class="card c-neutral"><span class="lbl">conditions</span><div class="f">same σ-skeleton, only π/lp differ</div></div>
+<div class="card c-neutral"><span class="lbl">result</span><div class="f">hybrid = weighted average, more stable</div></div>
+<div class="card c-exam"><span class="lbl">O₃ example</span><div class="f">both O-O bonds 1.28Å, BO=1.5</div></div>
+</div>
+
+<h2><span class="n">08</span>Polarity / dipole moment <a class="jump" href="notes.html#p8" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="two-col">
+<div class="grid">
+<div class="card c-formula"><span class="lbl">bond dipole</span><div class="f">μ = q × d (Debye)</div></div>
+<div class="card c-neutral"><span class="lbl">molecule</span><div class="f">μ(net) = vector sum of bond μ</div></div>
+</div>
+<div class="tblcard">
+<table><tr><th>molecule</th><th>shape</th><th>μ</th></tr>
+<tr><td class="rl">CO₂</td><td>linear</td><td>0</td></tr>
+<tr><td class="rl">BF₃, CCl₄</td><td>symmetric</td><td>0</td></tr>
+<tr><td class="rl">H₂O</td><td>bent</td><td>1.85 D</td></tr>
+<tr><td class="rl">NH₃</td><td>pyramidal</td><td>1.47 D</td></tr>
+<tr><td class="rl">CHCl₃</td><td>asym. tetrahedral</td><td>1.04 D</td></tr>
+</table>
+</div>
+</div>
+
+<h2><span class="n">09</span>Molecular orbital theory <a class="jump" href="notes.html#p9" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="grid">
+<div class="card c-formula"><span class="lbl">bond order</span><div class="f">BO=½(bonding e⁻−antibonding e⁻)</div></div>
+</div>
+<div class="tblcard" style="margin-top:8px">
+<table><tr><th>species</th><th>e⁻(2s,2p)</th><th>BO</th><th>magnetic</th><th>length(Å)</th></tr>
+<tr><td class="rl">N₂</td><td>10</td><td>3</td><td>dia</td><td>1.10</td></tr>
+<tr><td class="rl">O₂</td><td>12</td><td>2</td><td>para (2 unpaired)</td><td>1.21</td></tr>
+<tr><td class="rl">O₂⁺</td><td>11</td><td>2.5</td><td>para</td><td>1.12</td></tr>
+<tr><td class="rl">O₂⁻</td><td>13</td><td>1.5</td><td>para</td><td>1.28</td></tr>
+</table>
+</div>
+<div class="card c-exam" style="margin-top:8px"><span class="lbl">energy order (up to N₂)</span><div class="f" style="font-size:11.5px">σ1s&lt;σ*1s&lt;σ2s&lt;σ*2s&lt;π2p&lt;σ2p&lt;π*2p&lt;σ*2p</div><div class="m">from O₂ onward: σ2p below π2p</div></div>
+
+
+<!-- upd-2026-10-04:bond-nomix -->
+<div class="grid g2"><div class="card c-formula"><span class="lbl">s-p mixing નથી</span><div class="f">σ2p < π2p</div><div class="m">B₂ dia, C₂ para (ઊલટું)</div></div><div class="card c-neutral"><span class="lbl">F₂⁻</span><div class="m">19 e⁻: HOMO σ*2p, BO 0.5</div></div></div>
+<h2><span class="n">10</span>Hydrogen bonding <a class="jump" href="notes.html#p10" target="bondingChapterNotes">↳ notes</a></h2>
+<div class="grid">
+<div class="card c-neutral"><span class="lbl">condition</span><div class="f">H bonded to F/O/N only</div></div>
+<div class="card c-neutral"><span class="lbl">types</span><div class="f">intermolecular vs intramolecular</div></div>
+<div class="card c-exam"><span class="lbl">example</span><div class="f">o- vs p-nitrophenol bp</div></div>
+</div>
+
+<div class="strip" style="margin-top:20px">
+<div class="pill">Formal charge ≠ real charge — it ignores electronegativity, use only to rank Lewis structures.</div>
+<div class="pill">π bonds are never counted in steric number / hybridization count.</div>
+<div class="pill">Expanded octet only for period ≥3 elements — N, O, F never expand.</div>
+<div class="pill">Lone pair contributes to shape's electron-pair geometry, not to the named molecular shape.</div>
+</div>
+
+<p class="footer-note">Full worked PYQ set: <a href="solutions.html" target="bondingChapterNotes">Chemical Bonding and Molecular Structure PYQ Solutions</a></p>
+</div>

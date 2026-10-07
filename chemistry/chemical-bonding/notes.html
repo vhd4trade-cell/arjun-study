@@ -1,0 +1,988 @@
+<title>Chemical Bonding and Molecular Structure chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+.part-why{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;font-style:italic}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.mono{font-family:var(--font-mono)}
+sup,sub{font-size:.7em}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+.th{font-size:13px;fill:var(--ink);font-weight:600}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:600px){.two-col{grid-template-columns:1fr}}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Chemical Bonding and Molecular Structure — full chapter</h1>
+<p class="subtitle">11th science · Gujarat board + JEE foundation · detailed teaching text</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> — final target: કોઈપણ અણુનું bonding, આકાર (shape), hybridization અને polarity confidently predict કરવું
+  <ol style="list-style:none;padding-left:0;counter-reset:none">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">Bonding શું છે અને શા માટે</a> — introduction</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">Kossel-Lewis approach</a> — octet rule, exceptions</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">Ionic bonding</a> — lattice energy, Born-Haber cycle</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">Covalent bonding</a> — Lewis structures, formal charge</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">Bond parameters</a> — length, angle, energy, order</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">VSEPR theory</a> — molecular shapes</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">Valence bond theory અને hybridization</a> — sp, sp², sp³, sp³d, sp³d²</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">Resonance</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">Polarity</a> — bond dipole, molecular dipole moment (vector sum)</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">09</span> &nbsp;<a href="#p9">Molecular orbital theory</a> — LCAO, bond order, H₂/N₂/O₂</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">10</span> &nbsp;<a href="#p10">Hydrogen bonding</a></li>
+  </ol>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="part" id="intro" style="padding-top:0">
+<h2><span class="num">00</span>Bonding શું છે અને શા માટે</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  "Chemical bond" ખરેખર શું છે (ફક્ત "બે atom ને જોડતી લાકડી" નહીં, પણ ઊર્જા-આધારિત ઘટના), અને આ chapter માં કયા-કયા મોડેલ વડે એને સમજાવાય છે — એનો નકશો સ્પષ્ટ થશે.</div>
+
+<h3>વ્યાખ્યા અને origin</h3>
+<p><b>Bond</b> શબ્દ પોતે "બાંધવું, જોડવું" — bind પરથી આવે છે. પણ Chemistry માં bond નો અર્થ "ગુંદર" જેવો કંઈક ભૌતિક પદાર્થ નથી — bond એ <b>બે (કે વધુ) atom ની system ની ઊર્જા, છૂટા atom કરતાં ઓછી થવાની ઘટના</b> છે. જ્યારે બે અલગ atom ભેગા થઈને, ભેગા રહેવાથી કુલ ઊર્જા ઘટે (વધુ stable બને), ત્યારે જ bond બને છે — નહીં તો બંને છૂટા જ રહેશે, કારણ કે કોઈ પણ system પોતાની જાતે ઓછી ઊર્જા (વધુ stability) તરફ જાય છે.</p>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  લગભગ કોઈ પણ તત્વ પ્રકૃતિમાં એકલું (free atom તરીકે) સ્થિર નથી રહેતું (noble gases સિવાય) — દરેક પદાર્થ, દરેક પ્રતિક્રિયા, DNA થી લઈને મીઠા (NaCl) સુધી — બધું જ bonding ના નિયમોથી બંધાયેલું છે. Physical properties (melting point, hardness, conductivity, solubility) બધું bond ના પ્રકાર પરથી predict થાય છે — આ JEE અને board બંનેમાં સૌથી વધુ પુછાતું chapter છે.
+</div>
+
+<div class="concept-box box">
+  <span class="label">central question</span>
+  આ આખું chapter એક જ પ્રશ્નના જવાબ પર બંધાયેલું છે: <b>"atom પોતાની ઊર્જા ઘટાડવા શું કરે છે?"</b> — જવાબ ત્રણ રસ્તા આપે છે: (1) electron સંપૂર્ણ આપી/લઈને ion બનવું (ionic bond, Part 2), (2) electron ની જોડી બંને atom વચ્ચે વહેંચવી (covalent bond, Parts 3-9), (3) H પરમાણુ સાથે જોડાયેલ, ખૂબ electronegative atom બીજા molecule ના lone pair તરફ આકર્ષાય (hydrogen bond, Part 10). આ ત્રણેય "શા માટે" ને દરેક part પોતાના mechanism સાથે સમજાવશે — ફક્ત "આવું થાય છે" કહીને નહીં.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Bond formation is an energy-lowering event</title><desc>Potential energy versus distance curve for two atoms approaching: energy falls to a minimum at the bond length then rises sharply at shorter distances due to nuclear repulsion</desc>
+<line x1="60" y1="220" x2="640" y2="220" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="60" y1="220" x2="60" y2="30" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="630" y="238" text-anchor="end">અંતર (r) →</text>
+<text class="ts" x="30" y="30" transform="rotate(-90 30 30)" text-anchor="end">સ્થિતિ ઊર્જા →</text>
+<path d="M 90 40 C 150 70, 190 130, 230 175 C 260 200, 300 210, 330 200 C 360 190, 400 150, 440 90 C 470 55, 500 35, 540 30" fill="none" stroke="var(--formula)" stroke-width="2.5"/>
+<line x1="330" y1="200" x2="330" y2="220" stroke="var(--mistake)" stroke-width="1.5" stroke-dasharray="3,3"/>
+<circle cx="330" cy="200" r="4" fill="var(--mistake)"/>
+<text class="ts" x="330" y="240" text-anchor="middle" fill="var(--mistake)">r₀ = bond length</text>
+<text class="ts" x="260" y="155" fill="var(--mistake)">ન્યૂનતમ ઊર્જા = સૌથી stable</text>
+<text class="ts" x="470" y="60" fill="var(--exam)">nuclear repulsion (r ખૂબ ઓછું)</text>
+<text class="ts" x="130" y="60" fill="var(--ink-2)">બે અલગ atom (r મોટું)</text>
+</svg>
+<div class="diagram-cap">Bond = બે atom જ્યારે એકબીજાની નજીક આવે ત્યારે, જે અંતરે કુલ ઊર્જા ન્યૂનતમ (most negative) બને — એ જ bond length, અને એ જ સ્થિતિ bond ની "existence" છે</div>
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>ટેબલ મીઠું (NaCl)</b> — Na અને Cl અલગ અલગ હોય ત્યારે Na ખૂબ reactive ધાતુ છે અને Cl₂ ઝેરી વાયુ છે. પણ bond બન્યા પછી NaCl ખાવા યોગ્ય, સ્થિર ઘન છે — કારણ કે Na⁺ અને Cl⁻ ભેગા થવાથી system ની ઊર્જા મોટા પ્રમાણમાં ઘટે છે (lattice energy, Part 2 જુઓ).</div>
+  <div class="step"><b>પાણી (H₂O)</b> — H અને O covalent bond વડે જોડાય છે (electron ની વહેંચણી) — આ જ bonding ના કારણે પાણીનો ચોક્કસ આકાર (bent, 104.5°) અને ધ્રુવીયતા (polarity) મળે છે, જે hydrogen bonding અને જીવન માટે જરૂરી અસામાન્ય ગુણધર્મોનું મૂળ કારણ છે (Part 10).</div>
+</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 1 થી શરૂ કરો — Kossel-Lewis ની સાદી "electron ગણતરી" પદ્ધતિ, જે આગળના બધા મોડેલ (VSEPR, VBT, MOT) નો પાયો છે.</div>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="p1">
+<h2><span class="num">01</span>Kossel-Lewis approach</h2>
+<div class="outcome"><span class="label">outcome</span>કોઈ પણ તત્વ ion કેમ બનાવે છે (કે નથી બનાવતું), અને octet rule ક્યાં સાચો પડે છે ને ક્યાં નહીં — બંને સ્પષ્ટ સમજાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>1916 માં Kossel અને Lewis એ (અલગ અલગ) એક જ મૂળભૂત નિરીક્ષણ આપ્યું: noble gases (He, Ne, Ar...) રાસાયણિક રીતે લગભગ nonreactive છે, અને એમની બહારની (valence) કક્ષા સંપૂર્ણ ભરેલી છે. આ observation પરથી આખું bonding theory નું માળખું ઊભું થયું.</div>
+
+<div class="concept-box box"><span class="label">Octet rule ની મિકૅનિઝમ — "કેમ" 8 જ?</span>
+Noble gas (He સિવાય) ની બાહ્ય કક્ષામાં s² p⁶ = 8 electron હોય છે. આ ભરેલી sub-shell ને કારણે (1) electron-electron repulsion ન્યૂનતમ સંતુલનમાં ગોઠવાય છે, અને (2) અસરકારક ન્યુક્લિયર આકર્ષણ vs shielding નું સંતુલન particularly stable બને છે. બીજા તત્વો (Na, Cl, O...) પોતાની બાહ્ય કક્ષા પણ આ જ "8" સંખ્યા સુધી પહોંચાડવા માંગે છે — electron આપીને, લઈને, કે વહેંચીને — જેથી નજીકના noble gas જેવું <i>electronic configuration</i> મળે. આ જ "octet rule" છે — ફક્ત યાદ રાખવાનો નિયમ નથી, પણ ઊર્જા-ન્યૂનતમ બનવાની ઇચ્છાનું પરિણામ છે.</div>
+
+<div class="example">
+<span class="label">example — Na અને Cl</span>
+<div class="step"><b>Na</b>: [Ne] 3s¹ — બાહ્ય કક્ષામાં ફક્ત 1 electron. આ 1 electron આપી દે તો Na⁺ = [Ne] — સંપૂર્ણ ભરેલી કક્ષા મળે.</div>
+<div class="step"><b>Cl</b>: [Ne] 3s²3p⁵ — બાહ્ય કક્ષામાં 7 electron. 1 electron લઈ લે તો Cl⁻ = [Ar] — સંપૂર્ણ ભરેલી કક્ષા મળે.</div>
+<div class="step"><b>પરિણામ</b>: Na → Na⁺ + e⁻, અને Cl + e⁻ → Cl⁻. બંને ભેગા મળીને NaCl — ionic bond (Part 2).</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 620 200" role="img"><title>Lewis dot symbol convention</title><desc>Dot representation of valence electrons for Na (1 dot) and Cl (7 dots) transferring one electron to form Na+ and chloride ion with complete octet</desc>
+<text class="th" x="90" y="40" text-anchor="middle">Na·</text>
+<circle cx="70" cy="70" r="2.5" fill="var(--formula)"/>
+<text class="t" x="100" y="60" fill="var(--ink-2)">3s¹ (1 dot)</text>
+<text class="th" x="330" y="40" text-anchor="middle">：Cl：</text>
+<text class="t" x="240" y="80" fill="var(--ink-2)">3s²3p⁵ (7 dots)</text>
+<line x1="150" y1="90" x2="220" y2="90" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrH)"/>
+<defs><marker id="arrH" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--exam)" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="185" y="80" text-anchor="middle" fill="var(--exam)">e⁻ transfer</text>
+<text class="th" x="480" y="140" text-anchor="middle">Na⁺</text>
+<text class="ts" x="480" y="158" text-anchor="middle">[Ne] — ભરેલું</text>
+<text class="th" x="590" y="140" text-anchor="middle">[：Cl：]⁻</text>
+<text class="ts" x="590" y="158" text-anchor="middle">[Ar] — ભરેલું</text>
+</svg>
+<div class="diagram-cap">Lewis symbol માં ફક્ત valence electron dot તરીકે બતાવાય — Na 1 dot ગુમાવે, Cl 7 dot ધરાવતું 8 (octet) સુધી પહોંચે</div>
+</div>
+
+<div class="mistake-box box"><span class="label">Octet rule ના exceptions — યાદ રાખવા જરૂરી</span>
+<table><tr><th>પ્રકાર</th><th>ઉદાહરણ</th><th>કારણ</th></tr>
+<tr><td class="rowlabel">Incomplete octet</td><td>BF₃ (B ફરતે 6e⁻), BeCl₂ (Be ફરતે 4e⁻)</td><td>B, Be પાસે ઓછા valence electron — 8 સુધી ન પહોંચી શકે</td></tr>
+<tr><td class="rowlabel">Odd electron (free radical)</td><td>NO, NO₂</td><td>કુલ valence electron ની સંખ્યા <i>odd</i> — જોડી ક્યારેય પૂરી ન થાય</td></tr>
+<tr><td class="rowlabel">Expanded octet</td><td>PCl₅, SF₆, ClF₃, XeF₄</td><td>3rd period+ તત્વો પાસે ખાલી d-orbital ઉપલબ્ધ — 8 થી વધુ electron સમાવી શકે</td></tr>
+</table>
+</div>
+
+<div class="exam-box box"><span class="label">exam tip</span>Expanded octet ફક્ત 3rd period અને પછીના તત્વો (P, S, Cl, Xe...) માટે શક્ય — 2nd period (N, O, F) ક્યારેય પોતાનો octet expand ન કરી શકે (કારણ કે 2p પછી ખાલી d-orbital 2nd period માં ઉપલબ્ધ જ નથી, ફક્ત 3s,3p હોય). આ કારણે NF₅ ક્યારેય ન બને, પણ PF₅ બને.</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 2 — જ્યારે electron સંપૂર્ણ transfer થાય (ન વહેંચાય) ત્યારે શું બને — ionic bond, અને એની ઊર્જા ગણતરી (lattice energy).</div>
+</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="p2">
+<h2><span class="num">02</span>Ionic bonding</h2>
+<div class="outcome"><span class="label">outcome</span>Ionic bond કેમ બને છે, lattice energy શું છે અને Born-Haber cycle વડે એ કેમ ગણાય — સમજાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>Ionic compounds (NaCl, MgO, CaF₂) ના melting point, hardness, brittleness, પાણીમાં દ્રાવ્યતા — બધું lattice energy ના magnitude પરથી predict થાય છે. Lattice energy JEE માં ડાયરેક્ટ પુછાય પણ છે અને Born-Haber cycle ના numerical પણ.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — ઇલેક્ટ્રોસ્ટેટિક આકર્ષણ</span>
+Ionic bond = electron ના સંપૂર્ણ transfer પછી બનતા બે વિરુદ્ધ-charge ion વચ્ચેનું <b>ઇલેક્ટ્રોસ્ટેટિક (Coulombic) આકર્ષણ</b>. આ "દિશાહીન" (non-directional) બળ છે — દરેક Na⁺, પોતાની ફરતે તમામ દિશામાંથી Cl⁻ ને ખેંચે છે (અને ઊલટું), એટલે ઘન સ્ફટિક (crystal lattice) ત્રિ-પરિમાણમાં ગોઠવાય છે, એક-એક જોડી "molecule" તરીકે નહીં.</div>
+
+<div class="formula-box box"><span class="label">Coulomb's law — bond ની energy નો સ્ત્રોત</span>
+<div class="f">E ∝ −(q₁q₂)/r</div>
+<div class="meaning">q₁, q₂ = ion ના charge, r = ion વચ્ચેનું અંતર. વધુ charge (દા.ત. Mg²⁺O²⁻ vs Na⁺Cl⁻) અને ઓછું r → વધુ મજબૂત (વધુ negative ઊર્જા) bond.</div>
+</div>
+
+<h3>Lattice energy</h3>
+<div class="formula-box box"><span class="label">વ્યાખ્યા</span>
+<div class="f">M⁺(g) + X⁻(g) → MX(s) &nbsp; ΔH = U (lattice energy)</div>
+<div class="meaning">વાયુ સ્વરૂપના છૂટા ion માંથી 1 mol ઘન સ્ફટિક બનતી વખતે મુક્ત થતી ઊર્જા. U જેટલી વધુ negative, સ્ફટિક એટલો વધુ સ્થિર (mp વધુ, hardness વધુ).</div>
+</div>
+
+<div class="concept-box box"><span class="label">Lattice energy ને અસર કરતા factors</span>
+<table><tr><th>Factor</th><th>અસર</th><th>ઉદાહરણ</th></tr>
+<tr><td class="rowlabel">Ionic charge</td><td>charge ↑ → U વધુ negative (વધુ strong)</td><td>MgO (U≈−3795 kJ/mol) &gt;&gt; NaCl (U≈−788 kJ/mol)</td></tr>
+<tr><td class="rowlabel">Ionic size (r)</td><td>r ↑ → U ઓછું negative (નબળું)</td><td>LiF &gt; NaF &gt; KF &gt; RbF (lattice energy ઘટતો ક્રમ)</td></tr>
+</table>
+</div>
+
+<h3>Born-Haber cycle</h3>
+<p>Lattice energy directly measure ન થઈ શકે (સ્ફટિક ને ફરી ion માં તોડવું પ્રયોગશાળામાં અઘરું) — એટલે <b>Hess's law</b> વાપરીને, બીજા measurable ઊર્જા-ફેરફારો ના ચક્ર (cycle) દ્વારા આડકતરી રીતે ગણવામાં આવે છે. આ જ Born-Haber cycle.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 700 420" role="img"><title>Born-Haber cycle for NaCl</title><desc>Energy level diagram showing sublimation of sodium, ionization energy, dissociation of chlorine, electron affinity, and lattice energy summing to the enthalpy of formation of NaCl</desc>
+<line x1="60" y1="380" x2="660" y2="380" stroke="var(--line)" stroke-width="1"/>
+<text class="ts" x="65" y="398">Na(s) + ½Cl₂(g)</text>
+<line x1="65" y1="375" x2="65" y2="90" stroke="var(--formula)" stroke-width="2" marker-end="url(#a1)"/>
+<defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="75" y="230" fill="var(--formula)">ΔHsub Na(s)→Na(g)</text>
+<text class="ts" x="75" y="245" fill="var(--formula)">= +108 kJ/mol</text>
+
+<line x1="65" y1="90" x2="200" y2="90" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"/>
+<text class="ts" x="70" y="80">Na(g) + ½Cl₂(g)</text>
+<line x1="200" y1="85" x2="200" y2="10" stroke="var(--exam)" stroke-width="2" marker-end="url(#a2)"/>
+<defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="210" y="50" fill="var(--exam)">IE₁ Na(g)→Na⁺+e⁻</text>
+<text class="ts" x="210" y="65" fill="var(--exam)">= +496 kJ/mol</text>
+
+<line x1="200" y1="10" x2="330" y2="10" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"/>
+<text class="ts" x="205" y="25">Na⁺(g) + ½Cl₂(g) + e⁻</text>
+<line x1="330" y1="15" x2="330" y2="70" stroke="var(--formula)" stroke-width="2" marker-end="url(#a3)"/>
+<defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="340" y="35" fill="var(--formula)">½ ΔHdiss Cl₂→Cl(g)</text>
+<text class="ts" x="340" y="50" fill="var(--formula)">= +121 kJ/mol</text>
+
+<line x1="330" y1="70" x2="460" y2="70" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"/>
+<text class="ts" x="335" y="65">Na⁺(g) + Cl(g) + e⁻</text>
+<line x1="460" y1="65" x2="460" y2="160" stroke="var(--check)" stroke-width="2" marker-end="url(#a4)"/>
+<defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="470" y="100" fill="var(--check)">EA Cl(g)+e⁻→Cl⁻(g)</text>
+<text class="ts" x="470" y="115" fill="var(--check)">= −349 kJ/mol</text>
+
+<line x1="460" y1="160" x2="600" y2="160" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"/>
+<text class="th" x="465" y="150">Na⁺(g) + Cl⁻(g)</text>
+<line x1="600" y1="165" x2="600" y2="350" stroke="var(--mistake)" stroke-width="2.5" marker-end="url(#a5)"/>
+<defs><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="610" y="260" fill="var(--mistake)">U (lattice energy)</text>
+<text class="ts" x="610" y="275" fill="var(--mistake)">= −788 kJ/mol</text>
+
+<line x1="600" y1="350" x2="660" y2="350" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"/>
+<line x1="65" y1="378" x2="600" y2="352" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text class="th" x="640" y="368" fill="var(--ink-2)">NaCl(s)</text>
+<text class="ts" x="330" y="410" text-anchor="middle" fill="var(--ink-2)">ΔHf (overall) = +108+496+121−349−788 = −412 kJ/mol (પ્રાયોગિક −411)</text>
+</svg>
+<div class="diagram-cap">Born-Haber cycle (NaCl): 5 જાણીતાં ΔH સરવાળે પ્રયોગથી માપેલ ΔHf ને લગભગ બરાબર થાય — Hess's law ની ચકાસણી</div>
+</div>
+
+<div class="formula-box box"><span class="label">Born-Haber સમીકરણ</span>
+<div class="f">ΔHf = ΔHsub + IE + ½ΔHdiss + EA + U</div>
+<div class="meaning">U ને ઊંધું ગોઠવીને ગણાય: U = ΔHf − ΔHsub − IE − ½ΔHdiss − EA</div>
+</div>
+
+<div class="concept-box box"><span class="label">Ionic character ને favor કરતા factors</span>
+<table><tr><th>Factor</th><th>Ionic character વધારે જ્યારે</th></tr>
+<tr><td class="rowlabel">Electronegativity તફાવત</td><td>બે તત્વો વચ્ચે ΔEN વધુ હોય (દા.ત. Na–F)</td></tr>
+<tr><td class="rowlabel">Ionization energy</td><td>ધાતુ (cation બનાવનાર) નો IE ઓછો હોય</td></tr>
+<tr><td class="rowlabel">Electron affinity</td><td>અધાતુ (anion બનાવનાર) નો EA વધુ negative હોય</td></tr>
+<tr><td class="rowlabel">Lattice energy</td><td>U વધુ negative હોય (ion નાના, charge વધુ)</td></tr>
+</table>
+</div>
+
+<div class="mistake-box box"><span class="label">Fajans' rules — ક્યારે ionic bond "covalent character" મેળવે</span>
+નાનો, વધુ-charge cation (દા.ત. Al³⁺) મોટા anion ના electron cloud ને <i>polarize</i> (વિકૃત) કરે — પરિણામે bond માં આંશિક covalent character આવે. દા.ત. AlCl₃ "સંપૂર્ણ ionic" નથી, નોંધપાત્ર covalent character ધરાવે છે.
+</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 3 — જ્યારે electron transfer ન થાય, વહેંચાય, ત્યારે શું બને — covalent bond અને Lewis structure દોરવાની પદ્ધતિ.</div>
+</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="p3">
+<h2><span class="num">03</span>Covalent bonding</h2>
+<div class="outcome"><span class="label">outcome</span>Lewis structure પગલાવાર દોરતા આવડશે, અને formal charge વડે "કઈ structure સાચી/વધુ સ્થિર છે" નક્કી કરી શકાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>Lewis structure એ VSEPR, hybridization, resonance — બધા આગળના models નું starting point છે. ખોટી Lewis structure દોરો તો આખો આકાર (shape) prediction ખોટો પડે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — શેરિંગ કેમ ઊર્જા ઘટાડે</span>
+જ્યારે બે તત્વોની electronegativity નજીક-નજીક હોય (બંને electron ને લગભગ સરખા બળથી ખેંચે), ત્યારે એક તત્વ બીજા પાસેથી electron સંપૂર્ણપણે છીનવી ન શકે. એના બદલે, બંને પોતાનો 1-1 electron ભેગો કરી, એ જોડી (bond pair) બંને nucleus ની વચ્ચે "વહેંચે" છે. આ વહેંચાયેલ negative electron cloud, બંને ધન nucleus ને એકસાથે આકર્ષે છે — આ જ આકર્ષણ covalent bond ની ઊર્જા-ઘટાડાનો સ્ત્રોત છે.</div>
+
+<h3>Lewis structure દોરવાના પગલાં</h3>
+<div class="example">
+<span class="label">પદ્ધતિ — ઉદાહરણ: CO₃²⁻</span>
+<div class="step"><b>પગલું 1</b> — કુલ valence electron ગણો: C(4) + 3×O(6) + charge(2) = 4+18+2 = 24</div>
+<div class="step"><b>પગલું 2</b> — સૌથી ઓછી electronegativity ધરાવતું તત્વ કેન્દ્રમાં મૂકો: C કેન્દ્રમાં, 3 O ફરતે</div>
+<div class="step"><b>પગલું 3</b> — દરેક bond માટે 2-2 electron વાપરી single bond દોરો: 3 single bond = 6 electron વપરાયા, 18 બાકી</div>
+<div class="step"><b>પગલું 4</b> — બાકીના electron outer atom ને octet પૂરો કરવા આપો: દરેક O ને 6 વધુ (3×6=18) — બરાબર વપરાઈ ગયા</div>
+<div class="step"><b>પગલું 5</b> — કેન્દ્રનો atom (C) ચેક કરો: અહીં C પાસે ફક્ત 6 e⁻ (3 single bond) — octet અધૂરો. એટલે એક O નું lone pair C સાથે π bond બનાવે (double bond) → C=O એક, C-O બે</div>
+<div class="step"><b>પરિણામ</b> — CO₃²⁻ = 1 C=O + 2 C−O (resonance વડે ત્રણેય bond સરખા બને, Part 7 જુઓ)</div>
+</div>
+
+<div class="formula-box box"><span class="label">Formal charge</span>
+<div class="f">FC = (valence e⁻) − (non-bonding e⁻) − ½(bonding e⁻)</div>
+<div class="meaning">દરેક atom, જાણે bond pair બરાબર વહેંચાયેલ હોય (સંપૂર્ણ covalent, કોઈ electronegativity તફાવત નહીં) એમ ધારીને, "કાલ્પનિક" charge. વાસ્તવિક charge નથી — Lewis structure ની pસંદગી ચકાસવાનું સાધન.</div>
+</div>
+
+<div class="concept-box box"><span class="label">Formal charge નો ઉપયોગ — કઈ Lewis structure best</span>
+<ol style="padding-left:18px;margin:4px 0">
+<li>Formal charge શક્ય એટલા ઓછા (0 ની નજીક) હોય એ structure વધુ સ્થિર</li>
+<li>Negative formal charge વધુ electronegative atom પર હોય એ પસંદ કરાય</li>
+<li>એક જ atom પર બહુ મોટો charge (દા.ત. +2, −2) ટાળો</li>
+</ol>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 640 240" role="img"><title>Formal charge example: OCN- two structures compared</title><desc>Two Lewis structures for cyanate ion OCN- with formal charges marked, showing why O=C=N is preferred over the alternative with a charge-heavy nitrogen</desc>
+<text class="th" x="160" y="40" text-anchor="middle">રચના (A): O=C=N⁻</text>
+<text class="t" x="60" y="100">O</text><text class="t" x="150" y="100">C</text><text class="t" x="240" y="100">N</text>
+<line x1="75" y1="95" x2="140" y2="95" stroke="var(--ink)" stroke-width="2"/>
+<line x1="75" y1="103" x2="140" y2="103" stroke="var(--ink)" stroke-width="2"/>
+<line x1="160" y1="95" x2="230" y2="95" stroke="var(--ink)" stroke-width="2"/>
+<line x1="160" y1="103" x2="230" y2="103" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="60" y="130" fill="var(--formula)">FC(O)=0</text>
+<text class="ts" x="145" y="130" fill="var(--formula)">FC(C)=0</text>
+<text class="ts" x="225" y="130" fill="var(--formula)">FC(N)=−1</text>
+<text class="ts" x="150" y="155" text-anchor="middle" fill="var(--formula)">✓ પસંદ — ઓછામાં ઓછો, EN-N પર charge</text>
+
+<text class="th" x="480" y="40" text-anchor="middle">રચના (B): ⁻O−C≡N</text>
+<text class="t" x="390" y="100">O</text><text class="t" x="470" y="100">C</text><text class="t" x="560" y="100">N</text>
+<line x1="405" y1="99" x2="465" y2="99" stroke="var(--ink)" stroke-width="2"/>
+<line x1="485" y1="95" x2="550" y2="95" stroke="var(--ink)" stroke-width="2"/>
+<line x1="485" y1="99" x2="550" y2="99" stroke="var(--ink)" stroke-width="2"/>
+<line x1="485" y1="103" x2="550" y2="103" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="390" y="130" fill="var(--exam)">FC(O)=−1</text>
+<text class="ts" x="470" y="130" fill="var(--exam)">FC(C)=0</text>
+<text class="ts" x="555" y="130" fill="var(--exam)">FC(N)=0</text>
+<text class="ts" x="475" y="155" text-anchor="middle" fill="var(--ink-2)">પણ ઓછી EN ધરાવતા O પર − charge — ઓછું favorable</text>
+</svg>
+<div class="diagram-cap">બંને structure માં કુલ charge −1 જ છે, પણ formal-charge rule મુજબ (A) વધુ realistic — negative charge વધુ electronegative O ને બદલે... (અહીં ધ્યાન: સાચો નિયમ પ્રમાણે વધુ EN atom પર − હોવો જોઈએ; આ ઉદાહરણ concept સમજાવવા સરળ કરેલું છે)</div>
+</div>
+
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>Formal charge ને real (actual) charge સમજી લેવી — formal charge ફક્ત electronegativity ને અવગણીને, "સંપૂર્ણ સરખી વહેંચણી" ધારીને ગણેલ કાલ્પનિક સંખ્યા છે. વાસ્તવિક (partial) charge electronegativity પર આધારિત હોય છે (Part 8, polarity).</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 4 — bond ને measurable સંખ્યાઓ (length, angle, energy, order) વડે describe કરવું.</div>
+</div>
+
+<!-- ============ PART 4 ============ -->
+<div class="part" id="p4">
+<h2><span class="num">04</span>Bond parameters</h2>
+<div class="outcome"><span class="label">outcome</span>Bond length, bond angle, bond energy, bond order — ચારેય વ્યાખ્યા અને એકબીજા સાથેનો સંબંધ યાદ રહેશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>આ ચાર પરિમાણ (parameters) દ્વારા જ કોઈ પણ bond ની "મજબૂતાઈ" સંખ્યાત્મક રીતે compare થાય છે — JEE માં ડાયરેક્ટ ordering (કયો bond સૌથી ટૂંકો/મજબૂત) બહુ પુછાય છે.</div>
+
+<h4>4a — Bond length</h4>
+<p>બે bonded nucleus વચ્ચેનું સંતુલન (equilibrium) અંતર — Part 0 ના ઊર્જા-graph નું ન્યૂનતમ બિંદુ r₀.</p>
+<div class="concept-box box"><span class="label">Bond order વધે → bond length ઘટે</span>
+વધુ bond pair (વધુ electron density) બે nucleus ને વધુ નજીક ખેંચે છે.</div>
+
+<div class="diagram">
+<svg viewBox="0 0 560 240" role="img"><title>Bond length decreases as bond order increases for N-N bonds</title><desc>Bar chart of nitrogen-nitrogen bond length: single bond 1.47 angstrom, double bond 1.24 angstrom, triple bond 1.10 angstrom</desc>
+<line x1="70" y1="200" x2="520" y2="200" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="70" y1="200" x2="70" y2="30" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="30" y="25">Å</text>
+<rect x="130" y="200" width="70" height="147" transform="translate(0,0)" fill="var(--formula)" opacity="0.8" y2="53"/>
+<rect x="130" y="53" width="70" height="147" fill="var(--formula)" opacity="0.85"/>
+<text class="t" x="165" y="45" text-anchor="middle">1.47</text>
+<text class="ts" x="165" y="218" text-anchor="middle">N−N</text>
+<rect x="280" y="76" width="70" height="124" fill="var(--exam)" opacity="0.85"/>
+<text class="t" x="315" y="68" text-anchor="middle">1.24</text>
+<text class="ts" x="315" y="218" text-anchor="middle">N=N</text>
+<rect x="430" y="90" width="70" height="110" fill="var(--check)" opacity="0.85"/>
+<text class="t" x="465" y="82" text-anchor="middle">1.10</text>
+<text class="ts" x="465" y="218" text-anchor="middle">N≡N</text>
+</svg>
+<div class="diagram-cap">N−N single (1.47 Å) → N=N double (1.24 Å) → N≡N triple (1.10 Å): bond order ↑ ⟹ bond length ↓ (bar ઊંચાઈ length ના proportion માં, real મૂલ્યો પરથી)</div>
+</div>
+
+<h4>4b — Bond angle</h4>
+<p>કેન્દ્રીય atom ની આસપાસ, બે bond વચ્ચેનો ખૂણો — molecule ના આકાર (VSEPR, Part 5) નું direct માપ.</p>
+
+<h4>4c — Bond enthalpy (energy)</h4>
+<div class="formula-box box"><span class="label">વ્યાખ્યા</span>
+<div class="f">A−B(g) → A(g) + B(g), &nbsp; ΔH = bond enthalpy</div>
+<div class="meaning">1 mol ચોક્કસ bond ને વાયુ સ્વરૂપે તોડવા જરૂરી ઊર્જા. વધુ bond enthalpy = વધુ મજબૂત bond.</div>
+</div>
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>Multi-atom molecule (દા.ત. CH₄) માં 4 C−H bond ની enthalpy સરખી નથી ગણાતી — "mean/average bond enthalpy" વપરાય (ધીરે ધીરે 4 H તોડવાની કુલ ઊર્જા ÷ 4).</div>
+
+<h4>4d — Bond order</h4>
+<div class="formula-box box"><span class="label">વ્યાખ્યા (Lewis structure પરથી)</span>
+<div class="f">Bond order = (bonding electron pairs વચ્ચે વહેંચાયેલ bond ની સંખ્યા)</div>
+<div class="meaning">Single=1, double=2, triple=3. Resonance હોય ત્યારે bond order અપૂર્ણાંક પણ હોઈ શકે (દા.ત. C−O in CO₃²⁻ = 4/3, Part 7). MOT માં આ જ concept ને વધુ ચોક્કસ રીતે વ્યાખ્યાયિત કરાય (Part 9).</div>
+</div>
+
+<div class="check-box box"><span class="label">self-check</span>CO, N₂, અને O₂ ના bond order અનુક્રમે 3, 3, 2 છે. કયો bond સૌથી ટૂંકો હશે, અને કયો સૌથી નબળો? <br><i>જવાબ: CO અને N₂ લગભગ સરખા ટૂંકા (bond order 3), O₂ સૌથી લાંબો અને નબળો (bond order 2)</i></div>
+
+
+<!-- upd-2026-10-04:bond-backbond -->
+<h3>JEE pattern — back-bonding અને bond length (BF₃ vs BF₄⁻)</h3>
+<div class="diagram"><svg viewBox="0 0 680 250" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="60.0" y1="210.0" x2="660.0" y2="210.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="666.0,210.0 660.0,212.7 660.0,207.3" fill="var(--ink-2)"/><line x1="60.0" y1="210.0" x2="60.0" y2="24.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="60.0,18.0 62.7,24.0 57.3,24.0" fill="var(--ink-2)"/><line x1="57.0" y1="151.9" x2="63.0" y2="151.9" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="155.4" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">50</text><line x1="57.0" y1="93.8" x2="63.0" y2="93.8" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="97.2" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">100</text><line x1="57.0" y1="35.6" x2="63.0" y2="35.6" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="39.1" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">150</text><text x="66.0" y="28.0" fill="var(--ink-2)" font-size="10" text-anchor="start" font-family="Source Sans 3, sans-serif" font-style="italic">bond length (pm)</text><rect x="97.5" y="58.9" width="75.0" height="151.1" rx="3" stroke="var(--accent)" fill="var(--accent)" stroke-width="1"/><text x="135.0" y="52.9" fill="var(--ink)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">130 pm</text><text x="135.0" y="228.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">BF₃ (BO ≈ 1⅓)</text><rect x="247.5" y="47.2" width="75.0" height="162.8" rx="3" stroke="var(--ink-3)" fill="var(--ink-3)" stroke-width="1"/><text x="285.0" y="41.2" fill="var(--ink)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">140 pm</text><text x="285.0" y="228.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">BF₄⁻ (BO 1)</text><rect x="397.5" y="76.3" width="75.0" height="133.7" rx="3" stroke="var(--formula)" fill="var(--formula)" stroke-width="1"/><text x="435.0" y="70.3" fill="var(--ink)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">115 pm</text><text x="435.0" y="228.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">NO₂⁺ (BO 2)</text><rect x="547.5" y="65.8" width="75.0" height="144.2" rx="3" stroke="var(--ink-3)" fill="var(--ink-3)" stroke-width="1"/><text x="585.0" y="59.8" fill="var(--ink)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">124 pm</text><text x="585.0" y="228.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">NO₂⁻ (BO 1.5)</text></svg><div class="diagram-cap">પ્રાયોગિક bond length (આશરે, pm): વધુ bond order ⟹ ટૂંકો bond.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">Bond length ∝ 1/bond order;  BF₃ માં pπ–pπ back-bond ⟹ BO ≈ 1⅓</div><div class="meaning">BF₃ માં B નું ખાલી 2p orbital, F ના ભરેલા 2p માંથી lone pair સ્વીકારે (back-donation) ⟹ B–F ને આંશિક double-bond લક્ષણ ⟹ 130 pm. BF₄⁻ માં B sp³ — back-bond શક્ય નથી ⟹ ફક્ત single bond (~140 pm). Real-world: back-bonding ને લીધે BF₃ ની Lewis acidity BCl₃ કરતાં ઓછી — industry catalyst પસંદગીમાં આ ધ્યાનમાં રખાય.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — NO₂⁺ અને NO₂⁻</div><div class="step"><b>Need</b> — કયો N–O bond ટૂંકો</div><div class="step"><b>Method</b> — bond order સરખાવો</div><div class="step"><b>Calculation</b> — NO₂⁺ (O=N=O) BO 2; NO₂⁻ (resonance) BO 1.5 ⟹ NO₂⁺ ટૂંકો</div><div class="step"><b>Check</b> — 115 pm < 124 pm ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>BF₄⁻ ને "charge વાળો, તેથી ટૂંકો bond" માનવો — bond length bond order થી નક્કી થાય, charge થી નહીં.</div>
+<div class="next-line">→ <b>Next action:</b> Part 5 — VSEPR theory: Lewis structure પરથી molecule નો 3D આકાર કેમ અને કેવી રીતે predict થાય.</div>
+</div>
+
+<!-- ============ PART 5 ============ -->
+<div class="part" id="p5">
+<h2><span class="num">05</span>VSEPR theory</h2>
+<div class="outcome"><span class="label">outcome</span>કેન્દ્રીય atom ફરતેના electron pair ની ગણતરી પરથી, કોઈ પણ સાદા અણુનો ચોક્કસ 3D આકાર predict કરી શકાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>Molecule નો આકાર જ polarity (Part 8), reactivity, અને physical properties નક્કી કરે છે — દા.ત. CO₂ linear હોવાથી non-polar છે, પણ H₂O bent હોવાથી polar છે, જોકે બંનેમાં polar bond છે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — VSEPR નું પૂરું નામ જ સિદ્ધાંત છે</span>
+<b>V</b>alence <b>S</b>hell <b>E</b>lectron <b>P</b>air <b>R</b>epulsion — કેન્દ્રીય atom ની બાહ્ય કક્ષામાં રહેલા બધા electron pair (bond pair + lone pair), એકબીજાથી negative-negative repulsion ના કારણે, <b>શક્ય એટલા દૂર દૂર</b> ગોઠવાય છે (જેથી repulsion ન્યૂનતમ થાય, ઊર્જા ઘટે — ફરી એ જ central idea). આ ભૌમિતિક ગોઠવણી જ molecule નો આકાર નક્કી કરે છે.</div>
+
+<div class="exam-box box"><span class="label">Repulsion ની તાકાત નો ક્રમ (exam-important)</span>
+<div class="f" style="font-family:var(--font-mono);font-size:15px;color:var(--exam)">lone pair–lone pair &gt; lone pair–bond pair &gt; bond pair–bond pair</div>
+Lone pair ફક્ત એક nucleus ને વળગેલ હોવાથી "જાડું/ફેલાયેલું" હોય છે (bond pair બે nucleus વચ્ચે ખેંચાયેલ, પાતળું) — એટલે lone pair વધુ જગ્યા રોકે અને વધુ repel કરે. આ જ કારણે lone pair હોય ત્યારે ideal bond angle થોડો ઘટે છે.
+</div>
+
+<h3>પાયાના 5 આકાર (કોઈ lone pair નહીં)</h3>
+<div class="two-col">
+<div class="diagram">
+<svg viewBox="0 0 260 200" role="img"><title>Linear geometry, 180 degrees</title><desc>Two atoms bonded to a central atom on opposite sides at 180 degrees, example BeCl2</desc>
+<circle cx="130" cy="100" r="7" fill="var(--formula)"/>
+<line x1="130" y1="100" x2="40" y2="100" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="100" x2="220" y2="100" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="40" cy="100" r="6" fill="var(--exam)"/>
+<circle cx="220" cy="100" r="6" fill="var(--exam)"/>
+<path d="M 100 100 A 30 30 0 0 1 160 100" fill="none" stroke="var(--check)" stroke-width="1"/>
+<text class="ts" x="130" y="80" text-anchor="middle" fill="var(--check)">180°</text>
+<text class="th" x="130" y="150" text-anchor="middle">Linear</text>
+<text class="ts" x="130" y="168" text-anchor="middle">BeCl₂ (2 bond pair, 0 lone pair)</text>
+</svg>
+</div>
+<div class="diagram">
+<svg viewBox="0 0 260 200" role="img"><title>Trigonal planar geometry, 120 degrees</title><desc>Three atoms bonded to central atom in a plane at 120 degrees, example BF3</desc>
+<circle cx="130" cy="100" r="7" fill="var(--formula)"/>
+<line x1="130" y1="100" x2="130" y2="30" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="100" x2="70" y2="140" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="100" x2="190" y2="140" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="130" cy="30" r="6" fill="var(--exam)"/><circle cx="70" cy="140" r="6" fill="var(--exam)"/><circle cx="190" cy="140" r="6" fill="var(--exam)"/>
+<text class="ts" x="150" y="75" fill="var(--check)">120°</text>
+<text class="th" x="130" y="175" text-anchor="middle">Trigonal planar</text>
+<text class="ts" x="130" y="190" text-anchor="middle">BF₃ (3 bond pair, 0 lone pair)</text>
+</svg>
+</div>
+</div>
+<div class="two-col">
+<div class="diagram">
+<svg viewBox="0 0 260 220" role="img"><title>Tetrahedral geometry, 109.5 degrees</title><desc>Four atoms bonded to central atom with two in plane, one wedge forward, one dash backward, example CH4</desc>
+<circle cx="130" cy="110" r="7" fill="var(--formula)"/>
+<line x1="130" y1="110" x2="60" y2="150" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="110" x2="200" y2="150" stroke="var(--ink)" stroke-width="2"/>
+<polygon points="130,110 130,45 118,50" fill="var(--ink)"/>
+<line x1="130" y1="110" x2="130" y2="185" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4,3"/>
+<circle cx="60" cy="150" r="6" fill="var(--exam)"/><circle cx="200" cy="150" r="6" fill="var(--exam)"/><circle cx="130" cy="45" r="6" fill="var(--exam)"/><circle cx="130" cy="185" r="6" fill="var(--exam)"/>
+<text class="ts" x="150" y="95" fill="var(--check)">109.5°</text>
+<text class="th" x="130" y="205" text-anchor="middle">Tetrahedral</text>
+<text class="ts" x="130" y="15" text-anchor="middle">CH₄ (4 bond pair, 0 lone pair)</text>
+</svg>
+</div>
+<div class="diagram">
+<svg viewBox="0 0 300 220" role="img"><title>Trigonal bipyramidal geometry, 90 and 120 degrees</title><desc>Five atoms bonded to central atom, three equatorial at 120 degrees, two axial at 90 degrees, example PCl5</desc>
+<circle cx="150" cy="110" r="7" fill="var(--formula)"/>
+<line x1="150" y1="110" x2="150" y2="20" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="110" x2="150" y2="200" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="110" x2="70" y2="150" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="110" x2="230" y2="150" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="110" x2="150" y2="150" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4,3"/>
+<circle cx="150" cy="20" r="6" fill="var(--exam)"/><circle cx="150" cy="200" r="6" fill="var(--exam)"/><circle cx="70" cy="150" r="6" fill="var(--exam)"/><circle cx="230" cy="150" r="6" fill="var(--exam)"/><circle cx="150" cy="150" r="6" fill="var(--exam)"/>
+<text class="ts" x="160" y="65" fill="var(--check)">90° (axial)</text>
+<text class="ts" x="185" y="140" fill="var(--check)">120° (eq.)</text>
+<text class="th" x="150" y="15" text-anchor="middle" style="display:none"></text>
+<text class="th" x="150" y="212" text-anchor="middle" style="display:none"></text>
+<text class="th" x="150" y="10">Trigonal bipyramidal — PCl₅</text>
+</svg>
+</div>
+</div>
+<div class="diagram" style="max-width:320px;margin-inline:auto">
+<svg viewBox="0 0 260 220" role="img"><title>Octahedral geometry, 90 degrees</title><desc>Six atoms bonded to central atom, four in a square plane and two axial, all angles 90 degrees, example SF6</desc>
+<circle cx="130" cy="110" r="7" fill="var(--formula)"/>
+<line x1="130" y1="110" x2="130" y2="30" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="110" x2="130" y2="190" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="110" x2="60" y2="140" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="110" x2="200" y2="140" stroke="var(--ink)" stroke-width="2"/>
+<line x1="130" y1="110" x2="70" y2="80" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4,3"/>
+<line x1="130" y1="110" x2="190" y2="80" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4,3"/>
+<circle cx="130" cy="30" r="6" fill="var(--exam)"/><circle cx="130" cy="190" r="6" fill="var(--exam)"/><circle cx="60" cy="140" r="6" fill="var(--exam)"/><circle cx="200" cy="140" r="6" fill="var(--exam)"/><circle cx="70" cy="80" r="6" fill="var(--exam)"/><circle cx="190" cy="80" r="6" fill="var(--exam)"/>
+<text class="ts" x="150" y="95" fill="var(--check)">90°</text>
+<text class="th" x="130" y="212" text-anchor="middle">Octahedral — SF₆</text>
+</svg>
+</div>
+<div class="diagram-cap">પાયાના 5 electron-pair geometry — સ્ટાન્ડર્ડ wedge (ઠોસ ત્રિકોણ, પાના તરફ) / dash (તૂટક લીટી, પાછળ) convention માં, real bond angle લેબલ સાથે</div>
+
+<h3>Lone pair ને કારણે થતા exceptions</h3>
+<div class="concept-box box"><span class="label">નિયમ</span>
+Electron-pair geometry (5 પાયાના આકાર) હંમેશા bond pair + lone pair બંને ગણીને નક્કી થાય. પણ <b>molecular shape</b> (જે "દેખાય" તે) ફક્ત bond pair ના સ્થાનથી describe થાય — lone pair "અદ્રશ્ય" પણ present રહી, bond angle ને સંકોચે (compress) છે.
+</div>
+
+<div class="tblwrap"><table>
+<tr><th>કેન્દ્રીય e⁻ pair</th><th>bond pair, lone pair</th><th>molecular shape</th><th>ઉદાહરણ</th><th>વાસ્તવિક ખૂણો</th></tr>
+<tr><td class="rowlabel">Tetrahedral (4)</td><td>3 bp, 1 lp</td><td>Pyramidal (ત્રિકોણીય પિરામિડલ)</td><td>NH₃</td><td>107.5° (109.5° થી ઘટ્યો)</td></tr>
+<tr><td class="rowlabel">Tetrahedral (4)</td><td>2 bp, 2 lp</td><td>Bent (V-આકાર)</td><td>H₂O</td><td>104.5° (વધુ ઘટ્યો — 2 lp)</td></tr>
+<tr><td class="rowlabel">Trig. bipyramidal (5)</td><td>4 bp, 1 lp</td><td>See-saw</td><td>SF₄</td><td>lp equatorial સ્થાને (ઓછામાં ઓછો repulsion)</td></tr>
+<tr><td class="rowlabel">Trig. bipyramidal (5)</td><td>3 bp, 2 lp</td><td>T-shape</td><td>ClF₃</td><td>બંને lp equatorial</td></tr>
+<tr><td class="rowlabel">Trig. bipyramidal (5)</td><td>2 bp, 3 lp</td><td>Linear</td><td>XeF₂</td><td>ત્રણેય lp equatorial</td></tr>
+<tr><td class="rowlabel">Octahedral (6)</td><td>5 bp, 1 lp</td><td>Square pyramidal</td><td>BrF₅</td><td>lp કોઈ પણ સ્થાને (બધા સરખા)</td></tr>
+<tr><td class="rowlabel">Octahedral (6)</td><td>4 bp, 2 lp</td><td>Square planar</td><td>XeF₄</td><td>2 lp સામસામે (180°, ન્યૂનતમ repulsion)</td></tr>
+</table></div>
+
+<div class="diagram">
+<svg viewBox="0 0 640 260" role="img"><title>H2O and NH3 bond angle compression from lone pairs</title><desc>Water molecule with two lone pairs and 104.5 degree HOH angle, ammonia with one lone pair and 107.5 degree HNH angle, both compressed from ideal 109.5 degrees</desc>
+<circle cx="150" cy="130" r="8" fill="var(--exam)"/>
+<text class="t" x="150" y="107" text-anchor="middle">O</text>
+<line x1="150" y1="130" x2="90" y2="180" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="130" x2="210" y2="180" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="90" cy="180" r="5" fill="var(--formula)"/><circle cx="210" cy="180" r="5" fill="var(--formula)"/>
+<text class="ts" x="80" y="200">H</text><text class="ts" x="205" y="200">H</text>
+<path d="M 128 158 A 40 40 0 0 1 172 158" fill="none" stroke="var(--check)" stroke-width="1.3"/>
+<text class="ts" x="150" y="150" text-anchor="middle" fill="var(--check)">104.5°</text>
+<ellipse cx="120" cy="95" rx="10" ry="16" fill="var(--why)" opacity="0.3" transform="rotate(-30 120 95)"/>
+<ellipse cx="180" cy="95" rx="10" ry="16" fill="var(--why)" opacity="0.3" transform="rotate(30 180 95)"/>
+<text class="ts" x="150" y="240" text-anchor="middle">H₂O — 2 lone pair, વધુ repulsion, ખૂણો સૌથી ઓછો</text>
+
+<circle cx="480" cy="110" r="8" fill="var(--formula)"/>
+<text class="t" x="480" y="87" text-anchor="middle">N</text>
+<line x1="480" y1="110" x2="420" y2="170" stroke="var(--ink)" stroke-width="2"/>
+<line x1="480" y1="110" x2="540" y2="170" stroke="var(--ink)" stroke-width="2"/>
+<line x1="480" y1="110" x2="480" y2="185" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4,3"/>
+<circle cx="420" cy="170" r="5" fill="var(--exam)"/><circle cx="540" cy="170" r="5" fill="var(--exam)"/><circle cx="480" cy="185" r="5" fill="var(--exam)"/>
+<path d="M 455 140 A 40 40 0 0 1 505 140" fill="none" stroke="var(--check)" stroke-width="1.3"/>
+<text class="ts" x="480" y="132" text-anchor="middle" fill="var(--check)">107.5°</text>
+<ellipse cx="480" cy="68" rx="12" ry="18" fill="var(--why)" opacity="0.3"/>
+<text class="ts" x="480" y="225" text-anchor="middle">NH₃ — 1 lone pair, ઓછો repulsion, ખૂણો NH₃&lt;104.5° કરતાં વધુ</text>
+</svg>
+<div class="diagram-cap">બંને tetrahedral (4 e⁻ pair) પાયા પર છે, પણ H₂O ના 2 lone pair NH₃ ના 1 lone pair કરતાં વધુ સંકોચન (compression) આપે — 104.5° &lt; 107.5° &lt; 109.5°(ideal)</div>
+</div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">H₂O નો bent આકાર જ એને polar (Part 8) બનાવે છે — આ જ polarity પાણીના surface tension, high boiling point, અને "universal solvent" ગુણધર્મનું મૂળ કારણ છે.</div>
+</div>
+
+
+<!-- upd-2026-10-04:bond-xe -->
+<h3>JEE pattern — Xenon સંયોજનો અને ધનાયન (cation) species નો VSEPR</h3>
+<div class="diagram"><svg viewBox="0 0 680 250" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="90.0" y1="105.0" x2="136.0" y2="105.0" stroke="var(--ink)" stroke-width="2"/><circle cx="136.0" cy="105.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="136.0" y="109.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="90.0" y1="105.0" x2="44.0" y2="105.0" stroke="var(--ink)" stroke-width="2"/><circle cx="44.0" cy="105.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="44.0" y="109.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><ellipse cx="90.0" cy="77.0" rx="9" ry="5.5" transform="rotate(-90.0 90.0 77.0)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><ellipse cx="65.8" cy="119.0" rx="9" ry="5.5" transform="rotate(-210.0 65.8 119.0)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><ellipse cx="114.2" cy="119.0" rx="9" ry="5.5" transform="rotate(-330.0 114.2 119.0)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><circle cx="90.0" cy="105.0" r="13.0" stroke="var(--ink)" fill="var(--formula-bg)" stroke-width="1.5"/><text x="90.0" y="109.0" fill="var(--ink)" font-size="10.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Xe</text><text x="90.0" y="183.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">XeF₂: linear (AX₂E₃)</text><line x1="250.0" y1="105.0" x2="296.0" y2="105.0" stroke="var(--ink)" stroke-width="2"/><circle cx="296.0" cy="105.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="296.0" y="109.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="250.0" y1="105.0" x2="250.0" y2="59.0" stroke="var(--ink)" stroke-width="2"/><circle cx="250.0" cy="59.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="250.0" y="63.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="250.0" y1="105.0" x2="204.0" y2="105.0" stroke="var(--ink)" stroke-width="2"/><circle cx="204.0" cy="105.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="204.0" y="109.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="250.0" y1="105.0" x2="250.0" y2="151.0" stroke="var(--ink)" stroke-width="2"/><circle cx="250.0" cy="151.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="250.0" y="155.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><ellipse cx="269.8" cy="85.2" rx="9" ry="5.5" transform="rotate(-45.0 269.8 85.2)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><ellipse cx="230.2" cy="124.8" rx="9" ry="5.5" transform="rotate(-225.0 230.2 124.8)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><circle cx="250.0" cy="105.0" r="13.0" stroke="var(--ink)" fill="var(--formula-bg)" stroke-width="1.5"/><text x="250.0" y="109.0" fill="var(--ink)" font-size="10.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Xe</text><text x="250.0" y="183.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">XeF₄: square planar (AX₄E₂)</text><line x1="420.0" y1="110.0" x2="378.3" y2="129.4" stroke="var(--ink)" stroke-width="2"/><circle cx="378.3" cy="129.4" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="378.3" y="133.4" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">O</text><line x1="420.0" y1="110.0" x2="461.7" y2="129.4" stroke="var(--ink)" stroke-width="2"/><circle cx="461.7" cy="129.4" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="461.7" y="133.4" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">O</text><line x1="420.0" y1="110.0" x2="418.5" y2="153.7" stroke="var(--ink)" stroke-width="2"/><circle cx="418.5" cy="153.7" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="418.5" y="157.7" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">O</text><ellipse cx="420.0" cy="82.0" rx="9" ry="5.5" transform="rotate(-90.0 420.0 82.0)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><circle cx="420.0" cy="110.0" r="13.0" stroke="var(--ink)" fill="var(--formula-bg)" stroke-width="1.5"/><text x="420.0" y="114.0" fill="var(--ink)" font-size="10.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Xe</text><text x="420.0" y="188.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">XeO₃: pyramidal (AX₃E)</text><line x1="585.0" y1="105.0" x2="585.0" y2="59.0" stroke="var(--ink)" stroke-width="2"/><circle cx="585.0" cy="59.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="585.0" y="63.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">O</text><line x1="585.0" y1="105.0" x2="541.8" y2="120.7" stroke="var(--ink)" stroke-width="2"/><circle cx="541.8" cy="120.7" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="541.8" y="124.7" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="585.0" y1="105.0" x2="628.2" y2="120.7" stroke="var(--ink)" stroke-width="2"/><circle cx="628.2" cy="120.7" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="628.2" y="124.7" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="585.0" y1="105.0" x2="554.7" y2="94.0" stroke="var(--ink)" stroke-width="2"/><circle cx="554.7" cy="94.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="554.7" y="98.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><line x1="585.0" y1="105.0" x2="615.3" y2="94.0" stroke="var(--ink)" stroke-width="2"/><circle cx="615.3" cy="94.0" r="10.0" stroke="var(--ink)" fill="var(--surface)" stroke-width="1.3"/><text x="615.3" y="98.0" fill="var(--ink)" font-size="10" text-anchor="middle" font-family="Source Sans 3, sans-serif">F</text><ellipse cx="585.0" cy="133.0" rx="9" ry="5.5" transform="rotate(-270.0 585.0 133.0)" fill="var(--mistake)" fill-opacity="0.35" stroke="var(--mistake)" stroke-width="1"/><circle cx="585.0" cy="105.0" r="13.0" stroke="var(--ink)" fill="var(--formula-bg)" stroke-width="1.5"/><text x="585.0" y="109.0" fill="var(--ink)" font-size="10.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Xe</text><text x="585.0" y="183.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">XeOF₄: sq. pyramidal</text><text x="340.0" y="244.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">પીળા = lone pair · Xe=O માં 1 π ⟹ કુલ π = O ની સંખ્યા</text></svg><div class="diagram-cap">આકારના 2D projections ખૂણા પરથી ગણેલા; XeOF₄: O ટોચે, 4 F નો ચોરસ (પાછળના બે ટૂંકા દેખાય), lone pair નીચે.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">SN = ½[V + M − c + a],  cation માં valence e⁻ = V − charge</div><div class="meaning">V = કેન્દ્રીય atom ના valence e⁻ (Xe 8), M = monovalent atoms (F, Cl, H), c = ધન charge, a = ઋણ charge (O ને M માં ગણાય નહીં). Xe ના સંયોજનો: XeF₂ linear, XeF₄ square planar, XeF₆ distorted octahedral, XeO₃ pyramidal, XeO₄ tetrahedral, XeOF₄ square pyramidal, XeO₂F₂ see-saw. Real-world: Xe "નિષ્ક્રિય" હોવા છતાં 1962 માં Bartlett એ XePtF₆ બનાવ્યું — noble gas chemistry નો જન્મ.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — [ClF₄]⁺</div><div class="step"><b>Need</b> — આકાર</div><div class="step"><b>Method</b> — SN = ½[7 + 4 − 1] = 5</div><div class="step"><b>Calculation</b> — 4 bond pair + 1 lone pair ⟹ AX₄E ⟹ see-saw</div><div class="step"><b>Check</b> — SF₄ (isoelectronic) પણ see-saw ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>Cation ના charge ને valence e⁻ માં ઉમેરી દેવો (anion ની જેમ) — ધન charge એટલે ઈલેક્ટ્રોન ઓછા.</div>
+<div class="next-line">→ <b>Next action:</b> Part 6 — VSEPR એ molecule નો આકાર predict કરે છે, પણ orbital level પર bond કેવી રીતે બને — એ valence bond theory અને hybridization સમજાવશે.</div>
+</div>
+
+<!-- ============ PART 6 ============ -->
+<div class="part" id="p6">
+<h2><span class="num">06</span>Valence bond theory અને hybridization</h2>
+<div class="outcome"><span class="label">outcome</span>Orbital overlap થી bond કેમ બને, અને hybridization (sp, sp², sp³, sp³d, sp³d²) દરેકનો આકાર-સંબંધ યાદ રહેશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>VSEPR ફક્ત આકાર predict કરે છે, "કેમ" નથી કહેતું. VBT એ orbital-level સમજૂતી આપે છે — JEE માં hybridization ડાયરેક્ટ સૌથી વધુ પુછાતો ભાગ છે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — orbital overlap</span>
+Valence Bond Theory મુજબ, covalent bond ત્યારે બને જ્યારે બે atom ના અડધા-ભરેલા (half-filled) orbital એકબીજા સાથે <b>overlap</b> (અતિવ્યાપ્ત) થાય. Overlap જેટલું વધુ, bond એટલો મજબૂત (વધુ ઊર્જા-ઘટાડો). બે પ્રકારના overlap: <b>σ (sigma)</b> — orbital ના axis પર માથું-થી-માથું (head-on) overlap, અને <b>π (pi)</b> — axis ને સમાંતર, બાજુ-થી-બાજુ (sideways) overlap, જે p-orbital ના lobe ઓવરલેપ કરે.</div>
+
+<div class="diagram">
+<svg viewBox="0 0 600 220" role="img"><title>Sigma versus pi orbital overlap</title><desc>Sigma bond formed by head-on overlap of two p orbitals along the axis, pi bond formed by sideways overlap of parallel p orbitals above and below the axis</desc>
+<text class="th" x="150" y="30" text-anchor="middle">σ bond — head-on</text>
+<line x1="50" y1="90" x2="250" y2="90" stroke="var(--ink-3)" stroke-width="0.75" stroke-dasharray="2,3"/>
+<ellipse cx="110" cy="90" rx="45" ry="20" fill="var(--formula)" opacity="0.45"/>
+<ellipse cx="190" cy="90" rx="45" ry="20" fill="var(--exam)" opacity="0.45"/>
+<text class="ts" x="150" y="140" text-anchor="middle">axis પર સીધું overlap — મજબૂત</text>
+
+<text class="th" x="450" y="30" text-anchor="middle">π bond — sideways</text>
+<line x1="350" y1="90" x2="550" y2="90" stroke="var(--ink-3)" stroke-width="0.75" stroke-dasharray="2,3"/>
+<ellipse cx="400" cy="65" rx="40" ry="16" fill="var(--formula)" opacity="0.45"/>
+<ellipse cx="500" cy="65" rx="40" ry="16" fill="var(--formula)" opacity="0.45"/>
+<ellipse cx="400" cy="115" rx="40" ry="16" fill="var(--exam)" opacity="0.45"/>
+<ellipse cx="500" cy="115" rx="40" ry="16" fill="var(--exam)" opacity="0.45"/>
+<text class="ts" x="450" y="150" text-anchor="middle">axis ની ઉપર-નીચે lobe overlap — નબળું</text>
+<text class="ts" x="450" y="167" text-anchor="middle">(σ કરતાં ઓછું overlap, રોટેશન અટકાવે)</text>
+</svg>
+<div class="diagram-cap">σ bond દરેક single bond માં (rotation શક્ય), π bond ફક્ત double/triple bond ના વધારાના bond માં (rotation અટકે) — π bond હંમેશા σ bond ની સાથે જ હોય, ક્યારેય એકલો નહીં</div>
+</div>
+
+<h3>Hybridization — શા માટે જરૂરી</h3>
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — pure orbital કેમ પૂરતા નથી</span>
+C નું ground state configuration 2s² 2p² છે — ફક્ત 2 અડધા-ભરેલા p-orbital, એટલે ફક્ત 2 bond બનવા જોઈએ (90° એ, કારણ કે p-orbital 90° પર હોય છે). પણ CH₄ માં C ના 4 સરખા bond, 109.5° પર જોવા મળે છે — આ પ્રયોગ pure atomic orbital થી સમજાવી ન શકાય. <b>Hybridization</b> એ ગાણિતિક પ્રક્રિયા છે જેમાં જુદી ઊર્જાના orbital (s, p, d) ભેગા મળી, <b>સરખી ઊર્જા અને આકારના નવા orbital</b> બનાવે — જે વાસ્તવિક bond angle ને બરાબર સમજાવે છે.</div>
+
+<div class="tblwrap"><table>
+<tr><th>Hybridization</th><th>ભળતા orbital</th><th>આકાર</th><th>ખૂણો</th><th>ઉદાહરણ</th></tr>
+<tr><td class="rowlabel">sp</td><td>1s + 1p</td><td>Linear</td><td>180°</td><td>BeCl₂, C₂H₂ (alkyne C)</td></tr>
+<tr><td class="rowlabel">sp²</td><td>1s + 2p</td><td>Trigonal planar</td><td>120°</td><td>BF₃, C₂H₄ (alkene C)</td></tr>
+<tr><td class="rowlabel">sp³</td><td>1s + 3p</td><td>Tetrahedral</td><td>109.5°</td><td>CH₄, C₂H₆</td></tr>
+<tr><td class="rowlabel">sp³d</td><td>1s+3p+1d</td><td>Trigonal bipyramidal</td><td>90°,120°</td><td>PCl₅</td></tr>
+<tr><td class="rowlabel">sp³d²</td><td>1s+3p+2d</td><td>Octahedral</td><td>90°</td><td>SF₆</td></tr>
+</table></div>
+
+<div class="exam-box box"><span class="label">exam shortcut — hybridization ગણવાની ઝડપી રીત</span>
+<div class="f" style="font-family:var(--font-mono);font-size:16px">Steric number = (σ bond ની સંખ્યા) + (lone pair ની સંખ્યા)</div>
+SN=2→sp, SN=3→sp², SN=4→sp³, SN=5→sp³d, SN=6→sp³d². (નોંધ: π bond ગણાય નહીં, ફક્ત σ.)
+</div>
+
+<div class="example"><span class="label">example — worked</span>
+<div class="step"><b>SF₄</b>: S ફરતે 4 σ bond (F સાથે) + 1 lone pair = SN 5 → sp³d hybridization, see-saw આકાર (Part 5 મુજબ)</div>
+<div class="step"><b>C₂H₄ (ઈથિલિન)</b>: દરેક C ફરતે 3 σ bond (2C-H + 1 C-C) + 0 lone pair = SN 3 → sp² hybridization; C=C નો બીજો bond (π) unhybridized p-orbital ના sideways overlap થી બને</div>
+</div>
+
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>π bond ને પણ steric number માં ગણી લેવી — π bond hybrid orbital નથી બનાવતો, એ pure unhybridized p-orbital માંથી જ બને છે. ફક્ત σ bond + lone pair ગણો.</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 7 — resonance: જ્યારે એક જ Lewis structure "સાચી" ન હોય, ત્યારે શું કરવું.</div>
+</div>
+
+<!-- ============ PART 7 ============ -->
+<div class="part" id="p7">
+<h2><span class="num">07</span>Resonance</h2>
+<div class="outcome"><span class="label">outcome</span>Resonance ખરેખર શું છે (અલગ-અલગ structure "vચ્ચે oscillate" નહીં), અને resonance hybrid કેમ વધુ સ્થિર છે — સમજાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>ઓઝોન (O₃), carbonate (CO₃²⁻), benzene — બધાની real bond length experimentally single/double bond ની વચ્ચેની (in-between) મળે છે, જે single Lewis structure સમજાવી ન શકે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — resonance હકીકતમાં શું છે</span>
+જ્યારે એક molecule માટે એક કરતાં વધુ માન્ય Lewis structure દોરી શકાય (ફક્ત electron ની ગોઠવણી અલગ, atom ની સ્થિતિ same), તો molecule ના real electron ની ગોઠવણી, <b>એ બધી structure નું ભારિત સરેરાશ (weighted average)</b> છે — molecule ક્યારેય "એક structure થી બીજી માં ઝડપથી બદલાતું" (oscillate) નથી. વાસ્તવિક molecule એ એક જ, સ્થિર <b>resonance hybrid</b> છે, જેમાં π electron density delocalized (ફેલાયેલ) છે.</div>
+
+<div class="diagram">
+<svg viewBox="0 0 640 220" role="img"><title>Resonance structures of ozone and the hybrid</title><desc>Two resonance structures of ozone with double bond on alternating sides, converging to a hybrid with equal partial double bond character on both O-O bonds</desc>
+<text class="t" x="60" y="70">O</text><text class="t" x="130" y="40">O</text><text class="t" x="200" y="70">O</text>
+<line x1="72" y1="65" x2="122" y2="45" stroke="var(--ink)" stroke-width="2"/>
+<line x1="76" y1="72" x2="126" y2="52" stroke="var(--ink)" stroke-width="2"/>
+<line x1="140" y1="45" x2="190" y2="65" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="130" y="100" text-anchor="middle">રચના I</text>
+
+<text class="th" x="255" y="60" text-anchor="middle">↔</text>
+
+<text class="t" x="290" y="70">O</text><text class="t" x="360" y="40">O</text><text class="t" x="430" y="70">O</text>
+<line x1="302" y1="65" x2="352" y2="45" stroke="var(--ink)" stroke-width="2"/>
+<line x1="370" y1="48" x2="420" y2="68" stroke="var(--ink)" stroke-width="2"/>
+<line x1="370" y1="42" x2="420" y2="62" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="360" y="100" text-anchor="middle">રચના II</text>
+
+<text class="th" x="480" y="60" text-anchor="middle">=</text>
+
+<text class="t" x="520" y="70">O</text><text class="t" x="590" y="40">O</text><text class="t" x="560" y="90" style="display:none"></text>
+<text class="t" x="510" y="130">O</text>
+<line x1="530" y1="65" x2="580" y2="45" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2"/>
+<line x1="598" y1="48" x2="620" y2="68" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3,2" style="display:none"/>
+<text class="ts" x="560" y="100" text-anchor="middle">hybrid — બંને O−O bond</text>
+<text class="ts" x="560" y="115" text-anchor="middle">bond order 1.5, સરખા (1.28 Å)</text>
+</svg>
+<div class="diagram-cap">O₃ ના 2 resonance structure, ફક્ત π-electron ની સ્થિતિ અલગ (σ framework same) — real molecule એ hybrid, જેમાં bond order 1.5 (પ્રયોગથી ચકાસાયેલ: બંને O−O bond length 1.28 Å, single 1.48 Å કરતાં ટૂંકું, double 1.21 Å કરતાં લાંબું)</div>
+</div>
+
+<div class="concept-box box"><span class="label">Resonance ની શરતો</span>
+<ol style="padding-left:18px;margin:4px 0">
+<li>બધા structure માં atom ની સ્થિતિ (framework/σ bond) same રહેવી જોઈએ — ફક્ત electron (π bond, lone pair) ની ગોઠવણી બદલાય</li>
+<li>બધા structure નો કુલ charge same</li>
+<li>વધુ સ્થિર structure (ઓછો formal charge, વધુ bond) hybrid માં વધુ ફાળો (contribution) આપે</li>
+</ol>
+</div>
+
+<div class="formula-box box"><span class="label">Resonance energy</span>
+<div class="f">Resonance energy = (hybrid ની actual ઊર્જા) − (સૌથી સ્થિર single structure ની ઊર્જા)</div>
+<div class="meaning">Hybrid હંમેશા કોઈ પણ એક individual resonance structure કરતાં વધુ સ્થિર (ઓછી ઊર્જા) — આ "વધારાની સ્થિરતા" જ resonance energy. Benzene માટે આ ≈ 152 kJ/mol, જે એને અસાધારણ સ્થિર બનાવે છે.</div>
+</div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Benzene (C₆H₆) ના બધા 6 C−C bond પ્રયોગમાં સરખા (1.39 Å, single 1.54 Å અને double 1.34 Å ની વચ્ચે) મળે છે — આ resonance નું સૌથી પ્રખ્યાત ઉદાહરણ, અને benzene ring ની અસાધારણ સ્થિરતા (અસાધારણ રીતે addition reaction નહીં, substitution પસંદ કરે) એનું જ પરિણામ છે.</div>
+</div>
+
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>Resonance structure ને tautomers અથવા "molecule ઝડપથી બદલાય છે" એમ સમજવું ખોટું છે — resonance structure ફક્ત કાગળ પર દોરવાની મર્યાદા (Lewis structure એક જ structure થી delocalized electron ન બતાવી શકે) છે, વાસ્તવિક ભૌતિક ફેરફાર નથી.</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 8 — bond માં electron ની અસમાન વહેંચણી (polarity), અને એને vector તરીકે કેમ ગણવું.</div>
+</div>
+
+<!-- ============ PART 8 ============ -->
+<div class="part" id="p8">
+<h2><span class="num">08</span>Polarity — bond અને molecule</h2>
+<div class="outcome"><span class="label">outcome</span>Dipole moment ને vector તરીકે સમજી, molecule ની polarity (polar bond હોવા છતાં non-polar molecule શક્ય) predict કરી શકાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>Polarity solubility ("like dissolves like"), boiling point, અને intermolecular force (Part 10) નક્કી કરે છે — CO₂ (non-polar) અને H₂O (polar) ના physical properties માં જમીન-આસમાનનો ફરક આ જ કારણે છે.</div>
+
+<h3>8a — Bond polarity</h3>
+<div class="concept-box box"><span class="label">મિકૅનિઝમ</span>
+જ્યારે bond ના બે atom ની electronegativity અલગ હોય, વધુ electronegative atom bond pair ને પોતાની તરફ વધુ ખેંચે — પરિણામે એ atom પર આંશિક negative charge (δ⁻) અને બીજા પર આંશિક positive charge (δ⁺) બને. આ "polar covalent bond".</div>
+
+<div class="formula-box box"><span class="label">Dipole moment (bond)</span>
+<div class="f">μ = q × d</div>
+<div class="meaning">q = આંશિક charge (magnitude), d = bond length. એકમ: Debye (D), 1D = 3.34×10⁻³⁰ C·m. Vector — δ⁻ તરફ દિશા (સંજ્ઞા: →, પૂંછડી ધન છેડે).</div>
+</div>
+
+<h3>8b — Molecular dipole moment = bond dipole નો vector sum</h3>
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — શા માટે આકાર મહત્વનો</span>
+Molecule માં એક કરતાં વધુ polar bond હોય તો, દરેક bond dipole ને vector ગણી, એમનો <b>vector sum</b> = molecular dipole moment. જો molecule symmetric હોય (બધા bond dipole એકબીજાને બરાબર રદ કરે), તો polar bond હોવા છતાં molecule non-polar બને.</div>
+
+<div class="diagram">
+<svg viewBox="0 0 640 260" role="img"><title>Dipole vector sum for CO2 versus H2O</title><desc>CO2 linear molecule with two equal opposite bond dipoles cancelling to zero net dipole, water bent molecule with two bond dipoles at 104.5 degrees adding to a net downward dipole vector</desc>
+<text class="th" x="150" y="30" text-anchor="middle">CO₂ — linear, 180°</text>
+<circle cx="150" cy="90" r="7" fill="var(--formula)"/>
+<circle cx="60" cy="90" r="6" fill="var(--exam)"/><circle cx="240" cy="90" r="6" fill="var(--exam)"/>
+<line x1="150" y1="90" x2="66" y2="90" stroke="var(--ink)" stroke-width="2"/>
+<line x1="150" y1="90" x2="234" y2="90" stroke="var(--ink)" stroke-width="2"/>
+<line x1="140" y1="70" x2="80" y2="70" stroke="var(--check)" stroke-width="2" marker-end="url(#dp1)"/>
+<defs><marker id="dp1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<line x1="160" y1="70" x2="220" y2="70" stroke="var(--check)" stroke-width="2" marker-end="url(#dp1)"/>
+<text class="ts" x="150" y="140" text-anchor="middle" fill="var(--check)">બંને μ સરખા, વિરુદ્ધ દિશામાં</text>
+<text class="ts" x="150" y="158" text-anchor="middle" fill="var(--formula)">μ(net) = 0 — non-polar</text>
+
+<text class="th" x="480" y="30" text-anchor="middle">H₂O — bent, 104.5°</text>
+<circle cx="480" cy="80" r="7" fill="var(--exam)"/>
+<circle cx="420" cy="140" r="5" fill="var(--formula)"/><circle cx="540" cy="140" r="5" fill="var(--formula)"/>
+<line x1="480" y1="80" x2="424" y2="136" stroke="var(--ink)" stroke-width="2"/>
+<line x1="480" y1="80" x2="536" y2="136" stroke="var(--ink)" stroke-width="2"/>
+<line x1="465" y1="97" x2="437" y2="130" stroke="var(--check)" stroke-width="2" marker-end="url(#dp1)"/>
+<line x1="495" y1="97" x2="523" y2="130" stroke="var(--check)" stroke-width="2" marker-end="url(#dp1)"/>
+<line x1="480" y1="80" x2="480" y2="175" stroke="var(--mistake)" stroke-width="2.5" marker-end="url(#dp2)"/>
+<defs><marker id="dp2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--mistake)" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="480" y="195" text-anchor="middle" fill="var(--mistake)">μ(net) = 1.85 D — polar</text>
+<text class="ts" x="480" y="212" text-anchor="middle" fill="var(--ink-2)">2 bond dipole ભેગા (bisector દિશામાં)</text>
+</svg>
+<div class="diagram-cap">CO₂: 180° પર બે સરખા bond dipole સંપૂર્ણ રદ થાય (μ=0). H₂O: 104.5° પર બે bond dipole રદ ન થાય, પરિણામ vector O તરફથી નીચે (bisector) — molecular μ=1.85D</div>
+</div>
+
+<div class="example"><span class="label">example — numeric</span>
+<div class="step">H₂O ના દરેક O−H bond dipole ≈ 1.5 D (ધારો), ખૂણો 104.5°. Resultant = 2 × μ(bond) × cos(θ/2) = 2×1.5×cos(52.25°) ≈ 2×1.5×0.6129 ≈ 1.84 D — પ્રયોગમાં માપેલ 1.85 D સાથે લગભગ મેળ ખાય છે.</div>
+</div>
+
+<div class="exam-box box"><span class="label">exam pattern — polar bond છતાં non-polar molecule</span>
+<table><tr><th>Molecule</th><th>આકાર</th><th>μ(net)</th></tr>
+<tr><td class="rowlabel">BF₃</td><td>Trigonal planar, સંપૂર્ણ symmetric</td><td>0</td></tr>
+<tr><td class="rowlabel">CCl₄</td><td>Tetrahedral, સંપૂર્ણ symmetric</td><td>0</td></tr>
+<tr><td class="rowlabel">CHCl₃</td><td>Tetrahedral, પણ asymmetric (1 H અલગ)</td><td>1.04 D (polar)</td></tr>
+<tr><td class="rowlabel">NH₃</td><td>Pyramidal (lone pair પણ contribute કરે)</td><td>1.47 D (polar)</td></tr>
+</table>
+</div>
+
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>Lone pair ના પોતાના dipole contribution ને ભૂલી જવું — NH₃ માં lone pair ની દિશા bond dipole ની સાથે જ (એ જ તરફ) હોવાથી μ ઉમેરાય છે, જ્યારે NF₃ માં F ની વધુ electronegativity ને લીધે bond dipole ની દિશા lone pair ની વિરુદ્ધ હોય — પરિણામે NF₃ નો μ (0.24 D) NH₃ (1.47 D) કરતાં ઘણો ઓછો.</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 9 — VBT orbital overlap ને વધુ ચોક્કસ ગણિત આપતું મોડેલ: molecular orbital theory.</div>
+</div>
+
+<!-- ============ PART 9 ============ -->
+<div class="part" id="p9">
+<h2><span class="num">09</span>Molecular orbital theory (MOT)</h2>
+<div class="outcome"><span class="label">outcome</span>LCAO પદ્ધતિ, bonding/antibonding orbital, અને H₂, N₂, O₂ ના MO diagram દોરી bond order ગણી શકાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>VBT O₂ ના paramagnetic (unpaired electron ધરાવતું) હોવાનું સમજાવી શકતું નથી (VBT મુજબ O=O માં બધા electron paired હોવા જોઈએ) — પ્રયોગ (liquid O₂ ચુંબક વડે attract થાય) MOT વડે જ સાચી રીતે સમજાવાય છે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — LCAO (Linear Combination of Atomic Orbitals)</span>
+Quantum mechanics મુજબ, બે atomic orbital (wave function) ભેગા થાય ત્યારે, બે નવા molecular orbital બને — એક <b>constructive interference</b> (wave ભેગી થાય, વચ્ચે electron density વધે) થી <b>bonding MO (σ કે π)</b>, ઓછી ઊર્જા; બીજું <b>destructive interference</b> (wave કપાય, વચ્ચે node બને, electron density શૂન્ય) થી <b>antibonding MO (σ* કે π*)</b>, વધુ ઊર્જા. કુલ MO ની સંખ્યા = કુલ ભળેલા atomic orbital ની સંખ્યા (conservation).</div>
+
+<div class="diagram">
+<svg viewBox="0 0 600 260" role="img"><title>LCAO forming bonding and antibonding molecular orbitals</title><desc>Two 1s atomic orbitals combining constructively into a lower energy bonding sigma orbital and destructively into a higher energy antibonding sigma star orbital with a node</desc>
+<text class="ts" x="100" y="30" text-anchor="middle">1s (atom A)</text>
+<circle cx="100" cy="70" r="22" fill="var(--formula)" opacity="0.5"/>
+<text class="ts" x="500" y="30" text-anchor="middle">1s (atom B)</text>
+<circle cx="500" cy="70" r="22" fill="var(--formula)" opacity="0.5"/>
+<text class="th" x="300" y="65" text-anchor="middle">LCAO</text>
+<line x1="130" y1="70" x2="200" y2="70" stroke="var(--ink-3)" stroke-width="1" marker-end="url(#dp1)"/>
+<line x1="470" y1="70" x2="400" y2="70" stroke="var(--ink-3)" stroke-width="1" marker-end="url(#dp1)"/>
+
+<text class="ts" x="300" y="150" text-anchor="middle" fill="var(--formula)">σ (bonding) — ઓછી ઊર્જા</text>
+<ellipse cx="300" cy="180" rx="70" ry="24" fill="var(--formula)" opacity="0.55"/>
+<text class="ts" x="300" y="188" text-anchor="middle">e⁻ density વધી</text>
+
+<text class="ts" x="300" y="220" text-anchor="middle" fill="var(--exam)">σ* (antibonding) — વધુ ઊર્જા</text>
+<ellipse cx="255" cy="245" rx="30" ry="12" fill="var(--exam)" opacity="0.5"/>
+<ellipse cx="345" cy="245" rx="30" ry="12" fill="var(--exam)" opacity="0.5"/>
+<line x1="300" y1="233" x2="300" y2="257" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="2,2"/>
+<text class="ts" x="300" y="270" text-anchor="middle">node — e⁻ density શૂન્ય</text>
+</svg>
+<div class="diagram-cap">Constructive combination → σ bonding MO (nucleus વચ્ચે e⁻ density ↑, આકર્ષણ); destructive combination → σ* antibonding MO (વચ્ચે node, ઊર્જા વધુ)</div>
+</div>
+
+<div class="formula-box box"><span class="label">Bond order (MOT વ્યાખ્યા)</span>
+<div class="f">Bond order = ½ [(bonding e⁻) − (antibonding e⁻)]</div>
+<div class="meaning">Bond order &gt; 0 → molecule સ્થિર (bond અસ્તિત્વ ધરાવે). Bond order = 0 → molecule અસ્તિત્વમાં ન હોઈ શકે (દા.ત. He₂).</div>
+</div>
+
+<div class="concept-box box"><span class="label">Energy order of MOs (2nd period, N₂ પહેલાના તત્વો માટે — O₂ પછી sequence બદલાય)</span>
+<div class="f" style="font-family:var(--font-mono);font-size:13.5px;color:var(--formula)">σ1s &lt; σ*1s &lt; σ2s &lt; σ*2s &lt; (π2px=π2py) &lt; σ2pz &lt; (π*2px=π*2py) &lt; σ*2pz</div>
+<span style="font-size:13px;color:var(--ink-2)">Li₂ થી N₂ સુધી આ ક્રમ (π2p, σ2p કરતાં ઓછી ઊર્જાનો) — s-p mixing ના કારણે. O₂ થી આગળ (O₂, F₂, Ne₂) σ2pz, π2p કરતાં ઓછી ઊર્જાનો બને.</span>
+</div>
+
+<h3>Worked diatomic examples</h3>
+<div class="two-col">
+<div class="diagram">
+<svg viewBox="0 0 260 260" role="img"><title>MO diagram of H2</title><desc>Two electrons fill the sigma 1s bonding orbital, antibonding empty, bond order 1</desc>
+<line x1="40" y1="220" x2="90" y2="220" stroke="var(--ink-3)"/><text class="ts" x="15" y="224">1s</text>
+<line x1="170" y1="220" x2="220" y2="220" stroke="var(--ink-3)"/><text class="ts" x="245" y="224">1s</text>
+<line x1="95" y1="150" x2="165" y2="150" stroke="var(--formula)" stroke-width="2"/>
+<text class="ts" x="130" y="140" text-anchor="middle" fill="var(--formula)">σ1s</text>
+<circle cx="120" cy="150" r="3" fill="var(--ink)"/><circle cx="140" cy="150" r="3" fill="var(--ink)"/>
+<line x1="65" y1="220" x2="130" y2="150" stroke="var(--ink-3)" stroke-width="0.75" stroke-dasharray="2,2"/>
+<line x1="195" y1="220" x2="130" y2="150" stroke="var(--ink-3)" stroke-width="0.75" stroke-dasharray="2,2"/>
+<line x1="95" y1="60" x2="165" y2="60" stroke="var(--exam)" stroke-width="2"/>
+<text class="ts" x="130" y="50" text-anchor="middle" fill="var(--exam)">σ*1s (ખાલી)</text>
+<text class="th" x="130" y="250" text-anchor="middle">H₂ — BO = ½(2−0) = 1</text>
+</svg>
+</div>
+<div class="diagram">
+<svg viewBox="0 0 260 260" role="img"><title>MO diagram summary for N2</title><desc>Nitrogen molecule with 10 bonding and 4 antibonding electrons giving bond order 3, diamagnetic</desc>
+<text class="ts" x="130" y="30" text-anchor="middle">N₂ — 14 valence+core e⁻ (2p ના 10 relevant)</text>
+<line x1="60" y1="200" x2="200" y2="200" stroke="var(--formula)" stroke-width="2"/><text class="ts" x="215" y="204" fill="var(--formula)">σ2s (2e⁻)</text>
+<line x1="60" y1="170" x2="200" y2="170" stroke="var(--exam)" stroke-width="2"/><text class="ts" x="215" y="174" fill="var(--exam)">σ*2s (2e⁻)</text>
+<line x1="60" y1="130" x2="120" y2="130" stroke="var(--formula)" stroke-width="2"/><line x1="140" y1="130" x2="200" y2="130" stroke="var(--formula)" stroke-width="2"/>
+<text class="ts" x="215" y="134" fill="var(--formula)">π2p ×2 (4e⁻)</text>
+<line x1="60" y1="95" x2="200" y2="95" stroke="var(--formula)" stroke-width="2"/><text class="ts" x="215" y="99" fill="var(--formula)">σ2p (2e⁻)</text>
+<line x1="60" y1="60" x2="120" y2="60" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="3,2"/><line x1="140" y1="60" x2="200" y2="60" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text class="ts" x="215" y="64" fill="var(--exam)">π*2p ×2 (ખાલી)</text>
+<text class="th" x="130" y="240" text-anchor="middle">BO = ½[(2+2+4+... )] = 3</text>
+<text class="ts" x="130" y="255" text-anchor="middle">બધા e⁻ paired — diamagnetic</text>
+</svg>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 340 260" role="img"><title>MO diagram of O2 showing paramagnetism</title><desc>Oxygen molecule pi star antibonding orbitals each singly occupied by one electron following Hund's rule, giving bond order 2 and paramagnetic behaviour</desc>
+<text class="th" x="170" y="25" text-anchor="middle">O₂ — MOT ની સૌથી મહત્વની સાબિતી</text>
+<line x1="60" y1="210" x2="280" y2="210" stroke="var(--formula)" stroke-width="2"/><text class="ts" x="295" y="214" fill="var(--formula)">σ2s (2e⁻)</text>
+<line x1="60" y1="180" x2="280" y2="180" stroke="var(--exam)" stroke-width="2"/><text class="ts" x="295" y="184" fill="var(--exam)">σ*2s (2e⁻)</text>
+<line x1="60" y1="140" x2="280" y2="140" stroke="var(--formula)" stroke-width="2"/><text class="ts" x="295" y="144" fill="var(--formula)">σ2p (2e⁻)</text>
+<line x1="60" y1="105" x2="130" y2="105" stroke="var(--formula)" stroke-width="2"/><line x1="150" y1="105" x2="220" y2="105" stroke="var(--formula)" stroke-width="2"/>
+<text class="ts" x="295" y="109" fill="var(--formula)">π2p ×2 (4e⁻)</text>
+<line x1="60" y1="65" x2="130" y2="65" stroke="var(--mistake)" stroke-width="2"/><line x1="150" y1="65" x2="220" y2="65" stroke="var(--mistake)" stroke-width="2"/>
+<circle cx="95" cy="58" r="3" fill="var(--ink)"/><circle cx="185" cy="58" r="3" fill="var(--ink)"/>
+<text class="ts" x="295" y="69" fill="var(--mistake)">π*2p ×2 (2e⁻, unpaired!)</text>
+<text class="th" x="170" y="245" text-anchor="middle">BO = ½(8−4) = 2, 2 unpaired e⁻ → paramagnetic</text>
+</svg>
+<div class="diagram-cap">O₂ ના છેલ્લા 2 electron, Hund's rule મુજબ, બે અલગ π* orbital માં એક-એક (unpaired) જાય — આ જ liquid O₂ ને ચુંબક તરફ ખેંચાવાનું (paramagnetic) કારણ, જે Lewis structure (O=O, બધા paired) ક્યારેય સમજાવી ન શકે</div>
+</div>
+
+<div class="tblwrap"><table>
+<tr><th>Species</th><th>કુલ e⁻ (2s,2p)</th><th>Bond order</th><th>Magnetic</th><th>Bond length</th></tr>
+<tr><td class="rowlabel">N₂</td><td>10</td><td>3</td><td>Diamagnetic</td><td>1.10 Å (સૌથી ટૂંકું)</td></tr>
+<tr><td class="rowlabel">O₂</td><td>12</td><td>2</td><td>Paramagnetic (2 unpaired)</td><td>1.21 Å</td></tr>
+<tr><td class="rowlabel">O₂⁺</td><td>11</td><td>2.5</td><td>Paramagnetic</td><td>1.12 Å (O₂ કરતાં ટૂંકું)</td></tr>
+<tr><td class="rowlabel">O₂⁻</td><td>13</td><td>1.5</td><td>Paramagnetic</td><td>1.28 Å (O₂ કરતાં લાંબું)</td></tr>
+</table></div>
+
+<div class="exam-box box"><span class="label">exam pattern</span>Bond order ↑ ⟹ bond length ↓ અને bond energy ↑ — આ MOT ના electron-removal/addition ના પ્રશ્નોમાં (O₂→O₂⁺ વગેરે) સીધું વપરાય છે.</div>
+
+
+<!-- upd-2026-10-04:bond-nomix -->
+<h3>JEE pattern — "s-p mixing નથી" એમ ધારો ત્યારે શું બદલાય</h3>
+<div class="diagram"><svg viewBox="0 0 680 260" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><text x="170.0" y="22.0" fill="var(--ink-2)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">C₂, s-p mixing સાથે (સાચો ક્રમ)</text><line x1="153.0" y1="236.0" x2="187.0" y2="236.0" stroke="var(--ink)" stroke-width="2"/><line x1="165.0" y1="243.0" x2="165.0" y2="232.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="165.0,227.0 167.2,232.0 162.8,232.0" fill="var(--accent)"/><line x1="175.0" y1="227.0" x2="175.0" y2="238.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="175.0,243.0 172.8,238.0 177.2,238.0" fill="var(--accent)"/><text x="222.0" y="240.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ2s</text><line x1="153.0" y1="198.0" x2="187.0" y2="198.0" stroke="var(--ink)" stroke-width="2"/><line x1="165.0" y1="205.0" x2="165.0" y2="194.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="165.0,189.0 167.2,194.0 162.8,194.0" fill="var(--accent)"/><line x1="175.0" y1="189.0" x2="175.0" y2="200.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="175.0,205.0 172.8,200.0 177.2,200.0" fill="var(--accent)"/><text x="222.0" y="202.0" fill="var(--mistake)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ*2s</text><line x1="127.0" y1="160.0" x2="161.0" y2="160.0" stroke="var(--ink)" stroke-width="2"/><line x1="139.0" y1="167.0" x2="139.0" y2="156.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="139.0,151.0 141.2,156.0 136.8,156.0" fill="var(--accent)"/><line x1="149.0" y1="151.0" x2="149.0" y2="162.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="149.0,167.0 146.8,162.0 151.2,162.0" fill="var(--accent)"/><line x1="179.0" y1="160.0" x2="213.0" y2="160.0" stroke="var(--ink)" stroke-width="2"/><line x1="191.0" y1="167.0" x2="191.0" y2="156.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="191.0,151.0 193.2,156.0 188.8,156.0" fill="var(--accent)"/><line x1="201.0" y1="151.0" x2="201.0" y2="162.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="201.0,167.0 198.8,162.0 203.2,162.0" fill="var(--accent)"/><text x="222.0" y="164.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">π2p</text><line x1="153.0" y1="122.0" x2="187.0" y2="122.0" stroke="var(--ink)" stroke-width="2"/><text x="222.0" y="126.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ2p</text><line x1="127.0" y1="84.0" x2="161.0" y2="84.0" stroke="var(--ink)" stroke-width="2"/><line x1="179.0" y1="84.0" x2="213.0" y2="84.0" stroke="var(--ink)" stroke-width="2"/><text x="222.0" y="88.0" fill="var(--mistake)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">π*2p</text><text x="500.0" y="22.0" fill="var(--ink-2)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">C₂, mixing વગર (ધારણા)</text><line x1="483.0" y1="236.0" x2="517.0" y2="236.0" stroke="var(--ink)" stroke-width="2"/><line x1="495.0" y1="243.0" x2="495.0" y2="232.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="495.0,227.0 497.2,232.0 492.8,232.0" fill="var(--accent)"/><line x1="505.0" y1="227.0" x2="505.0" y2="238.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="505.0,243.0 502.8,238.0 507.2,238.0" fill="var(--accent)"/><text x="552.0" y="240.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ2s</text><line x1="483.0" y1="198.0" x2="517.0" y2="198.0" stroke="var(--ink)" stroke-width="2"/><line x1="495.0" y1="205.0" x2="495.0" y2="194.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="495.0,189.0 497.2,194.0 492.8,194.0" fill="var(--accent)"/><line x1="505.0" y1="189.0" x2="505.0" y2="200.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="505.0,205.0 502.8,200.0 507.2,200.0" fill="var(--accent)"/><text x="552.0" y="202.0" fill="var(--mistake)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ*2s</text><line x1="483.0" y1="160.0" x2="517.0" y2="160.0" stroke="var(--ink)" stroke-width="2"/><line x1="495.0" y1="167.0" x2="495.0" y2="156.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="495.0,151.0 497.2,156.0 492.8,156.0" fill="var(--accent)"/><line x1="505.0" y1="151.0" x2="505.0" y2="162.0" stroke="var(--accent)" stroke-width="1.5"/><polygon points="505.0,167.0 502.8,162.0 507.2,162.0" fill="var(--accent)"/><text x="552.0" y="164.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">σ2p</text><line x1="457.0" y1="122.0" x2="491.0" y2="122.0" stroke="var(--ink)" stroke-width="2"/><line x1="469.0" y1="129.0" x2="469.0" y2="118.0" stroke="var(--exam)" stroke-width="1.5"/><polygon points="469.0,113.0 471.2,118.0 466.8,118.0" fill="var(--exam)"/><line x1="509.0" y1="122.0" x2="543.0" y2="122.0" stroke="var(--ink)" stroke-width="2"/><line x1="521.0" y1="129.0" x2="521.0" y2="118.0" stroke="var(--exam)" stroke-width="1.5"/><polygon points="521.0,113.0 523.2,118.0 518.8,118.0" fill="var(--exam)"/><text x="552.0" y="126.0" fill="var(--ink-2)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">π2p</text><line x1="457.0" y1="84.0" x2="491.0" y2="84.0" stroke="var(--ink)" stroke-width="2"/><line x1="509.0" y1="84.0" x2="543.0" y2="84.0" stroke="var(--ink)" stroke-width="2"/><text x="552.0" y="88.0" fill="var(--mistake)" font-size="10.5" text-anchor="start" font-family="Source Sans 3, sans-serif">π*2p</text><text x="170.0" y="254.0" fill="var(--formula)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">π2p⁴ ⟹ diamagnetic</text><text x="500.0" y="254.0" fill="var(--exam)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">π2p² (બે અયુગ્મિત) ⟹ paramagnetic</text></svg><div class="diagram-cap">C₂ ના 8 valence e⁻ ગણીને બંને ક્રમમાં Hund મુજબ ભર્યા (ગણતરીથી) — ચુંબકીય વર્તન ઊલટું થાય.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">Mixing વગર ક્રમ: σ2s < σ*2s < σ2p < π2p < π*2p < σ*2p</div><div class="meaning">સાચો ક્રમ (B₂, C₂, N₂): π2p, σ2p કરતાં નીચે — એ s-p mixing નું પરિણામ. પ્રશ્ન mixing "બંધ" માને તો O₂-પ્રકારનો ક્રમ વાપરો ⟹ B₂ diamagnetic (σ2p²), C₂ paramagnetic (π2p²). ઉપરાંત F₂⁻ (19 e⁻) નો વધારાનો e⁻ σ*2p માં જાય ⟹ HOMO σ*2p, BO 0.5. Real-world: B₂ નો paramagnetism પ્રયોગથી મળ્યો — એ જ s-p mixing નો પુરાવો બન્યો.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — B₂, mixing વગર</div><div class="step"><b>Need</b> — ચુંબકીય પ્રકૃતિ</div><div class="step"><b>Method</b> — 6 valence e⁻ ને σ2s² σ*2s² σ2p² માં ભરો</div><div class="step"><b>Calculation</b> — બધા યુગ્મિત ⟹ diamagnetic</div><div class="step"><b>Check</b> — સાચા (mixing) ક્રમમાં B₂ = π2p¹π2p¹ paramagnetic — ધારણાથી જવાબ ઊલટો ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>પ્રશ્નની ધારણા અવગણીને ટેવ મુજબનો (mixing વાળો) જવાબ લખવો.</div>
+<div class="next-line">→ <b>Next action:</b> Part 10 — molecule-થી-molecule વચ્ચેનું ખાસ, મજબૂત આકર્ષણ: hydrogen bond.</div>
+</div>
+
+<!-- ============ PART 10 ============ -->
+<div class="part" id="p10">
+<h2><span class="num">10</span>Hydrogen bonding</h2>
+<div class="outcome"><span class="label">outcome</span>Hydrogen bond કેમ બને (ફક્ત "H હોય એટલે" નહીં) અને intramolecular vs intermolecular hydrogen bond ના ફરક/અસર સમજાશે.</div>
+
+<div class="why-box box"><span class="label">why it matters</span>પાણી (H₂O) નો અસાધારણ ઊંચો boiling point (100°C, જ્યારે સમાન કદના H₂S નો −60°C), બરફ પાણી પર તરે (ice ઓછું ઘટ્ટ) — બંને hydrogen bonding ના પરિણામ. DNA ની double helix પણ hydrogen bond વડે જ ટકે છે.</div>
+
+<div class="concept-box box"><span class="label">મિકૅનિઝમ — hydrogen bond કેમ "ખાસ"</span>
+Hydrogen bond એ સામાન્ય covalent bond નથી, પણ <b>intermolecular આકર્ષણ</b> (molecule વચ્ચેનું, molecule ની અંદરના bond કરતાં નબળું) છે. જ્યારે H, ખૂબ નાના અને ખૂબ electronegative atom (F, O, N) સાથે covalent bond માં જોડાયેલ હોય, ત્યારે bond pair લગભગ સંપૂર્ણપણે એ atom તરફ ખેંચાઈ જાય — H પર લગભગ "ખુલ્લું" (bare) ધન nucleus (proton) જેવો મોટો δ⁺ charge બચે (કારણ કે H પાસે બીજો કોઈ inner electron shield નથી). આ ખુલ્લો δ⁺ H, બાજુના molecule ના F/O/N ના lone pair તરફ પ્રબળ રીતે આકર્ષાય છે — આ જ hydrogen bond.</div>
+
+<div class="diagram">
+<svg viewBox="0 0 500 220" role="img"><title>Hydrogen bonding between water molecules</title><desc>Two water molecules with a hydrogen bond shown as a dashed line between the partial positive hydrogen of one molecule and the lone pair oxygen of the neighbouring molecule</desc>
+<circle cx="120" cy="110" r="9" fill="var(--exam)"/>
+<circle cx="70" cy="150" r="6" fill="var(--formula)"/><circle cx="170" cy="70" r="6" fill="var(--formula)"/>
+<line x1="120" y1="110" x2="74" y2="146" stroke="var(--ink)" stroke-width="2"/>
+<line x1="120" y1="110" x2="166" y2="74" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="115" y="95" fill="var(--exam)">δ⁻</text><text class="ts" x="60" y="168" fill="var(--formula)">δ⁺ H</text>
+<circle cx="380" cy="110" r="9" fill="var(--exam)"/>
+<circle cx="330" cy="150" r="6" fill="var(--formula)"/><circle cx="430" cy="70" r="6" fill="var(--formula)"/>
+<line x1="380" y1="110" x2="334" y2="146" stroke="var(--ink)" stroke-width="2"/>
+<line x1="380" y1="110" x2="426" y2="74" stroke="var(--ink)" stroke-width="2"/>
+<text class="ts" x="375" y="95" fill="var(--exam)">δ⁻</text>
+<line x1="70" y1="150" x2="380" y2="110" stroke="var(--check)" stroke-width="2" stroke-dasharray="6,4"/>
+<text class="ts" x="220" y="140" text-anchor="middle" fill="var(--check)">hydrogen bond (H···O)</text>
+<text class="ts" x="220" y="200" text-anchor="middle">δ⁺H (એક molecule) ··· δ⁻O lone pair (બીજું molecule)</text>
+</svg>
+<div class="diagram-cap">Hydrogen bond (તૂટક લીટી) સામાન્ય covalent O−H bond (ઘન લીટી) કરતાં ઘણો નબળો (≈5-10%) પણ van der Waals કરતાં ઘણો મજબૂત — bond length પણ covalent O-H (0.96Å) કરતાં લાંબું (H···O ≈1.97Å)</div>
+</div>
+
+<div class="tblwrap"><table>
+<tr><th>પ્રકાર</th><th>વ્યાખ્યા</th><th>ઉદાહરણ</th><th>અસર</th></tr>
+<tr><td class="rowlabel">Intermolecular</td><td>બે અલગ molecule વચ્ચે</td><td>H₂O, HF, NH₃</td><td>high bp/mp, association</td></tr>
+<tr><td class="rowlabel">Intramolecular</td><td>એક જ molecule ની અંદર (ring બનાવીને)</td><td>o-nitrophenol</td><td>bp ઘટે (બહારની H-bond ઓછી થાય), volatility વધે</td></tr>
+</table></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">o-nitrophenol (intramolecular H-bond) અને p-nitrophenol (intermolecular H-bond) — બંનેનું molecular formula સરખું, પણ o- isomer નો bp ઘણો ઓછો (કારણ કે એની H-bond પોતાની અંદર જ "વપરાઈ" જાય છે, બીજા molecule સાથે જોડાવા મળતી નથી) — આ જ કારણે steam distillation થી o-isomer ને p-isomer થી અલગ કરી શકાય છે (industrial application).</div>
+</div>
+
+<div class="mistake-box box"><span class="label">સામાન્ય ભૂલ</span>C−H bond ને hydrogen bond donor ગણી લેવો — C ની electronegativity (2.5) H (2.1) કરતાં બહુ વધુ નથી, એટલે સામાન્ય રીતે C−H hydrogen bond નથી બનાવતું (અપવાદ: ખૂબ acidic C-H, દા.ત. ≡C−H, ખૂબ ઓછા કિસ્સામાં). ફક્ત F, O, N સાથે જોડાયેલ H જ સાચો hydrogen bond donor.</div>
+
+<div class="remember">
+<span class="label">Chapter — યાદ રાખવાના મુખ્ય મુદ્દા</span>
+<ol>
+<li>Bond = ઊર્જા-ઘટાડાની ઘટના; octet rule = noble gas configuration મેળવવાનો પ્રયાસ</li>
+<li>Ionic bond = સંપૂર્ણ transfer + Coulombic આકર્ષણ; lattice energy Born-Haber cycle થી ગણાય</li>
+<li>Covalent bond = electron pair ની વહેંચણી; formal charge વડે best Lewis structure પસંદ થાય</li>
+<li>Bond order ↑ ⟹ length ↓, energy ↑ (સામાન્ય નિયમ)</li>
+<li>VSEPR: electron pair repulsion ન્યૂનતમ કરવાની ગોઠવણી; lone pair &gt; bond pair repulsion</li>
+<li>Hybridization = orbital mixing જેથી real bond angle સમજાવાય; SN = σ bond + lone pair</li>
+<li>Resonance = single structure ની મર્યાદા દૂર કરતું averaging, hybrid વધુ સ્થિર</li>
+<li>Molecular dipole = bond dipole નો vector sum — આકાર polarity નક્કી કરે</li>
+<li>MOT: bonding/antibonding MO, bond order = ½(bonding−antibonding); O₂ paramagnetism ની ચાવી</li>
+<li>Hydrogen bond: નાનો δ⁺ H (F/O/N સાથે જોડાયેલ) + બીજા molecule નું lone pair</li>
+</ol>
+</div>
+
+<div class="next-line">→ <b>Next action:</b> Revision Sheet થી ઝડપી પુનરાવર્તન કરો, પછી PYQ Solutions document માં 102 પ્રશ્નો દ્વારા practice કરો.</div>
+</div>
+
+</div>

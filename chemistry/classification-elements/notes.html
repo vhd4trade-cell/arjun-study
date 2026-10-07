@@ -1,0 +1,991 @@
+
+<title>Classification of Elements and Periodicity chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+.part-why{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;font-style:italic}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.mono{font-family:var(--font-mono)}
+sup,sub{font-size:.7em}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+.th{font-size:13px;fill:var(--ink);font-weight:600}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Classification of Elements and Periodicity in Properties</h1>
+<p class="subtitle">11th science &middot; Gujarat board + JEE Main foundation &middot; detailed teaching text</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize &mdash; formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> &mdash; final target: આવર્ત કોષ્ટકના કોઈપણ સ્થાન પરથી ત્રિજ્યા, IE, EA, EN, ઓક્સાઇડ-પ્રકૃતિ confidently predict કરવી
+  <ol style="list-style:none;padding-left:0;counter-reset:none">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">વર્ગીકરણ શા માટે</a> &mdash; Mendeleev, Moseley, આધુનિક આવર્ત નિયમ</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">લાંબા સ્વરૂપનું આવર્ત કોષ્ટક</a> &mdash; periods, groups, s/p/d/f blocks</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">ઈલેક્ટ્રોનીય રચના અને આવર્ત કોષ્ટક</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">પરમાણ્વીય અને આયનીય ત્રિજ્યા</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">આયનીકરણ એન્થાલ્પી</a> &mdash; Be&gt;B, N&gt;O અપવાદ સહિત</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી</a> &mdash; Cl&gt;F અપવાદ સહિત</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">વિદ્યુતઋણતા</a> &mdash; Pauling scale</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">સંયોજકતા અને ઓક્સિડેશન અવસ્થા</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">ધાત્વીય/અધાત્વીય લક્ષણ અને ઓક્સાઇડ પ્રકૃતિ</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">09</span> &nbsp;<a href="#p9">વિકર્ણ સંબંધ</a> &mdash; Li-Mg, Be-Al, B-Si</li>
+  </ol>
+</div>
+
+<div class="part" id="intro" style="padding-top:0">
+<h2><span class="num">00</span>વર્ગીકરણ શા માટે — Classification of Elements</h2>
+
+<div class="outcome"><span class="label">outcome</span>
+આવર્ત કોષ્ટક કેમ અને કેવી રીતે બન્યું (Mendeleev → Moseley → આધુનિક આવર્ત નિયમ) — અને શા માટે "atomic number" જ ખરો આધાર છે, "atomic mass" નહીં — એ સ્પષ્ટ સમજાશે.</div>
+
+<h3>વ્યાખ્યા — "Periodicity" શબ્દ કેમ?</h3>
+<p><b>Periodicity</b> = "period" (આવર્તન, ફરી-ફરી થતો ગાળો) પરથી — ઘડિયાળના lockstep ની જેમ, અમુક ગુણધર્મો (ત્રિજ્યા, IE, EN...) atomic number વધતાં ચોક્કસ ગાળે ફરી-ફરી સરખી પેટર્નમાં આવે છે. "Classification" = તત્વોને common ગુણધર્મો પ્રમાણે જૂથોમાં ગોઠવવા. બંને શબ્દો ચેપ્ટરના મૂળ કામને જ નામ આપે છે: પેટર્ન શોધો, પેટર્ન પ્રમાણે ગોઠવો.</p>
+
+<div class="why-box box"><span class="label">why it matters</span>
+118+ તત્વોના ગુણધર્મો અલગ-અલગ યાદ રાખવા અશક્ય છે. આવર્ત કોષ્ટક એ "compressed lookup" છે — સ્થાન ખબર હોય તો ત્રિજ્યા, IE, EN, ઓક્સાઇડની પ્રકૃતિ બધું predict કરી શકાય, ગોખ્યા વગર. JEE માં લગભગ દરેક paper માં periodicity-based comparison question (2-4 marks) આવે જ છે.</div>
+
+<h3>ઈતિહાસ — ત્રણ તબક્કા</h3>
+<table><tr><th>તબક્કો</th><th>આધાર</th><th>સમસ્યા</th></tr>
+<tr><td class="rowlabel">Döbereiner triads / Newlands octaves</td><td>સામ્યતા જોડીમાં</td><td>ફક્ત હલકા તત્વો સુધી કામ કરે</td></tr>
+<tr><td class="rowlabel">Mendeleev (1869)</td><td>વધતા <b>atomic mass</b> પ્રમાણે, સામ્ય ગુણધર્મવાળા તત્વો એક column માં</td><td>Ar(mass 39.9) vs K(mass 39.1) — mass પ્રમાણે ક્રમ ઊંધો પડે (ગુણધર્મ પ્રમાણે ખોટી જગ્યાએ જાય); કેટલાક gap છોડવા પડ્યા (ભવિષ્યના તત્વો માટે predict કર્યું — એ Mendeleev ની સાચી સફળતા)</td></tr>
+<tr><td class="rowlabel">Moseley (1913)</td><td>X-ray spectra પરથી દરેક તત્વનો <b>ખરો</b> "identity number" = <b>atomic number (Z)</b> = ન્યુક્લિયસનો પ્રોટોન count</td><td>Ar/K જેવી બધી વિસંગતતા દૂર — Z વધતા ક્રમમાં ગોઠવતા દરેક વસ્તુ સુસંગત બેસે</td></tr>
+</table>
+
+<div class="concept-box box"><span class="label">must understand — શા માટે mass નહીં, Z જ?</span>
+Mass = protons + neutrons (neutron count isotope-ல depend, ગુણધર્મ સાથે સીધો સંબંધ નથી). ગુણધર્મો ખરેખર <b>electron config</b> પર આધાર રાખે છે, અને neutral atom માં electrons = protons = Z. એટલે Z જ ગુણધર્મોનો સાચો, unique "સરનામું" છે — mass ફક્ત coincidentally મોટા ભાગના તત્વોમાં Z સાથે વધે છે, પણ Ar-K જેવા apવાદ (exception) એ સાબિત કરે છે mass ખોટો આધાર છે.</div>
+
+<div class="diagram"><svg viewBox="0 0 620 130" role="img"><title>Moseley's law</title>
+<text x="310" y="16" text-anchor="middle" class="ts" font-family="var(--font-mono)">Moseley's law: √ν = a(Z − b) — √ν (y) vs Z (x) સીધી લીટી</text>
+<line x1="60" y1="105" x2="560" y2="105" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="60" y1="30" x2="60" y2="105" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="60" y1="100" x2="540" y2="35" stroke="var(--formula)" stroke-width="2.2"/>
+<text x="300" y="120" text-anchor="middle" class="ts" font-family="var(--font-mono)">Z (atomic number) →</text>
+<text x="30" y="65" class="ts" font-family="var(--font-mono)" transform="rotate(-90 30 65)">√ν →</text>
+</svg><div class="diagram-cap">Moseley એ X-ray ઉત્સર્જન આવૃત્તિ (ν) ના √ν ને Z સામે plot કરી બરાબર સીધી લીટી મેળવી — mass સામે plot કરતા આવું ચોક્કસ ન મળત.</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">X-ray spectroscopy આજે પણ forensic/material-science lab માં અજાણ્યા sample માં કયું તત્વ છે એ ઓળખવા વપરાય છે — Moseley ના એ જ સિદ્ધાંત પર (દરેક તત્વની પોતાની characteristic X-ray frequency).</div></div>
+
+<h3>આધુનિક આવર્ત નિયમ</h3>
+<div class="formula-box box"><span class="label">must memorize</span>
+<div class="f">તત્વોના ગુણધર્મો તેમના atomic number (Z) ના સામયિક (periodic) વિધેય છે.</div>
+<div class="meaning">એટલે Z વધતા ક્રમમાં ગોઠવતા, ગુણધર્મો ચોક્કસ ગાળે પુનરાવર્તિત થાય છે.</div></div>
+
+<div class="next-line"><b>આગળ:</b> આ નિયમ પરથી ખરેખર બનતું <b>long-form periodic table</b> — periods, groups, અને s/p/d/f blocks — Part 01 માં.</div>
+</div>
+
+<div class="part" id="p1">
+<h2><span class="num">01</span>લાંબા સ્વરૂપનું આવર્ત કોષ્ટક — Periods, Groups, Blocks</h2>
+<p class="part-why">ટેબલનું structure (7 periods, 18 groups, 4 blocks) સમજાય તો પછીના દરેક trend નું "કેમ આ પેટર્નમાં" આપોઆપ સમજાય.</p>
+
+<div class="outcome"><span class="label">outcome</span>ટેબલની row (period) અને column (group) નો ખરો અર્થ, અને s/p/d/f block કઈ રીતે electron configuration પરથી જ નક્કી થાય છે તે.</div>
+
+<h3>Period = "n" (principal quantum number) બદલાય</h3>
+<p>નવો period શરૂ થાય એટલે નવું principal energy level (n) ભરાવાનું શરૂ થાય છે. Period number = એ period ના તત્વોનું outermost n. દા.ત. period 3 ના તત્વોમાં outermost electron n=3 shell માં છે.</p>
+
+<h3>Group = સમાન વેલેન્સ ઈલેક્ટ્રોન રચના</h3>
+<p>એક જ column (group) ના તત્વોની <b>valence shell electron configuration pattern સરખી</b> હોય છે — એટલે જ સમાન રાસાયણિક ગુણધર્મો દર્શાવે છે. દા.ત. ગ્રુપ 1 ના બધા તત્વો ns¹ થી અંત પામે.</p>
+
+<div class="diagram"><svg viewBox="0 0 640 300" role="img"><title>s,p,d,f બ્લોકનું આવર્ત કોષ્ટકમાં સ્થાન</title>
+<text x="320.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">આવર્ત કોષ્ટકના ચાર બ્લોક (s,p,d,f) — ખરેખર 18-column, 7-period ગ્રીડ</text>
+<rect x="40" y="20" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="312" y="20" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="36" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="36" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="232" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="36" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="52" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="52" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="232" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="52" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="68" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="68" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="72" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="88" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="104" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="120" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="136" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="152" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="168" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="184" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="200" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="216" y="68" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="232" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="68" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="84" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="84" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="72" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="88" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="104" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="120" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="136" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="152" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="168" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="184" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="200" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="216" y="84" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="232" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="84" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="100" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="100" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="72" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="88" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="104" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="120" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="136" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="152" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="168" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="184" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="200" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="216" y="100" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="232" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="100" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="40" y="116" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="56" y="116" width="15" height="15" fill="var(--formula)" rx="1.5"/>
+<rect x="72" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="88" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="104" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="120" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="136" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="152" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="168" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="184" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="200" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="216" y="116" width="15" height="15" fill="var(--exam)" rx="1.5"/>
+<rect x="232" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="248" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="264" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="280" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="296" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="312" y="116" width="15" height="15" fill="var(--check)" rx="1.5"/>
+<rect x="88" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="104" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="120" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="136" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="152" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="168" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="184" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="200" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="216" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="232" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="248" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="264" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="280" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="296" y="142" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="88" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="104" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="120" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="136" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="152" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="168" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="184" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="200" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="216" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="232" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="248" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="264" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="280" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="296" y="158" width="15" height="15" fill="var(--accent)" rx="1.5"/>
+<rect x="40" y="194" width="12" height="12" fill="var(--formula)" rx="2"/>
+<text x="56" y="204" class="ts" font-family="var(--font-mono)" font-size="10.5">s-block (group 1,2)</text>
+<rect x="190" y="194" width="12" height="12" fill="var(--check)" rx="2"/>
+<text x="206" y="204" class="ts" font-family="var(--font-mono)" font-size="10.5">p-block (group 13-18)</text>
+<rect x="340" y="194" width="12" height="12" fill="var(--exam)" rx="2"/>
+<text x="356" y="204" class="ts" font-family="var(--font-mono)" font-size="10.5">d-block (group 3-12)</text>
+<rect x="490" y="194" width="12" height="12" fill="var(--accent)" rx="2"/>
+<text x="506" y="204" class="ts" font-family="var(--font-mono)" font-size="10.5">f-block (lanthanide/actinide)</text>
+</svg><div class="diagram-cap">s-block (ns¹⁻²), p-block (ns²np¹⁻⁶), d-block (ns² (n−1)d¹⁻¹⁰), f-block ((n−2)f¹⁻¹⁴(n−1)d⁰⁻¹ns²) — છેલ્લે ઉમેરાયેલ ઈલેક્ટ્રોન કયા subshell માં જાય છે એ જ block નક્કી કરે છે.</div></div>
+
+<div class="concept-box box"><span class="label">must understand</span>
+Block નામ "s/p/d/f" એ છેલ્લે differentiate (વિભેદક) થતા ઈલેક્ટ્રોનનું subshell દર્શાવે છે — આખા atom નું નહીં, ફક્ત છેલ્લા ઉમેરાયેલા ઈલેક્ટ્રોનનું. દા.ત. Na = 1s²2s²2p⁶3s¹ — છેલ્લો ઈલેક્ટ્રોન 3s માં ગયો, એટલે Na s-block છે, ભલે એની પાસે p-electrons પણ હોય.</div>
+
+<table><tr><th>Block</th><th>Groups</th><th>General config</th><th>ઉદાહરણ</th></tr>
+<tr><td class="rowlabel">s</td><td>1, 2</td><td>ns¹⁻²</td><td>Na (3s¹), Mg (3s²)</td></tr>
+<tr><td class="rowlabel">p</td><td>13–18</td><td>ns²np¹⁻⁶</td><td>Al (3s²3p¹), Cl (3s²3p⁵)</td></tr>
+<tr><td class="rowlabel">d</td><td>3–12</td><td>(n−1)d¹⁻¹⁰ns⁰⁻²</td><td>Fe ([Ar]3d⁶4s²)</td></tr>
+<tr><td class="rowlabel">f</td><td>lanthanide/actinide</td><td>(n−2)f¹⁻¹⁴(n−1)d⁰⁻¹ns²</td><td>Ce ([Xe]4f¹5d¹6s²)</td></tr>
+</table>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Fertilizer ઉદ્યોગ N,P,K (ગ્રુપ 15, 1) ના oxidation-state ના જ્ઞાન પર ચાલે છે — group-based valence pattern ના real industrial ઉપયોગનું સીધું ઉદાહરણ.</div></div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>He (ગ્રુપ 18, p-block position) નું config 1s² છે (s-block પેટર્ન!) — છતાં position/ગુણધર્મ પ્રમાણે p-block (noble gas) માં મુકાય છે, કારણ કે એનું valence shell સંપૂર્ણ ભરેલું (like p-block noble gases) છે. Config-based rule નો આ એકમાત્ર અપવાદ છે.</div>
+
+
+<!-- upd-2026-10-04:per-iupac -->
+<h3>IUPAC નામકરણ — Z > 100 તત્વો</h3>
+<div class="diagram"><svg viewBox="0 0 680 220" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><rect x="40.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="67.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">0 = nil</text><rect x="102.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--accent)" fill="var(--surface)" stroke-width="1.3"/><text x="129.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">1 = un</text><rect x="164.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="191.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">2 = bi</text><rect x="226.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="253.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">3 = tri</text><rect x="288.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--accent)" fill="var(--surface)" stroke-width="1.3"/><text x="315.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">4 = quad</text><rect x="350.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="377.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">5 = pent</text><rect x="412.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="439.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">6 = hex</text><rect x="474.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="501.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">7 = sept</text><rect x="536.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="563.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">8 = oct</text><rect x="598.0" y="26.0" width="54.0" height="30.0" rx="5" stroke="var(--ink-3)" fill="var(--surface)" stroke-width="1.3"/><text x="625.0" y="46.0" fill="var(--ink)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">9 = enn</text><rect x="210.0" y="96.0" width="60.0" height="36.0" rx="6" stroke="var(--accent)" fill="none" stroke-width="1.6"/><text x="240.0" y="120.0" fill="var(--accent)" font-size="17" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">1</text><line x1="240.0" y1="134.0" x2="240.0" y2="150.0" stroke="var(--accent)" stroke-width="1.4"/><polygon points="240.0,156.0 237.3,150.0 242.7,150.0" fill="var(--accent)"/><text x="240.0" y="172.0" fill="var(--accent)" font-size="13" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">un</text><rect x="300.0" y="96.0" width="60.0" height="36.0" rx="6" stroke="var(--accent)" fill="none" stroke-width="1.6"/><text x="330.0" y="120.0" fill="var(--accent)" font-size="17" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">1</text><line x1="330.0" y1="134.0" x2="330.0" y2="150.0" stroke="var(--accent)" stroke-width="1.4"/><polygon points="330.0,156.0 327.3,150.0 332.7,150.0" fill="var(--accent)"/><text x="330.0" y="172.0" fill="var(--accent)" font-size="13" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">un</text><rect x="390.0" y="96.0" width="60.0" height="36.0" rx="6" stroke="var(--accent)" fill="none" stroke-width="1.6"/><text x="420.0" y="120.0" fill="var(--accent)" font-size="17" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">4</text><line x1="420.0" y1="134.0" x2="420.0" y2="150.0" stroke="var(--accent)" stroke-width="1.4"/><polygon points="420.0,156.0 417.3,150.0 422.7,150.0" fill="var(--accent)"/><text x="420.0" y="172.0" fill="var(--accent)" font-size="13" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">quad</text><text x="340.0" y="205.0" fill="var(--exam)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Z = 114 ⟹ un + un + quad + ium = Ununquadium (Uuq) ⟹ official: Flerovium (Fl)</text></svg><div class="diagram-cap">અંકથી મૂળ (digit root) નો નકશો; ઉદાહરણ Z = 114 ના ત્રણ અંક ⟹ Uuq.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">0 nil · 1 un · 2 bi · 3 tri · 4 quad · 5 pent · 6 hex · 7 sept · 8 oct · 9 enn  + "ium"</div><div class="meaning">Systematic નામ અને સંજ્ઞા (3 અક્ષર) નવા તત્વ માટે કામચલાઉ; પછી IUPAC official નામ આપે. Official (101–118): Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og. નિયમ: "bi"/"tri" + ium ⟹ "bium"/"trium" (i એક જ); "enn" + "nil" ⟹ "ennil". Real-world: નવા તત્વો (દા.ત. 2016 માં 113, 115, 117, 118) ને official નામ મળે ત્યાં સુધી આ systematic નામથી જ ઓળખાય.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — Z = 109</div><div class="step"><b>Need</b> — systematic નામ, સંજ્ઞા અને official નામ</div><div class="step"><b>Method</b> — અંકો 1-0-9 ⟹ un-nil-enn + ium</div><div class="step"><b>Calculation</b> — Unnilennium (Une) ⟹ official: Meitnerium (Mt)</div><div class="step"><b>Check</b> — Mt = 109 (Rf 104 થી ગણો: Rf, Db, Sg, Bh, Hs, Mt) ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>104 (Rf) અને 105 (Db) ગૂંચવવા; કે "Unnilpentium" ને official નામ માનવું — official નામ Dubnium છે.</div>
+<div class="next-line"><b>આગળ:</b> Part 02 માં — electron configuration લખવાનો ટેબલ સાથે સીધો સંબંધ (aufbau, ટેબલ પરથી સીધું config વાંચવું).</div>
+</div>
+
+<div class="part" id="p2">
+<h2><span class="num">02</span>ઈલેક્ટ્રોનીય રચના અને આવર્ત કોષ્ટક</h2>
+<p class="part-why">ટેબલ પરથી સીધું ઈલેક્ટ્રોન config વાંચી શકાય — Aufbau ક્રમ ગોખવાને બદલે.</p>
+
+<div class="outcome"><span class="label">outcome</span>કોઈપણ તત્વનું ઈલેક્ટ્રોન config ફક્ત એની ટેબલ-position પરથી, Aufbau ના (n+l) rule ને ટેબલના structure સાથે જોડીને, ઝડપથી લખી શકાય.</div>
+
+<div class="formula-box box"><span class="label">must memorize — (n+l) rule</span>
+<div class="f">ઓછા (n+l) વાળું subshell પહેલા ભરાય; સરખું (n+l) હોય તો ઓછા n વાળું પહેલા</div>
+<div class="meaning">દા.ત. 4s (n+l=4) પહેલા ભરાય, 3d (n+l=5) પછી — એટલે જ K,Ca પછી d-block (Sc thi) શરૂ થાય, 3d નહીં.</div></div>
+
+<div class="diagram"><svg viewBox="0 0 620 200" role="img"><title>Shielding effect schematic</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">Effective nuclear charge: Zeff = Z − σ (inner ઈલેક્ટ્રોન shield કરે છે)</text>
+<circle cx="180" cy="110" r="8" fill="var(--exam)"/>
+<text x="180" y="114" text-anchor="middle" font-size="9" fill="white" font-family="var(--font-mono)">+Z</text>
+<circle cx="180" cy="110" r="35" fill="none" stroke="var(--check)" stroke-width="1.4" stroke-dasharray="3,2"/>
+<circle cx="180" cy="110" r="60" fill="none" stroke="var(--check)" stroke-width="1.4" stroke-dasharray="3,2"/>
+<circle cx="215.0" cy="110.0" r="4" fill="var(--check)"/>
+<circle cx="197.5" cy="140.3" r="4" fill="var(--check)"/>
+<circle cx="162.5" cy="140.3" r="4" fill="var(--check)"/>
+<circle cx="145.0" cy="110.0" r="4" fill="var(--check)"/>
+<circle cx="162.5" cy="79.7" r="4" fill="var(--check)"/>
+<circle cx="197.5" cy="79.7" r="4" fill="var(--check)"/>
+<circle cx="232.0" cy="140.0" r="5" fill="var(--formula)"/>
+<text x="242.0" y="140.0" class="ts" font-family="var(--font-mono)">valence e⁻ (Zeff અનુભવે)</text>
+<text x="250" y="145" class="ts" font-family="var(--font-mono)">inner shell (shield, σ)</text>
+</svg><div class="diagram-cap">Inner electrons nucleus ના +Z charge ને "shield" કરે છે — outer electron ખરેખર ઓછો Zeff=Z−σ અનુભવે છે. આ shielding જ Part 03-06 ના બધા trends નું મૂળ કારણ છે.</div></div>
+
+<div class="concept-box box"><span class="label">must understand</span>
+ટેબલ પર ડાબેથી જમણે ચાલતા દરેક block, દરેક element નો config પાછલા noble gas ના config + નવો ઉમેરાતો ઈલેક્ટ્રોન છે. દા.ત. Cl = [Ne] 3s²3p⁵ — [Ne] પોતે 10 ઈલેક્ટ્રોનનો "shortcut" છે.</div>
+
+<div class="example"><span class="label">worked example</span>
+<div class="step"><b>તત્વ:</b> Z=16 (S)</div>
+<div class="step"><b>Position:</b> period 3, group 16 → outer shell n=3, 6 valence e⁻ (ns²np⁴)</div>
+<div class="step"><b>Config:</b> 1s²2s²2p⁶3s²3p⁴ = [Ne]3s²3p⁴</div></div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>d-block માં (n−1)d પહેલા લખાય (a Aufbau ક્રમ પ્રમાણે ભરાવાનો ક્રમ 4s પહેલા) — પણ <b>લખવાનો રિવાજ</b> increasing n પ્રમાણે છે: 3d ને 4s પહેલા લખો (દા.ત. Fe = 1s²2s²2p⁶3s²3p⁶3d⁶4s², "4s3d" નહીં "3d4s" ક્રમમાં ભરાયા છતાં). Cr, Cu જેવા d⁴/d⁹ → d⁵/d¹⁰ અપવાદ (અર્ધ-ભરેલ/પૂર્ણ-ભરેલ extra stability) યાદ રાખવા.</div>
+
+<div class="next-line"><b>આગળ:</b> આ config જ Part 03 થી શરૂ થતાં તમામ periodic trends (ત્રિજ્યા, IE, EN...) નું સીધું કારણ બનશે.</div>
+</div>
+
+<div class="part" id="p3">
+<h2><span class="num">03</span>પરમાણ્વીય અને આયનીય ત્રિજ્યાની આવર્તિતા</h2>
+<p class="part-why">ત્રિજ્યા = Zeff ની સૌથી સીધી "દેખાતી" અસર — આ trend સમજાય તો IE/EN/EA ના trend એની પાછળ ચાલતા આવે.</p>
+
+<div class="outcome"><span class="label">outcome</span>ત્રિજ્યા આવર્તમાં કેમ ઘટે, સમૂહમાં કેમ વધે — Zeff અને shell-number બંનેની ભૂમિકા સાથે — અને આયનીય ત્રિજ્યાના isoelectronic-series નિયમ.</div>
+
+<h3>પરમાણ્વીય ત્રિજ્યા શું છે — વ્યાખ્યા પહેલા</h3>
+<p>Atom ની "ધાર" ચોક્કસ નથી (ઈલેક્ટ્રોન cloud ધીમે-ધીમે ઝાંખું પડે છે, sharp edge નથી) — એટલે ત્રિજ્યા વ્યાખ્યાયિત કરવા બે bonded/touching atoms ના ન્યુક્લિયસ વચ્ચેનું અંતર માપી, અડધું ભાગી "covalent radius" (કે metallic/van der Waals radius, પ્રકાર પ્રમાણે) કહેવાય છે — "ત્રિજ્યા" શબ્દ ભૂમિતિના વર્તુળના ત્રિજ્યા સાથે analogy છે, પણ અહીં એ statistically-defined અંતર છે, ભૂમિતિની ચોક્કસ ધાર નહીં.</p>
+
+<h3>આવર્તમાં (ડાબેથી જમણે) ત્રિજ્યા કેમ ઘટે — mechanism પહેલા, rule પછી</h3>
+<div class="concept-box box"><span class="label">must understand — the actual mechanism</span>
+<ol style="padding-left:18px;margin:6px 0">
+<li>એક જ period માં, દરેક નવા તત્વમાં ઈલેક્ટ્રોન <b>એ જ outer shell (સરખું n)</b> માં ઉમેરાય છે — shielding લગભગ સરખું જ રહે છે (એ જ shell ના ઈલેક્ટ્રોન એકબીજાને બહુ ઓછું shield કરે છે).</li>
+<li>પણ nuclear charge (Z, protons) દરેક તત્વ સાથે +1 વધે છે.</li>
+<li>પરિણામે <b>Zeff = Z − σ વધે છે</b> (σ લગભગ સ્થિર, Z વધે) — nucleus outer electrons ને વધુ જોરથી ખેંચે છે → ત્રિજ્યા ઘટે.</li>
+</ol></div>
+
+<h3>સમૂહમાં (ઉપરથી નીચે) ત્રિજ્યા કેમ વધે</h3>
+<div class="concept-box box"><span class="label">must understand</span>
+સમૂહમાં નીચે જતાં, દરેક તત્વમાં <b>નવું n (નવું shell) ઉમેરાય</b> છે — Zeff માં થોડો વધારો થાય તો પણ, નવા shell નું અંતર nucleus થી ઘણું વધારે હોય છે, અને inner shells નું shielding વધે છે. શુદ્ધ પરિણામ: ત્રિજ્યા વધે — Zeff ના નાના વધારા કરતાં "એક નવું shell ઉમેરાવું" નું effect ઘણું મોટું છે.</div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>પરમાણ્વીય ત્રિજ્યા (pm) — Period 2 (Li→Ne)</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">પરમાણ્વીય ત્રિજ્યા (pm) — Period 2 (Li→Ne)</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">pm</text>
+<polyline points="54.0,26.0 132.0,119.2 210.0,171.5 288.0,196.5 366.0,203.3 444.0,221.5 522.0,226.0 600.0,223.7" fill="none" stroke="var(--formula)" stroke-width="2.2"/>
+<circle cx="54.0" cy="26.0" r="4" fill="var(--formula)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Li</text>
+<text x="54.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">152</text>
+<circle cx="132.0" cy="119.2" r="4" fill="var(--formula)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Be</text>
+<text x="132.0" y="111.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">111</text>
+<circle cx="210.0" cy="171.5" r="4" fill="var(--formula)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">B</text>
+<text x="210.0" y="163.5" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">88</text>
+<circle cx="288.0" cy="196.5" r="4" fill="var(--formula)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">C</text>
+<text x="288.0" y="188.5" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">77</text>
+<circle cx="366.0" cy="203.3" r="4" fill="var(--formula)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">N</text>
+<text x="366.0" y="195.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">74</text>
+<circle cx="444.0" cy="221.5" r="4" fill="var(--formula)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">O</text>
+<text x="444.0" y="213.5" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">66</text>
+<circle cx="522.0" cy="226.0" r="4" fill="var(--formula)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">F</text>
+<text x="522.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">64</text>
+<circle cx="600.0" cy="223.7" r="4" fill="var(--formula)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ne</text>
+<text x="600.0" y="215.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">65</text>
+</svg><div class="diagram-cap">Period 2 ની ત્રિજ્યા (Li→F) — real covalent radius data (pm). Ne dashed/અલગ ગણવો કારણ કે એ non-bonding vdW estimate છે, covalent radius સાથે સીધો compare ના કરાય.</div></div>
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>પરમાણ્વીય ત્રિજ્યા (pm) — Period 3 (Na→Ar)</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">પરમાણ્વીય ત્રિજ્યા (pm) — Period 3 (Na→Ar)</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">pm</text>
+<polyline points="54.0,26.0 132.0,71.2 210.0,100.8 288.0,146.0 366.0,158.2 444.0,168.6 522.0,177.3 600.0,226.0" fill="none" stroke="var(--formula)" stroke-width="2.2"/>
+<circle cx="54.0" cy="26.0" r="4" fill="var(--formula)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Na</text>
+<text x="54.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">186</text>
+<circle cx="132.0" cy="71.2" r="4" fill="var(--formula)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg</text>
+<text x="132.0" y="63.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">160</text>
+<circle cx="210.0" cy="100.8" r="4" fill="var(--formula)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al</text>
+<text x="210.0" y="92.8" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">143</text>
+<circle cx="288.0" cy="146.0" r="4" fill="var(--formula)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Si</text>
+<text x="288.0" y="138.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">117</text>
+<circle cx="366.0" cy="158.2" r="4" fill="var(--formula)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">P</text>
+<text x="366.0" y="150.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">110</text>
+<circle cx="444.0" cy="168.6" r="4" fill="var(--formula)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">S</text>
+<text x="444.0" y="160.6" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">104</text>
+<circle cx="522.0" cy="177.3" r="4" fill="var(--formula)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Cl</text>
+<text x="522.0" y="169.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">99</text>
+<circle cx="600.0" cy="226.0" r="4" fill="var(--formula)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ar</text>
+<text x="600.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">71</text>
+</svg><div class="diagram-cap">Period 3 ની ત્રિજ્યા (Na→Cl) — સમાન ઘટતો trend, ફરી Ar અલગ ગણવો.</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Semiconductor (Si) અને metal (Al) ના crystal lattice ના actual bond-length એ પરમાણ્વીય ત્રિજ્યા પરથી જ predict થાય છે — chip-fabrication માં atomic-spacing ની ચોકસાઈ સીધી આ trend પર આધારિત.</div></div>
+
+<h3>આયનીય ત્રિજ્યા — cation vs anion</h3>
+<table><tr><th>પ્રકાર</th><th>પેરેન્ટ atom સાથે સરખામણી</th><th>કારણ</th></tr>
+<tr><td class="rowlabel">Cation (M⁺, M²⁺...)</td><td>હંમેશા <b>નાનો</b></td><td>ઈલેક્ટ્રોન ગુમાવતા shell ઓછું થાય શકે (dia. Na→Na⁺ આખું 3s shell જ ગયું), અને બાકીના ઈલેક્ટ્રોન પર Zeff/e⁻ વધે</td></tr>
+<tr><td class="rowlabel">Anion (X⁻, X²⁻...)</td><td>હંમેશા <b>મોટો</b></td><td>ઈલેક્ટ્રોન ઉમેરાતા electron-electron repulsion વધે, effective attraction/e⁻ ઘટે</td></tr>
+</table>
+
+<div class="formula-box box"><span class="label">must memorize — isoelectronic series rule</span>
+<div class="f">સમાન ઈલેક્ટ્રોન સંખ્યા (isoelectronic) ધરાવતી સ્પીસીઝમાં, Z વધુ → ત્રિજ્યા નાની</div>
+<div class="meaning">બધામાં ઈલેક્ટ્રોન count સરખો (shielding લગભગ સરખું), પણ nucleus નો pull (Zeff) Z વધતા વધે — એટલે વધુ Z વાળી સ્પીસીઝ ઈલેક્ટ્રોનને વધુ જોરથી ખેંચે, ત્રિજ્યા ઘટે.</div></div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>સમઇલેક્ટ્રોનીય શ્રેણી (10 e⁻) ની આયનીય ત્રિજ્યા (pm) — Z વધતાં ત્રિજ્યા ઘટે</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">સમઇલેક્ટ્રોનીય શ્રેણી (10 e⁻) ની આયનીય ત્રિજ્યા (pm) — Z વધતાં ત્રિજ્યા ઘટે</text>
+<line x1="54" y1="26" x2="54" y2="220" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="220.0" x2="600" y2="220.0" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">pm</text>
+<rect x="72.2" y="26.0" width="54.6" height="194.0" fill="var(--formula)" rx="2"/>
+<text x="99.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">N3-(Z7)</text>
+<text x="99.5" y="20.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">171</text>
+<rect x="163.2" y="61.2" width="54.6" height="158.8" fill="var(--formula)" rx="2"/>
+<text x="190.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">O2-(Z8)</text>
+<text x="190.5" y="55.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">140</text>
+<rect x="254.2" y="69.1" width="54.6" height="150.9" fill="var(--formula)" rx="2"/>
+<text x="281.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">F-(Z9)</text>
+<text x="281.5" y="63.1" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">133</text>
+<rect x="345.2" y="104.3" width="54.6" height="115.7" fill="var(--formula)" rx="2"/>
+<text x="372.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Na+(Z11)</text>
+<text x="372.5" y="98.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">102</text>
+<rect x="436.2" y="138.3" width="54.6" height="81.7" fill="var(--formula)" rx="2"/>
+<text x="463.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg2+(Z12)</text>
+<text x="463.5" y="132.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">72</text>
+<rect x="527.2" y="158.7" width="54.6" height="61.3" fill="var(--formula)" rx="2"/>
+<text x="554.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al3+(Z13)</text>
+<text x="554.5" y="152.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">54</text>
+</svg><div class="diagram-cap">10-ઈલેક્ટ્રોન isoelectronic શ્રેણી (N³⁻ થી Al³⁺, Z=7→13) — real ionic radii (pm), Z વધતા ત્રિજ્યા ઘટે એ ચોખ્ખું દેખાય છે.</div></div>
+
+<div class="exam-box box"><span class="label">high exam probability</span>આ isoelectronic-series ranking (દા.ત. N³⁻, O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ નો ક્રમ) JEE માં લગભગ દર વર્ષે પુછાય છે — Z ના વધતા ક્રમમાં ગોઠવીને ત્રિજ્યા ઊંધા ક્રમમાં લખવી, એ જ ઝડપી method.</div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>Isoelectronic ના હોય એવી બે સ્પીસીઝ ને (દા.ત. Na⁺ vs Cl⁻, જુદા ઈલેક્ટ્રોન count) સીધી "Z વધુ = ત્રિજ્યા ઓછી" rule થી compare કરવાનો પ્રયત્ન — આ rule ફક્ત <b>સમાન ઈલેક્ટ્રોન count</b> હોય ત્યારે જ લાગુ પડે.</div>
+
+<div class="check-box box"><span class="label">self-check</span>F⁻, Na⁺, Mg²⁺ ત્રણેય 10-ઈલેક્ટ્રોન છે. ઘટતા ક્રમમાં ત્રિજ્યા ગોઠવો. <span style="color:var(--ink-3)">(જવાબ: F⁻ &gt; Na⁺ &gt; Mg²⁺, કારણ Z: 9&lt;11&lt;12)</span></div>
+
+<div class="next-line"><b>આગળ:</b> Part 04 — Ionization Enthalpy, જે આ જ Zeff mechanism નું "ઈલેક્ટ્રોન કાઢવા કેટલી ઊર્જા જોઈએ" version છે.</div>
+</div>
+
+<div class="part" id="p4">
+<h2><span class="num">04</span>આયનીકરણ એન્થાલ્પી (Ionization Enthalpy)</h2>
+<p class="part-why">Be&gt;B, N&gt;O જેવા "અપવાદ" ખરેખર અપવાદ નથી — electron config ના mechanism થી directly follow થાય છે. આ Part નું ધ્યેય એ mechanism પાકું કરવું.</p>
+
+<div class="outcome"><span class="label">outcome</span>IE ની વ્યાખ્યા, general trend (Zeff આધારિત), અને Be&gt;B તથા N&gt;O ના અપવાદ પાછળનું ચોક્કસ electron-config કારણ.</div>
+
+<h3>વ્યાખ્યા — "ionization" શબ્દ કેમ?</h3>
+<p><b>Ionize</b> = ion બનાવવો. Ionization enthalpy = એક છૂટા ગેસીય પરમાણુમાંથી એક ઈલેક્ટ્રોન કાઢી cation (+ion) બનાવવા જોઈતી ન્યૂનતમ ઊર્જા (kJ/mol). "Enthalpy" કારણ કે એ heat-content change (ΔH, હંમેશા <b>ધન</b>, ઊર્જા આપવી જ પડે — ઈલેક્ટ્રોન nucleus ના આકર્ષણ સામે ખેંચીને કાઢવો પડે).</p>
+
+<div class="formula-box box"><span class="label">must memorize</span>
+<div class="f">M(g) → M⁺(g) + e⁻ &nbsp;&nbsp; ΔH = IE₁ (હંમેશા &gt; 0)</div>
+<div class="meaning">IE₂ &gt; IE₁ હંમેશા (બીજો ઈલેક્ટ્રોન પહેલેથી +1 cation માંથી કાઢવો વધુ અઘરો — ઓછા ઈલેક્ટ્રોન, વધુ Zeff/e⁻).</div></div>
+
+<div class="concept-box box"><span class="label">must understand — general trend નું mechanism</span>
+IE એ સીધું Zeff અને ત્રિજ્યાનું પરિણામ છે: <b>Zeff વધુ, ત્રિજ્યા ઓછી → ઈલેક્ટ્રોન nucleus ને વધુ મજબૂત જકડાયેલ → કાઢવા વધુ ઊર્જા જોઈએ → IE વધુ</b>. એટલે જ આવર્તમાં IE વધે (Zeff વધે) અને સમૂહમાં IE ઘટે (ત્રિજ્યા વધે, outer e⁻ nucleus થી દૂર-ઓછો જકડાયેલ).</div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>પ્રથમ IE (kJ/mol) — Period 2, Be>B અને N>O anomaly</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">પ્રથમ IE (kJ/mol) — Period 2, Be>B અને N>O anomaly</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">kJ/mol</text>
+<polyline points="54.0,226.0 132.0,177.4 210.0,190.0 288.0,153.5 366.0,113.0 444.0,124.3 522.0,77.2 600.0,26.0" fill="none" stroke="var(--exam)" stroke-width="2.2"/>
+<circle cx="54.0" cy="226.0" r="4" fill="var(--exam)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Li</text>
+<text x="54.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">520</text>
+<circle cx="132.0" cy="177.4" r="4" fill="var(--mistake)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Be</text>
+<text x="132.0" y="169.4" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">899</text>
+<circle cx="210.0" cy="190.0" r="4" fill="var(--exam)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">B</text>
+<text x="210.0" y="182.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">801</text>
+<circle cx="288.0" cy="153.5" r="4" fill="var(--exam)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">C</text>
+<text x="288.0" y="145.5" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1086</text>
+<circle cx="366.0" cy="113.0" r="4" fill="var(--mistake)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">N</text>
+<text x="366.0" y="105.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1402</text>
+<circle cx="444.0" cy="124.3" r="4" fill="var(--exam)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">O</text>
+<text x="444.0" y="116.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1314</text>
+<circle cx="522.0" cy="77.2" r="4" fill="var(--exam)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">F</text>
+<text x="522.0" y="69.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1681</text>
+<circle cx="600.0" cy="26.0" r="4" fill="var(--exam)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ne</text>
+<text x="600.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2081</text>
+</svg><div class="diagram-cap">Period 2 IE₁ (kJ/mol) — પીળા (mistake-color) બિંદુ Be અને N એ dip (અપવાદ) દર્શાવે છે, overall વધતા trend ની વચ્ચે.</div></div>
+
+<h3>અપવાદ 1: IE(Be) &gt; IE(B)</h3>
+<div class="concept-box box"><span class="label">must understand — mechanism, analogy નહીં</span>
+Be = [He]2s² (સંપૂર્ણ ભરેલ 2s subshell — "fully-filled" સ્થિરતા). B = [He]2s²2p¹ — છેલ્લો ઈલેક્ટ્રોન 2p માં, જે 2s કરતાં <b>higher energy, ઓછું penetrating</b> subshell છે (2p ઈલેક્ટ્રોન nucleus ની નજીક ઓછો સમય વિતાવે, 2s ના ઈલેક્ટ્રોન દ્વારા થોડું shield પણ થાય). પરિણામે B નો 2p ઈલેક્ટ્રોન Be ના 2s ઈલેક્ટ્રોન કરતાં <b>ઓછો મજબૂત જકડાયેલ</b> — કાઢવા ઓછી ઊર્જા જોઈએ. એટલે IE(B) &lt; IE(Be), ભલે B નો Z વધુ હોય.</div>
+
+<h3>અપવાદ 2: IE(N) &gt; IE(O)</h3>
+<div class="concept-box box"><span class="label">must understand — mechanism</span>
+N = [He]2s²2p³ — 2p માં <b>અર્ધ-ભરેલ (half-filled), દરેક orbital માં એક-એક ઈલેક્ટ્રોન (Hund's rule, પરસ્પર distance મહત્તમ)</b> — આ symmetric, extra-stable ગોઠવણી છે (exchange energy મહત્તમ). O = [He]2s²2p⁴ — ચોથો ઈલેક્ટ્રોન એક orbital માં pair થવું પડે છે — <b>એ જ orbital માં બે ઈલેક્ટ્રોન વચ્ચે વધારાનું electron-electron repulsion</b> ઈલેક્ટ્રોન કાઢવાનું સહેલું બનાવે છે (ઓછી ઊર્જા જોઈએ, કારણ કાઢ્યા પછી બાકીનો અર્ધ-ભરેલ N-જેવો સ્થિર થાય). એટલે IE(O) &lt; IE(N).</div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>પ્રથમ IE (kJ/mol) — Period 3, Mg>Al અને P>S anomaly</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">પ્રથમ IE (kJ/mol) — Period 3, Mg>Al અને P>S anomaly</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">kJ/mol</text>
+<polyline points="54.0,226.0 132.0,178.9 210.0,210.2 288.0,169.4 366.0,125.2 444.0,127.8 522.0,77.6 600.0,26.0" fill="none" stroke="var(--exam)" stroke-width="2.2"/>
+<circle cx="54.0" cy="226.0" r="4" fill="var(--exam)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Na</text>
+<text x="54.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">496</text>
+<circle cx="132.0" cy="178.9" r="4" fill="var(--mistake)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg</text>
+<text x="132.0" y="170.9" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">737</text>
+<circle cx="210.0" cy="210.2" r="4" fill="var(--exam)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al</text>
+<text x="210.0" y="202.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">577</text>
+<circle cx="288.0" cy="169.4" r="4" fill="var(--exam)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Si</text>
+<text x="288.0" y="161.4" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">786</text>
+<circle cx="366.0" cy="125.2" r="4" fill="var(--mistake)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">P</text>
+<text x="366.0" y="117.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1012</text>
+<circle cx="444.0" cy="127.8" r="4" fill="var(--exam)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">S</text>
+<text x="444.0" y="119.8" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">999</text>
+<circle cx="522.0" cy="77.6" r="4" fill="var(--exam)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Cl</text>
+<text x="522.0" y="69.6" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1256</text>
+<circle cx="600.0" cy="26.0" r="4" fill="var(--exam)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ar</text>
+<text x="600.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1520</text>
+</svg><div class="diagram-cap">Period 3 IE₁ — સમાન પેટર્ન: Mg&gt;Al (3s² સ્થિર vs 3p¹), P&gt;S (અર્ધ-ભરેલ 3p³ vs paired 3p⁴).</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Neon/Argon જેવા noble gases ની ખૂબ ઊંચી IE એ જ કારણ છે તેઓ inert (રાસાયણિક રીતે નિષ્ક્રિય) છે — plasma lighting (neon signs) માં ઈલેક્ટ્રિક discharge થી જ ionize કરવા ખૂબ high voltage જોઈએ છે, એ સીધો આ ઊંચા IE નો પુરાવો.</div></div>
+
+<div class="exam-box box"><span class="label">high exam probability</span>સફળ ક્રમ (Be&gt;B, N&gt;O) ઉલટાવીને પ્રશ્નમાં mislead કરવાનો પ્રયત્ન વારંવાર થાય છે — "કારણ" સાથે (Assertion-Reason) પણ પુછાય છે (જેમ Q.30 PYQ માં).</div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>અપવાદ ને "just remember Be&gt;B, N&gt;O" તરીકે ગોખવા — પણ પ્રશ્ન config બદલીને (દા.ત. P vs S ને બદલે As vs Se) પુછાય તો ગોખેલું કામ ના આવે. Mechanism (half-filled/fully-filled સ્થિરતા) યાદ રાખો, પેટર્ન નહીં.</div>
+
+<div class="remember"><span class="label">remember — successive IE થી valence electron count</span>
+<ol><li>IE₁, IE₂, IE₃... ક્રમશઃ વધે છે (દરેક પછીનો ઈલેક્ટ્રોન કાઢવો અઘરો)</li>
+<li>જ્યારે એક IEₙ થી IEₙ₊₁ વચ્ચે <b>અસાધારણ મોટો કૂદકો (jump)</b> આવે — એ core (noble-gas) shell તૂટવાનો સંકેત છે</li>
+<li>એ જ n = વેલેન્સ ઈલેક્ટ્રોનની સંખ્યા (દા.ત. IE₃→IE₄ મોટો કૂદકો = 3 વેલેન્સ ઈલેક્ટ્રોન, group 13)</li></ol></div>
+
+<div class="check-box box"><span class="label">self-check</span>એક તત્વના IE₁-IE₅: 738, 1450, 7730, 10500, 13600 kJ/mol. વેલેન્સ ઈલેક્ટ્રોન કેટલા? <span style="color:var(--ink-3)">(જવાબ: 2 — IE₂→IE₃ વચ્ચે મોટો કૂદકો)</span></div>
+
+<div class="next-line"><b>આગળ:</b> Part 05 — Electron Gain Enthalpy, જે IE ની "ઊંધી" પ્રક્રિયા (ઈલેક્ટ્રોન ઉમેરવો) છે, પણ trend એટલો સીધો નથી.</div>
+</div>
+
+<div class="part" id="p5">
+<h2><span class="num">05</span>ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી (Electron Gain Enthalpy)</h2>
+<p class="part-why">આ property નો trend "smooth" નથી (F&lt;Cl!) — mechanism સમજ્યા વગર ગોખવાથી ખોટા જવાબ મળે.</p>
+
+<div class="outcome"><span class="label">outcome</span>EA ની વ્યાખ્યા, sign convention (ઋણ vs ધન), અને શા માટે Cl નું EA magnitude F કરતાં વધુ ઋણ છે (JEE ની favorite trap).</div>
+
+<div class="formula-box box"><span class="label">must memorize</span>
+<div class="f">X(g) + e⁻ → X⁻(g) &nbsp;&nbsp; ΔH = ΔegH (ઋણ = ઊર્જા મુક્ત થાય, ધન = ઊર્જા શોષાય)</div>
+<div class="meaning">મોટા ભાગના તત્વો માટે ΔegH ઋણ (ઈલેક્ટ્રોન સ્વીકારવો favorable) — પણ noble gases (પૂર્ણ shell) અને N/Be/Mg (fully/half-filled સ્થિર config) માટે ધન.</div></div>
+
+<div class="concept-box box"><span class="label">must understand — general trend</span>
+આવર્તમાં ડાબેથી જમણે: Zeff વધે → ઈલેક્ટ્રોન ઉમેરવાથી વધુ ઊર્જા મુક્ત થાય (more negative ΔegH) — halogens (ગ્રુપ 17) સૌથી ઋણ (noble-gas-જેવું stable config મેળવવા સૌથી "ઉત્સુક"). સમૂહમાં નીચે: ત્રિજ્યા વધે → નવો ઈલેક્ટ્રોન nucleus થી દૂર, ઓછો આકર્ષાય → ΔegH ઓછું ઋણ.</div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી (kJ/mol) — Period 2</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી (kJ/mol) — Period 2</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">kJ/mol</text>
+<polyline points="54.0,100.8 132.0,26.0 210.0,85.3 288.0,129.7 366.0,69.5 444.0,138.6 522.0,226.0 600.0,59.2" fill="none" stroke="var(--accent)" stroke-width="2.2"/>
+<circle cx="54.0" cy="100.8" r="4" fill="var(--accent)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Li</text>
+<text x="54.0" y="92.8" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-60</text>
+<circle cx="132.0" cy="26.0" r="4" fill="var(--mistake)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Be</text>
+<text x="132.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">100</text>
+<circle cx="210.0" cy="85.3" r="4" fill="var(--accent)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">B</text>
+<text x="210.0" y="77.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-27</text>
+<circle cx="288.0" cy="129.7" r="4" fill="var(--accent)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">C</text>
+<text x="288.0" y="121.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-122</text>
+<circle cx="366.0" cy="69.5" r="4" fill="var(--mistake)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">N</text>
+<text x="366.0" y="61.5" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">7</text>
+<circle cx="444.0" cy="138.6" r="4" fill="var(--accent)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">O</text>
+<text x="444.0" y="130.6" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-141</text>
+<circle cx="522.0" cy="226.0" r="4" fill="var(--accent)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">F</text>
+<text x="522.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-328</text>
+<circle cx="600.0" cy="59.2" r="4" fill="var(--mistake)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ne</text>
+<text x="600.0" y="51.2" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">29</text>
+</svg><div class="diagram-cap">Period 2 EA (kJ/mol) — Be, N, Ne ધન (પીળા) — fully/half-filled/full-shell સ્થિરતાના કારણે ઈલેક્ટ્રોન ઉમેરવો unfavorable.</div></div>
+
+<h3>અપવાદ: F નું EA magnitude Cl કરતાં ઓછું ઋણ કેમ?</h3>
+<div class="concept-box box"><span class="label">must understand — mechanism, ના કે "F નાનો છે એટલે"</span>
+F નો પરમાણુ ખૂબ નાનો (64 pm) — 2p subshell પહેલેથી ગીચ ભરેલ (compact). નવો ઈલેક્ટ્રોન ઉમેરતા, પહેલેથી હાજર ઈલેક્ટ્રોન સાથે <b>electron-electron repulsion</b> ખૂબ મોટું (નાની જગ્યામાં ભીડ) — આ repulsion, nucleus ના આકર્ષણનો ફાયદો આંશિક રીતે "ખાઈ" જાય છે. Cl મોટો (99 pm, 3p subshell) — ઓછી ભીડ, ઓછું repulsion — ચોખ્ખું આકર્ષણ વધુ મુક્ત ઊર્જા આપે છે. પરિણામ: |ΔegH(Cl)| = 349 &gt; |ΔegH(F)| = 328 kJ/mol.</div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી (kJ/mol) — Period 3</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી (kJ/mol) — Period 3</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">kJ/mol</text>
+<polyline points="54.0,83.7 132.0,26.0 210.0,78.9 288.0,122.6 366.0,92.8 444.0,154.4 522.0,226.0 600.0,41.4" fill="none" stroke="var(--accent)" stroke-width="2.2"/>
+<circle cx="54.0" cy="83.7" r="4" fill="var(--accent)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Na</text>
+<text x="54.0" y="75.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-53</text>
+<circle cx="132.0" cy="26.0" r="4" fill="var(--mistake)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg</text>
+<text x="132.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">67</text>
+<circle cx="210.0" cy="78.9" r="4" fill="var(--accent)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al</text>
+<text x="210.0" y="70.9" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-43</text>
+<circle cx="288.0" cy="122.6" r="4" fill="var(--accent)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Si</text>
+<text x="288.0" y="114.6" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-134</text>
+<circle cx="366.0" cy="92.8" r="4" fill="var(--accent)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">P</text>
+<text x="366.0" y="84.8" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-72</text>
+<circle cx="444.0" cy="154.4" r="4" fill="var(--accent)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">S</text>
+<text x="444.0" y="146.4" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-200</text>
+<circle cx="522.0" cy="226.0" r="4" fill="var(--accent)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Cl</text>
+<text x="522.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">-349</text>
+<circle cx="600.0" cy="41.4" r="4" fill="var(--mistake)"/>
+<text x="600.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Ar</text>
+<text x="600.0" y="33.4" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">35</text>
+</svg><div class="diagram-cap">Period 3 EA (kJ/mol) — Cl સૌથી ઋણ (−349), સમગ્ર periodic table માં સૌથી વધુ ઋણ EA ધરાવતું તત્વ.</div></div>
+
+<div class="exam-box box"><span class="label">high exam probability</span>"Cl &gt; F" (magnitude) એ single-most-repeated JEE trap છે — 2025 ના paper માં પણ સીધું આ જ પુછાયું (Q.29, Q.36).</div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Cl⁻ ની ઊંચી favorability એ જ કારણ NaCl (table salt) જેવા ionic compounds એટલા સ્થિર બને છે — lattice energy calculation માં EA સીધો input છે.</div></div>
+
+<h3>બીજી ઈલેક્ટ્રોન પ્રાપ્તિ — હંમેશા ધન</h3>
+<div class="formula-box box"><span class="label">must memorize</span>
+<div class="f">O⁻(g) + e⁻ → O²⁻(g) &nbsp;&nbsp; ΔegH₂ &gt; 0 (હંમેશા)</div>
+<div class="meaning">પહેલેથી ઋણ આયન (O⁻) માં બીજો ઈલેક્ટ્રોન ઉમેરવો — like-charge repulsion સામે ઊર્જા આપવી પડે, ક્યારેય favorable ના હોય.</div></div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>"ઋણ EA = ના ઋણ (endothermic)" ના sign ને ગૂંચવવો — યાદ રાખો: <b>વધુ ઋણ ΔegH = વધુ favorable/exothermic</b> (magnitude ની ભાષામાં "વધુ" કહેવાય પણ signed value ની ભાષામાં "ઓછું/નાનું").</div>
+
+<div class="check-box box"><span class="label">self-check</span>Ne નું EA ધન છે કે ઋણ, અને કેમ? <span style="color:var(--ink-3)">(જવાબ: ધન — પૂર્ણ ભરેલ 2p⁶ shell, નવો ઈલેક્ટ્રોન n=3 માં જવું પડે, unfavorable)</span></div>
+
+<div class="next-line"><b>આગળ:</b> Part 06 — Electronegativity, જે IE + EA બંનેના "ભાવ" ને એક જ number માં ભેગું કરે છે (bond ની અંદર).</div>
+</div>
+
+<div class="part" id="p6">
+<h2><span class="num">06</span>વિદ્યુતઋણતા (Electronegativity)</h2>
+<p class="part-why">EN એ IE/EA જેવો "isolated atom" property નથી — bond ની અંદર tug-of-war measure કરે છે, એટલે અલગ સમજવો પડે.</p>
+
+<div class="outcome"><span class="label">outcome</span>EN ની ખરી વ્યાખ્યા (IE/EA થી કેમ અલગ), Pauling scale, trend, અને trend ના અપવાદ ક્યાં નબળા પડે.</div>
+
+<h3>વ્યાખ્યા — IE/EA થી ફરક</h3>
+<div class="concept-box box"><span class="label">must understand</span>
+IE અને EA એ <b>isolated ગેસીય પરમાણુ</b> ના ગુણધર્મો (compound ની બહાર માપી શકાય, ચોક્કસ ઊર્જા-એકમમાં). Electronegativity એ <b>bond ની અંદર</b> નો ગુણધર્મ — "એક પરમાણુ, bonded pair ના shared ઈલેક્ટ્રોનને પોતાની તરફ કેટલા જોરથી ખેંચે છે" એનું <b>relative (no unit)</b> માપ. એટલે જ EN ને kJ/mol માં નહીં, Pauling scale (0-4, no unit) જેવા relative scale માં દર્શાવાય છે.</div>
+
+<div class="formula-box box"><span class="label">must memorize</span>
+<div class="f">EN ≈ (IE + |EA|) / 2 &nbsp;(Mulliken scale ની ભાવના)</div>
+<div class="meaning">જે તત્વનું IE ઊંચું (ઈલેક્ટ્રોન સહેલાઈથી ના જાય) અને EA વધુ ઋણ (ઈલેક્ટ્રોન સહેલાઈથી સ્વીકારે) — એ જ તત્વ bond ના ઈલેક્ટ્રોનને સૌથી વધુ પોતાની તરફ ખેંચે.</div></div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>વિદ્યુતઋણતા (Pauling) — Period 2</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">વિદ્યુતઋણતા (Pauling) — Period 2</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">Pauling</text>
+<polyline points="54.0,226.0 132.0,186.7 210.0,155.3 288.0,121.3 366.0,88.7 444.0,62.0 522.0,26.0" fill="none" stroke="var(--check)" stroke-width="2.2"/>
+<circle cx="54.0" cy="226.0" r="4" fill="var(--check)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Li</text>
+<text x="54.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">0.98</text>
+<circle cx="132.0" cy="186.7" r="4" fill="var(--check)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Be</text>
+<text x="132.0" y="178.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.57</text>
+<circle cx="210.0" cy="155.3" r="4" fill="var(--check)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">B</text>
+<text x="210.0" y="147.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2.04</text>
+<circle cx="288.0" cy="121.3" r="4" fill="var(--check)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">C</text>
+<text x="288.0" y="113.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2.55</text>
+<circle cx="366.0" cy="88.7" r="4" fill="var(--check)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">N</text>
+<text x="366.0" y="80.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">3.04</text>
+<circle cx="444.0" cy="62.0" r="4" fill="var(--check)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">O</text>
+<text x="444.0" y="54.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">3.44</text>
+<circle cx="522.0" cy="26.0" r="4" fill="var(--check)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">F</text>
+<text x="522.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">3.98</text>
+</svg><div class="diagram-cap">Period 2 EN (Pauling) — F સૌથી વધુ (3.98), સમગ્ર periodic table માં સૌથી વધુ electronegative તત્વ.</div></div>
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>વિદ્યુતઋણતા (Pauling) — Period 3</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">વિદ્યુતઋણતા (Pauling) — Period 3</text>
+<line x1="54" y1="26" x2="54" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="226" x2="600" y2="226" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">Pauling</text>
+<polyline points="54.0,226.0 132.0,191.9 210.0,165.0 288.0,139.0 366.0,113.0 444.0,78.0 522.0,26.0" fill="none" stroke="var(--check)" stroke-width="2.2"/>
+<circle cx="54.0" cy="226.0" r="4" fill="var(--check)"/>
+<text x="54.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Na</text>
+<text x="54.0" y="218.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">0.93</text>
+<circle cx="132.0" cy="191.9" r="4" fill="var(--check)"/>
+<text x="132.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg</text>
+<text x="132.0" y="183.9" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.31</text>
+<circle cx="210.0" cy="165.0" r="4" fill="var(--check)"/>
+<text x="210.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al</text>
+<text x="210.0" y="157.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.61</text>
+<circle cx="288.0" cy="139.0" r="4" fill="var(--check)"/>
+<text x="288.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Si</text>
+<text x="288.0" y="131.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.9</text>
+<circle cx="366.0" cy="113.0" r="4" fill="var(--check)"/>
+<text x="366.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">P</text>
+<text x="366.0" y="105.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2.19</text>
+<circle cx="444.0" cy="78.0" r="4" fill="var(--check)"/>
+<text x="444.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">S</text>
+<text x="444.0" y="70.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2.58</text>
+<circle cx="522.0" cy="26.0" r="4" fill="var(--check)"/>
+<text x="522.0" y="242" text-anchor="middle" class="ts" font-family="var(--font-mono)">Cl</text>
+<text x="522.0" y="18.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">3.16</text>
+</svg><div class="diagram-cap">Period 3 EN — સમાન વધતો trend, magnitude period 2 કરતાં ઓછું (મોટી ત્રિજ્યા, ઓછું Zeff/e⁻ પાસે outer shell).</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">પાણી (H₂O) ની polarity — O(EN 3.44) vs H(EN 2.20) નો તફાવત જ પાણીના molecule ને polar બનાવે છે, જે hydrogen bonding, surface tension, અને જીવન માટે પાણીના special ગુણધર્મોનું મૂળ કારણ છે.</div></div>
+
+<div class="exam-box box"><span class="label">high exam probability</span>F&gt;O&gt;N&gt;Cl≈Br&gt;C&gt;S≈I&gt;H — Pauling scale નો આ approximate ક્રમ ડાયરેક્ટ યાદ રાખવા જેવો (JEE-2025 Q.15 ડાયરેક્ટ આ જ પુછ્યું).</div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>Noble gases ને EN scale પર મુકવાનો પ્રયત્ન — તેઓ સામાન્ય રીતે bond જ નથી બનાવતા (compound બહુ ઓછા), એટલે પરંપરાગત Pauling scale પર EN વ્યાખ્યાયિત નથી.</div>
+
+<div class="check-box box"><span class="label">self-check</span>F અને Cl બંનેમાં કોણ વધુ electronegative, અને એ EA trend (Part 05) સાથે કેમ વિરોધાભાસી નથી? <span style="color:var(--ink-3)">(જવાબ: F વધુ electronegative — EN નાનું atom/ઊંચું IE થી driven, જ્યારે EA magnitude repulsion effect થી driven — બે અલગ mechanism, વિરોધાભાસ નહીં)</span></div>
+
+<div class="next-line"><b>આગળ:</b> Part 07 — સંયોજકતા/ઓક્સિડેશન અવસ્થાની આવર્તિતા (group number સાથે સીધો સંબંધ).</div>
+</div>
+
+<div class="part" id="p7">
+<h2><span class="num">07</span>સંયોજકતા અને ઓક્સિડેશન અવસ્થાની આવર્તિતા</h2>
+
+<div class="outcome"><span class="label">outcome</span>Valence electron count પરથી સંભવિત oxidation states કઈ રીતે predict થાય, અને group સાથે એનો સીધો સંબંધ.</div>
+
+<div class="concept-box box"><span class="label">must understand</span>
+Valency = એ તત્વ કેટલા ઈલેક્ટ્રોન ગુમાવી/મેળવી/share કરી noble-gas-જેવું સ્થિર (પૂર્ણ octet) config મેળવી શકે. Group number (1-18) સીધો valence electron count આપે છે (s,p-block માટે) — group 1→1 વેલેન્સ e⁻, group 17→7 વેલેન્સ e⁻ (એટલે 1 e⁻ મેળવી octet પૂરું કરે, valency 1).</div>
+
+<table><tr><th>Group</th><th>Valence e⁻</th><th>લાક્ષણિક oxidation state</th><th>ઉદાહરણ</th></tr>
+<tr><td class="rowlabel">1</td><td>1</td><td>+1</td><td>Na⁺</td></tr>
+<tr><td class="rowlabel">2</td><td>2</td><td>+2</td><td>Mg²⁺</td></tr>
+<tr><td class="rowlabel">13</td><td>3</td><td>+3</td><td>Al³⁺</td></tr>
+<tr><td class="rowlabel">15</td><td>5</td><td>−3 (કે +3,+5)</td><td>N³⁻, P⁵⁺</td></tr>
+<tr><td class="rowlabel">16</td><td>6</td><td>−2 (કે +4,+6)</td><td>O²⁻, S⁶⁺</td></tr>
+<tr><td class="rowlabel">17</td><td>7</td><td>−1 (કે +1...+7)</td><td>Cl⁻, Cl⁷⁺ (ClO₄⁻)</td></tr>
+</table>
+
+<div class="diagram"><svg viewBox="0 0 620 170" role="img"><title>Group vs common oxidation state</title>
+<text x="310" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">Group number → સૌથી સામાન્ય oxidation state (s,p-block)</text>
+<line x1="60" y1="140" x2="580" y2="140" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="60" y1="30" x2="60" y2="140" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="60.0" cy="75.0" r="4" fill="var(--formula)"/><text x="60.0" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">1</text><circle cx="90.6" cy="65.0" r="4" fill="var(--formula)"/><text x="90.6" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">2</text><circle cx="427.1" cy="55.0" r="4" fill="var(--formula)"/><text x="427.1" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">13</text><circle cx="457.6" cy="45.0" r="4" fill="var(--formula)"/><text x="457.6" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">14</text><circle cx="488.2" cy="115.0" r="4" fill="var(--formula)"/><text x="488.2" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">15</text><circle cx="518.8" cy="105.0" r="4" fill="var(--formula)"/><text x="518.8" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">16</text><circle cx="549.4" cy="95.0" r="4" fill="var(--formula)"/><text x="549.4" y="155" text-anchor="middle" font-size="9" fill="var(--ink-2)" font-family="var(--font-mono)">17</text>
+<line x1="60" y1="85" x2="580" y2="85" stroke="var(--ink-3)" stroke-width="0.6" stroke-dasharray="2,2"/>
+<text x="20" y="88" class="ts" font-family="var(--font-mono)">0</text>
+</svg><div class="diagram-cap">Group 1,2,13 → ધન oxidation state (ઈલેક્ટ્રોન ગુમાવે); group 15,16,17 → સામાન્યતઃ ઋણ (ઈલેક્ટ્રોન મેળવે, octet પૂરું કરવા ટૂંકો રસ્તો).</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Nitrogen ના multiple oxidation states (−3 થી +5, NH₃ થી HNO₃) એ જ કારણ છે fertilizer chemistry (NH₃, NH₄NO₃) અને explosives (TNT ના N-oxidation) બંનેમાં N કેન્દ્રમાં છે.</div></div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>d-block તત્વો group number = valency ધારી લેવું — d-block માં variable oxidation states સામાન્ય છે (દા.ત. Fe²⁺, Fe³⁺ બંને) કારણ (n-1)d અને ns બંને close-energy, બંનેમાંથી ઈલેક્ટ્રોન જઈ શકે.</div>
+
+<div class="next-line"><b>આગળ:</b> Part 08 — આ valency trends જ metallic/non-metallic character અને oxide ની acidic/basic પ્રકૃતિ નક્કી કરે છે.</div>
+</div>
+
+<div class="part" id="p8">
+<h2><span class="num">08</span>ધાત્વીય/અધાત્વીય ગુણધર્મ અને ઓક્સાઇડની પ્રકૃતિ</h2>
+<p class="part-why">બધા Parts (03-07) નું "practical output" — ધાતુ કે અધાતુ, oxide acidic કે basic — એ parीक्षामां સૌથી વધુ સીધા પુછાતા પ્રશ્નો.</p>
+
+<div class="outcome"><span class="label">outcome</span>ધાત્વીય લક્ષણ trend, અને oxide acidic/basic/amphoteric કેમ બને છે — IE/EN સાથે સીધો સંબંધ જોડીને.</div>
+
+<div class="concept-box box"><span class="label">must understand</span>
+<b>ધાત્વીય લક્ષણ (metallic character)</b> = ઈલેક્ટ્રોન ગુમાવવાની વૃત્તિ (ઓછું IE, ઓછું EN). <b>અધાત્વીય લક્ષણ</b> = ઈલેક્ટ્રોન મેળવવાની વૃત્તિ (ઊંચું IE, ઊંચું EN). આવર્તમાં ડાબેથી જમણે IE/EN વધે → ધાત્વીય લક્ષણ ઘટે, અધાત્વીય વધે. સમૂહમાં નીચે IE ઘટે → ધાત્વીય લક્ષણ વધે.</div>
+
+<div class="diagram"><svg viewBox="0 0 620 130" role="img"><title>Metallic character trend arrows</title>
+<text x="310" y="16" text-anchor="middle" class="ts" font-family="var(--font-mono)">ધાત્વીય લક્ષણ: સમૂહમાં નીચે વધે ↓, આવર્તમાં જમણે ઘટે →</text>
+<rect x="60" y="40" width="500" height="60" fill="none" stroke="var(--line)" stroke-width="1"/>
+<line x1="90" y1="55" x2="90" y2="90" stroke="var(--formula)" stroke-width="2.5" marker-end="url(#arrM)"/>
+<line x1="100" y1="55" x2="530" y2="55" stroke="var(--exam)" stroke-width="2.5" marker-end="url(#arrM2)"/>
+<defs>
+<marker id="arrM" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--formula)"/></marker>
+<marker id="arrM2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--exam)"/></marker>
+</defs>
+<text x="95" y="72" class="ts" font-family="var(--font-mono)" fill="var(--formula)">ધાત્વીય ↑</text>
+<text x="300" y="50" class="ts" font-family="var(--font-mono)" fill="var(--exam)">અધાત્વીય →</text>
+<text x="75" y="115" class="ts" font-family="var(--font-mono)">Metal (ડાબે-નીચે) ←——— Metalloid (વિકર્ણ પટ્ટી) ———→ Non-metal (જમણે-ઉપર)</text>
+</svg><div class="diagram-cap">Periodic table નો "staircase" (B-Si-As-Te-At લાઈન) metalloid ને metal/non-metal થી અલગ પાડે છે.</div></div>
+
+<h3>Oxide ની પ્રકૃતિ — કેમ acidic/basic/amphoteric</h3>
+<div class="concept-box box"><span class="label">must understand — mechanism</span>
+<ol style="padding-left:18px;margin:6px 0">
+<li><b>Metal oxide (basic):</b> ધાતુ ઈલેક્ટ્રોન સહેલાઈથી ગુમાવે (ઓછું IE) → M–O bond માં ionic character વધુ → પાણીમાં OH⁻ મુક્ત કરે (basic). દા.ત. Na₂O + H₂O → 2NaOH.</li>
+<li><b>Non-metal oxide (acidic):</b> Non-metal ઈલેક્ટ્રોન પકડી રાખે (ઊંચું EN) → covalent M–O bond → પાણી સાથે H⁺ મુક્ત કરે (acidic). દા.ત. SO₃ + H₂O → H₂SO₄.</li>
+<li><b>Amphoteric (Al, Zn, Be, Sn, Pb...):</b> Metal/non-metal સીમા પરના તત્વો — IE/EN "વચલા" range માં — acid અને base બંને સાથે પ્રતિક્રિયા આપે.</li>
+</ol></div>
+
+<div class="formula-box box"><span class="label">must memorize — amphoteric oxide, બંને reaction</span>
+<div class="f">Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O &nbsp;(base જેમ)<br>Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O &nbsp;(acid જેમ)</div>
+<div class="meaning">બંને દિશામાં પ્રતિક્રિયા આપવી — એ જ amphoteric ની વ્યાખ્યા.</div></div>
+
+<div class="diagram"><svg viewBox="0 0 620 260" role="img"><title>વિકર્ણ સંબંધ — EN ની સરખામણી (Pauling)</title>
+<text x="310.0" y="14" text-anchor="middle" class="ts" font-family="var(--font-mono)">વિકર્ણ સંબંધ — EN ની સરખામણી (Pauling)</text>
+<line x1="54" y1="26" x2="54" y2="220" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="54" y1="220.0" x2="600" y2="220.0" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="14" y="30" class="ts" font-family="var(--font-mono)">EN</text>
+<rect x="72.2" y="126.8" width="54.6" height="93.2" fill="var(--check)" rx="2"/>
+<text x="99.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Li</text>
+<text x="99.5" y="120.8" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">0.98</text>
+<rect x="163.2" y="95.4" width="54.6" height="124.6" fill="var(--check)" rx="2"/>
+<text x="190.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Mg</text>
+<text x="190.5" y="89.4" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.31</text>
+<rect x="254.2" y="70.7" width="54.6" height="149.3" fill="var(--check)" rx="2"/>
+<text x="281.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Be</text>
+<text x="281.5" y="64.7" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.57</text>
+<rect x="345.2" y="66.9" width="54.6" height="153.1" fill="var(--check)" rx="2"/>
+<text x="372.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Al</text>
+<text x="372.5" y="60.9" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.61</text>
+<rect x="436.2" y="26.0" width="54.6" height="194.0" fill="var(--check)" rx="2"/>
+<text x="463.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">B</text>
+<text x="463.5" y="20.0" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">2.04</text>
+<rect x="527.2" y="39.3" width="54.6" height="180.7" fill="var(--check)" rx="2"/>
+<text x="554.5" y="236" text-anchor="middle" class="ts" font-family="var(--font-mono)">Si</text>
+<text x="554.5" y="33.3" text-anchor="middle" font-size="10" fill="var(--ink-2)" font-family="var(--font-mono)">1.9</text>
+</svg><div class="diagram-cap">(preview — વિકર્ણ સંબંધ, Part 09 માં વિગતે) Li-Mg, Be-Al, B-Si ની EN નજીકની — સામ્ય ગુણધર્મ પાછળનું એક કારણ.</div></div>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Acid rain (SO₂, NOₓ = acidic non-metal oxides, વરસાદના પાણી સાથે acid બનાવે) vs quicklime (CaO, basic metal oxide, soil ની acidity neutralize કરવા ખેતરમાં વપરાય) — બંને આ જ acidic/basic oxide ના સિદ્ધાંત પર.</div></div>
+
+<div class="exam-box box"><span class="label">high exam probability</span>"કેટલા amphoteric/acidic/basic oxide છે" ગણવાના પ્રશ્નો (Q.44-Q.46, Q.53 PYQ માં) — દરેક oxide ને પરમાણ્વીય તત્વની metal/non-metal/metalloid ઓળખ સાથે જોડીને ઝડપથી ગણો.</div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>N₂O, NO ને "acidic" ગણી લેવા — આ neutral oxides છે (ન acidic, ન basic) — nitrogen ના બધા જ oxide acidic નથી હોતા.</div>
+
+<div class="check-box box"><span class="label">self-check</span>P₄O₁₀ acidic છે કે basic, અને કેમ? <span style="color:var(--ink-3)">(જવાબ: acidic — P non-metal, ઊંચું EN, પાણી સાથે H₃PO₄ બનાવે)</span></div>
+
+
+<!-- upd-2026-10-04:per-oxides -->
+<h3>B અને Group 14 ના oxide — acid/base પ્રકૃતિ</h3>
+<div class="diagram"><svg viewBox="0 0 680 210" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gox"><stop offset="0" style="stop-color:var(--exam)"/><stop offset="0.5" style="stop-color:var(--mistake)"/><stop offset="1" style="stop-color:var(--formula)"/></linearGradient></defs><rect x="60.0" y="92.0" width="560.0" height="16.0" rx="8" stroke="none" fill="url(#gox)" stroke-width="0"/><text x="60.0" y="134.0" fill="var(--exam)" font-size="12" text-anchor="start" font-family="Source Sans 3, sans-serif">acidic</text><text x="340.0" y="134.0" fill="var(--mistake)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif">amphoteric</text><text x="620.0" y="134.0" fill="var(--formula)" font-size="12" text-anchor="end" font-family="Source Sans 3, sans-serif">basic</text><line x1="82.4" y1="92.0" x2="82.4" y2="74.0" stroke="var(--ink)" stroke-width="1"/><text x="82.4" y="69.0" fill="var(--exam)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">B₂O₃</text><line x1="116.0" y1="92.0" x2="116.0" y2="48.0" stroke="var(--ink)" stroke-width="1"/><text x="116.0" y="43.0" fill="var(--exam)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">CO₂</text><line x1="155.2" y1="92.0" x2="155.2" y2="74.0" stroke="var(--ink)" stroke-width="1"/><text x="155.2" y="69.0" fill="var(--exam)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">SiO₂</text><line x1="261.6" y1="92.0" x2="261.6" y2="48.0" stroke="var(--ink)" stroke-width="1"/><text x="261.6" y="43.0" fill="var(--mistake)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">GeO₂</text><line x1="323.2" y1="92.0" x2="323.2" y2="74.0" stroke="var(--ink)" stroke-width="1"/><text x="323.2" y="69.0" fill="var(--mistake)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">SnO₂</text><line x1="373.6" y1="92.0" x2="373.6" y2="48.0" stroke="var(--ink)" stroke-width="1"/><text x="373.6" y="43.0" fill="var(--mistake)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">PbO₂</text><line x1="592.0" y1="92.0" x2="592.0" y2="74.0" stroke="var(--ink)" stroke-width="1"/><text x="592.0" y="69.0" fill="var(--formula)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Na₂O</text><text x="340.0" y="190.0" fill="var(--ink-2)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif">Group 14 માં નીચે જતાં ધાત્વીયતા વધે ⟹ oxide acidic → amphoteric</text></svg><div class="diagram-cap">Oxide ને પટ્ટી પર group trend ના ક્રમમાં ગોઠવ્યા (C → Pb નીચે જતાં basicity વધે).</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">B₂O₃, CO₂, SiO₂ — acidic;  GeO₂, SnO₂, PbO₂ — amphoteric</div><div class="meaning">Amphoteric oxide acid અને base બંને સાથે પ્રક્રિયા કરે: SnO₂ + 4HCl → SnCl₄ + 2H₂O અને SnO₂ + 2NaOH → Na₂SnO₃ + H₂O. તેથી "HCl માં ઓગળે" એટલે basic કે amphoteric. Real-world: SiO₂ (કાચ) acid માં ઓગળતો નથી — એટલે જ પ્રયોગશાળામાં acid કાચના વાસણમાં રખાય; ફક્ત HF કાચને કોરે (glass etching).</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — CO₂, SiO₂, SnO₂, PbO₂, Al₂O₃</div><div class="step"><b>Need</b> — NaOH અને HCl બંનેમાં ઓગળે તેવા oxide</div><div class="step"><b>Method</b> — amphoteric ઓળખો</div><div class="step"><b>Calculation</b> — SnO₂, PbO₂, Al₂O₃ — amphoteric ⟹ 3</div><div class="step"><b>Check</b> — CO₂, SiO₂ ફક્ત NaOH માં (acidic) ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>SiO₂ ને amphoteric માનવો (Si "અર્ધધાતુ" હોવાથી) — SiO₂ acidic છે.</div>
+<div class="next-line"><b>આગળ:</b> Part 09 — વિકર્ણ સંબંધ (diagonal relationship), છેલ્લો ભાગ.</div>
+</div>
+
+<div class="part" id="p9">
+<h2><span class="num">09</span>વિકર્ણ સંબંધ (Diagonal Relationship)</h2>
+
+<div class="outcome"><span class="label">outcome</span>Li-Mg, Be-Al, B-Si ના જોડાં કેમ સામ્ય ગુણધર્મ ધરાવે છે — period 2 ના તત્વો period 3 ના તેમના નીચે-જમણે પડોશી જેવા કેમ વર્તે.</div>
+
+<h3>વ્યાખ્યા — "વિકર્ણ" કેમ?</h3>
+<p>Group ની અંદર નીચે જતા ત્રિજ્યા વધે (IE/EN ઘટે); period માં જમણે જતા ત્રિજ્યા ઘટે (IE/EN વધે). <b>Diagonal (વિકર્ણ) neighbour</b> (એક group જમણે, એક period નીચે) માટે આ બે effects વિરુદ્ધ દિશામાં કામ કરી <b>આંશિક રીતે એકબીજાને cancel</b> કરે — પરિણામે Li અને Mg નું Zeff/ત્રિજ્યા/EN ratio અસલી પડોશીઓ (Li-Na કે Be-Mg) કરતાં વધુ નજીક રહે છે.</p>
+
+<div class="diagram"><svg viewBox="0 0 400 220" role="img"><title>Diagonal relationship diagram</title>
+<text x="200" y="16" text-anchor="middle" class="ts" font-family="var(--font-mono)">વિકર્ણ સંબંધ — period 2 ↘ period 3</text>
+<rect x="60" y="40" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/><rect x="140" y="40" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/><rect x="220" y="40" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/><rect x="60" y="100" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/><rect x="140" y="100" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/><rect x="220" y="100" width="70" height="50" fill="var(--surface-2)" stroke="var(--line)" rx="4"/>
+<text x="95" y="70" text-anchor="middle" class="th">Li</text><text x="95" y="88" text-anchor="middle" class="ts">Z=3</text>
+<text x="175" y="70" text-anchor="middle" class="th">Be</text><text x="175" y="88" text-anchor="middle" class="ts">Z=4</text>
+<text x="255" y="70" text-anchor="middle" class="th">B</text><text x="255" y="88" text-anchor="middle" class="ts">Z=5</text>
+<text x="95" y="130" text-anchor="middle" class="th">Na</text><text x="95" y="148" text-anchor="middle" class="ts">Z=11</text>
+<text x="175" y="130" text-anchor="middle" class="th">Mg</text><text x="175" y="148" text-anchor="middle" class="ts">Z=12</text>
+<text x="255" y="130" text-anchor="middle" class="th">Al</text><text x="255" y="148" text-anchor="middle" class="ts">Z=13</text>
+<line x1="95" y1="90" x2="175" y2="115" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrD)"/>
+<line x1="175" y1="90" x2="255" y2="115" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrD)"/>
+<defs><marker id="arrD" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--exam)"/></marker></defs>
+<text x="200" y="195" text-anchor="middle" class="ts" font-family="var(--font-mono)" fill="var(--exam)">Li↘Mg, Be↘Al, B↘Si — સામ્ય ગુણધર્મ</text>
+</svg><div class="diagram-cap">દરેક વિકર્ણ જોડાંનું EN/ત્રિજ્યા/ધ્રુવીકરણ-શક્તિ નજીક હોય છે (Part 06 ના diagonal_en ચાર્ટ સાથે cross-check કરો).</div></div>
+
+<table><tr><th>જોડું</th><th>સામ્ય ગુણધર્મ</th></tr>
+<tr><td class="rowlabel">Li – Mg</td><td>બંનેના carbonate ગરમ કરતા ઓક્સાઇડ બને (Li₂CO₃, MgCO₃ decompose થાય — Na₂CO₃ નથી થતું); બંને N₂ સાથે સીધા nitride બનાવે</td></tr>
+<tr><td class="rowlabel">Be – Al</td><td>બંનેના ઓક્સાઇડ/હાઇડ્રોક્સાઇડ amphoteric (BeO, Al₂O₃ બંને acid+base સાથે પ્રતિક્રિયા આપે — MgO નથી amphoteric)</td></tr>
+<tr><td class="rowlabel">B – Si</td><td>બંને non-metal-જેવા, covalent hydrides બનાવે, semiconducting/network solid ગુણધર્મ</td></tr>
+</table>
+
+<div class="example"><span class="label">real-world example</span>
+<div class="step">Be-Al વિકર્ણ સંબંધ ના કારણે Beryl (Be₃Al₂Si₆O₁₈, emerald નું ખનિજ) માં Be અને Al બંને સમાન coordination-જેવી ભૂમિકા લે છે — ખનિજશાસ્ત્રમાં practical relevance.</div></div>
+
+<div class="mistake-box box"><span class="label">common mistake</span>Diagonal relationship ને "group similarity" જેટલી મજબૂત ધારવી — આ ફક્ત આંશિક સામ્યતા છે (કેટલાક ગુણધર્મોમાં), Li હજુ alkali metal (group 1) જ છે, Mg ના ગુણધર્મો સંપૂર્ણ નથી અપનાવતું.</div>
+
+<div class="check-box box"><span class="label">self-check</span>B-Si વિકર્ણ જોડામાં કયો common ગુણધર્મ predict કરી શકાય? <span style="color:var(--ink-3)">(જવાબ: બંને network covalent solid, semiconducting character — non-metal/metalloid જેવું વર્તન)</span></div>
+
+<div class="remember"><span class="label">remember — સંપૂર્ણ ચેપ્ટરનો સાર</span>
+<ol>
+<li>Zeff (= Z − shielding) એ બધા trends નું મૂળ engine છે</li>
+<li>આવર્તમાં જમણે: ત્રિજ્યા↓, IE↑, EN↑, EA વધુ ઋણ (halogen સુધી), ધાત્વીય↓</li>
+<li>સમૂહમાં નીચે: ત્રિજ્યા↑, IE↓, EN↓, ધાત્વીય↑</li>
+<li>Isoelectronic series: e⁻ count સરખો → Z વધુ = ત્રિજ્યા ઓછી</li>
+<li>Be&gt;B, N&gt;O, Mg&gt;Al, P&gt;S — fully/half-filled subshell સ્થિરતાના અપવાદ (IE)</li>
+<li>Cl&gt;F (EA magnitude) — F ના નાના કદથી e⁻-e⁻ repulsion અપવાદ</li>
+<li>Metal oxide=basic, non-metal oxide=acidic, સીમા પરના=amphoteric</li>
+</ol></div>
+</div>
+</div>

@@ -1,0 +1,1106 @@
+<meta charset="utf-8">
+<title>Quadratic Equations chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+.part-why{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;font-style:italic}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.mono{font-family:var(--font-mono)}
+sup,sub{font-size:.7em}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+.th{font-size:13px;fill:var(--ink);font-weight:600}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Quadratic Equations — full chapter</h1>
+<p class="subtitle">11th science · Gujarat board + JEE foundation · detailed teaching text</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> — final target: કોઈપણ quadratic equation ના roots, એમની nature, અને roots-based conditions confidently handle કરવા
+  <ol style="list-style:none;padding-left:0;counter-reset:none">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">Quadratic equation શું છે</a> — introduction</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">Roots શોધવા</a> — factoring, quadratic formula, discriminant</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">Nature of roots</a> — D ના sign પરથી</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">Sum, product અને roots બનાવવા</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">Symmetric functions</a> — α²+β², α³+β³ વગેરે</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">Common roots</a> — one common, both common</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">Location of roots</a> — interval માં roots, graphical method</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">Quadratic inequalities</a> — sign/wavy-curve method</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">JEE extensions</a> — higher-degree reducible eqns, range of rational functions, more-than-2-roots trick</li>
+  </ol>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="part" id="intro" style="padding-top:0">
+<h2><span class="num">00</span>Quadratic equation શું છે</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Quadratic equation ના roots ને directly શોધ્યા વગર પણ, roots વિશેની condition (sum, product, nature, location, common root) જવાબ આપી શકાય — એ આ chapter નું core skill છે.
+</div>
+
+<h3>વ્યાખ્યા</h3>
+<p><b>Quadratic equation</b> એટલે <span class="mono">ax² + bx + c = 0</span> (જ્યાં a≠0). Degree 2 ની polynomial equation — એટલે મહત્તમ 2 roots (real અથવા complex) હોય છે. અહીં a,b,c ને <b>coefficients</b> કહેવાય — Latin <i>co-</i> (=સાથે) + <i>efficere</i> (=બનાવવું, અસર કરવું) પરથી — એટલે "x ની સાથે ભેગા મળીને term ની કિંમત બનાવતી સંખ્યા" (દા.ત. bx માં b, x ની સાથે "સાથે-કામ" કરે છે).</p>
+
+<div class="concept-box box">
+  <span class="label">"Quadratic" શબ્દ નો પાયો</span>
+  <b>"Quadratic"</b> Latin શબ્દ <i>quadratus</i> (=squared, ચોરસ) પરથી આવે છે, અને <i>quadr-</i> (=ચાર) સાથે જોડાયેલો છે — ચોરસ ને ચાર બાજુ હોય છે, અને x² ("x નો square") ભૂમિતિ રીતે ચોરસ ના area જેવું છે (બાજુ=x હોય તો area=x²). એટલે "quadratic equation" = "x² ધરાવતું equation" = "squaring સાથે સંકળાયેલું equation". આ જ મૂળ શબ્દ "quadrilateral" (ચાર બાજુ વાળો આકાર), "quadrant" (વર્તુળ નો ચોથો ભાગ) માં પણ દેખાય છે — બધે "ચાર/square" નો concept common છે.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>x² = ચોરસ નું area — "quadratic" શબ્દ નું ભૂમિતિ મૂળ</title><desc>બાજુ x વાળો ચોરસ, area=x×x=x². x=3 હોય તો area=9, x=5 હોય તો area=25 — બે concrete examples</desc>
+<g transform="translate(150,20)">
+<rect x="0" y="0" width="90" height="90" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<text class="ts" x="35" y="-8">x = 3</text>
+<text class="ts" x="-15" y="50">x</text>
+<text class="th" x="20" y="50" fill="var(--formula)">area = 3×3 = 9</text>
+</g>
+<g transform="translate(400,20)">
+<rect x="0" y="0" width="150" height="150" fill="none" stroke="var(--exam)" stroke-width="2"/>
+<text class="ts" x="60" y="-8">x = 5</text>
+<text class="ts" x="-15" y="80">x</text>
+<text class="th" x="35" y="80" fill="var(--exam)">area = 5×5 = 25</text>
+</g>
+</svg>
+<div class="diagram-cap">બાજુ x મોટી થાય એટલે area (x²) બાજુ ના square (વર્ગ) જેટલી ઝડપથી વધે — આ જ "quadratic growth" નો પાયો</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">"root" શબ્દ નો પાયો — "solution" કેમ નહીં?</span>
+  <b>Root ની વ્યાખ્યા:</b> r એ equation નો root છે ⟺ x ની જગ્યાએ r મૂકતાં equation સાચું પડે (એટલે ax²+bx+c માં x=r મૂકતાં કિંમત 0 થાય). આ કોઈપણ equation ના "solution" ની general વ્યાખ્યા જ છે — તો પછી ખાસ "root" કેમ?
+  <br><br>
+  <b>કારણ — factor theorem:</b> <span class="mono">(x − r)</span> એ એવું expression છે જે <b>x ના બદલાવા સાથે બદલાય</b> છે, અને <b>ફક્ત x=r પર જ 0</b> થાય છે (બીજા કોઈ x પર નહીં — r એક fixed constant છે, x=r ના મૂક્યે (x−r)≠0). આ જ કારણથી "r" ને બદલે "(x−r)" લખાય છે — ફક્ત "r" તો કંઈ 0 નથી થતું, પણ "(x−r)" x ના function તરીકે બરાબર x=r પર 0 થાય છે.
+  <br><br>
+  <b>Zero-product property (ખરું કારણ multiply કરવાથી equation પાછું મળે છે):</b> બે સંખ્યાઓ નો ગુણાકાર 0 થાય ⟺ ઓછામાં ઓછી એક સંખ્યા 0 હોય. એટલે <span class="mono">(x−r₁)(x−r₂) = 0  ⟺  x−r₁=0  અથવા  x−r₂=0  ⟺  x=r₁  અથવા  x=r₂</span>. આ કોઈ metaphor નથી — આ જ ખરું ગણિત છે જે બતાવે છે કે factored form ના roots બરાબર r₁,r₂ જ છે, બીજું કંઈ નહીં.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>y=(x−2), y=(x−5), અને y=(x−2)(x−5) — ત્રણેય ને એક જ graph પર, roots 2,5 ના computed points સાથે</title><desc>બે સીધી લીટીઓ પોતપોતાના root (2 અને 5) પર x-axis ને કાપે છે, અને એમનો product (parabola, નાનું scale) બંને જ points પર x-axis ને કાપે છે</desc>
+<g transform="translate(320,15)">
+<polyline points="-140.0,114.0 -120.0,108.0 -100.0,102.0 -80.0,96.0 -60.0,90.0 -40.0,84.0 -20.0,78.0 0.0,72.0 20.0,66.0 40.0,60.0 60.0,54.0 80.0,48.0 100.0,42.0 120.0,36.0 140.0,30.0" fill="none" stroke="var(--check)" stroke-width="1.5"/>
+<polyline points="-140.0,150.0 -120.0,144.0 -100.0,138.0 -80.0,132.0 -60.0,126.0 -40.0,120.0 -20.0,114.0 0.0,108.0 20.0,102.0 40.0,96.0 60.0,90.0 80.0,84.0 100.0,78.0 120.0,72.0 140.0,66.0" fill="none" stroke="var(--mistake)" stroke-width="1.5"/>
+<polyline points="-140.0,50.0 -130.0,56.8 -120.0,63.0 -110.0,68.8 -100.0,74.0 -90.0,78.8 -80.0,83.0 -70.0,86.8 -60.0,90.0 -50.0,92.8 -40.0,95.0 -30.0,96.8 -20.0,98.0 -10.0,98.8 0.0,99.0 10.0,98.8 20.0,98.0 30.0,96.8 40.0,95.0 50.0,92.8 60.0,90.0 70.0,86.8 80.0,83.0 90.0,78.8 100.0,74.0 110.0,68.8 120.0,63.0 130.0,56.8 140.0,50.0" fill="none" stroke="var(--formula)" stroke-width="2.5"/>
+<line x1="-140" y1="90" x2="140" y2="90" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-60" cy="90" r="4" fill="var(--exam)"/><circle cx="60" cy="90" r="4" fill="var(--exam)"/>
+<text class="ts" x="-72" y="108" fill="var(--exam)">x=2</text><text class="ts" x="52" y="108" fill="var(--exam)">x=5</text>
+<text class="ts" x="100" y="35" fill="var(--check)">y=(x−2)</text>
+<text class="ts" x="100" y="70" fill="var(--mistake)">y=(x−5)</text>
+<text class="ts" x="-135" y="45" fill="var(--formula)">y=(x−2)(x−5)</text>
+</g>
+</svg>
+<div class="diagram-cap">(x−2) પોતે x=2 પર 0 થાય, (x−5) પોતે x=5 પર 0 થાય — બંને ને multiply કરેલો parabola બંને જ points પર x-axis ને કાપે છે, બીજે ક્યાંય નહીં</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 230" role="img"><title>Zero-product property — શા માટે (x−r) અને શા માટે multiply કરવાથી roots બરાબર r₁,r₂ જ મળે</title><desc>x ની ત્રણ કિંમતો ચકાસો: x=r1 (પહેલું factor 0), x=r2 (બીજું factor 0), x=other (બંને non-zero, product non-zero)</desc>
+<g transform="translate(30,10)">
+<rect x="0" y="0" width="620" height="34" fill="var(--surface-2)" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="15" y="23">x ની કિંમત</text>
+<text class="th" x="175" y="23">(x − r₁)</text>
+<text class="th" x="320" y="23">(x − r₂)</text>
+<text class="th" x="465" y="23">Product</text>
+</g>
+<g transform="translate(30,44)">
+<rect x="0" y="0" width="620" height="34" fill="var(--formula-bg)" stroke="var(--line)" stroke-width="1"/>
+<text class="t" x="15" y="23">x = r₁</text>
+<text class="t" x="175" y="23" fill="var(--formula)">0</text>
+<text class="t" x="320" y="23">(r₁−r₂), non-zero</text>
+<text class="t" x="465" y="23" fill="var(--formula)">0 ✓ root</text>
+</g>
+<g transform="translate(30,78)">
+<rect x="0" y="0" width="620" height="34" fill="var(--formula-bg)" stroke="var(--line)" stroke-width="1"/>
+<text class="t" x="15" y="23">x = r₂</text>
+<text class="t" x="175" y="23">(r₂−r₁), non-zero</text>
+<text class="t" x="320" y="23" fill="var(--formula)">0</text>
+<text class="t" x="465" y="23" fill="var(--formula)">0 ✓ root</text>
+</g>
+<g transform="translate(30,112)">
+<rect x="0" y="0" width="620" height="34" fill="var(--mistake-bg)" stroke="var(--line)" stroke-width="1"/>
+<text class="t" x="15" y="23">x = બીજું કંઈપણ</text>
+<text class="t" x="175" y="23">non-zero</text>
+<text class="t" x="320" y="23">non-zero</text>
+<text class="t" x="465" y="23" fill="var(--mistake)">non-zero — root નહીં</text>
+</g>
+<text x="30" y="180" fill="var(--ink-2)" font-size="13.5">"r" એકલું ક્યારેય 0 નથી થતું — "(x−r)" જ x ના function તરીકે</text>
+<text x="30" y="200" fill="var(--ink-2)" font-size="13.5">બરાબર x=r પર 0 થાય છે. એટલે જ factor માં "x−" જરૂરી છે.</text>
+</svg>
+<div class="diagram-cap">Product 0 થાય ⟺ ઓછામાં ઓછું એક factor 0 હોય — આ mechanism જ roots ને factors સાથે જોડે છે</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — actual numbers, r₁,r₂ ને બદલે</span>
+  <div class="step"><b>ધારો roots 2 અને 5 છે.</b> Factor form: (x−2)(x−5)</div>
+  <div class="step"><b>Check x=2:</b> (2−2)(2−5) = (0)(−3) = 0 ✓ — પહેલું factor 0 થયું, product 0</div>
+  <div class="step"><b>Check x=5:</b> (5−2)(5−5) = (3)(0) = 0 ✓ — બીજું factor 0 થયું, product 0</div>
+  <div class="step"><b>Check x=1 (કોઈ root નહીં):</b> (1−2)(1−5) = (−1)(−4) = 4 ≠ 0 — બંને factors non-zero, product પણ non-zero</div>
+  <div class="step"><b>Expand:</b> (x−2)(x−5) = x² −5x −2x +10 = x² −7x +10 — એટલે sum=2+5=7 (=−b/a=7/1 ✓), product=2×5=10 (=c/a=10/1 ✓)</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>ax²+bx+c=0 ના roots = parabola y=ax²+bx+c ના x-axis ને છેદવાના points — curve y=(x−1)(x−3) નું computed plot</title><desc>a>0 હોય તો U-shape parabola, a<0 હોય તો ઊંધો ∩-shape parabola, roots (x=1,3) જ્યાં curve x-axis ને છેદે છે — points ખરેખર curve પર computed છે</desc>
+<g transform="translate(160,50)">
+<polyline points="-110.0,5.0 -104.5,11.0 -99.0,16.8 -93.5,22.2 -88.0,27.3 -82.5,32.1 -77.0,36.6 -71.5,40.7 -66.0,44.6 -60.5,48.2 -55.0,51.4 -49.5,54.3 -44.0,57.0 -38.5,59.3 -33.0,61.3 -27.5,63.0 -22.0,64.4 -16.5,65.5 -11.0,66.3 -5.5,66.7 0.0,66.9 5.5,66.7 11.0,66.3 16.5,65.5 22.0,64.4 27.5,63.0 33.0,61.3 38.5,59.3 44.0,57.0 49.5,54.3 55.0,51.4 60.5,48.2 66.0,44.6 71.5,40.7 77.0,36.6 82.5,32.1 88.0,27.3 93.5,22.2 99.0,16.8 104.5,11.0 110.0,5.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-130" y1="60" x2="130" y2="60" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-36.7" cy="60" r="3.5" fill="var(--exam)"/><circle cx="36.7" cy="60" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-52" y="78" fill="var(--exam)">root α=1</text><text class="ts" x="20" y="78" fill="var(--exam)">root β=3</text>
+<text class="th" x="-30" y="-5">a &gt; 0 (U-shape)</text>
+</g>
+<g transform="translate(460,50)">
+<polyline points="-110.0,115.0 -104.5,109.0 -99.0,103.2 -93.5,97.8 -88.0,92.7 -82.5,87.9 -77.0,83.4 -71.5,79.3 -66.0,75.4 -60.5,71.8 -55.0,68.6 -49.5,65.7 -44.0,63.0 -38.5,60.7 -33.0,58.7 -27.5,57.0 -22.0,55.6 -16.5,54.5 -11.0,53.7 -5.5,53.3 0.0,53.1 5.5,53.3 11.0,53.7 16.5,54.5 22.0,55.6 27.5,57.0 33.0,58.7 38.5,60.7 44.0,63.0 49.5,65.7 55.0,68.6 60.5,71.8 66.0,75.4 71.5,79.3 77.0,83.4 82.5,87.9 88.0,92.7 93.5,97.8 99.0,103.2 104.5,109.0 110.0,115.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-130" y1="60" x2="130" y2="60" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-36.7" cy="60" r="3.5" fill="var(--exam)"/><circle cx="36.7" cy="60" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-52" y="78" fill="var(--exam)">root α=1</text><text class="ts" x="20" y="78" fill="var(--exam)">root β=3</text>
+<text class="th" x="-40" y="130">a &lt; 0 (∩-shape)</text>
+</g>
+</svg>
+<div class="diagram-cap">Roots = જ્યાં curve x-axis ને છેદે છે. a&gt;0 → cup ઉપર તરફ ખૂલે, a&lt;0 → નીચે તરફ</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Quadratic equations physics ના projectile motion, roots-based inequality problems, coordinate geometry (circle-line intersection), અને JEE ના લગભગ દરેક chapter (complex numbers, sequences, calculus ના maxima-minima) માં પાછળથી embedded તરીકે આવે છે. "Roots શોધવા" કરતાં "roots વિશે reasoning કરવું" — એ જ આ chapter નું JEE-level core છે.
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  ક્રિકેટ કે ફૂટબોલમાં ઊંચે ફેંકેલા બોલ ની height-vs-time curve બરાબર આ જ parabola છે (h=−½gt²+u·t+h₀ સ્વરૂપ, જે ax²+bx+c જ છે). Roots = બોલ ક્યારે જમીન અડકે (h=0) — બે roots માંથી એક negative time (ભૂતકાળ, discard) અને એક positive time (actual landing) હોય છે.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>h(t) = −t²+3t+4 — બોલ ની height-vs-time curve, computed plot</title><desc>t=−1 (ભૂતકાળ, discard) અને t=4 (actual landing) બે roots, t=0 પર h₀=4 (throw ની શરૂઆતની height), vertex t=1.5 પર max height 6.25</desc>
+<g transform="translate(160,20)">
+<polyline points="-140.0,161.2 -130.7,143.9 -121.3,127.7 -112.0,112.6 -102.7,98.8 -93.3,86.2 -84.0,74.8 -74.7,64.6 -65.3,55.7 -56.0,47.8 -46.7,41.2 -37.3,35.8 -28.0,31.6 -18.7,28.7 -9.3,26.8 0.0,26.2 9.3,26.8 18.7,28.7 28.0,31.6 37.3,35.9 46.7,41.2 56.0,47.8 65.3,55.7 74.7,64.7 84.0,74.9 93.3,86.2 102.7,98.8 112.0,112.7 121.3,127.7 130.7,143.9 140.0,161.2" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-140" y1="120" x2="140" y2="120" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-116.7" cy="120" r="3.5" fill="var(--mistake)"/><text class="ts" x="-140" y="138" fill="var(--mistake)">t=−1 (discard)</text>
+<circle cx="116.7" cy="120" r="4" fill="var(--exam)"/><text class="ts" x="90" y="138" fill="var(--exam)">t=4 (landing)</text>
+<circle cx="-70" cy="60" r="3.5" fill="var(--check)"/><text class="ts" x="-105" y="50" fill="var(--check)">h₀=4 (t=0, throw)</text>
+<circle cx="0" cy="26.2" r="3.5" fill="var(--ink)"/><text class="ts" x="10" y="15">vertex: max height=6.25 (t=1.5)</text>
+</g>
+</svg>
+<div class="diagram-cap">Physical time માત્ર t≥0 માટે meaningful — t=−1 root ગણિત રીતે સાચો છે પણ ભૂતકાળ હોવાથી discard, t=4 એ actual landing</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">10th થી shift</span>
+  10th માં આપણે માત્ર actual roots શોધતા (factoring/formula). 11th-JEE માં પ્રશ્નો મોટેભાગે roots ને directly શોધ્યા વગર — sum/product/discriminant ના relations વાપરીને — પૂછાય છે. Roots શોધવા એ છેલ્લો resort છે, પહેલો નહીં.
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 1 — roots શોધવાની ત્રણ રીત, અને discriminant નો પરિચય.</div>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="p1">
+<h2><span class="num">01</span>Roots શોધવા</h2>
+<p class="part-why">શા માટે ભણવું: આગળના બધા parts આ પાયા પર ઊભા છે — discriminant D એ આખા chapter ની "master quantity" છે.</p>
+
+<div class="formula-box">
+  <span class="label">formula — quadratic formula</span>
+  <div class="f">x = [−b ± √(b²−4ac)] / 2a</div>
+  <div class="meaning">ax²+bx+c=0 ના બંને roots — factoring ન થાય ત્યારે પણ કામ કરે</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 220" role="img"><title>Quadratic formula ના બે roots parabola ના vertex ની બંને બાજુ symmetric રીતે આવેલા છે — y=(x−1)(x−3) નું computed plot</title><desc>Vertex x=2 (roots 1,3 નું average), બંને roots વચ્ચેનું અંતર 1 એકમ each side — vertex થી બંને બાજુ સરખા અંતરે, points ખરેખર curve પર computed છે</desc>
+<g transform="translate(160,30)">
+<polyline points="-110.0,102.0 -104.5,107.3 -99.0,112.3 -93.5,117.0 -88.0,121.4 -82.5,125.6 -77.0,129.5 -71.5,133.2 -66.0,136.6 -60.5,139.7 -55.0,142.5 -49.5,145.1 -44.0,147.4 -38.5,149.4 -33.0,151.1 -27.5,152.6 -22.0,153.8 -16.5,154.8 -11.0,155.5 -5.5,155.9 0.0,156.0 5.5,155.9 11.0,155.5 16.5,154.8 22.0,153.8 27.5,152.6 33.0,151.1 38.5,149.4 44.0,147.4 49.5,145.1 55.0,142.5 60.5,139.7 66.0,136.6 71.5,133.2 77.0,129.5 82.5,125.6 88.0,121.4 93.5,117.0 99.0,112.3 104.5,107.3 110.0,102.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-140" y1="150" x2="140" y2="150" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="0" y1="150" x2="0" y2="0" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<circle cx="-36.7" cy="150" r="3.5" fill="var(--exam)"/><circle cx="36.7" cy="150" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-95" y="172">root=1</text><text class="ts" x="30" y="172">root=3</text>
+<text class="ts" x="-95" y="188" fill="var(--ink-3)">(−b/2a − √D/2a)</text><text class="ts" x="30" y="188" fill="var(--ink-3)">(−b/2a + √D/2a)</text>
+<text class="ts" x="-30" y="-5" fill="var(--ink-2)">x=2 (vertex, axis of symmetry)</text>
+</g>
+</svg>
+<div class="diagram-cap">બંને roots vertex (−b/2a) ની આસપાસ સપ્રમાણ છે — ±√D/2a જેટલા દૂર</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  Satellite dish કે car headlight નું parabolic mirror આ જ curve નું 3D version છે — light/signal ને એક focus point પર ભેગા કરવા. Engineers ne mirror ના edges ક્યાં cut કરવા (એટલે "roots" જેવું boundary) એ પણ આ જ પ્રકારના equation થી નક્કી થાય છે.
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — discriminant</span>
+  <div class="f">D = b² − 4ac</div>
+  <div class="meaning">roots ની nature (real/complex, equal/distinct, rational/irrational) — D જ decide કરે છે</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">"Discriminant" શબ્દ નો પાયો</span>
+  Latin <i>discriminare</i> = "અલગ પાડવું, વચ્ચે ભેદ પારખવો" (discrimination શબ્દ પણ આ જ મૂળ માંથી — "ભેદ પારખવો"). D ને "discriminant" કહેવાય કારણ કે એ <b>એકલો number</b> રહીને પણ roots ના ત્રણ સંભવિત "પ્રકાર" (real-distinct, real-equal, complex) ને પારખી/અલગ પાડી આપે છે — roots શોધ્યા વગર જ.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> 2x² − 5x + 2 = 0 ના roots શોધો.</div>
+  <div class="step"><b>Factoring:</b> 2x² −4x −x +2 = 2x(x−2) −1(x−2) = (2x−1)(x−2) = 0</div>
+  <div class="step"><b>Roots:</b> x = 1/2, 2</div>
+  <div class="step"><b>Check via D:</b> D = 25−16 = 9 = 3² (perfect square) → rational roots ✓ consistent</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Quadratic formula માં <span class="mono">−b</span> નું sign ભૂલવું, અથવા <span class="mono">2a</span> ને બદલે <span class="mono">a</span> થી ભાગવું. લખતી વખતે formula આખું એકસાથે યાદ રાખો, ટુકડે ટુકડે નહીં.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x² − 6x + 9 = 0 ના roots શોધો, અને D ની કિંમત ચકાસો — D=0 નો શું અર્થ થાય?
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 2 — D ના sign પરથી roots ની nature ના બધા cases.</div>
+</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="p2">
+<h2><span class="num">02</span>Nature of roots</h2>
+<p class="part-why">શા માટે ભણવું: JEE માં "roots real છે?" "roots equal છે?" પ્રકારના પ્રશ્નો roots શોધ્યા વગર, ફક્ત D પરથી જ પુછાય છે.</p>
+
+<div class="tblwrap">
+<table>
+<tr><th>D ની કિંમત</th><th>Roots ની nature</th></tr>
+<tr><td class="rowlabel">D &gt; 0</td><td>બે distinct real roots</td></tr>
+<tr><td class="rowlabel">D = 0</td><td>બે equal (repeated) real roots = −b/2a</td></tr>
+<tr><td class="rowlabel">D &lt; 0</td><td>બે conjugate complex roots (p±iq સ્વરૂપ)</td></tr>
+<tr><td class="rowlabel">D &gt; 0, perfect square<br>(a,b,c rational)</td><td>બે rational roots</td></tr>
+<tr><td class="rowlabel">D &gt; 0, non-perfect-square<br>(a,b,c rational)</td><td>બે conjugate irrational (surd) roots</td></tr>
+</table>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>D&gt;0, D=0, D&lt;0 — parabola x-axis ને કેટલી વાર છેદે છે, ત્રણેય curves computed points પરથી</title><desc>ડાબે y=(x−1)(x−3) (D&gt;0) બે વાર છેદે; વચ્ચે y=(x−2)² (D=0) ફક્ત touch કરે (tangent, બે roots equal); જમણે y=(x−2)²+1 (D&lt;0) ક્યારેય નથી અડતો</desc>
+<g transform="translate(110,15)">
+<polyline points="-80.0,85.0 -72.0,96.8 -64.0,107.3 -56.0,116.6 -48.0,124.6 -40.0,131.4 -32.0,137.0 -24.0,141.3 -16.0,144.4 -8.0,146.3 0.0,146.9 8.0,146.3 16.0,144.4 24.0,141.3 32.0,137.0 40.0,131.4 48.0,124.6 56.0,116.6 64.0,107.3 72.0,96.8 80.0,85.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-100" y1="140" x2="100" y2="140" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-26.7" cy="140" r="3.5" fill="var(--exam)"/><circle cx="26.7" cy="140" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-60" y="15" fill="var(--ink-2)">D&gt;0</text>
+<text class="ts" x="-75" y="160" fill="var(--exam)">2 distinct roots</text>
+</g>
+<g transform="translate(340,15)">
+<polyline points="-80.0,80.0 -72.0,91.4 -64.0,101.6 -56.0,110.6 -48.0,118.4 -40.0,125.0 -32.0,130.4 -24.0,134.6 -16.0,137.6 -8.0,139.4 0.0,140.0 8.0,139.4 16.0,137.6 24.0,134.6 32.0,130.4 40.0,125.0 48.0,118.4 56.0,110.6 64.0,101.6 72.0,91.4 80.0,80.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-100" y1="140" x2="100" y2="140" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="0" cy="140" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-60" y="15" fill="var(--ink-2)">D=0</text>
+<text class="ts" x="-70" y="160" fill="var(--exam)">1 point, touch (tangent)</text>
+</g>
+<g transform="translate(560,15)">
+<polyline points="-80.0,65.0 -72.0,76.4 -64.0,86.6 -56.0,95.6 -48.0,103.4 -40.0,110.0 -32.0,115.4 -24.0,119.6 -16.0,122.6 -8.0,124.4 0.0,125.0 8.0,124.4 16.0,122.6 24.0,119.6 32.0,115.4 40.0,110.0 48.0,103.4 56.0,95.6 64.0,86.6 72.0,76.4 80.0,65.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-100" y1="140" x2="100" y2="140" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="-60" y="15" fill="var(--ink-2)">D&lt;0</text>
+<text class="ts" x="-70" y="160" fill="var(--exam)">0 real roots</text>
+</g>
+</svg>
+<div class="diagram-cap">D એ literally "curve x-axis ને કેટલી વાર અડકે છે" ગણે છે — 2 વાર, 1 વાર (touch), કે 0 વાર</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  રસ્તા પર બોલ ફેંક્યો હોય (D&gt;0: બે વાર જમીન ને અડકે — ફેંક્યો ત્યારે અને પડ્યો ત્યારે, પણ physically માત્ર landing વાળો root જ meaningful). Cricket માં બોલ બરાબર ફિલ્ડર ના હાથ ની height પર જ પહોંચે (D=0: એક જ point પર "just touch"). બોલ ક્યારેય જમીન ને ના અડકે એવી ઊંચાઈ પર જ રહે (D&lt;0: અશક્ય physically, પણ ગણિત રીતે "કોઈ real landing time નથી" — complex roots).
+</div>
+
+<div class="exam-box box">
+  <span class="label">high exam probability</span>
+  a,b,c rational હોય અને એક root p+√q (q non-perfect-square) હોય, તો બીજો root આપોઆપ p−√q જ હોવો જોઈએ — surd roots હંમેશા conjugate pair માં આવે છે. આ property ઘણી વાર "બીજો root શોધો" પ્રકારના પ્રશ્નમાં સીધી વપરાય છે.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  "D≥0 એટલે roots real" બોલતી વખતે a,b,c real હોવા જરૂરી છે એ ભૂલી જવાય છે — a,b,c complex હોય તો આ rule લાગુ નથી પડતું (JEE Advance level પર આ point ક્યારેક ટ્રેપ તરીકે વપરાય છે).
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — real-coefficient equation, one root given as non-real</span>
+  <div class="f">a,b,c ∈ ℝ અને એક root p+iq (q≠0) આપેલ હોય ⟹ બીજો root p−iq (conjugate) જ હોય</div>
+  <div class="meaning">આ પરથી S=α+β=2p, P=αβ=p²+q² સીધા મળી જાય — equation ફરી બનાવવા કે α−β, α−constant જેવી expressions શોધવા વાપરો</div>
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²−(3+2i)x+(1+3i)=0 — શું આ equation ના roots conjugate pair માં હશે? (Hint: coefficients real છે?)
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 3 — roots શોધ્યા વગર sum/product વાપરીને equation બનાવવી અને તોડવી.</div>
+</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="p3">
+<h2><span class="num">03</span>Sum, product અને roots બનાવવા</h2>
+<p class="part-why">શા માટે ભણવું: આ chapter નું સૌથી વધુ વપરાતું tool — "roots શોધ્યા વગર roots વિશે બોલવું".</p>
+
+<div class="formula-box">
+  <span class="label">formula — sum &amp; product of roots</span>
+  <div class="f">α + β = −b/a  ,  αβ = c/a</div>
+  <div class="meaning">ax²+bx+c=0 ના roots α,β માટે — direct coefficients પરથી</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — roots પરથી equation બનાવવી</span>
+  <div class="f">x² − (α+β)x + αβ = 0</div>
+  <div class="meaning">roots ની sum અને product ખબર હોય તો equation reconstruct કરવા</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>Sum અને product ને rectangle ના geometry તરીકે જોવું</title><desc>α,β ને rectangle ની બે બાજુ ધારો — perimeter/2 = α+β = sum, area = αβ = product</desc>
+<g transform="translate(230,30)">
+<rect x="-90" y="0" width="140" height="80" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<text class="t" x="-30" y="-10">α (લંબાઈ)</text>
+<text class="t" x="55" y="45">β (પહોળાઈ)</text>
+<text class="ts" x="-60" y="105" fill="var(--ink-2)">Area = αβ = product (P)</text>
+<text class="ts" x="-90" y="125" fill="var(--ink-2)">Perimeter/2 = α+β = sum (S)</text>
+</g>
+<text x="420" y="60" fill="var(--ink-2)" font-size="13">Sum-product ખબર હોય તો</text>
+<text x="420" y="82" fill="var(--ink-2)" font-size="13">rectangle ના sides (α,β) unique</text>
+<text x="420" y="104" fill="var(--ink-2)" font-size="13">રીતે નક્કી થાય — equation</text>
+<text x="420" y="126" fill="var(--ink-2)" font-size="13">x²−Sx+P=0 solve કરીને જ મળે</text>
+</svg>
+<div class="diagram-cap">Sum,Product ⟺ Rectangle ના sides — ક્લાસિક "sum-product આપ્યું, sides શોધો" problem નું ગણિત આ જ છે</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  "એક ખેતરની ફરતે 40m ની વાડ છે (perimeter fixed), અને area 96 m² છે — sides શોધો" પ્રકારના practical problems બરાબર આ formula વાપરે છે: sum=perimeter/2, product=area, પછી x²−(sum)x+product=0 solve કરો.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> 3x²−5x+2=0 ના roots α,β હોય, તો α+β અને αβ શોધો, અને 2α,2β ને roots ધરાવતું equation બનાવો.</div>
+  <div class="step">α+β = 5/3, αβ = 2/3</div>
+  <div class="step">નવા roots ની sum = 2α+2β = 2(5/3) = 10/3, product = 4αβ = 8/3</div>
+  <div class="step">નવું equation: x² − (10/3)x + 8/3 = 0 ⟹ 3x² −10x +8 = 0</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  α+β = −b/a માં "−" sign ભૂલી જવો — ખાસ કરીને b positive હોય ત્યારે "sum = b/a" લખાઈ જાય છે, જે ખોટું છે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²+7x+12=0 ના roots α,β હોય, તો 1/α + 1/β શોધો (roots શોધ્યા વગર).
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 4 — α²+β², α³+β³ જેવા higher symmetric functions, અને transformed-roots equations.</div>
+</div>
+
+<!-- ============ PART 4 ============ -->
+<div class="part" id="p4">
+<h2><span class="num">04</span>Symmetric functions of roots</h2>
+<p class="part-why">શા માટે ભણવું: JEE માં α²+β², α³+β³, α⁴+β⁴ પ્રકારના expressions ડાયરેક્ટ પુછાય છે — બધા α+β અને αβ પરથી જ નીકળે છે.</p>
+
+<div class="formula-box">
+  <span class="label">formula — symmetric function building blocks</span>
+  <div class="f">α²+β² = (α+β)² − 2αβ</div>
+  <div class="f">α³+β³ = (α+β)³ − 3αβ(α+β)</div>
+  <div class="f">α⁴+β⁴ = (α²+β²)² − 2(αβ)²</div>
+  <div class="f">α−β = ±√D / a  (D = b²−4ac)</div>
+  <div class="meaning">બધા જ higher symmetric sums, sum(S) અને product(P) ના combination તરીકે લખી શકાય</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 190" role="img"><title>α−β ને number line પર roots વચ્ચેનું ડાયરેક્ટ distance તરીકે જોવું</title><desc>α,β number line પર બે points, α−β = એમની વચ્ચેનું signed distance = ±√D/a</desc>
+<g transform="translate(180,60)">
+<line x1="-140" y1="0" x2="140" y2="0" stroke="var(--ink-3)" stroke-width="1.5"/>
+<circle cx="-70" cy="0" r="4" fill="var(--exam)"/><text class="t" x="-78" y="-14">β</text>
+<circle cx="70" cy="0" r="4" fill="var(--exam)"/><text class="t" x="65" y="-14">α</text>
+<line x1="-70" y1="20" x2="70" y2="20" stroke="var(--formula)" stroke-width="1.5" marker-start="url(#arrow4)" marker-end="url(#arrow4)"/>
+<defs><marker id="arrow4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--formula)" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="-25" y="38" fill="var(--formula)">α−β = √D/a</text>
+</g>
+<text x="420" y="50" fill="var(--ink-2)" font-size="13">α²+β², α³+β³ symmetric</text>
+<text x="420" y="72" fill="var(--ink-2)" font-size="13">(α,β swap → same value)</text>
+<text x="420" y="94" fill="var(--ink-2)" font-size="13">→ S,P થી લખાય. α−β</text>
+<text x="420" y="116" fill="var(--ink-2)" font-size="13">asymmetric (sign બદલાય) →</text>
+<text x="420" y="138" fill="var(--ink-2)" font-size="13">roots ના distance તરીકે √D જરૂરી</text>
+</svg>
+<div class="diagram-cap">Symmetric quantities roots ના "combined" behavior બતાવે, asymmetric quantities roots ના "relative position" (distance/order) બતાવે</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  બે rockets/particles ના position roots α,β તરીકે model કરીએ તો α+β,αβ (symmetric) એમનું center-of-mass જેવું combined behavior આપે, જ્યારે α−β (asymmetric) એ બે વચ્ચેનું actual separation/gap આપે — physics ના two-body problems માં આ જ split વારંવાર વપરાય છે.
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  કોઈપણ <b>symmetric</b> function of α,β (એટલે કે α અને β ને અંદરોઅંદર બદલવાથી value ના બદલાય — દા.ત. α²β+αβ², α³+β³) હંમેશા S=α+β અને P=αβ ના પદોમાં લખી શકાય. <b>Asymmetric</b> function (દા.ત. α−β, α²−β²) directly ના લખાય — ત્યાં ±√D/a જેવું root-sign વાળું પદ આવે છે.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> x²−px+q=0 ના roots α,β હોય, તો α³+β³ ને p,q માં લખો.</div>
+  <div class="step">S=α+β=p, P=αβ=q</div>
+  <div class="step">α³+β³ = S³−3PS = p³−3pq</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  α³+β³ = (α+β)(α²−αβ+β²) ફોર્મ્યુલા સાચી છે, પણ ત્યાં α²−αβ+β² ને ફરીથી (α²+β²)−αβ = (S²−2P)−P = S²−3P લખવાનું ભૂલી જવાય છે — છેલ્લે P,S માં convert કરવાનું જ ચૂકી જવાય.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²−4x+1=0 ના roots α,β હોય, તો α⁴+β⁴ શોધો.
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 5 — બે quadratic equations વચ્ચે common root(s) ની condition.</div>
+</div>
+
+<!-- ============ PART 5 ============ -->
+<div class="part" id="p5">
+<h2><span class="num">05</span>Common roots</h2>
+<p class="part-why">શા માટે ભણવું: બે અલગ quadratic equations ને link કરતો, JEE-favorite pattern.</p>
+
+<h3>5a. બંને roots common</h3>
+<div class="formula-box">
+  <span class="label">formula</span>
+  <div class="f">a₁/a₂ = b₁/b₂ = c₁/c₂</div>
+  <div class="meaning">a₁x²+b₁x+c₁=0 અને a₂x²+b₂x+c₂=0 ના બંને roots common હોય ત્યારે જ — બંને equations proportional (essentially same) છે</div>
+</div>
+
+<h3>5b. માત્ર એક root common</h3>
+<p>ધારો કે α common root છે. બંને equations માંથી α² ને eliminate કરીને α ને a,b,c ના પદોમાં cross-multiplication થી શોધાય છે:</p>
+<div class="formula-box">
+  <span class="label">formula — one common root ની condition</span>
+  <div class="f">(c₁a₂ − c₂a₁)² = (a₁b₂ − a₂b₁)(b₁c₂ − b₂c₁)</div>
+  <div class="meaning">common root α = (c₁a₂−c₂a₁)/(a₁b₂−a₂b₁) = (b₁c₂−b₂c₁)/(c₁a₂−c₂a₁)</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> x²−6x+5=0 અને x²−3x+a=0 નું એક common root હોય, તો a ના શક્ય values શોધો.</div>
+  <div class="step">પ્રથમ equation ના roots: 1, 5</div>
+  <div class="step">x=1 common → 1−3+a=0 → a=2</div>
+  <div class="step">x=5 common → 25−15+a=0 → a=−10</div>
+  <div class="step"><b>Answer:</b> a = 2 અથવા −10</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  જ્યારે એક equation ના roots સહેલાઈથી factoring થી મળે (ઉપરના example જેમ), ત્યારે સીધો cross-multiplication formula વાપરવો — actually direct substitution (દરેક root ને બીજા equation માં મૂકવો) સહેલું અને ઝડપી છે. Formula ત્યારે જ વાપરો જ્યારે roots સીધા ના મળે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²+ax+b=0 અને x²+bx+a=0 (a≠b) નું એક common root હોય, તો બતાવો કે એ common root = 1, અને a+b+1=0.
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 6 — roots ક્યાં આવેલા છે (કોઈ number ની જમણી/ડાબી બાજુ, કે interval માં) — graphical reasoning.</div>
+</div>
+
+<!-- ============ PART 6 ============ -->
+<div class="part" id="p6">
+<h2><span class="num">06</span>Location of roots</h2>
+<p class="part-why">શા માટે ભણવું: "roots બંને k થી મોટા છે" કે "roots (k1,k2) વચ્ચે છે" પ્રકારના પ્રશ્નો parabola ના graph પરથી સીધા solve થાય છે — algebra કરતાં ઝડપી.</p>
+
+<div class="concept-box box">
+  <span class="label">must understand — core idea</span>
+  ax²+bx+c=0 નું graph (y=ax²+bx+c) એક <b>parabola</b> છે — Greek <i>para</i> (=બાજુમાં) + <i>bolē</i> (=ફેંકવું, throw — "ballistic" શબ્દ પણ આ જ મૂળ) પરથી — શબ્દનો ઇતિહાસ સીધો "throw/projectile" સાથે જોડાયેલો છે, અને એ જ curve ફેંકેલા બોલ નો રસ્તો પણ છે (Part 00 નું real-world example યાદ કરો). <b>a&gt;0</b> હોય તો parabola ઉપર તરફ ખૂલે છે (U shape), <b>a&lt;0</b> હોય તો નીચે તરફ (∩ shape). કોઈપણ point k પર parabola ની height, એટલે <span class="mono">f(k) = ak²+bk+c</span>, ના sign પરથી k, roots ની ડાબી બાજુ છે, વચ્ચે છે, કે જમણી બાજુ છે — એ ખબર પડે છે.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>a&gt;0 parabola પર f(k) નું sign roots ની સાપેક્ષે k નું સ્થાન બતાવે છે — y=(x−2)(x−6) નું computed plot, roots 2,6</title><desc>ડાબી બાજુ k=1 બંને roots ની બહાર (f(1)=5&gt;0), જમણી બાજુ k=4 (vertex) બંને roots વચ્ચે (f(4)=−4&lt;0) — points curve પર ખરેખર computed છે</desc>
+<g transform="translate(150,50)">
+<polyline points="-100.0,51.0 -95.0,65.3 -90.0,78.9 -85.0,91.8 -80.0,103.9 -75.0,115.3 -70.0,126.0 -65.0,135.9 -60.0,145.1 -55.0,153.5 -50.0,161.2 -45.0,168.2 -40.0,174.5 -35.0,180.0 -30.0,184.8 -25.0,188.8 -20.0,192.1 -15.0,194.7 -10.0,196.5 -5.0,197.6 0.0,198.0 5.0,197.6 10.0,196.5 15.0,194.7 20.0,192.1 25.0,188.8 30.0,184.8 35.0,180.0 40.0,174.5 45.0,168.2 50.0,161.2 55.0,153.5 60.0,145.1 65.0,135.9 70.0,126.0 75.0,115.3 80.0,103.9 85.0,91.8 90.0,78.9 95.0,65.3 100.0,51.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-120" y1="150" x2="120" y2="150" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-57.1" cy="150" r="3" fill="var(--ink)"/><text class="ts" x="-70" y="168">root=2</text>
+<circle cx="57.1" cy="150" r="3" fill="var(--ink)"/><text class="ts" x="45" y="168">root=6</text>
+<line x1="-85.7" y1="150" x2="-85.7" y2="90" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="3,3"/>
+<circle cx="-85.7" cy="90" r="3" fill="var(--exam)"/>
+<text class="ts" x="-115" y="80" fill="var(--exam)">k=1 (બહાર)</text>
+<text class="ts" x="-125" y="185">f(1)=5 &gt; 0</text>
+</g>
+<g transform="translate(470,50)">
+<polyline points="-100.0,51.0 -95.0,65.3 -90.0,78.9 -85.0,91.8 -80.0,103.9 -75.0,115.3 -70.0,126.0 -65.0,135.9 -60.0,145.1 -55.0,153.5 -50.0,161.2 -45.0,168.2 -40.0,174.5 -35.0,180.0 -30.0,184.8 -25.0,188.8 -20.0,192.1 -15.0,194.7 -10.0,196.5 -5.0,197.6 0.0,198.0 5.0,197.6 10.0,196.5 15.0,194.7 20.0,192.1 25.0,188.8 30.0,184.8 35.0,180.0 40.0,174.5 45.0,168.2 50.0,161.2 55.0,153.5 60.0,145.1 65.0,135.9 70.0,126.0 75.0,115.3 80.0,103.9 85.0,91.8 90.0,78.9 95.0,65.3 100.0,51.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-120" y1="150" x2="120" y2="150" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-57.1" cy="150" r="3" fill="var(--ink)"/><text class="ts" x="-70" y="168">root=2</text>
+<circle cx="57.1" cy="150" r="3" fill="var(--ink)"/><text class="ts" x="45" y="168">root=6</text>
+<line x1="0" y1="150" x2="0" y2="198" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="3,3"/>
+<circle cx="0" cy="198" r="3" fill="var(--exam)"/>
+<text class="ts" x="-25" y="30" fill="var(--exam)">k=4 (વચ્ચે)</text>
+<text class="ts" x="-40" y="215">f(4)=−4 &lt; 0</text>
+</g>
+</svg>
+<div class="diagram-cap">a&gt;0: k roots ની બહાર → f(k) same sign as a (positive) · k roots ની વચ્ચે → f(k) opposite sign (negative)</div>
+</div>
+
+<div class="tblwrap">
+<table>
+<tr><th>Condition</th><th>Requirements (a&gt;0 ધારીને)</th></tr>
+<tr><td class="rowlabel">બંને roots &gt; k</td><td>D≥0, a·f(k)&gt;0, −b/2a &gt; k</td></tr>
+<tr><td class="rowlabel">બંને roots &lt; k</td><td>D≥0, a·f(k)&gt;0, −b/2a &lt; k</td></tr>
+<tr><td class="rowlabel">k, roots ની વચ્ચે</td><td>a·f(k) &lt; 0</td></tr>
+<tr><td class="rowlabel">roots ∈ (k₁,k₂)</td><td>D≥0, a·f(k₁)&gt;0, a·f(k₂)&gt;0, k₁ &lt; −b/2a &lt; k₂</td></tr>
+</table>
+</div>
+
+<div class="exam-box box">
+  <span class="label">high exam probability</span>
+  "a·f(k)" લખવાનું કારણ: a ના sign પ્રમાણે parabola ની દિશા બદલાય છે, એટલે માત્ર f(k) નું sign પૂરતું નથી — a વડે multiply કરીને sign ને a=positive ના case જેવું "normalize" કરવામાં આવે છે. આ ટ્રીક ભૂલવાથી a&lt;0 ના cases માં જવાબ ઊંધો આવે છે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²−(k+1)x+k=0 ના બંને roots 2 થી મોટા હોય એવા k ના values ની range શોધો.
+</div>
+
+<h3>6a. Vertex ની value, અને graph પરથી a,b,c ના signs</h3>
+<div class="concept-box box">
+  <span class="label">"Vertex" શબ્દ નો પાયો</span>
+  Latin <i>vertere</i> = "ફેરવવું, વળવું" (convert, revert, universe જેવા શબ્દો પણ આ જ મૂળ માંથી). Vertex = curve જ્યાં "વળે" છે — નીચે જતી દિશા ત્યાં જ ઉપર જવાની દિશામાં ફરે છે (અથવા ઊંધું). એ જ turning point છે.
+</div>
+<div class="formula-box">
+  <span class="label">formula — vertex point</span>
+  <div class="f">Vertex = ( −b/2a , c − b²/4a )</div>
+  <div class="meaning">Parabola નું સૌથી નીચું (a&gt;0) અથવા સૌથી ઊંચું (a&lt;0) point — x-coordinate −b/2a, અને ત્યાંની height c−b²/4a</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 250" role="img"><title>Vertex = parabola નું maximum/minimum point — y=−(x−1)(x−5) નું computed plot, roots 1,5, vertex(3,4)</title><desc>a<0 parabola, vertex ટોચ પર (x=3, height=4), roots x=1,5 baseline (y=0) પર — points ખરેખર curve પર computed છે</desc>
+<g transform="translate(300,20)">
+<polyline points="-140.0,215.0 -130.7,198.9 -121.3,183.9 -112.0,170.0 -102.7,157.2 -93.3,145.6 -84.0,135.0 -74.7,125.6 -65.3,117.2 -56.0,110.0 -46.7,103.9 -37.3,98.9 -28.0,95.0 -18.7,92.2 -9.3,90.6 0.0,90.0 9.3,90.6 18.7,92.2 28.0,95.0 37.3,98.9 46.7,103.9 56.0,110.0 65.3,117.2 74.7,125.6 84.0,135.0 93.3,145.6 102.7,157.2 112.0,170.0 121.3,183.9 130.7,198.9 140.0,215.0" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-160" y1="170" x2="160" y2="170" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="0" y1="90" x2="0" y2="170" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<circle cx="-112" cy="170" r="3.5" fill="var(--ink)"/><text class="ts" x="-125" y="188">root=1</text>
+<circle cx="112" cy="170" r="3.5" fill="var(--ink)"/><text class="ts" x="100" y="188">root=5</text>
+<circle cx="0" cy="90" r="4" fill="var(--exam)"/>
+<text class="ts" x="10" y="80" fill="var(--exam)">vertex (3, 4) = (−b/2a, c−b²/4a)</text>
+<text class="ts" x="10" y="98" fill="var(--ink-2)">= મહત્તમ height</text>
+</g>
+</svg>
+<div class="diagram-cap">a&lt;0 parabola નો vertex = curve નું સૌથી ઊંચું point (maximum value)</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  ઊંચે ફેંકેલા બોલ ની max height, કે કોઈ business ના profit=revenue−cost ને x (quantity) ના quadratic તરીકે લખો તો profit સૌથી વધારે ક્યારે થાય — બંને પ્રશ્નોનો જવાબ આ જ vertex formula આપે છે. Vertex ની x-coordinate = "કેટલા units બનાવવા" કે "કેટલો સમય" (optimal input), y-coordinate = "મહત્તમ height/profit" (optimal output).
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> y=−(x−1)(x−3) ના સૌથી ઊંચા point અને y=x(x−4) ના સૌથી નીચા point વચ્ચેનું distance શોધો.</div>
+  <div class="step">y=−(x−1)(x−3)=−x²+4x−3, vertex x=2, height=−4+8−3=1 → point (2,1)</div>
+  <div class="step">y=x(x−4)=x²−4x, vertex x=2, height=4−8=−4 → point (2,−4)</div>
+  <div class="step">બંને points નું x same (2) → distance = |1−(−4)| = 5</div>
+</div>
+<div class="concept-box box">
+  <span class="label">must understand — graph પરથી a,b,c reading</span>
+  Parabola નું picture આપ્યું હોય (roots ક્યાં છે, ઉપર/નીચે ખૂલે છે, y-axis ને ક્યાં કાપે છે) ત્યારે: <b>a</b> નું sign = parabola ઉપર(+)/નીચે(−) ખૂલે છે એ પરથી; <b>c</b> = f(0) = graph y-axis ને ક્યાં કાપે છે એ પરથી (ઉપર્ + , નીચે −); <b>b</b> નું sign vertex ની x-position (−b/2a) ના sign પરથી નીકળે — a અને vertex ની બાજુ (ડાબે/જમણે) બંને ભેગા વાપરવા પડે.
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Vertex <b>b=0 પર y-axis પર જ હોય</b> એવો special case (સममित parabola) — ત્યારે roots પણ origin ની આસપાસ symmetric (±k સ્વરૂપ) હોય છે, અને "sum of roots=0" સીધું vertex ના position પરથી જ ખબર પડી જાય, calculation કરવાની જરૂર નથી.
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 7 — quadratic expression નું sign (inequality) સીધું ax²+bx+c &gt; 0 પ્રકારના પ્રશ્નો માટે.</div>
+</div>
+
+<!-- ============ PART 7 ============ -->
+<div class="part" id="p7">
+<h2><span class="num">07</span>Quadratic inequalities</h2>
+<p class="part-why">શા માટે ભણવું: ax²+bx+c &gt;,&lt;,≥,≤ 0 form ના પ્રશ્નો — roots ના આધારે number-line પર sign મૂકીને solve થાય છે.</p>
+
+<div class="concept-box box">
+  <span class="label">must understand — wavy curve method</span>
+  1. Roots α ≤ β શોધો (D≥0 ધારીને). 2. Number line પર α, β mark કરો. 3. a&gt;0 હોય તો roots ની <b>બહાર</b> (x&lt;α અથવા x&gt;β) expression positive, <b>વચ્ચે</b> (α&lt;x&lt;β) negative. a&lt;0 હોય તો ઊંધું.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> x²−5x+6 &lt; 0 solve કરો.</div>
+  <div class="step">Roots: (x−2)(x−3)=0 → x=2,3. a=1&gt;0.</div>
+  <div class="step">Roots ની વચ્ચે expression negative → 2 &lt; x &lt; 3</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  D&lt;0 હોય (roots complex) ત્યારે inequality solve કરવા roots ની જરૂર જ નથી — a&gt;0 હોય તો expression બધા real x માટે positive (ax²+bx+c&gt;0 ∀x), a&lt;0 હોય તો બધા x માટે negative. આ shortcut ભૂલી જવાથી વિદ્યાર્થીઓ ખોટી રીતે "no solution" કે ખોટો range લખે છે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x²+x+1 &gt; 0 ના બધા real x માટે સાચું છે કે નહીં? D અને a બંને ચકાસીને જવાબ આપો.
+</div>
+
+<h3>7a. Parameter-based inequality — "for all x" / "for at least one x"</h3>
+<div class="concept-box box">
+  <span class="label">must understand — બે અલગ પ્રશ્ન-પ્રકાર</span>
+  "ax²+bx+c &gt; 0 <b>solve કરો</b>" (x માટે) અલગ છે "ax²+bx+c &gt; 0 <b>બધા x માટે સાચું</b> રહે એવા parameter (દા.ત. a) ના values શોધો" કરતાં. બીજા પ્રકારમાં x એ variable નથી — parameter (a,p,k...) એ unknown છે, અને condition D&lt;0 (કે D≤0) + a નું sign વાપરવાનું છે, x ની કોઈ range નહીં.
+</div>
+<div class="tblwrap">
+<table>
+<tr><th>Condition પર</th><th>Requirement</th></tr>
+<tr><td class="rowlabel">ax²+bx+c &gt; 0 ∀x∈R</td><td>a &gt; 0 અને D &lt; 0</td></tr>
+<tr><td class="rowlabel">ax²+bx+c &lt; 0 ∀x∈R</td><td>a &lt; 0 અને D &lt; 0</td></tr>
+<tr><td class="rowlabel">ax²+bx+c &lt; 0 for <i>at least one</i> real x</td><td>a &lt; 0 <b>અથવા</b> D &gt; 0 (a&gt;0 હોય તો roots ની વચ્ચે negative મળે જ)</td></tr>
+</table>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>D&lt;0 એટલે parabola x-axis ને ક્યારેય નથી અડતો — સંપૂર્ણ curve એક જ બાજુ. ત્રણેય curves computed points પરથી</title><desc>ડાબે y=(x−2)²+1 (a&gt;0,D&lt;0) curve x-axis ની ઉપર જ; વચ્ચે y=−(x−2)²−1 (a&lt;0,D&lt;0) curve x-axis ની નીચે જ; જમણે y=(x−1)(x−3) (D&gt;0) curve roots 1,3 પર x-axis ને કાપે</desc>
+<g transform="translate(110,15)"><polyline points="-80.0,65.0 -72.0,76.4 -64.0,86.6 -56.0,95.6 -48.0,103.4 -40.0,110.0 -32.0,115.4 -24.0,119.6 -16.0,122.6 -8.0,124.4 0.0,125.0 8.0,124.4 16.0,122.6 24.0,119.6 32.0,115.4 40.0,110.0 48.0,103.4 56.0,95.6 64.0,86.6 72.0,76.4 80.0,65.0" fill="none" stroke="var(--formula)" stroke-width="2"/><line x1="-100" y1="140" x2="100" y2="140" stroke="var(--ink-3)" stroke-width="1"/><text class="ts" x="-60" y="15" fill="var(--ink-2)">a&gt;0, D&lt;0</text><text class="ts" x="-75" y="160" fill="var(--ink-2)">બધે &gt;0</text></g>
+<g transform="translate(340,15)"><polyline points="-80.0,165.0 -72.0,153.6 -64.0,143.4 -56.0,134.4 -48.0,126.6 -40.0,120.0 -32.0,114.6 -24.0,110.4 -16.0,107.4 -8.0,105.6 0.0,105.0 8.0,105.6 16.0,107.4 24.0,110.4 32.0,114.6 40.0,120.0 48.0,126.6 56.0,134.4 64.0,143.4 72.0,153.6 80.0,165.0" fill="none" stroke="var(--formula)" stroke-width="2"/><line x1="-100" y1="90" x2="100" y2="90" stroke="var(--ink-3)" stroke-width="1"/><text class="ts" x="-60" y="15" fill="var(--ink-2)">a&lt;0, D&lt;0</text><text class="ts" x="-75" y="180" fill="var(--ink-2)">બધે &lt;0</text></g>
+<g transform="translate(560,15)"><polyline points="-80.0,85.0 -72.0,96.8 -64.0,107.3 -56.0,116.6 -48.0,124.6 -40.0,131.4 -32.0,137.0 -24.0,141.3 -16.0,144.4 -8.0,146.3 0.0,146.9 8.0,146.3 16.0,144.4 24.0,141.3 32.0,137.0 40.0,131.4 48.0,124.6 56.0,116.6 64.0,107.3 72.0,96.8 80.0,85.0" fill="none" stroke="var(--formula)" stroke-width="2"/><line x1="-100" y1="140" x2="100" y2="140" stroke="var(--ink-3)" stroke-width="1"/><circle cx="-26.7" cy="140" r="3" fill="var(--exam)"/><circle cx="26.7" cy="140" r="3" fill="var(--exam)"/><text class="ts" x="-60" y="15" fill="var(--ink-2)">D&gt;0</text><text class="ts" x="-70" y="160" fill="var(--ink-2)">વચ્ચે sign બદલાય</text></g>
+</svg>
+<div class="diagram-cap">D&lt;0 = curve ક્યારેય x-axis ને અડતો નથી, એટલે એક જ sign સર્વત્ર જળવાય</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  Engineering design માં "structure પર stress હંમેશા ચોક્કસ safe limit કરતાં ઓછો રહેવો જોઈએ, ગમે તે load (x) માટે" — આવી condition ઘણી વાર ax²+bx+c&lt;0 ∀x ના રૂપમાં આવે છે. Design parameter (a,b,c) ને એ રીતે choose કરવા પડે કે D&lt;0 રહે — નહીં તો કોઈક load પર structure fail થઈ શકે.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> x²+2ax+10−3a &gt; 0 બધા real x માટે સાચું રહે એવા a ની range શોધો.</div>
+  <div class="step">a(coefficient of x²)=1&gt;0 પહેલેથી, એટલે D&lt;0 જ જોઈએ.</div>
+  <div class="step">D = 4a²−4(10−3a) = 4(a²+3a−10) &lt; 0 → a²+3a−10&lt;0 → (a+5)(a−2)&lt;0 → −5&lt;a&lt;2</div>
+</div>
+
+<div class="next-line">→ <b>Next:</b> Part 8 — JEE extensions: higher-degree equations quadratic માં convert કરવી, range of rational expressions, more-than-2-roots trick.</div>
+</div>
+
+<!-- ============ PART 8: JEE EXTENSIONS ============ -->
+<div class="part" id="p8">
+<h2><span class="num">08</span>JEE extensions <span class="badge">beyond board syllabus</span></h2>
+<p class="part-why">શા માટે ભણવું: આ ભાગ ના topics ગુજરાત બોર્ડ ના core syllabus થી આગળ છે, પણ JEE Main/Advance ના PYQ sets માં વારંવાર દેખાય છે — Practice and Answer Keys ના Phoenix PYQ sheets માં આમાંથી ઘણા patterns સીધા વપરાયેલા મળશે.</p>
+
+<h3>8a. Higher-degree equations, quadratic માં convert કરવી</h3>
+<p>Biquadratic (ax⁴+bx²+c=0) type: <span class="mono">y=x²</span> substitute કરી quadratic-in-y બનાવો.</p>
+<div class="formula-box">
+  <span class="label">formula — substitution trick</span>
+  <div class="f">ax⁴+bx²+c=0  →  ay²+by+c=0, y=x²</div>
+  <div class="meaning">y ના roots શોધ્યા પછી x=±√y લેવાનું — દરેક positive y બે real x આપે</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 170" role="img"><title>y=x² substitution — ax⁴+bx²+c ને quadratic-in-y માં ફેરવવાનો flow</title><desc>x⁴ ને (x²)² તરીકે જોઈ y=x² ધારો, quadratic in y solve કરો, પછી x=±√y પાછું લો</desc>
+<g transform="translate(70,40)">
+<rect x="0" y="0" width="150" height="60" rx="8" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="t" x="20" y="35">ax⁴+bx²+c=0</text>
+</g>
+<path d="M 230 70 L 290 70" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#arrow5)"/>
+<defs><marker id="arrow5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/></marker></defs>
+<text class="ts" x="235" y="55" fill="var(--ink-2)">y=x²</text>
+<g transform="translate(300,40)">
+<rect x="0" y="0" width="140" height="60" rx="8" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="t" x="15" y="35">ay²+by+c=0</text>
+</g>
+<path d="M 450 70 L 510 70" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#arrow5)"/>
+<text class="ts" x="452" y="55" fill="var(--ink-2)">x=±√y</text>
+<g transform="translate(520,40)">
+<rect x="0" y="0" width="130" height="60" rx="8" fill="none" stroke="var(--exam)" stroke-width="1.5"/>
+<text class="t" x="20" y="35" fill="var(--exam)">x ના roots</text>
+</g>
+</svg>
+<div class="diagram-cap">Substitution flow: quartic → quadratic-in-y (સહેલું) → પાછું x માં convert</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  Symmetric potential-energy wells (physics) કે lens-design ના equations ઘણી વાર માત્ર even powers (x²,x⁴) માં જ હોય છે — કારણ કે system ડાબે-જમણે symmetric છે (x→−x પર કંઈ ના બદલાય). આવા symmetric systems solve કરવા આ જ y=x² trick literally વપરાય છે.
+</div>
+
+<p><b>Reciprocal-type</b> equations (ax⁴+bx³+cx²+bx+a=0, coefficients symmetric): x²થી ભાગીને <span class="mono">t = x + 1/x</span> substitute કરો.</p>
+
+<h3>8b. Range of rational quadratic expressions</h3>
+<div class="concept-box box">
+  <span class="label">must understand — parameter trick</span>
+  y = (a₁x²+b₁x+c₁)/(a₂x²+b₂x+c₂) નું range શોધવા: y ને parameter ધારીને cross-multiply કરો, x ના quadratic તરીકે ફરી લખો, અને <b>D ≥ 0</b> (real x મળે એ માટે) ની condition પરથી y ની range નીકળે છે.
+</div>
+<div class="example">
+  <span class="label">worked example — આ પ્રકારનો પ્રશ્ન Practice sheets માં આવેલો છે</span>
+  <div class="step"><b>Q.</b> x real હોય, તો (3x²+9x+17)/(3x²+9x+7) નું maximum value શોધો.</div>
+  <div class="step">y(3x²+9x+7) = 3x²+9x+17 → (3y−3)x² + (9y−9)x + (7y−17) = 0</div>
+  <div class="step">x real માટે D≥0: (9y−9)² − 4(3y−3)(7y−17) ≥ 0</div>
+  <div class="step">સરળ કરતાં: 81(y−1)² − 12(y−1)(7y−17) ≥ 0 → 3(y−1)[27(y−1)−4(7y−17)] ≥ 0</div>
+  <div class="step">3(y−1)(−y+41) ≥ 0 → (y−1)(y−41) ≤ 0 → 1 ≤ y ≤ 41</div>
+  <div class="step"><b>Maximum value = 41</b></div>
+</div>
+
+<h3>8c. "More than 2 roots ⟹ identity" trick</h3>
+<div class="formula-box">
+  <span class="label">formula</span>
+  <div class="f">ax²+bx+c=0 ના 3 થી વધારે (ડિસ્ટિન્ક્ટ) roots હોય ⟺ a=b=c=0</div>
+  <div class="meaning">Degree-2 equation ના મહત્તમ 2 જ roots હોઈ શકે — જો 3 મળે તો equation ખરેખર identity (દરેક x માટે સાચું) જ હોઈ શકે</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 190" role="img"><title>Curved parabola vs સીધી horizontal line — ketla x-axis crossings શક્ય છે — y=(x−2)(x−6) નું computed plot</title><desc>Non-zero parabola x-axis ને max 2 points (roots 2,6) પર કાપે, પણ flat line y=0 (identity) દરેક x પર x-axis પર જ છે — infinite roots</desc>
+<g transform="translate(150,15)">
+<polyline points="-110.0,6.2 -104.5,15.4 -99.0,24.1 -93.5,32.3 -88.0,40.0 -82.5,47.3 -77.0,54.1 -71.5,60.4 -66.0,66.2 -60.5,71.6 -55.0,76.6 -49.5,81.0 -44.0,85.0 -38.5,88.5 -33.0,91.6 -27.5,94.1 -22.0,96.2 -16.5,97.9 -11.0,99.1 -5.5,99.8 0.0,100.0 5.5,99.8 11.0,99.1 16.5,97.9 22.0,96.2 27.5,94.1 33.0,91.6 38.5,88.5 44.0,85.0 49.5,81.0 55.0,76.6 60.5,71.6 66.0,66.2 71.5,60.4 77.0,54.1 82.5,47.3 88.0,40.0 93.5,32.3 99.0,24.1 104.5,15.4 110.0,6.2" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="-140" y1="40" x2="140" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="-88" cy="40" r="3.5" fill="var(--exam)"/><circle cx="88" cy="40" r="3.5" fill="var(--exam)"/>
+<text class="ts" x="-105" y="58">root=2</text><text class="ts" x="75" y="58">root=6</text>
+<text class="ts" x="-45" y="120" fill="var(--ink-2)">a≠0: max 2 crossings</text>
+</g>
+<g transform="translate(480,30)">
+<line x1="-140" y1="90" x2="140" y2="90" stroke="var(--exam)" stroke-width="2.5"/>
+<line x1="-140" y1="90" x2="140" y2="90" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="2,4" transform="translate(0,0)"/>
+<text class="ts" x="-60" y="20" fill="var(--ink-2)">a=b=c=0: curve = x-axis જાતે</text>
+<text class="ts" x="-40" y="115" fill="var(--exam)">દરેક x root — infinite</text>
+</g>
+</svg>
+<div class="diagram-cap">3 distinct roots મળે એ curved parabola માટે impossible — એટલે curve ખરેખર x-axis પર જ "સપાટ" પડેલી હોવી જોઈએ (identity)</div>
+</div>
+
+<div class="why-box box">
+  <span class="label">real-world example</span>
+  કોઈ measured data (દા.ત. 3 અલગ-અલગ temperature readings પર voltage બરાબર predicted quadratic formula જેટલું જ મળે) — જો ખરેખર ત્રણ (કે વધારે) points પર બે અલગ quadratic formulas સરખું જ પરિણામ આપે, તો scientifically એ બે formulas ખરેખર <b>એક જ</b> formula છે (a,b,c coefficients બરાબર સરખા) — data-fitting/curve-matching માં આ logic વારંવાર વપરાય છે.
+</div>
+
+<div class="exam-box box">
+  <span class="label">high exam probability</span>
+  Functional-equation પ્રકારના પ્રશ્નોમાં (દા.ત. "f(x)=ax²+bx+c બધા x માટે f(x)=f(1−x) સાચું છે, અને એ ત્રણ ડિસ્ટિન્ક્ટ x માટે equal થાય છે એવું આપ્યું હોય") — આ trick એ સીધું a,b,c વચ્ચેનો relation આપી દે છે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  x⁴−13x²+36=0 ના બધા roots શોધો (Part 8a ની substitution trick વાપરીને).
+</div>
+
+<h3>8d. Power-sum recurrence — αⁿ+βⁿ (કે αⁿ−βⁿ) ઝડપથી શોધવા</h3>
+<div class="formula-box">
+  <span class="label">formula — Newton's recurrence (degree 2 version)</span>
+  <div class="f">Pₙ = S·Pₙ₋₁ − P·Pₙ₋₂  (S=α+β, P=αβ, Pₙ=αⁿ+βⁿ)</div>
+  <div class="meaning">દરેક higher power sum, પાછલા બે power sums પરથી સીધો નીકળે — α³+β³, α⁴+β⁴ repeat કરીને શોધવાની જરૂર નહીં</div>
+</div>
+<p>એ જ recurrence <span class="mono">aₙ=αⁿ−βⁿ</span> (asymmetric difference) માટે પણ ચાલે છે: aₙ = S·aₙ₋₁ − P·aₙ₋₂.</p>
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> α,β roots of x²−6x−2=0. aₙ=αⁿ−βⁿ હોય, તો (a₁₀−2a₈)/(3a₉) શોધો.</div>
+  <div class="step">S=6, P=−2. Recurrence: aₙ = 6aₙ₋₁+2aₙ₋₂ ⟹ a₁₀ = 6a₉+2a₈ ⟹ a₁₀−2a₈ = 6a₉</div>
+  <div class="step">(a₁₀−2a₈)/(3a₉) = 6a₉/3a₉ = <b>2</b></div>
+</div>
+
+<h3>8e. Transformed roots — products અને ratios</h3>
+<p>α,β ના પરથી બનતા <b>નવા roots</b> ના sum-product ને હંમેશા S,P ના પદોમાં ફેરવવા:</p>
+<div class="formula-box">
+  <span class="label">formula — product-type new roots</span>
+  <div class="f">αβ² + α²β = αβ(α+β) = PS  ,  αβ²·α²β = P³</div>
+  <div class="meaning">નવા equation ના roots αβ², α²β હોય તો — sum=PS, product=P³ વાપરીને x²−(PS)x+P³=0</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — ratio-type new roots (α/β, β/α)</span>
+  <div class="f">α/β + β/α = (α²+β²)/P = (S²−2P)/P  ,  (α/β)(β/α)=1</div>
+  <div class="meaning">Product હંમેશા 1 — sum માટે S,P જ વાપરવા. જો S,P ને બદલે α+β=−p, α³+β³=q આપ્યું હોય, તો પહેલા P = (S³−q)/3S (α³+β³=S³−3PS પરથી) કાઢી લેવું</div>
+</div>
+
+<h3>8f. Root-is-square-of-other</h3>
+<div class="concept-box box">
+  <span class="label">must understand — technique</span>
+  x²+px+q=0 નો એક root બીજા નો square હોય (β=α²) ત્યારે: S=α+β=α+α², P=αβ=α³. આ બંને equations માંથી α ને eliminate કરીને (α ને S,P બંનેમાં expression તરીકે treat કરીને) p,q વચ્ચેનો relation નીકળે છે — સામાન્ય રીતે <span class="mono">p³+q²−q(3p+1)=0</span> પ્રકારનું result આવે (sign conventions પ્રમાણે ચાર જુદા form શક્ય, exact sign paper પ્રમાણે ચકાસવું).
+</div>
+
+<h3>8g. Functional substitution — (x−a)(x−b)=c પ્રકાર</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  જો α,β એ <span class="mono">(x−a)(x−b)=c</span> ના roots હોય (એટલે (x−a)(x−b)−c=0 નું), તો <span class="mono">(x−α)(x−β)+c=0</span> ના roots સીધા <b>a, b</b> જ હોય છે — કારણ કે બંને equations એ જ parabola ને ઊંચે/નીચે shift કરેલું સ્વરૂપ છે, ફક્ત roles ઊંધા થાય છે. Direct expansion કરવાની જરૂર નથી, pattern ઓળખી લેવો.
+</div>
+
+<h3>8h. Identity in x — multiple unknowns સાથે</h3>
+<div class="concept-box box">
+  <span class="label">must understand — Part 8c થી આગળ</span>
+  Part 8c માં "3+ roots ⟹ a=b=c=0" જોયું — એ single quadratic માટે હતું. જ્યારે expression માં <b>બે અલગ unknowns</b> (દા.ત. a અને b બંને) હોય અને એ x ના બધા values માટે 0 રહેવું જોઈએ, ત્યારે x ની દરેક power (x², x¹, x⁰) નો coefficient અલગ-અલગ 0 મૂકવો પડે — એટલે એક equation ને બદલે 2-3 simultaneous equations મળે છે, જે a,b ના possible values (ઘણી વાર માત્ર 0 જ) આપે છે.
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  "Identity in x" જોઈને સીધું discriminant-based ("3 roots" trick) લગાવવા જવું — જ્યારે expression માં એક કરતાં વધારે unknown constant હોય, ત્યારે coefficient-matching (દરેક power ને અલગ 0 મૂકવો) જ સાચી રીત છે, "3 roots" trick નહીં.
+</div>
+
+<h3>8i. Modulus-mixed quadratic equations <span class="badge">most frequent JEE pattern</span></h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  \|x−a\| ધરાવતું equation solve કરવા — number line ને a ના આધારે <b>cases</b> માં તોડો (x&lt;a અને x≥a), દરેક case માં modulus ખૂલે એટલે equation plain quadratic બને, અને છેલ્લે મળેલો root એ case ની range માં આવે છે કે નહીં — ચકાસવું જરૂરી (ના આવે તો reject).
+</div>
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> x²+\|2x−3\|−4=0 ના roots ના squares નો સરવાળો શોધો.</div>
+  <div class="step">Case x≥3/2: x²+2x−3−4=0 → x²+2x−7=0 → x=−1±2√2; માત્ર x=−1+2√2 (≈1.83) આ case માં valid</div>
+  <div class="step">Case x&lt;3/2: x²−2x+3−4=0 → x²−2x−1=0 → x=1±√2; માત્ર x=1−√2 (≈−0.41) આ case માં valid</div>
+  <div class="step">બંને roots ના squares ઉમેરીને final answer મળે</div>
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Case-split કર્યા પછી મળેલા roots ને એ જ case ની range સામે ચકાસ્યા વગર સ્વીકારી લેવા — ઘણી વાર એક case નો root ખરેખર બીજા case ની range માં પડે છે, જે invalid (extraneous) છે.
+</div>
+
+<h3>8j. Floor-function (fractional-part) equations</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  [x] = greatest integer ≤ x, {x} = x−[x] (fractional part, 0≤{x}&lt;1). આવા equations માં [x] ને એક <b>integer parameter n</b> ધારી લો (x=n+f, 0≤f&lt;1), equation ને n,f માં expand કરો, અને પછી n ના integer values ચકાસો જેના માટે f ની range સાચી બેસે.
+</div>
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> [eˣ]²+[eˣ+1]−3=0 ના solutions નો interval શોધો.</div>
+  <div class="step">t=[eˣ] ધારો (integer). t²+(t+1)−3=0 → t²+t−2=0 → t=1 અથવા t=−2</div>
+  <div class="step">eˣ&gt;0 હોવાથી t=[eˣ]≥0, એટલે t=−2 reject. t=1 ⟹ 1≤eˣ&lt;2 ⟹ x∈[0,ln2)</div>
+</div>
+
+<h3>8k. Exponential/logarithmic substitution to quadratic</h3>
+<div class="formula-box">
+  <span class="label">formula — substitution pattern</span>
+  <div class="f">a·(base)^(2f(x)) + b·(base)^(f(x)) + c = 0  →  t=(base)^(f(x)), at²+bt+c=0</div>
+  <div class="meaning">eˣ, aˣ, e^(sinx) — ગમે તે exponential term repeat થાય ત્યારે t=એ term ધારીને quadratic બનાવો; પછી t&gt;0 (કે sinx જેવા bounded cases માટે specific range) ચકાસીને x પાછું કાઢો</div>
+</div>
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Q.</b> (√3+√2)ˣ+(√3−√2)ˣ=10 ના solutions ની સંખ્યા શોધો.</div>
+  <div class="step">(√3+√2)(√3−√2)=1, એટલે (√3−√2)ˣ = 1/(√3+√2)ˣ. t=(√3+√2)ˣ ધારો (t&gt;0)</div>
+  <div class="step">t+1/t=10 → t²−10t+1=0 → t=5±2√6, બંને positive — એટલે 2 solutions</div>
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  t માટે મળેલા roots માંથી <b>negative અથવા invalid-range</b> roots (દા.ત. sinx=t હોય તો \|t\|&gt;1 reject, eˣ=t હોય તો t≤0 reject) કાઢી નાખવાનું ભૂલી જવું — છેલ્લે "કેટલા x મળે" ગણતી વખતે આ સૌથી common ભૂલ છે.
+</div>
+
+<h3>8l. Radical equations reducible to quadratic form</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  √(quadratic) ના સરવાળા/તફાવત વાળા equations માં, ઘણી વાર બંને બાજુના quadratics નો common ભાગ કાઢીને એક <b>નવો variable</b> (દા.ત. y=x²−ax) ધારી શકાય — જે equation ને સીધું સરળ બનાવે, પૂરું square કરવાની જરૂર ન પડે.
+</div>
+<div class="example">
+  <span class="label">worked example — sketch</span>
+  <div class="step"><b>Q.</b> √(x²−4x+3) + √(x²−9) = √(4x²−14x+6) ના real roots ની સંખ્યા શોધો.</div>
+  <div class="step">દરેક term ને factor કરો: √((x−1)(x−3)) + √((x−3)(x+3)) = √((x−3)(4x−2))... પેટર્ન જુઓ — (x−3) common છે, y=√(x−3) જેવો substitution કરીને સરળ થાય છે</div>
+  <div class="step">(domain condition: ત્રણેય radicals real રહેવા x ની range ચકાસવી જરૂરી — ઘણી વાર domain પોતે જ answer ને 1 root સુધી સીમિત કરી દે છે)</div>
+</div>
+
+<h3>8m. Repeated compound-expression substitution</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  જ્યારે equation માં એક જ complicated expression (દા.ત. 3x²+4x+3) વારંવાર દેખાય, ત્યારે એને <b>u</b> ધારી લો — આખું equation u ના (અને related u−1 જેવા) પદોમાં એક સાદું quadratic (કે quadratic-in-ratio) બની જાય છે.
+</div>
+<div class="why-box box">
+  <span class="label">rare but real — brief mentions only</span>
+  <b>Infinite continued fractions</b> (દા.ત. x=4+1/(5+1/(4+1/(5+...)))): આખા fraction ને ફરી x (કે બે-તબક્કાનું y) તરીકે ધારીને, self-referencing equation quadratic બને છે. <b>Iterative root-mapping</b> (α root ⟹ f(α) પણ root, દા.ત. α²−2): બંને roots ના set ને α,f(α) તરીકે treat કરીને sum/product ની conditions થી a,b શોધાય — advanced, ઓછું frequent.
+</div>
+
+<h3>8n. Genuinely complex-coefficient quadratics</h3>
+<div class="concept-box box">
+  <span class="label">must understand — different rules apply</span>
+  જ્યારે equation ના coefficients (a,b,c) પોતે <b>complex</b> હોય (દા.ત. x²+(2i−1)=0), ત્યારે: S=−b/a, P=c/a હજુ પણ સાચા છે (Vieta's ક્યારેય coefficients ના real/complex પર આધારિત નથી), પણ <b>D≥0 ⟹ real roots</b>, <b>conjugate-pair roots</b>, "real અને imaginary part અલગ પાડવા" — આ બધા rules ફક્ત real coefficients માટે જ સાચા છે, complex coefficients પર લાગુ ન પડે.
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Complex coefficients જોઈને પણ "roots conjugate pair માં આવશે" ધારી લેવું — ના આવે. Complex-coefficient equation ના બંને roots સ્વતંત્ર complex numbers છે, એકબીજાના conjugate હોવા જરૂરી નથી.
+</div>
+
+<h3>8o. Repeated power-reduction using the defining equation</h3>
+<div class="concept-box box">
+  <span class="label">must understand — Newton's recurrence થી અલગ</span>
+  α equation નું root છે એટલે α² ને હંમેશા લોઅર powers (α¹, constant) ના પદોમાં લખી શકાય (equation પરથી જ). આ relation repeat વાપરીને α ની કોઈપણ ઊંચી power (α¹²,α⁹⁶ વગેરે) ધીમે ધીમે નીચે લાવી શકાય — આ Newton ના power-<b>sum</b> recurrence (Pₙ=αⁿ+βⁿ માટે) થી અલગ છે, આ ટેકનિક <b>એક જ root ની single power</b> ને simplify કરવા વાપરાય છે.
+</div>
+
+<div class="why-box box">
+  <span class="label">adjacent topic — degree 3/4 Vieta's</span>
+  α+β=−b/a, αβ=c/a ની idea ax³+bx²+cx+d=0 (ત્રણ roots) અને higher degree માટે પણ extend થાય છે (Σα=−b/a, Σαβ=c/a, αβγ=−d/a વગેરે) — એ Theory of Equations નો ભાગ છે, આ chapter નો core નથી, પણ PYQ sets માં ક્યારેક crossover question તરીકે આવે છે (દા.ત. "roots of a cubic, find (r₁+2)(r₂+2)(r₃+2)" — અહીં (r+2) ના factors ને એક નવા polynomial ના roots તરીકે treat કરીને, અથવા direct substitution કરીને ઉકેલાય).
+</div>
+
+
+<!-- upd-2026-10-04:qe-modulus -->
+<h3>JEE extension — modulus સમીકરણ: |A| + |B| = |A ± B|</h3>
+<div class="diagram"><svg viewBox="0 0 680 250" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="50.0" y1="205.5" x2="660.0" y2="205.5" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="666.0,205.5 660.0,208.2 660.0,202.8" fill="var(--ink-2)"/><line x1="50.0" y1="214.0" x2="50.0" y2="24.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="50.0,18.0 52.7,24.0 47.3,24.0" fill="var(--ink-2)"/><line x1="137.1" y1="202.5" x2="137.1" y2="208.5" stroke="var(--ink-2)" stroke-width="1"/><text x="137.1" y="219.5" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">-3</text><line x1="209.8" y1="202.5" x2="209.8" y2="208.5" stroke="var(--ink-2)" stroke-width="1"/><text x="209.8" y="219.5" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">-2</text><line x1="355.0" y1="202.5" x2="355.0" y2="208.5" stroke="var(--ink-2)" stroke-width="1"/><text x="355.0" y="219.5" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">0</text><line x1="500.2" y1="202.5" x2="500.2" y2="208.5" stroke="var(--ink-2)" stroke-width="1"/><text x="500.2" y="219.5" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">2</text><line x1="572.9" y1="202.5" x2="572.9" y2="208.5" stroke="var(--ink-2)" stroke-width="1"/><text x="572.9" y="219.5" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">3</text><line x1="47.0" y1="152.1" x2="53.0" y2="152.1" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="155.6" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">5</text><line x1="47.0" y1="98.7" x2="53.0" y2="98.7" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="102.2" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">10</text><line x1="47.0" y1="45.3" x2="53.0" y2="45.3" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="48.8" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">15</text><text x="662.0" y="198.5" fill="var(--ink-2)" font-size="10" text-anchor="end" font-family="Source Sans 3, sans-serif" font-style="italic">x</text><text x="56.0" y="28.0" fill="var(--ink-2)" font-size="10" text-anchor="start" font-family="Source Sans 3, sans-serif" font-style="italic">y</text><rect x="137.1" y="24.0" width="72.6" height="190.0" fill="var(--formula)" fill-opacity="0.12"/><rect x="500.2" y="24.0" width="72.6" height="190.0" fill="var(--formula)" fill-opacity="0.12"/><polyline points="75.4,27.8 78.0,33.5 80.5,39.2 83.0,44.8 85.6,50.4 88.1,55.9 90.7,61.4 93.2,66.8 95.8,72.1 98.3,77.5 100.8,82.7 103.4,87.9 105.9,93.1 108.5,98.2 111.0,103.2 113.5,108.2 116.1,113.1 118.6,118.0 121.2,122.9 123.7,127.7 126.2,132.4 128.8,137.1 131.3,141.7 133.9,146.3 136.4,150.8 139.0,152.1 141.5,152.1 144.0,152.1 146.6,152.1 149.1,152.1 151.7,152.1 154.2,152.1 156.7,152.1 159.3,152.1 161.8,152.1 164.4,152.1 166.9,152.1 169.5,152.1 172.0,152.1 174.5,152.1 177.1,152.1 179.6,152.1 182.2,152.1 184.7,152.1 187.2,152.1 189.8,152.1 192.3,152.1 194.9,152.1 197.4,152.1 200.0,152.1 202.5,152.1 205.0,152.1 207.6,152.1 210.1,151.7 212.7,148.7 215.2,145.8 217.8,143.0 220.3,140.2 222.8,137.4 225.4,134.7 227.9,132.1 230.5,129.5 233.0,127.0 235.5,124.5 238.1,122.0 240.6,119.7 243.2,117.3 245.7,115.1 248.2,112.8 250.8,110.7 253.3,108.5 255.9,106.5 258.4,104.5 261.0,102.5 263.5,100.6 266.0,98.7 268.6,96.9 271.1,95.2 273.7,93.5 276.2,91.8 278.8,90.2 281.3,88.7 283.8,87.2 286.4,85.8 288.9,84.4 291.5,83.0 294.0,81.8 296.5,80.5 299.1,79.4 301.6,78.2 304.2,77.2 306.7,76.1 309.2,75.2 311.8,74.3 314.3,73.4 316.9,72.6 319.4,71.8 322.0,71.1 324.5,70.5 327.0,69.9 329.6,69.3 332.1,68.8 334.7,68.4 337.2,68.0 339.8,67.6 342.3,67.4 344.8,67.1 347.4,66.9 349.9,66.8 352.5,66.7 355.0,66.7 357.5,66.7 360.1,66.8 362.6,66.9 365.2,67.1 367.7,67.4 370.2,67.6 372.8,68.0 375.3,68.4 377.9,68.8 380.4,69.3 383.0,69.9 385.5,70.5 388.0,71.1 390.6,71.8 393.1,72.6 395.7,73.4 398.2,74.3 400.8,75.2 403.3,76.1 405.8,77.2 408.4,78.2 410.9,79.4 413.5,80.5 416.0,81.8 418.5,83.0 421.1,84.4 423.6,85.8 426.2,87.2 428.7,88.7 431.2,90.2 433.8,91.8 436.3,93.5 438.9,95.2 441.4,96.9 444.0,98.7 446.5,100.6 449.0,102.5 451.6,104.5 454.1,106.5 456.7,108.5 459.2,110.7 461.7,112.8 464.3,115.1 466.8,117.3 469.4,119.7 471.9,122.0 474.5,124.5 477.0,127.0 479.5,129.5 482.1,132.1 484.6,134.7 487.2,137.4 489.7,140.2 492.3,143.0 494.8,145.8 497.3,148.7 499.9,151.7 502.4,152.1 505.0,152.1 507.5,152.1 510.0,152.1 512.6,152.1 515.1,152.1 517.7,152.1 520.2,152.1 522.8,152.1 525.3,152.1 527.8,152.1 530.4,152.1 532.9,152.1 535.5,152.1 538.0,152.1 540.5,152.1 543.1,152.1 545.6,152.1 548.2,152.1 550.7,152.1 553.2,152.1 555.8,152.1 558.3,152.1 560.9,152.1 563.4,152.1 566.0,152.1 568.5,152.1 571.0,152.1 573.6,150.8 576.1,146.3 578.7,141.7 581.2,137.1 583.7,132.4 586.3,127.7 588.8,122.9 591.4,118.0 593.9,113.1 596.5,108.2 599.0,103.2 601.5,98.2 604.1,93.1 606.6,87.9 609.2,82.7 611.7,77.5 614.2,72.1 616.8,66.8 619.3,61.4 621.9,55.9 624.4,50.4 627.0,44.8 629.5,39.2 632.0,33.5 634.6,27.8" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linejoin="round"/><line x1="50.0" y1="152.1" x2="660.0" y2="152.1" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="355.0" y="34.7" fill="var(--ink-2)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">|x² − 4| + |x² − 9| ≥ 5;  = 5 ફક્ત છાયાવાળા ભાગમાં</text><text x="652.7" y="146.1" fill="var(--exam)" font-size="11" text-anchor="end" font-family="Source Sans 3, sans-serif">y = 5</text></svg><div class="diagram-cap">y = |x² − 4| + |x² − 9| ના ગણેલા બિંદુઓ (5 થી ઉપરનો ભાગ clip): સમાનતા ફક્ત 4 ≤ x² ≤ 9 માં.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">|A| + |B| = |A + B| ⟺ AB ≥ 0;   |A| + |B| = |A − B| ⟺ AB ≤ 0</div><div class="meaning">Triangle inequality |A| + |B| ≥ |A ± B| માં સમાનતા ત્યારે જ જ્યારે બંને "એક દિશામાં" હોય. તેથી બે modulus નો સરવાળો જોઈએ ત્યારે પહેલાં તપાસો: A + B કે A − B જમણી બાજુ સરળ બને છે? |x| વાળા quadratic (x² − a|x| + b = m) માં t = |x| ≥ 0 મૂકો: દરેક ધન t ⟹ બે x, t = 0 ⟹ એક x. Real-world: GPS/નકશામાં "A થી B થઈને C" નું અંતર સીધા A-C અંતર જેટલું ત્યારે જ જ્યારે B સીધી રેખા પર હોય — એ જ સમાનતા શરત.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — |x² − 4| + |x² − 9| = 5</div><div class="step"><b>Need</b> — ઉકેલ ગણ</div><div class="step"><b>Method</b> — A = x² − 4, B = x² − 9, A − B = 5 ⟹ AB ≤ 0</div><div class="step"><b>Calculation</b> — (x² − 4)(x² − 9) ≤ 0 ⟹ 4 ≤ x² ≤ 9 ⟹ x ∈ [−3, −2] ∪ [2, 3]</div><div class="step"><b>Check</b> — x = 2.5: 2.25 + 2.75 = 5 ✓; x = 0: 4 + 9 = 13 ✗</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>Endpoints છોડી દેવા — A અથવા B = 0 પર પણ સમાનતા પૂરી થાય ⟹ બંધ અંતરાલ.</div>
+
+<!-- upd-2026-10-04:qe-nested -->
+<h3>JEE extension — અનંત nested radical અને log-domain વાળા સમીકરણ</h3>
+<div class="diagram"><svg viewBox="0 0 680 250" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="50.0" y1="214.0" x2="660.0" y2="214.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="666.0,214.0 660.0,216.7 660.0,211.3" fill="var(--ink-2)"/><line x1="50.0" y1="214.0" x2="50.0" y2="24.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="50.0,18.0 52.7,24.0 47.3,24.0" fill="var(--ink-2)"/><line x1="172.0" y1="211.0" x2="172.0" y2="217.0" stroke="var(--ink-2)" stroke-width="1"/><text x="172.0" y="228.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">1</text><line x1="294.0" y1="211.0" x2="294.0" y2="217.0" stroke="var(--ink-2)" stroke-width="1"/><text x="294.0" y="228.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">2</text><line x1="416.0" y1="211.0" x2="416.0" y2="217.0" stroke="var(--ink-2)" stroke-width="1"/><text x="416.0" y="228.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">3</text><line x1="538.0" y1="211.0" x2="538.0" y2="217.0" stroke="var(--ink-2)" stroke-width="1"/><text x="538.0" y="228.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">4</text><line x1="47.0" y1="172.7" x2="53.0" y2="172.7" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="176.2" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">1</text><line x1="47.0" y1="131.4" x2="53.0" y2="131.4" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="134.9" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">2</text><line x1="47.0" y1="90.1" x2="53.0" y2="90.1" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="93.6" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">3</text><line x1="47.0" y1="48.8" x2="53.0" y2="48.8" stroke="var(--ink-2)" stroke-width="1"/><text x="44.0" y="52.3" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">4</text><text x="662.0" y="207.0" fill="var(--ink-2)" font-size="10" text-anchor="end" font-family="Source Sans 3, sans-serif" font-style="italic">y</text><text x="56.0" y="28.0" fill="var(--ink-2)" font-size="10" text-anchor="start" font-family="Source Sans 3, sans-serif" font-style="italic">f(y)</text><polyline points="50.0,214.0 52.3,213.2 54.7,212.4 57.0,211.6 59.4,210.8 61.7,210.0 64.0,209.2 66.4,208.5 68.7,207.7 71.0,206.9 73.4,206.1 75.7,205.3 78.1,204.5 80.4,203.7 82.7,202.9 85.1,202.1 87.4,201.3 89.8,200.5 92.1,199.8 94.4,199.0 96.8,198.2 99.1,197.4 101.4,196.6 103.8,195.8 106.1,195.0 108.5,194.2 110.8,193.4 113.1,192.6 115.5,191.8 117.8,191.0 120.1,190.2 122.5,189.5 124.8,188.7 127.2,187.9 129.5,187.1 131.8,186.3 134.2,185.5 136.5,184.7 138.9,183.9 141.2,183.1 143.5,182.3 145.9,181.5 148.2,180.8 150.5,180.0 152.9,179.2 155.2,178.4 157.6,177.6 159.9,176.8 162.2,176.0 164.6,175.2 166.9,174.4 169.3,173.6 171.6,172.8 173.9,172.0 176.3,171.2 178.6,170.5 180.9,169.7 183.3,168.9 185.6,168.1 188.0,167.3 190.3,166.5 192.6,165.7 195.0,164.9 197.3,164.1 199.7,163.3 202.0,162.5 204.3,161.8 206.7,161.0 209.0,160.2 211.3,159.4 213.7,158.6 216.0,157.8 218.4,157.0 220.7,156.2 223.0,155.4 225.4,154.6 227.7,153.8 230.1,153.0 232.4,152.2 234.7,151.5 237.1,150.7 239.4,149.9 241.7,149.1 244.1,148.3 246.4,147.5 248.8,146.7 251.1,145.9 253.4,145.1 255.8,144.3 258.1,143.5 260.4,142.8 262.8,142.0 265.1,141.2 267.5,140.4 269.8,139.6 272.1,138.8 274.5,138.0 276.8,137.2 279.2,136.4 281.5,135.6 283.8,134.8 286.2,134.0 288.5,133.2 290.8,132.5 293.2,131.7 295.5,130.9 297.9,130.1 300.2,129.3 302.5,128.5 304.9,127.7 307.2,126.9 309.6,126.1 311.9,125.3 314.2,124.5 316.6,123.8 318.9,123.0 321.2,122.2 323.6,121.4 325.9,120.6 328.3,119.8 330.6,119.0 332.9,118.2 335.3,117.4 337.6,116.6 340.0,115.8 342.3,115.0 344.6,114.3 347.0,113.5 349.3,112.7 351.6,111.9 354.0,111.1 356.3,110.3 358.7,109.5 361.0,108.7 363.3,107.9 365.7,107.1 368.0,106.3 370.4,105.5 372.7,104.7 375.0,104.0 377.4,103.2 379.7,102.4 382.0,101.6 384.4,100.8 386.7,100.0 389.1,99.2 391.4,98.4 393.7,97.6 396.1,96.8 398.4,96.0 400.8,95.2 403.1,94.5 405.4,93.7 407.8,92.9 410.1,92.1 412.4,91.3 414.8,90.5 417.1,89.7 419.5,88.9 421.8,88.1 424.1,87.3 426.5,86.5 428.8,85.8 431.1,85.0 433.5,84.2 435.8,83.4 438.2,82.6 440.5,81.8 442.8,81.0 445.2,80.2 447.5,79.4 449.9,78.6 452.2,77.8 454.5,77.0 456.9,76.2 459.2,75.5 461.5,74.7 463.9,73.9 466.2,73.1 468.6,72.3 470.9,71.5 473.2,70.7 475.6,69.9 477.9,69.1 480.3,68.3 482.6,67.5 484.9,66.8 487.3,66.0 489.6,65.2 491.9,64.4 494.3,63.6 496.6,62.8 499.0,62.0 501.3,61.2 503.6,60.4 506.0,59.6 508.3,58.8 510.7,58.0 513.0,57.2 515.3,56.5 517.7,55.7 520.0,54.9 522.3,54.1 524.7,53.3 527.0,52.5 529.4,51.7 531.7,50.9 534.0,50.1 536.4,49.3 538.7,48.5 541.0,47.8 543.4,47.0 545.7,46.2 548.1,45.4 550.4,44.6 552.7,43.8 555.1,43.0 557.4,42.2 559.8,41.4 562.1,40.6 564.4,39.8 566.8,39.0 569.1,38.2 571.4,37.5 573.8,36.7 576.1,35.9 578.5,35.1 580.8,34.3 583.1,33.5 585.5,32.7 587.8,31.9 590.2,31.1 592.5,30.3 594.8,29.5 597.2,28.8 599.5,28.0 601.8,27.2 604.2,26.4 606.5,25.6 608.9,24.8 611.2,24.0" stroke="var(--ink-3)" fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/><polyline points="50.0,112.8 52.5,112.6 55.1,112.5 57.6,112.3 60.2,112.1 62.7,112.0 65.2,111.8 67.8,111.6 70.3,111.4 72.9,111.3 75.4,111.1 78.0,110.9 80.5,110.7 83.0,110.6 85.6,110.4 88.1,110.2 90.7,110.1 93.2,109.9 95.8,109.7 98.3,109.5 100.8,109.4 103.4,109.2 105.9,109.0 108.5,108.9 111.0,108.7 113.5,108.5 116.1,108.4 118.6,108.2 121.2,108.0 123.7,107.9 126.2,107.7 128.8,107.5 131.3,107.4 133.9,107.2 136.4,107.0 139.0,106.9 141.5,106.7 144.0,106.5 146.6,106.4 149.1,106.2 151.7,106.0 154.2,105.9 156.8,105.7 159.3,105.5 161.8,105.4 164.4,105.2 166.9,105.0 169.5,104.9 172.0,104.7 174.5,104.6 177.1,104.4 179.6,104.2 182.2,104.1 184.7,103.9 187.2,103.7 189.8,103.6 192.3,103.4 194.9,103.3 197.4,103.1 200.0,102.9 202.5,102.8 205.0,102.6 207.6,102.5 210.1,102.3 212.7,102.1 215.2,102.0 217.8,101.8 220.3,101.7 222.8,101.5 225.4,101.4 227.9,101.2 230.5,101.0 233.0,100.9 235.5,100.7 238.1,100.6 240.6,100.4 243.2,100.3 245.7,100.1 248.2,99.9 250.8,99.8 253.3,99.6 255.9,99.5 258.4,99.3 261.0,99.2 263.5,99.0 266.0,98.9 268.6,98.7 271.1,98.6 273.7,98.4 276.2,98.2 278.8,98.1 281.3,97.9 283.8,97.8 286.4,97.6 288.9,97.5 291.5,97.3 294.0,97.2 296.5,97.0 299.1,96.9 301.6,96.7 304.2,96.6 306.7,96.4 309.2,96.3 311.8,96.1 314.3,96.0 316.9,95.8 319.4,95.7 322.0,95.5 324.5,95.4 327.0,95.2 329.6,95.1 332.1,94.9 334.7,94.8 337.2,94.6 339.8,94.5 342.3,94.3 344.8,94.2 347.4,94.0 349.9,93.9 352.5,93.7 355.0,93.6 357.5,93.4 360.1,93.3 362.6,93.1 365.2,93.0 367.7,92.8 370.2,92.7 372.8,92.5 375.3,92.4 377.9,92.3 380.4,92.1 383.0,92.0 385.5,91.8 388.0,91.7 390.6,91.5 393.1,91.4 395.7,91.2 398.2,91.1 400.8,91.0 403.3,90.8 405.8,90.7 408.4,90.5 410.9,90.4 413.5,90.2 416.0,90.1 418.5,89.9 421.1,89.8 423.6,89.7 426.2,89.5 428.7,89.4 431.2,89.2 433.8,89.1 436.3,88.9 438.9,88.8 441.4,88.7 444.0,88.5 446.5,88.4 449.0,88.2 451.6,88.1 454.1,88.0 456.7,87.8 459.2,87.7 461.8,87.5 464.3,87.4 466.8,87.3 469.4,87.1 471.9,87.0 474.5,86.8 477.0,86.7 479.5,86.6 482.1,86.4 484.6,86.3 487.2,86.1 489.7,86.0 492.2,85.9 494.8,85.7 497.3,85.6 499.9,85.4 502.4,85.3 505.0,85.2 507.5,85.0 510.0,84.9 512.6,84.8 515.1,84.6 517.7,84.5 520.2,84.3 522.8,84.2 525.3,84.1 527.8,83.9 530.4,83.8 532.9,83.7 535.5,83.5 538.0,83.4 540.5,83.2 543.1,83.1 545.6,83.0 548.2,82.8 550.7,82.7 553.2,82.6 555.8,82.4 558.3,82.3 560.9,82.2 563.4,82.0 566.0,81.9 568.5,81.8 571.0,81.6 573.6,81.5 576.1,81.4 578.7,81.2 581.2,81.1 583.8,81.0 586.3,80.8 588.8,80.7 591.4,80.6 593.9,80.4 596.5,80.3 599.0,80.2 601.5,80.0 604.1,79.9 606.6,79.8 609.2,79.6 611.7,79.5 614.2,79.4 616.8,79.2 619.3,79.1 621.9,79.0 624.4,78.8 627.0,78.7 629.5,78.6 632.0,78.4 634.6,78.3 637.1,78.2 639.7,78.1 642.2,77.9 644.8,77.8 647.3,77.7 649.8,77.5 652.4,77.4 654.9,77.3 657.5,77.1 660.0,77.0" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linejoin="round"/><circle cx="416.0" cy="90.1" r="3.6" fill="var(--exam)"/><text x="426.0" y="108.1" fill="var(--exam)" font-size="12" text-anchor="start" font-family="Source Sans 3, sans-serif" font-weight="600">fixed point: y = √(6 + y) ⟹ y = 3</text><line x1="50.0" y1="214.0" x2="50.0" y2="112.8" stroke="var(--formula)" stroke-width="1.2"/><line x1="50.0" y1="112.8" x2="348.8" y2="112.8" stroke="var(--formula)" stroke-width="1.2"/><line x1="348.8" y1="112.8" x2="348.8" y2="93.9" stroke="var(--formula)" stroke-width="1.2"/><line x1="348.8" y1="93.9" x2="404.6" y2="93.9" stroke="var(--formula)" stroke-width="1.2"/><line x1="404.6" y1="93.9" x2="404.6" y2="90.7" stroke="var(--formula)" stroke-width="1.2"/><line x1="404.6" y1="90.7" x2="414.1" y2="90.7" stroke="var(--formula)" stroke-width="1.2"/><line x1="414.1" y1="90.7" x2="414.1" y2="90.2" stroke="var(--formula)" stroke-width="1.2"/><line x1="414.1" y1="90.2" x2="415.7" y2="90.2" stroke="var(--formula)" stroke-width="1.2"/><text x="111.0" y="40.5" fill="var(--formula)" font-size="11.5" text-anchor="start" font-family="Source Sans 3, sans-serif">cobweb: 0 → √6 → √(6+√6) → … → 3</text></svg><div class="diagram-cap">y = √(6 + y) અને y = y ના ગણેલા વક્રો; cobweb પગલાં ખરેખર ગણેલા — 3 તરફ જાય છે.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">√(a + √(a + √(a + …))) = y ⟹ y = √(a + y) ⟹ y² − y − a = 0 (ધન મૂળ)</div><div class="meaning">અનંત શ્રેણી પોતાની અંદર ફરી દેખાય છે, તેથી y પોતાનાથી વ્યાખ્યાયિત થાય. Radical હંમેશા ≥ 0, એટલે ફક્ત ધન મૂળ લો. Log સમીકરણ (log f = log g) ઉકેલી પછી <b>domain</b> (f > 0, g > 0) થી roots ગાળો — log(kx) = 2log(x + 1) માં k < 0 હોય તો પણ x ઋણ હોય ત્યારે kx > 0 બને. Real-world: continued fraction/નેસ્ટેડ ફોર્મ્યુલા (જેમ કે golden ratio φ = √(1 + √(1 + …))) આ જ રીતે ઉકેલાય.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — √(6 + √(6 + √(6 + …)))</div><div class="step"><b>Need</b> — કિંમત</div><div class="step"><b>Method</b> — y = √(6 + y)</div><div class="step"><b>Calculation</b> — y² − y − 6 = 0 ⟹ (y − 3)(y + 2) = 0 ⟹ y = 3</div><div class="step"><b>Check</b> — પગલાં: 2.449, 2.906, 2.984, 2.997 → 3 ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>ઋણ મૂળ (−2) પણ સ્વીકારવું, અથવા log સમીકરણમાં domain તપાસ્યા વગર બધા roots લખી દેવા.</div>
+<div class="next-line">→ <b>Next action:</b> Quadratic Equations PYQ Solutions.html (Practice and Answer Keys folder) — આ patterns (biquadratic, range, common root, location of roots, power-sum recurrence, transformed roots) ને actual PYQ problems માં જુઓ.</div>
+</div>
+
+<!-- ============ SUMMARY ============ -->
+<div class="part">
+<h3>8p. Newton's identities — 3+ roots ના power-sums (cubic/quartic વગેરે)</h3>
+<div class="concept-box box">
+  <span class="label">must understand — Part 8d નું higher-degree extension</span>
+  Part 8d નું Pₙ=S·Pₙ₋₁−P·Pₙ₋₂ recurrence માત્ર <b>2 roots</b> (quadratic) માટે છે. 3+ roots (cubic, quartic...) માટે elementary symmetric functions e₁=Σr, e₂=Σrᵢrⱼ, e₃=Σrᵢrⱼrₖ... (polynomial ના coefficients પરથી સીધા, sign alternate કરીને) વાપરી power-sums pₙ=Σrⁿ કાઢવાનું <b>Newton's identities</b> કહેવાય:
+</div>
+<div class="formula-box">
+  <span class="label">formula — Newton's identities (પ્રથમ 3)</span>
+  <div class="f">p₁=e₁ &nbsp; p₂=e₁p₁−2e₂ &nbsp; p₃=e₁p₂−e₂p₁+3e₃</div>
+  <div class="meaning">xⁿ−e₁xⁿ⁻¹+e₂xⁿ⁻²−e₃xⁿ⁻³+... ના standard sign pattern સાથે equation ના printed coefficients ને match કરીને e₁,e₂,e₃ ઓળખો (sign flip ધ્યાનથી)</div>
+</div>
+<div class="example">
+  <span class="label">worked example — Practice sheets માં આવેલો છે</span>
+  <div class="step"><b>Q.</b> x⁴−3x³−2x²+3x+1=0 ના roots ના cubes નો sum શોધો.</div>
+  <div class="step">e₁=3, e₂=−2, e₃=−3 (coefficients ને −e₁,+e₂,−e₃,+e₄ pattern સાથે match કરીને)</div>
+  <div class="step">p₁=3; p₂=3(3)−2(−2)=13; p₃=3(13)−(−2)(3)+3(−3)=39+6−9=<b>36</b></div>
+</div>
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  e₂,e₃ ના sign ને coefficient ના sign સાથે directly (flip વગર) લેવા — standard form xⁿ−e₁xⁿ⁻¹+e₂xⁿ⁻²−e₃xⁿ⁻³+... માં alternate signs છે, એ ભૂલવું નહીં.
+</div>
+
+<h3>8q. Palindromic polynomial — y+1/y substitution</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Exponential/polynomial equation ના coefficients symmetric હોય (દા.ત. y⁴+4y³−58y²+4y+1: 1,4,−58,4,1 — આગળ-પાછળ સરખા) ત્યારે y²થી divide કરી u=y+1/y મૂકતા degree ઘટીને quadratic-in-u બને છે. <b>Real y માટે |u|≥2 જરૂરી</b> (AM-GM: y+1/y ના extreme values ±2 પર) — આ constraint valid u ને filter કરવા હંમેશા વાપરવો.
+</div>
+<div class="formula-box">
+  <span class="label">formula</span>
+  <div class="f">y²+1/y² = u²−2 &nbsp; (u=y+1/y, y≠0)</div>
+</div>
+<div class="example">
+  <span class="label">worked example — Practice sheets માં આવેલો છે</span>
+  <div class="step"><b>Q.</b> e⁴ˣ+4e³ˣ−58e²ˣ+4eˣ+1=0 ના real solutions ની સંખ્યા.</div>
+  <div class="step">y=eˣ: y²+4y−58+4/y+1/y²=0 → (u²−2)+4u−58=0 → u²+4u−60=0 → u=6, u=−10</div>
+  <div class="step">u=6 (|u|≥2 ✓): y+1/y=6 → y=3±2√2 (બંને positive) → 2 valid x. u=−10: y negative → reject (eˣ&gt;0)</div>
+  <div class="step">Answer: <b>2</b> real solutions</div>
+</div>
+
+<div class="remember">
+  <span class="label">remember — સંપૂર્ણ chapter</span>
+  <ol>
+    <li>D=b²−4ac — roots ની nature (real/equal/complex, rational/irrational) સંપૂર્ણપણે decide કરે છે</li>
+    <li>α+β=−b/a, αβ=c/a — roots શોધ્યા વગર reasoning નો પાયો</li>
+    <li>Symmetric functions (α²+β², α³+β³...) → S,P ના પદોમાં લખાય; asymmetric (α−β) માં ±√D/a આવે</li>
+    <li>Common root: બંને common ⟹ ratios equal; એક common ⟹ cross-multiplication formula</li>
+    <li>Location of roots: a·f(k) નું sign parabola પરથી k ક્યાં આવેલો છે એ બતાવે</li>
+    <li>Inequality: roots ની બહાર/વચ્ચે a ના sign પ્રમાણે expression નું sign — wavy curve</li>
+    <li>Vertex = (−b/2a, c−b²/4a); "∀x" inequality ⟹ D&lt;0 (a ના sign સાથે); "∃x" ⟹ D&gt;0 અથવા a ના sign ઊંધું</li>
+    <li>Power-sum recurrence Pₙ=S·Pₙ₋₁−P·Pₙ₋₂ — αⁿ+βⁿ ઝડપથી શોધવા (2 roots); Newton's identities e₁,e₂,e₃... (Part 8p) એ જ idea 3+ roots માટે</li>
+    <li>(JEE) biquadratic substitution, range-via-D≥0 trick, more-than-2-roots ⟹ identity, transformed-roots (products/ratios), root-is-square-of-other, (x−a)(x−b)=c pattern</li>
+    <li>Modulus/floor/exponential/radical-mixed equations (Parts 8i-8m); real-coeff conjugate-root rule; complex-coefficient equations behave differently (Part 8n); power-reduction via the defining equation (Part 8o)</li>
+    <li>Palindromic polynomial (symmetric coefficients) ⟹ y+1/y substitution, |u|≥2 constraint (Part 8q)</li>
+  </ol>
+</div>
+<div class="next-line" style="border-top:none;padding-top:0">→ <b>Next action after this chapter:</b> Revision Sheet પર speed-practice કરો, પછી Practice and Answer Keys ના PYQ set પર — ખાસ Part 6 (location of roots) અને Part 8 (JEE extensions) પર ધ્યાન આપો, ત્યાં ભૂલ થવાની શક્યતા સૌથી વધારે છે.</div>
+</div>
+
+</div>

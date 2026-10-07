@@ -1,0 +1,1179 @@
+<title>Newton's Laws of Motion — PYQ solutions</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,6vw,34px);margin:0 0 6px}
+h2{font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10px}
+.subtitle{color:var(--ink-2);font-size:14.5px;margin:0 0 8px}
+.status{background:var(--check-bg);border:1px solid var(--check-line);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--check);margin-bottom:28px}
+.status b{color:var(--ink)}
+
+.section-divider{margin:40px 0 20px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+.qcard{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:34px;background:var(--surface)}
+.qhead{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.qnum{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-bg);padding:2px 10px;border-radius:20px}
+.qsrc{font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono)}
+.qtext{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:14.5px;margin:10px 0 16px;font-family:var(--font-mono)}
+.qtext .opts{margin-top:6px;color:var(--ink-2);font-size:13px}
+
+.step{margin:12px 0}
+.step .lbl{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.step .lbl .no{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:10px;color:var(--surface)}
+.step-body{font-size:14px;padding:10px 14px;border-radius:8px;border:1px solid}
+
+.s1 .no{background:var(--check)} .s1 .lbl{color:var(--check)} .s1 .step-body{background:var(--check-bg);border-color:var(--check-line)}
+.s2 .no{background:var(--accent)} .s2 .lbl{color:var(--accent)} .s2 .step-body{background:var(--accent-bg);border-color:var(--accent)}
+.s3 .no{background:var(--mistake)} .s3 .lbl{color:var(--mistake)} .s3 .step-body{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.s4 .no{background:var(--exam)} .s4 .lbl{color:var(--exam)} .s4 .step-body{background:var(--exam-bg);border-color:var(--exam-line)}
+.s5 .no{background:var(--formula)} .s5 .lbl{color:var(--formula)} .s5 .step-body{background:var(--formula-bg);border-color:var(--formula-line)}
+.s6 .no{background:var(--ink)} .s6 .lbl{color:var(--ink)} .s6 .step-body{background:var(--surface);border-color:var(--line)}
+.s7 .no{background:var(--ink-3)} .s7 .lbl{color:var(--ink-3)} .s7 .step-body{background:var(--surface);border-color:var(--line);border-style:dashed}
+.s8 .no{background:var(--exam)} .s8 .lbl{color:var(--exam)} .s8 .step-body{background:var(--exam-bg);border-color:var(--exam-line);font-weight:600}
+
+.calc{font-family:var(--font-mono);font-size:13.5px;margin:4px 0}
+.ans{font-family:var(--font-mono);font-weight:600;color:var(--formula);background:var(--formula-bg);border:1px solid var(--formula-line);border-radius:6px;padding:4px 10px;display:inline-block;margin-top:4px}
+ol,ul{margin:4px 0;padding-left:20px}
+li{margin-bottom:3px}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;margin:10px 0;color:var(--ink)}
+.diagram svg{display:block;width:100%;height:auto;max-height:260px}
+.diagram-cap{text-align:center;font-size:11px;color:var(--ink-3);margin-top:4px}
+.step-body a{color:inherit;font-weight:600;text-decoration:none;border-bottom:1.5px dotted currentColor}
+.jumpicon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--formula);color:var(--surface);text-decoration:none;font-size:12px;font-weight:700;vertical-align:middle;margin-left:2px}
+
+.tools{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:20px}
+.tools h3{font-family:var(--font-display);font-size:17px;margin:18px 0 8px}
+.tools h3:first-child{margin-top:0}
+.flag{background:var(--mistake-bg);border:1px solid var(--mistake-line);color:var(--mistake);border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Newton's Laws of Motion — PYQ solution sheet</h1>
+<p class="subtitle">NLM - PYQ.pdf — JEE Main previous-years, Level-I &amp; Level-II, approach-first solutions</p>
+<div class="status">
+<b>સ્ત્રોત સ્કેનમાં કુલ 65 પ્રશ્નો સંપૂર્ણ રીતે વાંચી શકાય તેવા છે (Q.1&ndash;Q.65) — આ બધા 65 (100%) independently ઉકેલાયેલા અને verify થયેલા છે.</b><br>
+Level-I Section-A (Q1&ndash;14, ન્યૂટનના નિયમો/momentum): 14/14. Level-I Section-B (Q15&ndash;41, સંતુલન/યંત્રશાસ્ત્ર/ઘર્ષણ): 27/27. Level-II Section-A (Q42&ndash;51): 10/10. Level-II Section-B + ઘર્ષણાંક (Q52&ndash;65): 14/14.<br>
+<b>સ્કેન સ્પષ્ટ રીતે પાનું 8 (છેલ્લા પાના) ના જમણા હાંસિયે Q.66, Q.67, Q.68 ના સ્ટબ નંબર દેખાય છે પણ તેમનું પ્રશ્ન-લખાણ કપાઈ ગયેલ/ગેરહાજર છે</b> — આ ત્રણેય પ્રશ્નો સ્કેનમાં જ અધૂરા છે (ખોટા guess ને બદલે honest રીતે અહીં નોંધેલ છે); સ્પષ્ટ સ્કેન મળે તો ઉમેરી શકાય.<br>
+Q.37, Q.38, Q.39, Q.40, Q.41, Q.61, Q.62, Q.63, Q.64, Q.65 — આ Numerical-Value-Answer (NVA) પ્રકારના પ્રશ્નો છે (સ્કેનમાં options છાપેલ નથી, એ ડિફેક્ટ નથી, JEE ના integer-answer format મુજબનું જ છે); દરેક માટે સીધો ગણેલ numeric જવાબ આપેલ છે. Q.60 નું પણ મૂળ સ્કેનમાં options છાપેલ ન હતા (options-cutoff, બાકીના પ્રશ્નોથી અલગ) — ત્યાં પણ સ્વતંત્ર numeric derivation આપેલ છે.<br>
+7-point final-check pass ચલાવેલ છે (force-analysis/formula ચોકસાઈ, diagram vector-accuracy, cross-reference sync) — નીચે master tools section માં વિગત.
+</div>
+
+<!-- ============ Q.1 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.1</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2019 (Jan)</span></div>
+<div class="qtext">એક કણ t=0 એ (2î+4ĵ)m થી પ્રારંભિક વેગ (5î+4ĵ)ms⁻¹ સાથે ગતિ કરે છે, અચળ પ્રવેગ (4î+4ĵ)ms⁻² લાગે છે. t=2s એ ઉગમબિંદુથી અંતર?<div class="opts">(A) 15 m &nbsp; (B) 20√2 m &nbsp; (C) 5 m &nbsp; (D) 10√2 m</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">r=r₀+v₀t+½at² થી t=2s નું સ્થાન, પછી ઉગમથી અંતર.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">x,y component અલગ ગણો, પછી Pythagoras.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: r₀=(2,4) ઉમેરવાનું ના ભૂલો</li><li>DON'T: î,ĵ component ભેગા ના કરો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">વિસ્થાપન (Δr) ને જ અંતર ગણી લેવું — r₀ ઉમેરવું જરૂરી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">x=2+5(2)+½(4)(4)=20, y=4+4(2)+½(4)(4)=20</div><div class="calc">અંતર=√(20²+20²)=20√2 m</div><div class="ans">Answer: (B) 20√2 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">a ના બંને component સરખા ⟹ final x=y, ઝડપી ચેક.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">બંને axis ના a સરખા હોય તો x=y પેટર્નથી sanity-check કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.2 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.2</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2021 (Feb)</span></div>
+<div class="qtext">2 kg વસ્તુ ઘર્ષણરહિત સપાટી પર, F=20î+10ĵ N લાગે તો પ્રથમ 10s માં x-દિશાનું વિસ્થાપન?<div class="opts">(A) 500 m &nbsp; (B) 300 m &nbsp; (C) 400 m &nbsp; (D) 200 m</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">માત્ર x-component (F_x=20N) જોઈએ, y અપ્રસ્તુત.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a_x=F_x/m, u=0 (મુકેલ છે), s=½a_xt².</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: u=0 લો</li><li>DON'T: F ના magnitude ને a માટે ના વાપરો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F ના resultant magnitude ને ખોટી રીતે વાપરવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a_x=20/2=10 m/s²</div><div class="calc">s=½(10)(100)=500 m</div><div class="ans">Answer: (A) 500 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">y-motion સ્વતંત્ર (a_y=5), પણ પ્રશ્ન x પૂરતો સીમિત.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">2D બળ, 1D જવાબ પૂછે તો — બીજા axis ને સ્પર્શશો જ નહીં.</div></div>
+
+</div>
+
+<!-- ============ Q.3 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.3</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">વ્યક્તિ લિફ્ટમાં ઉભો છે. કઈ સ્થિતિમાં વજનરહિત અનુભવશે?<div class="opts">(A) ઉપર તરફ અચળ પ્રવેગ &nbsp; (B) નીચે તરફ g જેટલા અચળ પ્રવેગ &nbsp; (C) ઉપર તરફ નિયમિત વેગ &nbsp; (D) નીચે તરફ નિયમિત વેગ</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">N=0 ક્યારે — 'નીચે જવું' પૂરતું નથી, a=g જ જોઈએ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">N=m(g−a); N=0 ⟹ a=g (free-fall).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: N=m(g−a) યાદ રાખો</li><li>DON'T: 'નીચે તરફ કોઈપણ a' ને વજનરહિત ના ગણો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">'નીચે તરફ ગતિ' અને 'a=g નીચે' ને એક ગણવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">N=m(g−a)=0 ⟹ a=g</div><div class="calc">આ free-fall જેવી સ્થિતિ</div><div class="ans">Answer: (B) નીચે તરફ g જેટલા અચળ પ્રવેગથી</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Uniform velocity (C,D) બંનેમાં N=mg — elimination સીધું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'વજનરહિત' શબ્દ ⟹ N=m(g−a)=0 ⟹ a=g સિવાય જવાબ ના હોય.</div></div>
+
+</div>
+
+<!-- ============ Q.4 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.4</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">ક્રેનના દોરડાનું આડછેદ ક્ષેત્રફળ 2.5×10⁻⁴ m², મહત્તમ ક્ષમતા 10 મેટ્રિક ટન. 25 ટન ક્ષમતા માટે ક્ષેત્રફળ?<div class="opts">(A) 6.5×10⁻⁴ m² &nbsp; (B) 10×10⁻⁴ m² &nbsp; (C) 1×10⁻⁴ m² &nbsp; (D) 1.67×10⁻⁴ m²</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Load ટકાવવા max stress (=load/area) અચળ material-property — load∝area.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">A₁/L₁=A₂/L₂ (direct proportion).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: load∝area સીધો ratio</li><li>DON'T: ઊલટો proportion ના ધારો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Area ઘટાડવું ધારી લેવું — વધુ load માટે વધુ area જ જોઈએ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">2.5×10⁻⁴/10 = A₂/25</div><div class="calc">A₂ = 2.5×10⁻⁴×2.5 = 6.25×10⁻⁴ m² ≈ 6.5×10⁻⁴</div><div class="ans">Answer: (A) 6.5×10⁻⁴ m² (નજીકનો વિકલ્પ)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Unit stress=10/2.5e-4=4×10⁴ ton/m²; A₂=25/4×10⁴=6.25×10⁻⁴ — સેમ.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Stress અચળ રાખવાના પ્રશ્નમાં ratio સીધો cross-multiply કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.5 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.5</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">5 kg પદાર્થ 25 ms⁻¹ ઝડપે બે અલગ દીવાલોને અથડાય, (i)3s (ii)5s માં અટકે. સાચો વિકલ્પ?<div class="opts">(A) આઘાત, બળ બંને સમાન &nbsp; (B) આઘાત સમાન, બળ જુદું &nbsp; (C) બળ સમાન, આઘાત જુદું &nbsp; (D) બંને જુદા</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Impulse(=Δp, સમય-સ્વતંત્ર) vs average force(=Δp/t, સમય-આધારિત) નું અલગ વર્તન.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Δp=mΔv બંનેમાં સમાન (m,u,v સરખા); F=Δp/t જુદા સમય માટે જુદું.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: impulse પહેલાં કાઢો</li><li>DON'T: impulse ને સમય-આધારિત ના ગણો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Impulse ને પણ સમય પ્રમાણે બદલાતું ધારી લેવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">J=5×25=125 kg·m/s (બંને સમાન)</div><div class="calc">F(i)=125/3=41.7N, F(ii)=125/5=25N (જુદા)</div><div class="ans">Answer: (B) આઘાત સમાન, બળ જુદું-જુદું</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">J=Δp direct યાદ રાખવાથી ગણતરી વિના concept-જવાબ.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">સમય જુદો પણ u,v,m સરખા ⟹ impulse સમાન, force જુદું — પેટર્ન યાદ રાખો.</div></div>
+
+</div>
+
+<!-- ============ Q.6 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.6</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">ફુગ્ગાનું દળ 10g, 4.5 cm/s ઝડપે હવા નીકળે, 5s માં ખાલી. ફુગ્ગા પર સરેરાશ બળ ___ dyne.<div class="opts">(A) 3 &nbsp; (B) 9 &nbsp; (C) 12 &nbsp; (D) 18</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Variable-mass thrust સમસ્યા — escaping gas reaction force આપે (rocket-સિદ્ધાંત).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F=v_rel×(dm/dt), cgs એકમમાં સીધું dyne.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: dm/dt=10/5=2 g/s</li><li>DON'T: cgs ને SI માં convert ના કરો — dyne જ જોઈએ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F=ma વાપરવાનો પ્રયત્ન — mass અહીં અચળ નથી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">dm/dt=2 g/s</div><div class="calc">F=4.5×2=9 dyne</div><div class="ans">Answer: (B) 9 dyne</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Variable-mass (rocket/ફુગ્ગો) ⟹ F=v(dm/dt) reflex, F=ma નહીં.</div></div>
+
+</div>
+
+<!-- ============ Q.7 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.7</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">વિધાન-I: એલિવેટરનું વજન કેબલ-તણાવ સાથે સંતુલિત હોય ત્યારે તે સમાન ઝડપે ઉપર/નીચે જઈ શકે. વિધાન-II: એલિવેટર વધતી ઝડપે નીચે જાય ત્યારે વ્યક્તિના પગ પર બળ વજન કરતાં વધુ હોય.<div class="opts">(A) બંને ખોટા &nbsp; (B) I સાચું, II ખોટું &nbsp; (C) બંને સાચા &nbsp; (D) I ખોટું, II સાચું</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બે સ્વતંત્ર statement — પહેલું Newton 1st law (a=0), બીજું apparent-weight (a>0 downward) નું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">N=m(g∓a) framework માં ચકાસો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'સંતુલિત તણાવ'=a=0 (1st law, velocity ગમે તે હોઈ શકે)</li><li>DON'T: 'નીચે જવું' ને 'નીચે વેગ વધવો' સાથે ના ગૂંચવો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Downward acceleration વખતે N વધે એમ ધારવું — ખરેખર N=m(g−a) ઘટે છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">I: T=mg ⟹ a=0 ⟹ 1st law મુજબ સાચું</div><div class="calc">II: a>0 downward ⟹ N=m(g−a)<mg — ખોટું</div><div class="ans">Answer: (B) વિધાન I સાચું, વિધાન II ખોટું</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">m=60,a=2: N=60(8)=480N<600N=mg — II ના દાવાથી ઊલટું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Elevator apparent-weight માં N=m(g∓a), 'ઝડપ વધવી/ઘટવી' a ની દિશા બતાવે, ગતિની દિશા નહીં.</div></div>
+
+</div>
+
+<!-- ============ Q.8 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.8</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">20 kg પદાર્થ પર વિરામસ્થિતિથી 20s બળ લાગે, પછી બળ બંધ, પછીના 10s માં 50m કાપે. બળનું મૂલ્ય?<div class="opts">(A) 40 N &nbsp; (B) 5 N &nbsp; (C) 20 N &nbsp; (D) 10 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બળ હટ્યા પછીની ગતિ = constant velocity (કોઈ resistance નથી) — એ velocity પરથી પાછળ જઈ a અને F કાઢવાના.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">v=50/10=5 m/s (constant, બળ-મુક્ત તબક્કો), આ v એ 20s ના પ્રવેગનું પરિણામ છે.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'બળ બંધ પછી'ની ગતિ=constant velocity લો</li><li>DON'T: 50m ને સીધો 20s સાથે ના જોડો — એ અલગ તબક્કો છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">બંને તબક્કા (20s સાથે બળ, 10s વગર બળ) ને એક જ ગણી ભૂલ કરવી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">v=50/10=5 m/s (પ્રથમ 20s ના અંતે વેગ)</div><div class="calc">a=v/t=5/20=0.25 m/s²</div><div class="calc">F=ma=20×0.25=5N</div><div class="ans">Answer: (B) 5 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'બળ બંધ પછી અંતર/સમય' અપાય ⟹ એ constant-velocity તબક્કો, ત્યાંથી ઊલટું a શોધો.</div></div>
+
+</div>
+
+<!-- ============ Q.9 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.9</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">p-t વક્ર દર્શાવેલ છે (વિસ્તાર a,b,c). (t₃−t₂)<t₁ હોય તો ક્યાં બળ મહત્તમ અને ક્યાં ન્યૂનતમ?<div class="opts">(A) c અને a &nbsp; (B) b અને c &nbsp; (C) c અને b &nbsp; (D) a અને b</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">p-t ગ્રાફનો slope (dp/dt) = બળ F — સૌથી steep slope=મહત્તમ બળ, સૌથી flat=ન્યૂનતમ બળ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">દરેક વિસ્તારનો ઢોળાવ (Δp/Δt) સરખાવો — c માં ટૂંકા સમય (t₃−t₂<t₁) માં મોટો ઘટાડો, એટલે c સૌથી steep.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'p-t slope = F' યાદ રાખો (F=dp/dt, બીજો નિયમ)</li><li>DON'T: p ના મૂલ્ય (height) ને બળ સાથે ના ગૂંચવો — slope જ બળ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">સૌથી ઊંચો p ધરાવતો બિંદુ (વિસ્તાર b નો શિખર) એ મહત્તમ બળ ધારી લેવું — ખરેખર ત્યાં slope≈0 (ન્યૂનતમ બળ).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a: 0 થી t₁, ધીમો ચઢાવ — ઓછો slope</div><div class="calc">b: t₁ થી t₂, વધુ ઢોળાવ પણ ટોચ પર slope→0</div><div class="calc">c: t₂ થી t₃ (ટૂંકો સમય, t₃−t₂<t₁), તીવ્ર ઘટાડો — સૌથી વધુ |slope|</div><div class="ans">Answer: (A) c અને a (મહત્તમ c માં, ન્યૂનતમ a માં)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">p-t ગ્રાફમાં 'ક્યાં બળ મહત્તમ' પુછાય કે તરત slope steepness સરખાવો, height નહીં.</div></div>
+
+</div>
+
+<!-- ============ Q.10 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.10</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">સમય t ના સંદર્ભમાં કણનો સ્થાન સદિશ r=(10tî+15t²ĵ+7k̂)m. કણ દ્વારા અનુભવાતા પરિણામી બળની દિશા કઈ?<div class="opts">(A) ધન x-અક્ષ &nbsp; (B) x-y સમતલમાં &nbsp; (C) ધન y-અક્ષ &nbsp; (D) ધન z-અક્ષ</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બળ ∝ પ્રવેગ (a=d²r/dt²) — r ને બે વાર derivative લઈ, કયા component માં a છે એ જોવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">v=dr/dt, a=dv/dt — z-component (7, અચળ) t-સ્વતંત્ર, એટલે એ દિશામાં a=0.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: દરેક component અલગ-અલગ differentiate કરો</li><li>DON'T: અચળ (constant) પદ ને differentiate કરવાનું ભૂલશો નહીં — derivative=0 જ મળે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">z-component ને પણ કંઈક પ્રવેગ આપે છે એમ ધારી લેવું — અચળ પદનો પ્રવેગ ચોક્કસ શૂન્ય.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">v=(10, 30t, 0)</div><div class="calc">a=(0, 30, 0) — ફક્ત +y દિશામાં અચળ પ્રવેગ</div><div class="calc">F=ma પણ તેથી ફક્ત +y દિશામાં</div><div class="ans">Answer: (C) ધન y-અક્ષ</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">x-component રેખીય (10t) ⟹ a_x=0 સીધું ઓળખાય, ગણતરી વગર.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">r માં t², t, અચળ પદ ભેગા હોય તો — ફક્ત t² પદ જ પ્રવેગ (અને બળ) આપે છે, બાકીના શૂન્ય.</div></div>
+
+</div>
+
+<!-- ============ Q.11 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.11</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">10g ગોળી 600 m/s ના વેગથી બંદૂકની નળીમાંથી બહાર નીકળે. નળી 50cm લાંબી, બંદૂકનું દળ 3kg. બંદૂકને પૂરા પાડવામાં આવેલ આધાતનું મૂલ્ય?<div class="opts">(A) 6 Ns &nbsp; (B) 3 Ns &nbsp; (C) 36 Ns &nbsp; (D) 12 Ns</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બંદૂક પરનો આઘાત = ગોળીના momentum-ફેરફાર જેટલો (Newton 3rd law + momentum સંરક્ષણ) — નળીની લંબાઈ (50cm) અહીં અપ્રસ્તુત વિગત છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">J_gun = Δp_bullet = m_bullet × v_bullet (ગોળી શરૂમાં સ્થિર હતી).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ગોળી અને બંદૂક પર સમાન-વિરુદ્ધ આઘાત (Newton 3rd law) લાગુ કરો</li><li>DON'T: નળીની 50cm લંબાઈ કે 3kg દળને ગણતરીમાં ના વાપરો — એ distractor data છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">નળીની લંબાઈ વાપરી કંઈક kinematics કરવાનો પ્રયત્ન — આઘાત માટે માત્ર momentum-ફેરફાર જોઈએ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p3" target="nlmChapterNotes">Part 3</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">m=10g=0.01kg, v=600m/s</div><div class="calc">J=mΔv=0.01×600=6 Ns</div><div class="ans">Answer: (A) 6 Ns</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">3rd law: ગોળી પર આગળ 6Ns લાગ્યું હોય તો બંદૂક પર પાછળ બરાબર 6Ns જ લાગે.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'બંદૂક-ગોળી' આઘાત પ્રશ્નમાં distractor data (નળીની લંબાઈ, બંદૂકનું દળ) અવગણો — ફક્ત ગોળીના m,v જોઈએ.</div></div>
+
+</div>
+
+<!-- ============ Q.12 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.12</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">મશીનગનને સ્થિતિમાં રાખવા તેના પર સરેરાશ 125N બળ લગાડવામાં આવે છે, જે 250 m/s ની ઝડપે 10g દળની ગોળીઓ છોડે છે. મશીનગન દ્વારા પ્રતિ સેકન્ડ છોડાતી ગોળીઓની સંખ્યા?<div class="opts">(A) 50 &nbsp; (B) 25 &nbsp; (C) 100 &nbsp; (D) 5</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Machine gun પર (recoil રોકવા) લગાડેલ બળ = દર સેકન્ડે છૂટતી ગોળીઓના કુલ momentum-rate બરાબર.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F = n × m × v (n=ગોળી/સેકન્ડ) — rate of momentum transfer.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: n ને પ્રતિ-સેકન્ડ rate તરીકે જ ઉકેલો (F=Δp/Δt=n·mv)</li><li>DON'T: એક ગોળીના momentum ને સીધો F ગણી ના લો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">m ને g માં જ રાખી kg માં convert ના કરવું — ખોટા order of magnitude નો જવાબ આવશે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">m=0.01kg, v=250m/s, F=125N</div><div class="calc">n = F/(mv) = 125/(0.01×250) = 125/2.5 = 50</div><div class="ans">Answer: (A) 50</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'પ્રતિ સેકન્ડ કેટલી ગોળી' પ્રશ્નમાં F=n·mv ને n માટે સીધો ઉકેલો, rate ને rate સાથે જ સરખાવો.</div></div>
+
+</div>
+
+<!-- ============ Q.13 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.13</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">500g પદાર્થ x-અક્ષ પર એવી રીતે ગતિ કરે છે કે તેનો વેગ સ્થાનાંતર x સાથે v=10√x m/s મુજબ બદલાય છે. પદાર્થ પર લાગતું બળ?<div class="opts">(A) 125 N &nbsp; (B) 25 N &nbsp; (C) 166 N &nbsp; (D) 5 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">v(x) અપાયું છે (v(t) નહીં) — પ્રવેગ કાઢવા chain rule a=v(dv/dx) વાપરવો પડશે, સીધો dv/dt નહીં.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a = v·dv/dx, પછી F=ma.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: dv/dx = d(10√x)/dx = 5/√x ચોક્કસ કાઢો</li><li>DON'T: a=dv/dt સીધું ના લખો — v નું x પર આધારિત સૂત્ર છે, t પર નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">a=dv/dx (dt વગર) ને જ સાચો પ્રવેગ ગણી લેવો — a=v·(dv/dx) જ સાચું (chain rule જરૂરી).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">v=10√x ⟹ dv/dx=5/√x</div><div class="calc">a=v(dv/dx)=10√x×5/√x=50 m/s² (x-સ્વતંત્ર, અચળ!)</div><div class="calc">F=ma=0.5×50=25N</div><div class="ans">Answer: (B) 25 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">a અચળ (50) નીકળે છે — એટલે એકસમાન પ્રવેગિત ગતિ છે, જોકે v(x) sqrt સ્વરૂપનું છે.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'v=k√x' સ્વરૂપ દેખાય ⟹ a=v(dv/dx) હંમેશા અચળ નીકળે — આ pattern ઓળખો, ઝડપી.</div></div>
+
+</div>
+
+<!-- ============ Q.14 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.14</span><span class="qsrc">Level I · Sec A &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">500g દળના કણનો વેગ (2tî+3t²ĵ)ms⁻¹ છે. t=1s સમયે કણ પર લાગતું બળ (î+xĵ)N હોય, તો x નું મૂલ્ય?<div class="opts">(A) 3 &nbsp; (B) 4 &nbsp; (C) 2 &nbsp; (D) 6</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">F=ma=m(dv/dt) — v(t) ને differentiate કરી a(t) કાઢો, t=1 મૂકી F ના component ને આપેલ (1,x) સાથે સરખાવો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=dv/dt=(2,6t), t=1: a=(2,6). F=ma=0.5×(2,6)=(1,3).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: t=1 મૂકતા પહેલાં પૂરું differentiate કરો</li><li>DON'T: F ના x-component (=1N, જે અપાયેલ જ છે) ને ફરી ગણવાની જરૂર નથી — ફક્ત y=x શોધવાનું</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">m=500g ને kg માં convert કરવાનું ભૂલવું — F ખોટું (2x) આવશે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a(t)=(2, 6t)</div><div class="calc">a(1)=(2,6)</div><div class="calc">F=0.5×(2,6)=(1,3)N — આપેલ (1,x) સાથે સરખાવતા x=3</div><div class="ans">Answer: (A) 3</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">F ના x-component (1N) એ આપેલ સાથે જ મેચ થાય છે — સ્વયં-ચકાસણી (self-check) મળે છે.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'આપેલ F ના એક component આપેલ જ છે' — એ ભાગ ને ચકાસણી (cross-check) તરીકે વાપરો, ભૂલ પકડાય.</div></div>
+
+</div>
+
+<!-- ============ Q.15 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.15</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Feb.)</span></div>
+<div class="qtext">એક ક્રિકેટર 120 g અને 25 m/s ની ઝડપ ધરાવતા બોલને પકડે છે. જો કેચ પકડવાની પ્રક્રિયા 0.1s માં પૂરી થતી હોય તો ખેલાડીના હાથ પર બોલ દ્વારા લાગતું બળનું મૂલ્ય (SI એકમમાં)?<div class="opts">(A) 24 &nbsp; (B) 12 &nbsp; (C) 25 &nbsp; (D) 30</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Impulse-momentum theorem — બોલનો momentum સંપૂર્ણ 0.1s માં શૂન્ય થાય છે, એ ફેરફાર-rate જ બળ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F = mΔv/Δt (u=25, v=0).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 120g ને 0.12kg માં convert કરો</li><li>DON'T: g એકમમાં જ રાખી SI જવાબ ના આપો — પ્રશ્ન SI માંગે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">120g ને kg માં convert કરવાનું ભૂલવું — જવાબ 1000× ખોટો આવશે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">F=mΔv/t=0.12×25/0.1=30N</div><div class="ans">Answer: (D) 30</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Catch/stopping પ્રશ્નોમાં હંમેશા g→kg convert પહેલાં કરો, પછી જ F=mΔv/t.</div></div>
+
+</div>
+
+<!-- ============ Q.16 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.16</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">લીસી હલકી ગરગડી પરથી પસાર થતી હલકી દોરી m₁ અને m₂ દળોના બે ચોસલાઓને બાંધે છે. તંત્રનો પ્રવેગ g/8 હોય તો, m₂/m₁ ગુણોત્તર?<div class="opts">(A) 9:7 &nbsp; (B) 4:3 &nbsp; (C) 5:3 &nbsp; (D) 8:1</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">સાદો Atwood machine — a=(m₂−m₁)g/(m₁+m₂) સૂત્રમાં a=g/8 મૂકી ratio કાઢવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=(m₂−m₁)g/(m₁+m₂)=g/8 થી m₂/m₁ માટે ઉકેલો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: સમીકરણમાં g cancel કરો, બાકી માત્ર m₁,m₂ નો ratio રહેશે</li><li>DON'T: m₂>m₁ ધારવાનું ના ભૂલો (a ધન છે એટલે ભારે તરફ ગતિ)</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">(m₁+m₂) ને બદલે (m₁−m₂) છેદમાં લખવાની ભૂલ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">8(m₂−m₁)=m₁+m₂</div><div class="calc">8m₂−8m₁=m₁+m₂ ⟹ 7m₂=9m₁ ⟹ m₂/m₁=9/7</div><div class="ans">Answer: (A) 9:7</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Atwood ratio પ્રશ્નમાં a=(m₂−m₁)g/(m₁+m₂) ને direct m₂/m₁ માટે algebra કરવું ઝડપી, numeric ધારવા કરતાં.</div></div>
+
+</div>
+
+<!-- ============ Q.17 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.17</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">ખેલાડી 150g દળના અને 20 m/s ના દરથી ગતિ કરતા બોલને પકડે છે. જો કેચ પકડવાની પ્રક્રિયા 0.1s માં પૂર્ણ થાય તો બોલ દ્વારા ખેલાડીના હાથ પર લાગતું બળ?<div class="opts">(A) 150 N &nbsp; (B) 3N &nbsp; (C) 30 N &nbsp; (D) 300 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Q.15 જેવો જ pattern — impulse-momentum, અલગ numbers.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F=mΔv/t.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 150g→0.15kg</li><li>DON'T: ફરીથી g ભૂલશો નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">એકમ-રૂપાંતર ચૂકી જવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">F=0.15×20/0.1=30N</div><div class="ans">Answer: (C) 30 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">—</div></div>
+
+</div>
+
+<!-- ============ Q.18 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.18</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">ઝાડની ડાળી પરથી 10kg દળ ધરાવતી સાંકળ વડે 200N વજન ધરાવતી વસ્તુને લટકાવવામાં આવે છે. ડાળી (શાખા) ચેઈનને ___ બળથી ખેંચશે.<div class="opts">(A) 150 N &nbsp; (B) 300 N &nbsp; (C) 200 N &nbsp; (D) 100 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">સાંકળનું પોતાનું વજન પણ ટોચ પર (ડાળી પરના) તણાવમાં ઉમેરાય છે — સાંકળને 'વજનરહિત દોરી' ના ગણવી, એ પોતે 10kg ધરાવે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">ડાળી પરનો તણાવ = લટકાવેલ વસ્તુનું વજન + સાંકળનું પોતાનું વજન.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: સાંકળના 10kg ને પણ વજનમાં ઉમેરો (10×g=100N)</li><li>DON'T: સાંકળને ભારરહિત (massless) ધારી ના લો — સ્પષ્ટ 10kg દળ આપેલ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">માત્ર લટકાવેલ વસ્તુનું 200N વજન જ જવાબ ગણી લેવું — સાંકળનું વજન ભૂલી જવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p3" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p3" target="nlmChapterNotes">Part 3</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">ડાળી પરનો તણાવ = 200 + (10×10) = 200+100 = 300N</div><div class="ans">Answer: (B) 300 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સાંકળ/દોરીનું દળ આપેલ છે' દેખાય કે તરત એ 'ભારરહિત' ધારણા તૂટે છે — તેનું વજન પણ ટોચના તણાવમાં ઉમેરો.</div></div>
+
+</div>
+
+<!-- ============ Q.19 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.19</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2019(Jan)</span></div>
+<div class="qtext">10kg દળ દોરડા દ્વારા છાંપરા પરથી લટકાવેલ છે. જ્યારે સમક્ષિતિજ બળ દોરડાં પરના કોઈ બિંદુ પર લગાડવામાં આવે ત્યારે દોરડું છાંપરાના બિંદુએ 45° નો કોણ વિચલિત થાય છે. જો લટકાવેલ દળ સંતુલન સ્થિતિમાં હોય, તો લગાડેલ બળની માત્રા?<div class="opts">(A) 200 N &nbsp; (B) 140 N &nbsp; (C) 70 N &nbsp; (D) 100 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">દોરડાનો બિંદુથી નીચેનો ભાગ સીધો (vertical) જ રહે છે (ત્યાં માત્ર વજન લટકે છે); ઉપરનો ભાગ (છાંપરા સુધી) 45° એ વિચલિત — એ બિંદુએ ત્રણ બળનું સંતુલન.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">વિચલન-બિંદુએ: ઉપરના તણાવ T નો vertical component=નીચેનું tension(=mg), horizontal component=લગાડેલ બળ F.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 45° હોવાથી cos45=sin45 — T cos45=mg અને T sin45=F બંને equal magnitude આપશે</li><li>DON'T: નીચેના ભાગનું tension ને mg થી અલગ ના ધારો — સીધી લીટીમાં માત્ર વજન લટકે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F=T ધારી લેવું, અથવા 45°ને ડાયરેક્ટ ઊંચાઈ-કોણ સાથે ગૂંચવવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T cos45° = mg = 100N ⟹ T=100/cos45°</div><div class="calc">F = T sin45° = (100/cos45°)×sin45° = 100N (cos45=sin45)</div><div class="ans">Answer: (D) 100 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">45° વિશેષ કિસ્સામાં F=mg સીધું (cos=sin) — general angle માટે F=mg·tanθ.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">45°-વિચલન વાળા 'string-bend' પ્રશ્નોમાં F=mg tanθ યાદ રાખો — 45° એ F=mg આપે, ઝડપી.</div></div>
+<div class="diagram"><svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow19" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker></defs>
+<line x1="20" y1="30" x2="340" y2="30" stroke="currentColor" stroke-width="4"/>
+<line x1="160" y1="30" x2="160" y2="230" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+<line x1="160" y1="30" x2="205" y2="95" stroke="currentColor" stroke-width="2.5"/>
+<line x1="205" y1="95" x2="205" y2="230" stroke="currentColor" stroke-width="2.5"/>
+<line x1="205" y1="95" x2="270" y2="95" stroke="currentColor" stroke-width="2" marker-end="url(#arrow19)"/>
+<circle cx="160" cy="30" r="3"/>
+<path d="M 160 60 A 30 30 0 0 1 183 76" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="172" y="58" font-size="12">45°</text>
+<text x="175" y="70" font-size="11">T1</text>
+<text x="215" y="88" font-size="11">F</text>
+<text x="212" y="165" font-size="11">T2</text>
+<rect x="190" y="230" width="30" height="20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<text x="195" y="244" font-size="10">10 kg</text>
+</svg></div><div class="diagram-cap">આકૃતિ &mdash; force diagram (ગણતરી કરેલ ખૂણા/ઘટકો)</div>
+</div>
+
+<!-- ============ Q.20 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.20</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">70kg ના ગાર્ડન રોલરને સમક્ષિતિજ સાથે 30° ના ખૂણે F=200N બળથી ધકેલવામાં આવે છે. રોલર પર લંબ પ્રતિક્રિયા બળ?<div class="opts">(A) 800√2 N &nbsp; (B) 600 N &nbsp; (C) 800 N &nbsp; (D) 200√3 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">ધકેલવાનું (push) બળ ત્રાંસુ નીચે તરફ (સપાટીમાં દબાવતું) છે — તેનો vertical component જમીનના normal reaction ને વધારશે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">N = mg + F sinθ (θ=30°, push force નો vertical component ઉમેરાય).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'ધકેલવું' (push) ⟹ vertical component ઉમેરાય, 'ખેંચવું' (pull) હોત તો બાદ થાત</li><li>DON'T: F cosθ ને normal માં ના ઉમેરો — એ horizontal component છે, motion માટે વપરાય</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Push અને pull ના vertical-component effect ને ગૂંચવવું — pull માં N ઘટે, push માં વધે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">N = 70×10 + 200×sin30° = 700+100 = 800N</div><div class="ans">Answer: (C) 800 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ધકેલવું' શબ્દ ⟹ N=mg+Fsinθ (વધે); 'ખેંચવું' ⟹ N=mg−Fsinθ (ઘટે) — શબ્દ પરથી sign નક્કી કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.21 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.21</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">√3 kg નો બ્લોક એક દોરી સાથે જોડાયેલ છે જેનો બીજો છેડો દીવાલ સાથે જોડાયેલ છે. અજ્ઞાત બળ F એવી રીતે લગાડવામાં આવે છે કે દોરી દીવાલ સાથે 30° નો ખૂણો બનાવે. તણાવ બળ T કેટલો છે?<div class="opts">(A) 20 N &nbsp; (B) 25 N &nbsp; (C) 10 N &nbsp; (D) 15 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">જંક્શન બિંદુએ ત્રણ બળ: T (દોરી, દીવાલથી 30°), F (સમક્ષિતિજ), અને બ્લોકનું વજન (ઊભી દોરી વડે નીચે) — સંતુલન.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Vertical: T cos30° = વજન (mg); Horizontal: T sin30° = F. પ્રથમ સમીકરણથી T સીધો મળે.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 30° દીવાલ (vertical) થી માપેલ છે — એટલે cos30° vertical component આપશે, sin30° નહીં</li><li>DON'T: 30° ને horizontal-થી ના ગણી લો — angle ની reference line (દીવાલ=vertical) ચોક્કસ વાંચો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">cos30° અને sin30° ને અદલાબદલી કરવી — angle કઈ line થી માપ્યો છે એ ના જોવાથી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">mg=√3×10=10√3 N</div><div class="calc">T cos30° = 10√3 ⟹ T = 10√3/(√3/2) = 20N</div><div class="ans">Answer: (A) 20 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">F=T sin30°=20×0.5=10N — cross-check તરીકે.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Angle 'દીવાલ/vertical થી' છે કે 'જમીન/horizontal થી' — હંમેશા પ્રથમ ચોક્કસ કરો, પછી જ cos/sin ફાળવો.</div></div>
+<div class="diagram"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow21" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker></defs>
+<line x1="30" y1="20" x2="30" y2="220" stroke="currentColor" stroke-width="4"/>
+<line x1="30" y1="40" x2="150" y2="185" stroke="currentColor" stroke-width="2.5"/>
+<rect x="130" y="185" width="34" height="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<line x1="150" y1="185" x2="230" y2="185" stroke="currentColor" stroke-width="2" marker-end="url(#arrow21)"/>
+<path d="M 30 75 A 45 45 0 0 1 66 100" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="42" y="72" font-size="12">30°</text>
+<text x="80" y="105" font-size="11">T</text>
+<text x="190" y="178" font-size="11">F</text>
+<text x="132" y="228" font-size="10">√3 kg</text>
+</svg></div><div class="diagram-cap">આકૃતિ &mdash; force diagram (ગણતરી કરેલ ખૂણા/ઘટકો)</div>
+</div>
+
+<!-- ============ Q.22 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.22</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(April)</span></div>
+<div class="qtext">5kg દળના કણ પર ત્રણ બળો F₁=10N, F₂=8N, F₃=6N લાગી રહ્યા છે. F₂ અને F₃ લંબરૂપે લગાડવામાં આવે છે જેથી કણ સ્થિર રહે છે. જો બળ F₁ દૂર કરવામાં આવે, તો કણનો પ્રવેગ કેટલો થશે?<div class="opts">(A) 7 ms⁻² &nbsp; (B) 0.5 ms⁻² &nbsp; (C) 4.8 ms⁻² &nbsp; (D) 2 ms⁻²</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">સંતુલન સ્થિતિમાં ત્રણેય બળનો સરવાળો શૂન્ય — એટલે F₁ = −(F₂+F₃) પહેલેથી જ નક્કી થઈ જાય છે, F₂⊥F₃ હોવાથી magnitude સીધી કાઢી શકાય.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F₁ હટાવતા બાકી રહેતું net force = F₂+F₃ (magnitude, કારણ કે પહેલાં એ F₁ ને જ સંતુલિત કરતું હતું).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: F₂⊥F₃ ⟹ resultant=√(F₂²+F₃²) સીધું વાપરો</li><li>DON'T: F₁ ને F₂,F₃ ના resultant સાથે ફરી સરખાવાની જરૂર નથી — સંતુલનની વ્યાખ્યાથી જ એ સરખા છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">કયું બળ હટાવ્યું (F₁, પ્રશ્નમાં સ્પષ્ટ) એ ખોટું વાંચી F₂ કે F₃ હટાવેલું ગણી લેવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">√(F₂²+F₃²)=√(64+36)=10N=F₁ (સંતુલનની ચકાસણી)</div><div class="calc">F₁ હટતા net force=10N બાકી</div><div class="calc">a=F/m=10/5=2 ms⁻²</div><div class="ans">Answer: (D) 2 ms⁻²</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ત્રણ બળ સંતુલિત, બેમાંથી એક લંબ' પેટર્નમાં ત્રીજું બળ=resultant of ⊥ pair — હટાવતા એ જ magnitude net રહે છે.</div></div>
+
+</div>
+
+<!-- ============ Q.23 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.23</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
+<div class="qtext">લીસી હલકી જડિત ગરગડી પરથી પસાર કરેલી હલકી દોરી m₁ અને m₂ દળોના બે બ્લોકને જોડે છે. તંત્રનો પ્રવેગ g/8 હોય, તો m₂/m₁ ગુણોત્તર?<div class="opts">(A) 9/7 &nbsp; (B) 8/1 &nbsp; (C) 4/3 &nbsp; (D) 5/3</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Q.16 જેવો જ સાદો Atwood machine (સમાન a=g/8) — ડુપ્લિકેટ પ્રશ્ન, અલગ JEE session.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=(m₂−m₁)g/(m₁+m₂)=g/8.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Q.16 ની જેમ જ algebra</li><li>DON'T: —</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">8m₂−8m₁=m₁+m₂ ⟹ 7m₂=9m₁</div><div class="ans">Answer: (A) 9/7</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">—</div></div>
+
+</div>
+
+<!-- ============ Q.24 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.24</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
+<div class="qtext">બધી સપાટીઓ ઘર્ષણરહિત અને દોરી-ગરગડી હલકી. 2kg દળ 30° ના ઢોળાવવાળા ચોસલામાં, દોરી વડે ગરગડી પરથી પસાર થઈ 4kg દળ સાથે જોડાયેલ. તંત્રનો પ્રવેગ?<div class="opts">(A) g &nbsp; (B) g/3 &nbsp; (C) g/2 &nbsp; (D) g/4</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Incline+hanging mass નું સાદું connected-body તંત્ર — net driving force=(hanging weight)−(incline ના gravity-component).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a = (m₂g − m₁g sinθ)/(m₁+m₂).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 2kg (incline) નો gravity-component=2g sin30°=g જ વાપરો, પૂરું 2g નહીં</li><li>DON'T: incline પરના mass નું આખું વજન driving force માં ના ગણો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Incline block નું આખું mg નીચે તરફ driving force ગણી લેવું — માત્ર mg sinθ ઘટક જ relevant.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=(4×10 − 2×10×0.5)/(2+4) = (40−10)/6 = 5 m/s²</div><div class="ans">Answer: (C) g/2 (=5, g=10 લેતા)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Incline+hanging mass માં હંમેશા incline ના mass નો sinθ ઘટક જ વાપરો, g cancel ના કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.25 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.25</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">5kg દળનું લાકડાનું ચોસલું પોચા સમક્ષિતિજ ભોંયતળિયા ઉપર છે. જ્યારે 25kg ના લોખંડના નળાકારને ચોસલાની ઉપર મૂકવામાં આવે ત્યારે ભોંયતળિયું દબાય છે, અને બંને 0.1 m/s² ના પ્રવેગથી નીચે તરફ ગતિ કરે છે. ભોંયતળિયા પર આ તંત્ર દ્વારા લાગતું બળ?<div class="opts">(A) 297 N &nbsp; (B) 294 N &nbsp; (C) 291 N &nbsp; (D) 196 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">તંત્ર (ચોસલું+નળાકાર) નીચે તરફ પ્રવેગિત છે — floor નું normal reaction N, mg કરતાં ઓછું હશે (Newton 2nd law, downward net force).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">mg − N = ma (તંત્ર) ⟹ N=m(g−a). g=9.8 (options ના pattern પરથી સ્પષ્ટ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: કુલ દળ m=5+25=30kg વાપરો</li><li>DON'T: g=10 ના બદલે અહીં g=9.8 જ વાપરવું પડશે (options ચકાસો)</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">g=10 વાપરી 297ની નજીક ખોટો જવાબ (=297 જ આવે સંજોગવશાત નહીં, ચોક્કસ ચકાસો) મેળવવો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">m=30kg, a=0.1 m/s² (નીચે)</div><div class="calc">N=m(g−a)=30×(9.8−0.1)=30×9.7=291N</div><div class="ans">Answer: (C) 291 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'તંત્ર નીચે પ્રવેગિત' ⟹ N=m(g−a) (ઓછું); 'ઉપર પ્રવેગિત' હોત તો N=m(g+a) (વધુ) — દિશા પ્રમાણે sign પસંદ કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.26 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.26</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">1kg દળને છત પરથી 4m લંબાઈના દોરડાથી લટકાવવામાં આવેલ છે. દોરડાના મધ્યબિંદુ આગળ સમક્ષિતિજ બળ 'F' લગાડતા દોરડું શિરોલંબ અક્ષને સાપેક્ષ 45°નો કોણ બનાવે છે. F નું મૂલ્ય (દળ સમતોલન સ્થિતિમાં, g=10)?<div class="opts">(A) 10/√2 N &nbsp; (B) 1 N &nbsp; (C) 1/(10√2) N &nbsp; (D) 10 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Q.19 જેવો જ 'string bend' pattern — midpoint નીચેનો ભાગ vertical (T₂=mg), ઉપરનો ભાગ 45° (T₁).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Midpoint સંતુલન: T₁cos45°=T₂=mg, T₁sin45°=F.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T₂ (નીચલો ભાગ) = mg = 10N સીધું ઓળખો</li><li>DON'T: 4m લંબાઈને ગણતરીમાં વાપરવાની જરૂર નથી — angle જ પૂરતો છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">4m લંબાઈને ત્રિકોણમિતિમાં ખોટી રીતે વાપરવાનો પ્રયત્ન — બિનજરૂરી માહિતી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₂=mg=10N</div><div class="calc">T₁cos45°=10 ⟹ T₁=10√2</div><div class="calc">F=T₁sin45°=10√2×(1/√2)=10N</div><div class="ans">Answer: (D) 10 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">45° special case: cos45=sin45 ⟹ F=T₂=mg સીધું — general angle માટે F=mg tanθ.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'મધ્યબિંદુએ 45°' પેટર્ન ફરી — Q.19 ની જેમ F=mg tan(45°)=mg સીધું યાદ રાખો.</div></div>
+<div class="diagram"><svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow19" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker></defs>
+<line x1="20" y1="30" x2="340" y2="30" stroke="currentColor" stroke-width="4"/>
+<line x1="160" y1="30" x2="160" y2="230" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+<line x1="160" y1="30" x2="205" y2="95" stroke="currentColor" stroke-width="2.5"/>
+<line x1="205" y1="95" x2="205" y2="230" stroke="currentColor" stroke-width="2.5"/>
+<line x1="205" y1="95" x2="270" y2="95" stroke="currentColor" stroke-width="2" marker-end="url(#arrow19)"/>
+<circle cx="160" cy="30" r="3"/>
+<path d="M 160 60 A 30 30 0 0 1 183 76" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="172" y="58" font-size="12">45°</text>
+<text x="175" y="70" font-size="11">T1</text>
+<text x="215" y="88" font-size="11">F</text>
+<text x="212" y="165" font-size="11">T2</text>
+<rect x="190" y="230" width="30" height="20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<text x="195" y="244" font-size="10">10 kg</text>
+</svg></div><div class="diagram-cap">આકૃતિ &mdash; force diagram (ગણતરી કરેલ ખૂણા/ઘટકો)</div>
+</div>
+
+<!-- ============ Q.27 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.27</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2025(April)</span></div>
+<div class="qtext">10cm લંબાઈનો ચોરસ લેમિના OABC 'O' પર ફરે છે. લેમિના પર દર્શાવ્યા મુજબ બળ કાર્ય કરે છે (C:F ડાબે+10N ઉપર, B:10N ઉપર+10N જમણે, A:10N જમણે+10N નીચે). લેમિના સ્થિર રહે તો F નું મૂલ્ય?<div class="opts">(A) 20 N &nbsp; (B) 0 &nbsp; (C) 10 N &nbsp; (D) 10√2 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'O' પર pivoted (ફરી શકે તેવું) છે — સ્થિર રહેવા માટે માત્ર net ટોર્ક (O ને સાપેક્ષ)=0 જોઈએ, net force=0 જરૂરી નથી.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">દરેક બળનો O ને સાપેક્ષ ટોર્ક (τ=x·F_y−y·F_x) ગણી સરવાળો શૂન્ય કરો, F ની બાબતે ઉકેલો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ટોર્ક ની sign convention (counter-clockwise ધન) સુસંગત રાખો</li><li>DON'T: net force=0 ને condition ના ગણો — pivoted body માત્ર ટોર્ક સંતુલન માંગે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Force-balance (ΣF=0) લગાડવાનો પ્રયત્ન — pivot હોવાથી ટોર્ક-balance જ સાચી શરત.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">O=(0,0),A=(0.1,0),B=(0.1,0.1),C=(0,0.1) (મીટરમાં)</div><div class="calc">τ(F@C,ડાબે)=0.1F; τ(10N@B,ઉપર)=1.0; τ(10N@B,જમણે)=−1.0; τ(10N@A,જમણે)=0; τ(10N@A,નીચે)=−1.0; τ(10N@C,ઉપર)=0</div><div class="calc">સરવાળો: 0.1F+1.0−1.0+0−1.0=0 ⟹ 0.1F=1.0 ⟹ F=10N</div><div class="ans">Answer: (C) 10 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Pivoted lamina/rod ના 'સ્થિર રહેવા' પ્રશ્નમાં હંમેશા ટોર્ક-balance (O ને સાપેક્ષ), force-balance નહીં.</div></div>
+
+</div>
+
+<!-- ============ Q.28 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.28</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">જ્વલનશીલ પ્રવાહી લઈ જતા વાહનમાં સામાન્ય રીતે જમીનને અડકે તેવી ધાતુની સાંકળ રાખવામાં આવે છે:<div class="opts">(A) હવાના ઘર્ષણને કારણે ઉત્પન્ન વધારાના વીજભારનું વહન કરી તણખાથી બચાવવા માટે &nbsp; (B) બીજા વાહનને સચેત (alert) કરવા &nbsp; (C) જમીન પરથી પૈડા ઉપર ગંદકી (ધૂળ)ના ચોંટે તે માટે &nbsp; (D) તે એક રીવાજ છે</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Physics-based conceptual પ્રશ્ન — વાહનની હવા સાથેના ઘર્ષણથી static charge જમા થાય છે, એ discharge કરવાનું સાચું કારણ ઓળખવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">સ્થિર વીજભાર (static electricity) જમીનમાં વહી જાય (ground) એ સલામતી માટે જરૂરી — ચેઈન conducting path પૂરો પાડે છે.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'તણખાથી બચાવ' (spark prevention) ને જ ભૌતિકશાસ્ત્રીય કારણ ગણો</li><li>DON'T: options (B),(C),(D) ને physics-based ના ગણો — એ distractor/non-physics કારણો છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Conceptual/non-numeric પ્રશ્નમાં 'સામાન્ય જ્ઞાન' જવાબ (રીવાજ) પસંદ કરવો — physics-based કારણ જ સાચો હોય.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">ઘર્ષણથી ઉત્પન્ન charge ⟹ સ્પાર્ક ⟹ જ્વલનશીલ પ્રવાહી માટે જોખમી ⟹ ચેઈન વડે ground થી discharge</div><div class="ans">Answer: (A) હવાના ઘર્ષણને કારણે ઉત્પન્ન વધારાના વીજભારનું વહન કરી તણખાથી બચાવવા માટે</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">—</div></div>
+
+</div>
+
+<!-- ============ Q.29 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.29</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">દ્વિ ત્રાંસા સમતલ (53°,37°) ની ગોઠવણીમાં M અને m દળોના બે બ્લોક, આદર્શ ગરગડી પરથી પસાર કરેલ હલકી દોરી વડે જોડેલા. બંને સપાટી-બ્લોક વચ્ચે ઘર્ષણાંક 0.25. M=10kg એ 2 m/s² પ્રવેગ સાથે નીચે (53° બાજુ) ગતિ કરે તે માટે m ની કિંમત?<div class="opts">(A) 9 kg &nbsp; (B) 4.5 kg &nbsp; (C) 6.5 kg &nbsp; (D) 2.25 kg</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Double-incline connected-body, બંને બાજુ ઘર્ષણ — M ના 53° incline પર નીચે સરકતું (ઘર્ષણ ઉપર તરફ વિરોધ), m ના 37° incline પર ઉપર ખેંચાતું (ઘર્ષણ નીચે તરફ વિરોધ).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">બંને બ્લોક માટે અલગ-અલગ Newton's 2nd law લખી, T eliminate કરી m માટે ઉકેલો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: sin53°=cos37°=0.8, cos53°=sin37°=0.6 ચોક્કસ યાદ રાખો</li><li>DON'T: બંને incline પર ઘર્ષણની દિશા સરખી ના ધારો — M માટે ઉપર (ગતિ-વિરોધ), m માટે નીચે (ગતિ-વિરોધ), ગતિની દિશા અલગ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ઘર્ષણ બળની દિશા બંને બ્લોક માટે ખોટી પસંદ કરવી — હંમેશા 'ગતિની વિરુદ્ધ' rule વાપરો, બંને માટે અલગ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">M (53°, નીચે): Mg sin53−μMg cos53−T=Ma ⟹ 80−15−T=20 ⟹ T=45N</div><div class="calc">m (37°, ઉપર): T−mg sin37−μmg cos37=ma ⟹ 45−6m−2m=2m ⟹ 45=10m</div><div class="ans">Answer: (B) 4.5 kg</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Double-incline+friction માં પહેલા મોટા/જાણીતા બ્લોકના સમીકરણથી T કાઢો, પછી બીજા સમીકરણમાં મૂકી અજ્ઞાત શોધો.</div></div>
+
+</div>
+
+<!-- ============ Q.30 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.30</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
+<div class="qtext">વિધાન-I: સ્થિત ઘર્ષણાંક માટેનું સિમાંત (મહત્તમ) બળ, સંપર્કમાં રહેલ ક્ષેત્રફળ ઉપર આધારિત અને દ્રવ્યથી સ્વતંત્ર છે. વિધાન-II: સીમાંત (મહત્તમ) ગતિકીય ઘર્ષણાંક માટેનું બળ સંપર્કમાં રહેલ ક્ષેત્રફળ થી સ્વતંત્ર અને દ્રવ્ય ઉપર આધારિત છે.<div class="opts">(A) I સાચું, II ખોટું &nbsp; (B) I ખોટું, II સાચું &nbsp; (C) બંને ખોટા &nbsp; (D) બંને સાચા</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">ઘર્ષણ બળનું ચોક્કસ ભૌતિક ગુણધર્મ (contact area vs normal force/mass પર આધાર) ચકાસવાનું — સામાન્ય ગેરસમજ (વધુ ક્ષેત્રફળ=વધુ ઘર્ષણ) સામે true physics.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">બંને પ્રકારના ઘર્ષણ (સ્થિત limiting, ગતિક) ખરેખર contact area થી સ્વતંત્ર છે અને normal force (∝ mass) પર આધારિત છે — આ standard result બંને statement ને ચકાસો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'ઘર્ષણ ક્ષેત્રફળ-સ્વતંત્ર, normal force-આધારિત' standard result યાદ રાખો</li><li>DON'T: 'મોટું ટાયર વધુ ઘર્ષણ આપે' જેવી rolling-resistance ગેરસમજને sliding friction સાથે ના ભેળવો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Statement I ને (ખોટી રીતે) સાચું ગણી લેવું — 'વધુ ક્ષેત્રફળ=વધુ ઘર્ષણ' એ સામાન્ય ગેરસમજ છે, ભૌતિકશાસ્ત્રમાં ખોટી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">I: 'ક્ષેત્રફળ ઉપર આધારિત' — ખોટું (ઘર્ષણ ક્ષેત્રફળ-સ્વતંત્ર છે)</div><div class="calc">II: 'ક્ષેત્રફળથી સ્વતંત્ર, દ્રવ્ય(mass) ઉપર આધારિત' — સાચું (f=μN, N∝mass)</div><div class="ans">Answer: (B) I ખોટું, II સાચું</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ઘર્ષણ અને ક્ષેત્રફળ' કોઈપણ statement માં ભેગા દેખાય તો conceptual red flag — ઘર્ષણ હંમેશા ક્ષેત્રફળ-સ્વતંત્ર.</div></div>
+
+</div>
+
+<!-- ============ Q.31 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.31</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Feb.)</span></div>
+<div class="qtext">બ્લોક અને ટ્રોલીનું તંત્ર આકૃતિમાં (20kg ટ્રોલી ટેબલ પર, દોરી ગરગડી પરથી પસાર થઈ 6kg+60N વજન લટકે). ટ્રોલી-સપાટી ઘર્ષણાંક 0.04. તંત્રનો પ્રવેગ?<div class="opts">(A) 3 &nbsp; (B) 4 &nbsp; (C) 2 &nbsp; (D) 1.2</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'60N' એ 6kg ના વજનનું જ લેબલ છે (6×10=60N, redundant double-labeling) — વધારાનું બળ નથી; ટ્રોલી (20kg) પર ઘર્ષણ કામ કરે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">20kg માટે: T−f=20a (f=μ×20g); 6kg માટે: 6g−T=6a.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 60N ને 6kg ના જ વજન તરીકે ઓળખો (6×10=60, ડબલ label) — બમણું ના ગણો</li><li>DON'T: 60N ને gravity ઉપરાંતનું વધારાનું applied બળ ના ગણો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">60N ને gravity ઉપરાંતનું બળ ગણી કુલ hanging force=120N લેવું — ખોટું, એ maત્ર 6kg નું વજન દર્શાવતું label છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">f=0.04×20×10=8N</div><div class="calc">T=20a+8 (ટ્રોલી)</div><div class="calc">60−T=6a (hanging) ⟹ T=60−6a</div><div class="calc">20a+8=60−6a ⟹ 26a=52 ⟹ a=2</div><div class="ans">Answer: (C) 2</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">આકૃતિમાં mass ની નીચે mg નું numeric label (દા.ત. '60N') દેખાય ત્યારે એ ફક્ત વજનનું વર્ણન છે કે extra force — context (બીજું કોઈ તીર છે?) ચોક્કસ ચકાસો.</div></div>
+
+</div>
+
+<!-- ============ Q.32 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.32</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">50kg દળની એક ભારે પેટી સમક્ષિતિજ સપાટી ઉપર સરકે છે. પેટી અને સપાટી વચ્ચે ગતિક ઘર્ષણાંક 0.3 છે. ગતિક ઘર્ષણબળ?<div class="opts">(A) 14.7 N &nbsp; (B) 147 N &nbsp; (C) 1.47 N &nbsp; (D) 1470 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">સીધો ઘર્ષણબળ=μN, N=mg (સમક્ષિતિજ સપાટી, ઊભું બળ ફક્ત gravity).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">f=μmg (g=9.8, options ના pattern પરથી).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: g=9.8 વાપરો (147 ચોખ્ખું 50×9.8×0.3 થી મળે છે)</li><li>DON'T: g=10 વાપરી 150N ખોટો જવાબ ના આપો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">g=10 વાપરવાની default આદતથી ખોટો જવાબ (150N, જે option માં જ નથી).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">f=0.3×50×9.8=147N</div><div class="ans">Answer: (B) 147 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Options ના decimal pattern (14.7, 147, 1470) જોઈ g=9.8 વપરાયું છે એ ઓળખો — options જ hint આપે છે.</div></div>
+
+</div>
+
+<!-- ============ Q.33 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.33</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
+<div class="qtext">m દળ ધરાવતો બ્લોક (ચોસલું) y=x²/4 વડે દર્શાવાતી ઊર્ધ્વ આછેદ ધરાવતી સપાટી પર મૂકવામાં આવે છે. ઘર્ષણાંકનું મૂલ્ય 0.5 હોય તો સપાટી પર જ્યાં તે સરકે નહીં તે રીતે મૂકી શકાય તે મહત્તમ ઊંચાઈ?<div class="opts">(A) 1/4 m &nbsp; (B) 1/2 m &nbsp; (C) 1/6 m &nbsp; (D) 1/3 m</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">વક્ર સપાટી પર દરેક બિંદુએ સ્પર્શકનો ઢોળાવ (dy/dx) = tanθ (સ્થાનિક incline-angle) — block ત્યાં સ્થિર રહે ત્યાં સુધી જ્યાં tanθ≤μ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Limiting condition: dy/dx = μ (સ્પર્શકનો ઢોળાવ = ઘર્ષણાંક) પર x શોધો, પછી y=x²/4 થી ઊંચાઈ.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: y=x²/4 ને differentiate કરી dy/dx=x/2 કાઢો</li><li>DON'T: સીધા y ને 'height' ધારી x વગર ના ઉકેલો — પહેલાં limiting x જોઈએ</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">સીધા સમતલ-incline નું tanθ=μ સૂત્ર curved surface પર lagoo કરવાનો પ્રયત્ન કરવો પણ x/y બંનેને ચલ ના ગણવા — વક્ર સપાટી પર ઢોળાવ બિંદુ-બિંદુ બદલાય છે, derivative જ સાચો રસ્તો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">dy/dx=x/2=μ=0.5 ⟹ x=1</div><div class="calc">y=x²/4=1/4=0.25m</div><div class="ans">Answer: (A) 1/4 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">વક્ર (curved) સપાટી પર 'ક્યાં સુધી ના સરકે' પ્રશ્નમાં — સીધા incline ના tanθ=μ ને derivative dy/dx=μ તરીકે generalize કરો.</div></div>
+
+</div>
+
+<!-- ============ Q.34 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.34</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">સમક્ષિતિજ સપાટી પર રહેલા 10kg દળના બ્લોકને સમક્ષિતિજ સાથે 30° ના ખૂણે લાગતા બળ F દ્વારા ખેંચવામાં આવે છે. μs=0.25 માટે, F ના કયા મૂલ્ય માટે બ્લોક ગતિ કરવાની શરૂઆત કરશે?<div class="opts">(A) 33.3 N &nbsp; (B) 25.2 N &nbsp; (C) 20 N &nbsp; (D) 35.7 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Limiting equilibrium — F ના vertical component block ને 'હળવો' કરે છે (N ઘટાડે), એટલે friction પણ ઘટે — F cosθ = μ(mg−F sinθ).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F ના x,y component અલગ કરી, limiting friction condition લગાડો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: N=mg−Fsinθ (ખેંચવાથી, pull, N ઘટે છે) — Q.20 ના push થી ઊલટું</li><li>DON'T: N=mg જ રાખવાની ભૂલ — F નો vertical ઘટક N બદલે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Pull force ના vertical component ને N માં ઉમેરવાની ભૂલ (push સાથે ગૂંચવવું) — pull માં N ઘટે છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Fcos30°=μ(mg−Fsin30°)</div><div class="calc">F(0.866)=0.25(100−0.5F)</div><div class="calc">0.866F=25−0.125F ⟹ 0.991F=25 ⟹ F≈25.2N</div><div class="ans">Answer: (B) 25.2 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ખેંચવું' (pull, ઉપર તરફના ખૂણે) ⟹ N ઘટે; 'ધકેલવું' (push, નીચે તરફના ખૂણે) ⟹ N વધે — Q.20 સાથે સરખાવી યાદ રાખો.</div></div>
+
+</div>
+
+<!-- ============ Q.35 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.35</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">10kg દળનો પદાર્થ 20 m/s ની પ્રારંભિક ઝડપથી ગતિ કરી રહ્યો છે. પદાર્થ અને ભોંયતળિયા વચ્ચેના ઘર્ષણને કારણે પદાર્થ 5s પછી અટકી જાય છે. ઘર્ષણાંકનું મૂલ્ય (g=10)?<div class="opts">(A) 0.2 &nbsp; (B) 0.3 &nbsp; (C) 0.5 &nbsp; (D) 0.4</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Deceleration purely ઘર્ષણથી — a=v/t થી પ્રવેગ કાઢી, μ=a/g.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=Δv/t=20/5=4 m/s² (deceleration); μg=a.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'અટકી જવું' ⟹ v_final=0, સીધું a=u/t</li><li>DON'T: SUVAT ના બીજા ફોર્મ્યુલા (અંતર જરૂરી) ની જરૂર નથી — સીધો a=Δv/t</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ઘર્ષણબળ f=μmg ને accel a=μg સાથે ગૂંચવી m ને ફરી ગુણવું (mass cancel થઈ જ ગયું છે).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=20/5=4 m/s²</div><div class="calc">μ=a/g=4/10=0.4</div><div class="ans">Answer: (D) 0.4</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સ્થિર થવાનો સમય' અપાય ⟹ સીધો a=u/t, પછી μ=a/g — mass ક્યારેય જરૂરી નથી આ pattern માં.</div></div>
+
+</div>
+
+<!-- ============ Q.36 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.36</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2025(April)</span></div>
+<div class="qtext">m દળનો સમઘન બ્લોક 60° ના ઢાળવાળા સમતલ પર g/2 ના પ્રવેગથી નીચે સરકી રહ્યો છે, ગતિક ઘર્ષણાંકનું મૂલ્ય કેટલું છે?<div class="opts">(A) √3−1 &nbsp; (B) √3/2 &nbsp; (C) √2/3 &nbsp; (D) 1−√3/2</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Incline+friction, નીચે સરકતું — a=g sinθ−μg cosθ, આપેલ a=g/2 મૂકી μ ઉકેલો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">g sinθ−μg cosθ=g/2 (g cancel), sin60°,cos60° મૂકો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: sin60°=√3/2, cos60°=1/2 ચોક્કસ</li><li>DON'T: a=g/2 ને g થી ભાગવાનું ભૂલશો નહીં — g બંને બાજુ cancel થાય છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">sin60,cos60 ને sin30,cos30 સાથે ગૂંચવવા (અદલાબદલી ભૂલ).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">√3/2 − μ(1/2) = 1/2</div><div class="calc">μ/2 = √3/2−1/2 = (√3−1)/2 ⟹ μ=√3−1</div><div class="ans">Answer: (A) √3−1</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Incline-sliding-with-friction ના a=gsinθ−μgcosθ ને 'g cancel કરી direct μ માટે ઉકેલો' — સમય બચાવો.</div></div>
+
+</div>
+
+<!-- ============ Q.37 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.37</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2021(Feb)</span></div>
+<div class="qtext">વ્યક્તિએ સ્થિર લિફ્ટમાં સ્પ્રિંગ કાંટો પકડેલ છે ત્યારે તેનું વાચન 60kg છે. હવે જો લિફ્ટ 1.8 m/s² ના અચળ પ્રવેગ સાથે નીચે આવવાનું શરૂ કરે તો સ્પ્રિંગ કાંટાનું નવું વાચન ન્યુટનમાં કેટલું થશે?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'Numerical Value Answer' (NVA) પ્રકારનો પ્રશ્ન — options નથી, સીધો numeric જવાબ ભરવાનો. સ્થિર-લિફ્ટનું વાચન (60kg) સાચું mass આપે છે (a=0 ત્યાં).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Apparent weight N=m(g−a) — લિફ્ટ નીચે તરફ પ્રવેગિત (a=1.8), એટલે N ઘટશે mg કરતાં.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: m=60kg (સ્થિર-લિફ્ટના વાચનથી સીધું સાચું mass) વાપરો</li><li>DON'T: જવાબને ફરી kg માં ના આપો — પ્રશ્ન ન્યુટન (N, બળ) માં પૂછે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">જવાબ kg માં આપી દેવો (દા.ત. 49.2kg) — પ્રશ્ન સ્પષ્ટ ન્યુટન માંગે છે, N=m(g−a) જ સીધો બળ આપે છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">N=m(g−a)=60×(10−1.8)=60×8.2=492N</div><div class="ans">Answer: 492 N (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">NVA-પ્રકારના elevator પ્રશ્નોમાં પણ N=m(g∓a) જ વાપરો, ફક્ત જવાબ સાચા એકમ (N, kg નહીં) માં લખો.</div></div>
+
+</div>
+
+<!-- ============ Q.38 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.38</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2021(August)</span></div>
+<div class="qtext">બે વ્યક્તિઓ A અને B ગતિમાન પદાર્થના વિસ્થાપનની દિશા સાથે અનુક્રમે 45° અને 60° ખૂણે બળ લગાડીને નિશ્ચિત અંતર d માં પદાર્થ પર સમાન જથ્થામાં કાર્ય કરે છે. વ્યક્તિ A દ્વારા લાગતા બળ અને વ્યક્તિ B દ્વારા લાગતા બળનો ગુણોત્તર 1/√x છે. x ની કિંમત?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Work=F·d·cosθ — 'સમાન કાર્ય' condition બંને બળોને d, પોતપોતાના angle સાથે જોડે છે, F_A/F_B નો ratio સીધો cosθ ના ratio થી મળે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">W_A=W_B ⟹ F_A d cos45° = F_B d cos60° (d cancel).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: d બંને સમીકરણમાં સમાન છે — cancel કરો</li><li>DON'T: cos45°,cos60° ના મૂલ્ય (1/√2, 1/2) ને અદલાબદલી ના કરો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F_A/F_B ને cosθ ના બદલે θ ના સીધા ratio તરીકે ધારી લેવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">F_A cos45° = F_B cos60°</div><div class="calc">F_A/F_B = cos60°/cos45° = (1/2)/(1/√2) = 1/√2</div><div class="ans">Answer: x=2 (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સમાન કાર્ય, જુદા ખૂણા' પેટર્નમાં F₁/F₂=cosθ₂/cosθ₁ (ઊંધો ratio) — d હંમેશા cancel થાય છે.</div></div>
+
+</div>
+
+<!-- ============ Q.39 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.39</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">10kg દળને 5m લાંબા દોરડાની મદદથી છત પરથી શિરોલંબ રીતે લટકાવવામાં આવેલ છે. દોરડાના મધ્યબિંદુ આગળ 30N જેટલું બળ સમક્ષિતિજ દિશામાં લગાડવામાં આવે છે. દોરડાનો શિરોલંબ સાથેનો કોણ θ=tan⁻¹(x×10⁻¹) છે. x નું મૂલ્ય?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Q.19/Q.26 જેવો જ 'string bend' pattern, પણ આ વખતે કોણ (θ) શોધવાનો છે, બળ નહીં — midpoint સંતુલનથી tanθ=F/mg સીધું મળે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Midpoint પર: T₂(નીચલો, vertical)=mg, T₁ ના horizontal=F, vertical=T₂ — tanθ=F/T₂.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: tanθ=F/(mg) સીધું વાપરો — T₁ કાઢવાની જરૂર જ નથી</li><li>DON'T: 5m લંબાઈને ગણતરીમાં ના વાપરો — angle formula માં એ અપ્રસ્તુત છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">θ ને શોધવા T₁ ની જરૂર છે એમ ધારી બિનજરૂરી પગલાં લેવા — સીધો tanθ=F/mg પૂરતો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">tanθ=F/mg=30/100=0.3=3×10⁻¹</div><div class="ans">Answer: x=3 (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'String bend' પ્રશ્નોમાં tanθ=F/mg (કોણ) અથવા F=mg tanθ (બળ) — બેમાંથી જે પૂછ્યું હોય એ સીધું, ત્રિકોણમિતિ derive કરવાની જરૂર નથી.</div></div>
+
+</div>
+
+<!-- ============ Q.40 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.40</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(April)</span></div>
+<div class="qtext">3N તણાવ હેઠળ રહેલ સ્થિતિસ્થાપક સ્પ્રિંગની લંબાઈ a જેટલી છે. 2N તણાવ હેઠળ તેની લંબાઈ b થાય છે. તેની લંબાઈ (3a−2b) થાય માટે જરૂરી તણાવ?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Hooke's law મુજબ length, tension નું રેખીય (linear) વિધેય છે — l(T)=L₀+cT. બે જાણીતા બિંદુ (3,a),(2,b) થી (3a−2b) ને પણ l(T) સ્વરૂપમાં લખી T શોધવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">l(T)=L₀+cT ધારી, a=L₀+3c, b=L₀+2c સમીકરણો બનાવો, પછી 3a−2b ને સરળ કરો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 3a−2b ને L₀,c ના પદોમાં expand કરો, પછી l(T) ના સ્વરૂપ સાથે સરખાવો</li><li>DON'T: T=3a−2b ને સીધો 'ટેન્શનનો સરવાળો' ના ગણો — એ ખોટું, linear-relation algebra જ સાચું</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">(3a−2b) ને ડાયરેક્ટ '3×3−2×2=5N' ગણી લેવું (સાચા અર્થે, પણ derivation વગર) — luckily coefficient pattern match થાય છે, પણ full algebra થી જ ખાતરી કરો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">3a−2b = 3(L₀+3c)−2(L₀+2c) = L₀+5c</div><div class="calc">l(T)=L₀+cT ને L₀+5c સાથે સરખાવતા T=5</div><div class="ans">Answer: 5 N (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Linear tension-length સંબંધમાં 'combination (3a−2b) માટે T શું' પ્રશ્નમાં — coefficients (3,−2 અહીં સરવાળો 1) નો check એ જ T ના coefficient sum ને અનુરૂપ હોય.</div></div>
+
+</div>
+
+<!-- ============ Q.41 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.41</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2021(March)</span></div>
+<div class="qtext">બે લંબઘન (m=0.5kg અને M=4.5kg) આકૃતિમાં દર્શાવ્યા મુજબ સમક્ષિતિજ ઘર્ષણરહિત ટેબલ પર ગોઠવેલા છે (m, M ની ઉપર). બંને લંબઘન વચ્ચે સ્થિર ઘર્ષણનો સહગુણક 3/7 છે. બંને લંબઘન એક સાથે ગતિ કરે તે માટે મોટા લંબઘન (M) પર મહત્તમ કેટલું સમક્ષિતિજ બળ આપી શકાય (નજીકના પૂર્ણાંકમાં, g=9.8)?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'સાથે ગતિ કરવી' ⟹ ઉપરના m ને પણ M જેટલો જ પ્રવેગ મળવો જોઈએ, જે ફક્ત m-M વચ્ચેના ઘર્ષણથી જ શક્ય — એ ઘર્ષણની મહત્તમ મર્યાદા a ની મહત્તમ મર્યાદા નક્કી કરે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">m પર max static friction જ તેને accelerate કરી શકે: f_max=μmg=ma_max ⟹ a_max=μg. પછી F_max=(M+m)a_max.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: a_max ફક્ત m ના સમીકરણ (f=ma) થી કાઢો, mass cancel થઈ a_max=μg જ મળે</li><li>DON'T: F ને ફક્ત M પર જ લગાડી m ને અલગ ગણવાની ભૂલ ના કરો — બંને સાથે જ move કરે એ condition છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F_max ને ફક્ત m પરના friction જેટલું ગણી લેવું — ખરેખર F આખા તંત્ર (M+m) ને એ પ્રવેગ આપવા જોઈએ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a_max=μg=(3/7)×9.8=4.2 m/s²</div><div class="calc">F_max=(M+m)×a_max=5×4.2=21N</div><div class="ans">Answer: 21 N (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'બ્લોક-ઓન-બ્લોક, સાથે ગતિ' પ્રશ્નમાં — ઉપરના (નાના) બ્લોકના friction-સમીકરણથી a_max કાઢો, પછી કુલ (M+m) દળ પર F=Σm·a_max લગાડો.</div></div>
+
+</div>
+
+<!-- ============ Q.42 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.42</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2019(April)</span></div>
+<div class="qtext">20g દળની બુલેટ પ્રારંભિક ઝડપ 1 ms⁻¹ ધરાવે છે. જ્યારે તે 20cm જાડીની છાણની દિવાલની અંદર ઘૂસવાનું શરૂ કરે છે. જો દિવાલ સરેરાશ અવરોધ 2.5×10⁻² N આવતી હોય, તો દિવાલની અન્ય બાજુમાંથી બહાર નીકળ્યા પછી બુલેટની ઝડપ?<div class="opts">(A) 0.4 ms⁻¹ &nbsp; (B) 0.1 ms⁻¹ &nbsp; (C) 0.3 ms⁻¹ &nbsp; (D) 0.7 ms⁻¹</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Work-energy theorem — દિવાલમાં resistive force સામે થયેલ કાર્ય = kinetic energy નો ઘટાડો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">KE_initial − F·d = KE_final, પછી v_final કાઢો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 20g ને kg માં convert કરો (0.02kg)</li><li>DON'T: નાના numbers (2.5×10⁻²N) જોઈ ડરવું નહીં — units cgs/SI મેચ છે, સીધું કામ કરે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">20cm ને m માં convert કરવાનું ભૂલવું (0.2m ને બદલે 20 વાપરવું).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">KE_i=½×0.02×1²=0.01 J</div><div class="calc">W=F·d=2.5×10⁻²×0.2=0.005 J</div><div class="calc">KE_f=0.01−0.005=0.005 J</div><div class="calc">v_f=√(2×0.005/0.02)=√0.5≈0.7 ms⁻¹</div><div class="ans">Answer: (D) 0.7 ms⁻¹</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ગોળી દિવાલમાંથી પસાર' પ્રશ્નોમાં F=ma ને બદલે work-energy (F·d=ΔKE) વાપરવું ઝડપી — સમય (t) ની જરૂર જ નથી.</div></div>
+
+</div>
+
+<!-- ============ Q.43 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.43</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2021(August)</span></div>
+<div class="qtext">વિધાન-I: ત્રણ બળો F₁,F₂ અને F₃ ને ત્રિકોણની ત્રણ બાજુઓ દ્વારા દર્શાવેલ છે અને F₁+F₂=−F₃, તો આ ત્રણેય બળો સહવર્તી બળો છે અને સંતુલન માટેની શરત પૂર્ણ કરે છે. વિધાન-II: ત્રણ બળો F₁,F₂ અને F₃ ત્રિકોણ બનાવે છે જેમાં તેની બાજુઓ સમાન ક્રમમાં લીધેલી છે, તેથી તે સ્થાનાંતરીત સંતુલન માટેની શરત પૂર્ણ કરે છે.<div class="opts">(A) I ખોટું, II સાચું &nbsp; (B) I સાચું, II ખોટું &nbsp; (C) બંને ખોટા &nbsp; (D) બંને સાચા</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બંને statement ખરેખર triangle-law-of-forces (બળોનો ત્રિકોણ નિયમ) ના જ બે સુસંગત વર્ણન છે — બંને સાચા છે કે નહીં ચકાસવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F₁+F₂=−F₃ ⟹ F₁+F₂+F₃=0, જે equilibrium ની જ વ્યાખ્યા (nose-to-tail બંધ ત્રિકોણ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'closed triangle (nose-to-tail)=equilibrium' ને બંને statement માટે ચેક કરો</li><li>DON'T: 'સમાન ક્રમમાં બાજુઓ' ને કોઈ અલગ/વિરોધાભાસી condition ના ગણો — એ triangle law ની જ યોગ્ય રજૂઆત છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">બેમાંથી એક statement ને ખોટું ધારી લેવું — બંને ખરેખર triangle law ના જ સાચા, સુસંગત વર્ણનો છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">I: F₁+F₂+F₃=0 ⟹ ત્રણેય બળ concurrent અને equilibrium — સાચું</div><div class="calc">II: nose-to-tail ક્રમમાં લીધેલ ત્રિકોણ પણ એ જ equilibrium condition દર્શાવે — સાચું</div><div class="ans">Answer: (D) બંને સાચા</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Triangle-law-of-forces ના બંને પ્રકારના વર્ણન (vector-sum=0, અથવા nose-to-tail closed triangle) સમાન conclusion આપે — બંને true તરીકે ઓળખો.</div></div>
+
+</div>
+
+<!-- ============ Q.44 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.44</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2021(August)</span></div>
+<div class="qtext">એક રોકેટનું પ્રારંભિક દળ 1000kg છે. રોકેટને 20 ms⁻² નો પ્રવેગ આપવા માટે બળતણને કેટલા દરે બાળવું જોઈએ તે ગણો. રોકેટની સાપેક્ષે વાયુઓ 500 ms⁻¹ ની સાપેક્ષ ઝડપે બહાર આવે છે (g=10).<div class="opts">(A) 6.0×10² kg s⁻¹ &nbsp; (B) 500 kg s⁻¹ &nbsp; (C) 10 kg s⁻¹ &nbsp; (D) 60 kg s⁻¹</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Variable-mass rocket-thrust સમસ્યા — thrust એ gravity સામે લડી extra a=20 પણ આપવો પડે, એટલે thrust=m(a+g), માત્ર ma નહીં.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Thrust=v_rel×(dm/dt)=m(a+g) — dm/dt માટે ઉકેલો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: gravity ને ધ્યાનમાં લો — thrust=m(a+g), માત્ર ma નહીં (રોકેટ ઉપર જાય છે)</li><li>DON'T: thrust=ma (gravity ignore) ધારી ખોટો (ઓછો) જવાબ ના આપો</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">g ને ignore કરી thrust=ma=1000×20=20000N વાપરવું — સાચું thrust=m(a+g)=30000N જોઈએ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Thrust=m(a+g)=1000×(20+10)=30000N</div><div class="calc">dm/dt=Thrust/v_rel=30000/500=60 kg/s</div><div class="ans">Answer: (D) 60 kg s⁻¹</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Rocket problems માં 'પ્રવેગ a આપવા' નો અર્થ થાય a ઉપરાંત gravity સામે લડવું પણ — thrust=m(a+g) (ઉપર જતું રોકેટ) reflex માં વાપરો.</div></div>
+
+</div>
+
+<!-- ============ Q.45 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.45</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">દર્શાવેલ રચનામાં m₁,m₂,m₃ અને m₄ દળોના પ્રવેગો અનુક્રમે a₁,a₂,a₃ અને a₄ છે (કાસ્કેડિંગ ગરગડી: m₁ ટોચની ગરગડી પર, બીજી (movable) ગરગડી પર m₂ અને ત્રીજી ગરગડીની axle, ત્રીજી ગરગડી પર m₃,m₄). આ રચના માટે સાચો સંબંધ?<div class="opts">(A) 4a₁+2a₂+a₃+a₄=0 &nbsp; (B) a₁+4a₂+3a₃+a₄=0 &nbsp; (C) a₁+4a₂+3a₃+2a₄=0 &nbsp; (D) 2a₁+2a₂+3a₃+a₄=0</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">બહુ-સ્તરીય (cascading) movable pulley — દરેક ગરગડી માટે અલગ string-constraint લખી, અંતે એક જ સમીકરણમાં ભેગા કરવાના.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">ટોચની ગરગડી: m₁ ↔ બીજી ગરગડીની axle (વિરુદ્ધ પ્રવેગ). બીજી ગરગડી: m₂ અને ત્રીજી ગરગડીની axle (constraint). ત્રીજી ગરગડી: m₃,m₄ (constraint).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: દરેક movable ગરગડી માટે અલગ-અલગ 'બંને છેડાનો સરવાળો = 2×axle નો પ્રવેગ' લખો</li><li>DON'T: બધા m ને એક જ ગરગડી પર છે એમ ધારી સીધો સાદો સરવાળો ના કરો — 3 અલગ ગરગડી છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ટોચની ગરગડી અને બીજી ગરગડી વચ્ચેનો sign-ફેરફાર (m₁ નીચે જાય તો axle ઉપર જાય) ભૂલી જવો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">ટોચની ગરગડી: a(axle-P2)=−a₁</div><div class="calc">બીજી ગરગડી (m₂, axle-P3): a₂+a(axle-P3)=2×a(axle-P2)=−2a₁</div><div class="calc">ત્રીજી ગરગડી (m₃,m₄): a(axle-P3)=(a₃+a₄)/2</div><div class="calc">ભેગું કરતાં: a₂+(a₃+a₄)/2=−2a₁ ⟹ 4a₁+2a₂+a₃+a₄=0</div><div class="ans">Answer: (A) 4a₁+2a₂+a₃+a₄=0</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Cascading (ગરગડી-પર-ગરગડી) તંત્રમાં — સૌથી ઉપરથી નીચે તરફ, દરેક ગરગડી માટે અલગ constraint લખી અંતે substitute કરો, એક-સામટું ના વિચારો.</div></div>
+
+</div>
+
+<!-- ============ Q.46 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.46</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">ખોખાની અંદર M જેટલું દળ ધરાવતું ચોસલું 'a' જેટલા પ્રવેગથી નીચે તરફ ગતિ કરે છે. ચોસલું બોક્ષના તળિયા ઉપર તેના વજન કરતાં ચોથા ભાગનું બળ લગાડે છે. 'a' નું મૂલ્ય?<div class="opts">(A) g/4 &nbsp; (B) g/2 &nbsp; (C) 3g/4 &nbsp; (D) g</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Newton's 3rd law — ચોસલું તળિયા પર જે બળ લગાડે છે, તળિયું ચોસલા પર બરાબર એટલું જ (વિરુદ્ધ દિશામાં, normal N) લગાડે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">N=Mg/4 (આપેલ). ચોસલા માટે: Mg−N=Ma.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'ચોસલું તળિયા પર લગાડે છે' અને 'તળિયું ચોસલા પર લગાડે છે' (N) એ 3rd law pair, magnitude સરખું</li><li>DON'T: N ને M ના વજનના પૂરા ભાગ (Mg) જેટલું ના ગણો — સ્પષ્ટ 'ચોથો ભાગ' આપેલ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Mg−N=Ma માં N ની જગ્યાએ ભૂલથી Mg જ મૂકી દેવું (ચોથો ભાગ ભૂલી જવો).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p3" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p3" target="nlmChapterNotes">Part 3</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Mg−Mg/4=Ma</div><div class="calc">(3/4)Mg=Ma ⟹ a=3g/4</div><div class="ans">Answer: (C) 3g/4</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ચોસલું તળિયા પર X બળ લગાડે' ⟹ 3rd law થી તળિયું ચોસલા પર બરાબર X જ લગાડે (N=X), પછી Newton 2nd law સીધું.</div></div>
+
+</div>
+
+<!-- ============ Q.47 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.47</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">આકૃતિમાં દર્શાવ્યા પ્રમાણે free body diagram માટે ઘણા બળો 'x' અને 'y' દિશામાં લગાડવામાં આવે છે (7N ઉપર, 6N ડાબે, 5N જમણે, 8N નીચે). વધારાનો કેટલો અને x-અક્ષને કેટલા કોણે બળ લગાડવો પડશે કે જેથી પદાર્થનો પરિણામી (ચોખ્ખું) પ્રવેગ શૂન્ય થાય?<div class="opts">(A) √2N, 45° &nbsp; (B) √2N, 135° &nbsp; (C) 2/√3 N, 30° &nbsp; (D) 2N, 45°</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">ચાર બળોનું net (resultant) કાઢી, તેની બરાબર-વિરુદ્ધ (equilibrant) બળ જ 'વધારાનું બળ' — સંતુલન માટે જરૂરી.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Fx=5−6=−1N, Fy=7−8=−1N — net resultant (−1,−1); સંતુલન માટે (+1,+1) જોઈએ.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: net force ના component પહેલાં કાઢો, પછી જ વિરુદ્ધ દિશા/મૂલ્ય નક્કી કરો</li><li>DON'T: 'વધારાનું બળ' ને resultant ની જ દિશામાં ના મૂકો — equilibrant હંમેશા વિરુદ્ધ દિશામાં હોય</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Equilibrant ને resultant ની સમાન દિશામાં મૂકી દેવું — ખરેખર બરાબર વિરુદ્ધ (180°) દિશામાં જોઈએ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p1" target="nlmChapterNotes">Part 1</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">net=(−1,−1), |net|=√2N, દિશા ત્રીજા ચતુર્થાંશમાં (225°)</div><div class="calc">Equilibrant=(+1,+1), magnitude √2N, x-અક્ષથી 45° (પ્રથમ ચતુર્થાંશ)</div><div class="ans">Answer: (A) √2N, 45°</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ચોખ્ખો પ્રવેગ શૂન્ય કરવા વધારાનું બળ' ⟹ હંમેશા હાલના resultant ની બરાબર-વિરુદ્ધ (equilibrant), magnitude સરખું.</div></div>
+
+</div>
+
+<!-- ============ Q.48 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.48</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">નિયમિત વેગ 'v' થી ઉપર તરફ ગતિ કરતી, 'l' લંબાઈના અને 30° ના નમન કોણ ધરાવતા ઘર્ષણરહિત ઢોળાવ પરથી એક ચોસલું 'A', 2s માં નીચે સરકે છે. જો નમન બદલીને 45° કરવામાં આવે તો ઢાળ પર સરકીને નીચે આવવા તે કેટલો સમય લેશે?<div class="opts">(A) 2.66 s &nbsp; (B) 0.83 s &nbsp; (C) 1.68 s &nbsp; (D) 0.70 s</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Incline ની લંબાઈ l અચળ રહે છે, ફક્ત ખૂણો બદલાય છે — l=½g sinθ·t² સંબંધ બંને કિસ્સામાં સરખાવો, l cancel કરી નવો t શોધો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">l=½g sin30°×2² = ½g sin45°×t₂² — l ને બંને બાજુ સરખું રાખો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: l ને બંને સમીકરણમાં સમાન ગણી cancel કરો</li><li>DON'T: 'ઉપર તરફ ગતિ કરતી' initial condition ને sliding-down ના kinematics સાથે ના ભેળવો — એ ફક્ત ઢોળાવના સંદર્ભ-ફ્રેમનું વર્ણન છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">sin30° અને sin45° ને ઊલટા (સ્વેપ) ગોઠવવાની ભૂલ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">4×sin30°=t₂²×sin45°</div><div class="calc">4×0.5=t₂²×0.7071</div><div class="calc">2=0.7071×t₂² ⟹ t₂²=2.828 ⟹ t₂≈1.68s</div><div class="ans">Answer: (C) 1.68 s</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સમાન લંબાઈ, અલગ ખૂણો' incline-sliding પ્રશ્નોમાં — l=½gsinθ·t² ને l cancel કરી t²∝1/sinθ સીધો ratio વાપરો.</div></div>
+
+</div>
+
+<!-- ============ Q.49 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.49</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">m₁=5kg અને m₂=3kg દળ ધરાવતા બે વસ્તુઓને આકૃતિમાં દર્શાવ્યા અનુસાર એક હલકી દોરી કે જે લીસી અને હલકી પુલી પરથી પસાર થઈ છે તેની મદદથી જોડવામાં આવે છે. પુલી એક લીસા ઢોળાવના છેડે રહેલ છે. આ તંત્ર સ્થિતિમાં છે. ઢોળાવ વડે m₁ દળ ધરાવતા પદાર્થ ઉપર લાગતું બળ?<div class="opts">(A) 30N &nbsp; (B) 40N &nbsp; (C) 50N &nbsp; (D) 60N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">તંત્ર સ્થિર (equilibrium) — 'ઢોળાવ વડે m₁ પર લાગતું બળ' એટલે normal reaction N (ઘર્ષણરહિત હોવાથી ફક્ત ⊥ ઘટક).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">m₂ ઊભું લટકે છે ⟹ T=m₂g. m₁ ના incline-સંતુલનથી θ અને N બંને કાઢી શકાય.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T=m₂g=30N પહેલાં કાઢો (સૌથી સહેલું)</li><li>DON'T: 'm₁ ઉપર લાગતું બળ' ને T સાથે ગૂંચવવું નહીં — પ્રશ્ન ઢોળાવ(incline) ના બળ (N) વિશે છે, દોરીના તણાવ વિશે નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">θ ને ધારી લેવાને બદલે m₁ ના સંતુલનથી જ derive કરવું જોઈએ — T=m₁g sinθ પરથી sinθ=T/(m₁g).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T=m₂g=3×10=30N</div><div class="calc">m₁ સંતુલન (incline-ધારે): T=m₁g sinθ ⟹ sinθ=30/50=0.6 ⟹ θ=37° (cosθ=0.8)</div><div class="calc">N=m₁g cosθ=50×0.8=40N</div><div class="ans">Answer: (B) 40N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ઢોળાવ વડે લાગતું બળ' (ઘર્ષણરહિત) હંમેશા ફક્ત normal N=mg cosθ — તણાવ T સાથે ગૂંચવશો નહીં, બંને અલગ બળ છે.</div></div>
+
+</div>
+
+<!-- ============ Q.50 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.50</span><span class="qsrc">Level II · Sec A &middot; JEE Main-2025(April)</span></div>
+<div class="qtext">1kg દળના પદાર્થને આકૃતિમાં દર્શાવ્યા મુજબ કોણ બનાવતી બે દોરીઓની મદદથી લટકાવવામાં આવે છે (T₁ 60°, T₂ 30°, ક્ષિતિજ સાથે). તણાવ T₁ અને T₂ ના મૂલ્યો (N માં) અનુક્રમે કેટલા છે?<div class="opts">(A) 5,5√3 &nbsp; (B) 5√3,5 &nbsp; (C) 5√3,5√3 &nbsp; (D) 5,5</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Two-string hanging mass, ખૂણા ક્ષિતિજ (horizontal) થી માપેલા, 60°+30°=90° ⟹ T₁⊥T₂ — ખાસ સરળ કિસ્સો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Horizontal: T₁cos60°=T₂cos30°; Vertical: T₁sin60°+T₂sin30°=mg.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ખૂણા ક્ષિતિજ (horizontal dashed line) થી માપેલા છે એ ધ્યાનમાં રાખો, vertical થી નહીં</li><li>DON'T: T₁,T₂ ને equal ના ધારો — અલગ ખૂણા (60°,30°) અલગ tension આપશે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Horizontal-component સમીકરણમાં cos ને બદલે sin (કે ઊલટું) વાપરવાની ભૂલ — ખૂણો horizontal થી છે એટલે 'આડું'=cos, 'ઊભું'=sin.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁cos60°=T₂cos30° ⟹ T₁(0.5)=T₂(√3/2) ⟹ T₁=T₂√3</div><div class="calc">T₁sin60°+T₂sin30°=10: T₂√3(√3/2)+T₂(0.5)=10 ⟹ T₂(1.5+0.5)=10 ⟹ T₂=5N</div><div class="calc">T₁=5√3 N</div><div class="ans">Answer: (B) 5√3, 5</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Lami's theorem થી પણ સીધું: T₁/sin(90°+30°)=T₂/sin(90°+60°)=mg/sin90° — cross-check તરીકે વાપરી શકાય.</div></div>
+<div class="diagram"><svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow50" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker></defs>
+<line x1="20" y1="20" x2="300" y2="20" stroke="currentColor" stroke-width="4"/>
+<line x1="20" y1="20" x2="160" y2="140" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrow50)"/>
+<line x1="300" y1="20" x2="160" y2="140" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrow50)"/>
+<line x1="160" y1="140" x2="160" y2="200" stroke="currentColor" stroke-width="2" marker-end="url(#arrow50)"/>
+<path d="M 60 20 A 40 40 0 0 1 95 46" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="65" y="42" font-size="12">60°</text>
+<path d="M 260 20 A 40 40 0 0 0 225 46" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="222" y="42" font-size="12">30°</text>
+<text x="95" y="85" font-size="12">T1</text>
+<text x="205" y="85" font-size="12">T2</text>
+<text x="168" y="175" font-size="12">mg</text>
+<circle cx="160" cy="140" r="4"/>
+</svg></div><div class="diagram-cap">આકૃતિ &mdash; force diagram (ગણતરી કરેલ ખૂણા/ઘટકો)</div>
+</div>
+
+<!-- ============ Q.51 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.51</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2019(Jan)</span></div>
+<div class="qtext">દળ 10kg નું ચોસલું ખરબચડા ઢોળાવવાળા સમતલ પર આકૃતિમાં દર્શાવ્યા મુજબ રાખેલ છે. 3N નું બળ ચોસલા પર લગાડવામાં આવે છે. સમતલ અને ચોસલા વચ્ચે સ્થિત ઘર્ષણાંક 0.6 છે તો બળ P નું ન્યૂનતમ મૂલ્ય કેટલું હોવું જોઈએ કે જેથી ચોસલું નીચે તરફ ગતિ ન કરે?<div class="opts">(A) 32 N &nbsp; (B) 18 N &nbsp; (C) 23 N &nbsp; (D) 25 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">45° incline, બ્લોક પર 3N (નીચે-તરફ ઢોળાવે) અને P (ઉપર-તરફ ઢોળાવે) બંને along-incline — 'નીચે ના સરકે' ⟹ ઘર્ષણ મહત્તમ ઉપર તરફ મદદ કરે, P ની ન્યૂનતમ મર્યાદા.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Along-incline equilibrium (limiting, ઘર્ષણ ઉપર તરફ મહત્તમ): P+f_max = mg sinθ + 3N.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 45° હોવાથી sinθ=cosθ=1/√2 — બંને સરખા, ગણતરી સરળ</li><li>DON'T: 3N ને ક્ષિતિજ બળ ના ગણો — આકૃતિ મુજબ એ incline ની સાથે જ (નીચે તરફ) છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ઘર્ષણની દિશા ખોટી (નીચે તરફ) લેવી — 'block ને નીચે સરકતા રોકવા' માટે ઘર્ષણ હંમેશા ઉપર તરફ કામ કરે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">mg sinθ=100×(1/√2)=70.71N; μmg cosθ=0.6×70.71=42.43N</div><div class="calc">P_min = mg sinθ+3−μmg cosθ = 70.71+3−42.43 ≈ 31.3N</div><div class="ans">Answer: (A) 32 N (નજીકનો વિકલ્પ, rounding)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ન્યૂનતમ P જેથી ના સરકે' પ્રશ્નમાં ઘર્ષણ મહત્તમ (ઉપર તરફ) ધારી equilibrium લખો — P_min=mgsinθ+(બીજા નીચે-તરફના બળ)−μmgcosθ.</div></div>
+
+</div>
+
+<!-- ============ Q.52 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.52</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2019(Jan)</span></div>
+<div class="qtext">ખરબચડી ઢોળાવવાળા સમતલમાં એક ચોસલું આકૃતિમાં દર્શાવ્યા મુજબ રાખેલ છે (30° ઢોળાવ). જે મહત્તમ 2N બળ નીચે તરફ ઢોળાવવાળા સમતલમાં લગાડવા છતાં ચોસલું સ્થિર અવસ્થામાં રહે છે; અને મહત્તમ 10N બળ ઉપર તરફનું ઢોળાવવાળા સમતલમાં લગાડવા છતાં ચોસલાને ગતિ ન કરાવી શકે. ચોસલા અને સમતલ વચ્ચેનો ઘર્ષણાંક?<div class="opts">(A) √3/2 &nbsp; (B) √3/4 &nbsp; (C) 1/2 &nbsp; (D) 2/3</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Static equilibrium ની 'range' — બે સીમા (2N નીચે-તરફ ઉમેરવા છતાં સ્થિર, 10N ઉપર-તરફ સુધી સ્થિર) બે અલગ સમીકરણ આપે છે, mg અને μ બંને અજ્ઞાત, બે સમીકરણ-બે અજ્ઞાત ઉકેલો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">નીચે-તરફ સીમા: mg sinθ+2=μmg cosθ (ઘર્ષણ ઉપર, મહત્તમ). ઉપર-તરફ સીમા: mg sinθ+μmg cosθ=10 (ઘર્ષણ નીચે, મહત્તમ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: બંને સમીકરણ ભેગા કરી mg sinθ પહેલાં eliminate/કાઢો</li><li>DON'T: mg ને આપેલ ધારી ના લો — mg પ્રશ્નમાં આપેલ નથી, બે સમીકરણથી જ નીકળશે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">mg ને 10kg×g જેવું કંઈક ધારી ખોટા numbers વાપરવા — mass આપેલ જ નથી, બંને સમીકરણ solve કરવા પડે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">(1): mgsinθ+2=μmgcosθ</div><div class="calc">(2): mgsinθ+μmgcosθ=10</div><div class="calc">(1)ને(2)માં: mgsinθ+mgsinθ+2=10 ⟹ 2mgsinθ=8 ⟹ mgsinθ=4</div><div class="calc">mg=4/sin30°=8N; (1): 8(0.5)+2=μ×8×cos30° ⟹ 6=μ×4√3 ⟹ μ=6/(4√3)=√3/2</div><div class="ans">Answer: (A) √3/2</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'Range of force to hold on incline' પ્રશ્નમાં બંને સીમા-સમીકરણ (નીચે-તરફ મહત્તમ, ઉપર-તરફ મહત્તમ) એકસાથે લખી ઉમેરો/બાદ કરો — mg,μ બંને એક સાથે નીકળી જશે.</div></div>
+
+</div>
+
+<!-- ============ Q.53 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.53</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2020(September)</span></div>
+<div class="qtext">1m ત્રિજ્યાના ગોળાર્ધ ખાઈના તળિયે જંતુ છે. તે બહાર નીકળવાનો પ્રયત્ન કરે છે, પરંતુ તળિયાથી h ઊંચાઈ પછી સરકવાનું શરૂ કરે છે. જમીન અને જંતુ વચ્ચેનો ઘર્ષણાંક 0.75 હોય તો h શોધો (g=10).<div class="opts">(A) 0.45 m &nbsp; (B) 0.80 m &nbsp; (C) 0.20 m &nbsp; (D) 0.60 m</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">વક્ર (ગોળાકાર) સપાટી પર દરેક બિંદુએ સ્પર્શક-ખૂણો કેન્દ્રથી માપેલ θ છે — જંતુ ત્યાં સુધી જ ચઢી શકે જ્યાં tanθ≤μ, limiting condition પર h કાઢવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Limiting: tanθ=μ પર h=R(1−cosθ) — θ ને μ થી, પછી h ને θ થી કાઢો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: tanθ=μ=0.75=3/4 થી 3-4-5 triangle વાપરો (sinθ=0.6,cosθ=0.8)</li><li>DON'T: h=Rsinθ ના ધારો — h એ 'ઊંચાઈ ચઢેલ' (તળિયાથી), જે R(1−cosθ) છે, Rsinθ નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">h ને R sinθ (આડું અંતર જેવું કંઈક) સાથે ગૂંચવવું — ઊંચાઈ h=R−Rcosθ=R(1−cosθ) જ સાચું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">tanθ=0.75=3/4 ⟹ cosθ=4/5=0.8 (3-4-5 triangle)</div><div class="calc">h=R(1−cosθ)=1×(1−0.8)=0.2m</div><div class="ans">Answer: (C) 0.20 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ગોળાકાર/વક્ર ખાડામાં ચઢવું, ક્યાં સરકવાનું શરૂ' પેટર્નમાં tanθ=μ (center થી માપેલ ખૂણે) અને h=R(1−cosθ) — બંને formula ભેગા વાપરો.</div></div>
+
+</div>
+
+<!-- ============ Q.54 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.54</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">10kg દળ ધરાવતું ચોસલું સપાટી ઉપર 9.8 ms⁻¹ ના પ્રારંભિક વેગથી સરકવાનું શરૂ કરે છે. સપાટી અને ચોસલા વચ્ચેનો ઘર્ષણાંક 0.5 છે. વિરામસ્થિતિમાં આવતા પહેલા ચોસલાએ કાપેલું અંતર (g=9.8)?<div class="opts">(A) 4.9 m &nbsp; (B) 9.8 m &nbsp; (C) 12.5 m &nbsp; (D) 19.6</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">સીધો deceleration-distance પ્રશ્ન — v²=u²−2as, v=0 (અટકે ત્યાં સુધી).</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=μg (deceleration), s=u²/(2a).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: g=9.8 જ વાપરો (પ્રશ્નમાં સ્પષ્ટ)</li><li>DON'T: u ને m/s થી ફરી convert ના કરો — પહેલેથી SI માં છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">a=μg ને બદલે a=μmg (mass સાથે) વાપરવાની ભૂલ — deceleration mass-સ્વતંત્ર (a=μg જ).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=0.5×9.8=4.9 m/s²</div><div class="calc">s=u²/(2a)=9.8²/(2×4.9)=96.04/9.8=9.8m</div><div class="ans">Answer: (B) 9.8 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">u=9.8=g ના numeric coincidence થી s પણ 9.8 જ નીકળે છે — special-case ચકાસણી.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સરકવાનું શરૂ→ઘર્ષણથી અટકવું' પ્રશ્નોમાં v²=u²−2μgs ને સીધો s માટે ઉકેલો, mass ક્યારેય જરૂરી નથી.</div></div>
+
+</div>
+
+<!-- ============ Q.55 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.55</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">m=2kg અને M=8kg દળ ધરાવતા બે ચોસલાનું બનેલું તંત્ર આકૃતિમાં દર્શાવ્યા અનુસાર એક લીસા ટેબલ ઉપર મૂકવામાં આવેલ છે (m, M ની ઉપર). બે ચોસલાઓ વચ્ચે સ્થિત ઘર્ષણાંક 0.5 છે. બંને ચોસલાઓ જોડે ગતિ કરે તે માટે M દળ ધરાવતા ચોસલા ઉપર લગાવવું પડતું મહત્તમ બળ F?<div class="opts">(A) 9.8 N &nbsp; (B) 39.2 N &nbsp; (C) 49 N &nbsp; (D) 78.4 N</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Q.41 જેવો જ 'block-on-block, move together' pattern — ઉપરના m ના max static friction જ a_max નક્કી કરે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">f_max=μmg=ma_max ⟹ a_max=μg; F_max=(M+m)a_max.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: g=9.8 વાપરો (options ના decimal pattern પરથી સ્પષ્ટ)</li><li>DON'T: F ને ફક્ત M(=8kg) પર જ આધારિત ના ગણો — કુલ (M+m)=10kg જ accelerate થાય છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">a_max ગણતી વખતે g=10 વાપરવું (49N ને બદલે 50N ખોટો જવાબ).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a_max=μg=0.5×9.8=4.9 m/s²</div><div class="calc">F_max=(M+m)×a_max=10×4.9=49N</div><div class="ans">Answer: (C) 49 N</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Q.41 અને Q.55 બંને 'block-on-block max F' ની જ pattern — a_max=μg (ઉપરના block ના સમીકરણથી), F=Σm·a_max (કુલ mass સાથે).</div></div>
+
+</div>
+
+<!-- ============ Q.56 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.56</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">મુસાફર-બેગને 2 m/s ની ઝડપથી ગતિ કરતા કન્વેયર બેલ્ટ પર હળવેકથી છોડવામાં આવે છે. કન્વેયર બેલ્ટ અને બેગ વચ્ચે ઘર્ષણાંક 0.4 છે. પ્રારંભમાં આ બેગ કન્વેયર બેલ્ટ ઉપર સરકે છે. પરંતુ ત્યારબાદ ઘર્ષણને કારણે સ્થિર થઈ જાય છે. મુસાફર બેગની બેલ્ટ ઉપર તેની સરકવાની સ્થિતિમાં કપાયેલ અંતર?<div class="opts">(A) 2 m &nbsp; (B) 0.5 m &nbsp; (C) 3.2 m &nbsp; (D) 0.8 m</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Relative-sliding-distance સમસ્યા — બેગ (u=0) ઘર્ષણથી પ્રવેગિત થઈ બેલ્ટ-ઝડપ (2m/s) સુધી પહોંચે ત્યાં સુધી, બેગ અને બેલ્ટ બંનેનું અલગ-અલગ ડિસ્પ્લેસમેન્ટ કાઢી ફરક લેવાનો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">બેગ: a=μg, t=v/a (2m/s સુધી પહોંચવાનો સમય). s_bag=½at², s_belt=v×t. Slip=s_belt−s_bag.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: બેગ અને બેલ્ટ બંનેનું ડિસ્પ્લેસમેન્ટ અલગ ગણો, પછી બાદબાકી</li><li>DON'T: 'સ્થિર થઈ જાય' ને બેગ સંપૂર્ણ અટકે એમ ના સમજો — બેગ બેલ્ટ સાથે 2m/s ઝડપે 'સ્થિર' (relative) થાય છે, absolute rest નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Slip distance ને ફક્ત s_bag (કે ફક્ત s_belt) જ ગણી લેવું — સાચો slip એ બેનો તફાવત છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=μg=0.4×10=4 m/s²</div><div class="calc">t=v/a=2/4=0.5s</div><div class="calc">s_bag=½×4×0.25=0.5m; s_belt=2×0.5=1.0m</div><div class="calc">Slip=1.0−0.5=0.5m</div><div class="ans">Answer: (B) 0.5 m</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'બેગ/વસ્તુ ધીમેથી બેલ્ટ પર મુકાય, ઘર્ષણથી બેલ્ટ-ઝડપ પકડે' પેટર્નમાં — સ્લિપ-ડિસ્ટન્સ = s_belt−s_object, બંને અલગ ગણવા ફરજિયાત.</div></div>
+
+</div>
+
+<!-- ============ Q.57 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.57</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2022(July)</span></div>
+<div class="qtext">M દળ ધરાવતું ચોસલું એક ખરબચડા ઢોળાવ પર અચળ વેગ સાથે નીચે સરકે છે. ઢોળાવનો સમક્ષિતિજ સાથે આંતરેલ કોણ θ છે. સંપર્ક બળનું મૂલ્ય?<div class="opts">(A) Mg &nbsp; (B) Mgcosθ &nbsp; (C) √(Mgsinθ+Mgcosθ) &nbsp; (D) Mgsinθ√(1+μ)</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'સંપર્ક બળ' (contact force) = normal N અને ઘર્ષણ f બંનેનું resultant (તેઓ પરસ્પર લંબ છે) — અચળ વેગ (a=0) એ ખાસ સરળતા આપે છે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">અચળ વેગ ⟹ f=Mg sinθ (સંતુલન, ઉપર તરફ), N=Mg cosθ — બંને લંબ, resultant=√(f²+N²).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: N,f પરસ્પર લંબ છે એ ઓળખો — resultant=Pythagoras</li><li>DON'T: 'સંપર્ક બળ'ને ફક્ત N (normal) જ ના ગણો — ઘર્ષણ (f) પણ સંપર્ક બળનો જ ભાગ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Contact force ને N પૂરતું સીમિત ગણી લેવું (option B પસંદ કરવું) — ઘર્ષણ f ને ignore કરવાની ભૂલ.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">f=Mgsinθ, N=Mgcosθ (અચળ વેગ, સંતુલન)</div><div class="calc">Contact=√(f²+N²)=√(M²g²sin²θ+M²g²cos²θ)=Mg√(sin²θ+cos²θ)=Mg</div><div class="ans">Answer: (A) Mg</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">સીધો conceptual insight: અચળ વેગે (સંતુલનમાં) સરકતા બ્લોક પર કુલ સંપર્ક બળ હંમેશા gravity ને બરાબર-વિરુદ્ધ હોવું જોઈએ (કારણ કે net force=0) — તેથી સીધું Mg.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'અચળ વેગે સરકતું' (terminal, a=0) બ્લોક ⟹ કુલ સંપર્ક બળ (N+f નું resultant) હંમેશા=Mg, ખૂણા θ ને ધ્યાનમાં લીધા વગર જ — યાદ રાખવા જેવો શોર્ટકટ.</div></div>
+
+</div>
+
+<!-- ============ Q.58 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.58</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">45° ના ખરબચડા ઢાળવાળા સમતલ પરથી નીચે સરકવા માટે પદાર્થ દ્વારા લેવામાં આવતો સમય તે સરકવા માટે લેતા સમય કરતાં n સંપૂર્ણપણે લીસા 45° ઢાળવાળા સમતલ પરથી નીચે પદાર્થ અને ઢાળવાળા સમતલ વચ્ચેનો ગતિક ઘર્ષણાંક કેટલો છે?<div class="opts">(A) √(1/(1−n²)) &nbsp; (B) √(1−1/n²) &nbsp; (C) 1+1/n² &nbsp; (D) 1−1/n²</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'ખરબચડા પરથી સમય = n×લીસા પરથી સમય' — l=½at² સંબંધથી t∝1/√a, બંને a ને સરખાવી μ કાઢવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a_smooth=gsinθ; a_rough=gsinθ(1−μ) (θ=45° હોવાથી sinθ=cosθ, μ-ફેક્ટર સીધો બહાર આવે છે). n=t_rough/t_smooth=√(a_smooth/a_rough).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: sin45°=cos45° હોવાથી a_rough=gsinθ−μgcosθ=gsinθ(1−μ) સરળ સ્વરૂપમાં લખો</li><li>DON'T: n ને a નો સીધો ratio ના ગણો — n=√(a_ratio) (કારણ કે t∝1/√a)</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">n²=a_smooth/a_rough ને બદલે n=a_smooth/a_rough (square ભૂલી જવું) વાપરવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n²=a_smooth/a_rough=1/(1−μ)</div><div class="calc">1−μ=1/n² ⟹ μ=1−1/n²</div><div class="ans">Answer: (D) 1−1/n²</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'સમય-ratio n અપાય, μ પૂછે' પેટર્નમાં t∝1/√a યાદ રાખો — n²(નહીં n) જ a ના ratio બરાબર થાય છે.</div></div>
+
+</div>
+
+<!-- ============ Q.59 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.59</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2023(Jan)</span></div>
+<div class="qtext">5kg દળનો બ્લોક ખરબચડી સપાટીવાળા ટેબલ પર સ્થિર મૂકવામાં આવે છે. હવે, જો ટેબલની સપાટીને સમાંતર દિશામાં 30N નું બળ લગાડવામાં આવે, તો બ્લોક 10s ના સમયગાળામાં 50m અંતર કાપે છે. ગતિક ઘર્ષણાંક કેટલો છે (g=10)?<div class="opts">(A) 0.60 &nbsp; (B) 0.75 &nbsp; (C) 0.50 &nbsp; (D) 0.25</div></div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">s=½at² થી પ્રવેગ કાઢી, Newton 2nd law (F−f=ma) થી ઘર્ષણ, પછી μ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=2s/t², F−μmg=ma.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: u=0 (સ્થિર મૂકેલ) ⟹ s=½at² સીધું</li><li>DON'T: F=30N ને direct ma ના ગણો — ઘર્ષણ બાદ કરવાનું ભૂલશો નહીં</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ઘર્ષણબળ બાદ કરવાનું ભૂલી F=ma થી સીધો a=F/m=6 m/s² (ખોટો, ઘર્ષણ વગરનો) વાપરવો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=2×50/10²=1 m/s²</div><div class="calc">30−μ×5×10=5×1 ⟹ 30−50μ=5 ⟹ μ=25/50=0.5</div><div class="ans">Answer: (C) 0.50</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'બળ+સમય+અંતર અપાય, μ પૂછે' પેટર્નમાં — પહેલાં kinematics (s=½at²) થી a, પછી જ Newton's 2nd law (F−f=ma) થી μ, ક્રમ ના બદલો.</div></div>
+
+</div>
+
+<!-- ============ Q.60 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.60</span><span class="qsrc">Level II · Sec B &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">દરેક 2kg ના 10 બોલના બનેલા તંત્રને દળરહિત અને ખેંચી ના શકાય તેવી દોરી વડે જોડવામાં આવેલા છે. આ તંત્રને લીસા ટેબલ ઉપર આકૃતિમાં દર્શાવ્યા અનુસાર સરકવા દેવામાં આવે છે (કેટલાક બોલ ટેબલ પર, બાકીના ધારેથી નીચે લટકતા). જ્યારે છઠ્ઠો બોલ ટેબલને છોડે તે જ ક્ષણે 7માં અને 8માં બોલ વચ્ચે દોરીમાં તણાવ કેટલો (N માં) હશે?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'છઠ્ઠો બોલ ટેબલ છોડે' ક્ષણે — બોલ 1-6 લટકતા (hanging), બોલ 7-10 હજુ ટેબલ પર (frictionless) — આખા તંત્રનો common પ્રવેગ પહેલાં કાઢો, પછી 7-8 વચ્ચેના તણાવ માટે ફક્ત 8,9,10 (ટેબલ પરના, 7 થી આગળના) સબ-સિસ્ટમ લો.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=(hanging weight)/(કુલ દળ)=6×2×g/(10×2). પછી T(7-8)=(mass of 8,9,10)×a.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'T(7-8)' શોધવા 7 ને accelerate કરતું બળ નહીં, પણ 7 થી આગળ (8,9,10) ને accelerate કરતું બળ ગણો</li><li>DON'T: આખા તંત્રનું mass (20kg) વાપરી ખોટી સબ-સિસ્ટમ ના લો — ફક્ત 8,9,10 (6kg) જ T(7-8) થી ખેંચાય છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">કઈ સબ-સિસ્ટમ (7-10 કે 8-10) એ T(7-8) અનુભવે છે એ ખોટી પસંદ કરવી — દોરી 7 અને 8 વચ્ચે છે, એટલે 8,9,10 જ 'આગળ' છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a>, <a href="../Chapter Notes/Newton's Laws of Motion.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a=(6×2×10)/(10×2)=120/20=6 m/s²</div><div class="calc">T(7-8)=mass(8,9,10)×a=(3×2)×6=36N</div><div class="ans">Answer: 36 N (સ્રોત સ્કેનમાં options છાપેલ નથી — numeric answer)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Multi-body chain (10 balls) માં 'બે ચોક્કસ balls વચ્ચેનું tension' પૂછાય તો — તંત્રનો common a પહેલાં કાઢો, પછી તણાવ-બિંદુથી 'આગળ'ની (table તરફની) સબ-સિસ્ટમ mass લઈ T=m·a.</div></div>
+
+</div>
+
+<!-- ============ Q.61 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.61</span><span class="qsrc">Level II · Sec B &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">100g દળ ધરાવતી વસ્તુ પર (10î+5ĵ)N જેટલું બળ લાગે છે. વિરામ સ્થિતિમાંથી શરૂ કરીને t=2s એ વસ્તુનું સ્થાન (aî+bĵ)m થાય છે. a/b નું મૂલ્ય મળે છે.</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">F ના x,y component અલગ-અલગ a_x,a_y આપે છે — દરેક દિશામાં સ્વતંત્ર રીતે s=½at² વાપરી a,b (સ્થાનના component) કાઢવાના.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a_x=F_x/m, a_y=F_y/m, પછી x=½a_xt², y=½a_yt² (u=0, વિરામસ્થિતિ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 100g ને 0.1kg માં convert કરો</li><li>DON'T: a_x,a_y ને ભેગા (resultant) ના કરો — પ્રશ્ન component-wise a,b માંગે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">m ને kg માં convert કરવાનું ભૂલવું — a_x,a_y બંને 1000× ખોટા આવશે (પણ ratio a/b પર mass ની ભૂલ cancel થઈ જાય, છતાં convention માટે સાચું કરવું જોઈએ).</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a_x=10/0.1=100 m/s², a_y=5/0.1=50 m/s²</div><div class="calc">x(=a)=½×100×4=200m, y(=b)=½×50×4=100m</div><div class="calc">a/b=200/100=2</div><div class="ans">Answer: 2 (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">m cancel થાય છે એટલે a/b=F_x/F_y=10/5=2 સીધું, ½t² ના પદો પણ cancel — શોર્ટકટ ચેક.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'a/b' જેવો ratio પુછાય ત્યારે m અને ½t² બંને cancel થઈ જાય છે — સીધો F_x/F_y જ ratio આપે, પૂરી kinematics ની જરૂર નથી.</div></div>
+
+</div>
+
+<!-- ============ Q.62 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.62</span><span class="qsrc">Level II · Sec B &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">200g દળ ધરાવતા ચોસલાને લીસા ઢોળાવ (60°) પર ચોક્કસ બળ F દ્વારા સ્થિર ટેકવવામાં આવેલ છે (F સમક્ષિતિજ, આકૃતિ પ્રમાણે). F નું લઘુત્તમ બળ મૂલ્ય F=√x N હોય તો x=?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">ઘર્ષણરહિત ઢોળાવ પર સમક્ષિતિજ બળ (F) વડે સંતુલન — ફક્ત એક જ F મૂલ્ય equilibrium આપે (ઘર્ષણ-રહિત હોવાથી 'range' નથી), એ જ 'જરૂરી/લઘુત્તમ' ગણાય.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Incline-along equilibrium: F cosθ = mg sinθ (બંનેના along-incline component સરખાવો) ⟹ F=mg tanθ.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: F ના ઘટકો ઢોળાવની દિશામાં (along incline) લો, ઊભા-આડા (x-y) નહીં — ઝડપી</li><li>DON'T: F ને ઢોળાવ પર લંબ ના ગણો — આપેલ આકૃતિમાં F ચોક્કસ સમક્ષિતિજ (horizontal) છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F cosθ=mgsinθ ને બદલે F sinθ=mgcosθ (ખૂણો ઊંધો) વાપરવો — સમક્ષિતિજ બળના incline-ઘટકો ચોક્કસ ઓળખો.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p6" target="nlmChapterNotes">Part 6</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">F=mgtanθ=0.2×10×tan60°=2×√3=2√3 N</div><div class="calc">2√3=√(4×3)=√12</div><div class="ans">Answer: x=12 (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">સમક્ષિતિજ બળ વડે ઘર્ષણરહિત ઢોળાવ પર ટેકવવાના પ્રશ્નમાં F=mg tanθ સીધો સૂત્ર તરીકે યાદ રાખો.</div></div>
+
+</div>
+
+<!-- ============ Q.63 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.63</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2021(March)</span></div>
+<div class="qtext">1kg દળની વસ્તુ સમક્ષિતિજ સપાટી પર સ્થિર છે, અને સપાટી સાથે સ્થિર ઘર્ષણાંક 1/√3 ધરાવે છે. વસ્તુને લઘુત્તમ શક્ય બળ F N લગાવીને ખસેડવી છે. F નું મૂલ્ય કેટલું હશે? (નજીકના પૂર્ણાંકમાં લખો, g=10)</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">'લઘુત્તમ શક્ય બળ' — F ને કોઈ પણ ખૂણે (ફક્ત સમક્ષિતિજ નહીં) લગાડવાની છૂટ છે, એટલે ખૂણા પર પણ minimize કરવાનું — કેલ્ક્યુલસ (કે જાણીતું પરિણામ tanθ=μ) વાપરવું પડશે.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F_min = μmg/√(1+μ²), જે θ=tan⁻¹(μ) એ થાય છે (ઉપર તરફના ખૂણે ખેંચવાથી N ઘટે, જરૂરી F ઘટે — એક optimum ખૂણો).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 'કોઈપણ ખૂણે લગાડી શકાય' શબ્દ જોઈ minimize-over-angle પ્રકારનો પ્રશ્ન ઓળખો</li><li>DON'T: F ને ફક્ત સમક્ષિતિજ (μmg) જ ધારી ના લો — એ minimum નથી, optimum ખૂણે ઓછું બળ જોઈએ છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">F_min=μmg (સીધું સમક્ષિતિજ ઘર્ષણ-બળ) ધારી લેવું — ખરેખર ખૂણો optimize કરવાથી ઓછું બળ પૂરતું થાય છે.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">μ=1/√3 ⟹ θ=tan⁻¹(1/√3)=30°</div><div class="calc">F_min=μmg cosθ=(1/√3)×1×10×cos30°=(1/√3)×10×(√3/2)=5N</div><div class="ans">Answer: 5 (Numerical Value, નજીકનો પૂર્ણાંક)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">વૈકલ્પિક સૂત્ર: F_min=μmg/√(1+μ²)=(1/√3)(10)/√(1+1/3)=(10/√3)/√(4/3)=(10/√3)×(√3/2)=5N — same.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'લઘુત્તમ શક્ય બળ, કોઈપણ ખૂણે' પેટર્નમાં F_min=μmg/√(1+μ²) (θ=tan⁻¹μ પર) સીધું સૂત્ર વાપરો — સમક્ષિતિજ ધારવાની ભૂલ ટાળો.</div></div>
+
+</div>
+
+<!-- ============ Q.64 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.64</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2021(July)</span></div>
+<div class="qtext">સમક્ષિતિજ સાથે 30° ખૂણો બનાવતા ત્રાંસા ખરબચડા સમતલ પર 'm' દળના પદાર્થને ઉપર લઈ જવામાં આવે છે. પદાર્થ અને સમતલ વચ્ચે ઘર્ષણાંક √x/5 છે. જો ચડવાનો સમય ઉતરવાના સમય કરતાં અડધો હોય તો x નું મૂલ્ય?</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">ચઢવા વખતે gravity+friction બંને ગતિ-વિરોધી (વધુ deceleration), ઉતરવા વખતે gravity ગતિ-સહાયક, friction વિરોધી (ઓછો net a) — બંને માટે અલગ a, સમાન અંતર l માટે સમય-ratio વાપરી μ કાઢવાનું.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">l=½a_up t_up²=½a_down t_down², t_up=t_down/2 આપેલ — a_up=4a_down.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: a_up=gsinθ+μgcosθ (બંને વિરોધ), a_down=gsinθ−μgcosθ (ઘર્ષણ વિરોધ) ચોક્કસ અલગ લખો</li><li>DON'T: 'ચઢવું-ઉતરવું' બંનેમાં સરખો a ધારી ના લો — ઘર્ષણની દિશા બદલાય છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">a_up અને a_down ના સૂત્રમાં ઘર્ષણનું ચિહ્ન (+/−) અદલાબદલી કરવી.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">a_up=4a_down: gsinθ+μgcosθ=4(gsinθ−μgcosθ)</div><div class="calc">sinθ+μcosθ=4sinθ−4μcosθ ⟹ 5μcosθ=3sinθ ⟹ μ=(3/5)tanθ</div><div class="calc">θ=30°,tanθ=1/√3: μ=3/(5√3)=√3/5</div><div class="ans">Answer: x=3 (Numerical Value, μ=√3/5 આપેલ √x/5 સાથે સરખાવતા)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ચઢવાનો સમય, ઉતરવાનો સમય' ratio અપાય ત્યારે — a_up (gsinθ+μgcosθ) અને a_down (gsinθ−μgcosθ) ને l=½at² દ્વારા સમય-ratio સાથે જોડો, ઘર્ષણની દિશા incline ની બંને બાજુ અલગ રાખો.</div></div>
+
+</div>
+
+<!-- ============ Q.65 ============ -->
+<div class="qcard">
+<div class="qhead"><span class="qnum">Q.65</span><span class="qsrc">ઘર્ષણાંક &middot; JEE Main-2022(June)</span></div>
+<div class="qtext">એક નિયમિત 6m લાંબી ચેઈનને ટેબલ ઉપર એવી રીતે મૂકેલ છે કે જેથી તેની લંબાઈનો અમુક ભાગ ટેબલની ધાર આગળ લબડતો રહે. આ તંત્ર વિરામ સ્થિતિમાં છે. જો ચેઈન અને ટેબલની સપાટી વચ્ચે સ્થિત ઘર્ષણાંક 0.5 જેટલો હોય તો ચેઈનનો ___ m જેટલો મહત્તમ ભાગ ટેબલ પરથી લટકતો રહી શકે.</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body"><p style="margin:0">Uniform ચેઈનનો ભાગ ટેબલ પર, ભાગ લટકતો — લટકતા ભાગનું વજન ટેબલ-પરના ભાગના ઘર્ષણ વડે જ ટકે છે (ટેબલ-ભાગનું પોતાનું વજન નહીં, ફક્ત તેનું ઘર્ષણ) — સમાન linear density ધારી, ભાગ 'f' (fraction) માટે સમીકરણ.</p></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Limiting: (લટકતો ભાગનું વજન) = μ×(ટેબલ-પરના ભાગનું વજન) — બંને ભાગ સમાન ચેઈનના જ હોવાથી length ના પદોમાં સીધું.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: સમગ્ર ચેઈનનું linear mass density (λ) બંને બાજુ cancel થાય છે એ ઓળખો — માત્ર length-fraction જ રહે છે</li><li>DON'T: ટેબલ-પરના ભાગનું 'સંપૂર્ણ વજન' લટકતા ભાગને પકડી રાખે એમ ના ગણો — ફક્ત તેનું ઘર્ષણ (μ×N) જ પકડી રાખે છે</li></ul></div></div>
+<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">લટકતા ભાગનું વજન = ટેબલ-ભાગનું વજન (ઘર્ષણ ભૂલી જવું) એવું ખોટું સમીકરણ બનાવવું.</p></div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="../Chapter Notes/Newton's Laws of Motion.html#p5" target="nlmChapterNotes">Part 5</a> ના concept/સૂત્ર વાપરો.</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">f = μ(1−f) [f=લટકતો ભાગ, fraction]</div><div class="calc">f(1+μ)=μ ⟹ f=μ/(1+μ)=0.5/1.5=1/3</div><div class="calc">મહત્તમ લટકતી લંબાઈ = f×L = 6×(1/3) = 2m</div><div class="ans">Answer: 2 m (Numerical Value)</div></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ચેઈન ટેબલ-ધારેથી લટકવું, ઘર્ષણથી ટકવું' પ્રશ્નમાં f=μ/(1+μ) (લટકતા ભાગનો fraction) સીધું સૂત્ર યાદ રાખો — λ (density) હંમેશા cancel થાય છે.</div></div>
+
+</div>
+<div class="section-divider">Master Tools · Tips · Special Notes</div>
+<div class="tools">
+
+<h3>1. વારંવાર આવતી technique-families (આ પેપરમાં)</h3>
+<ul>
+<li><b>Impulse-momentum (F=Δp/t, J=mΔv):</b> Q1,5,6,8,11,12,14,15,17,42,44,60,61 — 'સમય અપાય, force/impulse પૂછે' પેટર્ન.</li>
+<li><b>String-bend equilibrium (F=mg tanθ):</b> Q19,21,26,39,62 — દોરીના મધ્યબિંદુ/જંક્શન પર સમક્ષિતિજ બળ લગાડાય ત્યારે.</li>
+<li><b>Atwood/incline+hanging connected bodies:</b> Q16,23,24,29,45,49 — a=(net driving force)/(કુલ દળ) framework.</li>
+<li><b>Block-on-block max force (friction-limited):</b> Q41,55 — a_max=μg (ઉપરના બ્લોકથી), F=Σm·a_max.</li>
+<li><b>Limiting friction on curved surface (tanθ=μ generalized to dy/dx):</b> Q33,53 — સીધા incline ના tanθ=μ ને વક્ર સપાટી પર derivative તરીકે generalize.</li>
+<li><b>Range-of-force-on-incline (બે સીમા, mg+μ બંને અજ્ઞાત):</b> Q52 — બે limiting-equilibrium સમીકરણ ભેગા ઉકેલવા.</li>
+<li><b>Apparent weight in lift (N=m(g∓a)):</b> Q3,7,25,37 — દિશા (ઉપર/નીચે) અને accelerating/uniform ચોક્કસ ઓળખવું.</li>
+</ul>
+
+<h3>2. Special values &amp; conversions વારંવાર વપરાયેલ</h3>
+<ul>
+<li>sin37°=cos53°=0.6, cos37°=sin53°=0.8 (3-4-5 triangle) — Q29,49,64.</li>
+<li>sin45°=cos45°=1/√2≈0.707 — Q19,26,34,48,51,58.</li>
+<li>g=10 ms⁻² default, પણ g=9.8 જ્યાં options ના decimal pattern (147, 291, 49 વગેરે) એ સ્પષ્ટ કરે — Q25,32,37,41,54,55 માં ચોક્કસ ચકાસો.</li>
+<li>g,cm,s (cgs) એકમમાં બળ સીધું dyne મળે, SI conversion જરૂરી નથી — Q6.</li>
+</ul>
+
+<h3>3. Cross-cutting Do's / Don'ts</h3>
+<ul>
+<li>'દોરડું/સાંકળનું દળ આપેલ છે' દેખાય તો એ massless નથી — તેનું વજન ટોચના તણાવમાં ઉમેરો (Q18).</li>
+<li>Push (ધકેલવું) ⟹ N=mg+Fsinθ (વધે); Pull (ખેંચવું) ⟹ N=mg−Fsinθ (ઘટે) — Q20 vs Q34.</li>
+<li>Variable-mass (rocket/ફુગ્ગો) સમસ્યામાં F=ma નહીં, F=v(dm/dt) (અથવા gravity સામે m(a+g)) — Q6,Q44.</li>
+<li>Pivoted lamina/rod ('O પર ફરે છે') ⟹ સંતુલન-શરત ટોર્ક Σ=0 છે, force-balance નહીં — Q27.</li>
+<li>NVA (Numerical Value Answer) પ્રશ્નોમાં options ન હોવા એ સ્કેન-ડિફેક્ટ નથી — JEE ના જ integer-answer format ભાગનો હિસ્સો.</li>
+</ul>
+
+<h3>4. Time-management</h3>
+<p style="font-size:14px">Level-I Section-A (Q1-14) અને Section-B ના શરૂઆતના સ્ટ્રિંગ/પુલી પ્રશ્નો (Q15-27) સીધા pattern-recognition થી ઝડપી ઉકેલી શકાય (10-15 સેકન્ડ formula-recall). ઘર્ષણ-સેક્શન (Q28 પછી, અને Q51-65) માં limiting-friction ના બે-બાજુ સમીકરણો (Q29,Q52) સૌથી વધુ સમય માંગે — પરીક્ષામાં આ પ્રકારના પ્રશ્નો છેલ્લે રાખવા. NVA પ્રશ્નો (options નથી) માં guess-and-check શક્ય નથી — પૂરી ગણતરી જ કરવી પડે, સમય ફાળવણી પ્રમાણે.</p>
+
+<h3>5. Chapter notes / Revision sheet માં ઉમેરાયેલ નવી content (આ session દરમિયાન)</h3>
+<div class="flag">
+આ PYQ સેટ ઉકેલતી વખતે ત્રણ technique-gaps ચેપ્ટર નોટ્સમાં ન હતા — ઉમેરેલ છે (ચેપ્ટર નોટ્સ Part 2, Part 5, Part 7 ના અંતે નાના addendum તરીકે), અને Revision Sheet માં પણ mirror કરેલ છે:<br>
+1. <b>Variable-mass thrust equation</b> (F=v_rel×dm/dt) — Part 2 (Q6, Q44 માટે જરૂરી, rocket/ફુગ્ગા-પ્રકારના પ્રશ્નો).<br>
+2. <b>વક્ર સપાટી પર limiting friction</b> (tanθ=μ ને dy/dx=μ તરીકે generalize) — Part 5 (Q33, Q53 માટે જરૂરી).<br>
+3. <b>Cascading (ગરગડી-પર-ગરગડી) constraint method</b> — Part 7 (Q45 જેવા multi-pulley પ્રશ્નો માટે, JEE-extension તરીકે માર્ક કરેલ).
+</div>
+
+<h3>6. Genuinely unresolved / flagged items</h3>
+<div class="flag">
+Q.66, Q.67, Q.68 — સ્કેનના છેલ્લા પાના (પાનું 8) ના જમણા હાંસિયે સ્ટબ નંબર દેખાય છે, પણ પ્રશ્ન-લખાણ સંપૂર્ણપણે કપાઈ ગયેલ/ગેરહાજર છે. Guess કરવાને બદલે honestly અહીં ખાલી છોડેલ છે — સ્પષ્ટ/પૂરો સ્કેન મળે તો ભવિષ્યમાં ઉમેરી શકાય.
+</div>
+
+</div>
+</div>

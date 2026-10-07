@@ -1,0 +1,196 @@
+
+<title>Classification of Elements and Periodicity revision sheet</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.45;padding:0 14px}
+.wrap{max-width:980px;margin:0 auto;padding-block:20px 60px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,5vw,28px);margin:0 0 2px;text-wrap:balance}
+.subtitle{color:var(--ink-2);font-size:13px;margin:0 0 16px}
+.scan{background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.scan-label{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.scan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 14px;font-family:var(--font-mono);font-size:12.5px;color:var(--accent-ink);font-weight:600}
+.scan-grid span{min-width:0;overflow-wrap:anywhere;line-height:1.4}
+h2{font-family:var(--font-display);font-weight:600;font-size:16px;margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+h2 .n{font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:600}
+.jumpicon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--formula);color:var(--surface);text-decoration:none;font-size:12px;font-weight:700;vertical-align:middle;margin-left:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.grid.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{border-radius:10px;padding:10px 12px;border:1px solid;font-size:13px}
+.card .lbl{font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px;display:block;opacity:.85}
+.card .f{font-family:var(--font-mono);font-size:14.5px;font-weight:600;line-height:1.35}
+.card .m{font-size:11.5px;margin-top:3px;opacity:.85}
+.c-formula{background:var(--formula-bg);border-color:var(--formula-line);color:var(--formula)}
+.c-formula .f{color:var(--formula)}
+.c-exam{background:var(--exam-bg);border-color:var(--exam-line);color:var(--exam)}
+.c-mistake{background:var(--mistake-bg);border-color:var(--mistake-line);color:var(--mistake)}
+.c-check{background:var(--check-bg);border-color:var(--check-line);color:var(--check)}
+.c-neutral{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.c-neutral .f{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:5px 6px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:10.5px}
+td.rl{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2);font-size:11px}
+.tblcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;overflow-x:auto}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px}
+.mini svg{display:block;width:100%;height:auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.two-col{grid-template-columns:1fr}}
+.strip{display:flex;flex-wrap:wrap;gap:6px}
+.pill{background:var(--mistake-bg);border:1px solid var(--mistake-line);color:var(--mistake);border-radius:8px;padding:6px 10px;font-size:12px;flex:1 1 220px}
+.footer-note{text-align:center;color:var(--ink-3);font-size:11px;margin-top:26px}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Classification of Elements and Periodicity &mdash; revision sheet</h1>
+<p class="subtitle">11th science &middot; Gujarat board + JEE &middot; one-page quick scan before exam</p>
+
+<div class="scan">
+<span class="scan-label">10-second must-knows</span>
+<div class="scan-grid">
+<span>Zeff = Z − σ</span>
+<span>ત્રિજ્યા: આવર્તમાં ↓, સમૂહમાં ↑</span>
+<span>IE: આવર્તમાં ↑, સમૂહમાં ↓</span>
+<span>EN: આવર્તમાં ↑, સમૂહમાં ↓</span>
+<span>Be&gt;B, N&gt;O (IE અપવાદ)</span>
+<span>Cl&gt;F (EA magnitude અપવાદ)</span>
+<span>Isoelectronic: Z↑ ⟹ ત્રિજ્યા↓</span>
+<span>Metal oxide=basic, non-metal=acidic</span>
+</div>
+</div>
+
+<h2><span class="n">00</span>વર્ગીકરણ <a class="jumpicon" href="notes.html#intro" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-neutral"><span class="lbl">ઈતિહાસ</span><div class="f">Mendeleev (mass) → Moseley (Z) → આધુનિક નિયમ</div></div>
+<div class="card c-formula"><span class="lbl">આધુનિક આવર્ત નિયમ</span><div class="f">ગુણધર્મો = Z ના periodic function</div></div>
+</div>
+
+<h2><span class="n">01</span>Table structure <a class="jumpicon" href="notes.html#p1" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-neutral"><span class="lbl">period</span><div class="f">Row = outer n બદલાય</div></div>
+<div class="card c-neutral"><span class="lbl">group</span><div class="f">Column = સમાન valence pattern</div></div>
+<div class="card c-formula"><span class="lbl">s-block</span><div class="f">group 1,2 — ns¹⁻²</div></div>
+<div class="card c-formula"><span class="lbl">p-block</span><div class="f">group 13-18 — ns²np¹⁻⁶</div></div>
+<div class="card c-formula"><span class="lbl">d-block</span><div class="f">group 3-12 — (n−1)d ns⁰⁻²</div></div>
+<div class="card c-formula"><span class="lbl">f-block</span><div class="f">lanthanide/actinide — (n−2)f¹⁻¹⁴(n−1)d⁰⁻¹ns²</div></div>
+</div>
+
+
+<!-- upd-2026-10-04:per-iupac -->
+<div class="grid g2"><div class="card c-formula"><span class="lbl">IUPAC digit roots</span><div class="f">0 nil 1 un 2 bi 3 tri 4 quad 5 pent 6 hex 7 sept 8 oct 9 enn</div><div class="m">+ ium; દા.ત. 105 = Unp</div></div><div class="card c-neutral"><span class="lbl">official 104–112</span><div class="m">Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn</div></div></div>
+<h2><span class="n">02</span>Electron config <a class="jumpicon" href="notes.html#p2" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">(n+l) rule</span><div class="f">ઓછું (n+l) પહેલા ભરાય</div></div>
+<div class="card c-mistake"><span class="lbl">writing order</span><div class="f">d-block: (n−1)d ને ns પહેલા લખો (Fe=...3d⁶4s²)</div></div>
+</div>
+
+<h2><span class="n">03</span>ત્રિજ્યા <a class="jumpicon" href="notes.html#p3" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="two-col">
+<div class="tblcard"><table>
+<tr><th>Period 2</th><td>Li</td><td>Be</td><td>B</td><td>C</td><td>N</td><td>O</td><td>F</td></tr>
+<tr><td class="rl">pm</td><td>152</td><td>111</td><td>88</td><td>77</td><td>74</td><td>66</td><td>64</td></tr>
+</table></div>
+<div class="tblcard"><table>
+<tr><th>Period 3</th><td>Na</td><td>Mg</td><td>Al</td><td>Si</td><td>P</td><td>S</td><td>Cl</td></tr>
+<tr><td class="rl">pm</td><td>186</td><td>160</td><td>143</td><td>117</td><td>110</td><td>104</td><td>99</td></tr>
+</table></div>
+</div>
+<div class="grid g2" style="margin-top:8px">
+<div class="card c-formula"><span class="lbl">isoelectronic rule</span><div class="f">e⁻ count સરખો → Z↑ ⟹ ત્રિજ્યા↓</div><div class="m">N³⁻&gt;O²⁻&gt;F⁻&gt;Na⁺&gt;Mg²⁺&gt;Al³⁺</div></div>
+<div class="card c-neutral"><span class="lbl">cation vs anion</span><div class="f">cation &lt; parent atom &lt; anion</div></div>
+</div>
+
+<h2><span class="n">04</span>આયનીકરણ એન્થાલ્પી <a class="jumpicon" href="notes.html#p4" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">trend</span><div class="f">આવર્તમાં ↑ (Zeff↑), સમૂહમાં ↓ (ત્રિજ્યા↑)</div></div>
+<div class="card c-exam"><span class="lbl">IE1 order Period2 (kJ/mol)</span><div class="f">Li520&lt;B801&lt;Be899&lt;C1086&lt;O1314&lt;N1402&lt;F1681&lt;Ne2081</div></div>
+<div class="card c-exam"><span class="lbl">IE1 order Period3 (kJ/mol)</span><div class="f">Na496&lt;Al577&lt;Mg737&lt;Si786&lt;S999&lt;P1012&lt;Cl1256&lt;Ar1520</div></div>
+<div class="card c-mistake"><span class="lbl">અપવાદ</span><div class="f">Be&gt;B (2s² સ્થિર vs 2p¹), N&gt;O (અર્ધ-ભરેલ 2p³ vs paired 2p⁴)</div></div>
+<div class="card c-check"><span class="lbl">successive IE</span><div class="f">મોટો jump = core shell તૂટ્યું = વેલેન્સ e⁻ count</div></div>
+</div>
+
+<h2><span class="n">05</span>ઈલેક્ટ્રોન પ્રાપ્તિ એન્થાલ્પી <a class="jumpicon" href="notes.html#p5" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">trend</span><div class="f">આવર્તમાં વધુ ઋણ, સમૂહમાં ઓછું ઋણ</div></div>
+<div class="card c-mistake"><span class="lbl">અપવાદ — યાદ રાખો</span><div class="f">|EA(Cl)|=349 &gt; |EA(F)|=328 kJ/mol</div><div class="m">F નાનો → e⁻-e⁻ repulsion વધુ</div></div>
+<div class="card c-neutral"><span class="lbl">ધન EA (endothermic)</span><div class="f">noble gases, Be, Mg, N (સ્થિર config)</div></div>
+<div class="card c-formula"><span class="lbl">2nd EA</span><div class="f">હંમેશા ધન (X⁻→X²⁻)</div></div>
+</div>
+
+<h2><span class="n">06</span>વિદ્યુતઋણતા <a class="jumpicon" href="notes.html#p6" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">Pauling scale</span><div class="f">F(3.98)&gt;O(3.44)&gt;N(3.04)≈Cl(3.16)&gt;C(2.55)&gt;H(2.20)</div></div>
+<div class="card c-neutral"><span class="lbl">trend</span><div class="f">આવર્તમાં ↑, સમૂહમાં ↓ (કોઈ unit નથી)</div></div>
+</div>
+
+<h2><span class="n">07</span>સંયોજકતા/ઓક્સિડેશન અવસ્થા <a class="jumpicon" href="notes.html#p7" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">group ↔ valence e⁻</span><div class="f">group1→1e⁻(+1), group2→2e⁻(+2), group17→7e⁻(−1)</div></div>
+<div class="card c-mistake"><span class="lbl">d-block</span><div class="f">variable oxidation states (Fe²⁺,Fe³⁺)</div></div>
+</div>
+
+<h2><span class="n">08</span>ધાત્વીય/ઓક્સાઇડ પ્રકૃતિ <a class="jumpicon" href="notes.html#p8" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">metal oxide</span><div class="f">basic (Na₂O+H₂O→NaOH)</div></div>
+<div class="card c-formula"><span class="lbl">non-metal oxide</span><div class="f">acidic (SO₃+H₂O→H₂SO₄)</div></div>
+<div class="card c-exam"><span class="lbl">amphoteric</span><div class="f">Al₂O₃, BeO, ZnO, SnO₂, PbO₂, As₂O₃</div></div>
+<div class="card c-neutral"><span class="lbl">neutral oxide</span><div class="f">NO, N₂O, CO</div></div>
+</div>
+
+
+<!-- upd-2026-10-04:per-oxides -->
+<div class="grid g2"><div class="card c-formula"><span class="lbl">oxides</span><div class="f">B₂O₃, CO₂, SiO₂ acidic</div><div class="m">GeO₂, SnO₂, PbO₂, Al₂O₃ amphoteric</div></div><div class="card c-neutral"><span class="lbl">HCl માં ઓગળે</span><div class="m">basic + amphoteric oxides જ</div></div></div>
+<h2><span class="n">09</span>વિકર્ણ સંબંધ <a class="jumpicon" href="notes.html#p9" target="periodicityChapterNotes" title="Chapter notes ખોલો">↗</a></h2>
+<div class="grid g2">
+<div class="card c-formula"><span class="lbl">જોડાં</span><div class="f">Li–Mg &middot; Be–Al &middot; B–Si</div></div>
+<div class="card c-neutral"><span class="lbl">amphoteric ઉદાહરણ</span><div class="f">BeO, Al₂O₃ બંને amphoteric</div></div>
+</div>
+
+<h2><span class="n">!</span>Common mistakes</h2>
+<div class="strip">
+<div class="pill">Isoelectronic ના હોય એવી સ્પીસીઝમાં Z-rule વાપરવું નહીં</div>
+<div class="pill">EA sign confuse ના કરો — વધુ ઋણ = વધુ favorable</div>
+<div class="pill">Cl&gt;F (EA magnitude), પણ F&gt;Cl (EN) — બંને true, અલગ property</div>
+<div class="pill">N₂O, NO neutral છે — acidic ના ગણો</div>
+<div class="pill">d-block માં group=valency ધારી ના લો</div>
+</div>
+
+<p class="footer-note">Full explained chapter → School - Grade 11 / Chemistry / Chapter Notes / Classification of Elements and Periodicity.html</p>
+</div>

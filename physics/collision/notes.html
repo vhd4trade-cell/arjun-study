@@ -1,0 +1,799 @@
+<title>Collision chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+.part-why{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;font-style:italic}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.mono{font-family:var(--font-mono)}
+sup,sub{font-size:.7em}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+.th{font-size:13px;fill:var(--ink);font-weight:600}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Collision — full chapter</h1>
+<p class="subtitle">11th science · Gujarat board + JEE foundation · PABT Phase Test 2 — added topic alongside Work, Energy & Power</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> — final target: કોઈપણ collision (1D, 2D, wall સાથે) ને momentum + energy તર્કથી ઉકેલવું
+  <ol style="list-style:none;padding-left:0;counter-reset:none">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">Collision અને momentum શું છે</a> — introduction</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">Conservation of momentum</a> — collision નો પાયો</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">Collision ના પ્રકાર</a> — elastic, inelastic, coefficient of restitution</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">Perfectly elastic collision (1D)</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">Perfectly inelastic collision (1D)</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">Energy loss in collisions</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">Collision with a wall / fixed surface</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">Oblique (2D) collision</a> — JEE extension</li>
+  </ol>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="part" id="intro" style="padding-top:0">
+<h2><span class="num">00</span>Collision અને momentum શું છે</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  "Collision" શબ્દનો ચોક્કસ physics અર્થ, અને momentum (p=mv) નો ખ્યાલ — જે આ આખા chapter નો પાયો છે — સમજાશે.
+</div>
+
+<h3>Momentum — "ગતિનો જથ્થો"</h3>
+<p><b>Momentum</b> (લેટિન "movimentum" = ગતિ) = mass × velocity. Physics માં momentum ને "ગતિમાં રહેલો જથ્થો" (quantity of motion) કહેવાય — mass વધારે હોય કે velocity વધારે હોય, બંને object ને "રોકવા" વધારે અઘરો બનાવે છે. એટલે જ momentum ને m અને v બંનેનું ગુણાકાર રાખ્યું છે, ફક્ત v નહીં.</p>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">p⃗ = m v⃗</div>
+  <div class="meaning">Vector quantity — magnitude અને direction બંને. Unit: kg·m/s</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 220" role="img"><title>Momentum — mass અને velocity બંનેનો ફાળો</title><desc>સરખી velocity પર ભારે truck ને હલકી ball કરતા વધારે momentum હોય છે, રોકવા વધારે force જોઈએ</desc>
+<rect x="80" y="100" width="90" height="55" rx="6" fill="var(--surface-2)" stroke="var(--ink-3)"/>
+<text class="ts" x="125" y="132" text-anchor="middle">ball, m=0.5kg</text>
+<line x1="80" y1="80" x2="150" y2="80" stroke="var(--check)" stroke-width="2"/>
+<polygon points="150,80 140,75 140,85" fill="var(--check)"/>
+<text class="th" x="90" y="68" fill="var(--check)">v=10 m/s</text>
+<text class="ts" x="90" y="185">p = 0.5×10 = 5 kg·m/s</text>
+
+<rect x="420" y="80" width="180" height="75" rx="6" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="th" x="510" y="122" text-anchor="middle" fill="var(--exam)">truck, m=1000kg</text>
+<line x1="420" y1="60" x2="490" y2="60" stroke="var(--check)" stroke-width="2"/>
+<polygon points="490,60 480,55 480,65" fill="var(--check)"/>
+<text class="th" x="425" y="48" fill="var(--check)">v=10 m/s (સરખી)</text>
+<text class="th" x="430" y="185" fill="var(--exam)">p = 1000×10 = 10000 kg·m/s</text>
+</svg>
+<div class="diagram-cap">સરખી velocity — પણ mass વધારે એટલે momentum ઘણું વધારે; રોકવા વધારે force/time જોઈએ</div>
+</div>
+
+<h3>Collision — ટૂંકા સમય માટે મોટું internal force</h3>
+<p><b>Collision</b> એટલે બે (કે વધારે) objects વચ્ચે ટૂંકા સમય માટે થતી strong interaction, જેમાં એકબીજા પર force લગાડે છે — contact દ્વારા (બે ball ટકરાય) કે contact વગર પણ (magnetic repulsion, close-approach). Collision દરમિયાન external forces (gravity, friction) ની અસર એટલી ટૂંકી time માં નગણ્ય ગણાય છે.</p>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Collision ને "ટકરાવું" (physical contact) એમ સાંકડું ન સમજવું — physics માં કોઈપણ ટૂંકા-ગાળાની strong interaction જે momentum ને redistribute કરે એને collision ગણાય. Key idea: collision દરમિયાન system પર <b>net external force ≈ 0</b> (ટૂંકા સમય માટે internal force external કરતાં ઘણું મોટું), તેથી total momentum conserve થાય છે — આ જ આ ચેપ્ટરનું કેન્દ્રિય tool છે.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Car accident analysis, rocket propulsion, billiards, particle physics (Rutherford scattering), sports (bat-ball impact) — બધે collision ના momentum/energy laws વપરાય છે. PABT + JEE બંનેમાં numerical-heavy topic છે.
+</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 1 — momentum conservation law, ક્યાંથી આવે છે (Newton's third law સાથે જોડાણ).</div>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="p1">
+<h2><span class="num">01</span>Conservation of momentum</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Momentum conservation law ને Newton's third law પરથી derive કરી શકીશ, અને collision problems માં apply કરી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  આ ચેપ્ટરનો સૌથી વધારે વપરાતો equation — દરેક collision problem (elastic હોય કે inelastic) આ law થી શરૂ થાય છે.
+</div>
+
+<h3>Derivation — Newton's third law પરથી</h3>
+<p>બે objects m₁, m₂ collide થાય. Newton's third law: object 1, object 2 પર જે force લગાડે (F₁₂), એ જ magnitude નું પણ વિરુદ્ધ દિશાનું force object 2, object 1 પર લગાડે (F₂₁ = −F₁₂). Collision ના ટૂંકા સમય Δt માં:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Newton's third law પરથી momentum conservation ની derivation</title><desc>બે object ટકરાવા વખતે એકબીજા પર સરખા magnitude ના વિરુદ્ધ દિશાના force લગાડે છે</desc>
+<circle cx="220" cy="130" r="35" fill="var(--formula-bg)" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="ts" x="220" y="135" text-anchor="middle">m₁</text>
+<circle cx="420" cy="130" r="35" fill="var(--exam-bg)" stroke="var(--exam)" stroke-width="1.5"/>
+<text class="ts" x="420" y="135" text-anchor="middle">m₂</text>
+
+<line x1="255" y1="115" x2="385" y2="115" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="385,115 375,110 375,120" fill="var(--check)"/>
+<text class="th" x="280" y="103" fill="var(--check)">F₁₂ (m₂ પર, m₁ નું force)</text>
+
+<line x1="385" y1="145" x2="255" y2="145" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="255,145 265,140 265,150" fill="var(--accent)"/>
+<text class="th" x="280" y="172" fill="var(--accent)">F₂₁ (m₁ પર, m₂ નું force)</text>
+
+<text class="ts" x="230" y="200">|F₁₂| = |F₂₁| (Newton's 3rd law)</text>
+
+<line x1="510" y1="50" x2="510" y2="230" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="540" y="80">F₁₂ Δt = Δp₂ (impulse=Δp)</text>
+<text class="th" x="540" y="105">F₂₁ Δt = Δp₁</text>
+<text class="t" x="540" y="135">F₁₂ = −F₂₁ તેથી</text>
+<text class="t" x="540" y="160">Δp₂ = −Δp₁</text>
+<text class="th" x="540" y="190" fill="var(--formula)">Δp₁+Δp₂=0</text>
+</svg>
+<div class="diagram-cap">m₁, m₂ પર એકબીજાના force સરખા-વિરુદ્ધ (Newton's 3rd law) — તેથી બંનેના momentum ફેરફારો એકબીજાને રદ કરે છે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</div>
+  <div class="meaning">u = before collision velocity, v = after collision velocity. કોઈપણ collision (elastic કે inelastic) માટે હંમેશા સાચું — energy conservation ની જેમ શરત (conservative forces) નથી.</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — momentum vs energy conservation નો ભેદ</span>
+  Momentum conservation <b>દરેક</b> collision માં સાચું છે (elastic હોય કે ન હોય) — કારણ કે એ Newton's third law પરથી આવે છે, જે હંમેશા સાચું. Kinetic energy conservation ફક્ત <b>elastic</b> collision માં સાચું — બંનેને ગૂંચવવું નહીં.
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — m₁=2kg (u₁=6m/s), m₂=4kg (u₂=0), collision પછી m₁ ની velocity v₁=−2m/s (પાછળ ફર્યું)</div>
+  <div class="step"><b>Need</b> — m₂ ની final velocity v₂</div>
+  <div class="step"><b>Method</b> — momentum conservation</div>
+  <div class="step"><b>Calculation</b> — 2(6)+4(0) = 2(−2)+4v₂ ⟹ 12 = −4+4v₂ ⟹ v₂ = 4 m/s</div>
+  <div class="step"><b>Check</b> — total momentum before=12, after=2(−2)+4(4)=−4+16=12 ✓</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Direction (sign) ભૂલી જવી — momentum vector quantity છે, એક direction ને positive ધારીને એ જ convention બધા u, v માટે consistently વાપરવું જરૂરી.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  m₁=1kg (u₁=8m/s), m₂=3kg (u₂=0). Collision પછી બંને સાથે (combined) જ ખસે તો common velocity કેટલી?
+</div>
+
+
+<!-- upd-2026-10-04:col-explode -->
+<h3>JEE pattern — સ્થિર વસ્તુનો વિસ્ફોટ (explosion)</h3>
+<div class="diagram"><svg viewBox="0 0 680 230" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><circle cx="340.0" cy="100.0" r="16.0" stroke="var(--ink)" fill="var(--surface-2)" stroke-width="1.6"/><text x="340.0" y="144.0" fill="var(--ink-2)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">10 kg (સ્થિર)</text><line x1="322.0" y1="100.0" x2="129.0" y2="100.0" stroke="var(--accent)" stroke-width="3"/><polygon points="122.0,100.0 129.0,96.8 129.0,103.2" fill="var(--accent)"/><text x="222.0" y="86.0" fill="var(--accent)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">4 kg · 15 = 60 kg·m/s</text><line x1="358.0" y1="100.0" x2="551.0" y2="100.0" stroke="var(--exam)" stroke-width="3"/><polygon points="558.0,100.0 551.0,103.2 551.0,96.8" fill="var(--exam)"/><text x="458.0" y="86.0" fill="var(--exam)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">6 kg · 10 = 60 kg·m/s</text><text x="340.0" y="190.0" fill="var(--ink-2)" font-size="11.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">KE: 4 kg ⟹ ½·4·225 = 450 J,   6 kg ⟹ ½·6·100 = 300 J   (ગુણોત્તર 450 : 300 = 6 : 4)</text></svg><div class="diagram-cap">તીર લંબાઈ = momentum (બંને 60 kg·m/s, ગણેલા); વિરુદ્ધ દિશા ⟹ કુલ શૂન્ય.</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">m₁v₁ = m₂v₂ (વિરુદ્ધ દિશા),  KE₁/KE₂ = m₂/m₁</div><div class="meaning">વિસ્ફોટ internal force થી થાય ⟹ momentum (શૂન્ય) સંરક્ષિત. KE સંરક્ષિત <b>નથી</b> — રાસાયણિક ઊર્જા KE બને છે. સમાન p ⟹ KE = p²/2m ⟹ હલકા ટુકડાને વધુ KE. Real-world: બંદૂકનો recoil — ગોળી (હલકી) ને લગભગ બધી KE, બંદૂક (ભારે) ધીમી પાછળ આવે.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — 10 kg shell સ્થિર, ફૂટે: 4 kg ટુકડો 15 m/s</div><div class="step"><b>Need</b> — બીજા 6 kg ટુકડાનો વેગ અને KE</div><div class="step"><b>Method</b> — momentum conservation</div><div class="step"><b>Calculation</b> — 4 × 15 = 6 × v ⟹ v = 10 m/s; KE = ½·6·100 = 300 J</div><div class="step"><b>Check</b> — KE₁/KE₂ = 450/300 = 6/4 = m₂/m₁ ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>વિસ્ફોટમાં KE સંરક્ષિત માની બીજા ટુકડાની KE = પહેલાની KE લેવી — KE તો શૂન્યમાંથી પેદા થાય છે.</div>
+<div class="next-line">→ <b>Next:</b> Momentum તો હંમેશા conserve થાય, પણ collision ના જુદા-જુદા "પ્રકાર" કેમ છે — Part 2.</div>
+</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="p2">
+<h2><span class="num">02</span>Collision ના પ્રકાર — elastic, inelastic, coefficient of restitution</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Elastic/inelastic collision વચ્ચેનો ભેદ (KE conserve થાય છે કે નહીં), અને coefficient of restitution (e) એ ભેદ ને number તરીકે કેમ માપે છે તે સમજાશે.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  દરેક collision problem પહેલા "કયા પ્રકારનું" એ ઓળખવું પડે — એ પરથી જ કયું extra equation (KE conservation કે e ની value) વાપરવું નક્કી થાય છે.
+</div>
+
+<h3>Elastic vs inelastic — શું ફરક પડે છે</h3>
+<p>Collision વખતે objects સહેજ deform (આકાર બદલાય) થાય છે — ball ટકરાય ત્યારે સહેજ ચપટી થાય, પછી પાછી ફૂલે. જો આ deformation સંપૂર્ણપણે "elastic" હોય (spring ની જેમ, બધું જ deformation energy પાછું આપે) તો કોઈ KE loss ન થાય. Real material માં deformation થોડું "permanent" રહી જાય (heat, sound માં energy જાય) — તેથી KE ઘટે.</p>
+
+<div class="tblwrap">
+<table>
+<tr><th></th><th>Elastic collision</th><th>Inelastic collision</th></tr>
+<tr><td class="rowlabel">Momentum</td><td>Conserved</td><td>Conserved</td></tr>
+<tr><td class="rowlabel">Kinetic energy</td><td>Conserved</td><td>Conserved નથી (ઘટે છે)</td></tr>
+<tr><td class="rowlabel">Deformation</td><td>સંપૂર્ણ recover</td><td>Permanent (આંશિક કે પૂરું)</td></tr>
+<tr><td class="rowlabel">ઉદાહરણ</td><td>Billiard balls (લગભગ), gas molecules</td><td>Clay balls ભેગા ચોંટવું, car crash</td></tr>
+</table>
+</div>
+
+<h3>Coefficient of restitution (e) — deformation ના "recovery" નું માપ</h3>
+<p>e એ collision પછી objects <b>એકબીજાથી દૂર જવાની speed</b> ને, collision પહેલા <b>એકબીજા તરફ આવવાની speed</b> સાથે સરખાવે છે:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 280" role="img"><title>Coefficient of restitution — approach અને separation speed</title><desc>Collision પહેલા બે object એકબીજા તરફ ચોક્કસ relative speed થી આવે છે, પછી ચોક્કસ relative speed થી દૂર જાય છે — e એ બંનેનો ratio છે</desc>
+<text class="th" x="50" y="40">Before collision</text>
+<circle cx="120" cy="90" r="20" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="120" y="95" text-anchor="middle">1</text>
+<line x1="145" y1="90" x2="195" y2="90" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="195,90 185,85 185,95" fill="var(--check)"/>
+<circle cx="320" cy="90" r="20" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="320" y="95" text-anchor="middle">2</text>
+<line x1="295" y1="90" x2="245" y2="90" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="245,90 255,85 255,95" fill="var(--check)"/>
+<text class="th" x="140" y="70" fill="var(--check)">u₁</text>
+<text class="th" x="270" y="70" fill="var(--check)">u₂</text>
+<text class="ts" x="90" y="130">એકબીજા તરફ → approach speed = u₁−u₂</text>
+
+<text class="th" x="50" y="190">After collision</text>
+<circle cx="120" cy="230" r="20" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="120" y="235" text-anchor="middle">1</text>
+<line x1="95" y1="230" x2="60" y2="230" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="60,230 70,225 70,235" fill="var(--accent)"/>
+<circle cx="320" cy="230" r="20" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="320" y="235" text-anchor="middle">2</text>
+<line x1="345" y1="230" x2="400" y2="230" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="400,230 390,225 390,235" fill="var(--accent)"/>
+<text class="th" x="55" y="215" fill="var(--accent)">v₁</text>
+<text class="th" x="355" y="215" fill="var(--accent)">v₂</text>
+<text class="ts" x="90" y="270">એકબીજાથી દૂર → separation speed = v₂−v₁</text>
+
+<line x1="460" y1="50" x2="460" y2="270" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="490" y="90" fill="var(--formula)">e = separation speed</text>
+<text class="th" x="510" y="110" fill="var(--formula)">approach speed</text>
+<text class="t" x="490" y="145">e = (v₂−v₁)/(u₁−u₂)</text>
+<text class="ts" x="490" y="180">e=1 → elastic</text>
+<text class="ts" x="490" y="200">0&lt;e&lt;1 → inelastic</text>
+<text class="ts" x="490" y="220">e=0 → perfectly inelastic</text>
+</svg>
+<div class="diagram-cap">e = (separation speed)/(approach speed) — collision ના "bounciness" નું માપ, 0 (chોંટી જાય) થી 1 (પૂરું elastic) સુધી</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">e = (v₂ − v₁) / (u₁ − u₂)</div>
+  <div class="meaning">0 ≤ e ≤ 1 (real collisions માટે). e=1: perfectly elastic. e=0: perfectly inelastic (collision પછી બંને સાથે જ ખસે — separation speed=0)</div>
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>Bouncing ball</b> — ball ને height h થી જમીન પર પાડો, એ h' ઊંચાઈ સુધી પાછો ઊછળે (h'&lt;h). ground ને સ્થિર ગણીએ તો e = √(h'/h) — rubber ball માટે e વધારે (≈0.8-0.9), clay ball માટે e≈0 (ઊછળે જ નહીં).</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  e ના formula માં numerator-denominator ની order ઊંધી કરી દેવી — યાદ રાખો: <b>separation ÷ approach</b>, ઊલટું નહીં. અને u₁, u₂ (approach) નો order પણ સાચો રાખો — જે object પાછળથી નજીક આવે છે એ પ્રમાણે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Ball 5 m/s થી સ્થિર wall તરફ જાય, 3 m/s થી પાછો ફરે. e કેટલો?
+</div>
+
+<div class="next-line">→ <b>Next:</b> e=1 ની ખાસ case — perfectly elastic collision ના velocity formulas — Part 3.</div>
+</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="p3">
+<h2><span class="num">03</span>Perfectly elastic collision (1D)</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  બે equations (momentum + KE conservation) ને ભેગા ઉકેલીને final velocities ના general formulas મેળવી શકીશ, અને equal-mass ના special case ને સમજી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Elastic collision ના final-velocity formulas સીધા memorize કરવા યોગ્ય — દર વખતે બે equations ઉકેલવાને બદલે.
+</div>
+
+<h3>બે equations — momentum + KE conservation</h3>
+<p>1D elastic collision માં (m₁ u₁ સાથે, m₂ u₂ સાથે, ટકરાય):</p>
+<p class="mono" style="text-align:center;color:var(--formula)">m₁u₁+m₂u₂ = m₁v₁+m₂v₂ &nbsp;(momentum)</p>
+<p class="mono" style="text-align:center;color:var(--formula)">½m₁u₁²+½m₂u₂² = ½m₁v₁²+½m₂v₂² &nbsp;(KE)</p>
+<p>આ બે equations ને ભેગા ઉકેલતા (algebra — બંનેને combine કરી factor કરવાથી) મળે છે:</p>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">v₁ = [(m₁−m₂)u₁ + 2m₂u₂] / (m₁+m₂)</div>
+  <div class="f">v₂ = [(m₂−m₁)u₂ + 2m₁u₁] / (m₁+m₂)</div>
+  <div class="meaning">General 1D elastic collision formulas — સીધા numbers મૂકીને વાપરી શકાય</div>
+</div>
+
+<h3>Special case — સરખા mass (m₁=m₂), એક સ્થિર</h3>
+<p>m₁=m₂=m, u₂=0 મૂકતા: v₁ = 0, v₂ = u₁ — <b>velocities સંપૂર્ણપણે exchange</b> થાય છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>સરખા mass ની elastic collision — velocity exchange</title><desc>m1 speed v0 થી આવે છે, સ્થિર m2 ને ટકરાય, પછી m1 સ્થિર થઈ જાય અને m2, v0 speed થી ખસવા લાગે</desc>
+<text class="th" x="40" y="40">Before</text>
+<circle cx="120" cy="90" r="22" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="120" y="95" text-anchor="middle">m</text>
+<line x1="145" y1="90" x2="200" y2="90" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="200,90 190,85 190,95" fill="var(--check)"/>
+<text class="th" x="150" y="75" fill="var(--check)">v₀</text>
+<circle cx="380" cy="90" r="22" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="380" y="95" text-anchor="middle">m</text>
+<text class="ts" x="365" y="70">(સ્થિર)</text>
+
+<text class="th" x="40" y="180">After</text>
+<circle cx="120" cy="220" r="22" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="120" y="225" text-anchor="middle">m</text>
+<text class="ts" x="105" y="255">v₁=0 (સ્થિર)</text>
+<circle cx="380" cy="220" r="22" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="380" y="225" text-anchor="middle">m</text>
+<line x1="405" y1="220" x2="460" y2="220" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="460,220 450,215 450,225" fill="var(--accent)"/>
+<text class="th" x="410" y="205" fill="var(--accent)">v₂=v₀</text>
+
+<text class="ts" x="470" y="130">m₁ સંપૂર્ણપણે અટકી જાય,</text>
+<text class="ts" x="470" y="148">m₂ એ જ speed થી ખસે — "exchange"</text>
+</svg>
+<div class="diagram-cap">m₁=m₂, u₂=0: collision પછી m₁ સ્થિર, m₂ એ m₁ ની આખી speed મેળવી લે — Newton's cradle નું sમજ</div>
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>Newton's cradle</b> (ટેબલ પર લટકતા balls) — એક ball ને ઊંચકીને છોડો, એ છેડાના ball ને ટકરાય અને પોતે અટકી જાય, બીજા છેડાનો ball એ જ speed થી ઊછળે — સરખા mass ના elastic collision નું perfect ઉદાહરણ.</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — m₁=3kg (u₁=4m/s), m₂=1kg (u₂=0), elastic collision</div>
+  <div class="step"><b>Need</b> — v₁, v₂</div>
+  <div class="step"><b>Method</b> — general elastic formulas</div>
+  <div class="step"><b>Calculation</b> — v₁ = [(3−1)(4)+0]/4 = 8/4 = 2 m/s; v₂ = [0+2(3)(4)]/4 = 24/4 = 6 m/s</div>
+  <div class="step"><b>Check</b> — momentum: before=12, after=3(2)+1(6)=6+6=12 ✓. KE: before=½(3)(16)=24J, after=½(3)(4)+½(1)(36)=6+18=24J ✓</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  General formula ને m₁=m₂ ધારીને "always exchange થાય" એમ યાદ રાખવું, ને mass જુદા હોય ત્યારે પણ velocity exchange ધારી લેવી — ખોટું. Exchange ફક્ત equal mass, એક સ્થિર હોય એ ખાસ case માં જ થાય.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  m₁=2kg (u₁=5m/s), m₂=8kg (u₂=0), elastic collision. v₁, v₂ કાઢો.
+</div>
+
+<div class="next-line">→ <b>Next:</b> બીજી extreme — e=0, બંને object સાથે ચોંટી જાય — Part 4.</div>
+</div>
+
+<!-- ============ PART 4 ============ -->
+<div class="part" id="p4">
+<h2><span class="num">04</span>Perfectly inelastic collision (1D)</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Perfectly inelastic collision (e=0) માં objects સાથે કેમ ચોંટે છે, combined velocity formula, અને આ case માં KE loss maximum કેમ છે તે સમજાશે.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Car crash, bullet-block, clay balls — રોજિંદા "ટકરાઈને ભેગા થવા"ના મોટાભાગના ઉદાહરણો આ category માં આવે છે — exam માં પણ સૌથી વધારે frequent.
+</div>
+
+<h3>Setup — combined mass, common final velocity</h3>
+<p>Perfectly inelastic collision માં e=0, એટલે separation speed = 0 — collision પછી બંને objects <b>સાથે જ, common velocity</b> થી ખસે છે (એક જ combined object ની જેમ વર્તે).</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Perfectly inelastic collision — બે object ચોંટીને ભેગા ખસે</title><desc>m1, u1 speed થી આવે, સ્થિર m2 ને ટકરાય અને ચોંટી જાય, combined mass (m1+m2) common velocity v થી ખસે</desc>
+<text class="th" x="40" y="40">Before</text>
+<circle cx="120" cy="90" r="20" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="120" y="95" text-anchor="middle">m₁</text>
+<line x1="145" y1="90" x2="195" y2="90" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="195,90 185,85 185,95" fill="var(--check)"/>
+<text class="th" x="150" y="75" fill="var(--check)">u₁</text>
+<circle cx="330" cy="90" r="28" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="330" y="95" text-anchor="middle">m₂</text>
+<text class="ts" x="310" y="60">(સ્થિર, u₂=0)</text>
+
+<text class="th" x="40" y="180">After — ચોંટી ગયા</text>
+<ellipse cx="230" cy="220" rx="55" ry="26" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="2"/>
+<text class="ts" x="230" y="225" text-anchor="middle">m₁+m₂ (ભેગા)</text>
+<line x1="285" y1="220" x2="340" y2="220" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="340,220 330,215 330,225" fill="var(--accent)"/>
+<text class="th" x="350" y="215" fill="var(--accent)">v (common)</text>
+
+<line x1="470" y1="50" x2="470" y2="250" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="500" y="90" fill="var(--formula)">m₁u₁+m₂u₂</text>
+<text class="th" x="500" y="112" fill="var(--formula)">= (m₁+m₂)v</text>
+<text class="t" x="500" y="150">v = (m₁u₁+m₂u₂)/(m₁+m₂)</text>
+</svg>
+<div class="diagram-cap">બંને mass ચોંટીને એક combined object બને, momentum conservation થી common velocity v</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">v = (m₁u₁ + m₂u₂) / (m₁ + m₂)</div>
+  <div class="meaning">Momentum conservation નો સીધો પરિણામ — combined mass ની common (weighted-average) velocity</div>
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>Ballistic pendulum</b> — bullet ને લાકડાના block માં ફેંકવામાં આવે, bullet block માં ખૂંપી જાય (ચોંટી જાય) — bullet ની initial speed measure કરવા આ perfectly inelastic collision ના momentum equation નો ઉપયોગ થાય છે.</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — m₁=0.02kg bullet (u₁=300m/s), m₂=2kg block (u₂=0), bullet block માં ખૂંપી જાય</div>
+  <div class="step"><b>Need</b> — combined velocity</div>
+  <div class="step"><b>Method</b> — perfectly inelastic formula</div>
+  <div class="step"><b>Calculation</b> — v = [0.02(300)+0]/(0.02+2) = 6/2.02 ≈ 2.97 m/s</div>
+  <div class="step"><b>Check</b> — mass ઘણો વધારે (block), તેથી combined speed bullet ની original speed કરતાં ઘણી ઓછી — makes sense</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  "Perfectly inelastic" ને "e=0" ને બદલે "KE=0 થઈ જાય" સમજી લેવું — ખોટું. e=0 નો અર્થ separation speed=0 (સાથે ખસે), KE સંપૂર્ણ zero નથી થતી — ફક્ત <b>maximum શક્ય</b> KE loss થાય છે (Part 5).
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  m₁=4kg (u₁=6m/s), m₂=2kg (u₂=−3m/s, વિરુદ્ધ દિશામાં), perfectly inelastic. Common velocity?
+</div>
+
+<div class="next-line">→ <b>Next:</b> Elastic માં KE loss=0, perfectly inelastic માં maximum — વચ્ચેના general case માટે energy loss ની formula — Part 5.</div>
+</div>
+
+<!-- ============ PART 5 ============ -->
+<div class="part" id="p5">
+<h2><span class="num">05</span>Energy loss in collisions</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Collision માં ખોવાયેલી KE ક્યાં જાય છે અને એને calculate કરવાની general રીત સમજાશે.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  "Ketli energy loss થઈ" પ્રકારના પ્રશ્નો દરેક collision paper માં હોય છે — KE_before − KE_after સીધું ગણવું પડે.
+</div>
+
+<h3>Energy ક્યાં જાય છે — "loss" નહીં, રૂપાંતર</h3>
+<p>Inelastic collision માં "ખોવાયેલી" KE ખરેખર <b>નાશ પામતી નથી</b> (energy conservation નો universal law તૂટતો નથી) — એ heat, sound, અને permanent deformation (material ની અંદરની structure બદલાવા) માં રૂપાંતરિત થાય છે. "Loss" શબ્દ ફક્ત <i>યાંત્રિક (mechanical/kinetic)</i> energy ના સંદર્ભમાં વપરાય છે.</p>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">ΔKE = KE<sub>before</sub> − KE<sub>after</sub></div>
+  <div class="meaning">= ½m₁u₁²+½m₂u₂² − (½m₁v₁²+½m₂v₂²). Elastic collision માટે ΔKE=0.</div>
+</div>
+
+<h3>Perfectly inelastic collision માં maximum energy loss</h3>
+<p>Perfectly inelastic collision (m₂ સ્થિર) માટે, ΔKE ને algebra થી simplify કરતા compact ફોર્મ મળે છે:</p>
+<div class="formula-box">
+  <span class="label">formula — perfectly inelastic (u₂=0)</span>
+  <div class="f">ΔKE = [m₁m₂/(m₁+m₂)] × ½u₁²</div>
+  <div class="meaning">"Reduced mass" (m₁m₂/(m₁+m₂)) ના ખ્યાલ સાથે જોડાયેલું — JEE માં ક્યારેક સીધું આ ફોર્મમાં પુછાય</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Energy loss — elastic vs perfectly inelastic bar comparison</title><desc>સરખા m1,u1,m2,u2 માટે elastic collision માં KE loss zero, perfectly inelastic માં maximum loss દર્શાવતો bar chart</desc>
+<line x1="80" y1="230" x2="600" y2="230" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="30" y="60">KE (J)</text>
+
+<rect x="130" y="70" width="70" height="160" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<text class="ts" x="165" y="60" text-anchor="middle">KE before = 24J</text>
+<text class="ts" x="165" y="250" text-anchor="middle">before</text>
+
+<rect x="280" y="70" width="70" height="160" fill="var(--check-bg)" stroke="var(--check)"/>
+<text class="ts" x="315" y="60" text-anchor="middle">after (elastic)</text>
+<text class="th" x="315" y="155" text-anchor="middle" fill="var(--check)">24J</text>
+<text class="ts" x="315" y="250" text-anchor="middle">ΔKE=0</text>
+
+<rect x="430" y="110" width="70" height="120" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="465" y="98" text-anchor="middle" style="font-size:10px">after (perf.</text>
+<text class="ts" x="465" y="110" text-anchor="middle" style="font-size:10px">inelastic)</text>
+<text class="th" x="465" y="175" text-anchor="middle" fill="var(--exam)">18J</text>
+<text class="ts" x="465" y="250" text-anchor="middle">ΔKE=6J (heat)</text>
+</svg>
+<div class="diagram-cap">સરખા before-state (m₁=3kg u₁=4m/s, m₂=1kg, u₂=0): elastic collision માં KE અકબંધ (24J), perfectly inelastic માં 6J heat/sound માં જાય (24J→18J)</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — m₁=3kg (u₁=4m/s), m₂=1kg (u₂=0), perfectly inelastic collision</div>
+  <div class="step"><b>Need</b> — KE loss</div>
+  <div class="step"><b>Method</b> — v=(m₁u₁)/(m₁+m₂) પહેલા કાઢો, પછી KE before-after</div>
+  <div class="step"><b>Calculation</b> — v=12/4=3m/s; KE_before=½(3)(16)=24J; KE_after=½(4)(9)=18J; ΔKE=6J</div>
+  <div class="step"><b>Check</b> — reduced-mass formula: [3×1/4]×½(16)=0.75×8=6J ✓</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Momentum ને પણ "loss" થાય છે એમ ધારી લેવું — ખોટું. Momentum હંમેશા સંપૂર્ણ conserve થાય (Part 1), ફક્ત KE (mechanical energy) જ ઘટે (inelastic માં).
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  m₁=6kg (u₁=2m/s), m₂=3kg (u₂=0), perfectly inelastic. KE loss કેટલી?
+</div>
+
+<div class="next-line">→ <b>Next:</b> Collision હંમેશા બે moving object વચ્ચે નથી હોતું — સ્થિર wall સાથે collision — Part 6.</div>
+</div>
+
+<!-- ============ PART 6 ============ -->
+<div class="part" id="p6">
+<h2><span class="num">06</span>Collision with a wall / fixed surface</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Wall (infinite mass) સાથે collision ને normal collision formulas ના special/limiting case તરીકે સમજી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Ball wall ને અથડાવી, gas ના particles container ની દીવાલ સાથે અથડાવા (kinetic theory નો પાયો) — બંને આ જ idea વાપરે છે.
+</div>
+
+<h3>Wall ને "અનંત (infinite) mass" તરીકે ગણો</h3>
+<p>Wall પોતે ખસતી નથી (અનંત mass ધારીએ, m₂→∞). Elastic collision ના general formula v₁=[(m₁−m₂)u₁+2m₂u₂]/(m₁+m₂) માં m₂→∞ limit લેતા (u₂=0, wall સ્થિર):</p>
+<div class="formula-box">
+  <span class="label">formula — must memorize (elastic wall collision)</span>
+  <div class="f">v = −u &nbsp; (e=1 હોય તો)</div>
+  <div class="meaning">Speed એ જ રહે, દિશા સંપૂર્ણ ઊલટી. General case (કોઈપણ e): v = e·u (magnitude), દિશા ઊલટી</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Ball wall ને અથડાય — before/after velocity</title><desc>Ball u speed થી wall તરફ જાય, e=0.6 હોય તો 0.6u speed થી પાછો ફરે</desc>
+<rect x="480" y="40" width="20" height="200" fill="var(--surface-2)" stroke="var(--ink-3)" stroke-width="1.5"/>
+<text class="ts" x="475" y="30" text-anchor="end">wall (સ્થિર)</text>
+
+<circle cx="150" cy="100" r="18" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<line x1="170" y1="100" x2="240" y2="100" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="240,100 230,95 230,105" fill="var(--check)"/>
+<text class="th" x="175" y="85" fill="var(--check)">u = 10 m/s</text>
+
+<circle cx="350" cy="180" r="18" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<line x1="330" y1="180" x2="260" y2="180" stroke="var(--accent)" stroke-width="2.5"/>
+<polygon points="260,180 270,175 270,185" fill="var(--accent)"/>
+<text class="th" x="260" y="200" fill="var(--accent)">v = eu = 6 m/s</text>
+
+<text class="ts" x="60" y="240">e = separation/approach = v/u (wall સ્થિર હોવાથી)</text>
+</svg>
+<div class="diagram-cap">e=0.6, u=10m/s: ball 6 m/s થી (વિરુદ્ધ દિશામાં) પાછો ફરે — e = v/u જ્યારે wall સ્થિર</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Wall સાથે collision માં e ની વ્યાખ્યા simplify થાય છે: wall (u₂=0, v₂=0, સ્થિર જ રહે) મૂકતા e = (0−v₁)/(u₁−0) = −v₁/u₁, magnitude માં e = v/u. Elastic wall (e=1): ball એ જ speed થી પાછો ફરે. Perfectly inelastic wall (e=0): ball wall ને ચોંટી જાય (અટકી જાય).
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>Gas pressure (kinetic theory)</b> — container ની દીવાલ સાથે gas ના molecules ના elastic collisions (e≈1) જ gas નું pressure બનાવે છે — molecule ની momentum change (2mu) ની rate = force = pressure ના પાયામાં આ જ principle છે.</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — ball 8 m/s થી wall ને લંબ અથડાય, e=0.75</div>
+  <div class="step"><b>Need</b> — rebound speed</div>
+  <div class="step"><b>Method</b> — v = e×u (wall સ્થિર case)</div>
+  <div class="step"><b>Calculation</b> — v = 0.75×8 = 6 m/s (વિરુદ્ધ દિશામાં)</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  Wall ને "m₂=0" (mass-less) ધારી લેવી — ખોટું, ઊલટું છે: wall ને <b>અનંત mass</b> ધારવામાં આવે છે (એટલે જ એ ખસતી નથી). m₂→0 limit લેવાથી ખોટા formula આવશે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Ball 12 m/s થી દીવાલને લંબ અથડાય, 9 m/s થી પાછો ફરે. e કેટલો?
+</div>
+
+<div class="next-line">→ <b>Next:</b> અત્યાર સુધી બધા collisions એક જ સીધી લીટી (1D) પર હતા. Angle પર થતા collision — Part 7 (JEE extension).</div>
+</div>
+
+<!-- ============ PART 7 ============ -->
+<div class="part" id="p7">
+<h2><span class="num">07</span>Oblique (2D) collision <span class="badge">JEE extension</span></h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  2D (oblique) collision માં momentum ના x, y components અલગ-અલગ conserve થાય છે એ સમજાશે — board level પર ઓછું, JEE level પર numerical-heavy.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Billiards, particle-scattering (JEE Advanced level), real car-crash analysis — બધા 2D collision છે. PABT જેવા phase-test માં conceptual/numerical બંને પ્રકારે પુછાઈ શકે.
+</div>
+
+<h3>મુખ્ય idea — momentum vector છે, દરેક direction અલગ conserve થાય</h3>
+<p>Momentum vector quantity છે (Part 0), એટલે conservation law ને x અને y component માં <b>અલગ-અલગ</b> લખી શકાય — બંને independently સાચા:</p>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">Σp<sub>x,before</sub> = Σp<sub>x,after</sub> &nbsp;&nbsp; Σp<sub>y,before</sub> = Σp<sub>y,after</sub></div>
+  <div class="meaning">x, y દિશા independently — KE conservation (જો elastic હોય તો) ત્રીજું equation આપે</div>
+</div>
+
+<h3>Standard case — moving ball, સ્થિર ball ને ત્રાંસુ અથડાય</h3>
+<p>m₁, speed u₁ થી x-axis પર આવે છે, સ્થિર m₂ (=m₁, elastic ધારો) ને ત્રાંસુ (કેન્દ્રથી ખસેલા) અથડાય છે. પરિણામ: બંને balls collision પછી અલગ-અલગ angle (θ₁, θ₂) પર ખસે છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 300" role="img"><title>Oblique elastic collision — before/after angle vectors</title><desc>m1, u1 speed x-axis પર આવે, સ્થિર m2 ને ત્રાંસુ અથડાય, પછી બંને અલગ angle પર ખસે, x અને y momentum બંને અલગ-અલગ conserve થાય છે</desc>
+<text class="th" x="40" y="40">Before</text>
+<circle cx="120" cy="90" r="18" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<line x1="140" y1="90" x2="230" y2="90" stroke="var(--check)" stroke-width="2.5"/>
+<polygon points="230,90 220,85 220,95" fill="var(--check)"/>
+<text class="th" x="150" y="75" fill="var(--check)">u₁ (x-axis)</text>
+<circle cx="340" cy="90" r="18" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<text class="ts" x="340" y="70">m₂ સ્થિર</text>
+
+<text class="th" x="40" y="170">After</text>
+<circle cx="180" cy="240" r="6" fill="var(--ink)"/>
+<line x1="180" y1="240" x2="290" y2="190" stroke="var(--formula)" stroke-width="2.5"/>
+<polygon points="290,190 278,192 282,201" fill="var(--formula)"/>
+<text class="th" x="230" y="180" fill="var(--formula)">v₁, θ₁</text>
+<path d="M 220 240 A 40 40 0 0 0 208 219" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
+<text class="ts" x="222" y="228">θ₁</text>
+
+<line x1="180" y1="240" x2="270" y2="280" stroke="var(--exam)" stroke-width="2.5"/>
+<polygon points="270,280 258,275 262,286" fill="var(--exam)"/>
+<text class="th" x="220" y="298" fill="var(--exam)">v₂, θ₂</text>
+<path d="M 220 240 A 40 40 0 0 1 214 259" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
+<text class="ts" x="222" y="256">θ₂</text>
+<line x1="180" y1="240" x2="290" y2="240" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+
+<line x1="440" y1="50" x2="440" y2="280" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="470" y="90">x: m₁u₁ = m₁v₁cosθ₁+m₂v₂cosθ₂</text>
+<text class="th" x="470" y="120">y: 0 = m₁v₁sinθ₁−m₂v₂sinθ₂</text>
+<text class="ts" x="470" y="155">Elastic હોય તો ત્રીજું equation:</text>
+<text class="th" x="470" y="178">½m₁u₁²=½m₁v₁²+½m₂v₂²</text>
+</svg>
+<div class="diagram-cap">m₂ સ્થિર હતું એટલે before-collision y-momentum zero — after પણ y-components એકબીજાને રદ કરે જ (v₁sinθ₁=v₂sinθ₂)</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — special result: સરખા mass ની elastic oblique collision</span>
+  m₁=m₂ ની elastic oblique collision માં (એક સ્થિર), momentum + KE conservation ને ભેગા ઉકેલતા મળે છે: θ₁+θ₂ = 90° — collision પછી બંને balls હંમેશા એકબીજાને લંબ (perpendicular) દિશામાં ખસે છે. Billiards માં આ જ કારણે cue ball અને object ball 90° ના angle પર જાય છે (જ્યારે cue ball ને spin ન અપાયો હોય).
+</div>
+
+<div class="example">
+  <span class="label">real-world example</span>
+  <div class="step"><b>Billiards / carrom</b> — striker (સ્થિર coin ને ત્રાંસુ અથડાવીને) — equal-mass elastic oblique collision નું રોજિંદું ઉદાહરણ, θ₁+θ₂=90° rule ખેલાડીઓ intuitively વાપરે છે.</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  2D collision માં momentum ને એક જ scalar equation તરીકે (1D ની જેમ) લખી દેવું — ખોટું. x અને y momentum ને <b>અલગ-અલગ</b> equations તરીકે લખવા જરૂરી, ભેગા ન કરવા.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Equal mass ball elastic oblique collision માં, જો θ₁=35° હોય તો θ₂ કેટલો? (special result વાપરો)
+</div>
+
+<div class="remember">
+  <span class="label">Chapter yaad rakho — key points</span>
+  <ol>
+    <li>p = mv (vector). Momentum દરેક collision માં conserve — Newton's 3rd law પરથી, હંમેશા સાચું</li>
+    <li>e = (separation speed)/(approach speed); e=1 elastic, e=0 perfectly inelastic</li>
+    <li>Elastic: momentum + KE બંને conserve. General formulas: v₁,v₂ mass-ratio પર આધારિત</li>
+    <li>Equal mass, એક સ્થિર, elastic: velocities exchange થાય</li>
+    <li>Perfectly inelastic: v=(m₁u₁+m₂u₂)/(m₁+m₂), maximum KE loss</li>
+    <li>ΔKE = KE_before − KE_after; energy heat/sound માં જાય, નાશ પામતી નથી</li>
+    <li>Wall (અનંત mass): v=eu, દિશા ઊલટી; elastic wall (e=1): સ્પીડ same, દિશા reverse</li>
+    <li>2D collision: x, y momentum અલગ-અલગ conserve; equal-mass elastic oblique: θ₁+θ₂=90°</li>
+  </ol>
+</div>
+
+<p class="next-line">Work, Energy & Power (collision વગરનો ભાગ) અલગ chapter છે — Work Energy and Power.html જુઓ. બંને ભેગા મળીને PABT Phase Test 2 નો syllabus બને છે.</p>
+</div>
+
+</div>
