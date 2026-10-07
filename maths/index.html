@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mathematics — Chapter Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Source Sans 3", sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .breadcrumb {
+            padding: 15px 40px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .breadcrumb a { color: #4facfe; text-decoration: none; }
+        .content { padding: 40px; }
+        .chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .chapter {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .chapter:hover { transform: translateY(-5px); }
+        .chapter h2 { font-size: 1.3em; margin-bottom: 8px; }
+        .chapter-meta {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin: 8px 0 0 0;
+        }
+        .chapter-docs {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .doc-link {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .doc-link:hover { background: rgba(255,255,255,0.4); }
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4facfe;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-num { font-size: 2em; font-weight: bold; color: #4facfe; }
+        .stat-label { font-size: 0.9em; color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Mathematics</h1>
+            <p>11th Science • Full chapters with notes, revisions, and solutions</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="../">Home</a> / <strong>Mathematics</strong>
+        </div>
+
+        <div class="content">
+            <div class="chapters">
+                <a href="quadratic/" class="chapter">
+                    <h2>📖 Quadratic Equations</h2>
+                    <div class="chapter-meta">
+                        <div>8 parts • 95 questions</div>
+                        <div class="chapter-docs">
+                            <a href="quadratic/notes.html" class="doc-link">📝 Notes</a>
+                            <a href="quadratic/revision.html" class="doc-link">⚡ Revision</a>
+                            <a href="quadratic/solutions.html" class="doc-link">✅ Solutions</a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="trigonometry/" class="chapter">
+                    <h2>📖 Trigonometry</h2>
+                    <div class="chapter-meta">
+                        <div>9 parts • 110 questions</div>
+                        <div class="chapter-docs">
+                            <a href="trigonometry/notes.html" class="doc-link">📝 Notes</a>
+                            <a href="trigonometry/revision.html" class="doc-link">⚡ Revision</a>
+                            <a href="trigonometry/solutions.html" class="doc-link">✅ Solutions</a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="calculus/" class="chapter">
+                    <h2>📖 Basic Calculus</h2>
+                    <div class="chapter-meta">
+                        <div>7 parts • 85 questions</div>
+                        <div class="chapter-docs">
+                            <a href="calculus/notes.html" class="doc-link">📝 Notes</a>
+                            <a href="calculus/revision.html" class="doc-link">⚡ Revision</a>
+                            <a href="calculus/solutions.html" class="doc-link">✅ Solutions</a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="straight-lines/" class="chapter">
+                    <h2>📖 Straight Lines</h2>
+                    <div class="chapter-meta">
+                        <div>11 parts • 107 questions</div>
+                        <div class="chapter-docs">
+                            <a href="straight-lines/notes.html" class="doc-link">📝 Notes</a>
+                            <a href="straight-lines/revision.html" class="doc-link">⚡ Revision</a>
+                            <a href="straight-lines/solutions.html" class="doc-link">✅ Solutions</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="section-title">📊 At a Glance</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">Chapters</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">35</div>
+                    <div class="stat-label">Parts Total</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">397</div>
+                    <div class="stat-label">Solutions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">150+</div>
+                    <div class="stat-label">Diagrams</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+                <h3 style="color: #333; margin-bottom: 10px;">💡 Study Tips</h3>
+                <ul style="color: #666; line-height: 1.8; margin-left: 20px;">
+                    <li><strong>Start with Chapter Notes</strong> — Read all parts, study diagrams</li>
+                    <li><strong>Use Revision Sheet</strong> — 1-page quick scan before exams</li>
+                    <li><strong>Solve Questions</strong> — Follow 9-step format, verify with solutions</li>
+                    <li><strong>Click ↗ links</strong> — Jump to chapter notes for concept review</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

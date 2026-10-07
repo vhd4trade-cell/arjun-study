@@ -1,0 +1,1236 @@
+<meta charset="utf-8">
+<title>Trigonometry chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+.part-why{color:var(--ink-2);font-size:14.5px;margin:0 0 18px;font-style:italic}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.mono{font-family:var(--font-mono)}
+sup,sub{font-size:.7em}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+.th{font-size:13px;fill:var(--ink);font-weight:600}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>Trigonometry — full chapter</h1>
+<p class="subtitle">11th science · Gujarat board + JEE foundation · detailed teaching text</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> — final target: કોઈપણ trigonometric value, identity કે equation confidently solve કરવું
+  <ol style="list-style:none;padding-left:0;counter-reset:none">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">Trigonometry શું છે</a> — introduction</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">Angles and measurement</a> — degree, radian, arc length</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">Trigonometric functions</a> — unit circle પર definitions</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">Signs in quadrants</a> — ASTC rule</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">Trigonometric identities</a> — core relations</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">Compound and multiple angle formulas</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">Trigonometric equations</a> — general solutions</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">Properties of triangles</a> — sine rule, cosine rule</li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">JEE extensions</a> — θ,60°±θ product, telescoping, R-method, golden ratio, triangle sums</li>
+  </ol>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="part" id="intro" style="padding-top:0">
+<h2><span class="num">00</span>Trigonometry શું છે</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  Trigonometry શું study કરે છે અને chapter પૂરું થયા પછી ક્યાં જવું — એ બંને સ્પષ્ટ થશે.
+</div>
+
+<h3>વ્યાખ્યા</h3>
+<p><b>Trigonometry</b> = "trigon" (triangle) + "metron" (measurement). Triangle ના sides અને angles વચ્ચેનો relationship study કરતી શાખા — ખાસ કરીને right-angled triangle પરથી શરૂ થાય છે, પણ 11th માં આપણે એને triangle ની બહાર — કોઈપણ angle (0° થી 360°+, negative પણ) અને periodic behavior સુધી extend કરીએ છીએ.</p>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Angle અને distance/height વચ્ચે સંબંધ knowing વગર: building ની height measure ન થાય, wave (light, sound, AC current) describe ન થાય, projectile ની motion calculate ન થાય. Physics ના મોટાભાગના topics (SHM, waves, circular motion, optics) અને coordinate geometry, calculus — બધા trigonometry ને base તરીકે વાપરે છે. Gujarat board + JEE બંનેમાં direct અને applied — બંને પ્રકારના પ્રશ્નો આવે છે.
+</div>
+
+<div class="concept-box box">
+  <span class="label">11th માં shift</span>
+  10th સુધી trigonometry ફક્ત right-angled triangle (0°-90°) પૂરતું હતું. 11th થી angle ની વ્યાખ્યા બદલાય છે — હવે angle કોઈપણ size નો હોઈ શકે (360° થી વધારે પણ, negative પણ), અને triangle વગર પણ define થાય છે (unit circle પરથી). આ જ shift સમજવું આ chapter નો પાયો છે.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 480" role="img"><title>10th ના right-triangle definition vs 11th ના unit circle generalized angle</title><desc>ડાબી બાજુ right-angled triangle જેમાં angle 0 થી 90 ડિગ્રી સુધી સીમિત છે, જમણી બાજુ unit circle જેમાં angle anticlockwise 360 ડિગ્રીથી વધારે અને clockwise negative પણ ફરી શકે છે</desc>
+<defs><marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<text class="th" x="150" y="30" text-anchor="middle">10th — right triangle</text>
+<polygon points="80,180 80,80 220,180" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/>
+<path d="M 190 180 A 30 30 0 0 1 195.6 162.6" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="t" x="192" y="174" fill="var(--formula)">θ</text>
+<text class="ts" x="55" y="130">opp</text>
+<text class="ts" x="140" y="196">adj</text>
+<text class="ts" x="155" y="120">hyp</text>
+<rect x="80" y="166" width="14" height="14" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="60" y="215" fill="var(--ink-2)">θ ફક્ત 0°–90° વચ્ચે</text>
+<text class="ts" x="60" y="232" fill="var(--ink-2)">triangle વગર define નહીં</text>
+
+<line x1="330" y1="40" x2="330" y2="460" stroke="var(--line)" stroke-width="1"/>
+
+<text class="th" x="520" y="30" text-anchor="middle">11th — unit circle</text>
+<line x1="400" y1="135" x2="640" y2="135" stroke="var(--ink-3)" stroke-width="0.75"/>
+<circle cx="520" cy="135" r="85" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="520" y1="135" x2="562.5" y2="61.4" stroke="var(--formula)" stroke-width="2" marker-end="url(#arrow3)"/>
+<path d="M 570 135 A 50 50 0 0 0 545 91.7" fill="none" stroke="var(--formula)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+<text class="t" x="578" y="118" fill="var(--formula)">420° (= 360°+60°)</text>
+<text class="ts" x="450" y="235">anticlockwise → positive, એક કરતા વધુ ચક્કર શક્ય</text>
+
+<line x1="400" y1="360" x2="640" y2="360" stroke="var(--ink-3)" stroke-width="0.75"/>
+<circle cx="520" cy="360" r="85" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="520" y1="360" x2="593.6" y2="402.5" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrow3)"/>
+<path d="M 570 360 A 50 50 0 0 1 563.3 385" fill="none" stroke="var(--exam)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+<text class="t" x="578" y="410" fill="var(--exam)">−30°</text>
+<text class="ts" x="450" y="460">clockwise → negative angle</text>
+</svg>
+<div class="diagram-cap">Same 60° "shape" — પણ 420° (એક ચક્કર + 60°) અને −30° (clockwise) બંને 10th ના triangle-based definition માં impossible હતા, unit circle માં valid છે</div>
+</div>
+
+<div class="example">
+  <span class="label">example — old vs new</span>
+  <div class="step"><b>10th ની રીતે</b> — θ = 400° જેવો angle પૂછે તો triangle ન બનાવી શકાય, કારણ કે triangle નો કોઈ angle 90° થી વધારે ન હોય</div>
+  <div class="step"><b>11th ની રીતે</b> — 400° = 360° + 40° એટલે એક પૂરું ચક્કર (360°) ફરીને વધુ 40° — unit circle પર આ point સીધો મળે છે, અને sin 400° = sin 40° (કારણ કે 360° પછી ફરી same position)</div>
+  <div class="step"><b>Clue</b> — 360° થી મોટો angle આવે તો 360° (કે એના multiples) બાદ કરીને equivalent નાનો angle કાઢો</div>
+</div>
+
+<div class="next-line">→ <b>Next action:</b> Part 1 થી શરૂ કરો — angle નું નવું unit (radian) સમજવું, કારણ કે એના વગર આગળનું કંઈ સાચું નહીં બેસે.</div>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="p1">
+<h2><span class="num">01</span>Angles and measurement</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું degree ↔ radian convert કરી શકીશ અને arc length formula વાપરી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Trigonometric functions ના formulas (ખાસ કરીને calculus/JEE માં) radian માં જ સાચા કામ કરે છે. Degree રોજિંદો unit છે, radian mathematical unit છે. Conversion ન આવડે તો આખું chapter ખોટું પડશે.
+</div>
+
+<div class="submap">
+  <span>1a — Radian શું છે</span>
+  <span>1b — 1 radian = કેટલા degree</span>
+  <span>1c — બે systems શા માટે</span>
+  <span>1d — Standard values</span>
+  <span>1e — Arc length</span>
+</div>
+
+<h3>1a. Radian ની વ્યાખ્યા</h3>
+<p>Degree એ arbitrary unit છે (કોઈએ પૂરા circle ને 360 ભાગમાં વહેંચ્યું — historical). Radian એ circle ના પોતાના geometry માંથી નીકળતો natural unit છે.</p>
+<p><b>Definition:</b> Circle ના કેન્દ્ર પર એવો angle બનાવો કે જેની સામેની arc length, circle ના radius જેટલી જ હોય — એ angle = 1 radian.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 300" role="img"><title>Radian ની વ્યાખ્યા દર્શાવતો unit circle diagram</title><desc>Circle જેમાં arc length radius જેટલી હોય ત્યારે કેન્દ્ર પરનો angle 1 radian બને છે, sાથે full circle નો radian-degree સંબંધ</desc>
+<defs><marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<circle cx="160" cy="150" r="100" fill="none" stroke="var(--line)" stroke-width="1"/>
+<line x1="160" y1="150" x2="260" y2="150" stroke="var(--ink-3)" stroke-width="0.75"/>
+<line x1="160" y1="150" x2="214" y2="65.9" stroke="var(--ink-3)" stroke-width="0.75" marker-end="url(#arrow1)"/>
+<path d="M 220 150 A 60 60 0 0 0 192.4 99.5" fill="none" stroke="var(--formula)" stroke-width="2" marker-end="url(#arrow1)"/>
+<text class="th" x="234" y="118" fill="var(--formula)">1 rad</text>
+<path d="M 260 150 A 100 100 0 0 0 214 65.9" fill="none" stroke="var(--accent)" stroke-width="3"/>
+<text class="ts" x="255" y="88">arc = r</text>
+<text class="ts" x="150" y="168">r</text>
+<line x1="160" y1="150" x2="190" y2="150" stroke="var(--accent)" stroke-width="2"/>
+<text class="ts" x="70" y="270">arc length = radius ⟹ angle = 1 radian</text>
+
+<line x1="420" y1="60" x2="420" y2="240" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="450" y="80">Full circle</text>
+<text class="t" x="450" y="110">circumference = 2πr</text>
+<text class="t" x="450" y="135">angle = circumference / r</text>
+<text class="th" x="450" y="165" fill="var(--formula)">= 2π radians</text>
+<text class="t" x="450" y="195">= 360°</text>
+</svg>
+<div class="diagram-cap">Radius જેટલી arc length → 1 radian. પૂરું circle → 2π radian = 360°</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">θ (radian) = l / r</div>
+  <div class="meaning">l = arc length, r = radius</div>
+</div>
+
+<h4>1 radian = કેટલા degree?</h4>
+<p>પૂરું circle = 2π radian = 360°. તેથી 1 radian ને degree માં કાઢવા 360° ને 2π થી ભાગો:</p>
+<div class="formula-box">
+  <span class="label">formula</span>
+  <div class="f">1 radian = 180°/π ≈ 57.3°</div>
+  <div class="meaning">એટલે radius જેટલી arc કાપો તો બનતો angle લગભગ 57° (90° થી થોડો ઓછો) થાય</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>1 radian ≈ 57.3° નું ગ્રાફિક justification</title><desc>Unit circle પર 1 radian નો angle 90° ના ચતુર્થાંશ કરતા થોડો નાનો દેખાય છે, અને પૂરા circle માં આવા લગભગ 6.28 radian ટુકડા સમાય છે</desc>
+<circle cx="160" cy="140" r="95" fill="none" stroke="var(--line)" stroke-width="1"/>
+<line x1="160" y1="140" x2="255" y2="140" stroke="var(--ink-3)" stroke-width="0.75"/>
+<line x1="160" y1="140" x2="160" y2="45" stroke="var(--ink-3)" stroke-width="0.75" stroke-dasharray="3,3"/>
+<line x1="160" y1="140" x2="211.3" y2="60.1" stroke="var(--formula)" stroke-width="2"/>
+<path d="M 220 140 A 60 60 0 0 0 192.4 89.5" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="th" x="228" y="112" fill="var(--formula)">1 rad</text>
+<path d="M 235 140 A 75 75 0 0 0 160 65" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="2,3"/>
+<text class="ts" x="175" y="55">90° રેખા</text>
+<text class="ts" x="55" y="230">1 radian, 90° ના ચતુર્થાંશ કરતા થોડું ઓછું (57.3°)</text>
+
+<text class="th" x="430" y="60">circle માં કેટલા radian સમાય?</text>
+<text class="t" x="430" y="95">2π ≈ 6.28</text>
+<text class="ts" x="430" y="118">એટલે 1 radian જેવડા લગભગ 6.28</text>
+<text class="ts" x="430" y="136">ટુકડા આખા circle માં સમાય છે</text>
+<text class="t" x="430" y="170" fill="var(--formula)">360° / 6.28 ≈ 57.3°</text>
+<text class="ts" x="430" y="192">= 1 radian ની degree value</text>
+</svg>
+<div class="diagram-cap">1 radian ≈ 57.3° — 90° ના ચતુર્થાંશ કરતા થોડું નાનું; આખા circle માં આવા ≈6.28 (=2π) angle સમાય છે</div>
+</div>
+
+<h3>1b. બે અલગ systems શા માટે — degree અને radian</h3>
+<div class="tblwrap">
+<table>
+<tr><th></th><th>Degree</th><th>Radian</th></tr>
+<tr><td class="rowlabel">ક્યાંથી આવ્યું</td><td>Babylonian — circle ને મનસ્વી રીતે 360 ભાગમાં વહેંચ્યું</td><td>Circle ના પોતાના geometry (arc/radius) માંથી કુદરતી રીતે નીકળે છે</td></tr>
+<tr><td class="rowlabel">ફાયદો</td><td>360 ના ઘણા divisors (2,3,4,5,6...) — રોજિંદા maps, angles, construction માં સહેલું</td><td>Calculus માં derivative/integral formulas ચોખ્ખા આવે છે (દા.ત. d/dθ(sinθ)=cosθ ફક્ત radian માં સાચું)</td></tr>
+<tr><td class="rowlabel">ક્યાં વપરાય</td><td>Geometry, navigation, engineering drawing, રોજિંદી વાત</td><td>Physics formulas, calculus, higher mathematics, JEE</td></tr>
+</table>
+</div>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Degree "માણસે બનાવેલો" arbitrary unit છે — 360 ની પસંદગી પાછળ કોઈ deep math reason નથી. Radian circle ના પોતાના structure માંથી નીકળે છે, એટલે mathematics/physics ના formulas radian માં જ સૌથી સરળ અને સાચા બેસે છે. બંને એક જ angle ને માપવાની અલગ ભાષા છે — conversion formula વડે એકબીજામાં ફેરવી શકાય.
+</div>
+
+<h3>1c. Conversion formula</h3>
+<p>ઉપરથી મળ્યું: પૂરું circle = 2π radian = 360°. બંને બાજુ 2 થી ભાગતા:</p>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">π radian = 180°</div>
+  <div class="meaning">Degree → Radian: ×(π/180) &nbsp;|&nbsp; Radian → Degree: ×(180/π)</div>
+</div>
+
+<h4>1d. Standard values (memorize)</h4>
+<div class="tblwrap">
+<table>
+<tr><th>Degree</th><td>0°</td><td>30°</td><td>45°</td><td>60°</td><td>90°</td><td>180°</td><td>270°</td><td>360°</td></tr>
+<tr><th>Radian</th><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>π</td><td>3π/2</td><td>2π</td></tr>
+</table>
+</div>
+
+<h3>1e. Arc length formula</h3>
+<p>Radian ની વ્યાખ્યા (θ = l/r) ને rearrange કરતા સીધું arc length formula મળે છે:</p>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">l = r θ</div>
+  <div class="meaning">θ હંમેશા radian માં હોવું જોઈએ — આ formula ની shart છે</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — r = 10 cm, θ = 60°</div>
+  <div class="step"><b>Need</b> — arc length l</div>
+  <div class="step"><b>Method</b> — l = rθ formula radian માંગે છે, તેથી પહેલા θ ને radian માં convert કરવું</div>
+  <div class="step"><b>Calculation</b> — θ = 60 × π/180 = π/3 radian; l = 10 × π/3 = 10π/3 cm ≈ 10.47 cm</div>
+  <div class="step"><b>Check</b> — unit radian માં વાપર્યું ✓</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  l = rθ માં θ ને degree માં જ મૂકી દેવું — ખોટો જવાબ આવશે. Formula વાપરતા પહેલાં હંમેશા unit check કરો.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  1. 150° ને radian માં convert કર.<br>
+  2. r = 6 cm, θ = π/3 radian → arc length કેટલી?
+</div>
+
+<div class="next-line">→ <b>Next:</b> Angle નો unit નક્કી થયા પછી, હવે એ angle ને actual numeric value (sin, cos...) સાથે જોડીશું — Part 2.</div>
+</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="p2">
+<h2><span class="num">02</span>Trigonometric functions</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું sin, cos, tan (અને બાકીના 3) ને unit circle પરથી define કરી શકીશ, અને 0°-90° ના standard values યાદ રાખી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  sin, cos, tan — આ 3 (અને એમના reciprocals) જ આખા chapter નો base છે. Identities, equations, triangle properties — બધું આ functions ના ratio/relations પર બનેલું છે.
+</div>
+
+<div class="submap">
+  <span>2a — Unit circle definition</span>
+  <span>2b — 6 functions</span>
+  <span>2c — tan/sec ના નામ ક્યાંથી</span>
+  <span>2c-i — tan θ મોટું કેમ?</span>
+  <span>2d — Standard angle values</span>
+</div>
+
+<h3>2a. Unit circle પર definition</h3>
+<p>Unit circle એટલે radius = 1 વાળું circle, જેનું કેન્દ્ર origin (0,0) પર છે. Angle θ ને x-axis થી anticlockwise માપીએ છીએ. આ angle પર circle ને જે point P મળે, એના coordinates (x, y) જ trigonometric functions ને define કરે છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 320" role="img"><title>Unit circle પર sin અને cos ની વ્યાખ્યા</title><desc>Unit circle પર point P ના x-coordinate એ cos θ અને y-coordinate એ sin θ દર્શાવે છે</desc>
+<defs><marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="60" y1="180" x2="480" y2="180" stroke="var(--line)" stroke-width="1"/>
+<line x1="270" y1="20" x2="270" y2="300" stroke="var(--line)" stroke-width="1"/>
+<circle cx="270" cy="180" r="130" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="270" y1="180" x2="369.6" y2="96.4" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow2)"/>
+<path d="M 330 180 A 60 60 0 0 0 316 141.4" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="ts" x="332" y="158" fill="var(--formula)">θ</text>
+<line x1="369.6" y1="96.4" x2="369.6" y2="180" stroke="var(--exam)" stroke-width="2" stroke-dasharray="3,3"/>
+<line x1="270" y1="180" x2="369.6" y2="180" stroke="var(--check)" stroke-width="2" stroke-dasharray="3,3"/>
+<circle cx="369.6" cy="96.4" r="3" fill="var(--ink)"/>
+<text class="th" x="378" y="90">P (cos θ, sin θ)</text>
+<text class="th" x="319.8" y="200" text-anchor="middle" fill="var(--check)">cos θ (x)</text>
+<text class="th" x="378" y="140" fill="var(--exam)">sin θ (y)</text>
+<text class="ts" x="278" y="196">O</text>
+<text class="ts" x="30" y="184">x-axis</text>
+<text class="ts" x="276" y="34">y-axis</text>
+</svg>
+<div class="diagram-cap">P ના x-coordinate = cos θ, y-coordinate = sin θ (unit circle, radius 1)</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Unit circle (radius 1) પર point P(x, y) છે જેનો angle θ છે (x-axis થી, anticlockwise). ત્યારે: <b>cos θ = x</b>, <b>sin θ = y</b>. બાકીના 4 functions આ બેના ratio/reciprocal છે.
+</div>
+
+<h3>2b. છ functions</h3>
+<div class="tblwrap">
+<table>
+<tr><th>Function</th><th>Definition</th><th>Reciprocal</th></tr>
+<tr><td class="rowlabel">sin θ</td><td class="mono">y</td><td class="mono">1/cosec θ</td></tr>
+<tr><td class="rowlabel">cos θ</td><td class="mono">x</td><td class="mono">1/sec θ</td></tr>
+<tr><td class="rowlabel">tan θ</td><td class="mono">sin θ / cos θ</td><td class="mono">1/cot θ</td></tr>
+<tr><td class="rowlabel">cosec θ</td><td class="mono">1/sin θ</td><td></td></tr>
+<tr><td class="rowlabel">sec θ</td><td class="mono">1/cos θ</td><td></td></tr>
+<tr><td class="rowlabel">cot θ</td><td class="mono">cos θ/sin θ</td><td></td></tr>
+</table>
+</div>
+<p style="font-size:13.5px;color:var(--ink-2)">tan θ ને sin/cos તરીકે યાદ રાખવું — cos θ = 0 હોય (એટલે કે 90°, 270°) ત્યાં tan θ undefined થાય છે, એ પણ આ definition પરથી સીધું સમજાય છે.</p>
+
+<h3>2c. "tangent" અને "secant" નામ ક્યાંથી આવ્યા — textbook માં ભાગ્યે જ બતાવાય</h3>
+<p>tan અને sec ના નામ geometry ના શબ્દો "tangent line" અને "secant line" પરથી જ આવ્યા છે — coincidence નથી, actual circle geometry છે:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 320" role="img"><title>tan θ અને sec θ ની geometric ઉત્પત્તિ — tangent line અને secant line</title><desc>Unit circle ને x-axis પર touch કરતી tangent line દોરો, θ ના કિરણને લંબાવીને એ tangent line ને જ્યાં કાપે ત્યાં સુધીની ઊંચાઈ tanθ છે, અને કેન્દ્રથી એ કટ-બિંદુ સુધીનું અંતર secθ છે</desc>
+<defs><marker id="arrow6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="60" y1="230" x2="420" y2="230" stroke="var(--line)" stroke-width="1"/>
+<circle cx="180" cy="230" r="100" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="280" y1="70" x2="280" y2="230" stroke="var(--formula)" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text class="ts" x="286" y="80" fill="var(--formula)">tangent line</text>
+<line x1="180" y1="230" x2="280" y2="118" stroke="var(--exam)" stroke-width="2.5" marker-end="url(#arrow6)"/>
+<path d="M 210 230 A 30 30 0 0 0 200.1 207.7" fill="none" stroke="var(--check)" stroke-width="1.5"/>
+<text class="t" x="214" y="215" fill="var(--check)">θ</text>
+<line x1="280" y1="230" x2="280" y2="118" stroke="var(--formula)" stroke-width="3"/>
+<text class="th" x="288" y="175" fill="var(--formula)">tan θ</text>
+<text class="th" x="120" y="185" fill="var(--exam)">sec θ</text>
+<circle cx="280" cy="118" r="3" fill="var(--ink)"/>
+<rect x="266" y="217" width="14" height="13" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+
+<text class="th" x="450" y="70">Geometric meaning</text>
+<text class="ts" x="450" y="100">x-axis ના point (1,0) પર circle ને</text>
+<text class="ts" x="450" y="118">touch કરતી ઊભી line = tangent line</text>
+<text class="th" x="450" y="150" fill="var(--formula)">tan θ</text>
+<text class="ts" x="450" y="168">= θ ના કિરણને લંબાવતા tangent</text>
+<text class="ts" x="450" y="186">line પર જે ઊંચાઈ કાપે તે</text>
+<text class="th" x="450" y="215" fill="var(--exam)">sec θ</text>
+<text class="ts" x="450" y="233">= કેન્દ્રથી એ કટ-બિંદુ સુધીનું</text>
+<text class="ts" x="450" y="251">અંતર (secant = "કાપનારી" line)</text>
+</svg>
+<div class="diagram-cap">circle ને touch કરતી tangent line પર θ નું કિરણ લંબાવવાથી tan θ (ઊંચાઈ) અને sec θ (કેન્દ્રથી અંતર) મળે છે — નામ પણ અહીંથી જ આવ્યા</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — connection</span>
+  Circle ને એક બિંદુએ touch કરતી line ને geometry માં "tangent line" કહે છે, અને circle ને બે બિંદુએ કાપતી line ને "secant line" કહે છે. trigonometric tan અને sec એ જ lines પરથી measure થાય છે — એટલે નામ ઉધાર લેવાયેલા નથી, actual geometric origin છે.
+</div>
+
+<h3>2c-i. Doubt clear કરવો: tan θ, sin θ/cos θ કરતા મોટું કેમ દેખાય છે?</h3>
+<p>Unit circle પર sin θ, cos θ ≤ 1 જ રહે છે (circle ની અંદર બંધાયેલા). પણ tan θ, sec θ circle ની <b>બહાર</b> tangent line પર measure થાય છે — તેથી એ 1 કરતા ઘણા મોટા (θ, 90° ની નજીક જાય તો infinite પણ) થઈ શકે. બંને એક જ circle પર, એક જ θ સાથે, side-by-side જોઈએ તો clear થાય:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 380" role="img"><title>એક જ circle અને એક જ θ પર sin, cos, tan, sec ને side-by-side compare કરતો diagram</title><desc>sinθ અને cosθ circle ની અંદર બંધાયેલા (≤1) segments છે, જ્યારે tanθ અને secθ circle ને touch કરતી tangent line પર બહાર માપેલા segments છે — તેથી tanθ, sinθ કે cosθ કરતા મોટું હોઈ શકે</desc>
+<defs><marker id="arrow7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="60" y1="250" x2="420" y2="250" stroke="var(--ink-3)" stroke-width="0.75"/>
+<circle cx="250" cy="250" r="110" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="360" y1="60" x2="360" y2="250" stroke="var(--formula)" stroke-width="1" stroke-dasharray="4,3"/>
+<text class="ts" x="366" y="72" fill="var(--formula)">tangent line</text>
+
+<line x1="250" y1="250" x2="360" y2="140" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow7)"/>
+<path d="M 290 250 A 40 40 0 0 0 278.3 221.7" fill="none" stroke="var(--check)" stroke-width="1.5"/>
+<text class="t" x="294" y="238" fill="var(--check)">θ</text>
+
+<line x1="327.8" y1="172.2" x2="327.8" y2="250" stroke="var(--exam)" stroke-width="2.5" stroke-dasharray="3,3"/>
+<text class="th" x="335" y="215" fill="var(--exam)">sin θ = 0.71</text>
+<line x1="250" y1="250" x2="327.8" y2="250" stroke="var(--check)" stroke-width="2.5"/>
+<text class="th" x="262" y="268" fill="var(--check)">cos θ = 0.71</text>
+<circle cx="327.8" cy="172.2" r="3.5" fill="var(--ink)"/>
+<text class="ts" x="333" y="168">P (circle પર, r=1)</text>
+
+<line x1="360" y1="250" x2="360" y2="140" stroke="var(--formula)" stroke-width="3"/>
+<text class="th" x="368" y="195" fill="var(--formula)">tan θ = 1.0</text>
+<rect x="346" y="237" width="13" height="13" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<circle cx="360" cy="140" r="3.5" fill="var(--ink)"/>
+<text class="ts" x="368" y="135">tangent line ને મળે</text>
+
+<line x1="460" y1="60" x2="460" y2="290" stroke="var(--line)" stroke-width="1"/>
+<text class="th" x="490" y="90">Resolve — contradiction નથી</text>
+<text class="ts" x="490" y="118">sin θ, cos θ = point P ના coordinates,</text>
+<text class="ts" x="490" y="136">circle ની અંદર જ — તેથી ≤ 1</text>
+<text class="ts" x="490" y="164">tan θ, sec θ = circle ને touch કરતી</text>
+<text class="ts" x="490" y="182">tangent line પર બહાર measure</text>
+<text class="ts" x="490" y="200">થાય — 1 કરતા મોટા હોઈ શકે</text>
+<text class="th" x="490" y="232" fill="var(--formula)">tan θ = sin θ / cos θ</text>
+<text class="ts" x="490" y="252">cos θ &lt; 1 (ભાગનાર નાનો) —</text>
+<text class="ts" x="490" y="270">તેથી ભાગાકાર sin θ કરતા મોટો જ આવે</text>
+</svg>
+<div class="diagram-cap">θ = 45° માટે: sin θ = cos θ = 0.71 (circle ની અંદર, ≤1) જ્યારે tan θ = 1.0 (tangent line પર, બહાર) — બંને sાચા, contradiction નથી</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common doubt</span>
+  "tan θ = y/x છે, તો એ y કે x કરતા નાનું જ હોવું જોઈએ" — આ ખોટી ધારણા છે. y/x માં ભાગનાર (x=cosθ) પોતે 1 કરતા નાનો હોય છે, તેથી ભાગાકારનું પરિણામ numerator (y=sinθ) કરતા મોટું જ આવે. Geometrically આ એટલે થાય છે કારણ કે tanθ ને circle ની બહાર, tangent line પર માપવામાં આવે છે.
+</div>
+
+<h3>2d. Standard angle values <span class="badge">high frequency</span></h3>
+<div class="tblwrap">
+<table>
+<tr><th>θ</th><td>0°</td><td>30°</td><td>45°</td><td>60°</td><td>90°</td></tr>
+<tr><td class="rowlabel">sin θ</td><td>0</td><td>1/2</td><td>1/√2</td><td>√3/2</td><td>1</td></tr>
+<tr><td class="rowlabel">cos θ</td><td>1</td><td>√3/2</td><td>1/√2</td><td>1/2</td><td>0</td></tr>
+<tr><td class="rowlabel">tan θ</td><td>0</td><td>1/√3</td><td>1</td><td>√3</td><td>—</td></tr>
+</table>
+</div>
+<div class="concept-box box">
+  <span class="label">memory trick</span>
+  sin row: √(0/4), √(1/4), √(2/4), √(3/4), √(4/4) — એટલે કે 0,1,2,3,4 ના square root ને 2 થી ભાગો. cos row એ sin ની reverse order (sin ના values right-to-left વાંચો).
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  Standard angle values direct પ્રશ્નમાં અને trig equations, identities solve કરવામાં દરેક વખતે વપરાય છે — સંપૂર્ણ memorize કરવા.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  tan 45° + sin 30° − cos 60° = ?
+</div>
+
+<div class="next-line">→ <b>Next:</b> Standard values ફક્ત 0°-90° માટે છે. 90° થી બહારના angles (120°, 200°...) ના sign કેવી રીતે નક્કી કરવા — Part 3.</div>
+</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="p3">
+<h2><span class="num">03</span>Signs in quadrants — ASTC</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું કોઈપણ angle (0°-360°) માટે sin, cos, tan positive છે કે negative એ તરત કહી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Unit circle 4 quadrants માં વહેંચાયેલું છે, અને દરેક quadrant માં x, y ના sign અલગ છે. 90° થી બહારના angles (120°, 210°, 300° વગેરે) ના values કાઢવા sign પહેલા નક્કી કરવું પડે.</p>
+</div>
+
+<div class="submap">
+  <span>3a — Quadrant પ્રમાણે x,y sign</span>
+  <span>3b — ASTC rule</span>
+</div>
+
+<h3>3a. Quadrant પ્રમાણે sign</h3>
+<p>Part 2 માં જોયું કે cos θ = x, sin θ = y. Coordinate geometry માં આપણે જાણીએ છીએ કે 4 quadrants માં x, y ના signs અલગ હોય છે — એ જ logic અહીં લાગુ પડે છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 340" role="img"><title>ASTC rule દર્શાવતો ચાર quadrant નો diagram</title><desc>Unit circle ને ચાર quadrant માં વહેંચીને દરેકમાં કયા trigonometric functions positive છે તે દર્શાવતો diagram</desc>
+<line x1="270" y1="30" x2="270" y2="330" stroke="var(--line)" stroke-width="1"/>
+<line x1="70" y1="180" x2="470" y2="180" stroke="var(--line)" stroke-width="1"/>
+<circle cx="270" cy="180" r="150" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+
+<text class="th" x="360" y="110" fill="var(--formula)">I : All</text>
+<text class="ts" x="360" y="128">0°–90°</text>
+
+<text class="th" x="140" y="110" fill="var(--exam)">II : Sin</text>
+<text class="ts" x="140" y="128">90°–180°</text>
+
+<text class="th" x="140" y="245" fill="var(--check)">III : Tan</text>
+<text class="ts" x="140" y="263">180°–270°</text>
+
+<text class="th" x="360" y="245" fill="var(--accent)">IV : Cos</text>
+<text class="ts" x="360" y="263">270°–360°</text>
+
+<text class="ts" x="495" y="184">0°</text>
+<text class="ts" x="255" y="24">90°</text>
+<text class="ts" x="20" y="184">180°</text>
+<text class="ts" x="250" y="345">270°</text>
+
+<g>
+<rect x="530" y="60" width="120" height="230" rx="6" fill="var(--surface-2)" stroke="var(--line)" stroke-width="0.5"/>
+<text class="th" x="590" y="82" text-anchor="middle">A S T C</text>
+<text class="ts" x="590" y="108" text-anchor="middle">All Silver</text>
+<text class="ts" x="590" y="122" text-anchor="middle">Tea Cups</text>
+<line x1="545" y1="140" x2="635" y2="140" stroke="var(--line)" stroke-width="0.5"/>
+<text class="t" x="545" y="162">I → All +</text>
+<text class="t" x="545" y="184">II → Sin +</text>
+<text class="t" x="545" y="206">III → Tan +</text>
+<text class="t" x="545" y="228">IV → Cos +</text>
+</g>
+</svg>
+<div class="diagram-cap">ASTC — All Silver Tea Cups: ક્રમશઃ Quadrant I, II, III, IV માં positive function</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Quadrant I માં x, y બંને positive → sin, cos, tan બધા positive. Quadrant II માં x negative, y positive → sin (=y) positive, cos (=x) negative, tan (=sin/cos) negative. એ જ logic III, IV માટે લગાડો.
+</div>
+
+<h3>3b. ASTC rule</h3>
+<div class="tblwrap">
+<table>
+<tr><th>Quadrant</th><th>Angle range</th><th>Positive functions</th></tr>
+<tr><td class="rowlabel">I</td><td>0°–90°</td><td>All (sin, cos, tan)</td></tr>
+<tr><td class="rowlabel">II</td><td>90°–180°</td><td>Sin, cosec</td></tr>
+<tr><td class="rowlabel">III</td><td>180°–270°</td><td>Tan, cot</td></tr>
+<tr><td class="rowlabel">IV</td><td>270°–360°</td><td>Cos, sec</td></tr>
+</table>
+</div>
+
+<div class="formula-box">
+  <span class="label">mnemonic — must memorize</span>
+  <div class="f">All Silver Tea Cups</div>
+  <div class="meaning">A-S-T-C: quadrant I, II, III, IV માં ક્રમશઃ All, Sin, Tan, Cos positive (બાકીના negative)</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — sin 150° નું value કાઢવું</div>
+  <div class="step"><b>Need</b> — sign + value</div>
+  <div class="step"><b>Method</b> — 150° quadrant II માં આવે (90°-180°). II માં sin positive. 150° = 180°−30°, reference angle 30°</div>
+  <div class="step"><b>Calculation</b> — sin 150° = sin 30° = 1/2 (positive)</div>
+  <div class="step"><b>Clue</b> — reference angle = 180° થી subtract (quadrant II માટે)</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  sin(180°−θ), sin(180°+θ) જેવા cases માં ખોટું quadrant ધારી લેવું. હંમેશા પહેલા angle કયા quadrant માં પડે છે તે check કરો, પછી sign લગાવો.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  sin 210° નું sign શું હશે? (210° કયા quadrant માં છે?)
+</div>
+
+<div class="next-line">→ <b>Next:</b> Functions અને signs સમજાયા. હવે એમની વચ્ચેના fixed relations (identities) જોઈશું — જે simplification અને proofs માટે વપરાય છે — Part 4.</div>
+</div>
+
+<!-- ============ PART 4 ============ -->
+<div class="part" id="p4">
+<h2><span class="num">04</span>Trigonometric identities</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું sin²θ+cos²θ=1 જેવા identities નો ઉપયોગ કરીને expressions simplify અને prove કરી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Identities એ trigonometric functions વચ્ચેના હંમેશા-સાચા relations છે (કોઈપણ θ માટે). Equations solve કરવા, proofs કરવા, complex expressions ટૂંકા કરવા — બધે identities જ core tool છે.
+</div>
+
+<div class="submap">
+  <span>4a — Pythagorean identities</span>
+  <span>4b — Negative angle identities</span>
+</div>
+
+<h3>4a. Pythagorean identities</h3>
+<p>Part 2 માં જોયું: unit circle પર P(cos θ, sin θ) છે. Unit circle નું equation x²+y²=1 છે (કારણ કે radius=1). આમાં x=cosθ, y=sinθ મૂકતા:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 300" role="img"><title>Unit circle પરથી sin²θ+cos²θ=1 ની derivation</title><desc>Unit circle પર point P થી બનતો right triangle જેની hypotenuse 1, base cosθ અને height sinθ છે — Pythagoras theorem લગાડતા sin²θ+cos²θ=1 મળે છે</desc>
+<defs><marker id="arrow4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="60" y1="220" x2="380" y2="220" stroke="var(--line)" stroke-width="1"/>
+<line x1="180" y1="60" x2="180" y2="260" stroke="var(--line)" stroke-width="1"/>
+<circle cx="180" cy="220" r="130" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="180" y1="220" x2="269" y2="128" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrow4)"/>
+<text class="th" x="262" y="118">P</text>
+<line x1="269" y1="128" x2="269" y2="220" stroke="var(--exam)" stroke-width="2" stroke-dasharray="3,3"/>
+<line x1="180" y1="220" x2="269" y2="220" stroke="var(--check)" stroke-width="2" stroke-dasharray="3,3"/>
+<text class="th" x="215" y="238" fill="var(--check)">cos θ</text>
+<text class="th" x="277" y="175" fill="var(--exam)">sin θ</text>
+<text class="th" x="205" y="165">1 (radius)</text>
+<rect x="257" y="208" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+
+<text class="th" x="440" y="90">Right triangle માં Pythagoras:</text>
+<text class="t" x="440" y="120">base² + height² = hyp²</text>
+<text class="t" x="440" y="150">(cos θ)² + (sin θ)² = 1²</text>
+<text class="th" x="440" y="185" fill="var(--formula)">sin²θ + cos²θ = 1</text>
+</svg>
+<div class="diagram-cap">Unit circle પર P થી બનતો right triangle: base=cosθ, height=sinθ, hypotenuse=1 (radius) — Pythagoras theorem</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">sin²θ + cos²θ = 1</div>
+</div>
+
+<p>આ મુખ્ય identity ને cos²θ અથવા sin²θ થી ભાગીને બાકીના બે મળે છે:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 210" role="img"><title>sin²θ+cos²θ=1 ને ભાગીને બાકીના બે identities</title><desc>મુખ્ય identity ને cos²θ થી ભાગતા 1+tan²θ=sec²θ અને sin²θ થી ભાગતા 1+cot²θ=cosec²θ મળે છે તે step-by-step</desc>
+<rect x="30" y="30" width="290" height="150" rx="10" fill="var(--formula-bg)" stroke="var(--formula-line)" stroke-width="0.75"/>
+<text class="th" x="175" y="60" text-anchor="middle">÷ cos²θ બંને બાજુ</text>
+<text class="t" x="175" y="95" text-anchor="middle">sin²θ/cos²θ + cos²θ/cos²θ = 1/cos²θ</text>
+<text class="th" x="175" y="130" text-anchor="middle" fill="var(--formula)">tan²θ + 1 = sec²θ</text>
+<text class="ts" x="175" y="160" text-anchor="middle">(sinθ/cosθ=tanθ, 1/cosθ=secθ)</text>
+
+<rect x="360" y="30" width="290" height="150" rx="10" fill="var(--formula-bg)" stroke="var(--formula-line)" stroke-width="0.75"/>
+<text class="th" x="505" y="60" text-anchor="middle">÷ sin²θ બંને બાજુ</text>
+<text class="t" x="505" y="95" text-anchor="middle">sin²θ/sin²θ + cos²θ/sin²θ = 1/sin²θ</text>
+<text class="th" x="505" y="130" text-anchor="middle" fill="var(--formula)">1 + cot²θ = cosec²θ</text>
+<text class="ts" x="505" y="160" text-anchor="middle">(cosθ/sinθ=cotθ, 1/sinθ=cosecθ)</text>
+</svg>
+<div class="diagram-cap">એક જ identity ને cos²θ અથવા sin²θ થી ભાગતા બાકીના બે identities મળે છે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">1 + tan²θ = sec²θ</div>
+  <div class="meaning">sin²θ+cos²θ=1 ને cos²θ થી ભાગતા</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">1 + cot²θ = cosec²θ</div>
+  <div class="meaning">sin²θ+cos²θ=1 ને sin²θ થી ભાગતા</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  ત્રણેય identities ખરેખર એક જ fact (x²+y²=1) ના different forms છે — બધા યાદ રાખવાની જરૂર નથી, પહેલું identity + division logic યાદ રાખો તો બાકીના ડેરાઈવ કરી શકાય.
+</div>
+
+<h3>4b. Negative angle identities</h3>
+<p>Unit circle પર −θ angle, θ ના mirror image જેવો છે (x-axis ની નીચે). x-coordinate same રહે છે, y-coordinate નું sign બદલાય છે.</p>
+<div class="tblwrap">
+<table>
+<tr><td class="rowlabel">sin(−θ)</td><td>= −sin θ</td></tr>
+<tr><td class="rowlabel">cos(−θ)</td><td>= cos θ</td></tr>
+<tr><td class="rowlabel">tan(−θ)</td><td>= −tan θ</td></tr>
+</table>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — prove sec²θ − tan²θ = 1</div>
+  <div class="step"><b>Method</b> — 1 + tan²θ = sec²θ identity rearrange કરવી</div>
+  <div class="step"><b>Calculation</b> — sec²θ − tan²θ = (1 + tan²θ) − tan²θ = 1 ✓</div>
+  <div class="step"><b>Clue</b> — sec²−tan² કે cosec²−cot² દેખાય ત્યારે તરત Pythagorean identity વાપરવી</div>
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  "Prove that..." પ્રકારના identity-proof પ્રશ્નો board exam માં standard છે — sin²+cos²=1 ને base બનાવીને manipulate કરવાની practice જરૂરી.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  જો sin θ = 3/5 હોય (θ quadrant I માં), તો cos θ કાઢ.
+</div>
+
+<div class="next-line">→ <b>Next:</b> Single angle ના identities પછી, હવે બે angles ના sum/difference (A+B) ના formulas — જે JEE માં ખૂબ વપરાય છે — Part 5.</div>
+</div>
+
+<!-- ============ PART 5 ============ -->
+<div class="part" id="p5">
+<h2><span class="num">05</span>Compound and multiple angle formulas</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું sin(A+B), cos2A જેવી expressions ને individual angles ના ratios માં expand કરી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  75° જેવો non-standard angle, 45°+30° તરીકે તોડીને standard values થી કાઢી શકાય — પણ sin(A+B) ≠ sinA+sinB, તેથી ચોક્કસ formula જોઈએ. Multiple angle formulas (sin2A, cos2A) JEE ના calculus problems માં સતત વપરાય છે.
+</div>
+
+<div class="submap">
+  <span>5a — Compound angle formulas</span>
+  <span>5b — Multiple angle formulas</span>
+</div>
+
+<h3>5a. Compound angle formulas</h3>
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Angle A અને B ને ઉમેરીને A+B બનાવવાનો ખ્યાલ</title><desc>Unit circle પર પહેલા angle A ફેરવો, પછી ત્યાંથી વધુ B ફેરવો — કુલ rotation A+B થાય, પણ P નું coordinate sinA,cosA અને sinB,cosB બંનેના mix થી બને છે, સીધા sinA+sinB થી નહીં</desc>
+<defs><marker id="arrow5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="60" y1="150" x2="380" y2="150" stroke="var(--line)" stroke-width="1"/>
+<line x1="220" y1="20" x2="220" y2="260" stroke="var(--line)" stroke-width="1"/>
+<circle cx="220" cy="150" r="120" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="220" y1="150" x2="323.9" y2="90" stroke="var(--check)" stroke-width="2" marker-end="url(#arrow5)"/>
+<path d="M 260 150 A 40 40 0 0 0 254.6 130" fill="none" stroke="var(--check)" stroke-width="1.5"/>
+<text class="t" x="266" y="142" fill="var(--check)">A</text>
+<line x1="220" y1="150" x2="251.1" y2="34.1" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrow5)"/>
+<path d="M 267.6 122.5 A 55 55 0 0 0 234.2 96.9" fill="none" stroke="var(--exam)" stroke-width="1.5"/>
+<text class="t" x="272" y="112" fill="var(--exam)">A+B</text>
+<text class="ts" x="258" y="88" fill="var(--formula)">gap = B</text>
+<text class="th" x="180" y="20">P at angle (A+B)</text>
+
+<text class="th" x="440" y="70">P ના coordinates</text>
+<text class="t" x="440" y="100">x = cos(A+B), y = sin(A+B)</text>
+<text class="ts" x="440" y="130">પણ A, B બંનેની asar</text>
+<text class="ts" x="440" y="148">ભળીને બને છે —</text>
+<text class="th" x="440" y="178" fill="var(--formula)">sinA cosB + cosA sinB</text>
+<text class="ts" x="440" y="198">(derivation geometry થી, formula તરીકે યાદ રાખો)</text>
+</svg>
+<div class="diagram-cap">A rotate કરીને પછી B rotate કરવાથી કુલ angle A+B બને — પણ sin(A+B) સીધું sinA+sinB નથી, બંને coordinates ભળે છે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">sin(A±B) = sin A cos B ± cos A sin B</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">cos(A±B) = cos A cos B ∓ sin A sin B</div>
+  <div class="meaning">નોંધ: sign flip થાય છે — sin ના formula માં same sign, cos ના formula માં opposite sign</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">tan(A±B) = (tan A ± tan B) / (1 ∓ tan A tan B)</div>
+</div>
+
+<h3>5b. Multiple angle formulas</h3>
+<p>A=B મૂકતા compound angle formulas માંથી multiple angle formulas સીધા નીકળે છે:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 150" role="img"><title>A=B મૂકવાથી sin(A+B) માંથી sin2A બનવાની logic</title><desc>sin(A+B) ના formula માં B ની જગ્યાએ A મૂકતા sin2A=2sinAcosA બને છે</desc>
+<rect x="30" y="30" width="280" height="90" rx="10" fill="var(--surface-2)" stroke="var(--line)" stroke-width="0.5"/>
+<text class="t" x="170" y="65" text-anchor="middle">sin(A+B) = sinA cosB + cosA sinB</text>
+<text class="ts" x="170" y="90" text-anchor="middle">B ની જગ્યાએ A મૂકો ⟶</text>
+<text class="th" x="370" y="75" fill="var(--formula)">B = A</text>
+<rect x="400" y="30" width="250" height="90" rx="10" fill="var(--formula-bg)" stroke="var(--formula-line)" stroke-width="0.75"/>
+<text class="t" x="525" y="65" text-anchor="middle">sin(A+A) = sinA cosA + cosA sinA</text>
+<text class="th" x="525" y="95" text-anchor="middle" fill="var(--formula)">sin2A = 2 sinA cosA</text>
+</svg>
+<div class="diagram-cap">Compound formula માં B=A મૂકવાથી multiple angle formula સીધો નીકળે છે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">sin 2A = 2 sin A cos A</div>
+  <div class="meaning">sin(A+A) માંથી</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">cos 2A = cos²A − sin²A = 2cos²A − 1 = 1 − 2sin²A</div>
+  <div class="meaning">cos(A+A) માંથી, પછી sin²+cos²=1 વાપરીને 3 forms</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">tan 2A = 2tan A / (1 − tan²A)</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — sin 75° કાઢવું</div>
+  <div class="step"><b>Need</b> — exact value</div>
+  <div class="step"><b>Method</b> — 75° = 45°+30° (બંને standard angles), compound angle formula વાપરવી</div>
+  <div class="step"><b>Calculation</b> — sin45°cos30° + cos45°sin30° = (1/√2)(√3/2)+(1/√2)(1/2) = (√6+√2)/4</div>
+  <div class="step"><b>Clue</b> — non-standard angle, standard angles ના sum/difference તરીકે લખાય એ ઓળખો (75=45+30, 15=45−30, 105=60+45 વગેરે)</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  cos(A+B) ≠ cos A + cos B. Compound angle formula વગર angles ને સીધા add/subtract કરવાની ભૂલ ન કરવી.
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — very high (JEE)</span>
+  Multiple angle formulas (sin2A, cos2A) JEE માં calculus, integration જોડે mixed problems માં સતત વપરાય છે — cos2A ના ત્રણેય forms યાદ રાખવા (કયું form ક્યારે વાપરવું એ practice થી આવે છે).
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  cos 2A = 1 − 2sin²A વાપરીને cos 60° ને sin 30° થી verify કર.
+</div>
+
+<div class="next-line">→ <b>Next:</b> આ formulas expressions simplify કરવા માટે હતા. હવે θ ની unknown value શોધવાનું — trigonometric equations — Part 6.</div>
+</div>
+
+<!-- ============ PART 6 ============ -->
+<div class="part" id="p6">
+<h2><span class="num">06</span>Trigonometric equations</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું sin θ = k પ્રકારના equations નો complete general solution લખી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  sin θ = k જેવા equations ના infinite solutions હોય છે (periodic function હોવાથી) — general solution કાઢવાની ચોક્કસ પદ્ધતિ જરૂરી. Board + JEE બંનેમાં ભારે weightage.
+</div>
+
+<div class="submap">
+  <span>6a — Periodicity નો logic</span>
+  <span>6b — ત્રણ general solution formulas</span>
+</div>
+
+<h3>6a. શા માટે "general" solution</h3>
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Trig functions periodic હોવાથી એક જ value અનેક angles પર repeat થાય છે (દા.ત. sin 30° = sin 150° = sin 390° = 1/2). તેથી sin θ = 1/2 નો answer એક number નહીં, પણ બધા possible angles ને cover કરતું general formula (n ∈ ℤ સાથે) સ્વરૂપે અપાય છે.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>sin θ ના graph પર periodicity</title><desc>sin θ = 1/2 ને satisfy કરતા multiple angles y=1/2 line ને sin curve જ્યાં જ્યાં કાપે ત્યાં દેખાય છે</desc>
+<line x1="40" y1="200" x2="640" y2="200" stroke="var(--line)" stroke-width="1"/>
+<line x1="40" y1="200" x2="40" y2="40" stroke="var(--line)" stroke-width="1"/>
+<path d="M 40 200 Q 100 60 160 200 T 280 200 T 400 200 T 520 200 T 640 200" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line x1="40" y1="140" x2="640" y2="140" stroke="var(--exam)" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text class="ts" x="580" y="132" fill="var(--exam)">y = 1/2</text>
+<circle cx="90" cy="140" r="4" fill="var(--exam)"/>
+<circle cx="270" cy="140" r="4" fill="var(--exam)"/>
+<circle cx="450" cy="140" r="4" fill="var(--exam)"/>
+<text class="ts" x="75" y="220">30°</text>
+<text class="ts" x="245" y="220">150°</text>
+<text class="ts" x="425" y="220">390°</text>
+<text class="th" x="40" y="30">sin θ</text>
+</svg>
+<div class="diagram-cap">sin θ = 1/2 ને अनेक angles satisfy કરે છે — general solution બધાને cover કરે છે</div>
+</div>
+
+<h3>6b. General solution formulas</h3>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">sin θ = sin α ⟹ θ = nπ + (−1)ⁿ α</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">cos θ = cos α ⟹ θ = 2nπ ± α</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">tan θ = tan α ⟹ θ = nπ + α</div>
+</div>
+<p style="font-size:13.5px;color:var(--ink-2)">n ∈ ℤ (કોઈપણ integer), α = principal value (સૌથી નાનો angle જે equation satisfy કરે)</p>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — sin θ = 1/2</div>
+  <div class="step"><b>Need</b> — general solution</div>
+  <div class="step"><b>Method</b> — sin 30° = 1/2, તેથી principal value α = π/6</div>
+  <div class="step"><b>Calculation</b> — θ = nπ + (−1)ⁿ (π/6), n ∈ ℤ</div>
+  <div class="step"><b>Check</b> — n=0 → π/6 (30° ✓), n=1 → π−π/6=5π/6 (150°, જ્યાં sin પણ 1/2 ✓)</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  ફક્ત principal value (α) લખીને અટકી જવું — general solution (nπ કે 2nπ સાથે) આપ્યા વગર marks કપાય.
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — very high</span>
+  General solution કાઢવાનો પ્રશ્ન લગભગ દરેક exam paper માં હોય છે — formula ત્રણેય (sin, cos, tan) બરાબર યાદ રાખવા, અને sign/coefficient (nπ vs 2nπ, (−1)ⁿ vs ±) મિક્સ ન કરવા.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  cos θ = 1/2 નું general solution લખ.
+</div>
+
+<div class="next-line">→ <b>Next:</b> અત્યાર સુધી angles standalone હતા. હવે triangle ના sides-angles વચ્ચેનો સંબંધ — Part 7 (JEE-level, optional for board core).</div>
+</div>
+
+<!-- ============ PART 7 ============ -->
+<div class="part" id="p7">
+<h2><span class="num">07</span>Properties of triangles</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part પછી તું triangle ના sides-angles વચ્ચે sine rule અને cosine rule વાપરીને unknown quantity કાઢી શકીશ.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  ત્રિકોણમાં sides અને angles વચ્ચે trigonometric relations છે — JEE-level geometry/application problems માટે જરૂરી. <span style="font-style:italic">(Optional detail — board core syllabus કરતા advanced)</span>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 260" role="img"><title>Triangle માં sides અને opposite angles</title><desc>Triangle ABC જેમાં side a, b, c ક્રમશઃ angle A, B, C ની સામે છે</desc>
+<polygon points="340,50 180,210 500,210" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/>
+<text class="th" x="340" y="34" text-anchor="middle">A</text>
+<text class="th" x="160" y="222">B</text>
+<text class="th" x="510" y="222">C</text>
+<text class="t" x="238" y="122" text-anchor="middle">c</text>
+<text class="t" x="432" y="122" text-anchor="middle">b</text>
+<text class="t" x="340" y="228" text-anchor="middle">a</text>
+</svg>
+<div class="diagram-cap">side a (BC) એ angle A ની સામે, side b (AC) એ angle B ની સામે, side c (AB) એ angle C ની સામે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — sine rule</span>
+  <div class="f">a/sin A = b/sin B = c/sin C</div>
+  <div class="meaning">a, b, c = sides; A, B, C = opposite angles</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — cosine rule</span>
+  <div class="f">cos A = (b² + c² − a²) / 2bc</div>
+  <div class="meaning">જ્યારે ત્રણ sides ખબર હોય અને angle કાઢવો હોય ત્યારે વપરાય</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 680 190" role="img"><title>Sine rule અને cosine rule ક્યારે વાપરવા તેનો decision diagram</title><desc>Sine rule 2 angles+1 side અથવા 2 sides+non-included angle માટે, cosine rule 3 sides અથવા 2 sides+included angle માટે વપરાય છે</desc>
+<rect x="30" y="30" width="290" height="130" rx="10" fill="var(--check-bg)" stroke="var(--check-line)" stroke-width="0.75"/>
+<text class="th" x="175" y="58" text-anchor="middle" fill="var(--check)">Sine rule</text>
+<text class="ts" x="175" y="86" text-anchor="middle">2 angles + 1 side ખબર છે</text>
+<text class="ts" x="175" y="106" text-anchor="middle">અથવા</text>
+<text class="ts" x="175" y="126" text-anchor="middle">2 sides + non-included angle</text>
+
+<rect x="360" y="30" width="290" height="130" rx="10" fill="var(--exam-bg)" stroke="var(--exam-line)" stroke-width="0.75"/>
+<text class="th" x="505" y="58" text-anchor="middle" fill="var(--exam)">Cosine rule</text>
+<text class="ts" x="505" y="86" text-anchor="middle">3 sides ખબર છે</text>
+<text class="ts" x="505" y="106" text-anchor="middle">અથવા</text>
+<text class="ts" x="505" y="126" text-anchor="middle">2 sides + included angle</text>
+</svg>
+<div class="diagram-cap">શું ખબર છે એના પરથી કયો rule વાપરવો તે નક્કી થાય</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — ક્યારે કયું વાપરવું</span>
+  Sine rule: 2 angles + 1 side, અથવા 2 sides + 1 non-included angle ખબર હોય ત્યારે. Cosine rule: 3 sides, અથવા 2 sides + included angle ખબર હોય ત્યારે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Triangle માં a=7, b=8, c=9 ખબર છે. Angle કાઢવા sine rule વપરાશે કે cosine rule?
+</div>
+</div>
+
+<!-- ============ PART 8 ============ -->
+<div class="part" id="p8">
+<h2><span class="num">08</span>JEE extensions <span class="badge">board core કરતા advanced</span></h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  આ part board syllabus ની બહારનું છે — JEE Main ના previous-year papers માં વારંવાર આવતા 5 identities, જે Part 1-7 ના formulas પરથી જ બને છે પણ chapter માં ક્યાંય explicit નથી.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  Trigonometry PYQ solve કરતી વખતે આ 5 patterns વારંવાર દેખાયા — board exam માટે જરૂરી નથી, પણ JEE માં ઓળખાય તો ઘણો સમય બચે છે. દરેક ને "result તરીકે યાદ રાખવું" જ practical છે, derive કરવા બેસવું નહીં.
+</div>
+
+<div class="submap">
+  <span>8a — θ,60°±θ triple product</span>
+  <span>8b — Angle-doubling telescoping</span>
+  <span>8c — a sinx+b cosx range</span>
+  <span>8d — Golden-ratio values</span>
+  <span>8e — Triangle symmetric sums</span>
+</div>
+
+<h3>8a. θ, 60°−θ, 60°+θ ત્રિપુટી</h3>
+<p>ત્રણ angles જે 60° ની બરાબર આજુબાજુ symmetric હોય (gap 60°), એમનો sin/cos product single-angle માં ભેગો થઈ જાય છે:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 130" role="img"><title>θ, 60°−θ, 60°+θ ની 60° ની આજુબાજુ symmetry</title><desc>Number line 0 થી 90 ડિગ્રી, જેમાં 60°−θ અને 60°+θ એ 60° ની બરાબર બંને બાજુ θ દૂર છે</desc>
+<line x1="60" y1="70" x2="620" y2="70" stroke="var(--ink-3)" stroke-width="1"/>
+<line x1="60" y1="62" x2="60" y2="78" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="60" y="98" text-anchor="middle" fill="var(--ink-3)" font-size="11">0°</text>
+<line x1="185" y1="55" x2="185" y2="85" stroke="var(--check)" stroke-width="2"/>
+<text x="185" y="45" text-anchor="middle" fill="var(--check)" font-size="12" font-weight="600">θ</text>
+<line x1="308" y1="55" x2="308" y2="85" stroke="var(--exam)" stroke-width="2"/>
+<text x="308" y="45" text-anchor="middle" fill="var(--exam)" font-size="12" font-weight="600">60−θ</text>
+<line x1="432.9" y1="50" x2="432.9" y2="90" stroke="var(--accent)" stroke-width="2.5"/>
+<text x="432.9" y="112" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="600">60°</text>
+<line x1="557.8" y1="55" x2="557.8" y2="85" stroke="var(--exam)" stroke-width="2"/>
+<text x="557.8" y="45" text-anchor="middle" fill="var(--exam)" font-size="12" font-weight="600">60+θ</text>
+<line x1="620" y1="62" x2="620" y2="78" stroke="var(--ink-3)" stroke-width="1"/>
+<text class="ts" x="620" y="98" text-anchor="middle" fill="var(--ink-3)" font-size="11">90°</text>
+</svg>
+<div class="diagram-cap">60°−θ અને 60°+θ — બંને 60° ની બરાબર આજુબાજુ — આ pattern દેખાય કે તરત identity trigger કરો</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — JEE high-frequency</span>
+  <div class="f">sinθ·sin(60°−θ)·sin(60°+θ) = ¼ sin3θ</div>
+  <div class="meaning">cos માટે પણ same પેટર્ન: cosθ·cos(60°−θ)·cos(60°+θ) = ¼ cos3θ</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example</span>
+  <div class="step"><b>Given</b> — sin10°·sin50°·sin70° કાઢવું</div>
+  <div class="step"><b>Method</b> — θ=10° લેતા 60−10=50°, 60+10=70° — બરાબર pattern મળે છે</div>
+  <div class="step"><b>Calculation</b> — = ¼sin30° = ¼×½ = 1/8</div>
+</div>
+
+<h3>8b. Angle-doubling telescoping product</h3>
+<p>જ્યારે angles દરેક વખતે ×2 થતા દેખાય (θ, 2θ, 4θ, 8θ...), દરેક cos ને sinAcosA=½sin2A વાપરીને chain cancel કરી શકાય:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 130" role="img"><title>Angle doubling telescoping</title><desc>θ થી શરૂ કરીને દરેક step માં angle ડબલ થાય છે — n cos terms નો product sin(2ⁿθ)/(2ⁿsinθ) બને છે</desc>
+<g font-family="var(--font-mono)" font-size="13" font-weight="600">
+<rect x="40" y="20" width="70" height="34" rx="6" fill="var(--check-bg)" stroke="var(--check-line)" stroke-width="1"/>
+<text x="75" y="42" text-anchor="middle" fill="var(--check)">θ</text>
+<text x="130" y="42" fill="var(--ink-3)" font-size="16">→</text>
+<rect x="155" y="20" width="70" height="34" rx="6" fill="var(--check-bg)" stroke="var(--check-line)" stroke-width="1"/>
+<text x="190" y="42" text-anchor="middle" fill="var(--check)">2θ</text>
+<text x="245" y="42" fill="var(--ink-3)" font-size="16">→</text>
+<rect x="270" y="20" width="70" height="34" rx="6" fill="var(--check-bg)" stroke="var(--check-line)" stroke-width="1"/>
+<text x="305" y="42" text-anchor="middle" fill="var(--check)">4θ</text>
+<text x="360" y="42" fill="var(--ink-3)" font-size="16">→</text>
+<rect x="385" y="20" width="80" height="34" rx="6" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="1.5"/>
+<text x="425" y="42" text-anchor="middle" fill="var(--accent-ink)">...2ⁿ⁻¹θ</text>
+</g>
+<text x="40" y="80" fill="var(--ink-2)" font-size="12.5">cosθ·cos2θ·cos4θ·...·cos(2ⁿ⁻¹θ) = sin(2ⁿθ) / (2ⁿ sinθ)</text>
+</svg>
+<div class="diagram-cap">દરેક doubling step માં sinAcosA=½sin2A વારંવાર apply થાય છે — n cos terms હોય તો 2ⁿ denominator માં આવે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — JEE high-frequency</span>
+  <div class="f">cosθ·cos2θ·cos4θ·...·cos(2ⁿ⁻¹θ) = sin(2ⁿθ) / (2ⁿ sinθ)</div>
+  <div class="meaning">n = કેટલા cos terms છે</div>
+</div>
+
+<h3>8c. a sinx + b cosx ની range — R-method</h3>
+<p>Part 5 ના sin(A+B) formula નું reverse application: બે coefficients (a, b) ને right-triangle ના legs ગણી, resultant R = √(a²+b²) જ expression ની max/min નક્કી કરે છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 200" role="img"><title>a sinx+b cosx ને phasor તરીકે — R=√(a²+b²)</title><desc>a અને b ને લંબ legs ગણતા, resultant R એ expression ની maximum value આપે છે</desc>
+<line x1="100" y1="170" x2="190" y2="170" stroke="var(--check)" stroke-width="2.5"/>
+<text x="145" y="188" text-anchor="middle" fill="var(--check)" font-size="13" font-weight="600">a</text>
+<line x1="190" y1="170" x2="190" y2="60" stroke="var(--exam)" stroke-width="2.5"/>
+<text x="205" y="115" fill="var(--exam)" font-size="13" font-weight="600">b</text>
+<line x1="100" y1="170" x2="190" y2="60" stroke="var(--formula)" stroke-width="3"/>
+<text x="130" y="105" fill="var(--formula)" font-size="14" font-weight="600">R</text>
+<rect x="178" y="158" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+<text x="380" y="85" fill="var(--ink-2)" font-size="12.5">a sinx + b cosx = R sin(x+φ)</text>
+<text x="380" y="110" fill="var(--ink-2)" font-size="12.5">R = √(a²+b²), max value</text>
+<text x="380" y="135" fill="var(--ink-2)" font-size="12.5">Physics: SHM amplitude, AC phasors</text>
+</svg>
+<div class="diagram-cap">a, b ને perpendicular components ગણો — R એ hypotenuse, expression ની range [−R, R] બંધાયેલી છે</div>
+</div>
+
+<div class="formula-box">
+  <span class="label">formula — JEE high-frequency</span>
+  <div class="f">−√(a²+b²) ≤ a sinx + b cosx ≤ √(a²+b²)</div>
+  <div class="meaning">"solution exists" / "max-min" પ્રકારના પ્રશ્નોમાં direct વપરાય</div>
+</div>
+
+<h3>8d. Golden-ratio special values</h3>
+<p>18° અને 36° ના sin/cos values regular pentagon ના geometry (golden ratio, φ=(1+√5)/2) સાથે જોડાયેલા છે — art, architecture, અને nature (sunflower spirals, pentagon-shaped structures) માં પણ આ જ ratio દેખાય છે.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 680 240" role="img"><title>Regular pentagon અને golden ratio — sin18° ક્યાંથી આવે છે</title><desc>Regular pentagon ના કેન્દ્રિય ત્રિકોણનો ખૂણો 36° છે, જેમાંથી sin18°, cos36° ના golden-ratio values નીકળે છે</desc>
+<g transform="translate(160,120)">
+<polygon points="0,-90 85.6,-27.8 52.9,72.8 -52.9,72.8 -85.6,-27.8" fill="none" stroke="var(--accent)" stroke-width="2"/>
+<line x1="0" y1="0" x2="0" y2="-90" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="0" y1="0" x2="52.9" y2="-72.8" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<circle cx="0" cy="0" r="2.5" fill="var(--ink)"/>
+<path d="M 20 0 A 20 20 0 0 0 17.1 -10.3" fill="none" stroke="var(--formula)" stroke-width="1.5"/>
+<text class="t" x="26" y="-6" fill="var(--formula)">36°</text>
+</g>
+<text x="380" y="60" fill="var(--ink-2)" font-size="12.5">Pentagon ના કેન્દ્રથી બે adjacent</text>
+<text x="380" y="82" fill="var(--ink-2)" font-size="12.5">vertices વચ્ચેનો ખૂણો = 360°/5 = 72°,</text>
+<text x="380" y="104" fill="var(--ink-2)" font-size="12.5">અડધો = 36° — આ જ ત્રિકોણમાંથી</text>
+<text x="380" y="126" fill="var(--ink-2)" font-size="12.5">sin18°, cos36° ના exact values</text>
+<text x="380" y="148" fill="var(--ink-2)" font-size="12.5">(golden ratio) નીકળે છે</text>
+</svg>
+<div class="diagram-cap">Regular pentagon → 36° ના isoceles triangles → golden ratio φ=(1+√5)/2 → sin18°, cos36° ના surd values</div>
+</div>
+
+<div class="tblwrap">
+<table>
+<tr><th>Value</th><td>sin18°</td><td>cos36°</td><td>cosec18°</td></tr>
+<tr><td class="rowlabel">=</td><td>(√5−1)/4</td><td>(√5+1)/4</td><td>√5+1</td></tr>
+</table>
+</div>
+
+<h3>8e. Triangle symmetric sums (A+B+C=π)</h3>
+<p>Triangle ના ત્રણેય angles નો સરવાળો π (180°) fixed હોવાથી, એમના tan/cot ના sums વચ્ચે ખાસ identities બને છે:</p>
+
+<div class="formula-box">
+  <span class="label">formula — JEE high-frequency</span>
+  <div class="f">tanA + tanB + tanC = tanA·tanB·tanC</div>
+  <div class="meaning">A+B+C=π હોય ત્યારે જ સાચું (triangle ના ખૂણા)</div>
+</div>
+<div class="formula-box">
+  <span class="label">formula — JEE high-frequency</span>
+  <div class="f">cotA·cotB + cotB·cotC + cotC·cotA = 1</div>
+  <div class="meaning">tan version નહીં — cot version જ સાચી identity છે, confuse ના કરવું</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  ΣtanA·tanB=1 ખોટું છે (equilateral પર 9 આવે છે) — સાચી identity ΣcotA·cotB=1 છે. "tan" અને "cot" version વચ્ચે ગૂંચવાવું આ chapter ના most common JEE traps માંનો એક છે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Equilateral triangle (A=B=C=60°) પર tanA+tanB+tanC=tanAtanBtanC ચકાસ — બંને બાજુ સરખી કિંમત આવે છે?
+</div>
+
+
+<!-- upd-2026-10-04:trig-tel -->
+<h3>JEE extension — tan-તફાવત telescoping અને cosine શ્રેણી</h3>
+<div class="diagram"><svg viewBox="0 0 680 250" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><circle cx="180.0" cy="150.0" r="92.0" stroke="var(--ink-3)" fill="none" stroke-width="1.2"/><line x1="78.0" y1="150.0" x2="282.0" y2="150.0" stroke="var(--ink-3)" stroke-width="1"/><line x1="180.0" y1="150.0" x2="262.9" y2="110.1" stroke="var(--accent)" stroke-width="1.4"/><circle cx="262.9" cy="110.1" r="4" fill="var(--accent)"/><line x1="262.9" y1="110.1" x2="262.9" y2="150.0" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/><text x="262.9" y="100.1" fill="var(--accent)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">π/7</text><line x1="180.0" y1="150.0" x2="200.5" y2="60.3" stroke="var(--accent)" stroke-width="1.4"/><circle cx="200.5" cy="60.3" r="4" fill="var(--accent)"/><line x1="200.5" y1="60.3" x2="200.5" y2="150.0" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/><text x="200.5" y="50.3" fill="var(--accent)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">3π/7</text><line x1="180.0" y1="150.0" x2="122.6" y2="78.1" stroke="var(--accent)" stroke-width="1.4"/><circle cx="122.6" cy="78.1" r="4" fill="var(--accent)"/><line x1="122.6" y1="78.1" x2="122.6" y2="150.0" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/><text x="122.6" y="68.1" fill="var(--accent)" font-size="11" text-anchor="middle" font-family="Source Sans 3, sans-serif">5π/7</text><text x="180.0" y="30.0" fill="var(--exam)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">cos(π/7) + cos(3π/7) + cos(5π/7) = 0.5000 = ½</text><text x="470.0" y="90.0" fill="var(--ink-2)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">Telescoping:</text><text x="470.0" y="114.0" fill="var(--ink)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif">sin(B − A)/(cosA cosB) = tanB − tanA</text><text x="470.0" y="140.0" fill="var(--ink)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif">Σ (k=0→n−1) 1/(cos k° cos(k+1)°)</text><text x="470.0" y="164.0" fill="var(--exam)" font-size="12.5" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">= tan n°/sin 1°</text></svg><div class="diagram-cap">એકમ વર્તુળ પર (2r−1)π/7 ખૂણા ખરેખર ગણીને મૂક્યા; x-પ્રક્ષેપોનો સરવાળો 0.5000 (ગણેલો).</div></div>
+<div class="formula-box"><span class="label">formula — must memorize</span><div class="f">Σ (r = 1 થી n) cos((2r−1)π/(2n+1)) = ½;   1/(cosA cosB) = (tanB − tanA)/sin(B − A)</div><div class="meaning">પહેલું: એકમના (2n+1)-મા મૂળનો સરવાળો 0 છે, તેના વાસ્તવિક ભાગમાંથી. બીજું: sin(B − A) = sinB cosA − cosB sinA ને cosA cosB થી ભાગો ⟹ દરેક પદ બે tan નો તફાવત ⟹ સરવાળામાં વચ્ચેના બધા રદ. ઉપરાંત Σ (k = 1 થી n − 1) cos(2kπ/n) = −1. Real-world: સમાન ખૂણે ગોઠવેલા phasors (3-phase વીજળી) નો સરવાળો શૂન્ય — balanced load માં neutral વાયરમાં પ્રવાહ લગભગ શૂન્ય.</div></div>
+<div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — Σ (k = 0 થી 29) 1/(cos k° cos(k+1)°)</div><div class="step"><b>Need</b> — સરવાળો</div><div class="step"><b>Method</b> — tan-તફાવત telescoping</div><div class="step"><b>Calculation</b> — = (tan30° − tan0°)/sin1° = 1/(√3 sin1°)</div><div class="step"><b>Check</b> — numeric: 33.08… બંને રીતે ✓</div></div>
+<div class="mistake-box box"><span class="label">common mistake</span>છેલ્લા પદમાં tan(n − 1)° લઈ લેવું — telescoping માં ઉપરની સીમા (k + 1) નો ખૂણો રહે છે.</div>
+<div class="next-line">→ <b>Next action:</b> Trigonometry PYQ Solutions.html (Practice and Answer Keys folder) માં આ ચારેય patterns ને actual JEE problems માં apply થતા જુઓ — ત્યાં દરેકનું worked example છે.</div>
+</div>
+
+<!-- ============ SUMMARY ============ -->
+<div class="part">
+<div class="remember">
+  <span class="label">remember — સંપૂર્ણ chapter</span>
+  <ol>
+    <li>π radian = 180° — l = rθ (θ radian માં)</li>
+    <li>Standard angles (0°,30°,45°,60°,90°) ના sin/cos/tan values</li>
+    <li>ASTC — All Silver Tea Cups (quadrant-wise sign)</li>
+    <li>sin²θ+cos²θ=1 અને related identities</li>
+    <li>Compound/multiple angle formulas — sin(A±B), sin2A, cos2A</li>
+    <li>General solution formulas — sinθ=sinα, cosθ=cosα, tanθ=tanα</li>
+    <li>(JEE) θ,60°±θ product, doubling telescoping, R=√(a²+b²), ΣcotAcotB=1</li>
+  </ol>
+</div>
+<div class="next-line" style="border-top:none;padding-top:0">→ <b>Next action after this chapter:</b> Part 5-6 (compound formulas + equations) ને numerical problems પર practice કરો — direct formula-recall કરતાં application માં ભૂલ વધારે થાય છે. પછી Physics માં SHM/waves chapter શરૂ થાય ત્યારે આ જ trigonometry સીધું વપરાશે.</div>
+</div>
+
+</div>
