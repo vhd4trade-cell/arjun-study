@@ -129,159 +129,128 @@ sup,sub{font-size:.7em}
 .ts{font-size:11.5px;fill:var(--ink-2)}
 .th{font-size:13px;fill:var(--ink);font-weight:600}
 .vec{position:relative;padding-right:.45em;font-style:italic}.vec::after{content:"→";position:absolute;right:0;top:-.42em;font-size:.72em;font-style:normal;font-weight:600}</style>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&amp;family=Source+Sans+3:wght@400;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <div class="wrap">
 <h1>Work, Energy and Power — full chapter</h1>
 <p class="subtitle">11th science · Gujarat board + JEE foundation · collision NOT included here — see separate Collision chapter</p>
-
 <div class="legend">
-  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
-  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
-  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
-  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
-  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
-  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+<div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+<div class="legend-item"><span class="dot concept"></span>Must understand</div>
+<div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+<div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+<div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+<div class="legend-item"><span class="dot check"></span>Self-check</div>
 </div>
-
 <div class="toc">
-  <b>Chapter map</b> — final target: કોઈપણ force, motion situation માં work, energy, power ને correctly identify અને calculate કરવું (PABT Phase Test 2 — collision વગર)
+<b>Chapter map</b> — final target: કોઈપણ force, motion situation માં work, energy, power ને correctly identify અને calculate કરવું (PABT Phase Test 2 — collision વગર)
   <ol style="list-style:none;padding-left:0;counter-reset:none">
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">Work, Energy, Power શું છે</a> — introduction</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">Work done by constant force</a> — dot product, sign of work</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">Work done by variable force</a> — area under F-x graph</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">Work-Energy theorem</a></li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">Kinetic energy</a></li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">Potential energy</a> — gravitational, spring, conservative vs non-conservative</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">Conservation of mechanical energy</a></li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">Power</a> — average and instantaneous</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">Vertical circular motion — energy analysis</a></li>
-  </ol>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span>  <a href="#intro">Work, Energy, Power શું છે</a> — introduction</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span>  <a href="#p1">Work done by constant force</a> — dot product, sign of work</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span>  <a href="#p2">Work done by variable force</a> — area under F-x graph</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span>  <a href="#p3">Work-Energy theorem</a></li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span>  <a href="#p4">Kinetic energy</a></li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span>  <a href="#p5">Potential energy</a> — gravitational, spring, conservative vs non-conservative</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span>  <a href="#p6">Conservation of mechanical energy</a></li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span>  <a href="#p7">Power</a> — average and instantaneous</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span>  <a href="#p8">Vertical circular motion — energy analysis</a></li>
+</ol>
 </div>
-
 <!-- ============ INTRO ============ -->
 <div class="part" id="intro" style="padding-top:0">
 <h2><span class="num">00</span>Work, Energy, Power શું છે</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   ત્રણેય શબ્દો (work, energy, power) ને રોજિંદા Gujarati અર્થ ભુલીને, physics ની ચોક્કસ વ્યાખ્યા સાથે જોડવા — અને ત્રણેય એકબીજા સાથે કેમ જોડાયેલા છે તે સમજવું.
 </div>
-
 <h3>રોજિંદો અર્થ vs physics નો અર્થ</h3>
 <p>રોજિંદી ભાષામાં "કામ" (work) એટલે કોઈપણ પ્રયત્ન — વિચારવું, બેસી રહેવું, ભાર ઊંચકી રાખવું — બધું "કામ" ગણાય. Physics માં <b>work</b> ની વ્યાખ્યા સાંકડી અને ચોક્કસ છે: <b>force લગાડીને object ને ખસેડવું</b> — force લાગે પણ object ન ખસે તો physics ની ભાષામાં work = 0.</p>
-
 <div class="concept-box box">
-  <span class="label">must understand — કેમ આ સાંકડી વ્યાખ્યા</span>
+<span class="label">must understand — કેમ આ સાંકડી વ્યાખ્યા</span>
   દીવાલને ધક્કો મારીને થાકી જાઓ તો પણ physics કહેશે work = 0, કારણ કે દીવાલ ખસી નહીં. આ counter-intuitive લાગે પણ logical છે — physics માં "work" ને energy transfer સાથે જોડવું છે (force લગાડવાથી object ની energy બદલાય તો જ work થયું ગણાય). Object ન ખસે તો એની energy બદલાતી નથી, તેથી work zero.
 </div>
-
 <h3>Energy — "કામ કરવાની ક્ષમતા"</h3>
 <p><b>Energy</b> ગ્રીક શબ્દ "en" (અંદર) + "ergon" (કામ) પરથી — "અંદર રહેલું કામ", એટલે કે object પાસે રહેલી, work કરવાની capacity. જ્યારે એક object બીજા પર work કરે, ત્યારે પહેલાની energy ઘટે અને બીજાની વધે — energy એ ટ્રાન્સફર થતું "ચલણ" (currency) છે, work એ એ ટ્રાન્સફર ની ક્રિયા (process) છે.</p>
-
 <h3>Power — "કેટલી ઝડપથી"</h3>
 <p><b>Power</b> (લેટિન "potere" = સક્ષમ હોવું) એ work/energy transfer ની <b>ઝડપ</b> માપે છે — કેટલું work થયું એ નહીં, પણ કેટલી ઝડપથી થયું. બે માણસ સરખું 1000 J નું કામ કરે, પણ એક 10 second માં અને બીજો 100 second માં — બંનેએ સરખું work કર્યું, પણ પહેલાની power વધારે.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 260" role="img"><title>Work, Energy, Power વચ્ચેનો સંબંધ</title><desc>Force object ને ખસેડે ત્યારે work થાય છે, જે object ની energy બદલે છે, અને એ transfer કેટલી ઝડપથી થયું તે power કહે છે</desc>
-<rect x="40" y="90" width="140" height="70" rx="8" fill="var(--surface-2)" stroke="var(--line)"/>
-<text class="th" x="110" y="130" text-anchor="middle">Force લગાડો</text>
-<text class="ts" x="110" y="148" text-anchor="middle">object ને ખસેડો</text>
-
-<line x1="182" y1="125" x2="248" y2="125" stroke="var(--formula)" stroke-width="2"/>
-<polygon points="248,125 238,120 238,130" fill="var(--formula)"/>
-<text class="th" x="215" y="112" text-anchor="middle" fill="var(--formula)">WORK</text>
-
-<rect x="250" y="90" width="140" height="70" rx="8" fill="var(--formula-bg)" stroke="var(--formula-line)"/>
-<text class="th" x="320" y="122" text-anchor="middle">Energy</text>
-<text class="ts" x="320" y="140" text-anchor="middle">transfer થાય</text>
-<text class="ts" x="320" y="155" text-anchor="middle">(KE ↔ PE)</text>
-
-<line x1="392" y1="125" x2="458" y2="125" stroke="var(--exam)" stroke-width="2" stroke-dasharray="4,3"/>
-<polygon points="458,125 448,120 448,130" fill="var(--exam)"/>
-<text class="th" x="425" y="112" text-anchor="middle" fill="var(--exam)">દરે</text>
-
-<rect x="460" y="90" width="180" height="70" rx="8" fill="var(--exam-bg)" stroke="var(--exam-line)"/>
-<text class="th" x="550" y="122" text-anchor="middle">POWER</text>
-<text class="ts" x="550" y="140" text-anchor="middle">= work/energy transfer</text>
-<text class="ts" x="550" y="155" text-anchor="middle">ની ઝડપ (rate)</text>
-
+<svg role="img" viewbox="0 0 680 260"><title>Work, Energy, Power વચ્ચેનો સંબંધ</title><desc>Force object ને ખસેડે ત્યારે work થાય છે, જે object ની energy બદલે છે, અને એ transfer કેટલી ઝડપથી થયું તે power કહે છે</desc>
+<rect fill="var(--surface-2)" height="70" rx="8" stroke="var(--line)" width="140" x="40" y="90"></rect>
+<text class="th" text-anchor="middle" x="110" y="130">Force લગાડો</text>
+<text class="ts" text-anchor="middle" x="110" y="148">object ને ખસેડો</text>
+<line stroke="var(--formula)" stroke-width="2" x1="182" x2="248" y1="125" y2="125"></line>
+<polygon fill="var(--formula)" points="248,125 238,120 238,130"></polygon>
+<text class="th" fill="var(--formula)" text-anchor="middle" x="215" y="112">WORK</text>
+<rect fill="var(--formula-bg)" height="70" rx="8" stroke="var(--formula-line)" width="140" x="250" y="90"></rect>
+<text class="th" text-anchor="middle" x="320" y="122">Energy</text>
+<text class="ts" text-anchor="middle" x="320" y="140">transfer થાય</text>
+<text class="ts" text-anchor="middle" x="320" y="155">(KE ↔ PE)</text>
+<line stroke="var(--exam)" stroke-dasharray="4,3" stroke-width="2" x1="392" x2="458" y1="125" y2="125"></line>
+<polygon fill="var(--exam)" points="458,125 448,120 448,130"></polygon>
+<text class="th" fill="var(--exam)" text-anchor="middle" x="425" y="112">દરે</text>
+<rect fill="var(--exam-bg)" height="70" rx="8" stroke="var(--exam-line)" width="180" x="460" y="90"></rect>
+<text class="th" text-anchor="middle" x="550" y="122">POWER</text>
+<text class="ts" text-anchor="middle" x="550" y="140">= work/energy transfer</text>
+<text class="ts" text-anchor="middle" x="550" y="155">ની ઝડપ (rate)</text>
 <text class="ts" x="60" y="210">Work = ક્રિયા (verb) · Energy = સંગ્રહ (noun, currency) · Power = ઝડપ (rate)</text>
 </svg>
 <div class="diagram-cap">Work એ energy transfer ની ક્રિયા છે, Power એ એ transfer કેટલી ઝડપથી થાય એનું માપ</div>
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Engine ની rating (horsepower, watt), electricity bill (kWh = energy unit), શરીરમાં ખોરાકથી મળતી calories (energy) — બધું આ ત્રણ concept પર આધારિત. Physics માં collision, circular motion, SHM — બધા chapters energy conservation વાપરે છે, એટલે આ chapter પાયો છે.
 </div>
-
 <div class="next-line">→ <b>Next action:</b> Part 1 થી શરૂ કરો — work ની ચોક્કસ ગાણિતિક વ્યાખ્યા (constant force માટે).</div>
 </div>
-
 <!-- ============ PART 1 ============ -->
 <div class="part" id="p1">
 <h2><span class="num">01</span>Work done by constant force</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું W = F·d·cosθ formula ને derive/apply કરી શકીશ, અને work ક્યારે positive, negative કે zero થાય તે કહી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Force અને displacement ના angle પર work નો આધાર છે — આ સમજ્યા વગર friction, gravity, normal force દરેકનું work ખોટું ગણાશે.
 </div>
-
 <div class="submap">
-  <span>1a — Force displacement ની દિશામાં જ હોય ત્યારે</span>
-  <span>1b — Angle પર હોય ત્યારે — dot product</span>
-  <span>1c — Sign of work</span>
+<span>1a — Force displacement ની દિશામાં જ હોય ત્યારે</span>
+<span>1b — Angle પર હોય ત્યારે — dot product</span>
+<span>1c — Sign of work</span>
 </div>
-
 <h3>1a. સૌથી સાદો case — force displacement ની દિશામાં</h3>
 <p>Force F, object ને એની જ દિશામાં d અંતર ખસેડે તો:</p>
 <div class="formula-box">
-  <span class="label">formula</span>
-  <div class="f">W = F × d</div>
-  <div class="meaning">Unit: joule (J) = newton × meter (N·m). આ ફક્ત θ=0° નો special case છે — diagram/example 1b માં (cosθ=1 મૂકતા) સીધું આમાંથી જ મળે છે, અલગથી repeat નથી કર્યું.</div>
+<span class="label">formula</span>
+<div class="f">W = F × d</div>
+<div class="meaning">Unit: joule (J) = newton × meter (N·m). આ ફક્ત θ=0° નો special case છે — diagram/example 1b માં (cosθ=1 મૂકતા) સીધું આમાંથી જ મળે છે, અલગથી repeat નથી કર્યું.</div>
 </div>
-
 <h3>1b. Force, displacement ની દિશામાં ન હોય ત્યારે — dot product</h3>
 <p>વાસ્તવમાં force ઘણી વાર displacement ની દિશાથી અલગ angle પર હોય છે (દા.ત. સૂટકેસ ને handle ખેંચીને ત્રાંસી દિશામાં ખેંચવું). આવા case માં ફક્ત force નો એ <b>component જે displacement ની દિશામાં છે</b> જ work કરે છે — બાકીનો component (લંબ દિશામાં) કંઈ ખસેડતો નથી, તેથી work માં ફાળો આપતો નથી.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Force અને displacement વચ્ચે angle હોય ત્યારે work</title><desc>Force F, displacement d ની દિશાથી 37 ડિગ્રી પર છે, F નો displacement દિશા પરનો component Fcosθ જ work કરે છે</desc>
-<defs><marker id="arrowW1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<line x1="90" y1="230" x2="330" y2="230" stroke="var(--ink-3)" stroke-width="2" marker-end="url(#arrowW1)"/>
-<text class="th" x="200" y="252" text-anchor="middle">d = 4 m (displacement)</text>
-
-<line x1="90" y1="230" x2="186" y2="158" stroke="var(--exam)" stroke-width="2.5" marker-end="url(#arrowW1)"/>
-<text class="th" x="140" y="150" fill="var(--exam)">F = 10 N</text>
-
-<path d="M 120 230 A 30 30 0 0 0 114 212" fill="none" stroke="var(--check)" stroke-width="1.5"/>
-<text class="t" x="126" y="216" fill="var(--check)">θ=37°</text>
-
-<line x1="186" y1="158" x2="186" y2="230" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
-<line x1="90" y1="230" x2="186" y2="230" stroke="var(--formula)" stroke-width="3"/>
-<text class="th" x="90" y="284" fill="var(--formula)">Fcosθ = 8 N (work કરે છે)</text>
-<text class="ts" x="196" y="196" fill="var(--ink-2)">Fsinθ = 6 N (⊥ — work શૂન્ય)</text>
-
+<svg role="img" viewbox="0 0 680 300"><title>Force અને displacement વચ્ચે angle હોય ત્યારે work</title><desc>Force F, displacement d ની દિશાથી 37 ડિગ્રી પર છે, F નો displacement દિશા પરનો component Fcosθ જ work કરે છે</desc>
+<defs><marker id="arrowW1" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></marker></defs>
+<line marker-end="url(#arrowW1)" stroke="var(--ink-3)" stroke-width="2" x1="90" x2="330" y1="230" y2="230"></line>
+<text class="th" text-anchor="middle" x="200" y="252">d = 4 m (displacement)</text>
+<line marker-end="url(#arrowW1)" stroke="var(--exam)" stroke-width="2.5" x1="90" x2="186" y1="230" y2="158"></line>
+<text class="th" fill="var(--exam)" x="140" y="150">F = 10 N</text>
+<path d="M 120 230 A 30 30 0 0 0 114 212" fill="none" stroke="var(--check)" stroke-width="1.5"></path>
+<text class="t" fill="var(--check)" x="126" y="216">θ=37°</text>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="186" x2="186" y1="158" y2="230"></line>
+<line stroke="var(--formula)" stroke-width="3" x1="90" x2="186" y1="230" y2="230"></line>
+<text class="th" fill="var(--formula)" x="90" y="284">Fcosθ = 8 N (work કરે છે)</text>
+<text class="ts" fill="var(--ink-2)" x="196" y="196">Fsinθ = 6 N (⊥ — work શૂન્ય)</text>
 <text class="th" x="440" y="90">W = F d cosθ</text>
 <text class="t" x="440" y="120">= 10 × 4 × cos37°</text>
 <text class="t" x="440" y="145">= 10 × 4 × 0.8</text>
-<text class="th" x="440" y="170" fill="var(--formula)">= 32 J</text>
+<text class="th" fill="var(--formula)" x="440" y="170">= 32 J</text>
 </svg>
 <div class="diagram-cap">F ના બે component: Fcosθ (displacement દિશામાં — work કરે) અને Fsinθ (લંબ — work zero)</div>
 </div>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">W = F d cosθ = <span class="vec">F</span> · <span class="vec">d</span></div>
-  <div class="meaning">θ = force અને displacement વચ્ચેનો angle. Work એ scalar (dot product) છે, vector નથી.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">W = F d cosθ = <span class="vec">F</span> · <span class="vec">d</span></div>
+<div class="meaning">θ = force અને displacement વચ્ચેનો angle. Work એ scalar (dot product) છે, vector નથી.</div>
 </div>
-
 <h3>1c. Work નું sign — positive, negative, zero</h3>
 <div class="tblwrap">
 <table>
@@ -293,64 +262,51 @@ sup,sub{font-size:.7em}
 <tr><td>180° (વિરુદ્ધ)</td><td>−1</td><td>Maximum negative</td><td>Brake લગાડવો</td></tr>
 </table>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Satellite orbit</b> — circular ભ્રમણકક્ષામાં ફરતો satellite પર gravity (centripetal force, કેન્દ્ર તરફ) હંમેશા velocity (tangent દિશા) ને લંબ રહે છે — θ=90° — તેથી gravity નું work હંમેશા zero, અને satellite ની speed બદલાતી નથી.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Satellite orbit</b> — circular ભ્રમણકક્ષામાં ફરતો satellite પર gravity (centripetal force, કેન્દ્ર તરફ) હંમેશા velocity (tangent દિશા) ને લંબ રહે છે — θ=90° — તેથી gravity નું work હંમેશા zero, અને satellite ની speed બદલાતી નથી.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Normal force અને gravity બંને "કંઈક ન કરે" એમ માની લેવું ખોટું — flat સપાટી પર ચાલતા object પર બંને displacement ને લંબ છે (θ=90°) એટલે work zero, પણ ઢોળાવ પર gravity નો component displacement ની દિશામાં આવે તો work non-zero થાય. હંમેશા actual angle check કરો, ધારી ન લો.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   એક block ને 5 N force થી, displacement થી 60° ના angle પર, 3 m ખસેડ્યું. Work કેટલું?
 </div>
-
 <div class="next-line">→ <b>Next:</b> Force constant ન હોય (દા.ત. spring ખેંચતી વખતે force વધતું જાય) તો work કેમ કાઢવું — Part 2.</div>
 </div>
-
 <!-- ============ PART 2 ============ -->
 <div class="part" id="p2">
 <h2><span class="num">02</span>Work done by variable force — area under F-x graph</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું F-x graph પરથી area ગણીને variable force નું work કાઢી શકીશ (દા.ત. spring).
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Real life માં ઘણી forces constant નથી હોતી — spring force અંતર સાથે વધે છે, gravity ઊંચાઈ સાથે (મોટા સ્કેલ પર) બદલાય છે. W=Fd formula ફક્ત constant force માટે સાચું; variable force માટે નવી રીત જોઈએ.
 </div>
-
 <div class="submap">
-  <span>2a — નાનો ટુકડો ધારો</span>
-  <span>2b — Area = work</span>
-  <span>2c — Spring ઉદાહરણ</span>
+<span>2a — નાનો ટુકડો ધારો</span>
+<span>2b — Area = work</span>
+<span>2c — Spring ઉદાહરણ</span>
 </div>
-
 <h3>2a. Idea — બહુ નાના ટુકડામાં force ને લગભગ constant ધારો</h3>
 <p>જો x થી x+dx જેટલા બહુ નાના displacement માટે force F(x) ને લગભગ constant ગણીએ, તો એ નાના ટુકડાનું work ≈ F(x)·dx. પૂરા path નું work આવા બધા નાના ટુકડાનો સરવાળો (integral) છે — અને F(x) vs x ના ગ્રાફ પર, F(x)·dx એ ખરેખર એક પાતળી લંબચોરસ patti નું ક્ષેત્રફળ (area) છે. તેથી:</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">W = ∫ F(x) dx = F-x ગ્રાફ નીચેનું ક્ષેત્રફળ</div>
-  <div class="meaning">x₁ થી x₂ સુધીના area = એ interval માં થયેલું work</div>
+<span class="label">formula — must memorize</span>
+<div class="f">W = ∫ F(x) dx = F-x ગ્રાફ નીચેનું ક્ષેત્રફળ</div>
+<div class="meaning">x₁ થી x₂ સુધીના area = એ interval માં થયેલું work</div>
 </div>
-
 <h3>2b. Spring ને ખેંચવાનું ઉદાહરણ — real computed area</h3>
 <p>Spring ને ખેંચવા લગાડેલું force, ખેંચાણ x ના પ્રમાણમાં વધે છે: F = kx (spring constant k = 20 N/m). x = 0 થી x = 4 m સુધી ખેંચતા F, 0 થી 80 N સુધી linear રીતે વધે છે — ગ્રાફ એક ત્રિકોણ (triangle) બને છે.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Spring ખેંચવામાં F-x ગ્રાફ અને એની નીચેનું ક્ષેત્રફળ</title><desc>F=kx લીટી x=0 થી x=4 સુધી 0 થી 80N વધે છે, ત્રિકોણાકાર area = 160 J = work</desc>
-<line x1="80" y1="260" x2="600" y2="260" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="80" y1="260" x2="80" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 300"><title>Spring ખેંચવામાં F-x ગ્રાફ અને એની નીચેનું ક્ષેત્રફળ</title><desc>F=kx લીટી x=0 થી x=4 સુધી 0 થી 80N વધે છે, ત્રિકોણાકાર area = 160 J = work</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="600" y1="260" y2="260"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="80" y1="260" y2="40"></line>
 <text class="ts" x="580" y="278">x (m)</text>
 <text class="ts" x="30" y="50">F (N)</text>
-
 <text class="ts" x="176" y="276">1</text>
 <text class="ts" x="276" y="276">2</text>
 <text class="ts" x="376" y="276">3</text>
@@ -359,618 +315,512 @@ sup,sub{font-size:.7em}
 <text class="ts" x="55" y="176">40</text>
 <text class="ts" x="55" y="132">60</text>
 <text class="ts" x="55" y="88">80</text>
-
-<path d="M80,260 L480,84 L480,260 Z" fill="var(--formula-bg)" stroke="none" opacity="0.7"/>
-<line x1="80" y1="260" x2="480" y2="84" stroke="var(--formula)" stroke-width="2.5"/>
-<line x1="480" y1="84" x2="480" y2="260" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
-
-<text class="th" x="250" y="200" fill="var(--formula)">Area = ½ × 4 × 80</text>
-<text class="th" x="250" y="220" fill="var(--formula)">= 160 J</text>
-<text class="ts" x="480" y="76" text-anchor="middle">(4, 80)</text>
+<path d="M80,260 L480,84 L480,260 Z" fill="var(--formula-bg)" opacity="0.7" stroke="none"></path>
+<line stroke="var(--formula)" stroke-width="2.5" x1="80" x2="480" y1="260" y2="84"></line>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="480" x2="480" y1="84" y2="260"></line>
+<text class="th" fill="var(--formula)" x="250" y="200">Area = ½ × 4 × 80</text>
+<text class="th" fill="var(--formula)" x="250" y="220">= 160 J</text>
+<text class="ts" text-anchor="middle" x="480" y="76">(4, 80)</text>
 </svg>
 <div class="diagram-cap">F = kx (k=20N/m) નો ગ્રાફ — ત્રિકોણનું ક્ષેત્રફળ = ½ × base × height = ½ × 4m × 80N = 160 J</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — k = 20 N/m, spring ને x=0 થી x=4m સુધી ખેંચ્યું</div>
-  <div class="step"><b>Need</b> — કરેલું work</div>
-  <div class="step"><b>Method</b> — F-x ગ્રાફ ત્રિકોણ છે (F=kx linear), area = ½ base × height</div>
-  <div class="step"><b>Calculation</b> — base = 4m, height = F(4) = 20×4 = 80N; Area = ½×4×80 = 160 J</div>
-  <div class="step"><b>Check</b> — General formula W=½kx² આપે છે ½×20×16=160 J ✓ (matches — Part 5 માં આ જ formula spring PE તરીકે ફરી મળશે)</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — k = 20 N/m, spring ને x=0 થી x=4m સુધી ખેંચ્યું</div>
+<div class="step"><b>Need</b> — કરેલું work</div>
+<div class="step"><b>Method</b> — F-x ગ્રાફ ત્રિકોણ છે (F=kx linear), area = ½ base × height</div>
+<div class="step"><b>Calculation</b> — base = 4m, height = F(4) = 20×4 = 80N; Area = ½×4×80 = 160 J</div>
+<div class="step"><b>Check</b> — General formula W=½kx² આપે છે ½×20×16=160 J ✓ (matches — Part 5 માં આ જ formula spring PE તરીકે ફરી મળશે)</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Spring ના work ને W=Fx (F ને constant ધારીને, છેલ્લી value F=80N વાપરીને) ગણવું — ખોટું, કારણ કે F શરૂઆતમાં 0 હતું. Variable force માટે હંમેશા area (કે ½kx² જેવું integral formula) જ વાપરો, છેલ્લી value × distance નહીં.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   k = 50 N/m ની spring ને x=0 થી x=2m ખેંચતા કેટલું work થશે? (F-x ગ્રાફનો area વિચારો)
 </div>
-
 <div class="next-line">→ <b>Next:</b> Work object પર થાય ત્યારે object ની motion ને શું અસર થાય — Work-Energy theorem, Part 3.</div>
 </div>
-
 <!-- ============ PART 3 ============ -->
 <div class="part" id="p3">
 <h2><span class="num">03</span>Work-Energy theorem</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું સમજી શકીશ કે net work object ની kinetic energy માં કેમ સીધું ફેરવાય છે — અને એ theorem ને apply કરી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   આ theorem Newton ના laws અને energy concept વચ્ચેનો સેતુ (bridge) છે — kinematics ના પ્રશ્નો force/acceleration વગર, ફક્ત energy થી ઉકેલવાનો shortcut આપે છે.
 </div>
-
 <h3>Derivation — Newton's second law પરથી</h3>
 <p>Object પર net force F (constant ધારો), displacement d દરમિયાન લાગે છે. Kinematics નું ત્રીજું equation: v² = u² + 2as, જ્યાં a = F/m (Newton's second law).</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 240" role="img"><title>Work-Energy theorem નું schematic</title><desc>Object initial speed u સાથે શરૂ થાય છે, net force F displacement d સુધી લાગે છે, final speed v વધે છે</desc>
-<circle cx="140" cy="140" r="22" fill="var(--surface-2)" stroke="var(--ink-3)" stroke-width="1.5"/>
-<text class="ts" x="140" y="145" text-anchor="middle">m</text>
-<line x1="80" y1="100" x2="140" y2="100" stroke="var(--check)" stroke-width="2"/>
-<polygon points="140,100 130,96 130,104" fill="var(--check)"/>
-<text class="th" x="60" y="90" fill="var(--check)">u</text>
-
-<line x1="140" y1="140" x2="480" y2="140" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="4,3"/>
-<text class="ts" x="290" y="160" text-anchor="middle">d</text>
-<line x1="200" y1="180" x2="280" y2="180" stroke="var(--exam)" stroke-width="2.5"/>
-<polygon points="280,180 270,175 270,185" fill="var(--exam)"/>
-<text class="th" x="240" y="200" fill="var(--exam)">F (net force)</text>
-
-<circle cx="480" cy="140" r="26" fill="var(--formula-bg)" stroke="var(--formula)" stroke-width="1.5"/>
-<text class="ts" x="480" y="145" text-anchor="middle">m</text>
-<line x1="520" y1="90" x2="600" y2="90" stroke="var(--formula)" stroke-width="2.5"/>
-<polygon points="600,90 590,86 590,94" fill="var(--formula)"/>
-<text class="th" x="555" y="78" fill="var(--formula)">v (v &gt; u)</text>
-
+<svg role="img" viewbox="0 0 680 240"><title>Work-Energy theorem નું schematic</title><desc>Object initial speed u સાથે શરૂ થાય છે, net force F displacement d સુધી લાગે છે, final speed v વધે છે</desc>
+<circle cx="140" cy="140" fill="var(--surface-2)" r="22" stroke="var(--ink-3)" stroke-width="1.5"></circle>
+<text class="ts" text-anchor="middle" x="140" y="145">m</text>
+<line stroke="var(--check)" stroke-width="2" x1="80" x2="140" y1="100" y2="100"></line>
+<polygon fill="var(--check)" points="140,100 130,96 130,104"></polygon>
+<text class="th" fill="var(--check)" x="60" y="90">u</text>
+<line stroke="var(--ink-3)" stroke-dasharray="4,3" stroke-width="1" x1="140" x2="480" y1="140" y2="140"></line>
+<text class="ts" text-anchor="middle" x="290" y="160">d</text>
+<line stroke="var(--exam)" stroke-width="2.5" x1="200" x2="280" y1="180" y2="180"></line>
+<polygon fill="var(--exam)" points="280,180 270,175 270,185"></polygon>
+<text class="th" fill="var(--exam)" x="240" y="200">F (net force)</text>
+<circle cx="480" cy="140" fill="var(--formula-bg)" r="26" stroke="var(--formula)" stroke-width="1.5"></circle>
+<text class="ts" text-anchor="middle" x="480" y="145">m</text>
+<line stroke="var(--formula)" stroke-width="2.5" x1="520" x2="600" y1="90" y2="90"></line>
+<polygon fill="var(--formula)" points="600,90 590,86 590,94"></polygon>
+<text class="th" fill="var(--formula)" x="555" y="78">v (v &gt; u)</text>
 <text class="ts" x="140" y="200">start</text>
 <text class="ts" x="470" y="200">end</text>
 </svg>
 <div class="diagram-cap">Net force F, displacement d સુધી લાગે — speed u થી v સુધી વધે, net work = ΔKE</div>
 </div>
-
 <p>rearrange: F = m(v²−u²)/2d, અને W = F·d તેથી:</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">W<sub>net</sub> = ½mv² − ½mu² = ΔKE</div>
-  <div class="meaning">Net (બધી forces ભેગી કરેલું) work = kinetic energy માં ફેરફાર. કોઈપણ force pattern (constant/variable) માટે સાચું.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">W<sub>net</sub> = ½mv² − ½mu² = ΔKE</div>
+<div class="meaning">Net (બધી forces ભેગી કરેલું) work = kinetic energy માં ફેરફાર. કોઈપણ force pattern (constant/variable) માટે સાચું.</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand</span>
+<span class="label">must understand</span>
   "Net work" એટલે બધી forces (gravity, friction, applied — બધાં) નું ભેગું work — એક force નું નહીં. જો કોઈ એક force નું જ work પૂછ્યું હોય તો theorem સીધું લાગુ ન પડે, ફક્ત net force/net work માટે આ theorem સાચું.
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — m = 2 kg, u = 3 m/s, net force કરેલું work = 25 J</div>
-  <div class="step"><b>Need</b> — final speed v</div>
-  <div class="step"><b>Method</b> — W = ½mv² − ½mu²</div>
-  <div class="step"><b>Calculation</b> — 25 = ½(2)v² − ½(2)(9) = v² − 9 ⟹ v² = 34 ⟹ v ≈ 5.83 m/s</div>
-  <div class="step"><b>Check</b> — v &gt; u કારણ કે work positive હતું (energy વધી) ✓</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — m = 2 kg, u = 3 m/s, net force કરેલું work = 25 J</div>
+<div class="step"><b>Need</b> — final speed v</div>
+<div class="step"><b>Method</b> — W = ½mv² − ½mu²</div>
+<div class="step"><b>Calculation</b> — 25 = ½(2)v² − ½(2)(9) = v² − 9 ⟹ v² = 34 ⟹ v ≈ 5.83 m/s</div>
+<div class="step"><b>Check</b> — v &gt; u કારણ કે work positive હતું (energy વધી) ✓</div>
 </div>
-
 <div class="exam-box box">
-  <span class="label">exam probability — high</span>
+<span class="label">exam probability — high</span>
   Work-energy theorem numerical problems (ખાસ કરીને friction સાથે, ઢોળાવ પર) દરેક paper માં આવે છે — kinematics equations ને avoid કરવાનો shortcut તરીકે વાપરો.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   m = 1 kg block, u = 4 m/s, friction −6 J work કરે તો final speed?
 </div>
-
 <div class="next-line">→ <b>Next:</b> ΔKE ની વાત આવી — KE પોતે શું છે, ક્યાંથી formula આવ્યું — Part 4.</div>
 </div>
-
 <!-- ============ PART 4 ============ -->
 <div class="part" id="p4">
 <h2><span class="num">04</span>Kinetic energy</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   KE = ½mv² ક્યાંથી આવ્યું (ફક્ત formula નહીં) અને એ v² સાથે કેમ વધે (linear નહીં) એ સમજાશે.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Kinetic energy એ "ગતિ ને લીધે object પાસે રહેલી energy" — motion involve થતાં દરેક problem (car ની braking distance, ધડાકા ની ઊર્જા, collision) માં આ સીધું વપરાય છે.
 </div>
-
 <h3>વ્યાખ્યા</h3>
 <p>Work-Energy theorem (Part 3) એ જ kinetic energy ની વ્યાખ્યા આપે છે — object ને rest (u=0) થી speed v સુધી લાવવા જોઈતું કુલ work:</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">KE = ½ m v²</div>
-  <div class="meaning">m = mass (kg), v = speed (m/s), KE માં joule (J) unit</div>
+<span class="label">formula — must memorize</span>
+<div class="f">KE = ½ m v²</div>
+<div class="meaning">m = mass (kg), v = speed (m/s), KE માં joule (J) unit</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>KE = ½mv² નો ગ્રાફ — v² સાથે non-linear વધારો</title><desc>m=2kg માટે KE=v² નો ગ્રાફ, speed બમણું થતા KE ચાર ગણું થાય છે તે દર્શાવતો parabola, actual computed points પરથી બનાવેલો</desc>
-<line x1="80" y1="260" x2="600" y2="260" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="80" y1="260" x2="80" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 300"><title>KE = ½mv² નો ગ્રાફ — v² સાથે non-linear વધારો</title><desc>m=2kg માટે KE=v² નો ગ્રાફ, speed બમણું થતા KE ચાર ગણું થાય છે તે દર્શાવતો parabola, actual computed points પરથી બનાવેલો</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="600" y1="260" y2="260"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="80" y1="260" y2="40"></line>
 <text class="ts" x="580" y="278">v (m/s)</text>
 <text class="ts" x="30" y="50">KE (J)</text>
 <text class="ts" x="226" y="276">1</text>
 <text class="ts" x="376" y="276">2</text>
 <text class="ts" x="526" y="276">3</text>
-
-<polyline points="80,260 155,255.5 230,242 305,219.5 380,188 455,147.5 530,98" fill="none" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="230" cy="242" r="3.5" fill="var(--check)"/>
-<text class="ts" x="238" y="238" fill="var(--check)">v=1, KE=1J</text>
-<circle cx="380" cy="188" r="3.5" fill="var(--exam)"/>
-<text class="ts" x="388" y="184" fill="var(--exam)">v=2, KE=4J</text>
-<circle cx="530" cy="98" r="3.5" fill="var(--accent)"/>
-<text class="ts" x="440" y="95" fill="var(--accent)">v=3, KE=9J</text>
-
+<polyline fill="none" points="80,260 155,255.5 230,242 305,219.5 380,188 455,147.5 530,98" stroke="var(--formula)" stroke-width="2.5"></polyline>
+<circle cx="230" cy="242" fill="var(--check)" r="3.5"></circle>
+<text class="ts" fill="var(--check)" x="238" y="238">v=1, KE=1J</text>
+<circle cx="380" cy="188" fill="var(--exam)" r="3.5"></circle>
+<text class="ts" fill="var(--exam)" x="388" y="184">v=2, KE=4J</text>
+<circle cx="530" cy="98" fill="var(--accent)" r="3.5"></circle>
+<text class="ts" fill="var(--accent)" x="440" y="95">v=3, KE=9J</text>
 <text class="th" x="250" y="70">m = 2 kg — v બમણું → KE 4-ગણું</text>
 </svg>
 <div class="diagram-cap">KE = ½(2)v² = v² — v=1→1J, v=2→4J, v=3→9J: speed ડબલ થતાં KE ચાર ગણું (v² નો non-linear effect)</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — v² નો અર્થ</span>
+<span class="label">must understand — v² નો અર્થ</span>
   Speed બમણું (2×) કરવા engine એ 4× જેટલું work કરવું પડે (કારણ v²) — આ જ કારણે car ની speed ડબલ થતાં, brake લગાવવાની stopping distance ચાર ગણી (નહીં કે બમણી) થાય છે, કારણ કે friction ને એ 4× energy remove કરવી પડે.
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Car braking distance</b> — 40 km/h પર brake distance d હોય, તો 80 km/h (બમણી speed) પર brake distance ≈ 4d થાય — road safety rules આ જ કારણથી speed limit ને strict રાખે છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Car braking distance</b> — 40 km/h પર brake distance d હોય, તો 80 km/h (બમણી speed) પર brake distance ≈ 4d થાય — road safety rules આ જ કારણથી speed limit ને strict રાખે છે.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   KE ને v ના proportional (linear) ગણી લેવું — ખોટું. KE ∝ v², proportional to v નહીં. Speed ડબલ = KE 4-ગણું, ત્રણ ગણું = 9-ગણું.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   m=4kg, v=5m/s object ની KE કેટલી? Speed 10 m/s થાય તો KE કેટલા ગણું વધશે?
 </div>
-
 <div class="next-line">→ <b>Next:</b> KE એ motion ની energy હતી. હવે position/configuration ને લીધે મળતી energy — potential energy — Part 5.</div>
 </div>
-
 <!-- ============ PART 5 ============ -->
 <div class="part" id="p5">
 <h2><span class="num">05</span>Potential energy — gravitational, spring, conservative forces</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   Potential energy ક્યાંથી આવે છે (ફક્ત "સંગ્રહાયેલી energy" કહેવાને બદલે, why-mechanism સાથે), gravitational અને spring PE formulas, અને conservative vs non-conservative force નો ભેદ સમજાશે.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Energy conservation (Part 6) માટે PE જરૂરી concept છે. Spring PE JEE માં SHM chapter નો પાયો પણ છે.
 </div>
-
 <div class="submap">
-  <span>5a — PE ક્યાંથી define થાય</span>
-  <span>5b — Conservative vs non-conservative</span>
-  <span>5c — Gravitational PE</span>
-  <span>5d — Spring PE</span>
+<span>5a — PE ક્યાંથી define થાય</span>
+<span>5b — Conservative vs non-conservative</span>
+<span>5c — Gravitational PE</span>
+<span>5d — Spring PE</span>
 </div>
-
 <h3>5a. Potential energy ક્યાંથી આવે છે — mechanism</h3>
 <p>"Position ને લીધે energy" કહેવું પૂરતું નથી — ચોક્કસ mechanism: object ને કોઈ force ની વિરુદ્ધ (against) ધીમે ધીમે (કોઈ net KE gain વગર) ખસેડવા આપણે જે work કરવું પડે, એ work object ની <b>અંદર PE તરીકે store</b> થાય છે. પછી force free થવા દો તો એ જ store થયેલું work પાછું KE માં ફેરવાય છે.</p>
-
 <div class="concept-box box">
-  <span class="label">must understand</span>
+<span class="label">must understand</span>
   PE હંમેશા <b>force ની સામે</b> (against) કરેલા work બરાબર હોય છે. બોલ ને ઊંચકવો = gravity ની સામે work = ગુરુત્વાકર્ષણ PE. Spring ને ખેંચવી = spring ના restoring force ની સામે work = spring PE.
 </div>
-
 <h3>5b. Conservative vs non-conservative forces — path independence</h3>
 <p>Force ને <b>conservative</b> કહેવાય જો, A થી B સુધી object ને લઈ જવામાં થતું work ફક્ત A, B ના position પર આધારિત હોય — કયા <b>path</b> (રસ્તા) થી ગયા એના પર નહીં. Gravity, spring force — conservative છે. Friction — <b>non-conservative</b> છે, કારણ કે લાંબો રસ્તો લો તો વધારે heat (loss) થાય.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Conservative vs non-conservative force — path independence</title><desc>Gravity નું work A થી B બંને path પર સરખું છે (ફક્ત height diff પર આધારિત), પણ friction નું work લાંબા path પર વધારે છે</desc>
-<circle cx="130" cy="90" r="6" fill="var(--ink)"/>
+<svg role="img" viewbox="0 0 680 300"><title>Conservative vs non-conservative force — path independence</title><desc>Gravity નું work A થી B બંને path પર સરખું છે (ફક્ત height diff પર આધારિત), પણ friction નું work લાંબા path પર વધારે છે</desc>
+<circle cx="130" cy="90" fill="var(--ink)" r="6"></circle>
 <text class="th" x="105" y="72">A</text>
-<circle cx="480" cy="230" r="6" fill="var(--ink)"/>
+<circle cx="480" cy="230" fill="var(--ink)" r="6"></circle>
 <text class="th" x="490" y="250">B</text>
-
-<line x1="130" y1="90" x2="480" y2="230" stroke="var(--formula)" stroke-width="2.5"/>
-<text class="th" x="260" y="150" fill="var(--formula)">path 1 (straight)</text>
-
-<polyline points="130,90 260,240 480,230" fill="none" stroke="var(--exam)" stroke-width="2.5" stroke-dasharray="5,3"/>
-<text class="th" x="180" y="270" fill="var(--exam)">path 2 (લાંબો, વાંકોચૂકો)</text>
-
-<line x1="530" y1="60" x2="530" y2="280" stroke="var(--line)" stroke-width="1"/>
-<text class="th" x="555" y="90" fill="var(--formula)">Gravity (conservative)</text>
+<line stroke="var(--formula)" stroke-width="2.5" x1="130" x2="480" y1="90" y2="230"></line>
+<text class="th" fill="var(--formula)" x="260" y="150">path 1 (straight)</text>
+<polyline fill="none" points="130,90 260,240 480,230" stroke="var(--exam)" stroke-dasharray="5,3" stroke-width="2.5"></polyline>
+<text class="th" fill="var(--exam)" x="180" y="270">path 2 (લાંબો, વાંકોચૂકો)</text>
+<line stroke="var(--line)" stroke-width="1" x1="530" x2="530" y1="60" y2="280"></line>
+<text class="th" fill="var(--formula)" x="555" y="90">Gravity (conservative)</text>
 <text class="ts" x="555" y="112">W બંને path પર સરખું</text>
 <text class="ts" x="555" y="130">(ફક્ત height diff પર આધાર)</text>
-<text class="th" x="555" y="165" fill="var(--exam)">Friction (non-conservative)</text>
+<text class="th" fill="var(--exam)" x="555" y="165">Friction (non-conservative)</text>
 <text class="ts" x="555" y="187">path 2 લાંબો → વધારે heat</text>
 <text class="ts" x="555" y="205">loss → W વધારે negative</text>
 </svg>
 <div class="diagram-cap">Gravity: work path-independent (conservative). Friction: લાંબા path 2 પર વધારે negative work (non-conservative — path-dependent)</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — PE ફક્ત conservative force માટે જ define થાય</span>
+<span class="label">must understand — PE ફક્ત conservative force માટે જ define થાય</span>
   PE ને ફક્ત conservative force સાથે જોડી શકાય, કારણ કે path independent હોય તો જ "ચોક્કસ position એ ચોક્કસ PE" એમ define કરી શકાય. Friction જેવા non-conservative force ની કોઈ PE નથી હોતી — એનું work હંમેશા heat તરીકે ખોવાય (energy "loss" — હકીકતમાં heat માં રૂપાંતર, energy નાશ પામતી નથી).
 </div>
-
 <h3>5c. Gravitational potential energy</h3>
 <p>Object ને height h સુધી (ધીમેથી, constant velocity) ઊંચકવા, gravity (mg) ની સામે કરવું પડતું work:</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">U<sub>grav</sub> = mgh</div>
-  <div class="meaning">h = reference level (સામાન્ય રીતે ground) થી ઊંચાઈ. Reference level ની પસંદગી મનસ્વી (arbitrary) છે — ફક્ત ΔU જ physically meaningful.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">U<sub>grav</sub> = mgh</div>
+<div class="meaning">h = reference level (સામાન્ય રીતે ground) થી ઊંચાઈ. Reference level ની પસંદગી મનસ્વી (arbitrary) છે — ફક્ત ΔU જ physically meaningful.</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Gravitational PE — height સાથે linear વધારો</title><desc>m=2kg, g=10 માટે U=20h નો સીધો ગ્રાફ, h=0 થી h=5m સુધી U 0 થી 100J વધે છે</desc>
-<line x1="80" y1="260" x2="600" y2="260" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="80" y1="260" x2="80" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 300"><title>Gravitational PE — height સાથે linear વધારો</title><desc>m=2kg, g=10 માટે U=20h નો સીધો ગ્રાફ, h=0 થી h=5m સુધી U 0 થી 100J વધે છે</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="600" y1="260" y2="260"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="80" y1="260" y2="40"></line>
 <text class="ts" x="580" y="278">h (m)</text>
 <text class="ts" x="30" y="50">U (J)</text>
-<line x1="80" y1="260" x2="480" y2="100" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="480" cy="100" r="3.5" fill="var(--formula)"/>
+<line stroke="var(--formula)" stroke-width="2.5" x1="80" x2="480" y1="260" y2="100"></line>
+<circle cx="480" cy="100" fill="var(--formula)" r="3.5"></circle>
 <text class="ts" x="490" y="96">(5, 100)</text>
-<text class="th" x="200" y="150" fill="var(--formula)">U = mgh = 20h</text>
+<text class="th" fill="var(--formula)" x="200" y="150">U = mgh = 20h</text>
 <text class="ts" x="156" y="280">1</text><text class="ts" x="236" y="280">2</text><text class="ts" x="316" y="280">3</text><text class="ts" x="396" y="280">4</text>
 </svg>
 <div class="diagram-cap">m=2kg, g=10 m/s²: U ∝ h સીધી લીટીમાં વધે છે (linear, KE ની જેમ parabolic નહીં)</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Hydroelectric dam</b> — પાણી ને ઊંચાઈ પર બંધ (dam) માં રોકવાથી gravitational PE store થાય, નીચે પડતી વખતે એ turbine ને ફેરવીને electricity બનાવે — mgh formula સીધું power-plant design માં વપરાય છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Hydroelectric dam</b> — પાણી ને ઊંચાઈ પર બંધ (dam) માં રોકવાથી gravitational PE store થાય, નીચે પડતી વખતે એ turbine ને ફેરવીને electricity બનાવે — mgh formula સીધું power-plant design માં વપરાય છે.</div>
 </div>
-
 <h3>5d. Spring potential energy</h3>
 <p>Part 2 માં spring ને ખેંચવાનું work area તરીકે કાઢ્યું હતું (½kx²). એ જ work spring ની અંદર PE તરીકે store થાય છે:</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">U<sub>spring</sub> = ½ k x²</div>
-  <div class="meaning">x = natural length થી ખેંચાણ/દબાણ (compression). Sign (stretch કે compress) મહત્વનું નથી — x² હંમેશા positive.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">U<sub>spring</sub> = ½ k x²</div>
+<div class="meaning">x = natural length થી ખેંચાણ/દબાણ (compression). Sign (stretch કે compress) મહત્વનું નથી — x² હંમેશા positive.</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Spring PE — x² parabola, actual computed points</title><desc>k=20N/m, U=10x² નો parabola, x=-3 થી x=3 સુધીના sample points પરથી બનાવેલો, x=0 એ vertex</desc>
-<line x1="60" y1="260" x2="580" y2="260" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="300" y1="260" x2="300" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 300"><title>Spring PE — x² parabola, actual computed points</title><desc>k=20N/m, U=10x² નો parabola, x=-3 થી x=3 સુધીના sample points પરથી બનાવેલો, x=0 એ vertex</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="60" x2="580" y1="260" y2="260"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="300" x2="300" y1="260" y2="40"></line>
 <text class="ts" x="560" y="278">x (m)</text>
 <text class="ts" x="310" y="50">U (J)</text>
-
-<polyline points="120,80 180,180 240,240 300,260 360,240 420,180 480,80" fill="none" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="300" cy="260" r="4" fill="var(--exam)"/>
+<polyline fill="none" points="120,80 180,180 240,240 300,260 360,240 420,180 480,80" stroke="var(--formula)" stroke-width="2.5"></polyline>
+<circle cx="300" cy="260" fill="var(--exam)" r="4"></circle>
 <text class="ts" x="270" y="278">x=0, U=0 (natural length)</text>
-<circle cx="120" cy="80" r="3.5" fill="var(--check)"/>
+<circle cx="120" cy="80" fill="var(--check)" r="3.5"></circle>
 <text class="ts" x="70" y="72">(-3, 90J)</text>
-<circle cx="480" cy="80" r="3.5" fill="var(--check)"/>
+<circle cx="480" cy="80" fill="var(--check)" r="3.5"></circle>
 <text class="ts" x="470" y="72">(3, 90J)</text>
-
-<text class="th" x="355" y="120" fill="var(--formula)">U = ½kx² = 10x²</text>
-<text class="ts" x="180" y="270">-2</text><text class="ts" x="240" y="270">-1</text><text class="ts" x="360" y="270">1</text><text class="ts" x="420" y="270">2</text>
+<text class="th" fill="var(--formula)" x="355" y="120">U = ½kx² = 10x²</text>
+<text class="ts" x="180" y="270">-2</text><text class="ts" x="240" y="270">-1</text><text class="ts" x="360" y="263.3">1</text><text class="ts" x="420" y="270">2</text>
 </svg>
 <div class="diagram-cap">k=20 N/m: સ્ટ્રેચ (x&gt;0) અને compress (x&lt;0) બંને દિશામાં PE સરખું જ વધે — parabola symmetric</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Archery bow, toy launcher, vehicle suspension</b> — બધામાં spring/elastic material ને ખેંચીને/દબાવીને ½kx² જેટલી PE store થાય, છોડતા એ KE માં ફેરવાય (arrow ને ઝડપ આપે).</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Archery bow, toy launcher, vehicle suspension</b> — બધામાં spring/elastic material ને ખેંચીને/દબાવીને ½kx² જેટલી PE store થાય, છોડતા એ KE માં ફેરવાય (arrow ને ઝડપ આપે).</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Spring ને x=x₁ થી x=x₂ સુધી (બંને non-zero) ખેંચો તો work ને ½k(x₂−x₁)² ગણી લેવું ખોટું — સાચું: ½kx₂² − ½kx₁² (PE ના તફાવત તરીકે, differences of squares નહીં square of difference).
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   k=100 N/m spring ને x=0.2m compress કરી છે. Spring PE કેટલી?
 </div>
-
 <h3>5e. JEE extension — PE-curve પરથી equilibrium separation <span class="badge">board syllabus બહાર</span></h3>
-<p>બે પરમાણુ (atoms/molecules) વચ્ચેની intermolecular potential energy ઘણી વાર U(r) = &minus;A/r&#8319; + B/r&#7472; (દા.ત. Lennard-Jones-પ્રકાર, r=બે પરમાણુ વચ્ચેનું અંતર) સ્વરૂપે અપાય છે. <b>Equilibrium separation</b> (જ્યાં net force વચ્ચે zero છે, molecule "આરામથી" રહે છે) એ PE ના <b>minimum</b> બિંદુ પર છે — force અને PE નો સંબંધ F=&minus;dU/dr પરથી, equilibrium ⟺ dU/dr=0.</p>
-
+<p>બે પરમાણુ (atoms/molecules) વચ્ચેની intermolecular potential energy ઘણી વાર U(r) = −A/rⁿ + B/rᴰ (દા.ત. Lennard-Jones-પ્રકાર, r=બે પરમાણુ વચ્ચેનું અંતર) સ્વરૂપે અપાય છે. <b>Equilibrium separation</b> (જ્યાં net force વચ્ચે zero છે, molecule "આરામથી" રહે છે) એ PE ના <b>minimum</b> બિંદુ પર છે — force અને PE નો સંબંધ F=−dU/dr પરથી, equilibrium ⟺ dU/dr=0.</p>
 <div class="formula-box">
-  <span class="label">formula — JEE technique</span>
-  <div class="f">U(r) = &minus;A/r&#8319; + B/r&#7472; &nbsp;⟹&nbsp; equilibrium: dU/dr=0</div>
-  <div class="meaning">r ઉકેલીને equilibrium separation મળે છે, પછી એ r ને પાછું U માં મૂકીને minimum PE (U_min, હંમેશા negative — "બંધન ઊર્જા"/binding energy) મળે છે. ટૂંકા અંતરે (r નાનો) U ધન અને ઝડપથી વધે (repulsion પ્રભાવી), મોટા અંતરે U ધીમેથી 0 તરફ જાય (attraction નબળું પડે).</div>
+<span class="label">formula — JEE technique</span>
+<div class="f">U(r) = −A/rⁿ + B/rᴰ  ⟹  equilibrium: dU/dr=0</div>
+<div class="meaning">r ઉકેલીને equilibrium separation મળે છે, પછી એ r ને પાછું U માં મૂકીને minimum PE (U_min, હંમેશા negative — "બંધન ઊર્જા"/binding energy) મળે છે. ટૂંકા અંતરે (r નાનો) U ધન અને ઝડપથી વધે (repulsion પ્રભાવી), મોટા અંતરે U ધીમેથી 0 તરફ જાય (attraction નબળું પડે).</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Intermolecular PE curve — U=&minus;A/r&#8310;+B/r&sup1;&sup2; ના computed points પરથી</title><desc>A=B=1 ધારીને U(r) ના real ગણેલા points — r ઘટે તેમ U તીવ્રપણે ધન તરફ વધે (repulsion), r વધે તેમ U શૂન્ય તરફ જાય, વચ્ચે એક minimum (equilibrium r=2^(1/6)≈1.122)</desc>
-<line x1="60" y1="230" x2="620" y2="230" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="60" y1="230" x2="60" y2="40" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 300"><title>Intermolecular PE curve — U=−A/r⁶+B/r¹² ના computed points પરથી</title><desc>A=B=1 ધારીને U(r) ના real ગણેલા points — r ઘટે તેમ U તીવ્રપણે ધન તરફ વધે (repulsion), r વધે તેમ U શૂન્ય તરફ જાય, વચ્ચે એક minimum (equilibrium r=2^(1/6)≈1.122)</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="60" x2="620" y1="230" y2="230"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="60" x2="60" y1="230" y2="40"></line>
 <text class="ts" x="600" y="250">r</text>
 <text class="ts" x="30" y="50">U(r)</text>
-<line x1="60" y1="140" x2="620" y2="140" stroke="var(--line)" stroke-width="1" stroke-dasharray="3,3"/>
+<line stroke="var(--line)" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="620" y1="140" y2="140"></line>
 <text class="ts" x="560" y="132">U=0</text>
-<polyline points="90,27 106,103 122,140 142,160 162,166 181,166 202,164 241,157 281,152 361,146 441,143 520,142 600,141" fill="none" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="171" cy="166" r="4" fill="var(--exam)"/>
-<text class="th" x="180" y="195" fill="var(--exam)">equilibrium r=(2B/A)^(1/6)</text>
-<text class="ts" x="180" y="211">U_min = &minus;A&sup2;/4B</text>
+<polyline fill="none" points="90,27 106,103 122,140 142,160 162,166 181,166 202,164 241,157 281,152 361,146 441,143 520,142 600,141" stroke="var(--formula)" stroke-width="2.5"></polyline>
+<circle cx="171" cy="166" fill="var(--exam)" r="4"></circle>
+<text class="th" fill="var(--exam)" x="180" y="195">equilibrium r=(2B/A)^(1/6)</text>
+<text class="ts" x="180" y="211">U_min = −A²/4B</text>
 <text class="ts" x="90" y="60">repulsion પ્રભાવી (r નાનો)</text>
 <text class="ts" x="440" y="130">attraction ધીમે 0 તરફ</text>
 </svg>
 <div class="diagram-cap">A=B=1 ધારીને real ગણેલા (r,U) points — curve નું minimum જ equilibrium separation, U_min ઋણ (bound state) — JEE માં આ curve ના shape પરથી conceptual પ્રશ્નો પણ પુછાય છે</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Molecular bonding</b> — બે અણુ (દા.ત. વાયુના બે molecule, અથવા સ્ફટિક/crystal ના પડોશી અણુ) વચ્ચેનું અંતર કુદરતી રીતે આ જ equilibrium r પર સ્થિર થાય છે — વધારે નજીક લાવો તો repulsion પાછળ ધકેલે, વધારે દૂર કરો તો attraction પાછું ખેંચે. Solid ની "કુદરતી density" આ જ સંતુલનનું પરિણામ છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Molecular bonding</b> — બે અણુ (દા.ત. વાયુના બે molecule, અથવા સ્ફટિક/crystal ના પડોશી અણુ) વચ્ચેનું અંતર કુદરતી રીતે આ જ equilibrium r પર સ્થિર થાય છે — વધારે નજીક લાવો તો repulsion પાછળ ધકેલે, વધારે દૂર કરો તો attraction પાછું ખેંચે. Solid ની "કુદરતી density" આ જ સંતુલનનું પરિણામ છે.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Equilibrium ને "U=0 જ્યાં થાય ત્યાં" સાથે ગૂંચવવું — equilibrium એટલે <b>force શૂન્ય (dU/dr=0)</b>, U પોતે ત્યાં zero નથી હોતું (સામાન્ય રીતે U_min ઋણ જ હોય છે).
 </div>
-
 <div class="next-line">→ <b>Next:</b> KE અને PE બંને મળ્યા — હવે એમનો સરવાળો (mechanical energy) conservative system માં constant કેમ રહે છે — Part 6.</div>
 </div>
-
 <!-- ============ PART 6 ============ -->
 <div class="part" id="p6">
 <h2><span class="num">06</span>Conservation of mechanical energy</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   KE+PE = constant (જ્યારે ફક્ત conservative forces કામ કરતા હોય) ને derive કરી શકીશ અને free-fall/pendulum જેવા problems માં apply કરી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   આ chapter નું સૌથી વધારે વપરાતું tool — વગર kinematics equations ના, direct energy balance થી speed/height કાઢી શકાય છે.
 </div>
-
 <h3>Derivation</h3>
 <p>Work-Energy theorem (Part 3): W<sub>net</sub> = ΔKE. જો ફક્ત conservative force (દા.ત. gravity) જ કામ કરે, તો એ force નું work = −ΔPE (PE ની વ્યાખ્યા પ્રમાણે, force ની સામે કરેલું work PE store કરે, force પોતે કરે તો PE ઘટે — તેથી negative sign). તેથી:</p>
-<p class="mono" style="text-align:center;font-size:16px;color:var(--formula)">ΔKE = −ΔPE &nbsp;⟹&nbsp; ΔKE + ΔPE = 0</p>
-
+<p class="mono" style="text-align:center;font-size:16px;color:var(--formula)">ΔKE = −ΔPE  ⟹  ΔKE + ΔPE = 0</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">KE + PE = constant (mechanical energy E)</div>
-  <div class="meaning">શરત: ફક્ત conservative forces જ કામ કરતા હોય (friction/air-resistance ન હોય)</div>
+<span class="label">formula — must memorize</span>
+<div class="f">KE + PE = constant (mechanical energy E)</div>
+<div class="meaning">શરત: ફક્ત conservative forces જ કામ કરતા હોય (friction/air-resistance ન હોય)</div>
 </div>
-
 <h3>ઉદાહરણ — Free fall, energy transfer</h3>
 <p>m=1 kg object h=5m ઊંચાઈથી પડે છે (g=10 m/s²). શરૂઆતમાં બધી energy PE, છેક નીચે બધી KE — વચ્ચે બંને present.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 320" role="img"><title>Free fall માં mechanical energy નું PE થી KE માં transfer — bar chart</title><desc>ત્રણ ઊંચાઈ (h=5,2.5,0) પર PE અને KE ના bar, કુલ ઊંચાઈ constant 50J રહે છે તે દર્શાવતો diagram</desc>
-<line x1="60" y1="260" x2="640" y2="260" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="60" y1="160" x2="640" y2="160" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="4,3"/>
+<svg role="img" viewbox="0 0 680 320"><title>Free fall માં mechanical energy નું PE થી KE માં transfer — bar chart</title><desc>ત્રણ ઊંચાઈ (h=5,2.5,0) પર PE અને KE ના bar, કુલ ઊંચાઈ constant 50J રહે છે તે દર્શાવતો diagram</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="60" x2="640" y1="260" y2="260"></line>
+<line stroke="var(--ink-3)" stroke-dasharray="4,3" stroke-width="1" x1="60" x2="640" y1="160" y2="160"></line>
 <text class="ts" x="500" y="152">Total E = 50 J (constant)</text>
-
-<rect x="120" y="160" width="70" height="100" fill="var(--formula-bg)" stroke="var(--formula)"/>
-<text class="ts" x="155" y="150" text-anchor="middle">PE=50J</text>
-<text class="ts" x="155" y="280" text-anchor="middle">h=5m (top)</text>
-<text class="ts" x="155" y="296" text-anchor="middle">KE=0</text>
-
-<rect x="305" y="210" width="70" height="50" fill="var(--formula-bg)" stroke="var(--formula)"/>
-<rect x="305" y="160" width="70" height="50" fill="var(--exam-bg)" stroke="var(--exam)"/>
-<text class="ts" x="340" y="150" text-anchor="middle">KE=25 · PE=25</text>
-<text class="ts" x="340" y="280" text-anchor="middle">h=2.5m (mid)</text>
-
-<rect x="490" y="160" width="70" height="100" fill="var(--exam-bg)" stroke="var(--exam)"/>
-<text class="ts" x="525" y="150" text-anchor="middle">KE=50J</text>
-<text class="ts" x="525" y="280" text-anchor="middle">h=0 (bottom)</text>
-<text class="ts" x="525" y="296" text-anchor="middle">PE=0</text>
-
-<rect x="600" y="60" width="14" height="14" fill="var(--formula-bg)" stroke="var(--formula)"/>
+<rect fill="var(--formula-bg)" height="100" stroke="var(--formula)" width="70" x="120" y="160"></rect>
+<text class="ts" text-anchor="middle" x="155" y="150">PE=50J</text>
+<text class="ts" text-anchor="middle" x="155" y="280">h=5m (top)</text>
+<text class="ts" text-anchor="middle" x="155" y="296">KE=0</text>
+<rect fill="var(--formula-bg)" height="50" stroke="var(--formula)" width="70" x="305" y="210"></rect>
+<rect fill="var(--exam-bg)" height="50" stroke="var(--exam)" width="70" x="305" y="160"></rect>
+<text class="ts" text-anchor="middle" x="340" y="150">KE=25 · PE=25</text>
+<text class="ts" text-anchor="middle" x="340" y="280">h=2.5m (mid)</text>
+<rect fill="var(--exam-bg)" height="100" stroke="var(--exam)" width="70" x="490" y="160"></rect>
+<text class="ts" text-anchor="middle" x="525" y="169.3">KE=50J</text>
+<text class="ts" text-anchor="middle" x="525" y="280">h=0 (bottom)</text>
+<text class="ts" text-anchor="middle" x="525" y="296">PE=0</text>
+<rect fill="var(--formula-bg)" height="14" stroke="var(--formula)" width="14" x="600" y="60"></rect>
 <text class="ts" x="618" y="72">PE</text>
-<rect x="600" y="82" width="14" height="14" fill="var(--exam-bg)" stroke="var(--exam)"/>
+<rect fill="var(--exam-bg)" height="14" stroke="var(--exam)" width="14" x="600" y="82"></rect>
 <text class="ts" x="618" y="94">KE</text>
 </svg>
 <div class="diagram-cap">m=1kg, h=5m: ટોચ પર PE=mgh=50J,KE=0; મધ્યમાં (h=2.5m) KE=PE=25J; તળિયે PE=0, KE=50J — સરવાળો હંમેશા 50J</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — m=1kg, h=5m, g=10 m/s², free fall</div>
-  <div class="step"><b>Need</b> — તળિયે પહોંચતા speed</div>
-  <div class="step"><b>Method</b> — Energy conservation: mgh (top) = ½mv² (bottom)</div>
-  <div class="step"><b>Calculation</b> — 1×10×5 = ½×1×v² ⟹ v² = 100 ⟹ v = 10 m/s</div>
-  <div class="step"><b>Check</b> — kinematics v²=u²+2gh = 0+2(10)(5)=100 ✓ same answer, energy method ઝડપી</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — m=1kg, h=5m, g=10 m/s², free fall</div>
+<div class="step"><b>Need</b> — તળિયે પહોંચતા speed</div>
+<div class="step"><b>Method</b> — Energy conservation: mgh (top) = ½mv² (bottom)</div>
+<div class="step"><b>Calculation</b> — 1×10×5 = ½×1×v² ⟹ v² = 100 ⟹ v = 10 m/s</div>
+<div class="step"><b>Check</b> — kinematics v²=u²+2gh = 0+2(10)(5)=100 ✓ same answer, energy method ઝડપી</div>
 </div>
-
 <div class="why-box box">
-  <span class="label">real-world example</span>
+<span class="label">real-world example</span>
   Roller coaster ની ટોચ પર બધી energy PE, નીચે loop માં બધી KE — engineers આ જ principle થી loop ની minimum height design કરે છે (Part 8 માં circular motion સાથે જોડાણ).
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Friction/air-resistance હોય ત્યાં પણ KE+PE=constant વાપરવું ખોટું — non-conservative force હોય તો કેટલીક mechanical energy heat માં જાય, W<sub>friction</sub> = ΔE (energy loss) તરીકે અલગ ઉમેરવું પડે: KE₁+PE₁ = KE₂+PE₂+|W<sub>friction</sub>|.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   m=2kg pendulum bob, સૌથી ઊંચા બિંદુએ (h=0.2m ground થી ઉપર lowest point ના સંદર્ભમાં) rest માં છે. Lowest point પર speed કેટલી? (g=10)
 </div>
-
 <div class="next-line">→ <b>Next:</b> Work/energy કેટલી ઝડપથી transfer થાય છે — Power, Part 7.</div>
 </div>
-
 <!-- ============ PART 7 ============ -->
 <div class="part" id="p7">
 <h2><span class="num">07</span>Power — average and instantaneous</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   Power ના બે formulas (P=W/t અને P=Fv) ને derive/apply કરી શકીશ અને ક્યારે કયું વાપરવું તે નક્કી કરી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Engine rating (horsepower, kW), electricity bill — બધું power પર આધારિત. Same work અલગ-અલગ time માં થાય તો power જુદી.
 </div>
-
 <div class="submap">
-  <span>7a — Average power</span>
-  <span>7b — Instantaneous power = Fv</span>
+<span>7a — Average power</span>
+<span>7b — Instantaneous power = Fv</span>
 </div>
-
 <h3>7a. Average power</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">P<sub>avg</sub> = W / t</div>
-  <div class="meaning">Unit: watt (W) = joule/second. 1 horsepower = 746 W (JEE માં ક્યારેક વપરાય)</div>
+<span class="label">formula — must memorize</span>
+<div class="f">P<sub>avg</sub> = W / t</div>
+<div class="meaning">Unit: watt (W) = joule/second. 1 horsepower = 746 W (JEE માં ક્યારેક વપરાય)</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 260" role="img"><title>Work vs time ગ્રાફ — slope = power</title><desc>સીધી લીટી W=Pt, slope power ને દર્શાવે છે, P=10W ના constant power ઉદાહરણ સાથે</desc>
-<line x1="80" y1="220" x2="580" y2="220" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="80" y1="220" x2="80" y2="60" stroke="var(--ink-3)" stroke-width="1"/>
+<svg role="img" viewbox="0 0 680 260"><title>Work vs time ગ્રાફ — slope = power</title><desc>સીધી લીટી W=Pt, slope power ને દર્શાવે છે, P=10W ના constant power ઉદાહરણ સાથે</desc>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="580" y1="220" y2="220"></line>
+<line stroke="var(--ink-3)" stroke-width="1" x1="80" x2="80" y1="220" y2="60"></line>
 <text class="ts" x="560" y="238">t (s)</text>
 <text class="ts" x="30" y="70">W (J)</text>
-<line x1="80" y1="220" x2="480" y2="100" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="480" cy="100" r="3.5" fill="var(--formula)"/>
+<line stroke="var(--formula)" stroke-width="2.5" x1="80" x2="480" y1="220" y2="100"></line>
+<circle cx="480" cy="100" fill="var(--formula)" r="3.5"></circle>
 <text class="ts" x="490" y="96">(5s, 50J)</text>
-<text class="th" x="180" y="150" fill="var(--formula)">slope = ΔW/Δt = P = 10 W</text>
+<text class="th" fill="var(--formula)" x="180" y="150">slope = ΔW/Δt = P = 10 W</text>
 <text class="ts" x="156" y="238">1</text><text class="ts" x="236" y="238">2</text><text class="ts" x="316" y="238">3</text><text class="ts" x="396" y="238">4</text>
 </svg>
 <div class="diagram-cap">W-t ગ્રાફ ની ઢાળ (slope) = power. Constant power માટે ગ્રાફ સીધી લીટી, W=Pt (P=10W: t=1s→W=10J ... t=5s→W=50J)</div>
 </div>
-
 <h3>7b. Instantaneous power</h3>
 <p>Δt ને બહુ નાનું (limit) લેતાં, ΔW/Δt એ instantaneous power P બને છે. F·d = W હોવાથી, અને d/t = v:</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">P = <span class="vec">F</span> · <span class="vec">v</span> = Fv cosθ</div>
-  <div class="meaning">θ = force અને velocity વચ્ચેનો angle. F, v ની જ દિશામાં હોય તો P=Fv.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">P = <span class="vec">F</span> · <span class="vec">v</span> = Fv cosθ</div>
+<div class="meaning">θ = force અને velocity વચ્ચેનો angle. F, v ની જ દિશામાં હોય તો P=Fv.</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Car engine</b> — ઊંચી speed પર ચઢાણ ચઢવા, ઓછી speed કરતા વધારે power જોઈએ (P=Fv, ચઢાણ પર F પણ વધારે) — આ જ કારણે gear બદલીને engine ને યોગ્ય RPM પર રાખવામાં આવે છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Car engine</b> — ઊંચી speed પર ચઢાણ ચઢવા, ઓછી speed કરતા વધારે power જોઈએ (P=Fv, ચઢાણ પર F પણ વધારે) — આ જ કારણે gear બદલીને engine ને યોગ્ય RPM પર રાખવામાં આવે છે.</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — Motor 500 N બળ constant velocity 4 m/s (એ જ દિશામાં) સાથે લગાડે છે</div>
-  <div class="step"><b>Need</b> — power</div>
-  <div class="step"><b>Method</b> — P = Fv (θ=0°)</div>
-  <div class="step"><b>Calculation</b> — P = 500×4 = 2000 W = 2 kW</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — Motor 500 N બળ constant velocity 4 m/s (એ જ દિશામાં) સાથે લગાડે છે</div>
+<div class="step"><b>Need</b> — power</div>
+<div class="step"><b>Method</b> — P = Fv (θ=0°)</div>
+<div class="step"><b>Calculation</b> — P = 500×4 = 2000 W = 2 kW</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Average power ને instantaneous power ની જગ્યાએ વાપરવી (કે ઊલટું) — જો speed/force સમય સાથે બદલાય તો P=Fv ફક્ત એ ક્ષણ ની power આપે, આખા motion ની average power માટે કુલ W/કુલ t જોઈએ.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   1000 W ના motor વડે 5000 J નું કામ કરવા કેટલો સમય લાગશે?
 </div>
-
-
 <!-- upd-2026-10-04:wep-intP -->
 <h3>JEE pattern — પાવર સમય સાથે બદલાય ત્યારે કાર્ય</h3>
-<div class="diagram"><svg viewBox="0 0 680 260" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="60.0" y1="224.0" x2="660.0" y2="224.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="666.0,224.0 660.0,226.7 660.0,221.3" fill="var(--ink-2)"/><line x1="60.0" y1="224.0" x2="60.0" y2="24.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="60.0,18.0 62.7,24.0 57.3,24.0" fill="var(--ink-2)"/><line x1="290.8" y1="221.0" x2="290.8" y2="227.0" stroke="var(--ink-2)" stroke-width="1"/><text x="290.8" y="238.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">1</text><line x1="521.5" y1="221.0" x2="521.5" y2="227.0" stroke="var(--ink-2)" stroke-width="1"/><text x="521.5" y="238.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">2</text><line x1="57.0" y1="195.4" x2="63.0" y2="195.4" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="198.9" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">3</text><line x1="57.0" y1="109.7" x2="63.0" y2="109.7" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="113.2" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">12</text><line x1="57.0" y1="33.5" x2="63.0" y2="33.5" stroke="var(--ink-2)" stroke-width="1"/><text x="54.0" y="37.0" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">20</text><text x="662.0" y="217.0" fill="var(--ink-2)" font-size="10" text-anchor="end" font-family="Source Sans 3, sans-serif" font-style="italic">t (s)</text><text x="66.0" y="28.0" fill="var(--ink-2)" font-size="10" text-anchor="start" font-family="Source Sans 3, sans-serif" font-style="italic">P (W)</text><polygon points="60.0,224.0 60.0,224.0 63.8,224.0 67.7,224.0 71.5,223.9 75.4,223.9 79.2,223.8 83.1,223.7 86.9,223.6 90.8,223.5 94.6,223.4 98.5,223.2 102.3,223.0 106.2,222.9 110.0,222.7 113.8,222.4 117.7,222.2 121.5,222.0 125.4,221.7 129.2,221.4 133.1,221.1 136.9,220.8 140.8,220.5 144.6,220.2 148.5,219.8 152.3,219.4 156.2,219.0 160.0,218.6 163.8,218.2 167.7,217.8 171.5,217.3 175.4,216.9 179.2,216.4 183.1,215.9 186.9,215.4 190.8,214.8 194.6,214.3 198.5,213.7 202.3,213.1 206.2,212.5 210.0,211.9 213.8,211.3 217.7,210.7 221.5,210.0 225.4,209.3 229.2,208.6 233.1,207.9 236.9,207.2 240.8,206.5 244.6,205.7 248.5,204.9 252.3,204.2 256.2,203.4 260.0,202.5 263.8,201.7 267.7,200.9 271.5,200.0 275.4,199.1 279.2,198.2 283.1,197.3 286.9,196.4 290.8,195.4 294.6,194.5 298.5,193.5 302.3,192.5 306.2,191.5 310.0,190.5 313.8,189.4 317.7,188.4 321.5,187.3 325.4,186.2 329.2,185.1 333.1,184.0 336.9,182.9 340.8,181.7 344.6,180.5 348.5,179.4 352.3,178.2 356.2,176.9 360.0,175.7 363.8,174.5 367.7,173.2 371.5,171.9 375.4,170.6 379.2,169.3 383.1,168.0 386.9,166.7 390.8,165.3 394.6,163.9 398.5,162.5 402.3,161.1 406.2,159.7 410.0,158.3 413.8,156.8 417.7,155.4 421.5,153.9 425.4,152.4 429.2,150.9 433.1,149.3 436.9,147.8 440.8,146.2 444.6,144.6 448.5,143.0 452.3,141.4 456.2,139.8 460.0,138.2 463.8,136.5 467.7,134.8 471.5,133.1 475.4,131.4 479.2,129.7 483.1,128.0 486.9,126.2 490.8,124.4 494.6,122.7 498.5,120.9 502.3,119.0 506.2,117.2 510.0,115.4 513.8,113.5 517.7,111.6 521.5,109.7 521.5,224.0" fill="var(--formula)" fill-opacity="0.22" stroke="none"/><polyline points="60.0,224.0 62.5,224.0 64.9,224.0 67.4,224.0 69.8,223.9 72.3,223.9 74.7,223.9 77.2,223.8 79.6,223.8 82.1,223.7 84.5,223.7 87.0,223.6 89.4,223.5 91.9,223.5 94.3,223.4 96.8,223.3 99.2,223.2 101.7,223.1 104.1,223.0 106.6,222.8 109.0,222.7 111.5,222.6 113.9,222.4 116.4,222.3 118.8,222.1 121.3,222.0 123.8,221.8 126.2,221.6 128.7,221.5 131.1,221.3 133.6,221.1 136.0,220.9 138.5,220.7 140.9,220.5 143.4,220.3 145.8,220.0 148.3,219.8 150.7,219.6 153.2,219.3 155.6,219.1 158.1,218.8 160.5,218.6 163.0,218.3 165.4,218.0 167.9,217.8 170.3,217.5 172.8,217.2 175.2,216.9 177.7,216.6 180.1,216.3 182.6,215.9 185.0,215.6 187.5,215.3 190.0,214.9 192.4,214.6 194.9,214.2 197.3,213.9 199.8,213.5 202.2,213.1 204.7,212.8 207.1,212.4 209.6,212.0 212.0,211.6 214.5,211.2 216.9,210.8 219.4,210.4 221.8,209.9 224.3,209.5 226.7,209.1 229.2,208.6 231.6,208.2 234.1,207.7 236.5,207.3 239.0,206.8 241.4,206.3 243.9,205.9 246.3,205.4 248.8,204.9 251.2,204.4 253.7,203.9 256.2,203.4 258.6,202.8 261.1,202.3 263.5,201.8 266.0,201.2 268.4,200.7 270.9,200.1 273.3,199.6 275.8,199.0 278.2,198.5 280.7,197.9 283.1,197.3 285.6,196.7 288.0,196.1 290.5,195.5 292.9,194.9 295.4,194.3 297.8,193.7 300.3,193.0 302.7,192.4 305.2,191.7 307.6,191.1 310.1,190.4 312.5,189.8 315.0,189.1 317.5,188.4 319.9,187.8 322.4,187.1 324.8,186.4 327.3,185.7 329.7,185.0 332.2,184.3 334.6,183.5 337.1,182.8 339.5,182.1 342.0,181.3 344.4,180.6 346.9,179.8 349.3,179.1 351.8,178.3 354.2,177.6 356.7,176.8 359.1,176.0 361.6,175.2 364.0,174.4 366.5,173.6 368.9,172.8 371.4,172.0 373.8,171.2 376.3,170.3 378.8,169.5 381.2,168.6 383.7,167.8 386.1,166.9 388.6,166.1 391.0,165.2 393.5,164.3 395.9,163.5 398.4,162.6 400.8,161.7 403.3,160.8 405.7,159.9 408.2,159.0 410.6,158.0 413.1,157.1 415.5,156.2 418.0,155.2 420.4,154.3 422.9,153.3 425.3,152.4 427.8,151.4 430.2,150.5 432.7,149.5 435.1,148.5 437.6,147.5 440.0,146.5 442.5,145.5 445.0,144.5 447.4,143.5 449.9,142.5 452.3,141.4 454.8,140.4 457.2,139.4 459.7,138.3 462.1,137.2 464.6,136.2 467.0,135.1 469.5,134.0 471.9,133.0 474.4,131.9 476.8,130.8 479.3,129.7 481.7,128.6 484.2,127.5 486.6,126.3 489.1,125.2 491.5,124.1 494.0,122.9 496.4,121.8 498.9,120.7 501.3,119.5 503.8,118.3 506.2,117.2 508.7,116.0 511.2,114.8 513.6,113.6 516.1,112.4 518.5,111.2 521.0,110.0 523.4,108.8 525.9,107.6 528.3,106.3 530.8,105.1 533.2,103.9 535.7,102.6 538.1,101.4 540.6,100.1 543.0,98.8 545.5,97.5 547.9,96.3 550.4,95.0 552.8,93.7 555.3,92.4 557.7,91.1 560.2,89.8 562.6,88.5 565.1,87.1 567.5,85.8 570.0,84.5 572.5,83.1 574.9,81.8 577.4,80.4 579.8,79.0 582.3,77.7 584.7,76.3 587.2,74.9 589.6,73.5 592.1,72.1 594.5,70.7 597.0,69.3 599.4,67.9 601.9,66.5 604.3,65.0 606.8,63.6 609.2,62.2 611.7,60.7 614.1,59.3 616.6,57.8 619.0,56.3 621.5,54.9 623.9,53.4 626.4,51.9 628.8,50.4 631.3,48.9 633.7,47.4 636.2,45.9 638.7,44.4 641.1,42.8 643.6,41.3 646.0,39.8 648.5,38.2" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linejoin="round"/><line x1="521.5" y1="224.0" x2="521.5" y2="109.7" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="521.5" cy="109.7" r="3.6" fill="var(--exam)"/><text x="371.5" y="203.0" fill="var(--formula)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="600">W = ∫₀² 3t² dt = 8 J</text><text x="129.2" y="52.6" fill="var(--accent)" font-size="11.5" text-anchor="start" font-family="Source Sans 3, sans-serif">P = 3t² (ચલ પાવર)</text></svg><div class="diagram-cap">P = 3t² ના ગણેલા બિંદુઓ; 0 થી 2 s નીચેનું ક્ષેત્રફળ = t³ |₀² = 8 J.</div></div>
+<div class="diagram"><svg style="max-width:680px;display:block;margin:6px auto" viewbox="0 0 680 260" width="100%" xmlns="http://www.w3.org/2000/svg"><line stroke="var(--ink-2)" stroke-width="1.2" x1="60.0" x2="660.0" y1="224.0" y2="224.0"></line><polygon fill="var(--ink-2)" points="666.0,224.0 660.0,226.7 660.0,221.3"></polygon><line stroke="var(--ink-2)" stroke-width="1.2" x1="60.0" x2="60.0" y1="224.0" y2="24.0"></line><polygon fill="var(--ink-2)" points="60.0,18.0 62.7,24.0 57.3,24.0"></polygon><line stroke="var(--ink-2)" stroke-width="1" x1="290.8" x2="290.8" y1="221.0" y2="227.0"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="middle" x="290.8" y="238.0">1</text><line stroke="var(--ink-2)" stroke-width="1" x1="521.5" x2="521.5" y1="221.0" y2="227.0"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="middle" x="521.5" y="238.0">2</text><line stroke="var(--ink-2)" stroke-width="1" x1="57.0" x2="63.0" y1="195.4" y2="195.4"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="54.0" y="198.9">3</text><line stroke="var(--ink-2)" stroke-width="1" x1="57.0" x2="63.0" y1="109.7" y2="109.7"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="54.0" y="113.2">12</text><line stroke="var(--ink-2)" stroke-width="1" x1="57.0" x2="63.0" y1="33.5" y2="33.5"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="54.0" y="37.0">20</text><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="end" x="662.0" y="217.0">t (s)</text><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="start" x="66.0" y="28.0">P (W)</text><polygon fill="var(--formula)" fill-opacity="0.22" points="60.0,224.0 60.0,224.0 63.8,224.0 67.7,224.0 71.5,223.9 75.4,223.9 79.2,223.8 83.1,223.7 86.9,223.6 90.8,223.5 94.6,223.4 98.5,223.2 102.3,223.0 106.2,222.9 110.0,222.7 113.8,222.4 117.7,222.2 121.5,222.0 125.4,221.7 129.2,221.4 133.1,221.1 136.9,220.8 140.8,220.5 144.6,220.2 148.5,219.8 152.3,219.4 156.2,219.0 160.0,218.6 163.8,218.2 167.7,217.8 171.5,217.3 175.4,216.9 179.2,216.4 183.1,215.9 186.9,215.4 190.8,214.8 194.6,214.3 198.5,213.7 202.3,213.1 206.2,212.5 210.0,211.9 213.8,211.3 217.7,210.7 221.5,210.0 225.4,209.3 229.2,208.6 233.1,207.9 236.9,207.2 240.8,206.5 244.6,205.7 248.5,204.9 252.3,204.2 256.2,203.4 260.0,202.5 263.8,201.7 267.7,200.9 271.5,200.0 275.4,199.1 279.2,198.2 283.1,197.3 286.9,196.4 290.8,195.4 294.6,194.5 298.5,193.5 302.3,192.5 306.2,191.5 310.0,190.5 313.8,189.4 317.7,188.4 321.5,187.3 325.4,186.2 329.2,185.1 333.1,184.0 336.9,182.9 340.8,181.7 344.6,180.5 348.5,179.4 352.3,178.2 356.2,176.9 360.0,175.7 363.8,174.5 367.7,173.2 371.5,171.9 375.4,170.6 379.2,169.3 383.1,168.0 386.9,166.7 390.8,165.3 394.6,163.9 398.5,162.5 402.3,161.1 406.2,159.7 410.0,158.3 413.8,156.8 417.7,155.4 421.5,153.9 425.4,152.4 429.2,150.9 433.1,149.3 436.9,147.8 440.8,146.2 444.6,144.6 448.5,143.0 452.3,141.4 456.2,139.8 460.0,138.2 463.8,136.5 467.7,134.8 471.5,133.1 475.4,131.4 479.2,129.7 483.1,128.0 486.9,126.2 490.8,124.4 494.6,122.7 498.5,120.9 502.3,119.0 506.2,117.2 510.0,115.4 513.8,113.5 517.7,111.6 521.5,109.7 521.5,224.0" stroke="none"></polygon><polyline fill="none" points="60.0,224.0 62.5,224.0 64.9,224.0 67.4,224.0 69.8,223.9 72.3,223.9 74.7,223.9 77.2,223.8 79.6,223.8 82.1,223.7 84.5,223.7 87.0,223.6 89.4,223.5 91.9,223.5 94.3,223.4 96.8,223.3 99.2,223.2 101.7,223.1 104.1,223.0 106.6,222.8 109.0,222.7 111.5,222.6 113.9,222.4 116.4,222.3 118.8,222.1 121.3,222.0 123.8,221.8 126.2,221.6 128.7,221.5 131.1,221.3 133.6,221.1 136.0,220.9 138.5,220.7 140.9,220.5 143.4,220.3 145.8,220.0 148.3,219.8 150.7,219.6 153.2,219.3 155.6,219.1 158.1,218.8 160.5,218.6 163.0,218.3 165.4,218.0 167.9,217.8 170.3,217.5 172.8,217.2 175.2,216.9 177.7,216.6 180.1,216.3 182.6,215.9 185.0,215.6 187.5,215.3 190.0,214.9 192.4,214.6 194.9,214.2 197.3,213.9 199.8,213.5 202.2,213.1 204.7,212.8 207.1,212.4 209.6,212.0 212.0,211.6 214.5,211.2 216.9,210.8 219.4,210.4 221.8,209.9 224.3,209.5 226.7,209.1 229.2,208.6 231.6,208.2 234.1,207.7 236.5,207.3 239.0,206.8 241.4,206.3 243.9,205.9 246.3,205.4 248.8,204.9 251.2,204.4 253.7,203.9 256.2,203.4 258.6,202.8 261.1,202.3 263.5,201.8 266.0,201.2 268.4,200.7 270.9,200.1 273.3,199.6 275.8,199.0 278.2,198.5 280.7,197.9 283.1,197.3 285.6,196.7 288.0,196.1 290.5,195.5 292.9,194.9 295.4,194.3 297.8,193.7 300.3,193.0 302.7,192.4 305.2,191.7 307.6,191.1 310.1,190.4 312.5,189.8 315.0,189.1 317.5,188.4 319.9,187.8 322.4,187.1 324.8,186.4 327.3,185.7 329.7,185.0 332.2,184.3 334.6,183.5 337.1,182.8 339.5,182.1 342.0,181.3 344.4,180.6 346.9,179.8 349.3,179.1 351.8,178.3 354.2,177.6 356.7,176.8 359.1,176.0 361.6,175.2 364.0,174.4 366.5,173.6 368.9,172.8 371.4,172.0 373.8,171.2 376.3,170.3 378.8,169.5 381.2,168.6 383.7,167.8 386.1,166.9 388.6,166.1 391.0,165.2 393.5,164.3 395.9,163.5 398.4,162.6 400.8,161.7 403.3,160.8 405.7,159.9 408.2,159.0 410.6,158.0 413.1,157.1 415.5,156.2 418.0,155.2 420.4,154.3 422.9,153.3 425.3,152.4 427.8,151.4 430.2,150.5 432.7,149.5 435.1,148.5 437.6,147.5 440.0,146.5 442.5,145.5 445.0,144.5 447.4,143.5 449.9,142.5 452.3,141.4 454.8,140.4 457.2,139.4 459.7,138.3 462.1,137.2 464.6,136.2 467.0,135.1 469.5,134.0 471.9,133.0 474.4,131.9 476.8,130.8 479.3,129.7 481.7,128.6 484.2,127.5 486.6,126.3 489.1,125.2 491.5,124.1 494.0,122.9 496.4,121.8 498.9,120.7 501.3,119.5 503.8,118.3 506.2,117.2 508.7,116.0 511.2,114.8 513.6,113.6 516.1,112.4 518.5,111.2 521.0,110.0 523.4,108.8 525.9,107.6 528.3,106.3 530.8,105.1 533.2,103.9 535.7,102.6 538.1,101.4 540.6,100.1 543.0,98.8 545.5,97.5 547.9,96.3 550.4,95.0 552.8,93.7 555.3,92.4 557.7,91.1 560.2,89.8 562.6,88.5 565.1,87.1 567.5,85.8 570.0,84.5 572.5,83.1 574.9,81.8 577.4,80.4 579.8,79.0 582.3,77.7 584.7,76.3 587.2,74.9 589.6,73.5 592.1,72.1 594.5,70.7 597.0,69.3 599.4,67.9 601.9,66.5 604.3,65.0 606.8,63.6 609.2,62.2 611.7,60.7 614.1,59.3 616.6,57.8 619.0,56.3 621.5,54.9 623.9,53.4 626.4,51.9 628.8,50.4 631.3,48.9 633.7,47.4 636.2,45.9 638.7,44.4 641.1,42.8 643.6,41.3 646.0,39.8 648.5,38.2" stroke="var(--accent)" stroke-linejoin="round" stroke-width="2"></polyline><line stroke="var(--ink-3)" stroke-dasharray="4 3" stroke-width="1.2" x1="521.5" x2="521.5" y1="224.0" y2="109.7"></line><circle cx="521.5" cy="109.7" fill="var(--exam)" r="3.6"></circle><text fill="var(--formula)" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="371.5" y="203.0">W = ∫₀² 3t² dt = 8 J</text><text fill="var(--accent)" font-family="Source Sans 3, sans-serif" font-size="11.5" text-anchor="start" x="129.2" y="52.6">P = 3t² (ચલ પાવર)</text></svg><div class="diagram-cap">P = 3t² ના ગણેલા બિંદુઓ; 0 થી 2 s નીચેનું ક્ષેત્રફળ = t³ |₀² = 8 J.</div></div>
 <div class="formula-box"><span class="label">formula — must memorize</span><div class="f">W = ∫ P dt = P-t આલેખ નીચેનું ક્ષેત્રફળ</div><div class="meaning">P = dW/dt હોવાથી કાર્ય = પાવરનું સમય-integral. P અચળ હોય ત્યારે જ W = P·t. પછી work-energy theorem: ½mv² − ½mu² = W. Real-world: ગાડી શરૂ થતાં engine નો પાવર ધીમે ધીમે વધે — કુલ ઊર્જા = પાવર-સમય ક્ષેત્રફળ (electricity bill માં kWh પણ આ જ ક્ષેત્રફળ).</div></div>
 <div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — 4 kg સ્થિર પદાર્થ, P = 3t² W</div><div class="step"><b>Need</b> — t = 2 s પર વેગ</div><div class="step"><b>Method</b> — W = ∫P dt, પછી W = ΔKE</div><div class="step"><b>Calculation</b> — W = t³ |₀² = 8 J ⟹ ½·4·v² = 8 ⟹ v = 2 m/s</div><div class="step"><b>Check</b> — P = Fv ⟹ t = 2 પર F = 12/2 = 6 N, a ≈ 1.5 — v વધે છે, સુસંગત ✓</div></div>
 <div class="mistake-box box"><span class="label">common mistake</span>P ચલ હોય ત્યારે W = P(t)·t લેવું — P = kt માટે એ સાચા જવાબ કરતાં બમણું આપે.</div>
 <div class="next-line">→ <b>Next:</b> Energy conservation ને circular motion સાથે જોડીને — vertical circle માં speed કેમ બદલાય છે — Part 8.</div>
 </div>
-
 <!-- ============ PART 8 ============ -->
 <div class="part" id="p8">
 <h2><span class="num">08</span>Vertical circular motion — energy analysis</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   Vertical circle માં ટોચ અને તળિયા વચ્ચે speed કેમ અલગ હોય છે (gravity નું PE-KE transfer), અને loop-the-loop ની minimum speed condition સમજાશે.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Roller-coaster loop, bucket ફેરવવું, satellite/JEE mechanics — બધામાં circular motion + energy conservation ભેગા વપરાય છે. PABT syllabus માં "vertical circular motion" collision વગરના આ chapter નો ભાગ છે.
 </div>
-
 <h3>Setup — ટોચ અને તળિયા વચ્ચે height difference</h3>
 <p>Vertical circle (radius R) માં ફરતા object માટે, ટોચ (top) અને તળિયા (bottom) વચ્ચે height difference = 2R (વ્યાસ જેટલી). Circular motion માં gravity નું tangential component speed બદલે છે — ટોચ પર speed ઓછી, તળિયે વધારે.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 340" role="img"><title>Vertical circular motion — ટોચ અને તળિયા પર speed</title><desc>Radius R ના circle પર ટોચ પર ઓછી speed v_top, તળિયે વધારે speed v_bottom, height difference 2R energy conservation થી જોડાયેલા</desc>
-<circle cx="300" cy="170" r="100" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/>
-<circle cx="300" cy="70" r="5" fill="var(--exam)"/>
-<text class="th" x="315" y="65" fill="var(--exam)">Top</text>
-<line x1="300" y1="70" x2="380" y2="70" stroke="var(--check)" stroke-width="2.5"/>
-<polygon points="380,70 370,65 370,75" fill="var(--check)"/>
-<text class="th" x="315" y="45" fill="var(--check)">v<tspan baseline-shift="sub" font-size="9">top</tspan></text>
-<line x1="300" y1="70" x2="300" y2="45" stroke="var(--ink-3)" stroke-width="2"/>
-<polygon points="300,45 296,55 304,55" fill="var(--ink-3)"/>
+<svg role="img" viewbox="0 0 680 340"><title>Vertical circular motion — ટોચ અને તળિયા પર speed</title><desc>Radius R ના circle પર ટોચ પર ઓછી speed v_top, તળિયે વધારે speed v_bottom, height difference 2R energy conservation થી જોડાયેલા</desc>
+<circle cx="300" cy="170" fill="none" r="100" stroke="var(--ink-3)" stroke-width="1.5"></circle>
+<circle cx="300" cy="70" fill="var(--exam)" r="5"></circle>
+<text class="th" fill="var(--exam)" x="315" y="65">Top</text>
+<line stroke="var(--check)" stroke-width="2.5" x1="300" x2="380" y1="70" y2="70"></line>
+<polygon fill="var(--check)" points="380,70 370,65 370,75"></polygon>
+<text class="th" fill="var(--check)" x="315" y="83.9">v<tspan baseline-shift="sub" font-size="9">top</tspan></text>
+<line stroke="var(--ink-3)" stroke-width="2" x1="300" x2="300" y1="70" y2="45"></line>
+<polygon fill="var(--ink-3)" points="300,45 296,55 304,55"></polygon>
 <text class="ts" x="245" y="42">mg</text>
-
-<circle cx="300" cy="270" r="5" fill="var(--formula)"/>
-<text class="th" x="315" y="290" fill="var(--formula)">Bottom</text>
-<line x1="300" y1="270" x2="380" y2="270" stroke="var(--check)" stroke-width="3"/>
-<polygon points="380,270 370,265 370,275" fill="var(--check)"/>
-<text class="th" x="315" y="300" fill="var(--check)">v<tspan baseline-shift="sub" font-size="9">bottom</tspan> (વધારે)</text>
-
-<line x1="300" y1="270" x2="300" y2="70" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<circle cx="300" cy="270" fill="var(--formula)" r="5"></circle>
+<text class="th" fill="var(--formula)" x="315" y="290">Bottom</text>
+<line stroke="var(--check)" stroke-width="3" x1="300" x2="380" y1="270" y2="270"></line>
+<polygon fill="var(--check)" points="380,270 370,265 370,275"></polygon>
+<text class="th" fill="var(--check)" x="315" y="309.2">v<tspan baseline-shift="sub" font-size="9">bottom</tspan> (વધારે)</text>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="300" x2="300" y1="270" y2="70"></line>
 <text class="ts" x="255" y="170">2R</text>
-
-<line x1="470" y1="50" x2="470" y2="300" stroke="var(--line)" stroke-width="1"/>
+<line stroke="var(--line)" stroke-width="1" x1="470" x2="470" y1="50" y2="300"></line>
 <text class="th" x="495" y="90">Energy conservation:</text>
 <text class="t" x="495" y="120">½mv²<tspan baseline-shift="sub" font-size="10">bot</tspan> = ½mv²<tspan baseline-shift="sub" font-size="10">top</tspan> + mg(2R)</text>
-<text class="th" x="495" y="155" fill="var(--formula)">v²<tspan baseline-shift="sub" font-size="10">bot</tspan> = v²<tspan baseline-shift="sub" font-size="10">top</tspan> + 4gR</text>
+<text class="th" fill="var(--formula)" x="495" y="155">v²<tspan baseline-shift="sub" font-size="10">bot</tspan> = v²<tspan baseline-shift="sub" font-size="10">top</tspan> + 4gR</text>
 </svg>
 <div class="diagram-cap">Top અને bottom વચ્ચે height=2R; energy conservation થી v_bottom² = v_top² + 4gR (v_bottom હંમેશા વધારે)</div>
 </div>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">v²<sub>bottom</sub> = v²<sub>top</sub> + 4gR</div>
-  <div class="meaning">Energy conservation (KE+PE) નું સીધું પરિણામ, height diff = 2R વાપરીને</div>
+<span class="label">formula — must memorize</span>
+<div class="f">v²<sub>bottom</sub> = v²<sub>top</sub> + 4gR</div>
+<div class="meaning">Energy conservation (KE+PE) નું સીધું પરિણામ, height diff = 2R વાપરીને</div>
 </div>
-
 <h3>Minimum speed condition at top (JEE connection)</h3>
 <p>ટોચ પર string/track ની tension T, gravity ની સાથે મળીને centripetal force પૂરું પાડે છે: T + mg = mv²<sub>top</sub>/R. Minimum speed condition ત્યારે જ્યારે T=0 (string slack ન થાય એ સીમા):</p>
 <div class="formula-box">
-  <span class="label">formula — must memorize (JEE connection, circular motion સાથે)</span>
-  <div class="f">v<sub>top,min</sub> = √(gR)</div>
-  <div class="meaning">આ condition circular motion chapter ના centripetal force ખ્યાલ સાથે જોડાયેલી છે — energy conservation ફક્ત speed ને height સાથે જોડે છે, minimum speed condition force-balance થી આવે છે</div>
+<span class="label">formula — must memorize (JEE connection, circular motion સાથે)</span>
+<div class="f">v<sub>top,min</sub> = √(gR)</div>
+<div class="meaning">આ condition circular motion chapter ના centripetal force ખ્યાલ સાથે જોડાયેલી છે — energy conservation ફક્ત speed ને height સાથે જોડે છે, minimum speed condition force-balance થી આવે છે</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — R = 2m, ટોચ પર minimum speed condition (v_top = √(gR), g=10)</div>
-  <div class="step"><b>Need</b> — તળિયે જોઈતી speed</div>
-  <div class="step"><b>Method</b> — v_top² = gR = 20; v_bottom² = v_top² + 4gR = 20 + 80 = 100</div>
-  <div class="step"><b>Calculation</b> — v_bottom = 10 m/s</div>
-  <div class="step"><b>Check</b> — v_bottom &gt; v_top ✓ (gravity નું PE, KE માં ફેરવાયું)</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — R = 2m, ટોચ પર minimum speed condition (v_top = √(gR), g=10)</div>
+<div class="step"><b>Need</b> — તળિયે જોઈતી speed</div>
+<div class="step"><b>Method</b> — v_top² = gR = 20; v_bottom² = v_top² + 4gR = 20 + 80 = 100</div>
+<div class="step"><b>Calculation</b> — v_bottom = 10 m/s</div>
+<div class="step"><b>Check</b> — v_bottom &gt; v_top ✓ (gravity નું PE, KE માં ફેરવાયું)</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Height difference ને R (radius) ગણી લેવું — ખોટું, top-bottom વચ્ચે height = 2R (diameter), R નહીં. આ ભૂલ v²_bottom formula માં ખોટો 2gR આપે છે (સાચું 4gR).
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   R=1m ની vertical circle માં તળિયે v_bottom=8 m/s હોય તો ટોચ પર speed કેટલી? (g=10)
 </div>
-
 <div class="remember">
-  <span class="label">Chapter yaad rakho — key points</span>
-  <ol>
-    <li>W = Fd cosθ — angle પ્રમાણે sign બદલાય (0°=max+, 90°=0, 180°=max−)</li>
-    <li>Variable force નું work = F-x ગ્રાફ નીચેનું ક્ષેત્રફળ</li>
-    <li>Work-Energy theorem: W<sub>net</sub> = ΔKE — ફક્ત net force માટે</li>
-    <li>KE = ½mv² — speed સાથે square માં વધે</li>
-    <li>PE ફક્ત conservative force માટે define થાય (path-independent); U<sub>grav</sub>=mgh, U<sub>spring</sub>=½kx²</li>
-    <li>KE+PE=constant — ફક્ત conservative forces હોય ત્યારે જ (friction હોય તો adjust કરવું)</li>
-    <li>P=W/t (average), P=Fv cosθ (instantaneous)</li>
-    <li>Vertical circle: v²_bottom = v²_top + 4gR; minimum top speed = √(gR)</li>
-  </ol>
+<span class="label">Chapter yaad rakho — key points</span>
+<ol>
+<li>W = Fd cosθ — angle પ્રમાણે sign બદલાય (0°=max+, 90°=0, 180°=max−)</li>
+<li>Variable force નું work = F-x ગ્રાફ નીચેનું ક્ષેત્રફળ</li>
+<li>Work-Energy theorem: W<sub>net</sub> = ΔKE — ફક્ત net force માટે</li>
+<li>KE = ½mv² — speed સાથે square માં વધે</li>
+<li>PE ફક્ત conservative force માટે define થાય (path-independent); U<sub>grav</sub>=mgh, U<sub>spring</sub>=½kx²</li>
+<li>KE+PE=constant — ફક્ત conservative forces હોય ત્યારે જ (friction હોય તો adjust કરવું)</li>
+<li>P=W/t (average), P=Fv cosθ (instantaneous)</li>
+<li>Vertical circle: v²_bottom = v²_top + 4gR; minimum top speed = √(gR)</li>
+</ol>
 </div>
-
 <p class="next-line">Collision (momentum conservation, elastic/inelastic, coefficient of restitution) આ chapter માં નથી — અલગ Collision.html chapter જુઓ, જે PABT Phase Test 2 નો બીજો ભાગ છે.</p>
 </div>
-
 </div>

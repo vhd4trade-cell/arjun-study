@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+<meta charset="utf-8"/>
 <title>Basic Calculus chapter</title>
 <style>
 :root{
@@ -130,163 +130,137 @@ sup,sub{font-size:.7em}
 .ts{font-size:11.5px;fill:var(--ink-2)}
 .th{font-size:13px;fill:var(--ink);font-weight:600}
 </style>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&amp;family=Source+Sans+3:wght@400;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <div class="wrap">
 <h1>Basic Calculus — full chapter</h1>
 <p class="subtitle">11th science · Gujarat board + JEE foundation · limits, continuity, differentiation basics</p>
-
 <div class="legend">
-  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
-  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
-  <div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
-  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
-  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
-  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+<div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+<div class="legend-item"><span class="dot concept"></span>Must understand</div>
+<div class="legend-item"><span class="dot formula"></span>Must memorize — formula</div>
+<div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+<div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+<div class="legend-item"><span class="dot check"></span>Self-check</div>
 </div>
-
 <div class="toc">
-  <b>Chapter map</b> — final target: limit કાઢવું, continuity check કરવું, અને first principles + standard rules થી derivative કાઢવું — confidently
+<b>Chapter map</b> — final target: limit કાઢવું, continuity check કરવું, અને first principles + standard rules થી derivative કાઢવું — confidently
   <ol style="list-style:none;padding-left:0;counter-reset:none">
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro" target="calcChapterNotes">Calculus શું છે</a> — introduction</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1" target="calcChapterNotes">Limit નો ખ્યાલ</a> — intuitive + formal idea</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2" target="calcChapterNotes">Limit કાઢવાની રીતો</a> — techniques + standard limits</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3" target="calcChapterNotes">Continuity</a> — તૂટ્યા વગરનું function</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4" target="calcChapterNotes">Derivative — first principles</a> — limit તરીકે વ્યાખ્યા</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5" target="calcChapterNotes">Geometric interpretation</a> — tangent line નો slope</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6" target="calcChapterNotes">Differentiation ના standard rules</a> — power, product, quotient, chain</li>
-    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7" target="calcChapterNotes">Standard derivatives + practice map</a> — table, PABT focus</li>
-  </ol>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span>  <a href="#intro" target="calcChapterNotes">Calculus શું છે</a> — introduction</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span>  <a href="#p1" target="calcChapterNotes">Limit નો ખ્યાલ</a> — intuitive + formal idea</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span>  <a href="#p2" target="calcChapterNotes">Limit કાઢવાની રીતો</a> — techniques + standard limits</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span>  <a href="#p3" target="calcChapterNotes">Continuity</a> — તૂટ્યા વગરનું function</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span>  <a href="#p4" target="calcChapterNotes">Derivative — first principles</a> — limit તરીકે વ્યાખ્યા</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span>  <a href="#p5" target="calcChapterNotes">Geometric interpretation</a> — tangent line નો slope</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span>  <a href="#p6" target="calcChapterNotes">Differentiation ના standard rules</a> — power, product, quotient, chain</li>
+<li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span>  <a href="#p7" target="calcChapterNotes">Standard derivatives + practice map</a> — table, PABT focus</li>
+</ol>
 </div>
-
 <!-- ============ INTRO ============ -->
 <div class="part" id="intro" style="padding-top:0">
 <h2><span class="num">00</span>Calculus શું છે</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   Calculus કયા પ્રકારના problem માટે બન્યું છે, અને "differential calculus" નામ કેમ પડ્યું — એ સ્પષ્ટ થશે, જેથી આગળનું બધું procedure નહીં, logic તરીકે યાદ રહે.
 </div>
-
 <h3>નામ ક્યાંથી આવ્યું</h3>
 <p><b>Calculus</b> Latin શબ્દ છે જેનો મૂળ અર્થ "નાનો પથ્થર" (small stone/pebble) — પ્રાચીન સમયમાં ગણતરી (counting) માટે નાના પથ્થર વાપરતા, એટલે "calculus" નો જૂનો અર્થ જ "ગણતરીની પદ્ધતિ" હતો. આજે calculus એટલે <b>continuous ફેરફાર (change) ને ગણવાની ગણિત-પદ્ધતિ</b> — કેટલી ઝડપથી કંઈક બદલાય છે (differential calculus) અને નાના-નાના ટુકડા ભેગા કરીને કુલ કેટલું થાય (integral calculus), એ બંને. આ chapter ફક્ત પહેલા ભાગ — differential calculus ના પાયા (limits + derivative) પૂરતું છે; integral calculus પછીના chapter/વર્ષમાં આવશે.</p>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   અત્યાર સુધી (algebra, trigonometry) આપણે <b>static</b> સંબંધો ભણ્યા — એક x માટે એક ચોક્કસ y. પણ real world માં motion, growth, rate — બધું <b>બદલાતું</b> રહે છે: car ની speed સમય સાથે બદલાય, વસ્તીની growth rate બદલાય, ball ની height સમય સાથે બદલાય. "આ ક્ષણે કેટલી ઝડપથી બદલાઈ રહ્યું છે" — આ પ્રશ્નનો જવાબ algebra પાસે નથી, calculus પાસે છે. Physics (motion, SHM પછીના chapters), JEE — બંનેમાં derivative સીધું અને વારંવાર વપરાય છે.
 </div>
-
 <div class="concept-box box">
-  <span class="label">મૂળ સમસ્યા — algebra કેમ અધૂરું પડે છે</span>
+<span class="label">મૂળ સમસ્યા — algebra કેમ અધૂરું પડે છે</span>
   Average speed કાઢવી algebra થી સહેલી છે: distance/time. પણ <b>"બરાબર આ ક્ષણે" (instant) ની speed</b> કાઢવી હોય તો? Time interval ને 0 તરફ લઈ જવો પડે — પણ time=0 વડે ભાગી ન શકાય (0/0 undefined). Calculus નો આખો પાયો આ જ વિરોધાભાસ ઉકેલવા માટે બન્યો: "0 ની બિલકુલ નજીક પણ 0 નહીં" એવી ચોક્કસ ગણતરી-પદ્ધતિ — જેને <b>limit</b> કહે છે.
 </div>
-
 <div class="example">
-  <span class="label">real-world motivation</span>
-  <div class="step"><b>Situation</b> — Car 0 થી 2 કલાકમાં 120 km જાય છે. Average speed = 120/2 = 60 km/h.</div>
-  <div class="step"><b>પ્રશ્ન</b> — બરાબર t=1 કલાકે (ચોક્કસ ક્ષણે) speed કેટલી હતી? Speedometer ની સોય ત્યાં શું બતાવતી હતી?</div>
-  <div class="step"><b>Algebra ની મર્યાદા</b> — speed = distance/time માટે એક time-interval જોઈએ; "એક જ ક્ષણ" પર interval ની length 0 થાય, અને 0 વડે ભાગવું અર્થહીન છે.</div>
-  <div class="step"><b>Calculus નો ઉકેલ</b> — ખૂબ નાનો interval (t=1 થી t=1+h, h ખૂબ નાનો) લઈને, h ને 0 ની નજીક-નજીક (પણ ક્યારેય બરાબર 0 નહીં) લઈ જતાં, average speed શું value તરફ સ્થિર થાય છે — એ જ instant speed. આ જ "limit" નો વિચાર છે, Part 1 માં ચોક્કસ વ્યાખ્યા.</div>
+<span class="label">real-world motivation</span>
+<div class="step"><b>Situation</b> — Car 0 થી 2 કલાકમાં 120 km જાય છે. Average speed = 120/2 = 60 km/h.</div>
+<div class="step"><b>પ્રશ્ન</b> — બરાબર t=1 કલાકે (ચોક્કસ ક્ષણે) speed કેટલી હતી? Speedometer ની સોય ત્યાં શું બતાવતી હતી?</div>
+<div class="step"><b>Algebra ની મર્યાદા</b> — speed = distance/time માટે એક time-interval જોઈએ; "એક જ ક્ષણ" પર interval ની length 0 થાય, અને 0 વડે ભાગવું અર્થહીન છે.</div>
+<div class="step"><b>Calculus નો ઉકેલ</b> — ખૂબ નાનો interval (t=1 થી t=1+h, h ખૂબ નાનો) લઈને, h ને 0 ની નજીક-નજીક (પણ ક્યારેય બરાબર 0 નહીં) લઈ જતાં, average speed શું value તરફ સ્થિર થાય છે — એ જ instant speed. આ જ "limit" નો વિચાર છે, Part 1 માં ચોક્કસ વ્યાખ્યા.</div>
 </div>
-
 <div class="next-line">→ <b>Next action:</b> Part 1 થી શરૂ — "limit" નો ખ્યાલ ચોક્કસ રીતે સમજવો, કારણ કે derivative સહિત આ આખું chapter limit ના પાયા પર જ ઊભું છે.</div>
 </div>
-
 <!-- ============ PART 1 ============ -->
 <div class="part" id="p1">
 <h2><span class="num">01</span>Limit નો ખ્યાલ</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું કહી શકીશ કે "limit" શબ્દનો ખરો અર્થ શું છે, left-hand/right-hand limit કેમ અલગ ગણવા પડે, અને limit ક્યારે exist કરે.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Limit વગર derivative ની વ્યાખ્યા જ ન બની શકે (Part 4). Limit એ "0/0 જેવી undefined situation ને ચોક્કસ રીતે handle કરવાની" પદ્ધતિ છે — આખા calculus નું building block.
 </div>
-
 <div class="submap">
-  <span>1a — શબ્દનો અર્થ</span>
-  <span>1b — Intuitive idea</span>
-  <span>1c — Formal notation</span>
-  <span>1d — Left/right-hand limit</span>
-  <span>1e — Limit ક્યારે ન મળે</span>
+<span>1a — શબ્દનો અર્થ</span>
+<span>1b — Intuitive idea</span>
+<span>1c — Formal notation</span>
+<span>1d — Left/right-hand limit</span>
+<span>1e — Limit ક્યારે ન મળે</span>
 </div>
-
 <h3>1a. "Limit" શબ્દ કેમ વપરાય છે</h3>
 <p>રોજિંદી ભાષામાં "limit" એટલે એવી હદ જેની તદ્દન નજીક પહોંચી શકાય, પણ જરૂરી નથી કે ત્યાં પહોંચવું જ પડે. Math માં પણ બરાબર આ જ અર્થ છે: x ને કોઈ ચોક્કસ value (દા.ત. a) ની <b>તદ્દન નજીક</b> લઈ જતાં f(x) કઈ value ની તદ્દન નજીક પહોંચે છે — એ જ f(x) ની "limit" છે, પછી ભલે x=a પર f ખરેખર define હોય કે ન હોય.</p>
-
 <h3>1b. Intuitive idea — numerically જોઈએ</h3>
 <p>Function f(x) = (x²−1)/(x−1) લો. x=1 પર સીધું મૂકતાં 0/0 — undefined. પણ x=1 ની <b>નજીકની</b> values મૂકીને જોઈએ:</p>
-
 <div class="tblwrap">
 <table>
 <tr><th>x</th><td>0.9</td><td>0.99</td><td>0.999</td><td>→1←</td><td>1.001</td><td>1.01</td><td>1.1</td></tr>
 <tr><td class="rowlabel">f(x)</td><td>1.9</td><td>1.99</td><td>1.999</td><td>?</td><td>2.001</td><td>2.01</td><td>2.1</td></tr>
 </table>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand</span>
+<span class="label">must understand</span>
   x=1 પર f(x) undefined હોવા છતાં, x=1 ની બંને બાજુથી નજીક જતાં f(x) સ્પષ્ટ રીતે <b>2</b> તરફ સ્થિર થાય છે. આ "2" જ f ની x→1 પરની limit છે. કારણ સ્પષ્ટ છે: (x²−1)/(x−1) = (x−1)(x+1)/(x−1) = x+1 (x≠1 માટે), અને x+1 ને x=1 ની નજીક મૂકતાં 2 મળે.
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>f(x)=(x²−1)/(x−1) ની limit — x=1 પર hole, પણ limit=2</title><desc>રેખા y=x+1 દોરેલી છે જેમાં x=1 પર એક ખાલી (hollow) બિંદુ છે કારણ કે ત્યાં function undefined છે, છતાં બંને બાજુથી curve 2 તરફ જાય છે</desc>
-<line x1="60" y1="250" x2="620" y2="250" stroke="var(--line)" stroke-width="1"/>
-<line x1="150" y1="40" x2="150" y2="270" stroke="var(--line)" stroke-width="1"/>
-<line x1="160" y1="240" x2="560" y2="80" stroke="var(--formula)" stroke-width="2.5"/>
-<circle cx="350" cy="160" r="6" fill="var(--bg)" stroke="var(--exam)" stroke-width="2.5"/>
-<text class="th" x="362" y="150" fill="var(--exam)">x=1 પર undefined (hole)</text>
-<line x1="350" y1="250" x2="350" y2="160" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
-<line x1="150" y1="160" x2="350" y2="160" stroke="var(--check)" stroke-width="1" stroke-dasharray="3,3"/>
+<svg role="img" viewbox="0 0 680 300"><title>f(x)=(x²−1)/(x−1) ની limit — x=1 પર hole, પણ limit=2</title><desc>રેખા y=x+1 દોરેલી છે જેમાં x=1 પર એક ખાલી (hollow) બિંદુ છે કારણ કે ત્યાં function undefined છે, છતાં બંને બાજુથી curve 2 તરફ જાય છે</desc>
+<line stroke="var(--line)" stroke-width="1" x1="60" x2="620" y1="250" y2="250"></line>
+<line stroke="var(--line)" stroke-width="1" x1="150" x2="150" y1="40" y2="270"></line>
+<line stroke="var(--formula)" stroke-width="2.5" x1="160" x2="560" y1="240" y2="80"></line>
+<circle cx="350" cy="160" fill="var(--bg)" r="6" stroke="var(--exam)" stroke-width="2.5"></circle>
+<text class="th" fill="var(--exam)" x="362" y="150">x=1 પર undefined (hole)</text>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="350" x2="350" y1="250" y2="160"></line>
+<line stroke="var(--check)" stroke-dasharray="3,3" stroke-width="1" x1="150" x2="350" y1="160" y2="160"></line>
 <text class="ts" x="335" y="266">x=1</text>
-<text class="th" x="110" y="164" text-anchor="end" fill="var(--check)">y=2</text>
-<text class="ts" x="430" y="105" fill="var(--formula)">y = x+1 (x≠1 માટે)</text>
+<text class="th" fill="var(--check)" text-anchor="end" x="110" y="164">y=2</text>
+<text class="ts" fill="var(--formula)" x="430" y="105">y = x+1 (x≠1 માટે)</text>
 </svg>
 <div class="diagram-cap">Graph પર x=1 એ "hole" (ખાલી બિંદુ) છે — છતાં બંને બાજુથી curve y=2 ની તદ્દન નજીક પહોંચે છે, એટલે limit = 2</div>
 </div>
-
 <h3>1c. Formal notation</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">lim(x→a) f(x) = L</div>
-  <div class="meaning">"x, a ની નજીક જાય તેમ f(x), L ની નજીક જાય છે" — x=a પર f ખરેખર define હોય એ જરૂરી નથી</div>
+<span class="label">formula — must memorize</span>
+<div class="f">lim(x→a) f(x) = L</div>
+<div class="meaning">"x, a ની નજીક જાય તેમ f(x), L ની નજીક જાય છે" — x=a પર f ખરેખર define હોય એ જરૂરી નથી</div>
 </div>
-
 <h3>1d. Left-hand limit અને Right-hand limit</h3>
 <p>x, a ની નજીક <b>બે</b> દિશાથી જઈ શકે — ડાબેથી (a કરતાં નાની values, x→a⁻) અને જમણેથી (a કરતાં મોટી values, x→a⁺). Limit "exist" કરે એ કહેવા માટે <b>બંને દિશાની limit સરખી</b> આવવી જોઈએ.</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">lim(x→a) f(x) exists ⟺ LHL = RHL</div>
-  <div class="meaning">LHL = lim(x→a⁻)f(x), RHL = lim(x→a⁺)f(x) — બંને equal હોય તો જ limit exist કરે, અને એ common value જ limit</div>
+<span class="label">formula — must memorize</span>
+<div class="f">lim(x→a) f(x) exists ⟺ LHL = RHL</div>
+<div class="meaning">LHL = lim(x→a⁻)f(x), RHL = lim(x→a⁺)f(x) — બંને equal હોય તો જ limit exist કરે, અને એ common value જ limit</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>Left-hand અને right-hand limit અલગ હોય એવું ઉદાહરણ — step function</title><desc>x=2 પર step function માં ડાબેથી limit 1 અને જમણેથી limit 3 છે, બંને અલગ હોવાથી x=2 પર overall limit exist નથી કરતું</desc>
-<line x1="60" y1="250" x2="620" y2="250" stroke="var(--line)" stroke-width="1"/>
-<line x1="150" y1="40" x2="150" y2="270" stroke="var(--line)" stroke-width="1"/>
-<line x1="160" y1="170" x2="340" y2="170" stroke="var(--check)" stroke-width="2.5"/>
-<circle cx="340" cy="170" r="6" fill="var(--bg)" stroke="var(--check)" stroke-width="2.5"/>
-<line x1="340" y1="90" x2="560" y2="90" stroke="var(--exam)" stroke-width="2.5"/>
-<circle cx="340" cy="90" r="6" fill="var(--exam)"/>
-<line x1="340" y1="250" x2="340" y2="90" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
+<svg role="img" viewbox="0 0 680 300"><title>Left-hand અને right-hand limit અલગ હોય એવું ઉદાહરણ — step function</title><desc>x=2 પર step function માં ડાબેથી limit 1 અને જમણેથી limit 3 છે, બંને અલગ હોવાથી x=2 પર overall limit exist નથી કરતું</desc>
+<line stroke="var(--line)" stroke-width="1" x1="60" x2="620" y1="250" y2="250"></line>
+<line stroke="var(--line)" stroke-width="1" x1="150" x2="150" y1="40" y2="270"></line>
+<line stroke="var(--check)" stroke-width="2.5" x1="160" x2="340" y1="170" y2="170"></line>
+<circle cx="340" cy="170" fill="var(--bg)" r="6" stroke="var(--check)" stroke-width="2.5"></circle>
+<line stroke="var(--exam)" stroke-width="2.5" x1="340" x2="560" y1="90" y2="90"></line>
+<circle cx="340" cy="90" fill="var(--exam)" r="6"></circle>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="340" x2="340" y1="250" y2="90"></line>
 <text class="ts" x="330" y="266">x=2</text>
-<text class="th" x="200" y="155" fill="var(--check)">LHL = 1</text>
-<text class="th" x="420" y="75" fill="var(--exam)">RHL = 3</text>
+<text class="th" fill="var(--check)" x="200" y="155">LHL = 1</text>
+<text class="th" fill="var(--exam)" x="420" y="75">RHL = 3</text>
 <text class="ts" x="360" y="180">LHL ≠ RHL ⟹ x=2 પર limit exist નથી</text>
 </svg>
 <div class="diagram-cap">Step function (દા.ત. parking-fee slab, income-tax slab): x=2 પર કૂદકો (jump) — LHL=1, RHL=3, બંને અલગ એટલે limit exist નથી કરતું</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Parking ફી</b> — 2 કલાક સુધી ₹20, 2 કલાકથી વધુ ₹35 (2 કલાક પૂરા થતાં જ કૂદકો). બરાબર 2 કલાકની "તદ્દન નજીક પહેલાં" ફી ₹20 તરફ જાય છે (LHL), "તદ્દન નજીક પછી" ₹35 તરફ (RHL) — બંને અલગ, એટલે "2 કલાકે ફી ની limit" જેવી કોઈ એક ચોક્કસ value exist નથી કરતી. આવા sudden-jump situations (income-tax slabs, courier weight-slabs) એ જ discontinuity નું રોજિંદું ઉદાહરણ છે (Part 3 માં જોડાણ).</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Parking ફી</b> — 2 કલાક સુધી ₹20, 2 કલાકથી વધુ ₹35 (2 કલાક પૂરા થતાં જ કૂદકો). બરાબર 2 કલાકની "તદ્દન નજીક પહેલાં" ફી ₹20 તરફ જાય છે (LHL), "તદ્દન નજીક પછી" ₹35 તરફ (RHL) — બંને અલગ, એટલે "2 કલાકે ફી ની limit" જેવી કોઈ એક ચોક્કસ value exist નથી કરતી. આવા sudden-jump situations (income-tax slabs, courier weight-slabs) એ જ discontinuity નું રોજિંદું ઉદાહરણ છે (Part 3 માં જોડાણ).</div>
 </div>
-
 <h3>1e. Limit ક્યારે ન મળે</h3>
 <div class="tblwrap">
 <table>
@@ -296,124 +270,104 @@ sup,sub{font-size:.7em}
 <tr><td class="rowlabel">Function oscillate કરે</td><td>lim(x→0) sin(1/x) — x→0 પાસે અનંતવાર −1 થી 1 વચ્ચે ઝૂલે છે, કોઈ એક value પર સ્થિર નથી થતું</td></tr>
 </table>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   "f(a) ની value કાઢી લીધી એટલે limit મળી ગઈ" એવું ધારી લેવું. f(a) undefined હોય તો પણ limit exist કરી શકે (ઉપરનું hole-ઉદાહરણ), અને f(a) define હોય તો પણ limit ≠ f(a) હોઈ શકે (discontinuous function, Part 3).
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
-  1. f(x) = (x²−9)/(x−3) ની lim(x→3) f(x) કેટલી? (x=3 પર f undefined છે, છતાં limit કાઢ.)<br>
+<span class="label">self-check</span>
+  1. f(x) = (x²−9)/(x−3) ની lim(x→3) f(x) કેટલી? (x=3 પર f undefined છે, છતાં limit કાઢ.)<br/>
   2. LHL અને RHL અલગ હોય તો limit exist કરે કે નહીં?
 </div>
-
 <div class="next-line">→ <b>Next:</b> Limit નો ખ્યાલ સ્પષ્ટ થયો. હવે table બનાવ્યા વગર, સીધી algebraic રીતે limit કેવી રીતે કાઢવી — Part 2.</div>
 </div>
-
 <!-- ============ PART 2 ============ -->
 <div class="part" id="p2">
 <h2><span class="num">02</span>Limit કાઢવાની રીતો</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું direct substitution, factorization, rationalization વાપરીને limit કાઢી શકીશ, અને sinx/x જેવા standard limits યાદ રાખી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   દર વખતે table બનાવીને numerically limit કાઢવી શક્ય નથી — parीक्षामां ઝડપી algebraic રીતો જોઈએ. મોટાભાગના limit પ્રશ્નો આ થોડી standard techniques માંથી જ કોઈ એક વાપરે છે.
 </div>
-
 <div class="submap">
-  <span>2a — Direct substitution</span>
-  <span>2b — Factorization (0/0)</span>
-  <span>2c — Rationalization</span>
-  <span>2d — Standard algebraic limit</span>
-  <span>2e — sinx/x ની limit</span>
+<span>2a — Direct substitution</span>
+<span>2b — Factorization (0/0)</span>
+<span>2c — Rationalization</span>
+<span>2d — Standard algebraic limit</span>
+<span>2e — sinx/x ની limit</span>
 </div>
-
 <h3>2a. Direct substitution — પહેલો પ્રયત્ન</h3>
 <p>જો f(a) સીધું define થતું હોય (0/0 કે ∞/∞ ન આવે) તો limit = f(a) જ છે — limit ની આખી "નજીક જવાની" મહેનત ત્યારે જ જરૂરી પડે જ્યારે સીધું મૂકતાં undefined form (0/0, ∞/∞) આવે.</p>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — lim(x→2) (x²+3x)</div>
-  <div class="step"><b>Method</b> — x=2 સીધું મૂકીએ, undefined form નથી આવતું</div>
-  <div class="step"><b>Calculation</b> — 4+6 = 10</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — lim(x→2) (x²+3x)</div>
+<div class="step"><b>Method</b> — x=2 સીધું મૂકીએ, undefined form નથી આવતું</div>
+<div class="step"><b>Calculation</b> — 4+6 = 10</div>
 </div>
-
 <h3>2b. Factorization — 0/0 form માટે</h3>
 <p>Direct substitution થી 0/0 આવે તો, numerator/denominator બંનેમાં common factor (x−a) છુપાયેલો છે — એને કાઢીને cancel કરો, પછી substitution કરો.</p>
-
 <div class="formula-box">
-  <span class="label">technique</span>
-  <div class="f">0/0 form → factor કાઢો → (x−a) cancel કરો → પછી x=a મૂકો</div>
-  <div class="meaning">Part 1 ના ઉદાહરણ (x²−1)/(x−1) આ જ technique નું ઉદાહરણ હતું</div>
+<span class="label">technique</span>
+<div class="f">0/0 form → factor કાઢો → (x−a) cancel કરો → પછી x=a મૂકો</div>
+<div class="meaning">Part 1 ના ઉદાહરણ (x²−1)/(x−1) આ જ technique નું ઉદાહરણ હતું</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — lim(x→3) (x²−9)/(x²−5x+6)</div>
-  <div class="step"><b>Need</b> — x=3 મૂકતાં 0/0 આવે છે, factor કરવું પડશે</div>
-  <div class="step"><b>Method</b> — numerator = (x−3)(x+3), denominator = (x−3)(x−2)</div>
-  <div class="step"><b>Calculation</b> — (x−3) cancel: (x+3)/(x−2), x=3 મૂકતાં = 6/1 = 6</div>
-  <div class="step"><b>Check</b> — table બનાવીને x=2.99, 3.01 મૂકી verify કરી શકાય, ≈6 જ આવશે</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — lim(x→3) (x²−9)/(x²−5x+6)</div>
+<div class="step"><b>Need</b> — x=3 મૂકતાં 0/0 આવે છે, factor કરવું પડશે</div>
+<div class="step"><b>Method</b> — numerator = (x−3)(x+3), denominator = (x−3)(x−2)</div>
+<div class="step"><b>Calculation</b> — (x−3) cancel: (x+3)/(x−2), x=3 મૂકતાં = 6/1 = 6</div>
+<div class="step"><b>Check</b> — table બનાવીને x=2.99, 3.01 મૂકી verify કરી શકાય, ≈6 જ આવશે</div>
 </div>
-
 <h3>2c. Rationalization — √ હોય ત્યારે</h3>
 <p>Numerator કે denominator માં square root હોય અને 0/0 આવે, તો conjugate વડે ગુણીને root હટાવો.</p>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — lim(x→0) (√(1+x) − 1)/x</div>
-  <div class="step"><b>Method</b> — conjugate (√(1+x)+1) વડે numerator, denominator બંનેને ગુણો</div>
-  <div class="step"><b>Calculation</b> — numerator = (1+x)−1 = x; expression = x/[x(√(1+x)+1)] = 1/(√(1+x)+1); x=0 મૂકતાં = 1/2</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — lim(x→0) (√(1+x) − 1)/x</div>
+<div class="step"><b>Method</b> — conjugate (√(1+x)+1) વડે numerator, denominator બંનેને ગુણો</div>
+<div class="step"><b>Calculation</b> — numerator = (1+x)−1 = x; expression = x/[x(√(1+x)+1)] = 1/(√(1+x)+1); x=0 મૂકતાં = 1/2</div>
 </div>
-
 <h3>2d. Standard algebraic limit — must memorize</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">lim(x→a) (xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹</div>
-  <div class="meaning">factorization ની જગ્યાએ સીધું વાપરી શકાય — power-limit પ્રશ્નોમાં ઝડપી shortcut. n કોઈપણ rational number હોઈ શકે.</div>
+<span class="label">formula — must memorize</span>
+<div class="f">lim(x→a) (xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹</div>
+<div class="meaning">factorization ની જગ્યાએ સીધું વાપરી શકાય — power-limit પ્રશ્નોમાં ઝડપી shortcut. n કોઈપણ rational number હોઈ શકે.</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">આ formula કેમ સાચું — mechanism</span>
+<span class="label">આ formula કેમ સાચું — mechanism</span>
   xⁿ−aⁿ = (x−a)(xⁿ⁻¹+xⁿ⁻²a+...+aⁿ⁻¹) — આ (n પદ ની) factorization દરેક n માટે સાચી છે (n=2 માટે તો ઓળખીતું x²−a²=(x−a)(x+a) જ છે). (x−a) cancel કરતાં બાકી રહે છે n પદ, અને x=a મૂકતાં દરેક પદ aⁿ⁻¹ બને છે, કુલ n×aⁿ⁻¹.
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — lim(x→2) (x⁵−32)/(x−2)</div>
-  <div class="step"><b>Method</b> — સીધું formula: n=5, a=2</div>
-  <div class="step"><b>Calculation</b> — = 5×2⁴ = 5×16 = 80</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — lim(x→2) (x⁵−32)/(x−2)</div>
+<div class="step"><b>Method</b> — સીધું formula: n=5, a=2</div>
+<div class="step"><b>Calculation</b> — = 5×2⁴ = 5×16 = 80</div>
 </div>
-
 <h3>2e. Standard trigonometric limit — sinx/x</h3>
 <p>x radian માં ખૂબ નાનો (0 ની નજીક) હોય ત્યારે sinx ≈ x — આ approximation ને ચોક્કસ limit-સ્વરૂપે લખીએ:</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">lim(x→0) (sinx)/x = 1</div>
-  <div class="meaning">x radian માં જ, અને x→0 (x=0 પોતે નહીં, ત્યાં 0/0 છે)</div>
+<span class="label">formula — must memorize</span>
+<div class="f">lim(x→0) (sinx)/x = 1</div>
+<div class="meaning">x radian માં જ, અને x→0 (x=0 પોતે નહીં, ત્યાં 0/0 છે)</div>
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 300" role="img"><title>sinθ, θ, tanθ ની geometric સાબિતી — sinθ &lt; θ &lt; tanθ</title><desc>Unit circle પર નાનો angle θ લઈને ત્રણ area ની સરખામણી: OAP triangle નું area, OAP sector નું area, અને OAT triangle નું area — ત્યાંથી sinθ&lt;θ&lt;tanθ મળે છે</desc>
-<defs><marker id="arrowc1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<circle cx="180" cy="220" r="140" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-<line x1="180" y1="220" x2="340" y2="220" stroke="var(--ink-3)" stroke-width="1"/>
-<path d="M 180 220 L 320 220 L 320 160.8 Z" fill="var(--exam-bg)" opacity="0.5"/>
-<path d="M 180 220 L 320 220 A140 140 0 0 0 308.9 165.5 Z" fill="none" stroke="var(--check)" stroke-width="1"/>
-<line x1="180" y1="220" x2="308.9" y2="165.5" stroke="var(--ink)" stroke-width="2"/>
-<line x1="308.9" y1="165.5" x2="320" y2="220" stroke="var(--formula)" stroke-width="2" stroke-dasharray="2,2"/>
-<text class="th" x="290" y="182" fill="var(--formula)">sinθ</text>
-<path d="M 210 220 A 30 30 0 0 0 199.5 197.4" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-<text class="t" x="214" y="207" fill="var(--accent)">θ</text>
-<line x1="320" y1="220" x2="320" y2="160.8" stroke="var(--exam)" stroke-width="2.5" marker-end="url(#arrowc1)"/>
-<text class="th" x="326" y="185" fill="var(--exam)">tanθ</text>
-<circle cx="308.9" cy="165.5" r="3" fill="var(--ink)"/>
+<svg role="img" viewbox="0 0 680 300"><title>sinθ, θ, tanθ ની geometric સાબિતી — sinθ &lt; θ &lt; tanθ</title><desc>Unit circle પર નાનો angle θ લઈને ત્રણ area ની સરખામણી: OAP triangle નું area, OAP sector નું area, અને OAT triangle નું area — ત્યાંથી sinθ&lt;θ&lt;tanθ મળે છે</desc>
+<defs><marker id="arrowc1" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></marker></defs>
+<circle cx="180" cy="220" fill="none" r="140" stroke="var(--ink-3)" stroke-width="1"></circle>
+<line stroke="var(--ink-3)" stroke-width="1" x1="180" x2="340" y1="220" y2="220"></line>
+<path d="M 180 220 L 320 220 L 320 160.8 Z" fill="var(--exam-bg)" opacity="0.5"></path>
+<path d="M 180 220 L 320 220 A140 140 0 0 0 308.9 165.5 Z" fill="none" stroke="var(--check)" stroke-width="1"></path>
+<line stroke="var(--ink)" stroke-width="2" x1="180" x2="308.9" y1="220" y2="165.5"></line>
+<line stroke="var(--formula)" stroke-dasharray="2,2" stroke-width="2" x1="308.9" x2="320" y1="165.5" y2="220"></line>
+<text class="th" fill="var(--formula)" x="290" y="182">sinθ</text>
+<path d="M 210 220 A 30 30 0 0 0 199.5 197.4" fill="none" stroke="var(--accent)" stroke-width="1.5"></path>
+<text class="t" fill="var(--accent)" x="214" y="207">θ</text>
+<line marker-end="url(#arrowc1)" stroke="var(--exam)" stroke-width="2.5" x1="320" x2="320" y1="220" y2="160.8"></line>
+<text class="th" fill="var(--exam)" x="326" y="185">tanθ</text>
+<circle cx="308.9" cy="165.5" fill="var(--ink)" r="3"></circle>
 <text class="ts" x="150" y="240">O</text>
 <text class="ts" x="325" y="234">A</text>
 <text class="th" x="440" y="80">Area સરખામણી</text>
@@ -422,17 +376,15 @@ sup,sub{font-size:.7em}
 <text class="t" x="440" y="156">⟹ sinθ &lt; θ &lt; tanθ</text>
 <text class="t" x="440" y="186">બધે sinθ થી ભાગતા:</text>
 <text class="t" x="440" y="210">1 &lt; θ/sinθ &lt; 1/cosθ</text>
-<text class="th" x="440" y="240" fill="var(--formula)">θ→0: cosθ→1, squeeze</text>
-<text class="th" x="440" y="260" fill="var(--formula)">⟹ sinθ/θ → 1</text>
+<text class="th" fill="var(--formula)" x="440" y="240">θ→0: cosθ→1, squeeze</text>
+<text class="th" fill="var(--formula)" x="440" y="260">⟹ sinθ/θ → 1</text>
 </svg>
 <div class="diagram-cap">θ=0.4 rad માટે ત્રણ areas: △OAP (sinθ ઊંચાઈ) &lt; sector OAP (θ) &lt; △OAT (tanθ ઊંચાઈ) — બંને બાજુ θ→0 લેતાં sinθ/θ, 1 ની વચ્ચે "squeeze" થઈને 1 જ બને છે</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — Squeeze (Sandwich) logic</span>
+<span class="label">must understand — Squeeze (Sandwich) logic</span>
   sinθ &lt; θ &lt; tanθ પરથી 1 &lt; θ/sinθ &lt; secθ મળે છે. θ→0 જતાં secθ→1, અને θ/sinθ આ બે (1 અને secθ) ની વચ્ચે "સેન્ડવિચ" થયેલું છે — બંને બાજુની limit 1 હોય તો વચ્ચેની quantity ની limit પણ ફરજિયાત 1 જ હોય. આનાથી θ/sinθ→1, એટલે sinθ/θ→1 (reciprocal).
 </div>
-
 <div class="tblwrap">
 <table>
 <tr><th>Related standard limits</th><th>Value</th></tr>
@@ -442,168 +394,135 @@ sup,sub{font-size:.7em}
 <tr><td class="rowlabel">lim(x→0) (sin⁻¹x)/x</td><td>1</td></tr>
 </table>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Pendulum ની motion</b> — નાના oscillation (θ નાનો) માટે pendulum નું equation sinθ ધરાવે છે, જે ઉકેલવું અઘરું છે; sinθ≈θ (આ જ limit નું પરિણામ) વાપરીને physics simple harmonic motion જેવું સરળ સમીકરણ મેળવે છે — 12th/JEE physics ના SHM chapter માં આ approximation સીધી વપરાય છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Pendulum ની motion</b> — નાના oscillation (θ નાનો) માટે pendulum નું equation sinθ ધરાવે છે, જે ઉકેલવું અઘરું છે; sinθ≈θ (આ જ limit નું પરિણામ) વાપરીને physics simple harmonic motion જેવું સરળ સમીકરણ મેળવે છે — 12th/JEE physics ના SHM chapter માં આ approximation સીધી વપરાય છે.</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — lim(x→0) (sin5x)/(x)</div>
-  <div class="step"><b>Method</b> — sin5x/x = 5 × sin5x/(5x); હવે 5x=t મૂકતાં t→0, sin t/t → 1</div>
-  <div class="step"><b>Calculation</b> — = 5×1 = 5</div>
-  <div class="step"><b>Clue</b> — general pattern: lim(x→0) sin(kx)/x = k</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — lim(x→0) (sin5x)/(x)</div>
+<div class="step"><b>Method</b> — sin5x/x = 5 × sin5x/(5x); હવે 5x=t મૂકતાં t→0, sin t/t → 1</div>
+<div class="step"><b>Calculation</b> — = 5×1 = 5</div>
+<div class="step"><b>Clue</b> — general pattern: lim(x→0) sin(kx)/x = k</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   sinx/x ની limit formula માં x ને degree માં લઈ લેવું — formula ફક્ત radian માટે સાચું છે (Trigonometry chapter ના radian ના જ કારણે — Part 1 ત્યાં જુઓ). Degree માં direct વાપરવાથી ખોટો જવાબ આવશે.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
-  1. lim(x→1) (x³−1)/(x−1) કાઢ (formula 2d વાપરીને).<br>
+<span class="label">self-check</span>
+  1. lim(x→1) (x³−1)/(x−1) કાઢ (formula 2d વાપરીને).<br/>
   2. lim(x→0) (sin3x)/(sin5x) કાઢ. (Hint: બંનેને x વડે ભાગો)
 </div>
-
 <div class="next-line">→ <b>Next:</b> Limit કાઢવાની techniques આવડી ગઈ. હવે limit ને function ના "તૂટ્યા વગર" હોવા સાથે જોડીશું — continuity, Part 3.</div>
 </div>
-
 <!-- ============ PART 3 ============ -->
 <div class="part" id="p3">
 <h2><span class="num">03</span>Continuity — તૂટ્યા વગરનું function</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું કોઈ function કોઈ બિંદુ પર continuous છે કે નહીં — એ ત્રણ શરતો ચકાસીને કહી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Derivative (Part 4) ફક્ત continuous function માટે જ meaningful રીતે define થાય છે — function માં જ "તૂટ" (break/jump) હોય ત્યાં tangent line ની વાત જ અર્થહીન બની જાય. Continuity check એ calculus ના મોટાભાગના theorem ની પૂર્વશરત છે.
 </div>
-
 <div class="submap">
-  <span>3a — શબ્દનો સીધો અર્થ</span>
-  <span>3b — ત્રણ શરતો</span>
-  <span>3c — Discontinuity ના પ્રકાર</span>
+<span>3a — શબ્દનો સીધો અર્થ</span>
+<span>3b — ત્રણ શરતો</span>
+<span>3c — Discontinuity ના પ્રકાર</span>
 </div>
-
 <h3>3a. "Continuous" — પેન ઊંચકવી ન પડે</h3>
 <p><b>Continuous</b> Latin "continuus" (અખંડ, unbroken) પરથી. Graph ને પેન ઊંચકી લીધા વગર, એક જ સ્ટ્રોકમાં દોરી શકાય — એ જ intuitive test છે. જ્યાં પેન ઊંચકવી પડે (hole, jump, કે વર્ટિકલ ઉછાળો) — ત્યાં function discontinuous છે.</p>
-
 <h3>3b. ચોક્કસ વ્યાખ્યા — ત્રણ શરતો</h3>
 <p>f(x), x=a પર continuous છે ⟺ નીચેની ત્રણેય શરતો સાચી હોય:</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">1) f(a) defined&nbsp; 2) lim(x→a) f(x) exists (LHL=RHL)&nbsp; 3) lim(x→a) f(x) = f(a)</div>
-  <div class="meaning">ત્રણેય શરત — એક પણ તૂટે તો discontinuous</div>
+<span class="label">formula — must memorize</span>
+<div class="f">1) f(a) defined  2) lim(x→a) f(x) exists (LHL=RHL)  3) lim(x→a) f(x) = f(a)</div>
+<div class="meaning">ત્રણેય શરત — એક પણ તૂટે તો discontinuous</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — ત્રણેય કેમ જરૂરી</span>
+<span class="label">must understand — ત્રણેય કેમ જરૂરી</span>
   શરત (1) વગર — f(a) જ ન હોય તો "value બરાબર" ની વાત જ ન થાય (hole). શરત (2) વગર — LHL≠RHL હોય તો કઈ બાજુની value ને "f(a) બરાબર" ગણવી એ જ nonsense છે (jump). શરત (3) વગર — limit exist કરે પણ f(a) એનાથી અલગ define કરેલી હોય (દા.ત. hole ને ખોટી જગ્યાએ ભરેલી) — ત્યાં પણ ગ્રાફ "તૂટેલો" જ દેખાય. ત્રણેય મળીને જ "no-lift-the-pen" ને ચોક્કસ ગણિત-ભાષામાં કેદ કરે છે.
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 260" role="img"><title>Continuity ના ત્રણ પ્રકારના ભંગાણ — hole, jump, infinite</title><desc>ત્રણ અલગ graph: પહેલામાં x=a પર hole (f(a) defined નથી), બીજામાં jump (LHL≠RHL), ત્રીજામાં infinite discontinuity (asymptote)</desc>
-<text class="th" x="110" y="30" text-anchor="middle">Hole</text>
-<line x1="30" y1="180" x2="210" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="60" y1="200" x2="180" y2="80" stroke="var(--formula)" stroke-width="2"/>
-<circle cx="120" cy="140" r="5" fill="var(--bg)" stroke="var(--exam)" stroke-width="2"/>
+<svg role="img" viewbox="0 0 680 260"><title>Continuity ના ત્રણ પ્રકારના ભંગાણ — hole, jump, infinite</title><desc>ત્રણ અલગ graph: પહેલામાં x=a પર hole (f(a) defined નથી), બીજામાં jump (LHL≠RHL), ત્રીજામાં infinite discontinuity (asymptote)</desc>
+<text class="th" text-anchor="middle" x="110" y="30">Hole</text>
+<line stroke="var(--line)" stroke-width="1" x1="30" x2="210" y1="180" y2="180"></line>
+<line stroke="var(--formula)" stroke-width="2" x1="60" x2="180" y1="200" y2="80"></line>
+<circle cx="120" cy="140" fill="var(--bg)" r="5" stroke="var(--exam)" stroke-width="2"></circle>
 <text class="ts" x="100" y="215">a</text>
-
-<line x1="240" y1="40" x2="240" y2="240" stroke="var(--line)" stroke-width="1"/>
-
-<text class="th" x="350" y="30" text-anchor="middle">Jump</text>
-<line x1="270" y1="180" x2="380" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="285" y1="160" x2="360" y2="160" stroke="var(--check)" stroke-width="2"/>
-<circle cx="360" cy="160" r="4" fill="var(--bg)" stroke="var(--check)" stroke-width="2"/>
-<line x1="360" y1="105" x2="410" y2="105" stroke="var(--exam)" stroke-width="2"/>
-<circle cx="360" cy="105" r="4" fill="var(--exam)"/>
+<line stroke="var(--line)" stroke-width="1" x1="240" x2="240" y1="40" y2="240"></line>
+<text class="th" text-anchor="middle" x="350" y="30">Jump</text>
+<line stroke="var(--line)" stroke-width="1" x1="270" x2="380" y1="180" y2="180"></line>
+<line stroke="var(--check)" stroke-width="2" x1="285" x2="360" y1="160" y2="160"></line>
+<circle cx="360" cy="160" fill="var(--bg)" r="4" stroke="var(--check)" stroke-width="2"></circle>
+<line stroke="var(--exam)" stroke-width="2" x1="360" x2="410" y1="105" y2="105"></line>
+<circle cx="360" cy="105" fill="var(--exam)" r="4"></circle>
 <text class="ts" x="345" y="215">a</text>
-
-<line x1="450" y1="40" x2="450" y2="240" stroke="var(--line)" stroke-width="1"/>
-
-<text class="th" x="580" y="30" text-anchor="middle">Infinite</text>
-<line x1="480" y1="180" x2="640" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="560" y1="40" x2="560" y2="240" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,3"/>
-<path d="M 490 100 Q 540 110 555 40" fill="none" stroke="var(--formula)" stroke-width="2"/>
-<path d="M 565 240 Q 580 110 630 100" fill="none" stroke="var(--formula)" stroke-width="2"/>
+<line stroke="var(--line)" stroke-width="1" x1="450" x2="450" y1="40" y2="240"></line>
+<text class="th" text-anchor="middle" x="580" y="30">Infinite</text>
+<line stroke="var(--line)" stroke-width="1" x1="480" x2="640" y1="180" y2="180"></line>
+<line stroke="var(--ink-3)" stroke-dasharray="3,3" stroke-width="1" x1="560" x2="560" y1="40" y2="240"></line>
+<path d="M 490 100 Q 540 110 555 40" fill="none" stroke="var(--formula)" stroke-width="2"></path>
+<path d="M 565 240 Q 580 110 630 100" fill="none" stroke="var(--formula)" stroke-width="2"></path>
 <text class="ts" x="545" y="215">a</text>
 </svg>
 <div class="diagram-cap">ડાબે: hole (શરત 1 તૂટે — f(a) defined નથી). વચ્ચે: jump (શરત 2 તૂટે — LHL≠RHL). જમણે: infinite/asymptote (limit finite નથી — 1/(x−a) જેવું)</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Continuous</b> — temperature આખા દિવસ દરમિયાન સમય સાથે — ક્યારેય અચાનક કૂદકો નથી મારતું, ધીરે ધીરે જ બદલાય છે.</div>
-  <div class="step"><b>Discontinuous (jump)</b> — mobile recharge નો data balance — recharge કરો એ ક્ષણે અચાનક કૂદકો (jump) મારે છે, ધીરે ધીરે નથી વધતો.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Continuous</b> — temperature આખા દિવસ દરમિયાન સમય સાથે — ક્યારેય અચાનક કૂદકો નથી મારતું, ધીરે ધીરે જ બદલાય છે.</div>
+<div class="step"><b>Discontinuous (jump)</b> — mobile recharge નો data balance — recharge કરો એ ક્ષણે અચાનક કૂદકો (jump) મારે છે, ધીરે ધીરે નથી વધતો.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   "Function નું formula એક જ line માં લખાયેલું છે (દા.ત. polynomial)" જોઈને સીધું "continuous છે" માની લેવું ખોટું નથી (polynomial હંમેશા continuous હોય છે) — પણ piecewise (ટુકડાવાર) defined functions માં જોડાણ બિંદુ પર ત્રણેય શરત ચકાસ્યા વગર continuity ધારી ન લેવી.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   f(x) = x² for x≤2, f(x) = 3x for x&gt;2 — x=2 પર continuous છે કે નહીં? (ત્રણેય શરત ચકાસ.)
 </div>
-
 <div class="next-line">→ <b>Next:</b> Limit + continuity બંને પાયા તૈયાર છે. હવે એમના પરથી જ derivative ની વ્યાખ્યા બાંધીશું — Part 4, chapter નું મુખ્ય target.</div>
 </div>
-
 <!-- ============ PART 4 ============ -->
 <div class="part" id="p4">
 <h2><span class="num">04</span>Derivative — first principles</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું derivative ની વ્યાખ્યા (limit તરીકે) લખી શકીશ, અને first principles વડે સાદા function નું derivative જાતે derive કરી શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   "Derivative" એ calculus નું સૌથી central પરિણામ છે — rate of change ને ચોક્કસ ગણિત-સંખ્યામાં ફેરવે છે. Part 6 ના બધા ઝડપી rules (power, product, quotient, chain) આ જ limit-આધારિત વ્યાખ્યામાંથી જ સાબિત થાય છે — shortcut પહેલાં પાયો સમજવો જરૂરી.
 </div>
-
 <div class="submap">
-  <span>4a — "Derivative" નામ કેમ</span>
-  <span>4b — Average થી instantaneous rate</span>
-  <span>4c — ચોક્કસ વ્યાખ્યા</span>
-  <span>4d — Notation</span>
-  <span>4e — Worked derivation</span>
+<span>4a — "Derivative" નામ કેમ</span>
+<span>4b — Average થી instantaneous rate</span>
+<span>4c — ચોક્કસ વ્યાખ્યા</span>
+<span>4d — Notation</span>
+<span>4e — Worked derivation</span>
 </div>
-
 <h3>4a. "Derivative" નામ ક્યાંથી આવ્યું</h3>
 <p><b>Derivative</b> Latin "derivare" (de- = "થી દૂર" + rivus = "નદી/પ્રવાહ", મૂળ અર્થ "એક પ્રવાહ માંથી નવો પ્રવાહ કાઢવો") પરથી — એટલે "કોઈ વસ્તુ માંથી કાઢેલી/ઉતારેલી નવી વસ્તુ." Derivative, original function f(x) માંથી જ "કાઢેલું" (derived) એક નવું function છે — જે દરેક બિંદુએ f ના બદલાવાની ઝડપ (rate of change) બતાવે છે. મૂળ function ને "differentiate" કરવું એટલે એનો આ derived-rate-function કાઢવો — એટલે જ chapter ને "differential calculus" કહે છે.</p>
-
 <h3>4b. Average rate થી Instantaneous rate — Intro ના car ઉદાહરણનો ઉકેલ</h3>
 <p>Intro માં પ્રશ્ન હતો: બરાબર t=1 કલાકે car ની speed? f(t) = t=1 થી t=1+h સુધીનો average rate લખીએ:</p>
-
 <div class="formula-box">
-  <span class="label">Average rate of change</span>
-  <div class="f">[f(a+h) − f(a)] / h</div>
-  <div class="meaning">h = interval ની length. h ને 0 તરફ લઈ જતાં → instantaneous rate</div>
+<span class="label">Average rate of change</span>
+<div class="f">[f(a+h) − f(a)] / h</div>
+<div class="meaning">h = interval ની length. h ને 0 તરફ લઈ જતાં → instantaneous rate</div>
 </div>
-
 <p>h ને નાનો-નાનો કરતાં (પણ 0 નહીં) આ average rate કઈ value તરફ સ્થિર થાય છે — એ જ limit (Part 1) છે, અને એ જ "derivative."</p>
-
 <h3>4c. Derivative ની ચોક્કસ વ્યાખ્યા (first principles)</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">f'(x) = lim(h→0) [f(x+h) − f(x)] / h</div>
-  <div class="meaning">x એ ચોક્કસ બિંદુ, h એ x થી કેટલું આગળ ગયા (નાનો ફેરફાર). આ limit exist કરે તો જ f, x પર "differentiable" કહેવાય</div>
+<span class="label">formula — must memorize</span>
+<div class="f">f'(x) = lim(h→0) [f(x+h) − f(x)] / h</div>
+<div class="meaning">x એ ચોક્કસ બિંદુ, h એ x થી કેટલું આગળ ગયા (નાનો ફેરફાર). આ limit exist કરે તો જ f, x પર "differentiable" કહેવાય</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — 0/0 form ફરી</span>
+<span class="label">must understand — 0/0 form ફરી</span>
   h=0 સીધું મૂકતાં numerator=denominator=0 — 0/0, undefined. બરાબર Part 1-2 ના જ techniques (factorization, standard limits) વાપરીને આ 0/0 ને ઉકેલવાનું છે — derivative ની વ્યાખ્યા પોતે જ એક limit-problem છે, નવો વિષય નથી.
 </div>
-
 <h3>4d. Notation</h3>
 <div class="tblwrap">
 <table>
@@ -613,322 +532,267 @@ sup,sub{font-size:.7em}
 </table>
 </div>
 <div class="why-box box">
-  <span class="label">why "dy/dx" — નામ પાછળનું logic</span>
+<span class="label">why "dy/dx" — નામ પાછળનું logic</span>
   dy/dx કોઈ ભાગાકાર fraction નથી (એક જ symbol છે) — પણ એ Δy/Δx (average rate) ના જ h→0 limit માંથી આવે છે, એટલે ભાગાકાર જેવો દેખાવ ઈરાદાપૂર્વક રાખવામાં આવ્યો છે: "y માં અતિ-નાનો ફેરફાર, x માં અતિ-નાના ફેરફાર ભાગ્યા" — બરાબર Part 4b ના average-rate formula નું જ limiting સ્વરૂપ.
 </div>
-
 <h3>4e. Worked derivation — f(x) = x² નું derivative first principles થી</h3>
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — f(x) = x², first principles વડે f'(x) કાઢવું</div>
-  <div class="step"><b>Method</b> — વ્યાખ્યા સીધી વાપરો: f'(x) = lim(h→0) [f(x+h)−f(x)]/h</div>
-  <div class="step"><b>Calculation</b> — f(x+h) = (x+h)² = x²+2xh+h². તેથી [f(x+h)−f(x)]/h = [x²+2xh+h²−x²]/h = [2xh+h²]/h = 2x+h (h≠0 એટલે cancel થાય)</div>
-  <div class="step"><b>Limit</b> — lim(h→0) (2x+h) = 2x (સીધો substitution, undefined form નથી)</div>
-  <div class="step"><b>Answer</b> — f'(x) = 2x</div>
-  <div class="step"><b>Check</b> — x=1 પર f'(1)=2, જે Part 5 ના tangent-slope diagram સાથે બરાબર મળે છે</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — f(x) = x², first principles વડે f'(x) કાઢવું</div>
+<div class="step"><b>Method</b> — વ્યાખ્યા સીધી વાપરો: f'(x) = lim(h→0) [f(x+h)−f(x)]/h</div>
+<div class="step"><b>Calculation</b> — f(x+h) = (x+h)² = x²+2xh+h². તેથી [f(x+h)−f(x)]/h = [x²+2xh+h²−x²]/h = [2xh+h²]/h = 2x+h (h≠0 એટલે cancel થાય)</div>
+<div class="step"><b>Limit</b> — lim(h→0) (2x+h) = 2x (સીધો substitution, undefined form નથી)</div>
+<div class="step"><b>Answer</b> — f'(x) = 2x</div>
+<div class="step"><b>Check</b> — x=1 પર f'(1)=2, જે Part 5 ના tangent-slope diagram સાથે બરાબર મળે છે</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   f(x+h) કાઢતી વખતે (x+h)² ને ખોટી રીતે x²+h² લખી દેવું — cross term 2xh ભૂલાઈ જાય છે. Binomial expansion પૂરું કરો: (x+h)² = x²+2xh+h².
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
-  1. f(x) = x³ નું derivative first principles વડે કાઢ (hint: (x+h)³ = x³+3x²h+3xh²+h³).<br>
+<span class="label">self-check</span>
+  1. f(x) = x³ નું derivative first principles વડે કાઢ (hint: (x+h)³ = x³+3x²h+3xh²+h³).<br/>
   2. f(x) = 5 (constant) નું derivative first principles વડે કેટલું આવશે?
 </div>
-
 <div class="next-line">→ <b>Next:</b> f'(x) = 2x — આ સંખ્યાનો geometric અર્થ શું છે, ગ્રાફ પર શું દેખાય છે — Part 5.</div>
 </div>
-
 <!-- ============ PART 5 ============ -->
 <div class="part" id="p5">
 <h2><span class="num">05</span>Geometric interpretation — tangent line નો slope</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું સમજી શકીશ કે derivative ખરેખર ગ્રાફ પર શું બતાવે છે — secant line, tangent line, અને h→0 નો limiting process ગ્રાફ પર જોઈ શકીશ.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Derivative ને ફક્ત formula તરીકે યાદ રાખવાને બદલે, "ગ્રાફ પર એ શું છે" સમજવાથી curve-sketching, tangent-normal, અને physics ના motion-graphs — બધે derivative નો અર્થ સાહજિક બની જાય છે.
 </div>
-
 <div class="submap">
-  <span>5a — Secant line શું</span>
-  <span>5b — h→0 એટલે secant→tangent</span>
-  <span>5c — Slope ની formula સાથે જોડાણ</span>
+<span>5a — Secant line શું</span>
+<span>5b — h→0 એટલે secant→tangent</span>
+<span>5c — Slope ની formula સાથે જોડાણ</span>
 </div>
-
 <h3>5a. Secant line — બે બિંદુ જોડતી રેખા</h3>
 <p><b>Secant</b> (Latin "secare" = કાપવું) — curve ને બે બિંદુએ કાપતી સીધી રેખા, Trigonometry chapter ના sec θ નામનું મૂળ પણ આ જ શબ્દ છે. f(x)=x² curve પર બિંદુ (1,1) અને (1+h, (1+h)²) જોડતી secant line નો slope બરાબર Part 4b નું જ average rate of change છે.</p>
-
 <h3>5b. h ને 0 તરફ લઈ જતાં — secant, tangent બને છે</h3>
 <p>h મોટો હોય ત્યારે બંને બિંદુ દૂર-દૂર છે, secant line curve ને "કાપે" છે. h ને નાનો-નાનો કરતાં બીજું બિંદુ પહેલા બિંદુની એકદમ નજીક આવતું જાય છે — અને secant line ધીરે ધીરે એ બિંદુ પર curve ને માત્ર "સ્પર્શ" (touch) કરતી <b>tangent line</b> તરફ સ્થિર થાય છે.</p>
-
 <div class="diagram">
-<svg viewBox="0 0 680 400" role="img"><title>f(x)=x² પર x=1 આગળ secant line, h=1,0.5,0.25 માટે, tangent line તરફ જતી</title><desc>Parabola y=x² પર (1,1) બિંદુથી ત્રણ secant line દોરેલી છે h=1, 0.5, 0.25 માટે, જેમના slope અનુક્રમે 3, 2.5, 2.25 છે, અને છેલ્લે actual tangent line slope 2 સાથે દોરેલી છે — h ઘટતા secant, tangent તરફ સ્થિર થાય છે</desc>
-<line x1="60" y1="350" x2="620" y2="350" stroke="var(--line)" stroke-width="1"/>
-<line x1="60" y1="350" x2="60" y2="30" stroke="var(--line)" stroke-width="1"/>
-<polyline points="60,350 116,346.9 172,337.6 228,322.1 284,300.4 340,272.5 396,238.4 452,198.1 508,151.6 564,98.9 620,40" fill="none" stroke="var(--ink-3)" stroke-width="2"/>
-<text class="ts" x="560" y="60" fill="var(--ink-3)">y=x²</text>
-
-<circle cx="246.7" cy="315.6" r="4.5" fill="var(--ink)"/>
+<svg role="img" viewbox="0 0 680 400"><title>f(x)=x² પર x=1 આગળ secant line, h=1,0.5,0.25 માટે, tangent line તરફ જતી</title><desc>Parabola y=x² પર (1,1) બિંદુથી ત્રણ secant line દોરેલી છે h=1, 0.5, 0.25 માટે, જેમના slope અનુક્રમે 3, 2.5, 2.25 છે, અને છેલ્લે actual tangent line slope 2 સાથે દોરેલી છે — h ઘટતા secant, tangent તરફ સ્થિર થાય છે</desc>
+<line stroke="var(--line)" stroke-width="1" x1="60" x2="620" y1="350" y2="350"></line>
+<line stroke="var(--line)" stroke-width="1" x1="60" x2="60" y1="350" y2="30"></line>
+<polyline fill="none" points="60,350 116,346.9 172,337.6 228,322.1 284,300.4 340,272.5 396,238.4 452,198.1 508,151.6 564,98.9 620,40" stroke="var(--ink-3)" stroke-width="2"></polyline>
+<text class="ts" fill="var(--ink-3)" x="560" y="60">y=x²</text>
+<circle cx="246.7" cy="315.6" fill="var(--ink)" r="4.5"></circle>
 <text class="th" x="220" y="332">(1,1)</text>
-
-<line x1="218.7" y1="331.1" x2="452" y2="201.9" stroke="var(--check)" stroke-width="1.5"/>
-<circle cx="433.3" cy="212.2" r="3.5" fill="var(--check)"/>
-<text class="ts" x="440" y="210" fill="var(--check)">h=1, slope=3</text>
-
-<line x1="218.7" y1="328.5" x2="377.3" y2="255.3" stroke="var(--accent)" stroke-width="1.5"/>
-<circle cx="340" cy="272.5" r="3.5" fill="var(--accent)"/>
-<text class="ts" x="345" y="268" fill="var(--accent)">h=0.5, slope=2.5</text>
-
-<line x1="218.7" y1="327.2" x2="340" y2="276.8" stroke="var(--exam)" stroke-width="1.5"/>
-<circle cx="293.3" cy="296.2" r="3.5" fill="var(--exam)"/>
-<text class="ts" x="300" y="298" fill="var(--exam)">h=0.25, slope=2.25</text>
-
-<line x1="172" y1="343.1" x2="321.3" y2="288" stroke="var(--formula)" stroke-width="2.5"/>
-<text class="th" x="330" y="285" fill="var(--formula)">tangent (h→0), slope=2</text>
+<line stroke="var(--check)" stroke-width="1.5" x1="218.7" x2="452" y1="331.1" y2="201.9"></line>
+<circle cx="433.3" cy="212.2" fill="var(--check)" r="3.5"></circle>
+<text class="ts" fill="var(--check)" x="440" y="210">h=1, slope=3</text>
+<line stroke="var(--accent)" stroke-width="1.5" x1="218.7" x2="377.3" y1="328.5" y2="255.3"></line>
+<circle cx="340" cy="272.5" fill="var(--accent)" r="3.5"></circle>
+<text class="ts" fill="var(--accent)" x="345" y="268">h=0.5, slope=2.5</text>
+<line stroke="var(--exam)" stroke-width="1.5" x1="218.7" x2="340" y1="327.2" y2="276.8"></line>
+<circle cx="293.3" cy="296.2" fill="var(--exam)" r="3.5"></circle>
+<text class="ts" fill="var(--exam)" x="300" y="298">h=0.25, slope=2.25</text>
+<line stroke="var(--formula)" stroke-width="2.5" x1="172" x2="321.3" y1="343.1" y2="288"></line>
+<text class="th" fill="var(--formula)" x="330" y="315.1">tangent (h→0), slope=2</text>
 </svg>
 <div class="diagram-cap">h ઘટતો જાય (1 → 0.5 → 0.25 → 0) તેમ secant line નો slope (3 → 2.5 → 2.25 → ...) 2 તરફ સ્થિર થાય છે — બરાબર f'(1)=2×1=2, Part 4e ના જવાબ સાથે મેળ</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand</span>
-  <b>Derivative f'(a) = બિંદુ (a, f(a)) આગળ curve ની tangent line નો slope.</b> આ કોઈ અલગ વ્યાખ્યા નથી — Part 4c ની limit-વ્યાખ્યા અને "tangent slope" એ એક જ વસ્તુના બે નામ છે: [f(a+h)−f(a)]/h એ secant નો slope છે, h→0 limit લેતાં એ tangent નો slope બની જાય છે.
+<span class="label">must understand</span>
+<b>Derivative f'(a) = બિંદુ (a, f(a)) આગળ curve ની tangent line નો slope.</b> આ કોઈ અલગ વ્યાખ્યા નથી — Part 4c ની limit-વ્યાખ્યા અને "tangent slope" એ એક જ વસ્તુના બે નામ છે: [f(a+h)−f(a)]/h એ secant નો slope છે, h→0 limit લેતાં એ tangent નો slope બની જાય છે.
 </div>
-
 <h3>5c. Slope ની formula સાથે verify</h3>
 <div class="example">
-  <span class="label">worked example — verify</span>
-  <div class="step"><b>Given</b> — f(x)=x², x=1 પર tangent</div>
-  <div class="step"><b>Slope</b> — f'(1) = 2(1) = 2 (Part 4e થી)</div>
-  <div class="step"><b>Tangent line equation</b> — point-slope: y−1 = 2(x−1) ⟹ y = 2x−1</div>
-  <div class="step"><b>Check</b> — x=1 મૂકતાં y=1 ✓ (બિંદુ (1,1) પરથી પસાર થાય છે)</div>
+<span class="label">worked example — verify</span>
+<div class="step"><b>Given</b> — f(x)=x², x=1 પર tangent</div>
+<div class="step"><b>Slope</b> — f'(1) = 2(1) = 2 (Part 4e થી)</div>
+<div class="step"><b>Tangent line equation</b> — point-slope: y−1 = 2(x−1) ⟹ y = 2x−1</div>
+<div class="step"><b>Check</b> — x=1 મૂકતાં y=1 ✓ (બિંદુ (1,1) પરથી પસાર થાય છે)</div>
 </div>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">Tangent at (a,f(a)): y − f(a) = f'(a)(x − a)</div>
-  <div class="meaning">Normal (tangent ને લંબ રેખા): slope = −1/f'(a), same point થી</div>
+<span class="label">formula — must memorize</span>
+<div class="f">Tangent at (a,f(a)): y − f(a) = f'(a)(x − a)</div>
+<div class="meaning">Normal (tangent ને લંબ રેખા): slope = −1/f'(a), same point થી</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Roller-coaster ટ્રેક</b> — કોઈપણ ક્ષણે ટ્રેકનો ઢાળ (કેટલો ઊભો છે) એ જ એ બિંદુ પરની tangent line નો slope છે — derivative curve ના દરેક બિંદુ પરનો "ત્યાં નો ઢાળ" આપે છે, આખા ટ્રેક નો એક જ ઢાળ નહીં.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Roller-coaster ટ્રેક</b> — કોઈપણ ક્ષણે ટ્રેકનો ઢાળ (કેટલો ઊભો છે) એ જ એ બિંદુ પરની tangent line નો slope છે — derivative curve ના દરેક બિંદુ પરનો "ત્યાં નો ઢાળ" આપે છે, આખા ટ્રેક નો એક જ ઢાળ નહીં.</div>
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
+<span class="label">self-check</span>
   f(x)=x², x=2 પર tangent line નું equation કાઢ. (f'(2) પહેલા કાઢ.)
 </div>
-
 <div class="next-line">→ <b>Next:</b> First principles દર વખતે limit કાઢવી — ધીમું છે. હવે ઝડપી standard rules — Part 6.</div>
 </div>
-
 <!-- ============ PART 6 ============ -->
 <div class="part" id="p6">
 <h2><span class="num">06</span>Differentiation ના standard rules</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી તું power, product, quotient, chain rule વાપરીને કોઈપણ સામાન્ય function નું derivative ઝડપથી કાઢી શકીશ — first principles ના લાંબા રસ્તા વગર.
 </div>
-
 <div class="why-box box">
-  <span class="label">why it matters</span>
+<span class="label">why it matters</span>
   Real પ્રશ્નોમાં x³sinx કે (2x+1)/(x²+1) જેવા complex functions આવે છે — દર વખતે first principles કરવું impractical છે. આ rules, first principles માંથી જ એક વાર સાબિત થયેલા shortcuts છે.
 </div>
-
 <div class="submap">
-  <span>6a — Power rule</span>
-  <span>6b — Constant multiple + sum</span>
-  <span>6c — Product rule</span>
-  <span>6d — Quotient rule</span>
-  <span>6e — Chain rule</span>
+<span>6a — Power rule</span>
+<span>6b — Constant multiple + sum</span>
+<span>6c — Product rule</span>
+<span>6d — Quotient rule</span>
+<span>6e — Chain rule</span>
 </div>
-
 <h3>6a. Power rule</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">d/dx (xⁿ) = n·xⁿ⁻¹</div>
-  <div class="meaning">n કોઈપણ real number (positive, negative, fraction) માટે સાચું</div>
+<span class="label">formula — must memorize</span>
+<div class="f">d/dx (xⁿ) = n·xⁿ⁻¹</div>
+<div class="meaning">n કોઈપણ real number (positive, negative, fraction) માટે સાચું</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">આ ક્યાંથી આવ્યું</span>
+<span class="label">આ ક્યાંથી આવ્યું</span>
   Part 2d ના standard limit lim(x→a)(xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹ ને જ first-principles વ્યાખ્યામાં મૂકો: f'(a) = lim(x→a) [f(x)−f(a)]/(x−a) = lim(x→a) (xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹ — Part 4e ના x² ઉદાહરણ (n=2 ⟹ 2x) એનું જ ખાસ case છે. Power rule કોઈ નવો નિયમ નથી, Part 2 ના standard limit નું જ સીધું પરિણામ છે.
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 220" role="img"><title>Power rule ના ત્રણ ઉદાહરણ — n=2,3,½ માટે</title><desc>ત્રણ curve y=x², y=x³, y=√x અને એમના derivative ના પરિણામ 2x, 3x², 1/(2√x) દર્શાવતું diagram</desc>
-<text class="th" x="115" y="30" text-anchor="middle">y=x²</text>
-<text class="t" x="115" y="55" text-anchor="middle" fill="var(--formula)">dy/dx=2x</text>
-<line x1="30" y1="180" x2="200" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="45" y1="195" x2="45" y2="75" stroke="var(--line)" stroke-width="1"/>
-<polyline points="45,180 70,168 95,145 120,110 145,85" fill="none" stroke="var(--ink-3)" stroke-width="2"/>
-
-<text class="th" x="345" y="30" text-anchor="middle">y=x³</text>
-<text class="t" x="345" y="55" text-anchor="middle" fill="var(--formula)">dy/dx=3x²</text>
-<line x1="260" y1="180" x2="430" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="275" y1="195" x2="275" y2="75" stroke="var(--line)" stroke-width="1"/>
-<polyline points="275,180 300,178 325,165 350,120 375,85" fill="none" stroke="var(--ink-3)" stroke-width="2"/>
-
-<text class="th" x="575" y="30" text-anchor="middle">y=√x</text>
-<text class="t" x="575" y="55" text-anchor="middle" fill="var(--formula)">dy/dx=1/(2√x)</text>
-<line x1="490" y1="180" x2="660" y2="180" stroke="var(--line)" stroke-width="1"/>
-<line x1="505" y1="195" x2="505" y2="75" stroke="var(--line)" stroke-width="1"/>
-<polyline points="505,180 530,130 555,105 580,90 605,80" fill="none" stroke="var(--ink-3)" stroke-width="2"/>
+<svg role="img" viewbox="0 0 680 220"><title>Power rule ના ત્રણ ઉદાહરણ — n=2,3,½ માટે</title><desc>ત્રણ curve y=x², y=x³, y=√x અને એમના derivative ના પરિણામ 2x, 3x², 1/(2√x) દર્શાવતું diagram</desc>
+<text class="th" text-anchor="middle" x="115" y="30">y=x²</text>
+<text class="t" fill="var(--formula)" text-anchor="middle" x="115" y="55">dy/dx=2x</text>
+<line stroke="var(--line)" stroke-width="1" x1="30" x2="200" y1="180" y2="180"></line>
+<line stroke="var(--line)" stroke-width="1" x1="45" x2="45" y1="195" y2="75"></line>
+<polyline fill="none" points="45,180 70,168 95,145 120,110 145,85" stroke="var(--ink-3)" stroke-width="2"></polyline>
+<text class="th" text-anchor="middle" x="345" y="30">y=x³</text>
+<text class="t" fill="var(--formula)" text-anchor="middle" x="345" y="55">dy/dx=3x²</text>
+<line stroke="var(--line)" stroke-width="1" x1="260" x2="430" y1="180" y2="180"></line>
+<line stroke="var(--line)" stroke-width="1" x1="275" x2="275" y1="195" y2="75"></line>
+<polyline fill="none" points="275,180 300,178 325,165 350,120 375,85" stroke="var(--ink-3)" stroke-width="2"></polyline>
+<text class="th" text-anchor="middle" x="575" y="30">y=√x</text>
+<text class="t" fill="var(--formula)" text-anchor="middle" x="575" y="55">dy/dx=1/(2√x)</text>
+<line stroke="var(--line)" stroke-width="1" x1="490" x2="660" y1="180" y2="180"></line>
+<line stroke="var(--line)" stroke-width="1" x1="505" x2="505" y1="195" y2="75"></line>
+<polyline fill="none" points="505,180 530,130 555,105 580,90 605,80" stroke="var(--ink-3)" stroke-width="2"></polyline>
 </svg>
 <div class="diagram-cap">n=2 (parabola), n=3 (cubic), n=½ (√x) — ત્રણેયમાં ઢાળ સતત બદલાય છે, derivative formula આ બદલાવને દરેક બિંદુ પર ચોક્કસ સંખ્યા આપે છે</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>d/dx(x⁵)</b> = 5x⁴</div>
-  <div class="step"><b>d/dx(1/x²) = d/dx(x⁻²)</b> = −2x⁻³ = −2/x³</div>
-  <div class="step"><b>d/dx(√x) = d/dx(x^½)</b> = ½x^(−½) = 1/(2√x)</div>
+<span class="label">worked example</span>
+<div class="step"><b>d/dx(x⁵)</b> = 5x⁴</div>
+<div class="step"><b>d/dx(1/x²) = d/dx(x⁻²)</b> = −2x⁻³ = −2/x³</div>
+<div class="step"><b>d/dx(√x) = d/dx(x^½)</b> = ½x^(−½) = 1/(2√x)</div>
 </div>
-
 <h3>6b. Constant multiple અને Sum/Difference rule</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">d/dx[c·f(x)] = c·f'(x)&nbsp;&nbsp;&nbsp;&nbsp;d/dx[f(x)±g(x)] = f'(x)±g'(x)</div>
-  <div class="meaning">Constant ને બહાર કાઢી શકાય; term-by-term differentiate કરી શકાય</div>
+<span class="label">formula — must memorize</span>
+<div class="f">d/dx[c·f(x)] = c·f'(x)    d/dx[f(x)±g(x)] = f'(x)±g'(x)</div>
+<div class="meaning">Constant ને બહાર કાઢી શકાય; term-by-term differentiate કરી શકાય</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Projectile height</b> — h(t) = 20t − 5t² (ऊंचाई, meters, t=seconds). Velocity = h'(t) = 20 − 10t — Sum/constant-multiple rule સીધો વપરાય છે, t=2s એ velocity = 0 (highest point, JEE physics standard problem).</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Projectile height</b> — h(t) = 20t − 5t² (ऊंचाई, meters, t=seconds). Velocity = h'(t) = 20 − 10t — Sum/constant-multiple rule સીધો વપરાય છે, t=2s એ velocity = 0 (highest point, JEE physics standard problem).</div>
 </div>
-
 <h3>6c. Product rule</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">d/dx[f(x)·g(x)] = f'(x)·g(x) + f(x)·g'(x)</div>
-  <div class="meaning">"પહેલાનું derivative × બીજું, + પહેલું × બીજાનું derivative" — ક્યારેય f'·g' (બંને derivative ગુણવા) નહીં</div>
+<span class="label">formula — must memorize</span>
+<div class="f">d/dx[f(x)·g(x)] = f'(x)·g(x) + f(x)·g'(x)</div>
+<div class="meaning">"પહેલાનું derivative × બીજું, + પહેલું × બીજાનું derivative" — ક્યારેય f'·g' (બંને derivative ગુણવા) નહીં</div>
 </div>
-
 <div class="why-box box">
-  <span class="label">skip — diagram justification</span>
+<span class="label">skip — diagram justification</span>
   Product rule શુદ્ધ algebraic operation (બે function નો ગુણાકાર differentiate કરવો) છે — એનું કોઈ પ્રામાણિક geometric ચિત્ર (unlike tangent-slope) સીધું નથી; area-based proof existe કરે છે પણ 11th સ્તરે જરૂરી નથી, એટલે diagram જાણી-જોઈને છોડેલ છે.
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — y = x²·sinx</div>
-  <div class="step"><b>Method</b> — f=x² (f'=2x), g=sinx (g'=cosx)</div>
-  <div class="step"><b>Calculation</b> — dy/dx = 2x·sinx + x²·cosx</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — y = x²·sinx</div>
+<div class="step"><b>Method</b> — f=x² (f'=2x), g=sinx (g'=cosx)</div>
+<div class="step"><b>Calculation</b> — dy/dx = 2x·sinx + x²·cosx</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   d/dx(f·g) = f'·g' ધારી લેવું (બંને derivative સીધા ગુણી દેવા) — ખોટું છે. Sum rule ની જેમ product rule term-by-term નથી ચાલતો; ચારેય પદ (f'g + fg') જોઈએ.
 </div>
-
 <h3>6d. Quotient rule</h3>
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">d/dx[f(x)/g(x)] = [f'(x)·g(x) − f(x)·g'(x)] / [g(x)]²</div>
-  <div class="meaning">"નીચેવાળા વડે ઉપરવાળાનું ગુણો, ઓછું ઉપરવાળા વડે નીચેવાળાનું ગુણો, નીચેવાળાનો વર્ગ ભાગનાર" — order મહત્વનું (bાદબાકીની જગ્યા fixed)</div>
+<span class="label">formula — must memorize</span>
+<div class="f">d/dx[f(x)/g(x)] = [f'(x)·g(x) − f(x)·g'(x)] / [g(x)]²</div>
+<div class="meaning">"નીચેવાળા વડે ઉપરવાળાનું ગુણો, ઓછું ઉપરવાળા વડે નીચેવાળાનું ગુણો, નીચેવાળાનો વર્ગ ભાગનાર" — order મહત્વનું (bાદબાકીની જગ્યા fixed)</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — y = x/(x+1)</div>
-  <div class="step"><b>Method</b> — f=x (f'=1), g=x+1 (g'=1)</div>
-  <div class="step"><b>Calculation</b> — dy/dx = [1·(x+1) − x·1]/(x+1)² = [x+1−x]/(x+1)² = 1/(x+1)²</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — y = x/(x+1)</div>
+<div class="step"><b>Method</b> — f=x (f'=1), g=x+1 (g'=1)</div>
+<div class="step"><b>Calculation</b> — dy/dx = [1·(x+1) − x·1]/(x+1)² = [x+1−x]/(x+1)² = 1/(x+1)²</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Average cost function</b> — economics/optimization માં Cost(x)/x (per-unit cost) જેવા ratio-functions નું derivative optimum production-level શોધવા quotient rule વાપરે છે — JEE Main ના optimization પ્રશ્નોમાં આ pattern વારંવાર આવે છે.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Average cost function</b> — economics/optimization માં Cost(x)/x (per-unit cost) જેવા ratio-functions નું derivative optimum production-level શોધવા quotient rule વાપરે છે — JEE Main ના optimization પ્રશ્નોમાં આ pattern વારંવાર આવે છે.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   Quotient rule ના numerator માં ક્રમ ઊંધો કરવો (f·g' − f'·g લખવું) — sign ખોટું આવશે. "પહેલા f', પછી g'" ક્રમ ફિક્સ યાદ રાખવો.
 </div>
-
 <h3>6e. Chain rule — function ની અંદર function</h3>
 <p>જ્યારે y, u નું function હોય અને u પોતે x નું function હોય (દા.ત. y=sin(x²) — બહાર sin, અંદર x²) ત્યારે derivative "સ્તર-દર-સ્તર" (layer by layer) લેવાય છે.</p>
-
 <div class="formula-box">
-  <span class="label">formula — must memorize</span>
-  <div class="f">dy/dx = dy/du × du/dx</div>
-  <div class="meaning">"બહારના function નું derivative (અંદરવાળું એમ જ રાખીને) × અંદરના function નું derivative"</div>
+<span class="label">formula — must memorize</span>
+<div class="f">dy/dx = dy/du × du/dx</div>
+<div class="meaning">"બહારના function નું derivative (અંદરવાળું એમ જ રાખીને) × અંદરના function નું derivative"</div>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — નામ "chain" કેમ</span>
+<span class="label">must understand — નામ "chain" કેમ</span>
   y, u સાથે અને u, x સાથે "સાંકળ" (chain) ની જેમ જોડાયેલા છે — y ને x સાથે સીધો સંબંધ નથી, u ના મારફતે જ છે. dy/du × du/dx માં du કપાઈ જાય (Leibniz notation ના fraction જેવા દેખાવનું જ કારણ — Part 4d) અને dy/dx જ બાકી રહે, બરાબર જેમ સાંકળના વચલા કડા બંને છેડાના કડાને જોડે છે.
 </div>
-
 <div class="diagram">
-<svg viewBox="0 0 680 160" role="img"><title>Chain rule — x થી u થી y, સાંકળનું ચિત્ર</title><desc>x, u ને અસર કરે અને u, y ને અસર કરે એવી બે તીર ની સાંકળ, જેમાં du/dx અને dy/du બતાવેલા છે, ને છેલ્લે એમનો ગુણાકાર dy/dx</desc>
-<defs><marker id="arrowc2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<circle cx="90" cy="80" r="34" fill="var(--surface-2)" stroke="var(--line)"/>
-<text class="th" x="90" y="86" text-anchor="middle">x</text>
-<line x1="124" y1="80" x2="256" y2="80" stroke="var(--formula)" stroke-width="2" marker-end="url(#arrowc2)"/>
-<text class="th" x="190" y="66" text-anchor="middle" fill="var(--formula)">du/dx</text>
-<circle cx="290" cy="80" r="34" fill="var(--surface-2)" stroke="var(--line)"/>
-<text class="th" x="290" y="86" text-anchor="middle">u</text>
-<line x1="324" y1="80" x2="456" y2="80" stroke="var(--exam)" stroke-width="2" marker-end="url(#arrowc2)"/>
-<text class="th" x="390" y="66" text-anchor="middle" fill="var(--exam)">dy/du</text>
-<circle cx="490" cy="80" r="34" fill="var(--surface-2)" stroke="var(--line)"/>
-<text class="th" x="490" y="86" text-anchor="middle">y</text>
-<path d="M 90 120 Q 290 155 490 120" fill="none" stroke="var(--check)" stroke-width="1.5" stroke-dasharray="4,3"/>
-<text class="th" x="290" y="150" text-anchor="middle" fill="var(--check)">dy/dx = dy/du × du/dx</text>
+<svg role="img" viewbox="0 0 680 160"><title>Chain rule — x થી u થી y, સાંકળનું ચિત્ર</title><desc>x, u ને અસર કરે અને u, y ને અસર કરે એવી બે તીર ની સાંકળ, જેમાં du/dx અને dy/du બતાવેલા છે, ને છેલ્લે એમનો ગુણાકાર dy/dx</desc>
+<defs><marker id="arrowc2" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></marker></defs>
+<circle cx="90" cy="80" fill="var(--surface-2)" r="34" stroke="var(--line)"></circle>
+<text class="th" text-anchor="middle" x="90" y="86">x</text>
+<line marker-end="url(#arrowc2)" stroke="var(--formula)" stroke-width="2" x1="124" x2="256" y1="80" y2="80"></line>
+<text class="th" fill="var(--formula)" text-anchor="middle" x="190" y="66">du/dx</text>
+<circle cx="290" cy="80" fill="var(--surface-2)" r="34" stroke="var(--line)"></circle>
+<text class="th" text-anchor="middle" x="290" y="86">u</text>
+<line marker-end="url(#arrowc2)" stroke="var(--exam)" stroke-width="2" x1="324" x2="456" y1="80" y2="80"></line>
+<text class="th" fill="var(--exam)" text-anchor="middle" x="390" y="66">dy/du</text>
+<circle cx="490" cy="80" fill="var(--surface-2)" r="34" stroke="var(--line)"></circle>
+<text class="th" text-anchor="middle" x="490" y="86">y</text>
+<path d="M 90 120 Q 290 155 490 120" fill="none" stroke="var(--check)" stroke-dasharray="4,3" stroke-width="1.5"></path>
+<text class="th" fill="var(--check)" text-anchor="middle" x="290" y="150">dy/dx = dy/du × du/dx</text>
 </svg>
 <div class="diagram-cap">x → u → y ની "સાંકળ": u ના મારફતે x, y ને અસર કરે છે — dy/dx બંને વચલા-કડાના derivatives નો ગુણાકાર</div>
 </div>
-
 <div class="example">
-  <span class="label">worked example</span>
-  <div class="step"><b>Given</b> — y = sin(x²)</div>
-  <div class="step"><b>Method</b> — u = x² (અંદરનું), y = sinu (બહારનું). du/dx = 2x, dy/du = cosu = cos(x²)</div>
-  <div class="step"><b>Calculation</b> — dy/dx = cos(x²) × 2x = 2x·cos(x²)</div>
+<span class="label">worked example</span>
+<div class="step"><b>Given</b> — y = sin(x²)</div>
+<div class="step"><b>Method</b> — u = x² (અંદરનું), y = sinu (બહારનું). du/dx = 2x, dy/du = cosu = cos(x²)</div>
+<div class="step"><b>Calculation</b> — dy/dx = cos(x²) × 2x = 2x·cos(x²)</div>
 </div>
-
 <div class="example">
-  <span class="label">real-world example</span>
-  <div class="step"><b>Ripple ની area</b> — તળાવમાં પથ્થર પડતાં ripple નો radius r, time t સાથે વધે (r=f(t)); ripple ની area A=πr² છે, r સાથે બદલાય. "Area, time સાથે કેટલી ઝડપથી વધે છે" (dA/dt) કાઢવા chain rule જોઈએ: dA/dt = dA/dr × dr/dt — બરાબર related-rates નો સૌથી common ઉદાહરણ.</div>
+<span class="label">real-world example</span>
+<div class="step"><b>Ripple ની area</b> — તળાવમાં પથ્થર પડતાં ripple નો radius r, time t સાથે વધે (r=f(t)); ripple ની area A=πr² છે, r સાથે બદલાય. "Area, time સાથે કેટલી ઝડપથી વધે છે" (dA/dt) કાઢવા chain rule જોઈએ: dA/dt = dA/dr × dr/dt — બરાબર related-rates નો સૌથી common ઉદાહરણ.</div>
 </div>
-
 <div class="mistake-box box">
-  <span class="label">common mistake</span>
+<span class="label">common mistake</span>
   y=sin(x²) ને differentiate કરતાં ફક્ત cos(x²) લખી દેવું, ×2x (du/dx) ભૂલી જવું — chain rule નો બીજો ભાગ (અંદરના function નું પોતાનું derivative) છોડી દેવો એ સૌથી common error છે.
 </div>
-
 <div class="check-box box">
-  <span class="label">self-check</span>
-  1. y = (3x+1)⁵ નું dy/dx કાઢ.<br>
-  2. y = x²cosx નું dy/dx કાઢ (product rule).<br>
+<span class="label">self-check</span>
+  1. y = (3x+1)⁵ નું dy/dx કાઢ.<br/>
+  2. y = x²cosx નું dy/dx કાઢ (product rule).<br/>
   3. y = sinx/x² નું dy/dx કાઢ (quotient rule).
 </div>
-
-
 <!-- upd-2026-10-04:calc-implicit -->
 <h3>Implicit differentiation — y ને અલગ કર્યા વગર dy/dx</h3>
-<div class="diagram"><svg viewBox="0 0 480 300" width="100%" style="max-width:680px;display:block;margin:6px auto" xmlns="http://www.w3.org/2000/svg"><line x1="50.0" y1="144.0" x2="460.0" y2="144.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="466.0,144.0 460.0,146.7 460.0,141.3" fill="var(--ink-2)"/><line x1="179.2" y1="264.0" x2="179.2" y2="24.0" stroke="var(--ink-2)" stroke-width="1.2"/><polygon points="179.2,18.0 181.9,24.0 176.5,24.0" fill="var(--ink-2)"/><line x1="86.9" y1="141.0" x2="86.9" y2="147.0" stroke="var(--ink-2)" stroke-width="1"/><text x="86.9" y="158.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">-5</text><line x1="234.6" y1="141.0" x2="234.6" y2="147.0" stroke="var(--ink-2)" stroke-width="1"/><text x="234.6" y="158.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">3</text><line x1="271.5" y1="141.0" x2="271.5" y2="147.0" stroke="var(--ink-2)" stroke-width="1"/><text x="271.5" y="158.0" fill="var(--ink-2)" font-size="9.5" text-anchor="middle" font-family="Source Sans 3, sans-serif">5</text><line x1="176.2" y1="236.3" x2="182.2" y2="236.3" stroke="var(--ink-2)" stroke-width="1"/><text x="173.2" y="239.8" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">-5</text><line x1="176.2" y1="70.2" x2="182.2" y2="70.2" stroke="var(--ink-2)" stroke-width="1"/><text x="173.2" y="73.7" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">4</text><line x1="176.2" y1="51.7" x2="182.2" y2="51.7" stroke="var(--ink-2)" stroke-width="1"/><text x="173.2" y="55.2" fill="var(--ink-2)" font-size="9.5" text-anchor="end" font-family="Source Sans 3, sans-serif">5</text><text x="462.0" y="137.0" fill="var(--ink-2)" font-size="10" text-anchor="end" font-family="Source Sans 3, sans-serif" font-style="italic">x</text><text x="185.2" y="28.0" fill="var(--ink-2)" font-size="10" text-anchor="start" font-family="Source Sans 3, sans-serif" font-style="italic">y</text><polyline points="271.5,144.0 271.5,141.1 271.4,138.2 271.1,135.3 270.8,132.4 270.4,129.6 269.9,126.7 269.3,123.9 268.6,121.0 267.9,118.2 267.0,115.5 266.1,112.7 265.1,110.0 263.9,107.3 262.8,104.7 261.5,102.1 260.1,99.5 258.7,97.0 257.2,94.5 255.6,92.1 253.9,89.7 252.2,87.4 250.4,85.2 248.5,83.0 246.5,80.8 244.5,78.7 242.4,76.7 240.3,74.8 238.1,72.9 235.8,71.1 233.5,69.3 231.1,67.7 228.7,66.1 226.2,64.5 223.7,63.1 221.1,61.8 218.5,60.5 215.9,59.3 213.2,58.2 210.5,57.1 207.8,56.2 205.0,55.4 202.2,54.6 199.4,53.9 196.5,53.3 193.7,52.8 190.8,52.4 187.9,52.1 185.0,51.9 182.1,51.7 179.2,51.7 176.3,51.7 173.4,51.9 170.5,52.1 167.7,52.4 164.8,52.8 161.9,53.3 159.1,53.9 156.3,54.6 153.5,55.4 150.7,56.2 148.0,57.1 145.3,58.2 142.6,59.3 139.9,60.5 137.3,61.8 134.8,63.1 132.2,64.5 129.8,66.1 127.3,67.7 125.0,69.3 122.7,71.1 120.4,72.9 118.2,74.8 116.0,76.7 114.0,78.7 111.9,80.8 110.0,83.0 108.1,85.2 106.3,87.4 104.6,89.7 102.9,92.1 101.3,94.5 99.8,97.0 98.3,99.5 97.0,102.1 95.7,104.7 94.5,107.3 93.4,110.0 92.4,112.7 91.4,115.5 90.6,118.2 89.8,121.0 89.1,123.9 88.6,126.7 88.1,129.6 87.7,132.4 87.3,135.3 87.1,138.2 87.0,141.1 86.9,144.0 87.0,146.9 87.1,149.8 87.3,152.7 87.7,155.6 88.1,158.4 88.6,161.3 89.1,164.1 89.8,167.0 90.6,169.8 91.4,172.5 92.4,175.3 93.4,178.0 94.5,180.7 95.7,183.3 97.0,185.9 98.3,188.5 99.8,191.0 101.3,193.5 102.9,195.9 104.6,198.3 106.3,200.6 108.1,202.8 110.0,205.0 111.9,207.2 114.0,209.3 116.0,211.3 118.2,213.2 120.4,215.1 122.7,216.9 125.0,218.7 127.3,220.3 129.8,221.9 132.2,223.5 134.8,224.9 137.3,226.2 139.9,227.5 142.6,228.7 145.3,229.8 148.0,230.9 150.7,231.8 153.5,232.6 156.3,233.4 159.1,234.1 161.9,234.7 164.8,235.2 167.7,235.6 170.5,235.9 173.4,236.1 176.3,236.3 179.2,236.3 182.1,236.3 185.0,236.1 187.9,235.9 190.8,235.6 193.7,235.2 196.5,234.7 199.4,234.1 202.2,233.4 205.0,232.6 207.8,231.8 210.5,230.9 213.2,229.8 215.9,228.7 218.5,227.5 221.1,226.2 223.7,224.9 226.2,223.5 228.7,221.9 231.1,220.3 233.5,218.7 235.8,216.9 238.1,215.1 240.3,213.2 242.4,211.3 244.5,209.3 246.5,207.2 248.5,205.0 250.4,202.8 252.2,200.6 253.9,198.3 255.6,195.9 257.2,193.5 258.7,191.0 260.1,188.5 261.5,185.9 262.8,183.3 263.9,180.7 265.1,178.0 266.1,175.3 267.0,172.5 267.9,169.8 268.6,167.0 269.3,164.1 269.9,161.3 270.4,158.4 270.8,155.6 271.1,152.7 271.4,149.8 271.5,146.9 271.5,144.0" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linejoin="round"/><polyline points="173.2,24.1 173.8,24.6 174.5,25.1 175.2,25.6 175.8,26.0 176.5,26.5 177.1,27.0 177.8,27.5 178.4,28.0 179.1,28.5 179.7,29.0 180.4,29.5 181.0,30.0 181.7,30.5 182.3,31.0 183.0,31.4 183.7,31.9 184.3,32.4 185.0,32.9 185.6,33.4 186.3,33.9 186.9,34.4 187.6,34.9 188.2,35.4 188.9,35.9 189.5,36.3 190.2,36.8 190.8,37.3 191.5,37.8 192.2,38.3 192.8,38.8 193.5,39.3 194.1,39.8 194.8,40.3 195.4,40.8 196.1,41.2 196.7,41.7 197.4,42.2 198.0,42.7 198.7,43.2 199.3,43.7 200.0,44.2 200.7,44.7 201.3,45.2 202.0,45.7 202.6,46.2 203.3,46.6 203.9,47.1 204.6,47.6 205.2,48.1 205.9,48.6 206.5,49.1 207.2,49.6 207.8,50.1 208.5,50.6 209.2,51.1 209.8,51.5 210.5,52.0 211.1,52.5 211.8,53.0 212.4,53.5 213.1,54.0 213.7,54.5 214.4,55.0 215.0,55.5 215.7,56.0 216.3,56.5 217.0,56.9 217.7,57.4 218.3,57.9 219.0,58.4 219.6,58.9 220.3,59.4 220.9,59.9 221.6,60.4 222.2,60.9 222.9,61.4 223.5,61.8 224.2,62.3 224.8,62.8 225.5,63.3 226.2,63.8 226.8,64.3 227.5,64.8 228.1,65.3 228.8,65.8 229.4,66.3 230.1,66.8 230.7,67.2 231.4,67.7 232.0,68.2 232.7,68.7 233.3,69.2 234.0,69.7 234.7,70.2 235.3,70.7 236.0,71.2 236.6,71.7 237.3,72.1 237.9,72.6 238.6,73.1 239.2,73.6 239.9,74.1 240.5,74.6 241.2,75.1 241.8,75.6 242.5,76.1 243.2,76.6 243.8,77.0 244.5,77.5 245.1,78.0 245.8,78.5 246.4,79.0 247.1,79.5 247.7,80.0 248.4,80.5 249.0,81.0 249.7,81.5 250.3,82.0 251.0,82.4 251.7,82.9 252.3,83.4 253.0,83.9 253.6,84.4 254.3,84.9 254.9,85.4 255.6,85.9 256.2,86.4 256.9,86.9 257.5,87.3 258.2,87.8 258.8,88.3 259.5,88.8 260.2,89.3 260.8,89.8 261.5,90.3 262.1,90.8 262.8,91.3 263.4,91.8 264.1,92.2 264.7,92.7 265.4,93.2 266.0,93.7 266.7,94.2 267.3,94.7 268.0,95.2 268.7,95.7 269.3,96.2 270.0,96.7 270.6,97.2 271.3,97.6 271.9,98.1 272.6,98.6 273.2,99.1 273.9,99.6 274.5,100.1 275.2,100.6 275.8,101.1 276.5,101.6 277.2,102.1 277.8,102.5 278.5,103.0 279.1,103.5 279.8,104.0 280.4,104.5 281.1,105.0 281.7,105.5 282.4,106.0 283.0,106.5 283.7,107.0 284.3,107.5 285.0,107.9 285.7,108.4 286.3,108.9 287.0,109.4 287.6,109.9 288.3,110.4 288.9,110.9 289.6,111.4 290.2,111.9 290.9,112.4 291.5,112.8 292.2,113.3 292.8,113.8 293.5,114.3 294.2,114.8 294.8,115.3 295.5,115.8 296.1,116.3 296.8,116.8 297.4,117.3 298.1,117.8 298.7,118.2 299.4,118.7 300.0,119.2 300.7,119.7 301.3,120.2 302.0,120.7 302.7,121.2 303.3,121.7 304.0,122.2 304.6,122.7 305.3,123.1 305.9,123.6 306.6,124.1 307.2,124.6 307.9,125.1 308.5,125.6 309.2,126.1 309.8,126.6 310.5,127.1 311.2,127.6 311.8,128.0 312.5,128.5 313.1,129.0 313.8,129.5 314.4,130.0 315.1,130.5 315.7,131.0 316.4,131.5 317.0,132.0 317.7,132.5" stroke="var(--exam)" fill="none" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="6 4"/><circle cx="234.6" cy="70.2" r="3.6" fill="var(--exam)"/><text x="246.6" y="62.2" fill="var(--exam)" font-size="12" text-anchor="start" font-family="Source Sans 3, sans-serif" font-weight="600">(3, 4): y′ = −x/y = −3/4</text><text x="354.6" y="227.1" fill="var(--accent)" font-size="12" text-anchor="middle" font-family="Source Sans 3, sans-serif">x² + y² = 25</text></svg><div class="diagram-cap">વર્તુળ x² + y² = 25 equal-scale axes પર ગણેલું; (3, 4) પર slope −3/4 નો tangent — ત્રિજ્યાને લંબ (slope 4/3 × −3/4 = −1).</div></div>
+<div class="diagram"><svg style="max-width:680px;display:block;margin:6px auto" viewbox="0 0 480 300" width="100%" xmlns="http://www.w3.org/2000/svg"><line stroke="var(--ink-2)" stroke-width="1.2" x1="50.0" x2="460.0" y1="144.0" y2="144.0"></line><polygon fill="var(--ink-2)" points="466.0,144.0 460.0,146.7 460.0,141.3"></polygon><line stroke="var(--ink-2)" stroke-width="1.2" x1="179.2" x2="179.2" y1="264.0" y2="24.0"></line><polygon fill="var(--ink-2)" points="179.2,18.0 181.9,24.0 176.5,24.0"></polygon><line stroke="var(--ink-2)" stroke-width="1" x1="86.9" x2="86.9" y1="141.0" y2="147.0"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="middle" x="86.9" y="158.0">-5</text><line stroke="var(--ink-2)" stroke-width="1" x1="234.6" x2="234.6" y1="141.0" y2="147.0"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="middle" x="234.6" y="158.0">3</text><line stroke="var(--ink-2)" stroke-width="1" x1="271.5" x2="271.5" y1="141.0" y2="147.0"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="middle" x="271.5" y="158.0">5</text><line stroke="var(--ink-2)" stroke-width="1" x1="176.2" x2="182.2" y1="236.3" y2="236.3"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="173.2" y="239.8">-5</text><line stroke="var(--ink-2)" stroke-width="1" x1="176.2" x2="182.2" y1="70.2" y2="70.2"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="173.2" y="73.7">4</text><line stroke="var(--ink-2)" stroke-width="1" x1="176.2" x2="182.2" y1="51.7" y2="51.7"></line><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="9.5" text-anchor="end" x="173.2" y="55.2">5</text><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="end" x="462.0" y="137.0">x</text><text fill="var(--ink-2)" font-family="Source Sans 3, sans-serif" font-size="10" font-style="italic" text-anchor="start" x="185.2" y="28.0">y</text><polyline fill="none" points="271.5,144.0 271.5,141.1 271.4,138.2 271.1,135.3 270.8,132.4 270.4,129.6 269.9,126.7 269.3,123.9 268.6,121.0 267.9,118.2 267.0,115.5 266.1,112.7 265.1,110.0 263.9,107.3 262.8,104.7 261.5,102.1 260.1,99.5 258.7,97.0 257.2,94.5 255.6,92.1 253.9,89.7 252.2,87.4 250.4,85.2 248.5,83.0 246.5,80.8 244.5,78.7 242.4,76.7 240.3,74.8 238.1,72.9 235.8,71.1 233.5,69.3 231.1,67.7 228.7,66.1 226.2,64.5 223.7,63.1 221.1,61.8 218.5,60.5 215.9,59.3 213.2,58.2 210.5,57.1 207.8,56.2 205.0,55.4 202.2,54.6 199.4,53.9 196.5,53.3 193.7,52.8 190.8,52.4 187.9,52.1 185.0,51.9 182.1,51.7 179.2,51.7 176.3,51.7 173.4,51.9 170.5,52.1 167.7,52.4 164.8,52.8 161.9,53.3 159.1,53.9 156.3,54.6 153.5,55.4 150.7,56.2 148.0,57.1 145.3,58.2 142.6,59.3 139.9,60.5 137.3,61.8 134.8,63.1 132.2,64.5 129.8,66.1 127.3,67.7 125.0,69.3 122.7,71.1 120.4,72.9 118.2,74.8 116.0,76.7 114.0,78.7 111.9,80.8 110.0,83.0 108.1,85.2 106.3,87.4 104.6,89.7 102.9,92.1 101.3,94.5 99.8,97.0 98.3,99.5 97.0,102.1 95.7,104.7 94.5,107.3 93.4,110.0 92.4,112.7 91.4,115.5 90.6,118.2 89.8,121.0 89.1,123.9 88.6,126.7 88.1,129.6 87.7,132.4 87.3,135.3 87.1,138.2 87.0,141.1 86.9,144.0 87.0,146.9 87.1,149.8 87.3,152.7 87.7,155.6 88.1,158.4 88.6,161.3 89.1,164.1 89.8,167.0 90.6,169.8 91.4,172.5 92.4,175.3 93.4,178.0 94.5,180.7 95.7,183.3 97.0,185.9 98.3,188.5 99.8,191.0 101.3,193.5 102.9,195.9 104.6,198.3 106.3,200.6 108.1,202.8 110.0,205.0 111.9,207.2 114.0,209.3 116.0,211.3 118.2,213.2 120.4,215.1 122.7,216.9 125.0,218.7 127.3,220.3 129.8,221.9 132.2,223.5 134.8,224.9 137.3,226.2 139.9,227.5 142.6,228.7 145.3,229.8 148.0,230.9 150.7,231.8 153.5,232.6 156.3,233.4 159.1,234.1 161.9,234.7 164.8,235.2 167.7,235.6 170.5,235.9 173.4,236.1 176.3,236.3 179.2,236.3 182.1,236.3 185.0,236.1 187.9,235.9 190.8,235.6 193.7,235.2 196.5,234.7 199.4,234.1 202.2,233.4 205.0,232.6 207.8,231.8 210.5,230.9 213.2,229.8 215.9,228.7 218.5,227.5 221.1,226.2 223.7,224.9 226.2,223.5 228.7,221.9 231.1,220.3 233.5,218.7 235.8,216.9 238.1,215.1 240.3,213.2 242.4,211.3 244.5,209.3 246.5,207.2 248.5,205.0 250.4,202.8 252.2,200.6 253.9,198.3 255.6,195.9 257.2,193.5 258.7,191.0 260.1,188.5 261.5,185.9 262.8,183.3 263.9,180.7 265.1,178.0 266.1,175.3 267.0,172.5 267.9,169.8 268.6,167.0 269.3,164.1 269.9,161.3 270.4,158.4 270.8,155.6 271.1,152.7 271.4,149.8 271.5,146.9 271.5,144.0" stroke="var(--accent)" stroke-linejoin="round" stroke-width="2"></polyline><polyline fill="none" points="173.2,24.1 173.8,24.6 174.5,25.1 175.2,25.6 175.8,26.0 176.5,26.5 177.1,27.0 177.8,27.5 178.4,28.0 179.1,28.5 179.7,29.0 180.4,29.5 181.0,30.0 181.7,30.5 182.3,31.0 183.0,31.4 183.7,31.9 184.3,32.4 185.0,32.9 185.6,33.4 186.3,33.9 186.9,34.4 187.6,34.9 188.2,35.4 188.9,35.9 189.5,36.3 190.2,36.8 190.8,37.3 191.5,37.8 192.2,38.3 192.8,38.8 193.5,39.3 194.1,39.8 194.8,40.3 195.4,40.8 196.1,41.2 196.7,41.7 197.4,42.2 198.0,42.7 198.7,43.2 199.3,43.7 200.0,44.2 200.7,44.7 201.3,45.2 202.0,45.7 202.6,46.2 203.3,46.6 203.9,47.1 204.6,47.6 205.2,48.1 205.9,48.6 206.5,49.1 207.2,49.6 207.8,50.1 208.5,50.6 209.2,51.1 209.8,51.5 210.5,52.0 211.1,52.5 211.8,53.0 212.4,53.5 213.1,54.0 213.7,54.5 214.4,55.0 215.0,55.5 215.7,56.0 216.3,56.5 217.0,56.9 217.7,57.4 218.3,57.9 219.0,58.4 219.6,58.9 220.3,59.4 220.9,59.9 221.6,60.4 222.2,60.9 222.9,61.4 223.5,61.8 224.2,62.3 224.8,62.8 225.5,63.3 226.2,63.8 226.8,64.3 227.5,64.8 228.1,65.3 228.8,65.8 229.4,66.3 230.1,66.8 230.7,67.2 231.4,67.7 232.0,68.2 232.7,68.7 233.3,69.2 234.0,69.7 234.7,70.2 235.3,70.7 236.0,71.2 236.6,71.7 237.3,72.1 237.9,72.6 238.6,73.1 239.2,73.6 239.9,74.1 240.5,74.6 241.2,75.1 241.8,75.6 242.5,76.1 243.2,76.6 243.8,77.0 244.5,77.5 245.1,78.0 245.8,78.5 246.4,79.0 247.1,79.5 247.7,80.0 248.4,80.5 249.0,81.0 249.7,81.5 250.3,82.0 251.0,82.4 251.7,82.9 252.3,83.4 253.0,83.9 253.6,84.4 254.3,84.9 254.9,85.4 255.6,85.9 256.2,86.4 256.9,86.9 257.5,87.3 258.2,87.8 258.8,88.3 259.5,88.8 260.2,89.3 260.8,89.8 261.5,90.3 262.1,90.8 262.8,91.3 263.4,91.8 264.1,92.2 264.7,92.7 265.4,93.2 266.0,93.7 266.7,94.2 267.3,94.7 268.0,95.2 268.7,95.7 269.3,96.2 270.0,96.7 270.6,97.2 271.3,97.6 271.9,98.1 272.6,98.6 273.2,99.1 273.9,99.6 274.5,100.1 275.2,100.6 275.8,101.1 276.5,101.6 277.2,102.1 277.8,102.5 278.5,103.0 279.1,103.5 279.8,104.0 280.4,104.5 281.1,105.0 281.7,105.5 282.4,106.0 283.0,106.5 283.7,107.0 284.3,107.5 285.0,107.9 285.7,108.4 286.3,108.9 287.0,109.4 287.6,109.9 288.3,110.4 288.9,110.9 289.6,111.4 290.2,111.9 290.9,112.4 291.5,112.8 292.2,113.3 292.8,113.8 293.5,114.3 294.2,114.8 294.8,115.3 295.5,115.8 296.1,116.3 296.8,116.8 297.4,117.3 298.1,117.8 298.7,118.2 299.4,118.7 300.0,119.2 300.7,119.7 301.3,120.2 302.0,120.7 302.7,121.2 303.3,121.7 304.0,122.2 304.6,122.7 305.3,123.1 305.9,123.6 306.6,124.1 307.2,124.6 307.9,125.1 308.5,125.6 309.2,126.1 309.8,126.6 310.5,127.1 311.2,127.6 311.8,128.0 312.5,128.5 313.1,129.0 313.8,129.5 314.4,130.0 315.1,130.5 315.7,131.0 316.4,131.5 317.0,132.0 317.7,132.5" stroke="var(--exam)" stroke-dasharray="6 4" stroke-linejoin="round" stroke-width="1.6"></polyline><circle cx="234.6" cy="70.2" fill="var(--exam)" r="3.6"></circle><text fill="var(--exam)" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="600" text-anchor="start" x="246.6" y="62.2">(3, 4): y′ = −x/y = −3/4</text><text fill="var(--accent)" font-family="Source Sans 3, sans-serif" font-size="12" text-anchor="middle" x="354.6" y="227.1">x² + y² = 25</text></svg><div class="diagram-cap">વર્તુળ x² + y² = 25 equal-scale axes પર ગણેલું; (3, 4) પર slope −3/4 નો tangent — ત્રિજ્યાને લંબ (slope 4/3 × −3/4 = −1).</div></div>
 <div class="formula-box"><span class="label">formula — must memorize</span><div class="f">F(x, y) = 0 ⟹ dy/dx = −(∂F/∂x)/(∂F/∂y)</div><div class="meaning">બંને બાજુ x પ્રત્યે differentiate કરો; y નું દરેક પદ chain rule થી y′ આપે: d(y²)/dx = 2y·y′, d(xy)/dx = y + x·y′. પછી y′ વાળા પદો એક બાજુ ભેગા કરો. Real-world: "related rates" — દીવાલ સાથે સરકતી નિસરણી (x² + y² = L²) માં ઉપરનો છેડો કેટલી ઝડપે નીચે આવે તે આ જ રીતે મળે.</div></div>
 <div class="example"><span class="label">worked example</span><div class="step"><b>Given</b> — x² + xy + y² = 7, બિંદુ (1, 2)</div><div class="step"><b>Need</b> — dy/dx</div><div class="step"><b>Method</b> — implicit: 2x + (y + xy′) + 2yy′ = 0</div><div class="step"><b>Calculation</b> — y′ = −(2x + y)/(x + 2y) = −4/5</div><div class="step"><b>Check</b> — formula −F_x/F_y = −(2x + y)/(x + 2y) સમાન ✓</div></div>
 <div class="mistake-box box"><span class="label">common mistake</span>d(y²)/dx = 2y લખવું (y′ ભૂલવું), કે xy ના derivative માં product rule ન વાપરવો.</div>
 <div class="next-line">→ <b>Next:</b> બધા rules આવ્યા. હવે standard functions (sinx, cosx, eˣ, lnx) ના ready derivatives ની table — Part 7, ત્યાં PABT focus પણ.</div>
 </div>
-
 <!-- ============ PART 7 ============ -->
 <div class="part" id="p7">
 <h2><span class="num">07</span>Standard derivatives + practice map</h2>
-
 <div class="outcome">
-  <span class="label">outcome</span>
+<span class="label">outcome</span>
   આ part પછી, ready-to-use standard derivative table તારી પાસે હશે, અને PABT Phase Test 2 માટે શું practice priority છે એ સ્પષ્ટ હશે.
 </div>
-
 <h3>7a. Standard derivatives table <span class="badge">must memorize</span></h3>
 <div class="tblwrap">
 <table>
@@ -936,12 +800,10 @@ sup,sub{font-size:.7em}
 <tr><td class="rowlabel">f'(x)</td><td>nxⁿ⁻¹</td><td>cosx</td><td>−sinx</td><td>sec²x</td><td>eˣ</td><td>1/x</td><td>0</td></tr>
 </table>
 </div>
-
 <div class="concept-box box">
-  <span class="label">must understand — constant નું derivative 0 કેમ</span>
+<span class="label">must understand — constant નું derivative 0 કેમ</span>
   f(x)=c (constant) — ગ્રાફ સીધી horizontal રેખા છે, ક્યારેય ઉપર-નીચે નથી જતી, એટલે ઢાળ (slope) દરેક બિંદુએ 0 જ છે. First principles થી પણ: [f(x+h)−f(x)]/h = [c−c]/h = 0/h = 0 (h≠0 માટે), limit પણ 0.
 </div>
-
 <h3>7b. MUST UNDERSTAND / MUST MEMORIZE / MUST PRACTISE / NICE TO KNOW</h3>
 <div class="tblwrap">
 <table>
@@ -952,30 +814,26 @@ sup,sub{font-size:.7em}
 <tr><td class="rowlabel">NICE TO KNOW</td><td>Squeeze theorem નું general સ્વરૂપ, ε-δ formal વ્યાખ્યા (JEE Advanced/higher-level, board syllabus બહાર)</td></tr>
 </table>
 </div>
-
 <div class="exam-box box">
-  <span class="label">exam probability — PABT Phase Test 2 (2026-10-04)</span>
+<span class="label">exam probability — PABT Phase Test 2 (2026-10-04)</span>
   Standard limits (sinx/x, xⁿ−aⁿ), first-principles derivative (સાદા polynomial/trig function), અને product/quotient/chain rule ના mixed differentiation problems — આ ત્રણ સૌથી વધુ સંભવિત પ્રશ્ન-પ્રકાર છે. Tangent-line equation (Part 5c) પણ frequently combined-question તરીકે આવે છે.
 </div>
-
 <div class="next-line">→ <b>Next action:</b> Self-check પ્રશ્નો (Part 1-6, દરેકના અંતે) જાતે ફરી હલ કરો, પછી Revision Sheet થી ઝડપી scan કરો. PYQ source material હજુ upload નથી થયું — મળે એટલે અલગ Practice/Solutions document બનશે.</div>
 </div>
-
 <!-- ============ SUMMARY ============ -->
 <div class="part">
 <div class="remember">
-  <span class="label">remember — સંપૂર્ણ chapter</span>
-  <ol>
-    <li>lim(x→a) f(x) exists ⟺ LHL = RHL (બંને equal)</li>
-    <li>0/0 form → factorize / rationalize; lim(x→a)(xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹</li>
-    <li>lim(x→0) sinx/x = 1 (radian માં જ)</li>
-    <li>Continuity — ત્રણ શરત: f(a) defined, limit exists, limit = f(a)</li>
-    <li>f'(x) = lim(h→0) [f(x+h)−f(x)]/h — derivative = tangent slope</li>
-    <li>Power, Product (f'g+fg'), Quotient ([f'g−fg']/g²), Chain (dy/du × du/dx)</li>
-    <li>Standard derivatives: sinx→cosx, cosx→−sinx, eˣ→eˣ, lnx→1/x</li>
-  </ol>
+<span class="label">remember — સંપૂર્ણ chapter</span>
+<ol>
+<li>lim(x→a) f(x) exists ⟺ LHL = RHL (બંને equal)</li>
+<li>0/0 form → factorize / rationalize; lim(x→a)(xⁿ−aⁿ)/(x−a) = n·aⁿ⁻¹</li>
+<li>lim(x→0) sinx/x = 1 (radian માં જ)</li>
+<li>Continuity — ત્રણ શરત: f(a) defined, limit exists, limit = f(a)</li>
+<li>f'(x) = lim(h→0) [f(x+h)−f(x)]/h — derivative = tangent slope</li>
+<li>Power, Product (f'g+fg'), Quotient ([f'g−fg']/g²), Chain (dy/du × du/dx)</li>
+<li>Standard derivatives: sinx→cosx, cosx→−sinx, eˣ→eˣ, lnx→1/x</li>
+</ol>
 </div>
 <div class="next-line" style="border-top:none;padding-top:0">→ <b>Next action after this chapter:</b> Tangent/normal equation problems અને mixed differentiation (product+chain combined) numerically practice કરો — PABT Phase Test 2 (2026-10-04) માં "Basic Calculus" સ્પષ્ટ topic તરીકે listed છે.</div>
 </div>
-
 </div>
