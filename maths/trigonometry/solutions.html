@@ -81,7 +81,7 @@ li{margin-bottom:3px}
 
 .jumpicon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--formula);color:var(--surface);text-decoration:none;font-size:12px;font-weight:700;vertical-align:middle;margin-left:2px}
 .jumpicon:hover{background:var(--formula-line);color:var(--formula)}
-.qcard{border-top:6px solid var(--accent);margin-bottom:40px;position:relative}.qhead.big{background:var(--accent-bg);border:1px solid var(--accent);border-radius:10px;padding:10px 14px;margin:0 0 12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.qhead.big .qnum{font-size:26px;font-weight:800;color:var(--surface);background:var(--accent);padding:4px 16px;border-radius:8px;letter-spacing:.02em}.qhead.big .qsrc{font-size:12.5px;color:var(--accent-ink);font-family:var(--font-mono);font-weight:600}</style>
+.qcard{border-top:6px solid var(--accent);margin-bottom:40px;position:relative}.qhead.big{background:var(--accent-bg);border:1px solid var(--accent);border-radius:10px;padding:10px 14px;margin:0 0 12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.qhead.big .qnum{font-size:26px;font-weight:800;color:var(--surface);background:var(--accent);padding:4px 16px;border-radius:8px;letter-spacing:.02em}.qhead.big .qsrc{font-size:12.5px;color:var(--accent-ink);font-family:var(--font-mono);font-weight:600}.langtag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);font-weight:600}.langsep{border:0;border-top:1px dashed var(--line);margin:10px 0}.trapbox{margin-top:8px;background:var(--mistake-bg);border:1px solid var(--mistake-line);border-radius:8px;padding:8px 12px;font-size:13px}</style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&amp;family=Source+Sans+3:wght@400;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <div class="wrap">
 <h1>Trigonometry — PYQ solution sheet</h1>
@@ -90,19 +90,11 @@ li{margin-bottom:3px}
 <!-- ============ Q1 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.1</span><span class="qsrc">JEE Main 2021 (February)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>x = Σ_{n=0}^∞ cos^{2n}θ, y = Σ_{n=0}^∞ sin^{2n}φ, θ, φ ∈ (0, π/2), and Z = Σ_{n=0}^∞ (sinθ)^{2n}(cosφ)^{2n}. Then Z = ? (1) xy/(xy − 1) (2) xy/(xy + 1) (3) (xy − 1)/xy (4) (xy + 1)/xy<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 x = Σ<sub>n=0</sub><sup>∞</sup> cos<sup>2n</sup>θ,   y = Σ<sub>n=0</sub><sup>∞</sup> sin<sup>2n</sup>φ,   θ,φ ∈ (0, π/2)<br/>
 અને Z = Σ<sub>n=0</sub><sup>∞</sup> (sinθ)<sup>2n</sup>(cosφ)<sup>2n</sup> તો Z = ?
 <div class="opts">(1) xy/(xy−1)   (2) xy/(xy+1)   (3) (xy−1)/xy   (4) (xy+1)/xy</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>ત્રણ અનંત શ્રેણી x, y, Z આપી છે; Z ને x અને y ના રૂપમાં લખો.<br/><br/>શું hidden છે: sin²θ અને cos²φ ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: sin²θ, cos²φ ના બદલે અનંત શ્રેણીના સરવાળા x અને y આપ્યા છે<br/><br/>તે sin²θ, cos²φ કેવી રીતે મળે છે:<br/>• દરેક શ્રેણી geometric, ratio 1 થી ઓછો ⟹ સરવાળો = 1/(1 − r).<br/>• x = 1/(1 − cos²θ) = 1/sin²θ ⟹ sin²θ = 1/x; એ જ રીતે cos²φ = 1/y.<br/>• Z = 1/(1 − sin²θ cos²φ) = 1/(1 − 1/xy) = xy/(xy − 1).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">દરેક series geometric છે (r&lt;1 કારણ કે θ,φ∈(0,π/2) એટલે cos²θ, sin²φ બંને (0,1) માં). Geometric series ના sum formula (1/(1−r)) વાપરીને x, y, Z ને બંધ સ્વરૂપમાં (closed form) લખો, પછી sin²θ, cos²φ ને x, y ના રૂપમાં કાઢી Z ના formula માં substitute કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -125,19 +117,10 @@ x = Σ<sub>n=0</sub><sup>∞</sup> cos<sup>2n</sup>θ,   y = Σ<sub>n=0</sub><s
 <!-- ============ Q2 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.2</span><span class="qsrc">JEE Main 2021 (March)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If for some α ∈ R, 15 sin⁴α + 10 cos⁴α = 6, find 27 sec⁶α + 8 cosec⁶α. (1) 350 (2) 500 (3) 400 (4) 250<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો કોઈ α∈R માટે, 15sin⁴α+10cos⁴α=6 તો 27sec⁶α+8cosec⁶α ની કિંમત કેટલી?
 <div class="opts">(1) 350   (2) 500   (3) 400   (4) 250</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>15sin⁴α + 10cos⁴α = 6 હોય તો 27sec⁶α + 8cosec⁶α શોધો.<br/><br/>શું hidden છે: sin²α ની ચોક્કસ કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: sin²α ના બદલે ચોથા ઘાતવાળું એક સમીકરણ આપ્યું છે<br/><br/>તે sin²α કેવી રીતે મળે છે:<br/>• s = sin²α, cos²α = 1 − s મૂકો ⟹ 25s² − 20s + 4 = 0.<br/>• Discriminant = 0 ⟹ s = 2/5 ⟹ cos²α = 3/5.<br/>• 27/(3/5)³ + 8/(2/5)³ = 125 + 125 = 250.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin²α = s, cos²α = 1−s મૂકીને પહેલું equation quadratic માં convert કરો — s માટે solve કરો. પછી sec⁶α = 1/cos⁶α અને cosec⁶α = 1/sin⁶α ને એ જ s વાપરીને કાઢો. Condition માં ⁴th power છે અને જવાબમાં ⁶th power — બંને s ના જ powers છે, direct substitution કામ કરશે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -176,19 +159,10 @@ x = Σ<sub>n=0</sub><sup>∞</sup> cos<sup>2n</sup>θ,   y = Σ<sub>n=0</sub><s
 <!-- ============ Q8 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.8</span><span class="qsrc">JEE Main 2019 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of cos²10° − cos10° cos50° + cos²50°. (1) (3/2)(1 + cos20°) (2) 3/4 (3) 3/4 + cos20° (4) 3/4<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cos²10° − cos10°cos50° + cos²50° નું મૂલ્ય કેટલું?
 <div class="opts">(1) (3/2)(1+cos20°)   (2) 3/4   (3) 3/4 + cos20°   (4) 3/4</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cos²10° − cos10°cos50° + cos²50° નું મૂલ્ય શોધો.<br/><br/>શું hidden છે: 10° અને 50° વચ્ચેનો ખાસ સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: કોઈ સંબંધ કહ્યો નથી — ફક્ત બે અસામાન્ય ખૂણા આપ્યા છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• 10° + 50° = 60° — આ જ ચાવી.<br/>• cos² ને (1 + cos2θ)/2 અને ગુણાકારને સરવાળામાં ફેરવો ⟹ 3/4 + ½(cos20° − cos40° + cos100°).<br/>• કૌંસ શૂન્ય થાય ⟹ જવાબ 3/4.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Power-reduction formulas (cos²θ=(1+cos2θ)/2) અને product-to-sum (cosA cosB = ½[cos(A−B)+cos(A+B)]) વાપરીને આખી expression ને single angles ના sum માં convert કરો. A+B=60° fixed હોવાથી ઘણા terms cancel/simplify થશે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -228,19 +202,10 @@ cos²10° − cos10°cos50° + cos²50° નું મૂલ્ય કેટલ�
 <!-- ============ Q13 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.13</span><span class="qsrc">JEE Main 2019 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of sin10° sin30° sin50° sin70°. (1) 1/36 (2) 1/32 (3) 1/18 (4) 1/16<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <div class="opts">(1) 1/36   (2) 1/32   (3) 1/18   (4) 1/16</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sin10° sin30° sin50° sin70° નું મૂલ્ય શોધો.<br/><br/>શું hidden છે: θ, 60° − θ, 60° + θ ત્રિપુટી<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ત્રિપુટી સીધી નથી — ફક્ત ચાર ખૂણા આપ્યા છે<br/><br/>તે ત્રિપુટી કેવી રીતે મળે છે:<br/>• 50° = 60° − 10°, 70° = 60° + 10° ⟹ θ = 10°.<br/>• sinθ sin(60° − θ) sin(60° + θ) = ¼ sin3θ = ¼ sin30° = 1/8.<br/>• sin30° = ½ થી ગુણો ⟹ 1/16.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sinθ·sin(60°−θ)·sin(60°+θ) = ¼sin3θ — આ standard identity ત્રણ angles ને single sin3θ માં ભેગા કરી દે છે. sin10°, sin50°, sin70° ને આ pattern માં ગોઠવીને simplify કરો, sin30°=1/2 અલગ multiply કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -283,19 +248,10 @@ sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <!-- ============ Q17 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.17</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>16 sin(20°) sin(40°) sin(80°) = ? (1) √3 (2) 2√3 (3) 3 (4) 4√3<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 16 sin(20°) sin(40°) sin(80°) = ?
 <div class="opts">(1) √3   (2) 2√3   (3) 3   (4) 4√3</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>16 sin20° sin40° sin80° શોધો.<br/><br/>શું hidden છે: θ, 60° − θ, 60° + θ ત્રિપુટી<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ત્રિપુટી સીધી નથી — ફક્ત ત્રણ ખૂણા આપ્યા છે<br/><br/>તે ત્રિપુટી કેવી રીતે મળે છે:<br/>• 40° = 60° − 20°, 80° = 60° + 20° ⟹ θ = 20°.<br/>• ગુણાકાર = ¼ sin60° = √3/8.<br/>• 16 × √3/8 = 2√3.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">એ જ identity sinθsin(60−θ)sin(60+θ)=¼sin3θ, અહીં θ=20° વાપરો. Pattern-recognition ઝડપ વધારવા Q.13 જેવા problems ને "family" તરીકે યાદ રાખો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -338,19 +294,10 @@ sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <!-- ============ Q21 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.21</span><span class="qsrc">JEE Main 2023 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>96 cos(π/33) cos(2π/33) cos(4π/33) cos(8π/33) cos(16π/33) equals: (1) 3 (2) 1 (3) 4 (4) 2<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 96 cos(π/33) cos(2π/33) cos(4π/33) cos(8π/33) cos(16π/33) બરાબર કેટલા?
 <div class="opts">(1) 3   (2) 1   (3) 4   (4) 2</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>96 cos(π/33) cos(2π/33) cos(4π/33) cos(8π/33) cos(16π/33) શોધો.<br/><br/>શું hidden છે: ખૂણા બમણા થતા જાય છે તે pattern<br/><br/>શું આપ્યું છે તેની જગ્યાએ: Pattern કહ્યું નથી — ફક્ત પાંચ cos આપ્યા છે<br/><br/>તે pattern કેવી રીતે મળે છે:<br/>• દરેક ખૂણો આગળના કરતાં બમણો ⟹ sin θ થી ગુણી sin2θ = 2sinθcosθ વારંવાર લગાડો.<br/>• ગુણાકાર = sin(32π/33)/(32 sin(π/33)).<br/>• sin(32π/33) = sin(π/33) ⟹ 1/32 ⟹ 96/32 = 3.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Doubling-angle cosine product માટે standard telescoping identity વપરાય: cosθ·cos2θ·cos4θ·...·cos(2ⁿ⁻¹θ) = sin(2ⁿθ)/(2ⁿ sinθ). આ sin2θ=2sinθcosθ ના વારંવાર ઉપયોગથી બને છે (દરેક step માં એક sin ઉમેરાય, એક cos "consume" થાય).</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -403,18 +350,10 @@ sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <!-- ============ Q3 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.3</span><span class="qsrc">JEE Main 2024 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If α, −π/2 &lt; α &lt; π/2, is a solution of 4cosθ + 5sinθ = 1, then tan α is ______. (1) (10 − √10)/6 (2) (10 − √10)/12 (3) (√10 − 10)/12 (4) (√10 − 10)/6<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો α, −π/2&lt;α&lt;π/2 એ 4cosθ+5sinθ=1 નો ઉકેલ હોય, તો tan α નું મૂલ્ય ______ છે.
 <div class="opts">(1) (10−√10)/6   (2) (10−√10)/12   (3) (√10−10)/12   (4) (√10−10)/6</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>4cosα + 5sinα = 1 નો (−π/2, π/2) માંનો ઉકેલ α હોય તો tanα શોધો.<br/><br/>શું hidden છે: tanα માટેનું સમીકરણ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: tanα નું સમીકરણ નથી — sin અને cos વાળું સમીકરણ અને ખૂણાની મર્યાદા આપી છે<br/><br/>તે સમીકરણ કેવી રીતે મળે છે:<br/>• t = tanα ⟹ cosα = 1/√(1 + t²) (મર્યાદામાં cos ધન) ⟹ 4 + 5t = √(1 + t²).<br/>• વર્ગ કરો ⟹ 24t² + 40t + 15 = 0 ⟹ t = (−10 ± √10)/12.<br/>• 4 + 5t ≥ 0 જ જોઈએ ⟹ t = (√10 − 10)/12.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Equation ને cosα થી ભાગીને directly t=tanα માં convert કરો (half-angle substitution ની જરૂર નથી — cosα, sinα બંને single α ના જ છે, tanα થી સીધો સંબંધ છે). cosα=1/√(1+t²), sinα=t/√(1+t²) વાપરીને t નું quadratic બનાવો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -439,19 +378,10 @@ sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <!-- ============ Q4 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.4</span><span class="qsrc">JEE Main 2021 (February)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the number of integer values of k for which the equation 3 sin x + 4 cos x = k + 1 has a solution. (1) 13 (2) 6 (3) 8 (4) 11<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 સમીકરણ 3sinx + 4cosx = k+1 ઉકેલ ધરાવતું હોય તે માટે k ના પૂર્ણાંક મૂલ્યોની સંખ્યા શોધો.
 <div class="opts">(1) 13   (2) 6   (3) 8   (4) 11</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>3sinx + 4cosx = k + 1 ઉકેલ ધરાવે તે માટે k ની પૂર્ણાંક કિંમતો ગણો.<br/><br/>શું hidden છે: ડાબી બાજુની range<br/><br/>શું આપ્યું છે તેની જગ્યાએ: Range ના બદલે ફક્ત સમીકરણ આપ્યું છે<br/><br/>તે range કેવી રીતે મળે છે:<br/>• a sinx + b cosx ની range [−√(a² + b²), √(a² + b²)] = [−5, 5].<br/>• ઉકેલ ⟹ −5 ≤ k + 1 ≤ 5 ⟹ −6 ≤ k ≤ 4.<br/>• પૂર્ણાંક = 11.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">a sinx+b cosx ની range હંમેશા [−√(a²+b²), √(a²+b²)] હોય છે (R-method: a sinx+b cosx = R sin(x+φ), R=√(a²+b²)). Equation solution ધરાવે તે માટે RHS આ range ની અંદર જ હોવું જોઈએ.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -494,18 +424,10 @@ sin10° sin30° sin50° sin70° નું મૂલ્ય કેટલું?
 <!-- ============ Q5 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.5</span><span class="qsrc">JEE Main 2021 (August)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>cosec 18° is a root of which equation? (1) x² + 2x − 4 = 0 (2) 4x² + 2x − 1 = 0 (3) x² − 2x + 4 = 0 (4) x² − 2x − 4 = 0<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <div class="opts">(1) x²+2x−4=0   (2) 4x²+2x−1=0   (3) x²−2x+4=0   (4) x²−2x−4=0</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cosec18° કયા સમીકરણનું બીજ છે તે ઓળખો.<br/><br/>શું hidden છે: sin18° ની ચોક્કસ કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: કિંમતના બદલે ફક્ત ખૂણો 18° આપ્યો છે<br/><br/>તે sin18° કેવી રીતે મળે છે:<br/>• sin18° = (√5 − 1)/4 (ખાસ કિંમત).<br/>• cosec18° = 4/(√5 − 1) = √5 + 1.<br/>• x² − 2x − 4 = 0 નાં બીજ 1 ± √5 ⟹ (4).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin18° = (√5−1)/4 એ standard special value છે (golden ratio સાથે સંબંધિત). cosec18°=1/sin18° કાઢીને, દરેક option માં એ value મૂકી ચકાસો, અથવા options ને ઉકેલી roots ચેક કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -528,18 +450,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q6 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.6</span><span class="qsrc">JEE Main 2022 (July)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>2 sin(π/22) sin(3π/22) sin(5π/22) sin(7π/22) sin(9π/22) = ? (1) 3/16 (2) 1/16 (3) 1/32 (4) 9/32<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 2sin(π/22)sin(3π/22)sin(5π/22)sin(7π/22)sin(9π/22) = ?
 <div class="opts">(1) 3/16   (2) 1/16   (3) 1/32   (4) 9/32</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>2 sin(π/22) sin(3π/22) sin(5π/22) sin(7π/22) sin(9π/22) શોધો.<br/><br/>શું hidden છે: ગુણાકારનું બંધ સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: કોઈ ઓળખ (identity) ઉપયોગી નથી — π/22 ના એકી ગુણકો આપ્યા છે<br/><br/>તે બંધ સ્વરૂપ કેવી રીતે મળે છે:<br/>• θ, 60° ± θ કે બમણા ખૂણાનું pattern બેસતું નથી.<br/>• સંખ્યાત્મક રીતે: ગુણાકાર ≈ 0.03125 ⟹ 2 × 0.03125 = 0.0625.<br/>• = 1/16 ⟹ (2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">π/22 ના multiples (7 એ 22 નો factor નથી, 60° pattern પણ ફિટ નથી થતો) — આ specific angle-set માટે કોઈ ટૂંકી standard identity ચેપ્ટરમાં નથી, તેથી numeric evaluation જ practical route છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -562,19 +476,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q7 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.7</span><span class="qsrc">JEE Main 2019 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If cos(α + β) = 3/5, sin(α − β) = 5/13 and 0 &lt; α, β &lt; π/4, then tan(2α) equals: (1) 21/16 (2) 63/52 (3) 33/52 (4) 63/16<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો cos(α+β) = 3/5, sin(α−β) = 5/13 અને 0 &lt; α, β &lt; π/4, તો tan(2α) બરાબર:
 <div class="opts">(1) 21/16   (2) 63/52   (3) 33/52   (4) 63/16</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cos(α + β) = 3/5, sin(α − β) = 5/13 હોય તો tan2α શોધો.<br/><br/>શું hidden છે: 2α અને આપેલા બે ખૂણા વચ્ચેનો સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: α, β અલગ નથી આપ્યા — તેમનો સરવાળો અને તફાવત જ આપ્યા છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• 2α = (α + β) + (α − β).<br/>• tan(α + β) = 4/3, tan(α − β) = 5/12 (બંને ખૂણા પ્રથમ ચરણમાં).<br/>• tan2α = (4/3 + 5/12)/(1 − 5/9) = 63/16.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">મુખ્ય નિરીક્ષણ: 2α = (α+β) + (α−β). તેથી tan2α ને tan[(α+β)+(α−β)] તરીકે compound angle formula વાપરીને સીધું કાઢી શકાય — α, β અલગ કાઢવાની જરૂર જ નથી.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -615,18 +520,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q9 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.9</span><span class="qsrc">JEE Main 2020 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Let α and β be the two real roots of (k + 1)tan²x − √2 λ tan x = (1 − k), where k (≠ −1) and λ are real. If tan²(α + β) = 50, find λ. (1) 10√2 (2) 5√2 (3) 10 (4) 5<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ધારો કે α અને β એ (k+1)tan²x − √2·λ tanx = (1−k) ના બે વાસ્તવિક મૂળ છે, જ્યાં k(≠−1) અને λ વાસ્તવિક સંખ્યાઓ છે. જો tan²(α+β) = 50 હોય, તો λ નું મૂલ્ય કેટલું થાય.
 <div class="opts">(1) 10√2   (2) 5√2   (3) 10   (4) 5</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan²(α + β) = 50 હોય તો λ શોધો.<br/><br/>શું hidden છે: tanα + tanβ અને tanα·tanβ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: α, β ના બદલે તેઓ tan x ના quadratic નાં બીજ છે એવું કહ્યું છે<br/><br/>તે સરવાળો અને ગુણાકાર કેવી રીતે મળે છે:<br/>• t = tanx ⟹ (k + 1)t² − √2λt + (k − 1) = 0, બીજ tanα, tanβ.<br/>• સરવાળો = √2λ/(k + 1), ગુણાકાર = (k − 1)/(k + 1) ⟹ tan(α + β) = λ/√2.<br/>• λ²/2 = 50 ⟹ λ = 10.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Equation ને standard quadratic form (k+1)t²−√2λt+(k−1)=0 માં લખો (t=tanx). Sum of roots = tanα+tanβ, Product = tanαtanβ — Vieta's formulas સીધા આપે છે. tan(α+β) formula માં આ sum/product મૂકો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -649,19 +546,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q10 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.10</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If cot α = 1 and sec β = −5/3, where π &lt; α &lt; 3π/2 and π/2 &lt; β &lt; π, find tan(α + β) and the quadrant of α + β. (1) −1/7, fourth quadrant (2) 7, first quadrant (3) −7, fourth quadrant (4) 1/7, first quadrant<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો cotα=1 અને secβ=−5/3, જ્યાં π&lt;α&lt;3π/2 અને π/2&lt;β&lt;π, છે, તો tan(α+β) ની કિંમત અને α+β નું ચરણ અનુક્રમે _____ છે.
 <div class="opts">(1) −1/7 અને ચોથું ચરણ   (2) 7 અને પ્રથમ ચરણ   (3) −7 અને ચોથું ચરણ   (4) 1/7 અને પ્રથમ ચરણ</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan(α + β) અને α + β નું ચરણ શોધો.<br/><br/>શું hidden છે: tanβ ની નિશાની (ચરણ પરથી)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: tanβ ના બદલે secβ = −5/3 અને β નું ચરણ આપ્યું છે<br/><br/>તે tanβ કેવી રીતે મળે છે:<br/>• cotα = 1, α ત્રીજા ચરણમાં ⟹ tanα = 1.<br/>• β બીજા ચરણમાં ⟹ sinβ = 4/5 ⟹ tanβ = −4/3.<br/>• tan(α + β) = (−1/3)/(7/3) = −1/7; α + β ∈ (7π/4, 9π/4) અને tan ઋણ ⟹ ચોથું ચરણ.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cotα=1 અને range પરથી ચોક્કસ α (=5π/4) નક્કી કરો. secβ=−5/3 અને range પરથી sinβ, cosβ ના ચોક્કસ signs સાથે કાઢો. પછી tan(α+β) formula વાપરો, અને α+β ની range ગણી quadrant નક્કી કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -696,18 +584,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q11 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.11</span><span class="qsrc">JEE Main 2024 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>For α, β ∈ (0, π/2), 3 sin(α + β) = 2 sin(α − β) and a real number k satisfies tan α = k tan β. Then k = ____. (1) −2/3 (2) −5 (3) 2/3 (4) 5<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 α,β ∈ (0,π/2) માટે ધારો કે 3sin(α+β) = 2sin(α−β) થાય અને એક વાસ્તવિક સંખ્યા k એવી છે કે જેથી tanα = k tanβ થાય. તો k નું મૂલ્ય .... છે.
 <div class="opts">(1) −2/3   (2) −5   (3) 2/3   (4) 5</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>3sin(α + β) = 2sin(α − β) હોય તો tanα = k tanβ માટે k શોધો.<br/><br/>શું hidden છે: tanα/tanβ નો ગુણોત્તર<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ગુણોત્તરના બદલે sin(α + β) અને sin(α − β) વચ્ચેનો સંબંધ આપ્યો છે<br/><br/>તે ગુણોત્તર કેવી રીતે મળે છે:<br/>• sin(α + β)/sin(α − β) = 2/3.<br/>• Componendo-dividendo ⟹ (2sinαcosβ)/(2cosαsinβ) = (2 + 3)/(2 − 3).<br/>• tanα/tanβ = −5 ⟹ k = −5.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin(α+β)/sin(α−β) = 2/3 ને componendo-dividendo (સરવાળો/બાદબાકીનો ratio) વાપરીને simplify કરો — sin(α+β)+sin(α−β) અને sin(α+β)−sin(α−β) બંને sum-to-product formulas થી સીધા 2sinαcosβ અને 2cosαsinβ આપે છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -730,18 +610,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q12 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.12</span><span class="qsrc">JEE Main 2019 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>For some θ ∈ (π/4, π/2), the expression 3(sinθ − cosθ)⁴ + 6(sinθ + cosθ)² + 4 sin⁶θ equals: (1) 13 − 4cos²θ + 6 sin²θ cos²θ (2) 13 − 4cos⁶θ (3) 13 − 4cos²θ + 6cos⁴θ (4) 13 − 4cos⁴θ + 2 sin²θ cos²θ<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 કોઈ θ∈(π/4,π/2) માટે, સમીકરણ 3(sinθ−cosθ)⁴+6(sinθ+cosθ)²+4sin⁶θ બરાબર:
 <div class="opts">(1) 13−4cos²θ+6sin²θcos²θ   (2) 13−4cos⁶θ   (3) 13−4cos²θ+6cos⁴θ   (4) 13−4cos⁴θ+2sin²θcos²θ</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>3(sinθ − cosθ)⁴ + 6(sinθ + cosθ)² + 4sin⁶θ નું સરળ સ્વરૂપ ઓળખો.<br/><br/>શું hidden છે: sinθcosθ વાળાં પદો cancel થાય છે તે<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ઘાતવાળી expression અને ચાર વિકલ્પ આપ્યા છે<br/><br/>તે cancel કેવી રીતે મળે છે:<br/>• (sinθ ∓ cosθ)² = 1 ∓ 2sc ⟹ sc વાળાં પદો cancel ⟹ 9 + 12s²c² + 4sin⁶θ.<br/>• બધું cos²θ માં ફેરવો: sin⁶θ = (1 − cos²θ)³, s²c² = cos²θ − cos⁴θ.<br/>• બાકી 13 − 4cos⁶θ ⟹ (2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">(sinθ−cosθ)² = 1−2sinθcosθ અને (sinθ+cosθ)² = 1+2sinθcosθ — બંનેને sinθcosθ ના single variable માં expand કરો, પછી sin⁶θ ને (1−cos²θ)³ તરીકે cos²θ માં convert કરી આખી expression ને cos²θ ના polynomial માં ભેગી કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -766,18 +638,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q14 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.14</span><span class="qsrc">JEE Main 2021 (July)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If sinθ + cosθ = 1/2, find 16(sin 2θ + cos 4θ + sin 6θ). (1) 23 (2) −27 (3) −23 (4) 27<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો sinθ + cosθ = 1/2, તો 16(sin(2θ) + cos(4θ) + sin(6θ)) બરાબર કેટલા?
 <div class="opts">(1) 23   (2) −27   (3) −23   (4) 27</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sinθ + cosθ = 1/2 હોય તો 16(sin2θ + cos4θ + sin6θ) શોધો.<br/><br/>શું hidden છે: sin2θ ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: sin2θ ના બદલે sinθ + cosθ આપ્યું છે<br/><br/>તે sin2θ કેવી રીતે મળે છે:<br/>• વર્ગ કરો ⟹ 1 + sin2θ = 1/4 ⟹ sin2θ = −3/4.<br/>• cos4θ = 1 − 2sin²2θ = −1/8; sin6θ = 3sin2θ − 4sin³2θ = −9/16.<br/>• સરવાળો = −23/16 ⟹ 16 × = −23.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sinθ+cosθ=1/2 ને square કરીને sin2θ સીધું મળે છે (2sinθcosθ=sin2θ). પછી cos4θ ને sin2θ થી (cos4θ=1−2sin²2θ) અને sin6θ ને sin2θ થી (sin6θ=3sin2θ−4sin³2θ, triple-angle formula 2θ ને base angle લઈને) express કરો — બધું sin2θ ના single number માં.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -802,18 +666,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q15 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.15</span><span class="qsrc">JEE Main 2021 (August)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of 2 sin(π/8) sin(2π/8) sin(3π/8) sin(5π/8) sin(6π/8) sin(7π/8). (1) 1/(4√2) (2) 1/4 (3) 1/8 (4) 1/(8√2)<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 2sin(π/8)sin(2π/8)sin(3π/8)sin(5π/8)sin(6π/8)sin(7π/8) ની કિંમત કેટલી?
 <div class="opts">(1) 1/(4√2)   (2) 1/4   (3) 1/8   (4) 1/(8√2)</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>2 sin(π/8) sin(2π/8) sin(3π/8) sin(5π/8) sin(6π/8) sin(7π/8) શોધો.<br/><br/>શું hidden છે: પુનરાવર્તિત (supplementary) ખૂણા<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત છ ખૂણા આપ્યા છે — પુનરાવર્તન છુપાયેલું છે<br/><br/>તે પુનરાવર્તન કેવી રીતે મળે છે:<br/>• sin(π − θ) = sinθ ⟹ 7π/8 → π/8, 6π/8 → 2π/8, 5π/8 → 3π/8.<br/>• sin(3π/8) = cos(π/8) ⟹ sin(π/8)sin(3π/8) = ½ sin(π/4) = √2/4.<br/>• 2 × (1/8) × (1/2) = 1/8.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin(π−θ)=sinθ વાપરીને sin(5π/8)=sin(3π/8), sin(6π/8)=sin(2π/8), sin(7π/8)=sin(π/8) — product ને ત્રણ જ distinct values ના squares માં ઘટાડો, પછી sin(π/8)sin(3π/8) ને complementary (sin(3π/8)=cos(π/8)) વાપરીને simplify કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -838,18 +694,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q16 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.16</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of 2 sin 12° − sin 72°. (1) √5(1 − √3)/4 (2) (1 − √5)/8 (3) √3(1 − √5)/2 (4) √3(1 − √5)/4<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 2sin(12°) − sin(72°) નું મૂલ્ય કેટલું?
 <div class="opts">(1) √5(1−√3)/4   (2) (1−√5)/8   (3) √3(1−√5)/2   (4) √3(1−√5)/4</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>2sin12° − sin72° નું મૂલ્ય ઓળખો.<br/><br/>શું hidden છે: sin72° ની ખાસ (√5 વાળી) કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત બે અસામાન્ય ખૂણા આપ્યા છે; વિકલ્પોમાં √3 અને √5 છે<br/><br/>તે ખાસ કિંમત કેવી રીતે મળે છે:<br/>• √5 ⟹ 18°/72° ની ખાસ કિંમત; √3 ⟹ 60°/30° નો ઉપયોગ (12° = 72° − 60°).<br/>• સંખ્યાત્મક ચકાસણી: 2(0.2079) − 0.9511 ≈ −0.535.<br/>• √3(1 − √5)/4 ≈ −0.535 ⟹ (4).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin72°=cos18°=(√5+1)/4 ×2 પ્રકારની special value વાપરો (અથવા options match કરવા numeric-first check). 12° ને 72°−60° અથવા 30°−18° તરીકે તોડીને compound angle formula વાપરવાનો રસ્તો પણ છે, પણ numeric cross-check ઝડપી છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -873,18 +721,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q18 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.18</span><span class="qsrc">JEE Main 2023 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If tan15° + 1/tan75° + 1/tan105° + tan195° = 2a, find a + 1/a. (1) 4 (2) 4 − 2√3 (3) 2 (4) 5 − (3√3)/2<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો tan15° + 1/tan75° + 1/tan105° + tan195° = 2a, તો (a + 1/a) ની કિંમત કેટલી?
 <div class="opts">(1) 4   (2) 4−2√3   (3) 2   (4) 5−(3√3)/2</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan15° + 1/tan75° + 1/tan105° + tan195° = 2a હોય તો a + 1/a શોધો.<br/><br/>શું hidden છે: દરેક પદનો tan15° સાથે સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ચાર જુદા ખૂણા આપ્યા છે — બધા 15° સાથે જોડાયેલા છે તે કહ્યું નથી<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• 1/tan75° = tan15°, 1/tan105° = −tan15°, tan195° = tan15°.<br/>• સરવાળો = 2tan15° ⟹ a = 2 − √3.<br/>• a + 1/a = (2 − √3) + (2 + √3) = 4.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">tan75°=cot15° (કારણ કે 75°=90°−15°) એટલે 1/tan75°=tan15°. tan105°=tan(180°−75°)=−tan75°=−cot15°, એટલે 1/tan105°=−tan15°. tan195°=tan(180°+15°)=tan15°. બધું tan15° માં reduce થાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -910,19 +750,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q19 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.19</span><span class="qsrc">JEE Main 2019 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the maximum value of 3 cosθ + 5 sin(θ − π/6) over all θ. (1) √19 (2) √79/2 (3) √34 (4) √31<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 3cosθ + 5sin(θ−π/6) નું કોઈપણ θ માટે મહત્તમ મૂલ્ય કેટલું?
 <div class="opts">(1) √19   (2) √79/2   (3) √34   (4) √31</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>3cosθ + 5sin(θ − π/6) નું મહત્તમ મૂલ્ય શોધો.<br/><br/>શું hidden છે: એક જ ખૂણાનું a cosθ + b sinθ સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: બે જુદા ખૂણા (θ અને θ − π/6) આપ્યા છે<br/><br/>તે સ્વરૂપ કેવી રીતે મળે છે:<br/>• sin(θ − π/6) = (√3/2)sinθ − (1/2)cosθ.<br/>• કુલ = (1/2)cosθ + (5√3/2)sinθ.<br/>• મહત્તમ = √(1/4 + 75/4) = √19.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin(θ−π/6) ને compound angle formula થી expand કરો — તેમાંથી નીકળતા sinθ, cosθ ના coefficients ને 3cosθ સાથે combine કરો. પછી single a cosθ+b sinθ ફોર્મ મળશે, જેનું max = √(a²+b²) છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -962,18 +793,10 @@ cosec18° એ ક્યા સમીકરણનું બીજ છે?
 <!-- ============ Q20 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.20</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>The value of cos(2π/7) + cos(4π/7) + cos(6π/7) is ____. (1) −1 (2) −1/2 (3) −1/3 (4) −1/4<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cos(2π/7) + cos(4π/7) + cos(6π/7) ની કિંમત છે ____.
 <div class="opts">(1) −1   (2) −1/2   (3) −1/3   (4) −1/4</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cos(2π/7) + cos(4π/7) + cos(6π/7) શોધો.<br/><br/>શું hidden છે: telescoping માટેનો ગુણક 2sin(π/7)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ત્રણ cos નો સરવાળો આપ્યો છે<br/><br/>તે ગુણક કેવી રીતે મળે છે:<br/>• 2sin(π/7) થી ગુણો ⟹ દરેક પદ sin નો તફાવત બને અને cancel થાય.<br/>• બાકી −sin(π/7) ⟹ S = −1/2 (સંખ્યાત્મક ચકાસણી પણ −0.5).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">S = cos(2π/7)+cos(4π/7)+cos(6π/7) ને 2sin(π/7) થી multiply કરીને telescoping product-to-sum trick વાપરો — દરેક term 2sin(π/7)cos(kπ/7) = sin((k+1)π/7)−sin((k−1)π/7) બને છે, જે series telescope થઈ જાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -995,17 +818,9 @@ cos(2π/7) + cos(4π/7) + cos(6π/7) ની કિંમત છે ____.
 <!-- ============ Q22 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.22</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If sin²(10°) sin(20°) sin(40°) sin(50°) sin(70°) = α − (1/16) sin(10°), find 16 + α⁻¹ = ______.<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો sin²(10°)sin(20°)sin(40°)sin(50°)sin(70°) = α − (1/16)sin(10°) તો 16+α⁻¹ = ______.
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sin²10° sin20° sin40° sin50° sin70° = α − (1/16)sin10° હોય તો 16 + α⁻¹ શોધો.<br/><br/>શું hidden છે: α ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: α સીધો નથી — ગુણાકાર અને sin10° વાળું સમીકરણ આપ્યું છે<br/><br/>તે α કેવી રીતે મળે છે:<br/>• sin70° = cos20°, sin50° = cos40° ⟹ જોડીઓ sin2A = 2sinAcosA માં ફેરવાય.<br/>• સંખ્યાત્મક રીતે ડાબી બાજુ + (1/16)sin10° ≈ 0.015625 = 1/64 ⟹ α = 1/64.<br/>• 16 + 64 = 80.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin70°=cos20°, sin50°=cos40° વાપરીને sin20°sin40°sin50°sin70° ને (sin20°cos20°)(sin40°cos40°) માં જોડો — બંને pair sin2A=2sinAcosA ના રૂપમાં simplify થાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1029,17 +844,9 @@ cos(2π/7) + cos(4π/7) + cos(6π/7) ની કિંમત છે ____.
 <!-- ============ Q23 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.23</span><span class="qsrc">JEE Main 2023 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of tan9° − tan27° − tan63° + tan81°.<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 tan9° − tan27° − tan63° + tan81° ની કિંમત ______ છે.
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan9° − tan27° − tan63° + tan81° શોધો.<br/><br/>શું hidden છે: પૂરક (complementary) ખૂણાની જોડી<br/><br/>શું આપ્યું છે તેની જગ્યાએ: જોડી કહી નથી — ફક્ત ચાર tan આપ્યા છે<br/><br/>તે જોડી કેવી રીતે મળે છે:<br/>• 9° + 81° = 90°, 27° + 63° = 90° ⟹ tan81° = cot9°, tan63° = cot27°.<br/>• tanθ + cotθ = 2/sin2θ ⟹ 2/sin18° − 2/sin54°.<br/>• = 2(√5 + 1) − 2(√5 − 1) = 4.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">tan81°=cot9°, tan63°=cot27° વાપરીને tan9°+cot9° અને −(tan27°+cot27°) ના જોડમાં ગોઠવો — tanθ+cotθ = 1/(sinθcosθ) = 2/sin2θ ફોર્મ સીધો વાપરી શકાય.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1064,19 +871,10 @@ tan9° − tan27° − tan63° + tan81° ની કિંમત ______ છે.
 <!-- ============ Q24 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.24</span><span class="qsrc">JEE Main 2019 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of cos(π/2²)·cos(π/2³)·…·cos(π/2¹⁰)·sin(π/2¹⁰). (1) 1/512 (2) 1/1024 (3) 1/256 (4) 1/2<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cos(π/2²)·cos(π/2³)·...·cos(π/2¹⁰)·sin(π/2¹⁰) ની કિંમત કેટલી?
 <div class="opts">(1) 1/512   (2) 1/1024   (3) 1/256   (4) 1/2</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cos(π/2²)·cos(π/2³)···cos(π/2¹⁰)·sin(π/2¹⁰) શોધો.<br/><br/>શું hidden છે: ખૂણા અડધા થતા જાય છે તે pattern<br/><br/>શું આપ્યું છે તેની જગ્યાએ: Pattern કહ્યું નથી — ફક્ત લાંબો ગુણાકાર આપ્યો છે<br/><br/>તે pattern કેવી રીતે મળે છે:<br/>• છેલ્લેથી: sin(π/2¹⁰)cos(π/2¹⁰) = ½ sin(π/2⁹).<br/>• દરેક cos સાથે ½ ઉમેરાય અને ખૂણો બમણો થાય — 9 વખત.<br/>• (1/2⁹) sin(π/2) = 1/512.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sinθcosθ=½sin2θ ને વારંવાર (પાછળથી આગળ) apply કરો: sin(π/2¹⁰)cos(π/2¹⁰)=½sin(π/2⁹), પછી ×cos(π/2⁹) આપે ¼sin(π/2⁸), એમ ચાલુ રાખતા છેલ્લે sin(π/2)=1 સુધી પહોંચશો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1114,18 +912,10 @@ cos(π/2²)·cos(π/2³)·...·cos(π/2¹⁰)·sin(π/2¹⁰) ની કિં�
 <!-- ============ Q25 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.25</span><span class="qsrc">JEE Main 2020 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of cos³(π/8)·cos(3π/8) + sin³(π/8)·sin(3π/8). (1) 1/(2√2) (2) 1/√2 (3) 1/4 (4) 1/2<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cos³(π/8)·cos(3π/8) + sin³(π/8)·sin(3π/8) નું મૂલ્ય કેટલું થાય?
 <div class="opts">(1) 1/(2√2)   (2) 1/√2   (3) 1/4   (4) 1/2</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cos³(π/8)cos(3π/8) + sin³(π/8)sin(3π/8) શોધો.<br/><br/>શું hidden છે: cos³x cos3x + sin³x sin3x નું સરળ સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: સ્વરૂપના બદલે ચોક્કસ ખૂણા (π/8, 3π/8 = 3x) આપ્યા છે<br/><br/>તે સ્વરૂપ કેવી રીતે મળે છે:<br/>• 3π/8 = 3 × π/8 ⟹ triple-angle formula લગાડો.<br/>• સરળ કરતાં = cos³2x.<br/>• x = π/8 ⟹ cos³(π/4) = 1/(2√2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cos3x=4cos³x−3cosx, sin3x=3sinx−4sin³x ને substitute કરી, cos⁶x, sin⁶x, cos⁴x, sin⁴x ના terms ને cos2x ના powers માં ભેગા કરો — final result cos³2x માં simplify થાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1149,18 +939,10 @@ cos³(π/8)·cos(3π/8) + sin³(π/8)·sin(3π/8) નું મૂલ્ય ક�
 <!-- ============ Q26 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.26</span><span class="qsrc">JEE Main 2020 (September)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If L = sin²(π/16) − sin²(π/8) and M = cos²(π/16) − sin²(π/8), which statement is true? (1) L = −1/(2√2) + ½cos(π/8) (2) M = 1/(2√2) + ½cos(π/8) (3) M = 1/(4√2) + ¼cos(π/8) (4) L = 1/(4√2) − ¼cos(π/8)<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો L = sin²(π/16) − sin²(π/8) અને M = cos²(π/16) − sin²(π/8) હોય, તો કયું વિધાન સાચું છે?
 <div class="opts">(1) L = −1/(2√2)+½cos(π/8)   (2) M = 1/(2√2)+½cos(π/8)   (3) M = 1/(4√2)+¼cos(π/8)   (4) L = 1/(4√2)−¼cos(π/8)</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>L અને M વિશે સાચું વિધાન ઓળખો.<br/><br/>શું hidden છે: L, M નું cos(π/8) વાળું સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત sin² અને cos² ના તફાવત આપ્યા છે<br/><br/>તે સ્વરૂપ કેવી રીતે મળે છે:<br/>• cos²(π/16) = (1 + cos(π/8))/2.<br/>• sin²(π/8) = (1 − cos(π/4))/2 = (1 − √2/2)/2.<br/>• M = ½cos(π/8) + 1/(2√2) ⟹ (2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin²θ=(1−cos2θ)/2, cos²θ=(1+cos2θ)/2 વાપરીને L, M બંનેને expand કરો. sin²(π/8)=(1−cos(π/4))/2 = (1−√2/2)/2 એ constant piece બંનેમાં common છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1181,19 +963,10 @@ cos³(π/8)·cos(3π/8) + sin³(π/8)·sin(3π/8) નું મૂલ્ય ક�
 <!-- ============ Q27 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.27</span><span class="qsrc">JEE Main 2020 (September)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>The minimum value of 2^sinx + 2^cosx is ______. (1) 2^(−1+√2) (2) 2^(1−√2) (3) 2^(1−1/√2) (4) 2^(−1+1/√2)<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 2^sinx + 2^cosx નું ન્યૂનતમ મૂલ્ય ______ છે.
 <div class="opts">(1) 2^(−1+√2)   (2) 2^(1−√2)   (3) 2^(1−1/√2)   (4) 2^(−1+1/√2)</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>2^sinx + 2^cosx નું ન્યૂનતમ મૂલ્ય શોધો.<br/><br/>શું hidden છે: ન્યૂનતમ ક્યાં થાય છે (sinx = cosx)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ઘાતાંકમાં sin અને cos વાળી expression આપી છે<br/><br/>તે ન્યૂનતમ બિંદુ કેવી રીતે મળે છે:<br/>• AM-GM: 2^sinx + 2^cosx ≥ 2·2^((sinx + cosx)/2).<br/>• sinx + cosx નું ન્યૂનતમ −√2 ⟹ sinx = cosx = −1/√2.<br/>• મૂલ્ય = 2 × 2^(−1/√2) = 2^(1 − 1/√2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">2^t એ increasing function છે, તેથી sum ને minimize કરવા sinx અને cosx બંને simultaneously નાના (negative) જોઈએ — sinx=cosx=−1/√2 (x=5π/4) પર બંને પોતાનું common minimum-consistent value લે છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1231,18 +1004,10 @@ cos³(π/8)·cos(3π/8) + sin³(π/8)·sin(3π/8) નું મૂલ્ય ક�
 <!-- ============ Q28 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.28</span><span class="qsrc">JEE Main 2021 (July)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of cot(π/24). (1) √2 + √3 + 2 − √6 (2) √2 + √3 + 2 + √6 (3) √2 − √3 − 2 + √6 (4) 3√2 − √3 − √6<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 cot(π/24) ની કિંમત કેટલી છે?
 <div class="opts">(1) √2+√3+2−√6   (2) √2+√3+2+√6   (3) √2−√3−2+√6   (4) 3√2−√3−√6</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>cot(π/24) ની કિંમત ઓળખો.<br/><br/>શું hidden છે: 7.5° અને 15° વચ્ચેનો અડધા ખૂણાનો સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત π/24 (7.5°) આપ્યો છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• 7.5° = 15°/2 ⟹ cot(θ/2) = (1 + cosθ)/sinθ, θ = 15°.<br/>• sin15°, cos15° ની કિંમતો મૂકો (અથવા સંખ્યાત્મક ≈ 7.596).<br/>• √2 + √3 + 2 + √6 ≈ 7.596 ⟹ (2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">7.5° = 15°/2 — half-angle formula tan(θ/2) = (1−cosθ)/sinθ વાપરીને cot(θ/2)=sinθ/(1−cosθ), θ=15° ના known sin15°, cos15° (30°−45° decomposition થી) મૂકો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1264,18 +1029,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q29 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.29</span><span class="qsrc">JEE Main 2021 (July)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If tan(π/9), x, tan(7π/18) are in A.P. and tan(π/9), y, tan(5π/18) are also in A.P., then |x − 2y| equals: (1) 4 (2) 3 (3) 0 (4) 1<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો tan(π/9), x, tan(7π/18) સમાંતરશ્રેણીમાં હોય અને tan(π/9), y, tan(5π/18) પણ સમાંતરશ્રેણીમાં હોય તો |x−2y| બરાબર કેટલા?
 <div class="opts">(1) 4   (2) 3   (3) 0   (4) 1</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>|x − 2y| શોધો.<br/><br/>શું hidden છે: x અને y ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: x, y ના બદલે "સમાંતર શ્રેણીમાં" એવી શરત આપી છે<br/><br/>તે x, y કેવી રીતે મળે છે:<br/>• AP નું વચ્ચેનું પદ = સરાસરી ⟹ x = (tan20° + tan70°)/2, y = (tan20° + tan50°)/2.<br/>• x − 2y = (tan70° − tan20° − 2tan50°)/2; tan70° − tan20° = 2tan50°.<br/>• |x − 2y| = 0.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">AP માં middle term = average of neighbors: x=[tan(π/9)+tan(7π/18)]/2, y=[tan(π/9)+tan(5π/18)]/2. Angles ને degree માં convert કરી (20°,70°,50°) numeric સીધું કાઢો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1298,18 +1055,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q30 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.30</span><span class="qsrc">JEE Main 2022 (June)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>α = sin 36° is a root of the equation: (1) 16x⁴ − 10x² − 5 = 0 (2) 16x⁴ + 20x² − 5 = 0 (3) 16x⁴ − 20x² + 5 = 0 (4) 16x⁴ − 10x² + 5 = 0<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 α = sin36° એ સમીકરણનું એક બીજ છે.
 <div class="opts">(1) 16x⁴−10x²−5=0   (2) 16x⁴+20x²−5=0   (3) 16x⁴−20x²+5=0   (4) 16x⁴−10x²+5=0</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sin36° કયા સમીકરણનું બીજ છે તે ઓળખો.<br/><br/>શું hidden છે: sin36° ની ખાસ કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ખૂણો 36° આપ્યો છે<br/><br/>તે ખાસ કિંમત કેવી રીતે મળે છે:<br/>• sin²36° = (10 − 2√5)/16 ⟹ s = x².<br/>• 16s − 10 = −2√5 ⟹ વર્ગ કરો ⟹ 16s² − 20s + 5 = 0.<br/>• 16x⁴ − 20x² + 5 = 0 ⟹ (3).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin36° = √(10−2√5)/4 (special value). sin²36° ને s=x² ગણી, s ના equation ને rationalize કરી (√5 દૂર કરવા square) quadratic-in-s equation બનાવો, પછી x⁴ માં convert કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1332,19 +1081,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q31 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.31</span><span class="qsrc">JEE Main 2023 (April) — Level II</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>In triangle ABC, if cosA + 2cosB + cosC = 2 and the sides opposite A and C are 3 and 7, find cosA − cosC. (1) 9/7 (2) 10/7 (3) 5/7 (4) 3/7<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ત્રિકોણ ABCમાં, જો cosA+2cosB+cosC=2 અને ખૂણા A અને Cની સામેની બાજુઓની લંબાઈ અનુક્રમે 3 અને 7 હોય તો cosA−cosC બરાબર કેટલા?
 <div class="opts">(1) 9/7   (2) 10/7   (3) 5/7   (4) 3/7</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>ત્રિકોણમાં cosA + 2cosB + cosC = 2, a = 3, c = 7 હોય તો cosA − cosC શોધો.<br/><br/>શું hidden છે: ખૂણાની શરતનો બાજુઓ સાથે સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત cos ની શરત અને બે બાજુ આપી છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• cosA + cosC = 2sin(B/2)cos((A − C)/2) ⟹ શરત cos((A − C)/2) = 2sin(B/2).<br/>• Sine rule સાથે જોડો ⟹ a + c = 2b ⟹ b = 5.<br/>• Cosine rule થી cosA = 13/14, cosC = −1/2 ⟹ cosA − cosC = 10/7.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cosA+cosC ને sum-to-product (2cos((A+C)/2)cos((A−C)/2)) માં લખો, B=π−(A+C) વાપરી cos((A+C)/2)=sin(B/2) બનાવો. Condition equation simplify કરતા cos((A−C)/2)=2sin(B/2) મળે છે. પછી sine rule (a,c=3,7) સાથે જોડો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1387,18 +1127,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q32 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.32</span><span class="qsrc">JEE Main 2024 (April) — Level II</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Let θ ∈ [0, π/4] be a solution of 4cosθ − 3sinθ = 1. cosθ = ____. (1) 4/(3√6 − 2) (2) (6 − √6)/(3√6 − 2) (3) (6 + √6)/(3√6 − 2) (4) —<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ધારો કે θ∈[0,π/4] એ 4cosθ−3sinθ=1 નો ઉકેલ છે. cosθ = ____.
 <div class="opts">(1) 4/(3√6−2)   (2) (6−√6)/(3√6−2)   (3) (6+√6)/(3√6−2)   (4) —</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>4cosθ − 3sinθ = 1, θ ∈ [0, π/4] હોય તો cosθ શોધો.<br/><br/>શું hidden છે: tan(θ/2) ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત sin, cos વાળું સમીકરણ અને મર્યાદા આપી છે<br/><br/>તે tan(θ/2) કેવી રીતે મળે છે:<br/>• t = tan(θ/2) ⟹ 4(1 − t²) − 6t = 1 + t² ⟹ 5t² + 6t − 3 = 0.<br/>• મર્યાદામાં t = (2√6 − 3)/5.<br/>• cosθ = (1 − t²)/(1 + t²) ≈ 0.748 = 4/(3√6 − 2).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">t=tan(θ/2) substitution (Weierstrass) વાપરીને equation ને t ના quadratic માં convert કરો, θ∈[0,π/4] range પરથી સાચો root પસંદ કરો, પછી cosθ=(1−t²)/(1+t²) કાઢો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1421,19 +1153,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q33 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.33</span><span class="qsrc">JEE Main 2025 (April) — Level II</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If 10 sin⁴θ + 15 cos⁴θ = 6, find (27 cosec⁶θ + 8 sec⁶θ)/(16 sec⁸θ). (1) 2/5 (2) 3/4 (3) 3/5 (4) 1/5<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો 10sin⁴θ+15cos⁴θ=6, તો (27cosec⁶θ+8sec⁶θ)/(16sec⁸θ) ની કિંમત કેટલી?
 <div class="opts">(1) 2/5   (2) 3/4   (3) 3/5   (4) 1/5</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>10sin⁴θ + 15cos⁴θ = 6 હોય તો (27cosec⁶θ + 8sec⁶θ)/(16sec⁸θ) શોધો.<br/><br/>શું hidden છે: sin²θ ની ચોક્કસ કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: sin²θ ના બદલે ચોથા ઘાતવાળું સમીકરણ આપ્યું છે<br/><br/>તે sin²θ કેવી રીતે મળે છે:<br/>• s = sin²θ ⟹ 25s² − 30s + 9 = 0 ⟹ s = 3/5.<br/>• 27(5/3)³ + 8(5/2)³ = 250.<br/>• 16(5/2)⁴ = 625 ⟹ 250/625 = 2/5.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">s=sin²θ મૂકીને condition quadratic બનાવો, discriminant=0 (Q.2 જેવો જ pattern) check કરો, s ની ચોક્કસ કિંમત કાઢો, પછી numerator, denominator અલગ-અલગ કાઢી ratio simplify કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1472,18 +1195,9 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q34 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.34</span><span class="qsrc">JEE Main 2023 (April) — Level II Section-B</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If the line x = y = z intersects the line x sinA + y sinB + z sinC − 18 = 0 = x sin2A + y sin2B + z sin2C − 9, where A, B, C are the angles of triangle ABC, find 80(sin(A/2) sin(B/2) sin(C/2)).<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો રેખા x=y=z એ રેખા xsinA+ysinB+zsinC−18=0=xsin2A+ysin2B+zsin2C−9ને આંતર્છેદ જ્યાં A,B,C એ ત્રિકોણ ABCના ખૂણાઓ છે તો 80(sin(A/2)sin(B/2)sin(C/2)) બરાબર ____.
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>80 sin(A/2) sin(B/2) sin(C/2) શોધો.<br/><br/>શું hidden છે: ΣsinA અને Σsin2A નો ગુણોત્તર<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ગુણોત્તરના બદલે રેખા x = y = z અને બે સમતલ આપ્યા છે<br/><br/>તે ગુણોત્તર કેવી રીતે મળે છે:<br/>• x = y = z = k મૂકો ⟹ kΣsinA = 18, kΣsin2A = 9 ⟹ ગુણોત્તર 2.<br/>• ΣsinA = 4Πcos(A/2), Σsin2A = 4ΠsinA = 32Πsin(A/2)Πcos(A/2).<br/>• Πsin(A/2) = 1/16 ⟹ 80/16 = 5.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">x=y=z=k બંને equations માં મૂકતા k(ΣsinA)=18 અને k(Σsin2A)=9. Ratio ΣsinA/Σsin2A = 2. triangle ના standard identities (ΣsinA=4cos(A/2)cos(B/2)cos(C/2), Σsin2A=4sinAsinBsinC) વાપરીને sin(A/2)sin(B/2)sin(C/2) સુધી પહોંચો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1522,17 +1236,9 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q35 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.35</span><span class="qsrc">JEE Main 2024 (January) — Level III</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Let the set of all a ∈ R for which cos2x + a sinx = 2a − 7 has a solution be [p, q], and let r = tan9° − tan27° − 1/cot63° + tan81°. Find pqr.<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ધારો કે તમામ a∈R નો ગણ એવો છે કે જેથી સમીકરણ cos2x+a sinx=2a−7, ને ઉકેલ [p,q] છે અને r=tan9°−tan27°−1/cot63°+tan81°. તો pqr = ____.
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>a ની range [p, q] અને r આપેલ હોય તો pqr શોધો.<br/><br/>શું hidden છે: a ને sinx ના વિધેય તરીકે અને r ની કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: Range ના બદલે સમીકરણ, અને r માં 1/cot63° છુપાવીને tan63° આપ્યું છે<br/><br/>તે a અને r કેવી રીતે મળે છે:<br/>• 1/cot63° = tan63° ⟹ r = Q.23 જેવો જ = 4.<br/>• cos2x = 1 − 2sin²x ⟹ a = 2(2 + sinx).<br/>• sinx ∈ [−1, 1] ⟹ a ∈ [2, 6] ⟹ pqr = 2 × 6 × 4 = 48.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cos2x=1−2sin²x વાપરી equation ને sinx=t ના quadratic માં convert કરો, a ને t ના function તરીકે express કરો (a=2(2+t)), t∈[−1,1] range વાપરીને a ની range [p,q] કાઢો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1556,18 +1262,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q36 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.36</span><span class="qsrc">JEE Main 2023 (April) — Level III</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Let S = {x ∈ (−π/2, π/2) : 9^(1 − tan²x) + 9^(tan²x) = 10} and β = Σ_{x∈S} tan²(x/3). Find (1/6)(β − 14)². (1) 16 (2) 8 (3) 64 (4) 32<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ધારો કે S = {x∈(−π/2,π/2) : 9^(1−tan²x)+9^(tan²x)=10} અને β=Σ_{x∈S} tan²(x/3) તો (1/6)(β−14)² બરાબર કેટલા?
 <div class="opts">(1) 16   (2) 8   (3) 64   (4) 32</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>(1/6)(β − 14)² શોધો.<br/><br/>શું hidden છે: સમૂહ S ના સભ્યો<br/><br/>શું આપ્યું છે તેની જગ્યાએ: S સીધો નથી — ઘાતાંકીય સમીકરણ આપ્યું છે<br/><br/>તે S કેવી રીતે મળે છે:<br/>• u = 9^(tan²x) ⟹ u + 9/u = 10 ⟹ u = 1 અથવા 9.<br/>• tan²x = 0 અથવા 1 ⟹ S = {0, ±π/4}.<br/>• β = 2tan²15° = 14 − 8√3 ⟹ (1/6)(8√3)² = 32.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">u=9^(tan²x) મૂકીને equation quadratic (u²−10u+9=0) માં convert કરો — u=1 અથવા u=9 થી tan²x=0 અથવા 1 મળે છે, જે x ના ચોક્કસ values આપે છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1591,17 +1289,9 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ Q37 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.37</span><span class="qsrc">JEE Main 2025 (January) — Level III</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If Σ_{r=1}^{13} 1/[sin(π/4 + (r − 1)π/6) · sin(π/4 + rπ/6)] = a√3 + b, with a, b ∈ Z, find a² + b².<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો Σ_{r=1}^{13} {1 / [sin(π/4+(r−1)π/6)·sin(π/4+rπ/6)]} = a√3+b, જ્યાં a,b∈Z હોય, તો a²+b² = ____.
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>13 પદના સરવાળાને a√3 + b સ્વરૂપે લખી a² + b² શોધો.<br/><br/>શું hidden છે: દરેક પદને cot ના તફાવતમાં ફેરવવાની રીત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત 1/(sinA sinB) પદોનો સરવાળો આપ્યો છે<br/><br/>તે રીત કેવી રીતે મળે છે:<br/>• B − A = π/6 દરેક પદમાં અચળ ⟹ 1/(sinA sinB) = (cotA − cotB)/sin(π/6).<br/>• Telescoping ⟹ 2[cot(π/4) − cot(29π/12)] = 2[1 − (2 − √3)].<br/>• 2√3 − 2 ⟹ a = 2, b = −2 ⟹ a² + b² = 8.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">1/(sinA sinB) = (cotA−cotB)/sin(B−A) identity વાપરો (B−A=π/6 fixed). દરેક term cot ના difference માં convert થઈ series telescope થઈ જાય છે — વચ્ચેના બધા terms cancel.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1631,19 +1321,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD1 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.1</span><span class="qsrc">JEE Main 2019 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If sin⁴α + 4cos⁴β + 2 = 4√2 sinα cosβ, α, β ∈ [0, π], then cos(α + β) − cos(α − β) equals: (1) 0 (2) −1 (3) √2 (4) −√2<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો sin⁴α+4cos⁴β+2=4√2 sinα cosβ; α,β∈[0,π], તો cos(α+β)−cos(α−β) બરાબર:
 <div class="opts">(1) 0   (2) −1   (3) √2   (4) −√2</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sin⁴α + 4cos⁴β + 2 = 4√2 sinα cosβ હોય તો cos(α + β) − cos(α − β) શોધો.<br/><br/>શું hidden છે: α અને β ની ચોક્કસ કિંમત<br/><br/>શું આપ્યું છે તેની જગ્યાએ: કિંમતના બદલે એક જ સમીકરણ આપ્યું છે (બે અજ્ઞાત માટે)<br/><br/>તે કિંમત કેવી રીતે મળે છે:<br/>• AM-GM: sin⁴α + 4cos⁴β + 1 + 1 ≥ 4(sin⁴α · 4cos⁴β)^(1/4) = 4√2 sinα cosβ.<br/>• સમાનતા ⟹ sin⁴α = 4cos⁴β = 1 ⟹ α = π/2, β = π/4.<br/>• cos(3π/4) − cos(π/4) = −√2.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin⁴α+4cos⁴β ≥ 4sin²αcos²β (AM-GM: a+b≥2√(ab)). Equation માં "+2=4√2sinαcosβ" ઉમેરાય ત્યારે equality ફક્ત ચોક્કસ α,β પર જ શક્ય બને — sinα=1,cosβ=1/√2 (α=π/2,β=π/4) મૂકીને ચકાસો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1685,18 +1366,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD2 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.2</span><span class="qsrc">JEE Main 2019</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>All pairs (x, y) satisfying 2^(√(sin²x − 2sinx + 5)) · (1/4^(sin²y)) ≤ 1 also satisfy which equation? (1) sinx = |siny| (2) sinx = 2siny (3) 2|sinx| = 3siny (4) 2sinx = siny<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 બધા જ જોડીઓ (x,y) જે અસમતા 2^(√(sin²x−2sinx+5)) · (1/4^(sin²y)) ≤ 1 ને સંતોષે તે નીચેનામાંથી ક્યા સમીકરણને પણ સંતોષે?
 <div class="opts">(1) sinx = |siny|   (2) sinx = 2siny   (3) 2|sinx| = 3siny   (4) 2sinx = siny</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>અસમતા સંતોષતી (x, y) જોડી કયું સમીકરણ પણ સંતોષે છે તે ઓળખો.<br/><br/>શું hidden છે: ક્યારે અસમતા શક્ય બને છે<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ઘાતાંકીય અસમતા આપી છે<br/><br/>તે શક્યતા કેવી રીતે મળે છે:<br/>• એક જ આધાર 2 ⟹ √((sinx − 1)² + 4) ≤ 2sin²y.<br/>• ડાબી બાજુ ≥ 2, જમણી ≤ 2 ⟹ બંને = 2.<br/>• sinx = 1, sin²y = 1 ⟹ sinx = |siny|.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Inequality ને 2^√(...) ≤ 2^(2sin²y) સ્વરૂપે લખો (4^t=2^2t). LHS ના exponent નું minimum કાઢો (completing square: sin²x−2sinx+5=(sinx−1)²+4≥4), RHS નું maximum કાઢો (2sin²y≤2) — બંને extremes equal થાય ત્યારે જ inequality possible.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1720,17 +1393,9 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD3 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.3</span><span class="qsrc">JEE Main 2020 (January)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If √2 sinα/√(1 + cos2α) = 1/7 and √((1 − cos2β)/2) = 1/√10, where α, β ∈ (0, π/2), find tan(α + 2β).<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો √2sinα/√(1+cos2α) = 1/7 અને √[(1−cos2β)/2] = 1/√10 જ્યાં α,β∈(0,π/2) હોય તો tan(α+2β) = ____ થાય.
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan(α + 2β) શોધો.<br/><br/>શું hidden છે: tanα અને tanβ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: tanα, tanβ ના બદલે power-reduction ના સ્વરૂપમાં છુપાવેલા ગુણોત્તર આપ્યા છે<br/><br/>તે tanα, tanβ કેવી રીતે મળે છે:<br/>• 1 + cos2α = 2cos²α ⟹ પહેલી શરત = tanα = 1/7.<br/>• (1 − cos2β)/2 = sin²β ⟹ sinβ = 1/√10 ⟹ tanβ = 1/3 ⟹ tan2β = 3/4.<br/>• tan(α + 2β) = (1/7 + 3/4)/(1 − 3/28) = 1.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">1+cos2α=2cos²α અને 1−cos2β=2sin²β વાપરીને બંને expressions simplify કરો — પહેલું tanα આપશે, બીજું sinβ (પછી cosβ, tanβ).</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1754,18 +1419,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD7 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.7</span><span class="qsrc">JEE Main 2023 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Find the value of 36(4cos²9° − 1)(4cos²27° − 1)(4cos²81° − 1)(4cos²243° − 1). (1) 54 (2) 18 (3) 27 (4) 36<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 36(4cos²9°−1)(4cos²27°−1)(4cos²81°−1)(4cos²243°−1) ની કિંમત ____.
 <div class="opts">(1) 54   (2) 18   (3) 27   (4) 36</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>36(4cos²9° − 1)(4cos²27° − 1)(4cos²81° − 1)(4cos²243° − 1) શોધો.<br/><br/>શું hidden છે: 4cos²θ − 1 નું sin ના ગુણોત્તર સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ચાર અવયવ આપ્યા છે; ખૂણા ત્રણ ગણા થાય છે<br/><br/>તે સ્વરૂપ કેવી રીતે મળે છે:<br/>• sin3θ = sinθ(4cos²θ − 1) ⟹ 4cos²θ − 1 = sin3θ/sinθ.<br/>• Telescoping ⟹ sin729°/sin9°.<br/>• 729° = 720° + 9° ⟹ 1 ⟹ 36.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">Key identity: 4cos²θ−1 = sin3θ/sinθ (sin3θ=sinθ(4cos²θ−1) ના rearrangement થી). દરેક factor ને આ ratio માં convert કરતા આખું product telescope થઈ જાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1789,19 +1446,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD8 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.8</span><span class="qsrc">JEE Main 2024 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If tanA = 1/√(x(x² + x + 1)), tanB = √x/√(x² + x + 1) and tanC = (x⁻³ + x⁻² + x⁻¹)^(1/2), where 0 &lt; A, B, C &lt; π/2, then A + B = ____. (1) C (2) π − C (3) 2π − C (4) π/2 − C<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો tanA = 1/√(x(x²+x+1)), tanB = √x/√(x²+x+1) અને tanC = (x⁻³+x⁻²+x⁻¹)^(1/2), જ્યાં 0&lt;A,B,C&lt;π/2 હોય, તો A+B = ____.
 <div class="opts">(1) C   (2) π−C   (3) 2π−C   (4) π/2−C</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>A + B ને C ના રૂપમાં લખો.<br/><br/>શું hidden છે: tan(A + B)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: A, B, C ના બદલે x ના રૂપમાં તેમના tan આપ્યા છે<br/><br/>તે tan(A + B) કેવી રીતે મળે છે:<br/>• tanA + tanB = (1 + x)/(√x √(x² + x + 1)), 1 − tanA tanB = x(x + 1)/(x² + x + 1).<br/>• ભાગાકાર ⟹ tan(A + B) = √(x² + x + 1)/x^(3/2) = tanC.<br/>• બંને ખૂણા યોગ્ય મર્યાદામાં ⟹ A + B = C.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">tan(A+B)=(tanA+tanB)/(1−tanAtanB) formula માં tanA, tanB substitute કરી algebra simplify કરો — result tanC ના expression જોડે exactly match થવું જોઈએ.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1839,18 +1487,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD9 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.9</span><span class="qsrc">JEE Main 2024 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>If the value of (3cos36° + 5sin18°)/(5cos36° − 3sin18°) is (a√5 − b)/c, where a, b, c are natural numbers with gcd(a, c) = 1, find a + b + c. (1) 50 (2) 40 (3) 52 (4) 54<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો (3cos36°+5sin18°)/(5cos36°−3sin18°) નું મૂલ્ય (a√5−b)/c હોય, જ્યાં a,b,c પ્રાકૃતિક સંખ્યાઓ છે અને ગુ.સા.અ.(a,c)=1, તો a+b+c = ____.
 <div class="opts">(1) 50   (2) 40   (3) 52   (4) 54</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>(3cos36° + 5sin18°)/(5cos36° − 3sin18°) = (a√5 − b)/c હોય તો a + b + c શોધો.<br/><br/>શું hidden છે: cos36° અને sin18° ની ખાસ કિંમતો<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત ખૂણા 36° અને 18° આપ્યા છે<br/><br/>તે ખાસ કિંમતો કેવી રીતે મળે છે:<br/>• cos36° = (√5 + 1)/4, sin18° = (√5 − 1)/4.<br/>• અંશ = (4√5 − 1)/2, છેદ = (√5 + 4)/2 ⟹ ગુણોત્તર = (4√5 − 1)/(√5 + 4).<br/>• Rationalize ⟹ (17√5 − 24)/11 ⟹ 17 + 24 + 11 = 52.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cos36°=(√5+1)/4, sin18°=(√5−1)/4 ને directly substitute કરી numerator, denominator બંનેને simplify કરો, પછી rationalize કરીને a√5−b ફોર્મ મેળવો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1875,19 +1515,10 @@ cot(π/24) ની કિંમત કેટલી છે?
 <!-- ============ TD10 ============ -->
 <div class="qcard">
 <div class="qhead big"><span class="qnum">TD.10</span><span class="qsrc">JEE Main 2025 (April)</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>For θ ∈ [−π/3, 0], the points (x, y) = (3tan(θ + π/3), 2tan(θ + π/6)) lie on xy + αx + βy + γ = 0. Find α² + β² + γ². (1) 80 (2) 72 (3) 96 (4) 75<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 જો θ∈[−π/3,0], માટે બિંદુઓ (x,y)=(3tan(θ+π/3), 2tan(θ+π/6)) એ xy+αx+βy+γ=0, પર આવેલ હોય તો α²+β²+γ² = ____.
 <div class="opts">(1) 80   (2) 72   (3) 96   (4) 75</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>α² + β² + γ² શોધો.<br/><br/>શું hidden છે: x અને y વચ્ચેનો સીધો સંબંધ (θ વગર)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: સંબંધના બદલે θ ના રૂપમાં બિંદુ (parametric) આપ્યું છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• tanu = x/3, tanv = y/2, અને u − v = π/6 અચળ.<br/>• tan(u − v) = 1/√3 ⟹ xy − 2√3x + 3√3y + 6 = 0.<br/>• 12 + 27 + 36 = 75.</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">tan(u−v)=tan(π/6)=1/√3 ને tan(A−B) formula વડે x/3, y/2 (=tanu, tanv) ના રૂપમાં લખો — θ automatically cancel થઈ x,y વચ્ચેનું equation મળે છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1937,19 +1568,11 @@ cot(π/24) ની કિંમત કેટલી છે?
 </div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.50</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Statement-1: tan(6π/7) − tan(5π/7) − tan(π/7) = tan(6π/7)·tan(5π/7)·tan(π/7). Statement-2: If θ = α + β, then tanθ − tanα − tanβ = tanθ·tanα·tanβ. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 વિધાન-1: tan(6π/7)−tan(5π/7)−tan(π/7) = tan(6π/7)·tan(5π/7)·tan(π/7)<br/>
 વિધાન-2: જો θ=α+β, તો tanθ−tanα−tanβ = tanθ·tanα·tanβ
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>tan વાળાં બે વિધાન સાચાં છે કે નહીં અને વિધાન-2 સાચું કારણ છે કે નહીં તે નક્કી કરો.<br/><br/>શું hidden છે: 6π/7, 5π/7, π/7 વચ્ચેનો સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: સંબંધ કહ્યો નથી — ફક્ત ત્રણ ખૂણા અને એક સામાન્ય ઓળખ આપી છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• θ = α + β ⟹ tan formula ફેરવતાં tanθ − tanα − tanβ = tanθ tanα tanβ ⟹ વિધાન-2 સાચું.<br/>• 5π/7 + π/7 = 6π/7 ⟹ વિધાન-1 એ જ ઓળખનો ઉપયોગ ⟹ (A).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">પહેલા વિધાન-2 ને tan(A+B) formula થી derive કરો (general proof). પછી ચકાસો કે 6π/7 = 5π/7+π/7 (α+β=θ સાચું છે કે નહીં).</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -1971,21 +1594,12 @@ cot(π/24) ની કિંમત કેટલી છે?
 <div class="step-body">A+B+C=π વાળા "tanA+tanB+tanC=tanAtanBtanC" identity જોડે પણ compare કરી શકાય — સમાન logic (α+β+γ=fixed sum ⟹ tan-identity) નો બીજો case.</div></div></div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.51</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Consider a cyclic quadrilateral ABCD; A, B, C, D denote its interior angles, none of which is 90°. Statement-1: tanA·cotC + 1 = 0 and secB·cosD + 1 = 0. Statement-2: In a cyclic quadrilateral, opposite angles are supplementary. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ચક્રિય ચતુષ્કોણ ABCD ધ્યાનમાં લો. ખૂણામાં A,B,C,D તેના આંતરિક ખૂણાઓ દર્શાવે છે. જેમાંથી એકપણ 90° નથી.<br/>
 વિધાન-1: tanA·cotC+1=0 અને secB·cosD+1=0<br/>
 વિધાન-2: ચક્રિય ચતુષ્કોણમાં, સામસામેના ખૂણાઓ પૂરકકોણ હોય છે
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>ચક્રીય ચતુષ્કોણના ખૂણા વિશેના બે વિધાન ચકાસો.<br/><br/>શું hidden છે: સામસામેના ખૂણા વચ્ચેનો સંબંધ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત "ચક્રીય ચતુષ્કોણ" શબ્દ આપ્યો છે<br/><br/>તે સંબંધ કેવી રીતે મળે છે:<br/>• ચક્રીય ⟹ A + C = 180°, B + D = 180°.<br/>• cotC = −cotA ⟹ tanA cotC = −1; cosD = −cosB ⟹ secB cosD = −1.<br/>• બંને સાચા અને વિધાન-2 કારણ ⟹ (A).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">વિધાન-2 (A+C=180°, B+D=180°) એક જાણીતો geometry fact છે. C=180°−A, D=180°−B લખીને tanC, cosD ને tanA, cosB ના રૂપમાં express કરો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -2027,21 +1641,12 @@ cot(π/24) ની કિંમત કેટલી છે?
 </div></div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.52</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>In any triangle ABC: Statement-1: cotA + cotB + cotC &gt; 0. Statement-2: the minimum value of cotA + cotB + cotC is 1. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 કોઈપણ ત્રિકોણ ABC માં:<br/>
 વિધાન-1: cotA+cotB+cotC &gt; 0<br/>
 વિધાન-2: cotA+cotB+cotC ની લઘુત્તમ કિંમત 1 છે
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>ત્રિકોણમાં cotA + cotB + cotC વિશેના બે વિધાન ચકાસો.<br/><br/>શું hidden છે: cot ના સરવાળાનું બાજુઓ અને ક્ષેત્રફળ વાળું સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત "કોઈપણ ત્રિકોણ" કહ્યું છે<br/><br/>તે સ્વરૂપ કેવી રીતે મળે છે:<br/>• ΣcotA = (a² + b² + c²)/(4Δ) &gt; 0 ⟹ વિધાન-1 સાચું.<br/>• સમબાજુ ત્રિકોણે ન્યૂનતમ = 3cot60° = √3, 1 નહીં ⟹ વિધાન-2 ખોટું ⟹ (C).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cotA+cotB+cotC = (a²+b²+c²)/(4Δ) (known identity, Δ=area) — sides²નો સરવાળો અને area બંને હંમેશા positive, તેથી sum પણ positive (વિધાન-1 true). Minimum equilateral triangle (A=B=C=60°) પર થાય છે.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -2075,21 +1680,12 @@ cot(π/24) ની કિંમત કેટલી છે?
 </div></div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.53</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>In a non-right-angled triangle ABC: Statement-1: Σ(cosA·cosecB·cosecC) = 2. Statement-2: Σ(tanA·tanB) = 1. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 કોઈ ત્રિકોણ ABC માં, જે કાટકોણ ન હોય, તો:<br/>
 વિધાન-1: Σ(cosA·cosecB·cosecC) = 2 છે<br/>
 વિધાન-2: Σ(tanA·tanB) = 1 છે
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>કાટકોણ ન હોય તેવા ત્રિકોણ માટેનાં બે વિધાન ચકાસો.<br/><br/>શું hidden છે: A + B + C = π પરથી મળતી ઓળખો<br/><br/>શું આપ્યું છે તેની જગ્યાએ: ફક્ત બે ઓળખનો દાવો આપ્યો છે<br/><br/>તે ઓળખો કેવી રીતે મળે છે:<br/>• cosA = −cos(B + C) ⟹ cosA/(sinB sinC) = 1 − cotB cotC.<br/>• ΣcotA cotB = 1 ⟹ સરવાળો = 3 − 1 = 2 ⟹ વિધાન-1 સાચું.<br/>• સમબાજુ ત્રિકોણે ΣtanA tanB = 9 ≠ 1 ⟹ વિધાન-2 ખોટું ⟹ (C).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">cosA=−cos(B+C)=sinBsinC−cosBcosC (A=π−(B+C) વાપરીને) — cosA/(sinBsinC) = 1−cotBcotC. Σ over cyclic permutations લેતા વિધાન-1 verify થાય છે. વિધાન-2 ને equilateral triangle પર ચકાસો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -2124,20 +1720,12 @@ cot(π/24) ની કિંમત કેટલી છે?
 </div></div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.54</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Consider: Statement-1: In any right-angled triangle ABC, sin²A + sin²B + sin²C = 2. Statement-2: In any triangle ABC, sin²A + sin²B + sin²C = 2 − 2cosA·cosB·cosC. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 નીચેના વિધાનો ધ્યાનમાં લો:<br/>
 વિધાન-1: કોઈપણ <b>કાટકોણ</b> ત્રિકોણ ABC માં sin²A+sin²B+sin²C=2<br/>
 વિધાન-2: કોઈપણ ત્રિકોણ ABC માં, sin²A+sin²B+sin²C=2−2cosA·cosB·cosC
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>sin²A + sin²B + sin²C વિશેના બે વિધાન ચકાસો.<br/><br/>શું hidden છે: સાચી સામાન્ય ઓળખ (નિશાની સાથે)<br/><br/>શું આપ્યું છે તેની જગ્યાએ: વિધાન-2 માં ઓછા (−) ચિહ્ન સાથેની ઓળખ આપી છે<br/><br/>તે સાચી ઓળખ કેવી રીતે મળે છે:<br/>• sin² = (1 − cos2θ)/2 અને Σcos2A = −1 − 4ΠcosA ⟹ Σsin²A = 2 + 2ΠcosA.<br/>• કાટકોણ (cosA = 0) ⟹ 2 ⟹ વિધાન-1 સાચું.<br/>• વિધાન-2 માં − ચિહ્ન ખોટું ⟹ (C).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">sin²θ=(1−cos2θ)/2 વાપરીને sin²A+sin²B+sin²C ને cos2A+cos2B+cos2C માં convert કરો, પછી known identity cos2A+cos2B+cos2C=−1−4cosAcosBcosC (A+B+C=π માટે) apply કરીને સાચું general form derive કરો — પછી વિધાન-2 ના sign સાથે સરખાવો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
@@ -2161,20 +1749,12 @@ cot(π/24) ની કિંમત કેટલી છે?
 <div class="step-body">Non-equilateral triangle (A=90°,B=60°,C=30°) લઈને પણ ચકાસી શકાય: sin²90+sin²60+sin²30=1+3/4+1/4=2 ✓ વિધાન-1 confirm કરે છે, right angle ના કારણે B,C ના values independent રીતે matter નથી કરતા.</div></div></div>
 <div class="qcard">
 <div class="qhead big"><span class="qnum">Q.55</span><span class="qsrc">Assertion-Reason</span></div>
-<div class="qtext">
+<div class="qtext"><b class="langtag">ENGLISH</b><br/>Let f(θ) = [sin²θ cosθ/(sinθ + cosθ)] − (1/4)tan(π/4 − θ) for all θ ∈ R − {nπ − π/4}, n ∈ I. Statement-1: The difference between the largest and smallest values of f(θ) is 1/√2. Statement-2: a sinx + b cosx + c ∈ [c − √(a² + b²), c + √(a² + b²)] for all x ∈ R, where a, b, c ∈ R. (A) both true, 2 is a correct explanation (B) both true, 2 is not a correct explanation (C) 1 true, 2 false (D) 1 false, 2 true<hr class="langsep"/><b class="langtag">ગુજરાતી</b><br/>
 ધારો કે f(θ) = [sin²θcosθ/(sinθ+cosθ)] − (1/4)tan(π/4−θ) ∀θ∈R−{nπ−π/4}, n∈I હોય, તો:<br/>
 વિધાન-1: f(θ) ની સૌથી મોટી અને સૌથી નાની કિંમત વચ્ચેનો તફાવત 1/√2 જેટલો છે<br/>
 વિધાન-2: a sinx+b cosx+c ∈ [c−√(a²+b²), c+√(a²+b²)] ∀x∈R, જ્યાં a,b,c∈R
 <div class="opts">(A) બંને true, વિધાન-2 સાચું કારણ   (B) બંને true, વિધાન-2 સાચું કારણ નથી   (C) વિધાન-1 true, વિધાન-2 false   (D) વિધાન-1 false, વિધાન-2 true</div>
 </div>
-
-
-
-
-
-
-
-
 <div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div>
 <div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br/>f(θ) ની મહત્તમ અને ન્યૂનતમ કિંમતનો તફાવત 1/√2 છે કે નહીં અને range સૂત્ર સાચું કારણ છે કે નહીં તે નક્કી કરો.<br/><br/>શું hidden છે: f(θ) નું sin/cos વાળું સરળ સ્વરૂપ<br/><br/>શું આપ્યું છે તેની જગ્યાએ: સરળ સ્વરૂપના બદલે જટિલ અપૂર્ણાંક expression આપી છે<br/><br/>તે સરળ સ્વરૂપ કેવી રીતે મળે છે:<br/>• tan(π/4 − θ) = (cosθ − sinθ)/(cosθ + sinθ) ⟹ એક જ છેદ પર ભેગું કરો.<br/>• સરળ કરતાં f(θ) = (sin2θ − cos2θ)/4 ⟹ કંપવિસ્તાર √2/4 = 1/(2√2).<br/>• તફાવત = 1/√2 ⟹ બંને સાચા અને વિધાન-2 કારણ ⟹ (A).</div></div><div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div>
 <div class="step-body">tan(π/4−θ)=(cosθ−sinθ)/(cosθ+sinθ) વાપરીને f(θ) ને common denominator (sinθ+cosθ) પર ભેગું કરો, simplify કરી single sinusoid સ્વરૂપ (a sin2θ+b cos2θ) સુધી પહોંચો.</div></div><div class="step s6"><div class="lbl"><span class="no">3</span>Ideal method — સંપૂર્ણ steps</div>
