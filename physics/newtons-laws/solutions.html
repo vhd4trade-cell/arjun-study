@@ -52,6 +52,9 @@ h2{font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10p
 .qhead{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
 .qnum{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-bg);padding:2px 10px;border-radius:20px}
 .qsrc{font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono)}
+.qhead.big{margin-bottom:10px}
+.qhead.big .qnum{font-size:22px;font-weight:800;padding:4px 16px;letter-spacing:.02em}
+.qhead.big .qsrc{font-size:12.5px}
 .qtext{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:14.5px;margin:10px 0 16px;font-family:var(--font-mono)}
 .qtext .opts{margin-top:6px;color:var(--ink-2);font-size:13px}
 
@@ -442,32 +445,95 @@ Q.37, Q.38, Q.39, Q.40, Q.41, Q.61, Q.62, Q.63, Q.64, Q.65 — આ Numerical-Val
 
 <!-- ============ Q.22 ============ -->
 <div class="qcard">
-<div class="qhead"><span class="qnum">Q.22</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(April)</span></div>
-<div class="qtext">5kg દળના કણ પર ત્રણ બળો F₁=10N, F₂=8N, F₃=6N લાગી રહ્યા છે. F₂ અને F₃ લંબરૂપે લગાડવામાં આવે છે જેથી કણ સ્થિર રહે છે. જો બળ F₁ દૂર કરવામાં આવે, તો કણનો પ્રવેગ કેટલો થશે?<div class="opts">(A) 7 ms⁻² &nbsp; (B) 0.5 ms⁻² &nbsp; (C) 4.8 ms⁻² &nbsp; (D) 2 ms⁻²</div></div>
-<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br>F₁ દૂર કર્યા પછી કણનો પ્રવેગ શોધો.<br><br>શું hidden છે: F₁ દૂર થયા પછી બાકી રહેતું net force<br><br>શું આપ્યું છે તેની જગ્યાએ: Net force ના બદલે "કણ સ્થિર છે" એવું કહ્યું છે<br><br>તે net force કેવી રીતે મળે છે:<br>• સ્થિર ⟹ F₁ + F₂ + F₃ = 0 ⟹ F₂ + F₃ = −F₁.<br>• F₁ દૂર કરો ⟹ net force = F₂ + F₃, મૂલ્ય 10 N (√(64 + 36) પણ 10 આપે).<br>• a = 10/5 = 2 m/s².</div></div>
-<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F₁ હટાવતા બાકી રહેતું net force = F₂+F₃ (magnitude, કારણ કે પહેલાં એ F₁ ને જ સંતુલિત કરતું હતું).</p></div></div>
-<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: F₂⊥F₃ ⟹ resultant=√(F₂²+F₃²) સીધું વાપરો</li><li>DON'T: F₁ ને F₂,F₃ ના resultant સાથે ફરી સરખાવાની જરૂર નથી — સંતુલનની વ્યાખ્યાથી જ એ સરખા છે</li></ul></div></div>
-<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">કયું બળ હટાવ્યું (F₁, પ્રશ્નમાં સ્પષ્ટ) એ ખોટું વાંચી F₂ કે F₃ હટાવેલું ગણી લેવું.</p></div></div>
-<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p1" target="nlmChapterNotes">Part 1</a>, <a href="notes.html#p2" target="nlmChapterNotes">Part 2</a> ના concept/સૂત્ર વાપરો.</p></div></div>
-<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">√(F₂²+F₃²)=√(64+36)=10N=F₁ (સંતુલનની ચકાસણી)</div><div class="calc">F₁ હટતા net force=10N બાકી</div><div class="calc">a=F/m=10/5=2 ms⁻²</div><div class="ans">Answer: (D) 2 ms⁻²</div></div></div>
-<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
-<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">'ત્રણ બળ સંતુલિત, બેમાંથી એક લંબ' પેટર્નમાં ત્રીજું બળ=resultant of ⊥ pair — હટાવતા એ જ magnitude net રહે છે.</div></div>
-
+<div class="qhead big"><span class="qnum">Q.22</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2023(April)</span></div>
+<div class="qtext"><b style="font-size:11px;color:var(--ink-3)">ENGLISH</b><br>A particle of mass 5 kg is acted upon by three forces F₁ = 10 N, F₂ = 8 N and F₃ = 6 N. F₂ and F₃ are applied perpendicular to each other so that the particle remains at rest. If the force F₁ is removed, what is the acceleration of the particle?<div class="opts">(A) 7 ms⁻² &nbsp; (B) 0.5 ms⁻² &nbsp; (C) 4.8 ms⁻² &nbsp; (D) 2 ms⁻²</div>
+<hr style="border:0;border-top:1px dashed var(--line);margin:10px 0"><b style="font-size:11px;color:var(--ink-3)">ગુજરાતી</b><br>5kg દળના કણ પર ત્રણ બળો F₁=10N, F₂=8N, F₃=6N લાગી રહ્યા છે. F₂ અને F₃ લંબરૂપે લગાડવામાં આવે છે જેથી કણ સ્થિર રહે છે. જો બળ F₁ દૂર કરવામાં આવે, તો કણનો પ્રવેગ કેટલો થશે?<div class="opts">(A) 7 ms⁻² &nbsp; (B) 0.5 ms⁻² &nbsp; (C) 4.8 ms⁻² &nbsp; (D) 2 ms⁻²</div>
+<div class="step-body" style="margin-top:8px;background:var(--mistake-bg);border-color:var(--mistake-line)"><b>અનુવાદ-જાળ:</b> (1) "લંબરૂપે" = F₂ અને F₃ <b>એકબીજાને</b> લંબ છે, F₁ ને લંબ નથી. (2) "સ્થિર રહે" = કણ પર કુલ બળ <b>શૂન્ય</b> છે. (3) "દૂર કરવામાં આવે" = F₁ <b>કાઢી નાખવામાં</b> આવે, તેનું મૂલ્ય બદલવાનું નથી. (4) "પ્રવેગ" = ઝડપ નહીં, acceleration (m/s²).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">
+• <b>શું પૂછે છે:</b> F₁ કાઢ્યા પછી કણનો પ્રવેગ.<br>
+• <b>શું hidden છે:</b> F₁ કાઢ્યા પછી બાકી રહેતું net force, એટલે કે F₂ અને F₃ નું resultant.<br>
+• <b>શું આપ્યું છે તેની જગ્યાએ:</b> Net force આપ્યું નથી; "સ્થિર" અને ત્રણ બળો આપ્યાં છે, તેના પરથી net force ગણવાનું છે.<br>
+• <b>તે કેવી રીતે મળે છે:</b> સ્થિર ⟹ ત્રણ બળનો સરવાળો 0 ⟹ F₂+F₃ નું resultant = F₁ (magnitude). F₁ કાઢતા એ જ magnitude net બને.
+</div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">F₂ ⊥ F₃ હોવાથી resultant R = √(F₂²+F₃²). ત્રણેયનો સદિશ સરવાળો કરવાની જરૂર નથી, કારણ કે F₁ કાઢ્યા પછી બાકી રહેલાં બે બળનું resultant જ net છે. Pythagoras એ સૌથી ઝડપી રસ્તો છે.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">R = √(F₂²+F₃²) = √(8²+6²) = √100 = 10 N</div><div class="calc">ચકાસણી: |F₁| = 10 N = R ✓ (સંતુલન સાચું)</div><div class="calc">F₁ કાઢતા net = R = 10 N (F₁ ની વિરુદ્ધ દિશામાં)</div><div class="calc">a = F/m = 10/5 = 2 m/s²</div><div class="ans">Answer: (D) 2 ms⁻²</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">8, 6, 10 એ 3-4-5 નું ×2 છે, એટલે Pythagoras તરત ઓળખાય. "ત્રણ બળ સંતુલિત + બે એકબીજાને લંબ" પેટર્ન દેખાય કે ત્રીજા બળ (F₁) ના magnitude થી જ net મળે, એટલે a = F₁/m.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p1" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p1" target="nlmChapterNotes">Part 1</a> (સંતુલન: net = 0), <a href="notes.html#p2" target="nlmChapterNotes">Part 2</a> (F = ma; બે લંબ બળનું resultant).</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: પહેલાં સંતુલન ચકાસો (|F₂+F₃| = F₁). આ તમારા resultant ની સાચાઈ બતાવે છે.</li><li>DON'T: 8 + 6 = 14 N ઉમેરવું. બંને બળ લંબ છે, તેથી સરવાળો સદિશ રીતે કરવો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">બળોનો <b>arithmetic</b> સરવાળો (14 N) લેવો: a = 14/5 = 2.8 m/s², જે વિકલ્પોમાં નથી, એટલે આ ભૂલ ઓળખાઈ જાય. બીજી ભૂલ: F₂ કે F₃ માંથી એક જ બળ net ગણવું (8/5 = 1.6 કે 6/5 = 1.2).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Components: F₂ = (8, 0), F₃ = (0, 6), F₁ = (−8, −6). F₁ કાઢતા net = (8, 6), |net| = √100 = 10 N, a = 2 m/s². વિકલ્પો તપાસ: 7 m/s² માટે 35 N, 0.5 m/s² માટે 2.5 N જોઈએ; આ બળો પરથી મળતા નથી, એટલે (D) જ બાકી.</p></div></div>
+<div class="diagram" style="color:var(--ink)">
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Q22 — forces before and after removing F1</title>
+<desc>Left: particle at rest under F2 (8 N, right), F3 (6 N, up) and F1 (10 N, down-left, equal and opposite to their resultant). Right: after F1 is removed, net force 10 N up-right, a = 2 m/s².</desc>
+<defs><marker id="a22" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="context-stroke"/></marker></defs>
+<text x="90" y="18" font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle">(a) F₁ લાગુ — સ્થિર</text>
+<text x="270" y="18" font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle">(b) F₁ દૂર — net 10 N</text>
+<line x1="180" y1="24" x2="180" y2="190" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="90" cy="112" r="5" fill="var(--ink)"/>
+<line x1="90.0" y1="112.0" x2="154.0" y2="112.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#a22)"/><text x="150.0" y="104.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="end">F₂ = 8 N</text>
+<line x1="90.0" y1="112.0" x2="90.0" y2="64.0" stroke="var(--formula)" stroke-width="2.4" marker-end="url(#a22)"/><text x="96.0" y="68.0" fill="var(--formula)" font-size="12" font-weight="600" text-anchor="start">F₃ = 6 N</text>
+<line x1="90.0" y1="112.0" x2="26.0" y2="160.0" stroke="var(--exam)" stroke-width="2.4" marker-end="url(#a22)"/><text x="22.0" y="174.0" fill="var(--exam)" font-size="12" font-weight="600" text-anchor="end">F₁ = 10 N</text>
+<text x="90" y="186" font-size="11" fill="var(--ink-2)" text-anchor="middle">|F₂+F₃| = √(64+36) = 10 N = F₁</text>
+<circle cx="270" cy="112" r="5" fill="var(--ink)"/>
+<line x1="270.0" y1="112.0" x2="334.0" y2="64.0" stroke="var(--exam)" stroke-width="2.4" marker-end="url(#a22)"/><text x="340.0" y="60.0" fill="var(--exam)" font-size="12" font-weight="600" text-anchor="start">F_net = 10 N</text>
+<text x="270" y="186" font-size="11" fill="var(--ink-2)" text-anchor="middle">a = F/m = 10/5 = 2 m/s²</text>
+</svg>
+<div class="diagram-cap">આકૃતિ Q.22 — (a) ત્રણ બળ, કણ સ્થિર; (b) F₁ કાઢ્યા પછી net 10 N, a = 2 m/s². ગણતરી: 1 N = 8 px.</div>
+</div>
 </div>
 
 <!-- ============ Q.23 ============ -->
 <div class="qcard">
-<div class="qhead"><span class="qnum">Q.23</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
-<div class="qtext">લીસી હલકી જડિત ગરગડી પરથી પસાર કરેલી હલકી દોરી m₁ અને m₂ દળોના બે બ્લોકને જોડે છે. તંત્રનો પ્રવેગ g/8 હોય, તો m₂/m₁ ગુણોત્તર?<div class="opts">(A) 9/7 &nbsp; (B) 8/1 &nbsp; (C) 4/3 &nbsp; (D) 5/3</div></div>
-<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">આ પ્રશ્ન શું પૂછે છે:<br>Atwood machine નો પ્રવેગ g/8 હોય તો m₂/m₁ શોધો.<br><br>શું hidden છે: બે દળ વચ્ચેનો ગુણોત્તર<br><br>શું આપ્યું છે તેની જગ્યાએ: દળના બદલે પ્રવેગ g/8 આપ્યો છે<br><br>તે ગુણોત્તર કેવી રીતે મળે છે:<br>• a = (m₂ − m₁)g/(m₁ + m₂) = g/8.<br>• 8m₂ − 8m₁ = m₁ + m₂ ⟹ 7m₂ = 9m₁ ⟹ m₂/m₁ = 9/7.</div></div>
-<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a=(m₂−m₁)g/(m₁+m₂)=g/8.</p></div></div>
-<div class="step s3"><div class="lbl"><span class="no">3</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Q.16 ની જેમ જ algebra</li><li>DON'T: —</li></ul></div></div>
-<div class="step s4"><div class="lbl"><span class="no">4</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">—</p></div></div>
-<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="nlmChapterNotes">Part 7</a> ના concept/સૂત્ર વાપરો.</p></div></div>
-<div class="step s6"><div class="lbl"><span class="no">6</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">8m₂−8m₁=m₁+m₂ ⟹ 7m₂=9m₁</div><div class="ans">Answer: (A) 9/7</div></div></div>
-<div class="step s7"><div class="lbl"><span class="no">7</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">—</p></div></div>
-<div class="step s8"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">—</div></div>
-
+<div class="qhead big"><span class="qnum">Q.23</span><span class="qsrc">Level I · Sec B &middot; JEE Main-2024(Jan.)</span></div>
+<div class="qtext"><b style="font-size:11px;color:var(--ink-3)">ENGLISH</b><br>A light string passes over a smooth, light, fixed pulley and connects two blocks of masses m₁ and m₂. The acceleration of the system is g/8. What is the ratio m₂/m₁?<div class="opts">(A) 9/7 &nbsp; (B) 8/1 &nbsp; (C) 4/3 &nbsp; (D) 5/3</div>
+<hr style="border:0;border-top:1px dashed var(--line);margin:10px 0"><b style="font-size:11px;color:var(--ink-3)">ગુજરાતી</b><br>લીસી હલકી જડિત ગરગડી પરથી પસાર કરેલી હલકી દોરી m₁ અને m₂ દળોના બે બ્લોકને જોડે છે. તંત્રનો પ્રવેગ g/8 હોય, તો m₂/m₁ ગુણોત્તર?<div class="opts">(A) 9/7 &nbsp; (B) 8/1 &nbsp; (C) 4/3 &nbsp; (D) 5/3</div>
+<div class="step-body" style="margin-top:8px;background:var(--mistake-bg);border-color:var(--mistake-line)"><b>અનુવાદ-જાળ:</b> (1) "જડિત ગરગડી" = ગરગડી <b>સ્થિર</b> છે, ખસતી નથી. (2) "હલકી દોરી" = દોરીનું દળ શૂન્ય, એટલે બંને બાજુ તણાવ સરખો. (3) "તંત્રનો પ્રવેગ" = બંને બ્લોકનો સમાન પ્રવેગ (magnitude). (4) "m₂/m₁" = m₂ <b>ઉપર</b>, m₁ <b>નીચે</b> નહીં: ભાગાકાર m₂ ÷ m₁.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">
+• <b>શું પૂછે છે:</b> બે દળનો ગુણોત્તર m₂/m₁.<br>
+• <b>શું hidden છે:</b> દરેક બ્લોક માટે બળ-સમીકરણ; દોરી હલકી હોવાથી તણાવ T બંને બાજુ સમાન.<br>
+• <b>શું આપ્યું છે તેની જગ્યાએ:</b> દળો નથી આપ્યાં; તેના બદલે પ્રવેગ a = g/8 આપ્યો છે.<br>
+• <b>તે કેવી રીતે મળે છે:</b> a પરથી (m₂−m₁)/(m₁+m₂) = 1/8 લખો, પછી ગુણોત્તર કાઢો.
+</div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Atwood machine. દરેક બ્લોક પર બળ-સમીકરણ લખીને બે સમીકરણ ઉમેરવાથી T રદ થાય છે, એટલે સીધો a મળે. દોરી હલકી અને ગરગડી સ્થિર અને લીસી હોવાથી આ રીત સૌથી સરળ છે.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">m₂ માટે (નીચે): m₂g − T = m₂a</div><div class="calc">m₁ માટે (ઉપર): T − m₁g = m₁a</div><div class="calc">ઉમેરતા: (m₂−m₁)g = (m₁+m₂)a</div><div class="calc">a = g/8 ⟹ 8(m₂−m₁) = m₁+m₂ ⟹ 7m₂ = 9m₁</div><div class="calc">m₂/m₁ = 9/7</div><div class="ans">Answer: (A) 9/7</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">a/g = (r−1)/(r+1) જ્યાં r = m₂/m₁. અહીં a/g = 1/8 ⟹ r = (8+1)/(8−1) = 9/7 સીધું મળે. પ્રશ્ન "ગુણોત્તર" પૂછે ત્યારે આ સૂત્ર સૌથી ઝડપી છે.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="nlmChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="nlmChapterNotes">Part 7</a> (Atwood machine: બે બ્લોકનો સમાન પ્રવેગ અને તણાવ).</p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: દરેક બ્લોક માટે <b>અલગ</b> બળ-સમીકરણ લખો; દિશા (નીચે/ઉપર) નક્કી કરીને sign રાખો.</li><li>DON'T: T = mg ધારી લેવું. દોરી ખસતી હોય ત્યારે તણાવ mg થી જુદો હોય છે.</li><li>DON'T: m₂ અને m₁ ની જગ્યા ઊલટી કરવી; ભાગાકાર બદલાઈ જાય.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Sign ઊલટો લેવો: (m₁−m₂)g/(m₁+m₂) = g/8 ⟹ m₂/m₁ = 7/9, જે વિકલ્પોમાં નથી. આ ભૂલ વિકલ્પ તપાસથી પકડાય.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">ચકાસણી: m₁ = 7, m₂ = 9 લો. a = (9−7)g/(9+7) = 2g/16 = g/8 ✓. વિકલ્પો તપાસ: (B) 8/1 માટે a = 7g/9 ≠ g/8; (C) 4/3 માટે a = g/7 ≠ g/8; (D) 5/3 માટે a = g/4 ≠ g/8. ફક્ત (A) બંધબેસે છે.</p></div></div>
+<div class="diagram" style="color:var(--ink)">
+<svg viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Q23 — Atwood machine free-body diagram</title>
+<desc>Smooth light pulley. m1 on the left and m2 on the right, both at the same height at the start. Tension T acts up on each string, weights m1g and m2g act down. Accelerations: m2 down, m1 up, each of magnitude a = g/8.</desc>
+<defs><marker id="a23" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="context-stroke"/></marker></defs>
+<line x1="20" y1="18" x2="340" y2="18" stroke="var(--ink-3)" stroke-width="3"/>
+<line x1="180" y1="18" x2="180" y2="40" stroke="var(--ink-3)" stroke-width="2"/>
+<circle cx="180" cy="40" r="30" fill="none" stroke="var(--ink-2)" stroke-width="2"/>
+<circle cx="180" cy="40" r="3" fill="var(--ink-2)"/>
+<line x1="150" y1="40" x2="150" y2="120" stroke="var(--ink-2)" stroke-width="1.8"/>
+<line x1="210" y1="40" x2="210" y2="120" stroke="var(--ink-2)" stroke-width="1.8"/>
+<rect x="130" y="120" width="40" height="40" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.5"/>
+<rect x="190" y="120" width="40" height="40" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.5"/>
+<text x="150" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="var(--ink)">m₁</text>
+<text x="210" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="var(--ink)">m₂</text>
+<line x1="150" y1="116" x2="150" y2="84" stroke="var(--formula)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="138" y="92" font-size="12" font-weight="600" fill="var(--formula)" text-anchor="end">T</text>
+<line x1="210" y1="116" x2="210" y2="84" stroke="var(--formula)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="222" y="92" font-size="12" font-weight="600" fill="var(--formula)" text-anchor="start">T</text>
+<line x1="150" y1="164" x2="150" y2="196" stroke="var(--exam)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="150" y="214" font-size="12" font-weight="600" fill="var(--exam)" text-anchor="middle">m₁g</text>
+<line x1="210" y1="164" x2="210" y2="196" stroke="var(--exam)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="210" y="214" font-size="12" font-weight="600" fill="var(--exam)" text-anchor="middle">m₂g</text>
+<line x1="250" y1="128" x2="250" y2="158" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="258" y="146" font-size="12" font-weight="600" fill="var(--accent)" text-anchor="start">a ↓ (m₂)</text>
+<line x1="110" y1="152" x2="110" y2="122" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#a23)"/>
+<text x="102" y="146" font-size="12" font-weight="600" fill="var(--accent)" text-anchor="end">a ↑ (m₁)</text>
+</svg>
+<div class="diagram-cap">આકૃતિ Q.23 — Atwood machine. T = દોરીનો તણાવ, m₁g અને m₂g = વજન. પ્રવેગ: m₂ નીચે, m₁ ઉપર, બંનેનું મૂલ્ય g/8. આકૃતિ schematic છે; લંબાઈ દળના પ્રમાણમાં નથી, માત્ર દિશા બતાવે છે.</div>
+</div>
 </div>
 
 <!-- ============ Q.24 ============ -->
