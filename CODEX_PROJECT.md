@@ -12,50 +12,41 @@ The formula/recall pilot must reduce unnecessary memorisation without reducing e
 - D = should be derived quickly from a parent relation
 - R = recognition/use rule or condition rather than a standalone formula
 
-## Canonical sources
+## Working architecture
+
+### Shared Codex workspace — Google Drive synced
+The active Codex project state must live in the synced Google Drive so the same workspace is available from both Office and Home.
+
+Office:
+`D:\vhd4trd\Arjun Study\_Codex`
+
+Home:
+`J:\My Drive\Arjun Study\_Codex`
+
+This `_Codex` folder stores project instructions, current-state notes, analysis outputs, generated study artifacts and reusable scripts that must follow the user between machines.
+
+### Academic source root
+Office:
+`D:\vhd4trd\Arjun Study`
+
+Home:
+`J:\My Drive\Arjun Study`
+
+Never hard-code one machine path into reusable project logic. Detect the active synced root.
 
 ### GitHub repository
 `vhd4trade-cell/arjun-study`
 
-Chapter bundles already present:
+GitHub remains the canonical version-controlled source for published chapter HTML and reusable repository tooling.
+
+Do not rely on a C: path for continuity. If a machine-local Git clone is used for publishing/version-control operations, treat it as disposable infrastructure and keep shared Codex state in `_Codex` on Google Drive.
+
+## Current chapter bundles
 - `physics/gravitation/`
 - `chemistry/states-of-matter/`
 - `maths/straight-lines/`
 
 Each chapter normally contains `notes.html`, `revision.html`, and `solutions.html`.
-
-### Google Drive source root
-The same Drive folder is synced at different local roots.
-
-Home laptop:
-`J:\My Drive\Arjun Study`
-
-Office PC:
-`D:\vhd4trd\Arjun Study`
-
-Never hard-code one machine path into project logic. Use `tools/path_config.py` to resolve the active Drive root.
-
-## Recommended local Codex layout
-Do not place the Git repository itself inside Google Drive. Keep one local clone on each machine and use GitHub for code/project-state sync.
-
-Recommended clones:
-
-Home:
-`C:\Users\Appex\projects\arjun-study`
-
-Office:
-`C:\Users\yds_c\projects\arjun-study`
-
-Google Drive is for source books, question banks, exported study artifacts and shared non-Git files. GitHub is for chapter HTML, project instructions and reproducible tooling.
-
-## Start-of-session check
-From the repository root run:
-
-```powershell
-python tools/path_config.py
-```
-
-The command must report the detected Drive root. If neither known root exists, stop and ask for the local synced Drive location rather than inventing a path.
 
 ## Current PABT workflow
 For each of the three active chapters:
