@@ -1,0 +1,1045 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>States of Matter — PYQ solutions</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap"><style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,6vw,34px);margin:0 0 6px}
+h2{font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10px}
+.subtitle{color:var(--ink-2);font-size:14.5px;margin:0 0 8px}
+.status{background:var(--check-bg);border:1px solid var(--check-line);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--check);margin-bottom:28px}
+.status b{color:var(--ink)}
+
+.section-divider{margin:40px 0 20px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+.qcard{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:34px;background:var(--surface)}
+.qhead{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.qnum{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-bg);padding:2px 10px;border-radius:20px}
+.qsrc{font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono)}
+.qcard{border-top:6px solid var(--accent);margin-bottom:40px;position:relative}
+.qhead.big{background:var(--accent-bg);border:1px solid var(--accent);border-radius:10px;padding:10px 14px;margin:0 0 12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.qhead.big .qnum{font-size:26px;font-weight:800;color:var(--surface);background:var(--accent);padding:4px 16px;border-radius:8px;letter-spacing:.02em}
+.qhead.big .qsrc{font-size:12.5px;color:var(--accent-ink);font-family:var(--font-mono);font-weight:600}
+.qtext{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:14.5px;margin:10px 0 16px;font-family:var(--font-mono)}
+.qtext .opts{margin-top:6px;color:var(--ink-2);font-size:13px}
+
+.step{margin:12px 0}
+.step .lbl{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.step .lbl .no{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:10px;color:var(--surface)}
+.step-body{font-size:14px;padding:10px 14px;border-radius:8px;border:1px solid}
+
+.s1 .no{background:var(--check)} .s1 .lbl{color:var(--check)} .s1 .step-body{background:var(--check-bg);border-color:var(--check-line)}
+.s2 .no{background:var(--accent)} .s2 .lbl{color:var(--accent)} .s2 .step-body{background:var(--accent-bg);border-color:var(--accent)}
+.s3 .no{background:var(--mistake)} .s3 .lbl{color:var(--mistake)} .s3 .step-body{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.s4 .no{background:var(--exam)} .s4 .lbl{color:var(--exam)} .s4 .step-body{background:var(--exam-bg);border-color:var(--exam-line)}
+.s5 .no{background:var(--formula)} .s5 .lbl{color:var(--formula)} .s5 .step-body{background:var(--formula-bg);border-color:var(--formula-line)}
+.s6 .no{background:var(--ink)} .s6 .lbl{color:var(--ink)} .s6 .step-body{background:var(--surface);border-color:var(--line)}
+.s7 .no{background:var(--ink-3)} .s7 .lbl{color:var(--ink-3)} .s7 .step-body{background:var(--surface);border-color:var(--line);border-style:dashed}
+.s8 .no{background:var(--exam)} .s8 .lbl{color:var(--exam)} .s8 .step-body{background:var(--exam-bg);border-color:var(--exam-line);font-weight:600}
+
+.calc{font-family:var(--font-mono);font-size:13.5px;margin:4px 0}
+.ans{font-family:var(--font-mono);font-weight:600;color:var(--formula);background:var(--formula-bg);border:1px solid var(--formula-line);border-radius:6px;padding:4px 10px;display:inline-block;margin-top:4px}
+ol,ul{margin:4px 0;padding-left:20px}
+li{margin-bottom:3px}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;margin:10px 0;color:var(--ink)}
+.diagram svg{display:block;width:100%;height:auto;max-height:260px}
+.diagram-cap{text-align:center;font-size:11px;color:var(--ink-3);margin-top:4px}
+.step-body a{color:inherit;font-weight:600;text-decoration:none;border-bottom:1.5px dotted currentColor}
+.jumpicon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--formula);color:var(--surface);text-decoration:none;font-size:12px;font-weight:700;vertical-align:middle;margin-left:2px}
+
+.tools{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:20px}
+.tools h3{font-family:var(--font-display);font-size:17px;margin:18px 0 8px}
+.tools h3:first-child{margin-top:0}
+.flag{background:var(--mistake-bg);border:1px solid var(--mistake-line);color:var(--mistake);border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+
+.langtag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);font-weight:600}
+.langsep{border:0;border-top:1px dashed var(--line);margin:10px 0}
+.trapbox{margin-top:8px;background:var(--mistake-bg);border:1px solid var(--mistake-line);border-radius:8px;padding:8px 12px;font-size:13px}
+.diagram-flag{margin-top:8px;font-size:12.5px;color:var(--mistake);background:var(--mistake-bg);border:1px dashed var(--mistake-line);border-radius:8px;padding:6px 10px}
+</style></head><body><div class="wrap"><h1>પદાર્થની અવસ્થાઓ — PYQ solutions</h1><p class="subtitle">Neeraj Kumar Ch.3 (Gaseous State) · Exercise I (JEE Main) · 50 most important questions solved now</p><div class="scan" style="margin-bottom:18px"><span class="scan-label">કાર્ય-સ્થિતિ</span><div style="font-size:13.5px;color:var(--accent-ink)"><b>આ પાનામાં:</b> Exercise I માંથી 50 સૌથી મહત્વના પ્રશ્નો (કુલ 115). દરેક પ્રશ્ન: English પ્રથમ, પછી ગુજરાતી; 9-step ક્રમ; દરેકમાં આકૃતિ.<br><b>બાકી (ટ્રેકરમાં):</b> Exercise I ના બાકીના 65 પ્રશ્નો; Exercise II (JEE Advanced) — સંપૂર્ણ.</div></div><!-- ============ Q.5 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.5</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>At constant temperature a gas occupies 200 mL at 0.720 bar. It is subjected to an external pressure of 0.900 bar. What is the resulting volume? (a) 160 mL (b) 320 mL (c) 80 mL (d) 400 mL
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>અચળ તાપમાને 0.720 bar દબાણે ગેસનું કદ 200 mL છે. તેના પર 0.900 bar બાહ્ય દબાણ લાગુ પડે છે. પરિણામી કદ? (a) 160 mL (b) 320 mL (c) 80 mL (d) 400 mL
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "અચળ તાપમાન" = Boyle નિયમ. દબાણ વધે તો કદ ઘટે.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: નવું કદ V₂.<br>• શું hidden છે: Boyle નિયમ, P₁V₁ = P₂V₂.<br>• શું આપ્યું છે તેની જગ્યાએ: બાહ્ય દબાણ નહીં, ગેસનું દબાણ 0.900 bar આપ્યું છે.<br>• તે કેવી રીતે મળે છે: T અચળ ⟹ P₁V₁ = P₂V₂.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Boyle નિયમ: P ∝ 1/V.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">0.720 × 200 = 0.900 × V₂</div><div class="calc">V₂ = 144/0.900 = 160 mL</div><div class="ans">Answer: (a) 160 mL</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દબાણનો ગુણોત્તર 0.9/0.72 = 1.25 ⟹ કદ 1/1.25 = 0.8 ગણો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: એકમો (bar, mL) એક જ રાખો.</li><li>DON'T: દબાણ વધે ત્યારે કદ વધે એમ ના ધારો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">કદ વધારવું (ઊલટો ગુણોત્તર).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">200 × 0.8 = 160 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.5 — Boyle: same gas, pressure up, volume down</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P = 0.720 bar</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">V = 200 mL</text><defs><marker id="ar1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="150.0" y1="85.0" x2="190.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar1)"/><rect x="190" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="245.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P = 0.900 bar</text><text x="245.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">V = 160 mL</text><text x="150.0" y="30.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">T સ્થિર</text></svg><div class="diagram-cap">Q.5 — Boyle’s law at constant T</div></div>
+</div>
+<!-- ============ Q.6 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.6</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A 2.5 L sample of gas at 27 °C and 1 bar is compressed to 500 mL at constant temperature. The percentage increase in pressure is: (a) 100% (b) 400% (c) 500% (d) 80%
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C અને 1 bar દબાણે 2.5 L ગેસનો નમૂનો અચળ તાપમાને 500 mL સુધી સંકોચાય છે. દબાણમાં ટકાવારી વધારો? (a) 100% (b) 400% (c) 500% (d) 80%
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "ટકાવારી વધારો" = (P₂ − P₁)/P₁ × 100, P₂ નહીં.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: દબાણમાં ટકાવારી વધારો.<br>• શું hidden છે: અંતિમ દબાણ P₂.<br>• શું આપ્યું છે તેની જગ્યાએ: P₂ નહીં, V₂ અને T અચળ.<br>• તે કેવી રીતે મળે છે: Boyle ⟹ P₂ = P₁V₁/V₂.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Boyle: P₂ = P₁ V₁/V₂, પછી ટકાવારી.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">P₂ = 1 × 2.5/0.5 = 5 bar</div><div class="calc">ટકાવારી વધારો = (5 − 1)/1 × 100 = 400%</div><div class="ans">Answer: (b) 400%</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">V 5 ગણો ઘટ્યું ⟹ P 5 ગણું ⟹ વધારો 400%.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: વધારો = (નવું − જૂનું)/જૂનું.</li><li>DON'T: 5 ને જવાબ ના લો (તે ગુણોત્તર છે).</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">5 bar નો જવાબ (500%) આપવો.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">1 × 2.5 = 5 × 0.5 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.6 — isothermal compression</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2.5 L</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 bar</text><defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="150.0" y1="85.0" x2="190.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar2)"/><text x="150.0" y="78.0" fill="var(--ink)" font-size="12" font-weight="600" text-anchor="middle">compress</text><rect x="190" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="245.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">0.5 L</text><text x="245.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">5 bar</text><text x="150.0" y="30.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">T = 300 K (અચળ)</text></svg><div class="diagram-cap">Q.6 — isothermal compression: P rises five-fold</div></div>
+</div>
+<!-- ============ Q.8 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.8</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>The value of the Boyle’s law constant (SI-type units) for 200 mL of gas at 1.2 atm is about: (a) 240 atm·mL (b) 0.24 atm·L (c) 24.3 J (d) 0.24 J
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>1.2 atm દબાણે 200 mL ગેસ માટે Boyle નિયમનો અચળાંક (લગભગ)? (a) 240 atm·mL (b) 0.24 atm·L (c) 24.3 J (d) 0.24 J
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "Boyle અચળાંક" = PV; એકમો પસંદ કરો (atm·L).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: PV નો અચળાંક.<br>• શું hidden છે: PV = સ્થિર.<br>• શું આપ્યું છે તેની જગ્યાએ: અચળાંક નહીં; P અને V આપ્યા.<br>• તે કેવી રીતે મળે છે: k = PV.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">k = PV; mL ને L માં ફેરવો.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">k = 1.2 atm × 0.200 L = 0.24 atm·L</div><div class="ans">Answer: (b) 0.24 atm·L</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">mL → L ફેરવીને atm·L.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 200 mL = 0.200 L.</li><li>DON'T: 240 atm·mL (a) ને એકમ સાથે સરખાવશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">200 mL ને L માં ફેરવ્યા વિના 240 લખવું (એકમ અલગ).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">240 atm·mL = 0.24 atm·L ✓ (બંને એકમમાં સમાન મૂલ્ય).</p></div></div>
+<div class="diagram"><svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.8 — PV constant</title><desc></desc><rect x="60" y="40" width="140" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="130.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">200 mL</text><text x="130.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1.2 atm</text><text x="130.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">PV = 0.24 atm·L</text><text x="130.0" y="150.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">Boyle: PV = સ્થિર</text></svg><div class="diagram-cap">Q.8 — constant PV for a fixed amount of gas</div></div>
+</div>
+<!-- ============ Q.14 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.14</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A gas at 35 °C and 1 atm occupies 3.75 L. At what temperature must it be kept to reduce its volume to 3.0 L at the same pressure? (a) −26.6 °C (b) 0 °C (c) 3.98 °C (d) 28 °C
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>35 °C અને 1 atm એ ગેસનું કદ 3.75 L છે. સમાન દબાણે કદ 3.0 L કરવા માટે તાપમાન કેટલું રાખવું? (a) −26.6 °C (b) 0 °C (c) 3.98 °C (d) 28 °C
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> તાપમાન °C માં આપ્યું છે; ગણતરી માટે K. "ઘટાડવું" ⟹ T ઘટે.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: નવું તાપમાન.<br>• શું hidden છે: Charles નિયમ (V ∝ T).<br>• શું આપ્યું છે તેની જગ્યાએ: T₂ નહીં, V₂.<br>• તે કેવી રીતે મળે છે: V₁/T₁ = V₂/T₂ (P અચળ).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Charles: T₂ = T₁ × V₂/V₁ (K માં).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 308 K</div><div class="calc">T₂ = 308 × 3.0/3.75 = 246.4 K = −26.6 °C</div><div class="ans">Answer: (a) −26.6 °C</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">તાપમાન °C ને સીધા ગુણાકાર માટે ના વાપરો; K માં ફેરવો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 35 °C = 308 K.</li><li>DON'T: °C ને સીધું ગુણાકાર ના કરો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">°C માં ગણવું (ખોટું).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">246.4 − 273 = −26.6 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.14 — Charles law at constant pressure</title><desc></desc><rect x="30" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="80.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">35 °C (308 K)</text><text x="80.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">3.75 L</text><defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="140.0" y1="85.0" x2="170.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar3)"/><rect x="170" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T₂ = ?</text><text x="220.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">3.0 L</text><text x="150.0" y="30.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">P = 1 atm (અચળ)</text></svg><div class="diagram-cap">Q.14 — Charles’ law: V ∝ T at constant P</div></div>
+</div>
+<!-- ============ Q.16 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.16</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>On one day at 300 K and 760 mm, a gas has volume 1200 mL. Next day volume is 1218 mL at the same pressure. What is the temperature on the next day? (a) 546 K (b) 304.5 K (c) 315 K (d) 300 K
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>એક દિવસે 300 K અને 760 mm દબાણે ગેસનું કદ 1200 mL છે. બીજા દિવસે સમાન દબાણે કદ 1218 mL છે. બીજા દિવસનું તાપમાન? (a) 546 K (b) 304.5 K (c) 315 K (d) 300 K
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "સમાન દબાણ" = P અચળ ⟹ Charles.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: બીજા દિવસનું T.<br>• શું hidden છે: V ∝ T (P અચળ).<br>• શું આપ્યું છે તેની જગ્યાએ: T નહીં, V.<br>• તે કેવી રીતે મળે છે: T₂ = T₁V₂/V₁.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Charles: T₂ = T₁ V₂/V₁.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₂ = 300 × 1218/1200 = 304.5 K</div><div class="ans">Answer: (b) 304.5 K</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">V નો ગુણોત્તર 1.015 ⟹ T 1.5% વધે.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: P અચળ છે તેની ચકાસણી.</li><li>DON'T: દબાણ 760 mm ને તાપમાન ગણવું નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ગુણોત્તર ઊલટો (1200/1218).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">300 × 1.015 = 304.5 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.16 — same pressure, different volume</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">દિવસ 1</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1200 mL</text><text x="85.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">300 K</text><defs><marker id="ar4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="150.0" y1="85.0" x2="190.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar4)"/><rect x="190" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="245.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">દિવસ 2</text><text x="245.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1218 mL</text><text x="245.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T = ?</text></svg><div class="diagram-cap">Q.16 — Charles’ law on two days</div></div>
+</div>
+<!-- ============ Q.17 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.17</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>The pressure of a gas increases by 1% on heating by 1 °C at constant volume. Its initial temperature must be: (a) 100 K (b) 100 °C (c) 250 K (d) 250 °C
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>અચળ કદે 1 °C ગરમ કરતાં ગેસનું દબાણ 1% વધે છે. પ્રારંભિક તાપમાન? (a) 100 K (b) 100 °C (c) 250 K (d) 250 °C
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "1% વધારો" = ΔP/P = 0.01; ΔT = 1 K (°C જેટલું જ).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: પ્રારંભિક T.<br>• શું hidden છે: Gay-Lussac (P ∝ T).<br>• શું આપ્યું છે તેની જગ્યાએ: T નહીં, ΔP/P.<br>• તે કેવી રીતે મળે છે: ΔP/P = ΔT/T ⟹ T = ΔT/(ΔP/P).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Gay-Lussac: ΔP/P = ΔT/T.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">0.01 = 1/T ⟹ T = 100 K</div><div class="ans">Answer: (a) 100 K</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">ΔT ને K માં લો (1 °C = 1 K).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ΔT (1 °C) = 1 K.</li><li>DON'T: (b) 100 °C ને K ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">100 °C = 373 K ને જવાબ ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">1/100 = 0.01 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.17 — Gay-Lussac at constant volume</title><desc></desc><rect x="60" y="30" width="140" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="130.0" y="48.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ચોક્કસ V</text><text x="130.0" y="64.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T = 100 K</text><text x="130.0" y="80.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ΔT = 1 K</text><text x="130.0" y="96.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ΔP/P = 1%</text></svg><div class="diagram-cap">Q.17 — Gay-Lussac: P ∝ T at constant V</div></div>
+</div>
+<!-- ============ Q.19 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.19</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Gas at 1 atm and 273 °C is cooled to 273 K at constant volume. The final pressure is: (a) 273 atm (b) 0.5 atm (c) 0.2 atm (d) 0.1 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>1 atm અને 273 °C એ ગેસને અચળ કદે 273 K સુધી ઠંડો પાડવામાં આવે છે. અંતિમ દબાણ? (a) 273 atm (b) 0.5 atm (c) 0.2 atm (d) 0.1 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> 273 °C = 546 K (K માં ફેરવો).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: અંતિમ દબાણ.<br>• શું hidden છે: 273 °C = 546 K.<br>• શું આપ્યું છે તેની જગ્યાએ: અંતિમ P નહીં, T₁ (°C) અને T₂ (K).<br>• તે કેવી રીતે મળે છે: Gay-Lussac: P₂ = P₁T₂/T₁.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P ∝ T (V અચળ); બંને T K માં.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 546 K, T₂ = 273 K</div><div class="calc">P₂ = 1 × 273/546 = 0.5 atm</div><div class="ans">Answer: (b) 0.5 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">°C ને K માં ફેરવ્યા વિના ગણવું (ખોટું).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 273 °C = 546 K.</li><li>DON'T: 273 °C ને 273 K ગણવું.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">273 °C ને 273 K ગણી 1 atm લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">1 × 273/546 = 0.5 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.19 — cooling at constant volume</title><desc></desc><rect x="40" y="30" width="150" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="115.0" y="48.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 atm</text><text x="115.0" y="64.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">273 °C = 546 K</text><text x="115.0" y="80.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">→ 273 K</text><text x="115.0" y="96.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P = ?</text></svg><div class="diagram-cap">Q.19 — Gay-Lussac: pressure halves when T halves (K)</div></div>
+</div>
+<!-- ============ Q.20 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.20</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A pre-weighed vessel is filled with O₂ at NTP and weighed; then evacuated and filled with SO₂ at the same T and P. The mass of O₂ will be: (a) same as SO₂ (b) half that of SO₂ (c) twice that of SO₂ (d) one-fourth of SO₂
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>પૂર્વ-વજન કરેલું પાત્ર NTP પર O₂થી ભરાય છે; પછી ખાલી કરીને સમાન T અને P પર SO₂થી ભરાય છે. O₂નું દળ? (a) SO₂ જેટલું (b) SO₂ નું અડધું (c) SO₂ નું બમણું (d) SO₂ નું ચોથા ભાગનું
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "સમાન T, P, V" ⟹ મોલ સરખા ⟹ દળ ∝ મોલર દળ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: O₂ નું દળ SO₂ ની સરખામણીએ.<br>• શું hidden છે: સમાન મોલ સંખ્યા (Avogadro).<br>• શું આપ્યું છે તેની જગ્યાએ: દળ નહીં, ગેસ અને પરિસ્થિતિ.<br>• તે કેવી રીતે મળે છે: n = PV/RT સમાન ⟹ m ∝ M.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">સમાન n ⟹ m₁/m₂ = M₁/M₂.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">M(O₂) = 32, M(SO₂) = 64</div><div class="calc">m(O₂)/m(SO₂) = 32/64 = 1/2</div><div class="ans">Answer: (b) half</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દળ ∝ M, કદ નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: સમાન moles.</li><li>DON'T: સમાન દળ ધારવું.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">O₂ અને SO₂ નું દળ સરખું ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Avogadro: સમાન V ⟹ સમાન n ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.20 — equal moles, mass ∝ molar mass</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂ (M = 32)</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">NTP</text><rect x="190" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="245.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">SO₂ (M = 64)</text><text x="245.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">NTP</text></svg><div class="diagram-cap">Q.20 — same V, T, P ⟹ same moles (Avogadro)</div></div>
+</div>
+<!-- ============ Q.36 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.36</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A 10 L bulb contains gas of molar mass 81 at 27 °C. Gas is removed until the pressure falls by 0.82 atm. Mass of gas removed (R = 0.082 L·atm/K·mol): (a) 27 g (b) 81 g (c) 40.5 g (d) 54 g
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>10 L બલ્બમાં 27 °C પર મોલર દળ 81 નો ગેસ છે. દબાણ 0.82 atm ઘટે ત્યાં સુધી ગેસ કાઢવામાં આવે છે. કાઢેલા ગેસનું દળ? (R = 0.082) (a) 27 g (b) 81 g (c) 40.5 g (d) 54 g
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દબાણ ઘટે" = ΔP; મોલ ΔP·V/RT.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કાઢેલું દળ.<br>• શું hidden છે: કાઢેલા મોલ Δn.<br>• શું આપ્યું છે તેની જગ્યાએ: દળ નહીં, ΔP.<br>• તે કેવી રીતે મળે છે: Δn = ΔP·V/(RT); m = Δn × M.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Δn = ΔP·V/(RT).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T = 300 K, V = 10 L</div><div class="calc">Δn = 0.82 × 10/(0.082 × 300) = 8.2/24.6 = 0.333 mol</div><div class="calc">m = 0.333 × 81 = 27 g</div><div class="ans">Answer: (a) 27 g</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">ΔP ને ગેસના દબાણ સાથે ગૂંચવશો નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a>, <a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T ને K માં.</li><li>DON'T: P ને mm Hg માં ફેરવીને atm સાથે મિશ્રિત ના કરો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ΔP ને મૂળ P ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.333 × 81 = 27 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.36 — bulb losing gas</title><desc></desc><rect x="40" y="30" width="160" height="100" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="120.0" y="48.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10 L</text><text x="120.0" y="64.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">27 °C</text><text x="120.0" y="80.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ΔP = 0.82 atm ઘટાડો</text></svg><div class="diagram-cap">Q.36 — mass removed from fixed-volume bulb</div></div>
+</div>
+<!-- ============ Q.34 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.34</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>At which of the following conditions is the density of an ideal gas maximum? (a) 0 °C, 0.1 atm (b) 0 °C, 0.2 atm (c) 273 °C, 0.1 atm (d) 273 °C, 0.2 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>નીચેની કઈ પરિસ્થિતિમાં આદર્શ ગેસની ઘનતા મહત્તમ છે? (a) 0 °C, 0.1 atm (b) 0 °C, 0.2 atm (c) 273 °C, 0.1 atm (d) 273 °C, 0.2 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> ઘનતા ∝ P/T (d = PM/RT).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: મહત્તમ ઘનતા.<br>• શું hidden છે: d = PM/RT.<br>• શું આપ્યું છે તેની જગ્યાએ: ચાર પરિસ્થિતિ.<br>• તે કેવી રીતે મળે છે: P/T મહત્તમ શોધો.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">d ∝ P/T; ઓછું T અને વધુ P.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">(a) 0.1/273, (b) 0.2/273, (c) 0.1/546, (d) 0.2/546</div><div class="calc">મહત્તમ P/T = 0.2/273 ⟹ (b)</div><div class="ans">Answer: (b) 0 °C, 0.2 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">T ને K માં (273 °C = 546 K).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: °C ને K.</li><li>DON'T: 273 °C ને 273 K ગણવું.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">273 °C ને ઓછું T ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">d ∝ P/T: (b) વધુ ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.34 — density ∝ P/T</title><desc></desc><rect x="20" y="40" width="130" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">0 °C (273 K)</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">0.2 atm</text><text x="85.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">d મહત્તમ</text></svg><div class="diagram-cap">Q.34 — density ∝ P/T at ideal gas conditions</div></div>
+</div>
+<!-- ============ Q.35 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.35</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A vessel contains 1 mol O₂ at T and pressure P. An identical vessel contains 1 mol He at 2T. Its pressure is: (a) P/8 (b) P (c) 2P (d) 8P
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>એક પાત્રમાં તાપમાન T પર 1 mol O₂ અને દબાણ P છે. સમાન પાત્રમાં 2T તાપમાને 1 mol He છે. તેનું દબાણ? (a) P/8 (b) P (c) 2P (d) 8P
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "સમાન પાત્ર, સમાન mol" ⟹ P ∝ T.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: He પાત્રનું દબાણ.<br>• શું hidden છે: P ∝ T (V, n અચળ).<br>• શું આપ્યું છે તેની જગ્યાએ: P નહીં, T.<br>• તે કેવી રીતે મળે છે: P₂ = P₁ × T₂/T₁.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P = nRT/V; ગેસ પ્રકાર અપ્રસ્તુત.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">P₂ = P × (2T)/T = 2P</div><div class="ans">Answer: (c) 2P</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">ગેસનો પ્રકાર (He/O₂) મહત્વનો નથી.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a>, <a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: n, V સરખા.</li><li>DON'T: M ના આધારે દબાણ ગણવું નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">He નું દબાણ O₂ થી અલગ ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">PV = nRT: P ∝ T ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.35 — identical vessels, same n</title><desc></desc><rect x="20" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="80.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂ · 1 mol</text><text x="80.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T</text><text x="80.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P</text><rect x="160" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">He · 1 mol</text><text x="220.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2T</text><text x="220.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P′ = ?</text></svg><div class="diagram-cap">Q.35 — identical vessels, 1 mol each</div></div>
+</div>
+<!-- ============ Q.40 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.40</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Density of a gas is 5.46 g/dm³ at 27 °C and 2 bar. Its density at STP (1 atm, 273 K) will be: (a) 1 (b) 2 (c) 3 (d) 4 g/dm³
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C અને 2 bar દબાણે ગેસની ઘનતા 5.46 g/dm³ છે. STP (1 atm, 273 K) પર ઘનતા? (a) 1 (b) 2 (c) 3 (d) 4 g/dm³
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> STP = 1 atm (≈1.01325 bar) અને 273 K.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: STP ઘનતા.<br>• શું hidden છે: d ∝ P/T.<br>• શું આપ્યું છે તેની જગ્યાએ: M નહીં; બે પરિસ્થિતિ.<br>• તે કેવી રીતે મળે છે: d₂ = d₁ × (P₂/P₁) × (T₁/T₂).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">d ∝ P/T; બંને K માં.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">d₂ = 5.46 × (1.01325/2) × (300/273)</div><div class="calc">= 5.46 × 0.5066 × 1.0989 ≈ 3.04 g/dm³</div><div class="ans">Answer: (c) 3 g/dm³</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">STP માં 1 atm નો ઉપયોગ (1 bar નહીં).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: STP = 1 atm, 273 K.</li><li>DON'T: T ને °C માં ગુણાકાર ના કરો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">T₁/T₂ ઊલટું લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">ઘનતા ↓ કારણ P ↓ (2 → 1 atm) ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.40 — density at standard conditions</title><desc></desc><rect x="20" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="70.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">27 °C</text><text x="70.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2 bar</text><text x="70.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">5.46 g/dm³</text><defs><marker id="ar5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="130.0" y1="85.0" x2="160.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar5)"/><rect x="160" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="210.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">273 K</text><text x="210.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 atm</text><text x="210.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">d = ?</text></svg><div class="diagram-cap">Q.40 — density scales with P/T</div></div>
+</div>
+<!-- ============ Q.43 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.43</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A compound exists as monomer A (M = 48) and dimer B. 96 g of compound is in a 33.6 L vessel at 546 K; 50% by weight is dimer. Pressure developed: (a) 2 atm (b) 4 atm (c) 3 atm (d) 0.5 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>એક સંયોજન મોનોમર A (M = 48) અને ડાઇમર B તરીકે અસ્તિત્વમાં છે. 33.6 L પાત્રમાં 96 g સંયોજન 546 K સુધી ગરમ. વજનથી 50% ડાઇમર. ઉત્પન્ન દબાણ? (a) 2 (b) 4 (c) 3 (d) 0.5 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "વજનથી 50%" ⟹ દળ સરખું; મોલ અલગ (ડાઇમરનું M = 96).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કુલ દબાણ.<br>• શું hidden છે: કુલ મોલ (monomer + dimer).<br>• શું આપ્યું છે તેની જગ્યાએ: મોલ નહીં; દળ અને ટકાવારી.<br>• તે કેવી રીતે મળે છે: 48 g monomer = 1 mol; 48 g dimer = 0.5 mol.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">કુલ n = Σ(દળ/M); પછી PV = nRT.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n_monomer = 48/48 = 1 mol</div><div class="calc">n_dimer = 48/96 = 0.5 mol</div><div class="calc">n_total = 1.5 mol</div><div class="calc">P = nRT/V = 1.5 × 0.0821 × 546/33.6 = 2.0 atm</div><div class="ans">Answer: (a) 2 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Dimer ના મોલ = દળ/2M.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ડાઇમર નું M = 2 × 48 = 96.</li><li>DON'T: 96 g ને બધા monomer ગણવું નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ડાઇમર ની સંખ્યા 1 mol ગણવી.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">1.5 × 0.0821 × 546 = 67.2; 67.2/33.6 = 2.0 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.43 — monomer–dimer equilibrium mixture</title><desc></desc><rect x="30" y="40" width="130" height="100" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="95.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">33.6 L</text><text x="95.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">546 K</text><text x="95.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">monomer 1 mol</text><text x="95.0" y="106.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">dimer 0.5 mol</text><defs><marker id="ar6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="170.0" y1="90.0" x2="200.0" y2="90.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar6)"/><text x="230.0" y="100.0" font-size="13" font-weight="600" fill="var(--ink)" text-anchor="middle">P = ?</text></svg><div class="diagram-cap">Q.43 — mixture of monomer and dimer in fixed volume</div></div>
+</div>
+<!-- ============ Q.46 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.46</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A balloon filled with He at 27 °C and 720 mm Hg has volume 100 L. It rises to a place with pressure 420 mm Hg and temperature −63 °C. Change in volume: (a) 16 L (b) 20 L (c) 48 L (d) 120 L
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C અને 720 mm Hg એ He ભરેલું ફુગ્ગો 100 L છે. તે 420 mm Hg અને −63 °C વાળા સ્થળે જાય છે. કદમાં ફેરફાર? (a) 16 (b) 20 (c) 48 (d) 120 L
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "ફેરફાર" = |V₂ − V₁|. T ને K માં.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કદનો ફેરફાર.<br>• શું hidden છે: V₂ (combined gas law).<br>• શું આપ્યું છે તેની જગ્યાએ: V₂ નહીં, P અને T.<br>• તે કેવી રીતે મળે છે: P₁V₁/T₁ = P₂V₂/T₂.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">V₂ = V₁ (P₁/P₂)(T₂/T₁).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 300 K, T₂ = 210 K</div><div class="calc">V₂ = 100 × (720/420) × (210/300) = 120 L</div><div class="calc">ΔV = 120 − 100 = 20 L</div><div class="ans">Answer: (b) 20 L</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">T ને K માં (−63 °C = 210 K).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p2" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p2" target="statesChapterNotes">Part 2</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: −63 °C = 210 K.</li><li>DON'T: 120 ને જવાબ ના લો (ફક્ત V₂).</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ΔV ને બદલે V₂ લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">100 × 1.714 × 0.7 = 120 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.46 — balloon rising</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">27 °C</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">720 mm</text><text x="85.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">100 L</text><defs><marker id="ar7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="150.0" y1="85.0" x2="190.0" y2="85.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar7)"/><text x="152.0" y="78.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">ઉપર</text><rect x="190" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="245.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">−63 °C</text><text x="245.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">420 mm</text><text x="245.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">120 L</text></svg><div class="diagram-cap">Q.46 — balloon: combined gas law</div></div>
+</div>
+<!-- ============ Q.48 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.48</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>An ideal gas at 9 atm and 30 °C is heated to 131 °C at constant volume; then its amount is increased by 50% at constant V and T. Final pressure: (a) 9 atm (b) 4.5 atm (c) 18 atm (d) 13.5 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>9 atm અને 30 °C પરનો આદર્શ ગેસ અચળ કદે 131 °C સુધી ગરમ થાય છે; પછી અચળ V અને T પર જથ્થો 50% વધારવામાં આવે છે. અંતિમ દબાણ? (a) 9 (b) 4.5 (c) 18 (d) 13.5 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> 1st ફેરફાર: Gay-Lussac; 2nd: P ∝ n.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: અંતિમ P.<br>• શું hidden છે: બે તબક્કા.<br>• શું આપ્યું છે તેની જગ્યાએ: P ફક્ત પ્રારંભિક.<br>• તે કેવી રીતે મળે છે: P₁ = 9 × 404/303; P ∝ n.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Step 1: P ∝ T; Step 2: P ∝ n.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 303 K, T₂ = 404 K</div><div class="calc">P₁ = 9 × 404/303 = 12 atm</div><div class="calc">n × 1.5 ⟹ P = 12 × 1.5 = 18 atm</div><div class="ans">Answer: (c) 18 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">બંને પગલા અલગ કારણોથી.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: °C → K બંને વખતે.</li><li>DON'T: બીજા પગલે T બદલાય એમ ધારવું નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">50% વધારા ને 1.5 ને બદલે 0.5 ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">9 × 1.333 × 1.5 = 18 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.48 — heating then adding gas</title><desc></desc><rect x="20" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="80.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">9 atm</text><text x="80.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">30 °C</text><text x="80.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">V અચળ</text><defs><marker id="ar8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="150.0" y1="85.0" x2="180.0" y2="85.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar8)"/><rect x="170" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="230.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">12 atm</text><text x="230.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">131 °C</text><text x="230.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">+50% n → 18 atm</text></svg><div class="diagram-cap">Q.48 — two-step pressure change</div></div>
+</div>
+<!-- ============ Q.22 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.22</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Four 1-L flasks at the same T and P contain H₂, He, O₂ and O₃ separately. Ratio of total number of atoms: (a) 1:1:1:1 (b) 1:2:2:3 (c) 2:1:2:3 (d) 1:2:2:1
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>સમાન T અને P પર ચાર 1-L ફ્લાસ્કમાં અનુક્રમે H₂, He, O₂, O₃ છે. કુલ પરમાણુ સંખ્યાનો ગુણોત્તર? (a) 1:1:1:1 (b) 1:2:2:3 (c) 2:1:2:3 (d) 1:2:2:1
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "કુલ પરમાણુ" = મોલ × પરમાણુ/અણુ. બધા ફ્લાસ્કમાં સમાન મોલ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: પરમાણુ સંખ્યાનો ગુણોત્તર.<br>• શું hidden છે: સમાન મોલ (Avogadro).<br>• શું આપ્યું છે તેની જગ્યાએ: મોલ નહીં; ગેસ અને સમાન 1 L.<br>• તે કેવી રીતે મળે છે: પરમાણુ/અણુ: H₂=2, He=1, O₂=2, O₃=3.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">સમાન V, T, P ⟹ સમાન n; atoms = n × atomicity.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">H₂: 2, He: 1, O₂: 2, O₃: 3</div><div class="calc">ગુણોત્તર = 2:1:2:3</div><div class="ans">Answer: (c) 2:1:2:3</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">He એક-પરમાણુ છે.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: atomicity ગણો.</li><li>DON'T: (d) 1:2:2:1 માં O₃ ને 1 ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">He ને 2 પરમાણુ ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">સમાન n: ratio = atomicity ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.22 — four 1 L flasks at same T and P</title><desc></desc><rect x="15" y="50" width="65" height="70" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="47.5" y="68.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂</text><text x="47.5" y="84.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2 atoms</text><rect x="88" y="50" width="65" height="70" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="120.5" y="68.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">He</text><text x="120.5" y="84.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 atom</text><rect x="161" y="50" width="65" height="70" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="193.5" y="68.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂</text><text x="193.5" y="84.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2 atoms</text><rect x="234" y="50" width="60" height="70" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="264.0" y="68.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₃</text><text x="264.0" y="84.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">3 atoms</text></svg><div class="diagram-cap">Q.22 — same moles, atoms ∝ atomicity</div></div>
+</div>
+<!-- ============ Q.52 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.52</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Partial pressures of N₂, O₂, CO₂ in a vessel are 38 cm Hg, 190 torr and 0.5 atm. Total pressure: (a) 0.96 atm (b) 1.02 atm (c) 1.64 atm (d) 1.25 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>પાત્રમાં N₂, O₂, CO₂ના આંશિક દબાણ અનુક્રમે 38 cm Hg, 190 torr અને 0.5 atm છે. કુલ દબાણ? (a) 0.96 (b) 1.02 (c) 1.64 (d) 1.25 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> એકમો એકસમાન કરો: atm.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કુલ દબાણ.<br>• શું hidden છે: Dalton નિયમ.<br>• શું આપ્યું છે તેની જગ્યાએ: ત્રણ અલગ એકમો.<br>• તે કેવી રીતે મળે છે: 380 mm = 0.5 atm; 190 torr = 0.25 atm; Σ = 1.25 atm.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P_total = Σ p_i (એકમ atm).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">N₂: 38 cm Hg = 380 mm = 0.5 atm</div><div class="calc">O₂: 190 torr = 0.25 atm</div><div class="calc">CO₂: 0.5 atm</div><div class="calc">Σ = 1.25 atm</div><div class="ans">Answer: (d) 1.25 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">1 atm = 760 mm = 760 torr = 76 cm Hg.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p4" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p4" target="statesChapterNotes">Part 4</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: cm Hg → mm → atm.</li><li>DON'T: 38 ને atm માં ગણવું.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">38 cm Hg ને 38 mm ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.5 + 0.25 + 0.5 = 1.25 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.52 — Dalton’s law, three partial pressures</title><desc></desc><rect x="20" y="40" width="80" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="60.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">N₂</text><text x="60.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">38 cm Hg</text><rect x="110" y="40" width="80" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">190 torr</text><rect x="200" y="40" width="80" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="240.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CO₂</text><text x="240.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">0.5 atm</text></svg><div class="diagram-cap">Q.52 — total pressure = sum of partial pressures</div></div>
+</div>
+<!-- ============ Q.53 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.53</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Air is 21% O₂ and 79% N₂ by volume. Barometric pressure 740 mm. Partial pressure of O₂ is closest to: (a) 155 mm (b) 310 mm (c) 580 mm (d) 740 mm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>હવામાં કદથી 21% O₂ અને 79% N₂ છે. બેરોમેટ્રિક દબાણ 740 mm. O₂નું આંશિક દબાણ લગભગ? (a) 155 (b) 310 (c) 580 (d) 740 mm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "કદથી %" = મોલ-અંશ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: O₂ નું આંશિક દબાણ.<br>• શું hidden છે: મોલ-અંશ x = 0.21.<br>• શું આપ્યું છે તેની જગ્યાએ: આંશિક દબાણ નહીં; કદ-ટકાવારી.<br>• તે કેવી રીતે મળે છે: p = x × P.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">p_O₂ = 0.21 × 740.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">p = 0.21 × 740 = 155.4 mm</div><div class="ans">Answer: (a) 155 mm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">કદ-% ને દળ-% સાથે ગૂંચવશો નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p4" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p4" target="statesChapterNotes">Part 4</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: કદ % = મોલ-અંશ (આદર્શ વાયુ).</li><li>DON'T: 0.79 નો ઉપયોગ O₂ માટે.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">O₂ માટે 0.79 વાપરવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">740 − 0.79 × 740 = 155 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.53 — air: mole fraction of O₂</title><desc></desc><rect x="40" y="40" width="220" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">હવા: O₂ 21% · N₂ 79%</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P = 740 mm</text><text x="150.0" y="140.0" font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂ નું p = 0.21 × 740 ≈ 155 mm</text></svg><div class="diagram-cap">Q.53 — partial pressure = mole fraction × total</div></div>
+</div>
+<!-- ============ Q.54 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.54</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Equal masses of ethane and hydrogen are mixed in an empty container at 25 °C. Fraction of total pressure due to hydrogen: (a) 1:2 (b) 1:1 (c) 1:16 (d) 15:16
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ખાલી પાત્રમાં 25 °C પર ઈથેન અને હાઇડ્રોજનના સમાન દળ મિશ્ર કરવામાં આવે છે. કુલ દબાણમાં હાઇડ્રોજનનો ભાગ? (a) 1:2 (b) 1:1 (c) 1:16 (d) 15:16
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "સમાન દળ" ⟹ મોલ અલગ (M ના વ્યસ્ત).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: H₂ નો આંશિક-દબાણનો ભાગ.<br>• શું hidden છે: મોલ-અંશ.<br>• શું આપ્યું છે તેની જગ્યાએ: દળ, મોલ નહીં.<br>• તે કેવી રીતે મળે છે: n = m/M; x_H₂ = n_H₂/(n_H₂+n_C₂H₆).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">x = (m/M_H₂)/[(m/M_H₂)+(m/M_C₂H₆)].</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n(H₂) = m/2, n(C₂H₆) = m/30</div><div class="calc">x(H₂) = (1/2)/(1/2 + 1/30) = 15/16</div><div class="ans">Answer: (d) 15:16</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">M(C₂H₆) = 30.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p4" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p4" target="statesChapterNotes">Part 4</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: M(C₂H₆) = 30.</li><li>DON'T: ભાગ = દળનો ગુણોત્તર ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">દળ-ગુણોત્તર 1:1 લેવો.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">x(C₂H₆) = 1/16 ✓ (sum 1).</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ઈથેન (M = 30) + H₂ (M = 2)</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">સમાન દળ · 25 °C</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">x(H₂) = 15/16 ⟹ p(H₂)/P = 15/16</text></svg><div class="diagram-cap">Q.54 — equal masses: mole fraction of H₂ = 15/16</div></div>
+</div>
+<!-- ============ Q.55 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.55</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A mixture of H₂ and O₂ at 1 bar contains 20% by weight H₂. Partial pressure of H₂: (a) 8 bar (b) 0.8 bar (c) 4 bar (d) 6 bar
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>1 bar દબાણે H₂ અને O₂નું મિશ્રણ દળથી 20% H₂ ધરાવે છે. H₂નું આંશિક દબાણ? (a) 8 (b) 0.8 (c) 4 (d) 6 bar
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દળથી 20%" ⟹ મોલ ગણો (M અલગ).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: p(H₂).<br>• શું hidden છે: મોલ-અંશ.<br>• શું આપ્યું છે તેની જગ્યાએ: દળ-% (મોલ નહીં).<br>• તે કેવી રીતે મળે છે: 20 g H₂ = 10 mol; 80 g O₂ = 2.5 mol; x = 10/12.5.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">દળ → મોલ; પછી x × P.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n(H₂) = 20/2 = 10, n(O₂) = 80/32 = 2.5</div><div class="calc">x(H₂) = 10/12.5 = 0.8</div><div class="calc">p(H₂) = 0.8 × 1 bar = 0.8 bar</div><div class="ans">Answer: (b) 0.8 bar</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દળ-% ને મોલ-% સમજવું નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p4" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p4" target="statesChapterNotes">Part 4</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: પહેલા મોલ.</li><li>DON'T: 20% ને સીધું દબાણ ના ગણો (0.2 bar ખોટું).</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">0.2 bar લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">10 + 2.5 = 12.5; 10/12.5 = 0.8 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ 20 g (10 mol) + O₂ 80 g (2.5 mol)</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P = 1 bar</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">p(H₂) = 0.8 bar</text></svg><div class="diagram-cap">Q.55 — mole fraction from mass percent</div></div>
+</div>
+<!-- ============ Q.56 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.56</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>In a closed bottle: 16 g O₂ and 14 g N₂ at total pressure 4 atm. 8 g O₂ is removed. New pressure: (a) 2 atm (b) 4 atm (c) 6 atm (d) 3 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>બંધ બોટલમાં 16 g O₂ અને 14 g N₂ છે; કુલ દબાણ 4 atm. 8 g O₂ કાઢવામાં આવે છે. નવું દબાણ? (a) 2 (b) 4 (c) 6 (d) 3 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> O₂ 16 g = 0.5 mol; N₂ 14 g = 0.5 mol.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: નવું P.<br>• શું hidden છે: બાકી મોલ.<br>• શું આપ્યું છે તેની જગ્યાએ: દળ, P.<br>• તે કેવી રીતે મળે છે: કુલ મોલ 1 ⟹ 4 atm; પછી 0.75 mol.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P ∝ n (V, T અચળ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">કુલ n₁ = 0.5 + 0.5 = 1 mol ⟹ 4 atm</div><div class="calc">8 g O₂ = 0.25 mol કાઢ્યા ⟹ n₂ = 0.75 mol</div><div class="calc">P₂ = 4 × 0.75 = 3 atm</div><div class="ans">Answer: (d) 3 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">કાઢેલા દળનું mol = 8/32.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: moles પહેલા.</li><li>DON'T: 8 g ને mol ગણ્યા વિના ઉપયોગ નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">કાઢેલો O₂ 8 mol ગણવો.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.75/1 × 4 = 3 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂ 16 g (0.5 mol) + N₂ 14 g (0.5 mol)</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">4 atm → 8 g O₂ કાઢો → 3 atm</text></svg><div class="diagram-cap">Q.56 — partial removal of one component</div></div>
+</div>
+<!-- ============ Q.57 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.57</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Mass of pure CH₄ to be mixed with 70 g of pure CO so that partial pressure of CO equals that of CH₄: (a) 40 g (b) 70 g (c) 16 g (d) 28 g
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>70 g શુદ્ધ CO સાથે કેટલું શુદ્ધ CH₄ મિશ્ર કરવું જોઈએ કે CO નું આંશિક દબાણ CH₄ ના જેટલું થાય? (a) 40 g (b) 70 g (c) 16 g (d) 28 g
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "આંશિક દબાણ સમાન" ⟹ મોલ સમાન.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: CH₄ નું દળ.<br>• શું hidden છે: સમાન મોલ.<br>• શું આપ્યું છે તેની જગ્યાએ: CH₄ નું દળ નહીં.<br>• તે કેવી રીતે મળે છે: n(CO) = 70/28 = 2.5 mol ⟹ n(CH₄) = 2.5.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">સમાન p ⟹ સમાન n.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n(CO) = 70/28 = 2.5 mol</div><div class="calc">m(CH₄) = 2.5 × 16 = 40 g</div><div class="ans">Answer: (a) 40 g</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">M(CO) = 28, M(CH₄) = 16.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: moles first.</li><li>DON'T: દળ સમાન ના ધારો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">CH₄ નું દળ 70 g ધારવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">2.5 × 16 = 40 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="90.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CO 70 g</text><text x="90.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2.5 mol</text><rect x="170" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CH₄ ?</text><text x="220.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2.5 mol</text></svg><div class="diagram-cap">Q.57 — equal partial pressure ⟹ equal moles</div></div>
+</div>
+<!-- ============ Q.58 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.58</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>A 1 L box is divided into two equal compartments by a partition; one holds 2 g H₂ and the other 16 g CH₄, each at P atm. Total pressure after the partition is removed: (a) P (b) 2P (c) P/2 (d) P/4
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>1 L બોક્સ સમાન બે ભાગમાં પાર્ટિશનથી વહેંચાયેલ છે; એકમાં 2 g H₂ અને બીજામાં 16 g CH₄, દરેકનું દબાણ P atm. પાર્ટિશન દૂર કરતાં કુલ દબાણ? (a) P (b) 2P (c) P/2 (d) P/4
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> 2 g H₂ = 1 mol; 16 g CH₄ = 1 mol.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: પાર્ટિશન પછી કુલ P.<br>• શું hidden છે: દરેક ભાગ 0.5 L, કુલ 1 L.<br>• શું આપ્યું છે તેની જગ્યાએ: P દરેક ભાગનું.<br>• તે કેવી રીતે મળે છે: કુલ mol = 2, કુલ V = 1 L; PV ∝ n.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P_total = (n_total RT)/V_total.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">દરેક ભાગ: 1 mol / 0.5 L ⟹ P = P (given)</div><div class="calc">પાર્ટિશન પછી: n = 2 mol, V = 1 L</div><div class="calc">P_total = P × (2/1)/(1/0.5) = P</div><div class="ans">Answer: (a) P</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">V બમણું અને n બમણું ⟹ P સરખું.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: કુલ n અને કુલ V.</li><li>DON'T: દરેક ઘટકનું P ઉમેરવું (પહેલા મિશ્રણ નથી).</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">P + P = 2P લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">n/V સ્થિર ⟹ P સ્થિર ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.58 — partition removed</title><desc></desc><rect x="30" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ 2 g</text><text x="85.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 mol</text><text x="85.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P</text><line x1="150" y1="40" x2="150" y2="130" stroke="var(--exam)" stroke-width="3"/><rect x="160" y="40" width="110" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="215.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CH₄ 16 g</text><text x="215.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 mol</text><text x="215.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P</text></svg><div class="diagram-cap">Q.58 — partition: equal moles in equal volumes</div></div>
+</div>
+<!-- ============ Q.62 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.62</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>0.5 L H₂ at 0.8 bar and 2.0 L O₂ at 0.7 bar are introduced into a 1 L vessel at 27 °C. Total pressure: (a) 3 bar (b) 1.8 bar (c) 1 bar (d) 18 bar
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C પર 0.8 bar ના 0.5 L H₂ અને 0.7 bar ના 2.0 L O₂ને 1 L પાત્રમાં દાખલ કરવામાં આવે છે. કુલ દબાણ? (a) 3 (b) 1.8 (c) 1 (d) 18 bar
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> દરેક ગેસ માટે PV = nRT; કુલ n = Σ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કુલ P.<br>• શું hidden છે: n = PV/RT (T સમાન).<br>• શું આપ્યું છે તેની જગ્યાએ: n નહીં; P અને V.<br>• તે કેવી રીતે મળે છે: Σ(PV) ÷ V_final.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P_f = Σ(P_i V_i)/V_f (T અચળ).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">PV(H₂) = 0.8 × 0.5 = 0.4</div><div class="calc">PV(O₂) = 0.7 × 2.0 = 1.4</div><div class="calc">Σ = 1.8 bar·L</div><div class="calc">P_f = 1.8/1 = 1.8 bar</div><div class="ans">Answer: (b) 1.8 bar</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">V_final = 1 L.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: PV ઉમેરો.</li><li>DON'T: P ને સીધા ઉમેરવા.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">P ઉમેરીને 1.5 bar (અથવા 3) લખવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">1.8 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="30" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="80.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂</text><text x="80.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">0.5 L · 0.8 bar</text><rect x="170" y="40" width="100" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂</text><text x="220.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">2.0 L · 0.7 bar</text><text x="150.0" y="140.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">→ 1 L, 27 °C: P = ?</text></svg><div class="diagram-cap">Q.62 — gases combined into 1 L</div></div>
+</div>
+<!-- ============ Q.63 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.63</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>4 g H₂ reacts with 9 × 10²³ Cl₂ molecules to form HCl. Total pressure after reaction is 700 mm. Partial pressure of HCl: (a) 200 (b) 350 (c) 300 (d) 600 mm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>4 g H₂ 9×10²³ Cl₂ અણુ સાથે પ્રતિક્રિયા કરી HCl બનાવે છે. પ્રતિક્રિયા પછી કુલ દબાણ 700 mm. HCl નું આંશિક દબાણ? (a) 200 (b) 350 (c) 300 (d) 600 mm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> H₂ + Cl₂ → 2HCl; મર્યાદિત પ્રક્રિયક શોધો.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: p(HCl).<br>• શું hidden છે: મર્યાદિત પ્રક્રિયક અને અંતિમ મોલ.<br>• શું આપ્યું છે તેની જગ્યાએ: મોલ નહીં; દળ અને અણુ-સંખ્યા.<br>• તે કેવી રીતે મળે છે: H₂ 2 mol, Cl₂ 1.5 mol ⟹ Cl₂ મર્યાદિત.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">મર્યાદિત પ્રક્રિયક ⟹ HCl મોલ; પછી મોલ-અંશ.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">H₂ = 2 mol, Cl₂ = 1.5 mol ⟹ Cl₂ મર્યાદિત</div><div class="calc">HCl = 3 mol, H₂ બાકી = 0.5 mol</div><div class="calc">કુલ = 3.5 mol; x(HCl) = 3/3.5</div><div class="calc">p(HCl) = (3/3.5) × 700 = 600 mm</div><div class="ans">Answer: (d) 600 mm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">મર્યાદિત પ્રક્રિયક ઓળખો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p4" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p4" target="statesChapterNotes">Part 4</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: મોલ ગણતરી પહેલા.</li><li>DON'T: પ્રક્રિયા પછી H₂ ને મર્યાદિત ગણશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">H₂ ને મર્યાદિત ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">3/3.5 × 700 = 600 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title>Q.63 — limiting reagent then mole fraction</title><desc></desc><rect x="30" y="40" width="130" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="95.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ 2 mol</text><text x="95.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Cl₂ 1.5 mol</text><defs><marker id="ar9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--ink)"/></marker></defs><line x1="170.0" y1="85.0" x2="200.0" y2="85.0" stroke="var(--ink)" stroke-width="2.4" marker-end="url(#ar9)"/><text x="185.0" y="78.0" fill="var(--ink)" font-size="12" font-weight="600" text-anchor="middle">→</text><rect x="200" y="40" width="80" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="240.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">HCl 3 mol</text><text x="240.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ 0.5</text></svg><div class="diagram-cap">Q.63 — H₂ + Cl₂ → 2HCl with limiting reagent</div></div>
+</div>
+<!-- ============ Q.71 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.71</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Helium and methane diffuse out of a container under similar T and P. Ratio of their rates of diffusion He : CH₄: (a) 2:1 (b) 1:1 (c) 1:2 (d) 4:1
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>સમાન T અને P હેઠળ હિલિયમ અને મિથેન પાત્રમાંથી વિસરણ પામે છે. He : CH₄ વિસરણ-દરનો ગુણોત્તર? (a) 2:1 (b) 1:1 (c) 1:2 (d) 4:1
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દર" = rate; Graham: r ∝ 1/√M.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: r(He)/r(CH₄).<br>• શું hidden છે: Graham નિયમ.<br>• શું આપ્યું છે તેની જગ્યાએ: દર નહીં; ગેસો.<br>• તે કેવી રીતે મળે છે: r₁/r₂ = √(M₂/M₁).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">r ∝ 1/√M.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">M(He) = 4, M(CH₄) = 16</div><div class="calc">r(He)/r(CH₄) = √(16/4) = 2</div><div class="ans">Answer: (a) 2:1</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">હલકો ગેસ ઝડપી.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: √ લેવાનું ભૂલશો નહીં.</li><li>DON'T: M નો સીધો ratio ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">ratio 4:1 (M નો સીધો).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√16/√4 = 2 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">He (M = 4)</text><defs><marker id="ar10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="130.0" y1="80.0" x2="170.0" y2="80.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar10)"/><text x="150.0" y="72.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">વિસરણ</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CH₄ (M = 16)</text></svg><div class="diagram-cap">Q.71 — Graham: r ∝ 1/√M</div></div>
+</div>
+<!-- ============ Q.72 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.72</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>An unknown gas X diffuses at 0.88 times the rate of PH₃ at same T and P. X may be: (a) C₂H₆ (b) CO (c) NO₂ (d) N₂O
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>સમાન T અને P પર અજ્ઞાત ગેસ X નો વિસરણ-દર PH₃ ના દરના 0.88 ગણો છે. X હોઈ શકે? (a) C₂H₆ (b) CO (c) NO₂ (d) N₂O
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "0.88 ગણો" = r_X/r_PH₃.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: X ની ઓળખ.<br>• શું hidden છે: M(X).<br>• શું આપ્યું છે તેની જગ્યાએ: M નહીં; દરનો ગુણોત્તર.<br>• તે કેવી રીતે મળે છે: √(M_PH₃/M_X) = 0.88 ⟹ M_X ≈ 44.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">M_X = M_PH₃ / (0.88)².</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">M(PH₃) = 34</div><div class="calc">M_X = 34/0.7744 ≈ 43.9 ≈ 44</div><div class="ans">N₂O (44) ⟹ Answer: (d) N₂O</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">(0.88)² ગણો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: r ∝ 1/√M.</li><li>DON'T: M_X = 34 × 0.88 ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">M_X = 34 × 0.88 ≈ 30 ⟹ C₂H₆.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√(34/44) = 0.879 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">PH₃ (M = 34)</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">r = 1</text><defs><marker id="ar11" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="130.0" y1="80.0" x2="170.0" y2="80.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar11)"/><text x="150.0" y="72.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">0.88 r</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">X (M ≈ 44)</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">N₂O</text></svg><div class="diagram-cap">Q.72 — rate ratio ⟹ molar mass</div></div>
+</div>
+<!-- ============ Q.73 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.73</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>2 g of H₂ diffuses from a container in 10 min. How many grams of O₂ would diffuse through the same container in the same time? (a) 0.5 g (b) 4 g (c) 6 g (d) 8 g
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>એક પાત્રમાંથી 10 મિનિટમાં 2 g H₂ વિસરણ પામે છે. સમાન પાત્રમાંથી સમાન સમયમાં કેટલા g O₂ વિસરણ પામશે? (a) 0.5 (b) 4 (c) 6 (d) 8 g
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દળ" નહીં, "મોલ" ની સરખામણી કરો.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: O₂ નું દળ.<br>• શું hidden છે: O₂ ના મોલ.<br>• શું આપ્યું છે તેની જગ્યાએ: O₂ ના વિસરણનો સમય/પાત્ર સમાન.<br>• તે કેવી રીતે મળે છે: n ∝ 1/√M; n(O₂) = n(H₂)·√(M_H₂/M_O₂).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Graham (મોલમાં): n₁/n₂ = √(M₂/M₁).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n(H₂) = 2/2 = 1 mol</div><div class="calc">n(O₂) = 1 × √(2/32) = 0.25 mol</div><div class="calc">m(O₂) = 0.25 × 32 = 8 g</div><div class="ans">Answer: (d) 8 g</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દરને મોલ-દર તરીકે લો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: દળ → મોલ પહેલા.</li><li>DON'T: દળ-દર સીધો Graham લગાડવો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">0.5 g (ઊલટો ratio).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.25 × 32 = 8 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ 2 g</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10 min</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂ ? g</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10 min</text></svg><div class="diagram-cap">Q.73 — same time, same container: moles ∝ 1/√M</div></div>
+</div>
+<!-- ============ Q.74 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.74</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Gas CₙH₂ₙ₊₂ diffuses at one-sixth the rate of H₂ under similar conditions. Formula of the gas: (a) C₂H₆ (b) C₁₀H₂₂ (c) C₅H₁₂ (d) C₆H₁₄
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>સમાન પરિસ્થિતિમાં CₙH₂ₙ₊₂ ગેસ H₂ ના વિસરણ-દરના એક-છઠ્ઠા ભાગે વિસરણ પામે છે. ગેસનું સૂત્ર? (a) C₂H₆ (b) C₁₀H₂₂ (c) C₅H₁₂ (d) C₆H₁₄
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "એક-છઠ્ઠો" ⟹ r₁/r₂ = 1/6.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: ગેસનું સૂત્ર.<br>• શું hidden છે: M = 14n + 2.<br>• શું આપ્યું છે તેની જગ્યાએ: M નહીં; દર-ગુણોત્તર.<br>• તે કેવી રીતે મળે છે: √(M_H₂/M) = 1/6 ⟹ M = 72.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">r ∝ 1/√M; M = 2 × 36.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">(1/6) = √(2/M) ⟹ M = 72</div><div class="calc">CₙH₂ₙ₊₂: 14n + 2 = 72 ⟹ n = 5</div><div class="ans">Answer: (c) C₅H₁₂</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દર ગુણોત્તર (1/6) ને M ગુણોત્તર (1/36) સાથે ગૂંચવશો નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: √ લો.</li><li>DON'T: M = 2 × 6 = 12 ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">M = 2 × 36 = 72 ના બદલે 12 ધારવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">14·5 + 2 = 72 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂ (M = 2)</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">r = 6</text><defs><marker id="ar12" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="130.0" y1="80.0" x2="170.0" y2="80.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar12)"/><text x="150.0" y="72.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">1/6</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CₙH₂ₙ₊₂</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">M = 72</text></svg><div class="diagram-cap">Q.74 — rate ratio 1/6 ⟹ M = 72 ⟹ C₅H₁₂</div></div>
+</div>
+<!-- ============ Q.78 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.78</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>180 mL of a hydrocarbon takes 15 min to diffuse. Under the same conditions 120 mL of SO₂ takes 20 min. Molecular weight of the hydrocarbon: (a) 16 (b) 32 (c) 48 (d) 64
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>180 mL હાઇડ્રોકાર્બન 15 મિનિટમાં વિસરણ પામે છે. સમાન પરિસ્થિતિમાં 120 mL SO₂ 20 મિનિટ લે છે. હાઇડ્રોકાર્બનનું મોલર દળ? (a) 16 (b) 32 (c) 48 (d) 64
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દર" = (કદ)/(સમય).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: હાઇડ્રોકાર્બનનું M.<br>• શું hidden છે: દર = V/t.<br>• શું આપ્યું છે તેની જગ્યાએ: દર નહીં; કદ અને સમય.<br>• તે કેવી રીતે મળે છે: r_HC = 12 mL/min; r_SO₂ = 6 mL/min; Graham.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">r₁/r₂ = √(M₂/M₁).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">r_HC = 180/15 = 12 mL/min; r_SO₂ = 120/20 = 6 mL/min</div><div class="calc">r_HC/r_SO₂ = 2 = √(64/M) ⟹ M = 16</div><div class="ans">Answer: (a) 16</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દર = V/t (કદ-દર).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: દર = V/t પહેલા.</li><li>DON'T: સમય અને કદને સીધા સરખાવશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">M = 64/2 = 32 લેવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√(64/16) = 2 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">HC 180 mL</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">15 min</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">SO₂ 120 mL</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">20 min</text></svg><div class="diagram-cap">Q.78 — volume rate ⟹ Graham</div></div>
+</div>
+<!-- ============ Q.80 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.80</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>At 27 °C, N₂ and an unknown gas leak for 10 min each from identical holes into a 3 L vessel. Pressure 4.15 bar; mixture has 0.4 mol N₂. Molar mass of the unknown gas (R = 0.083 L·bar/K·mol): (a) 112 (b) 242 (c) 224 (d) 448 g/mol
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C પર, સમાન છિદ્રોમાંથી N₂ અને અજ્ઞાત ગેસ દરેક 10 મિનિટ 3 L પાત્રમાં લીક થાય છે. દબાણ 4.15 bar; મિશ્રણમાં 0.4 mol N₂. અજ્ઞાત ગેસનું મોલર દળ? (a) 112 (b) 242 (c) 224 (d) 448 g/mol
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "સમાન છિદ્ર, સમાન સમય" ⟹ mol ∝ 1/√M.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: અજ્ઞાત M.<br>• શું hidden છે: કુલ mol અને X નો mol.<br>• શું આપ્યું છે તેની જગ્યાએ: X નો mol નહીં, કુલ P.<br>• તે કેવી રીતે મળે છે: n_total = PV/RT; n_X = n_total − 0.4; n_N₂/n_X = √(M_X/M_N₂).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Effusion (mol): n_N₂/n_X = √(M_X/M_N₂).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n_total = 4.15 × 3/(0.083 × 300) = 0.5 mol</div><div class="calc">n_X = 0.5 − 0.4 = 0.1 mol</div><div class="calc">0.4/0.1 = 4 = √(M_X/28)</div><div class="calc">M_X = 16 × 28 = 448 g/mol</div><div class="ans">Answer: (d) 448</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Mol નો ગુણોત્તર √M ના ઊલટા પ્રમાણમાં, M નહીં.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p5" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p5" target="statesChapterNotes">Part 5</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: mol ગુણોત્તર પહેલા.</li><li>DON'T: 4 નો વર્ગ ભૂલશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">M_X = 4 × 28 = 112 (√ ભૂલ).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.5 mol total ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="80.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">N₂ 0.4 mol</text><text x="80.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10 min</text><rect x="160" y="40" width="120" height="90" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">X 0.1 mol</text><text x="220.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10 min</text></svg><div class="diagram-cap">Q.80 — effusion of two gases through identical holes</div></div>
+</div>
+<!-- ============ Q.81 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.81</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Ratio of rms speed of H₂ at 50 K to that of O₂ at 800 K is: (a) 4:1 (b) 2:1 (c) 1:1 (d) 1:4
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>50 K પર H₂ અને 800 K પર O₂ ની rms ઝડપનો ગુણોત્તર? (a) 4:1 (b) 2:1 (c) 1:1 (d) 1:4
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> u_rms = √(3RT/M): T અને M બંને જુઓ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: u_rms(H₂)/u_rms(O₂).<br>• શું hidden છે: √(T/M).<br>• શું આપ્યું છે તેની જગ્યાએ: બે T અને બે M.<br>• તે કેવી રીતે મળે છે: u ∝ √(T/M).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">u_rms = √(3RT/M).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">H₂: √(50/2) = 5</div><div class="calc">O₂: √(800/32) = 5</div><div class="calc">Ratio = 5/5 = 1:1</div><div class="ans">Answer: (c) 1:1</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">બંને ગેસ માટે T/M સરખું.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T/M ગણો.</li><li>DON'T: T ને M સાથે ગૂંચવશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">T નો ratio 50/800 = 1/16 ⟹ 1:4.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">(50/2) = (800/32) = 25 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">H₂</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">50 K</text><text x="75.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">M = 2</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">O₂</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">800 K</text><text x="225.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">M = 32</text></svg><div class="diagram-cap">Q.81 — u_rms ∝ √(T/M)</div></div>
+</div>
+<!-- ============ Q.83 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.83</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Average speed of an ideal gas molecule at 27 °C is 0.3 m/s. Average speed at 927 °C: (a) 0.6 (b) 0.3 (c) 0.9 (d) 3.0 m/s
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>27 °C પર આદર્શ ગેસ અણુની સરેરાશ ઝડપ 0.3 m/s છે. 927 °C પર સરેરાશ ઝડપ? (a) 0.6 (b) 0.3 (c) 0.9 (d) 3.0 m/s
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> T ને K માં (300 K, 1200 K).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: 1200 K પર સરેરાશ ઝડપ.<br>• શું hidden છે: u_avg ∝ √T.<br>• શું આપ્યું છે તેની જગ્યાએ: બે તાપમાન (°C).<br>• તે કેવી રીતે મળે છે: u₂ = u₁√(T₂/T₁).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">u_avg = √(8RT/πM) ∝ √T.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 300 K, T₂ = 1200 K</div><div class="calc">u₂ = 0.3 × √(1200/300) = 0.3 × 2 = 0.6 m/s</div><div class="ans">Answer: (a) 0.6 m/s</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">°C ને K માં ફેરવો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T ને K.</li><li>DON'T: ratio 927/27 ને સીધો ગણવો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">u ∝ T ગણવું (ખોટું: 0.3 × 4 = 1.2).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√4 = 2 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">27 °C = 300 K</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">u = 0.3 m/s</text><defs><marker id="ar13" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--accent)"/></marker></defs><line x1="130.0" y1="80.0" x2="170.0" y2="80.0" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ar13)"/><text x="150.0" y="72.0" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">√T</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">927 °C = 1200 K</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">u = ?</text></svg><div class="diagram-cap">Q.83 — average speed ∝ √T</div></div>
+</div>
+<!-- ============ Q.84 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.84</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>RMS speed of a gas at 300 K and 100000 bar is 200 m/s. If T is doubled and pressure halved, RMS speed becomes: (a) 200 (b) 400 (c) 100 (d) 200√2 m/s
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>300 K અને 100000 bar પર ગેસની rms ઝડપ 200 m/s છે. T બમણું અને દબાણ અડધું કરતાં rms ઝડપ? (a) 200 (b) 400 (c) 100 (d) 200√2 m/s
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> દબાણ u_rms ને અસર કરતું નથી.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: નવી u_rms.<br>• શું hidden છે: u ∝ √T.<br>• શું આપ્યું છે તેની જગ્યાએ: P બદલાયું (અપ્રસ્તુત).<br>• તે કેવી રીતે મળે છે: u ∝ √T ⟹ √2 ગણો.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">u_rms = √(3RT/M): P નહીં.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">u₂ = 200 × √(600/300) = 200√2 m/s</div><div class="ans">Answer: (d) 200√2 m/s</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">દબાણ અપ્રસ્તુત.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: ફક્ત T.</li><li>DON'T: P ને u માં ઉમેરશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">P અડધું ⟹ u અડધું ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">200 × 1.414 = 282.8 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">300 K → 600 K</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P ÷ 2 (અપ્રસ્તુત)</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">u_rms: 200 → 200√2 m/s</text></svg><div class="diagram-cap">Q.84 — u_rms depends on T and M only</div></div>
+</div>
+<!-- ============ Q.86 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.86</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Two gases X and Y have molecular speeds in ratio 3 : 1 at a certain temperature. Ratio of molar masses Mₓ : M_Y: (a) 1:3 (b) 3:1 (c) 1:9 (d) 9:1
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ચોક્કસ તાપમાને બે ગેસ X અને Y ની અણુ-ઝડપનો ગુણોત્તર 3:1 છે. તેમના મોલર દળનો ગુણોત્તર Mₓ : M_Y? (a) 1:3 (b) 3:1 (c) 1:9 (d) 9:1
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> ઝડપ ∝ 1/√M (સમાન T).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: Mₓ/M_Y.<br>• શું hidden છે: u ∝ 1/√M.<br>• શું આપ્યું છે તેની જગ્યાએ: ઝડપ-ગુણોત્તર.<br>• તે કેવી રીતે મળે છે: (u_X/u_Y)² = M_Y/M_X.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">u ∝ 1/√M (સમાન T).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">(u_X/u_Y)² = (3)² = 9 = M_Y/M_X</div><div class="calc">M_X/M_Y = 1/9</div><div class="ans">Answer: (c) 1:9</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">ઝડપ ગુણોત્તરનો વર્ગ લો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: વર્ગ લો.</li><li>DON'T: M_X/M_Y = 3 ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">M ratio = 3:1 (ઝડપ-ratio સીધો).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√(1/9) = 1/3 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">X</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">u = 3</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Y</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">u = 1</text></svg><div class="diagram-cap">Q.86 — equal T: u ∝ 1/√M</div></div>
+</div>
+<!-- ============ Q.87 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.87</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>At what temperature will the total translational KE of 0.30 mol He equal that of 0.40 mol Ar at 400 K? (a) 533 K (b) 400 K (c) 300 K (d) 266 K
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>0.30 mol He ની કુલ સ્થાનાંતરીય ગતિ-ઊર્જા 400 K પર 0.40 mol Ar ની જેટલી હોય તો કયું તાપમાન? (a) 533 K (b) 400 K (c) 300 K (d) 266 K
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Translational KE = (3/2) n R T (ગેસ-પ્રકારથી સ્વતંત્ર).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: He નું T.<br>• શું hidden છે: સમાન KE.<br>• શું આપ્યું છે તેની જગ્યાએ: KE નહીં; mol અને T (Ar).<br>• તે કેવી રીતે મળે છે: 0.30 T = 0.40 × 400.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">KE = (3/2)nRT.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">0.30 × T = 0.40 × 400</div><div class="calc">T = 160/0.30 = 533.3 K</div><div class="ans">Answer: (a) 533 K</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">KE માં દળ નહીં, મોલ.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: mol × T.</li><li>DON'T: He અને Ar ના દળ ગણશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">દળ ઉપયોગ કરવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.4×400/0.3 = 533 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">He 0.30 mol</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T = ?</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Ar 0.40 mol</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">400 K</text></svg><div class="diagram-cap">Q.87 — equal total translational KE</div></div>
+</div>
+<!-- ============ Q.88 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.88</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Translational KE of N molecules of O₂ is x J at −123 °C. Another sample of O₂ at 27 °C has translational KE 2x J. This sample contains: (a) N (b) 2N (c) N/2 (d) N/4 molecules
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>−123 °C પર O₂ ના N અણુની સ્થાનાંતરીય KE x J છે. 27 °C પર O₂ નો બીજો નમૂનો 2x J ધરાવે છે. આ નમૂનામાં કેટલા અણુ? (a) N (b) 2N (c) N/2 (d) N/4
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> KE = N·(3/2)kT; બંને K માં.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: બીજા નમૂનાના અણુ.<br>• શું hidden છે: KE ∝ N·T.<br>• શું આપ્યું છે તેની જગ્યાએ: અણુ-સંખ્યા નહીં.<br>• તે કેવી રીતે મળે છે: x = N·T₁; 2x = N′·T₂.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">KE ∝ N·T.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">T₁ = 150 K, T₂ = 300 K</div><div class="calc">N·150 = x; N′·300 = 2x</div><div class="calc">N′ = 2x/300 ÷ (x/150) ⟹ N′ = N</div><div class="ans">Answer: (a) N</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">°C ને K માં ફેરવો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: T ને K.</li><li>DON'T: T ને °C માં લેવું.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">T ratio ને N માં ઉમેરવું (N/2).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">N′ = 2x/(300·k) ÷ … = N ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="75.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">N molecules</text><text x="75.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">−123 °C = 150 K</text><text x="75.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">KE = x</text><rect x="170" y="40" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="225.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">N′ molecules</text><text x="225.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">27 °C = 300 K</text><text x="225.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">KE = 2x</text></svg><div class="diagram-cap">Q.88 — KE ∝ N·T</div></div>
+</div>
+<!-- ============ Q.90 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.90</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Translational KE of 10²⁰ molecules of N₂ at a certain temperature is 0.63 J (N_A = 6 × 10²³). Temperature: (a) 23 °C (b) 303.1 °C (c) 30.1 °C (d) 43.3 °C
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ચોક્કસ તાપમાને 10²⁰ N₂ અણુની સ્થાનાંતરીય KE 0.63 J છે (N_A = 6×10²³). તાપમાન? (a) 23 °C (b) 303.1 °C (c) 30.1 °C (d) 43.3 °C
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> KE = (3/2) n R T, n = N/N_A.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: T.<br>• શું hidden છે: n = N/N_A.<br>• શું આપ્યું છે તેની જગ્યાએ: T નહીં; KE અને N.<br>• તે કેવી રીતે મળે છે: T = 2·KE/(3nR).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">KE = (3/2) n R T.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n = 10²⁰/6×10²³ = 1.667×10⁻⁴ mol</div><div class="calc">T = 2 × 0.63/(3 × 1.667×10⁻⁴ × 8.314) = 303.1 K</div><div class="calc">= 30.1 °C</div><div class="ans">Answer: (c) 30.1 °C</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">K માં ગણો; પછી °C = K − 273.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p6" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p6" target="statesChapterNotes">Part 6</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: n = N/N_A.</li><li>DON'T: N ને mol ગણવું નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">n = N (અણુ) ને સીધો mol.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">303.1 − 273 = 30.1 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">10²⁰ N₂ molecules</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">KE = 0.63 J</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T = ?</text></svg><div class="diagram-cap">Q.90 — KE = (3/2)nRT</div></div>
+</div>
+<!-- ============ Q.100 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.100</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>The van der Waals constant a is maximum for: (a) He (b) H₂ (c) O₂ (d) NH₃
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>વેન ડર વાલ્સ અચળાંક a મહત્તમ કયા ગેસ માટે છે? (a) He (b) H₂ (c) O₂ (d) NH₃
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "a" = આંતરઆણ્વિક આકર્ષણનું માપ (પ્રવર્તે ધ્રુવીયતા, H-બંધન).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: a નું મહત્તમ મૂલ્ય.<br>• શું hidden છે: આકર્ષણની તીવ્રતા.<br>• શું આપ્યું છે તેની જગ્યાએ: a નું મૂલ્ય નહીં.<br>• તે કેવી રીતે મળે છે: H-બંધન ⟹ સૌથી મોટું આકર્ષણ.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">a ∝ આંતરઆણ્વિક આકર્ષણ.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">He: a ≈ 0.034, H₂: 0.244, O₂: 1.36, NH₃: 4.17 L²·atm/mol²</div><div class="ans">Answer: (d) NH₃</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">H-બંધન વાળા ગેસનું a સૌથી મોટું.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: H-બંધન ધ્યાનમાં લો.</li><li>DON'T: મોલર દળને એકમાત્ર માપદંડ ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">O₂ ને મોટા M ના કારણે મહત્તમ ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">NH₃ નો a સૌથી મોટો ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">He < H₂ < O₂ < NH₃</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">a: મહત્તમ = NH₃ (H-બંધન)</text></svg><div class="diagram-cap">Q.100 — a increases with intermolecular attraction</div></div>
+</div>
+<!-- ============ Q.101 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.101</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Molecular radius of a gas is 1.25 Å. A reasonable estimate of van der Waals b: (a) 0.98×10⁻² (b) 1.43×10⁻² (c) 1.97×10⁻² (d) 3.33×10⁻² L/mol
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ગેસના અણુની ત્રિજ્યા 1.25 Å છે. વેન ડર વાલ્સ b નો વાજબી અંદાજ? (a) 0.98×10⁻² (b) 1.43×10⁻² (c) 1.97×10⁻² (d) 3.33×10⁻² L/mol
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> b = 4 N_A V_molecule (V = 4/3 π r³).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: b.<br>• શું hidden છે: V_molecule.<br>• શું આપ્યું છે તેની જગ્યાએ: b નહીં; r.<br>• તે કેવી રીતે મળે છે: b = 4 × N_A × (4/3)π r³.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">b = 4 N_A (4/3)πr³.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">r = 1.25×10⁻¹⁰ m ⟹ (4/3)πr³ = 8.18×10⁻³⁰ m³</div><div class="calc">b = 4 × 6.022×10²³ × 8.18×10⁻³⁰ = 1.97×10⁻⁵ m³/mol = 1.97×10⁻² L/mol</div><div class="ans">Answer: (c)</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">1 m³ = 1000 L.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: r ને m માં.</li><li>DON'T: Å ને m માં ફેરવવાનું ભૂલશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">1 Å = 10⁻⁸ cm = 10⁻¹⁰ m (ખોટું 10⁻⁸ m).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">√ ગણતરી: b/4 = 4.9×10⁻³ L/mol ✓ (4× ⟹ 1.97 ✓).</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><circle cx="150" cy="75" r="40" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="80.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">r = 1.25 Å</text><text x="150.0" y="132.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">b = 4 × N_A × (4/3)πr³</text></svg><div class="diagram-cap">Q.101 — molecular volume ⟹ van der Waals b</div></div>
+</div>
+<!-- ============ Q.102 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.102</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Pressure exerted by 32 g methane in a 250 mL vessel at 300 K by van der Waals equation (a = 2.5 atm·L²/mol², b = 0.05 L/mol): (a) 227.54 (b) 299.64 (c) 168.4 (d) 328.4 atm
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>300 K પર 250 mL પાત્રમાં 32 g મિથેન વેન ડર વાલ્સ સમીકરણથી કેટલું દબાણ? (a = 2.5, b = 0.05) (a) 227.54 (b) 299.64 (c) 168.4 (d) 328.4 atm
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> n = 32/16 = 2 mol; V = 0.25 L.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: P.<br>• શું hidden છે: n, V.<br>• શું આપ્યું છે તેની જગ્યાએ: n નહીં; દળ (g).<br>• તે કેવી રીતે મળે છે: P = nRT/(V − nb) − a n²/V².<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">P = nRT/(V − nb) − an²/V².</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">n = 2 mol, V = 0.25 L</div><div class="calc">nRT/(V − nb) = 2 × 0.0821 × 300/(0.25 − 0.1) = 49.26/0.15 = 328.4</div><div class="calc">an²/V² = 2.5 × 4/0.0625 = 160</div><div class="calc">P = 328.4 − 160 = 168.4 atm</div><div class="ans">Answer: (c) 168.4 atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">n = દળ/M = 32/16.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: nb ને V માંથી બાદ કરો.</li><li>DON'T: a ને ઉમેરવાને બદલે બાદ કરવાનું ભૂલશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">P = 328.4 (b વગર).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">328.4 − 160 = 168.4 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">CH₄ 32 g = 2 mol</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">V = 250 mL</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T = 300 K</text><text x="150.0" y="106.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P (vdW) = 168.4 atm</text></svg><div class="diagram-cap">Q.102 — van der Waals pressure of CH₄</div></div>
+</div>
+<!-- ============ Q.103 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.103</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>van der Waals b for a gas is 0.0391 L/mol. Radius of the gas molecule: (a) 3.8765 Å (b) 1.5708 Å (c) 8.3675 Å (d) 5.8075 Å
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ગેસ માટે વેન ડર વાલ્સ b = 0.0391 L/mol છે. અણુની ત્રિજ્યા? (a) 3.8765 Å (b) 1.5708 Å (c) 8.3675 Å (d) 5.8075 Å
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> b = 4 N_A V_molecule.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: r.<br>• શું hidden છે: V_molecule = b/(4 N_A).<br>• શું આપ્યું છે તેની જગ્યાએ: r નહીં; b.<br>• તે કેવી રીતે મળે છે: r = [3V/(4π)]^(1/3).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">V_molecule = b/(4N_A).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">b = 0.0391 L = 3.91×10⁻⁵ m³/mol</div><div class="calc">V = b/(4N_A) = 1.623×10⁻²⁹ m³</div><div class="calc">r = (3V/4π)^(1/3) = 1.5708×10⁻¹⁰ m</div><div class="ans">Answer: (b) 1.5708 Å</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">L → m³ (1 L = 10⁻³ m³).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: L ↔ m³.</li><li>DON'T: 4 ને ભૂલશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">V = b/N_A (4 ભૂલ).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">r ≈ 1.571 Å ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><circle cx="150" cy="75" r="36" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="80.0" font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle">r = ?</text><text x="150.0" y="132.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">b = 0.0391 L/mol</text></svg><div class="diagram-cap">Q.103 — b ⟹ molecular radius</div></div>
+</div>
+<!-- ============ Q.105 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.105</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>PV vs P isotherms of 1 mol of different gases at 273 K: as P → 0, PV converges to: (a) 11.2 L·atm (b) 22.4 L·atm (c) 0 (d) 22.4 L
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>273 K પર 1 mol વિવિધ ગેસના PV–P સમતાપ રેખાઓ. P→0 થતાં PV કયા મૂલ્ય પર મળે? (a) 11.2 L·atm (b) 22.4 L·atm (c) 0 (d) 22.4 L
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> P → 0: બધા ગેસ આદર્શ.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: PV મર્યાદા.<br>• શું hidden છે: આદર્શ ગેસ નિયમ.<br>• શું આપ્યું છે તેની જગ્યાએ: PV નહીં; T અને mol.<br>• તે કેવી રીતે મળે છે: PV = nRT = 1 × 0.0821 × 273 = 22.4 L·atm.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">PV = nRT (P → 0).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">PV = 1 × 0.0821 × 273 = 22.41 L·atm ≈ 22.4 L·atm</div><div class="ans">Answer: (b) 22.4 L·atm</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">એકમ L·atm (L નહીં).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p3" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p3" target="statesChapterNotes">Part 3</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: એકમ atm·L.</li><li>DON'T: (d) 22.4 L નો એકમ ખોટો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">22.4 L (એકમ વગર દબાણ).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.0821 × 273 = 22.4 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">1 mol · 273 K</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P → 0</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">PV → 22.4 L·atm (બધા ગેસ માટે)</text></svg><div class="diagram-cap">Q.105 — PV → RT as P → 0</div></div>
+</div>
+<!-- ============ Q.107 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.107</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Van der Waals b and critical temperature for gases P, Q, R: P (Tc = −200 °C, b = 0.03), Q (Tc = −100 °C, b = 0.02), R (Tc = +50 °C, b = 0.01 L/mol). Which can be liquefied at −110 °C by increasing pressure? (a) P, Q, R (b) P, Q (c) Q, R (d) None
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ગેસ P, Q, R ના વેન ડર વાલ્સ b અને Tc: P (−200 °C), Q (−100 °C), R (+50 °C). −110 °C પર દબાણ વધારીને કયા ગેસ પ્રવાહી બને? (a) P,Q,R (b) P,Q (c) Q,R (d) None
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "દબાણથી પ્રવાહી" ⟹ T < Tc.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: કયા ગેસ liquefiable.<br>• શું hidden છે: Tc > −110 °C.<br>• શું આપ્યું છે તેની જગ્યાએ: b (અપ્રસ્તુત) અને Tc.<br>• તે કેવી રીતે મળે છે: Tc સરખાવો.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">T < Tc ⟹ દબાણથી પ્રવાહી શક્ય.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">P: Tc = −200 °C < −110 °C ⟹ ✗</div><div class="calc">Q: Tc = −100 °C > −110 °C ⟹ ✓</div><div class="calc">R: Tc = +50 °C ⟹ ✓</div><div class="ans">Answer: (c) Q, R</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">b અહીં અપ્રસ્તુત.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Tc સાથે સરખામણી.</li><li>DON'T: b થી liquefiability ના આંકવી.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Tc ને ઊલટું સરખાવવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Q (−100) ઉપર −110 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="80" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="60.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">P</text><text x="60.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc = −200</text><rect x="110" y="40" width="80" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Q</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc = −100</text><rect x="200" y="40" width="80" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="240.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">R</text><text x="240.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc = +50</text><text x="150.0" y="135.0" font-size="11" font-weight="400" fill="var(--ink-2)" text-anchor="middle">T = −110 °C</text></svg><div class="diagram-cap">Q.107 — liquefaction needs T below Tc</div></div>
+</div>
+<!-- ============ Q.108 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.108</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>For a van der Waals gas, Tc = 305.5 K and Pc = 48.2 atm. Critical volume: (a) 0.098 (b) 0.195 (c) 0.231 (d) 0.321 L/mol
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>વેન ડર વાલ્સ ગેસ માટે Tc = 305.5 K અને Pc = 48.2 atm. ક્રાંતિક કદ? (a) 0.098 (b) 0.195 (c) 0.231 (d) 0.321 L/mol
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Vc = 3b; Pc Vc = (3/8) R Tc.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: Vc.<br>• શું hidden છે: Pc Vc/(RTc) = 3/8.<br>• શું આપ્યું છે તેની જગ્યાએ: Vc નહીં; Pc, Tc.<br>• તે કેવી રીતે મળે છે: Vc = (3/8) R Tc / Pc.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Vc = 3RTc/(8Pc).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Vc = 3 × 0.0821 × 305.5/(8 × 48.2)</div><div class="calc">= 75.2/385.6 = 0.195 L/mol</div><div class="ans">Answer: (b) 0.195</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Vc = 3b (ક્રાંતિક કદ) વાપરી શકાય.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: R = 0.0821 L·atm.</li><li>DON'T: 3/8 ને ભૂલશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Vc = RTc/Pc (3/8 ભૂલ).</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">3 × 0.0821 × 305.5 = 75.2 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc = 305.5 K</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Pc = 48.2 atm</text><text x="150.0" y="90.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Vc = 3RTc/(8Pc) = 0.195 L/mol</text></svg><div class="diagram-cap">Q.108 — critical volume from Pc and Tc</div></div>
+</div>
+<!-- ============ Q.109 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.109</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Van der Waals parameters: W (a 4.0, b 0.027), X (8.0, 0.030), Y (6.0, 0.032), Z (12.0, 0.027). Highest critical temperature: (a) W (b) X (c) Y (d) Z
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>વેન ડર વાલ્સ પરિમાણ: W (a 4.0, b 0.027), X (8.0, 0.030), Y (6.0, 0.032), Z (12.0, 0.027). સૌથી વધુ Tc? (a) W (b) X (c) Y (d) Z
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Tc = 8a/(27Rb) ⟹ Tc ∝ a/b.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: મહત્તમ Tc.<br>• શું hidden છે: a/b.<br>• શું આપ્યું છે તેની જગ્યાએ: Tc નહીં; a, b.<br>• તે કેવી રીતે મળે છે: a/b ગણો.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Tc ∝ a/b.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">W: 4.0/0.027 = 148</div><div class="calc">X: 8.0/0.030 = 267</div><div class="calc">Y: 6.0/0.032 = 188</div><div class="calc">Z: 12.0/0.027 = 444</div><div class="ans">Answer: (d) Z</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Tc ∝ a/b (R અને 27/8 અચળ).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: a/b ગણો.</li><li>DON'T: b ને ધ્યાનમાં લીધા વગર a ઊંચું એ જવાબ ના ગણો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">a નો મહત્તમ (Z) — બરાબર હોવા છતાં તપાસ જરૂરી; X ને ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">Z (444) મહત્તમ ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="130" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="85.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Z: a/b = 444</text><rect x="160" y="40" width="120" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="220.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">X: 267</text></svg><div class="diagram-cap">Q.109 — Tc ∝ a/b</div></div>
+</div>
+<!-- ============ Q.111 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.111</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Under critical conditions, the compressibility factor Z for a gas is: (a) 3/8 (b) 8/3 (c) 1 (d) 1/4
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>ક્રાંતિક પરિસ્થિતિમાં ગેસનો compressibility factor Z: (a) 3/8 (b) 8/3 (c) 1 (d) 1/4
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Zc = Pc Vc/(R Tc).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: Zc.<br>• શું hidden છે: Pc Vc/(RTc).<br>• શું આપ્યું છે તેની જગ્યાએ: Z નહીં.<br>• તે કેવી રીતે મળે છે: Vc = 3b, Pc = a/27b², Tc = 8a/27Rb.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Zc = PcVc/(RTc).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Pc Vc = (a/27b²)(3b) = a/(9b)</div><div class="calc">R Tc = 8a/27b</div><div class="calc">Zc = (a/9b)/(8a/27b) = 27/72 = 3/8</div><div class="ans">Answer: (a) 3/8</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Zc = 3/8 (સાર્વત્રિક).</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Zc = 3/8 યાદ રાખો.</li><li>DON'T: 1 (આદર્શ) ને Zc સાથે ગૂંચવશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Zc = 1 ધારવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">27/72 = 3/8 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">ક્રાંતિક બિંદુ</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Zc = PcVc/(RTc) = 3/8 ≈ 0.375</text></svg><div class="diagram-cap">Q.111 — universal critical Z = 3/8</div></div>
+</div>
+<!-- ============ Q.112 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.112</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Behaviour of temporary gases (e.g., CO₂) approaches that of permanent gases (N₂, O₂) as we go: (a) below Tc (b) above Tc (c) above absolute zero (d) below absolute zero
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>અસ્થાયી ગેસ (દા.ત. CO₂) નું વર્તન કાયમી ગેસ (N₂, O₂) જેવું ક્યારે થાય? (a) Tc ની નીચે (b) Tc ની ઉપર (c) 0 K ઉપર (d) 0 K નીચે
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> "અસ્થાયી ગેસ" = Tc ની ઉપર પ્રવાહી બનતો નથી.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: ક્યાં તાપમાને વર્તન કાયમી ગેસ જેવું.<br>• શું hidden છે: Tc.<br>• શું આપ્યું છે તેની જગ્યાએ: Tc નથી કહ્યું.<br>• તે કેવી રીતે મળે છે: T > Tc ⟹ પ્રવાહી શક્ય નથી.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">T > Tc ⟹ બિન-liquefiable.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Tc ઉપર ગેસ પ્રવાહી બની શકતો નથી</div><div class="ans">Answer: (b) above Tc</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Tc ઉપર = permanent જેવું.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Tc ની ઉપર.</li><li>DON'T: 0 K ને Tc સમજશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Tc ની નીચે ગણવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">T > Tc ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T < Tc: CO₂ પ્રવાહી</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">T > Tc: બધા ગેસ સમાન (permanent-like)</text></svg><div class="diagram-cap">Q.112 — above Tc gas cannot liquefy</div></div>
+</div>
+<!-- ============ Q.114 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.114</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Correct order of critical temperature Tc, Boyle temperature T_B, and inversion temperature Tᵢ of a real gas: (a) Tc < T_B < Tᵢ (b) T_B < Tᵢ < Tc (c) T_B < Tc < Tᵢ (d) Tc < Tᵢ < Tc
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>વાસ્તવિક ગેસના ક્રાંતિક તાપમાન Tc, Boyle તાપમાન T_B અને inversion તાપમાન Tᵢ નો સાચો ક્રમ? (a) Tc < T_B < Tᵢ (b) T_B < Tᵢ < Tc (c) T_B < Tc < Tᵢ (d) Tc < Tᵢ < Tc
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Tc = 8a/27Rb; T_B = a/Rb; Tᵢ = 2a/Rb.</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: ક્રમ.<br>• શું hidden છે: સંબંધ a/Rb ના ગુણાંકો.<br>• શું આપ્યું છે તેની જગ્યાએ: સંખ્યા નહીં.<br>• તે કેવી રીતે મળે છે: 8/27 < 1 < 2.<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">Tc = (8/27)(a/Rb); T_B = a/Rb; Tᵢ = 2a/Rb.</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Tc = 0.296 a/Rb</div><div class="calc">T_B = 1.00 a/Rb</div><div class="calc">Tᵢ = 2.00 a/Rb</div><div class="ans">Tc < T_B < Tᵢ ⟹ Answer: (a)</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">Tc ને T_B થી ઊંચું ના ગણો.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: 8/27 યાદ રાખો.</li><li>DON'T: T_B ↔ Tc ગૂંચવશો નહીં.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Tc > T_B ધારવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">0.296 < 1 < 2 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="20" y="40" width="260" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc (0.296)  <  T_B (1.0)  <  Tᵢ (2.0)  [× a/Rb]</text></svg><div class="diagram-cap">Q.114 — ratio of Tc : T_B : Tᵢ = 8/27 : 1 : 2</div></div>
+</div>
+<!-- ============ Q.115 ============ -->
+<div class="qcard">
+<div class="qhead big"><span class="qnum">Q.115</span><span class="qsrc">Exercise I (JEE Main) · Neeraj Kumar Ch.3</span></div>
+<div class="qtext">
+<b class="langtag">ENGLISH</b><br>Critical temperature and pressure of a vdW gas are 27 °C and 82.1 atm. Its van der Waals b (L/mol): (a) 0.500 (b) 0.30 (c) 0.075 (d) 0.0375
+<hr class="langsep">
+<b class="langtag">ગુજરાતી</b><br>vdW ગેસ માટે ક્રાંતિક તાપમાન 27 °C અને ક્રાંતિક દબાણ 82.1 atm છે. તેનો b (L/mol)? (a) 0.500 (b) 0.30 (c) 0.075 (d) 0.0375
+<div class="step-body trapbox"><b>અનુવાદ-જાળ:</b> Tc/Pc = 8b/R ⟹ b = R Tc/(8 Pc).</div>
+</div>
+<div class="step s1"><div class="lbl"><span class="no">1</span>પ્રશ્ન શું પૂછે છે</div><div class="step-body">• શું પૂછે છે: b.<br>• શું hidden છે: Tc/Pc = 8b/R.<br>• શું આપ્યું છે તેની જગ્યાએ: a નહીં; Tc, Pc.<br>• તે કેવી રીતે મળે છે: b = R·Tc/(8·Pc).<br></div></div>
+<div class="step s2"><div class="lbl"><span class="no">2</span>Approach અને શા માટે</div><div class="step-body"><p style="margin:0">b = RTc/(8Pc) (a રદ થાય).</p></div></div>
+<div class="step s3"><div class="lbl"><span class="no">3</span>Ideal method &mdash; સંપૂર્ણ steps</div><div class="step-body"><div class="calc">Tc = 300 K</div><div class="calc">b = 0.0821 × 300/(8 × 82.1) = 24.63/656.8 = 0.0375 L/mol</div><div class="ans">Answer: (d) 0.0375</div></div></div>
+<div class="step s4"><div class="lbl"><span class="no">&#9201;</span>Time-saving tip</div><div class="step-body">K માં Tc.</div></div>
+<div class="step s5"><div class="lbl"><span class="no">5</span>Chapter notes માંથી શું fetch કરવું <a class="jumpicon" href="notes.html#p7" target="statesChapterNotes" title="Chapter notes ખોલો">↗</a></div><div class="step-body"><p style="margin:0"><a href="notes.html#p7" target="statesChapterNotes">Part 7</a></p></div></div>
+<div class="step s6"><div class="lbl"><span class="no">6</span>Catches / Do's and Don'ts</div><div class="step-body"><ul><li>DO: Tc ને K માં (27 + 273 = 300).</li><li>DON'T: 27 નો ઉપયોગ K વગર ના કરો.</li></ul></div></div>
+<div class="step s7"><div class="lbl"><span class="no">7</span>તમારી ભૂલ ક્યાં થઈ શકે</div><div class="step-body"><p style="margin:0">Tc = 27 K ધારવું.</p></div></div>
+<div class="step s8"><div class="lbl"><span class="no">8</span>Alternative approach / ચકાસણી</div><div class="step-body"><p style="margin:0">24.63/656.8 = 0.0375 ✓.</p></div></div>
+<div class="diagram"><svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img"><title></title><desc></desc><rect x="40" y="40" width="220" height="80" rx="6" fill="var(--surface-2)" stroke="var(--ink-2)" stroke-width="1.6"/><text x="150.0" y="58.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">Tc = 300 K · Pc = 82.1 atm</text><text x="150.0" y="74.0" font-size="11" font-weight="600" fill="var(--ink)" text-anchor="middle">b = RTc/(8Pc) = 0.0375 L/mol</text></svg><div class="diagram-cap">Q.115 — b from critical constants</div></div>
+</div>
+</div></body></html>

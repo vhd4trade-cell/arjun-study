@@ -128,7 +128,7 @@ sup,sub{font-size:.7em}
 .t{font-size:13px;fill:var(--ink)}
 .ts{font-size:11.5px;fill:var(--ink-2)}
 .th{font-size:13px;fill:var(--ink);font-weight:600}
-</style>
+.vec{position:relative;padding-right:.45em;font-style:italic}.vec::after{content:"→";position:absolute;right:0;top:-.42em;font-size:.72em;font-style:normal;font-weight:600}</style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
 
@@ -278,7 +278,7 @@ sup,sub{font-size:.7em}
 
 <div class="formula-box">
   <span class="label">formula — must memorize</span>
-  <div class="f">W = F d cosθ = F⃗ · d⃗</div>
+  <div class="f">W = F d cosθ = <span class="vec">F</span> · <span class="vec">d</span></div>
   <div class="meaning">θ = force અને displacement વચ્ચેનો angle. Work એ scalar (dot product) છે, vector નથી.</div>
 </div>
 
@@ -840,7 +840,7 @@ sup,sub{font-size:.7em}
 <p>Δt ને બહુ નાનું (limit) લેતાં, ΔW/Δt એ instantaneous power P બને છે. F·d = W હોવાથી, અને d/t = v:</p>
 <div class="formula-box">
   <span class="label">formula — must memorize</span>
-  <div class="f">P = F⃗ · v⃗ = Fv cosθ</div>
+  <div class="f">P = <span class="vec">F</span> · <span class="vec">v</span> = Fv cosθ</div>
   <div class="meaning">θ = force અને velocity વચ્ચેનો angle. F, v ની જ દિશામાં હોય તો P=Fv.</div>
 </div>
 

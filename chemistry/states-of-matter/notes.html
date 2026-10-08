@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>States of Matter chapter</title>
+<style>
+:root{
+  --bg:#FBF9F4; --surface:#FFFFFF; --surface-2:#F3F0E7;
+  --ink:#241F16; --ink-2:#5B5647; --ink-3:#8C8672;
+  --line:#E4DFD0;
+  --accent:#8B5E34; --accent-ink:#3E2A17; --accent-bg:#F1E4D3;
+  --formula:#1F4E42; --formula-bg:#E3F0EA; --formula-line:#9FC6B7;
+  --exam:#7A2E2E; --exam-bg:#F6E4E1; --exam-line:#DBA9A4;
+  --mistake:#8A5A00; --mistake-bg:#FDF1D9; --mistake-line:#E9C877;
+  --check:#2E4E7A; --check-bg:#E4ECF6; --check-line:#A9C0DB;
+  --why:#5B5647; --why-bg:#F3F0E7; --why-line:#DAD4C2;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+    --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+    --line:#3A3428;
+    --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+    --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+    --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+    --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+    --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+    --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#181510; --surface:#211D16; --surface-2:#2A251C;
+  --ink:#EFE9DA; --ink-2:#C7C0AC; --ink-3:#948C77;
+  --line:#3A3428;
+  --accent:#D7A876; --accent-ink:#F0DCC0; --accent-bg:#332618;
+  --formula:#8FCBB3; --formula-bg:#1B2E27; --formula-line:#2E5647;
+  --exam:#E39B94; --exam-bg:#301D1B; --exam-line:#5C332F;
+  --mistake:#E8C060; --mistake-bg:#2E2408; --mistake-line:#5C4712;
+  --check:#9DBEE6; --check-bg:#1C2635; --check-line:#38507A;
+  --why:#C7C0AC; --why-bg:#241F16; --why-line:#3A3428;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 80px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(28px,6vw,38px);margin:0 0 6px}
+.subtitle{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+h2{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .num{color:var(--accent);font-family:var(--font-mono);font-size:15px;font-weight:600}
+h3{font-size:18px;margin:30px 0 10px;color:var(--accent-ink)}
+h4{font-size:14.5px;margin:16px 0 6px;color:var(--ink-2);font-family:var(--font-body);font-weight:600}
+p{margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:36px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+.dot.formula{background:var(--formula)}
+.dot.exam{background:var(--exam)}
+.dot.mistake{background:var(--mistake)}
+.dot.check{background:var(--check)}
+.dot.concept{background:var(--accent)}
+.dot.why{background:var(--why)}
+.part{padding:32px 0;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:none}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:32px}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc li{margin-bottom:5px;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+
+.box{border-radius:12px;padding:14px 18px;margin:14px 0;border:1px solid;font-size:15px}
+.box .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+.formula-box{background:var(--formula-bg);border-color:var(--formula-line)}
+.formula-box .label{color:var(--formula)}
+.formula-box .f{font-family:var(--font-mono);font-size:18px;color:var(--formula);font-weight:600;margin:4px 0}
+.formula-box .meaning{color:var(--ink-2);font-size:13.5px}
+.concept-box{background:var(--surface);border-color:var(--line);border-left:3px solid var(--accent)}
+.concept-box .label{color:var(--accent)}
+.exam-box{background:var(--exam-bg);border-color:var(--exam-line)}
+.exam-box .label{color:var(--exam)}
+.mistake-box{background:var(--mistake-bg);border-color:var(--mistake-line)}
+.mistake-box .label{color:var(--mistake)}
+.check-box{background:var(--check-bg);border-color:var(--check-line)}
+.check-box .label{color:var(--check)}
+.why-box{background:var(--why-bg);border-color:var(--why-line)}
+.why-box .label{color:var(--why)}
+.outcome{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;margin:0 0 16px}
+.outcome .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+
+.submap{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.submap span{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono)}
+.next-line{font-size:14px;color:var(--ink-2);margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.next-line b{color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{padding:8px 10px;border:1px solid var(--line);text-align:center}
+th{background:var(--surface-2);font-weight:600;color:var(--ink-2);font-size:12.5px}
+td.rowlabel{text-align:left;color:var(--ink-2);font-weight:600;background:var(--surface-2)}
+.tblwrap{overflow-x:auto}
+
+.example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.example .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+.example .step{margin:3px 0}
+.example .step b{color:var(--ink-2);font-weight:600}
+
+.remember{background:var(--accent-bg);border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin:16px 0}
+.remember .label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.remember ol{margin:0;padding-left:18px}
+.remember li{margin-bottom:5px}
+
+.badge{display:inline-block;font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:20px;background:var(--exam-bg);color:var(--exam);border:1px solid var(--exam-line);margin-left:6px;vertical-align:middle}
+
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin:16px 0}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram-cap{text-align:center;font-size:12.5px;color:var(--ink-3);margin-top:6px}
+.t{font-size:13px;fill:var(--ink)}
+.ts{font-size:11.5px;fill:var(--ink-2)}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap">
+
+<div class="wrap">
+<h1>પદાર્થની અવસ્થાઓ (States of Matter)</h1>
+<p class="subtitle">11th science &middot; Gujarat board + JEE Main foundation &middot; detailed teaching text</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="dot why"></span>Why / outcome</div>
+  <div class="legend-item"><span class="dot concept"></span>Must understand</div>
+  <div class="legend-item"><span class="dot formula"></span>Must memorize &mdash; formula</div>
+  <div class="legend-item"><span class="dot exam"></span>High exam probability</div>
+  <div class="legend-item"><span class="dot mistake"></span>Common mistake</div>
+  <div class="legend-item"><span class="dot check"></span>Self-check</div>
+</div>
+
+<div class="toc">
+  <b>Chapter map</b> &mdash; અંતિમ લક્ષ્ય: આપેલા P, V, T, n માટે ગેસનું વર્તન, ઘનતા, મોલર દળ અને ઝડપ confidently ગણવાં
+  <ol style="list-style:none;padding-left:0">
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">00</span> &nbsp;<a href="#intro">અવસ્થાઓ શા માટે</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">01</span> &nbsp;<a href="#p1">આંતરઆણ્વિક બળ વિરુદ્ધ ઉષ્મીય ઊર્જા</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">02</span> &nbsp;<a href="#p2">વાયુના નિયમો: Boyle, Charles, Gay-Lussac, Avogadro</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">03</span> &nbsp;<a href="#p3">આદર્શ વાયુ સમીકરણ PV = nRT</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">04</span> &nbsp;<a href="#p4">ડાલ્ટનનો આંશિક દબાણનો નિયમ</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">05</span> &nbsp;<a href="#p5">ગ્રેહામનો વિસરણ / effusion નિયમ</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">06</span> &nbsp;<a href="#p6">ગતિજ સિદ્ધાંત અને અણુઓની ઝડપ</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">07</span> &nbsp;<a href="#p7">વાસ્તવિક વાયુઓ, compressibility, van der Waals</a></li>
+    <li><span class="mono" style="color:var(--accent);font-size:13px;font-weight:600">08</span> &nbsp;<a href="#p8">પ્રવાહી અવસ્થા: બાષ્પદાબ, પૃષ્ઠતાણ, શ્યાનતા</a></li>
+  </ol>
+</div>
+
+<!-- ============ PART 00 ============ -->
+<div class="part" id="intro">
+<h2><span class="num">00</span>અવસ્થાઓ શા માટે જુદી પડે છે</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  ઘન, પ્રવાહી અને વાયુ એક જ પદાર્થના ત્રણ રૂપ છે. કયું રૂપ મળશે તે બે સ્પર્ધક બળો નક્કી કરે છે: અણુઓને જોડી રાખતા <b>આંતરઆણ્વિક બળ</b> અને તેમને છૂટા પાડતી <b>ઉષ્મીય ઊર્જા</b>.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  આ એક વિચાર પરથી આખો chapter ઉકેલાય છે. ગેસના નિયમો, ઘનતા, ઝડપ અને વાસ્તવિક વાયુનું વર્તન &mdash; બધું &quot;અણુઓ કેટલી ઝડપે ફરે છે અને એકબીજાને કેટલું ખેંચે છે&quot; એ પ્રશ્નના જવાબ છે.
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  આંતરઆણ્વિક બળ ઘટે તેમ અણુઓ વધુ મુક્ત બને છે: ઘન (નજીક, નિશ્ચિત સ્થાન) &rarr; પ્રવાહી (નજીક, સ્થાન બદલે) &rarr; વાયુ (દૂર, અવ્યવસ્થિત ગતિ). ઉષ્મા વધે તેમ ઊર્જા વધે અને અણુઓ વધુ મુક્ત થાય.
+</div>
+
+<div class="submap">
+  <span>ઘન: બળ &gt;&gt; ઊર્જા</span><span>પ્રવાહી: બળ ≈ ઊર્જા</span><span>વાયુ: ઊર્જા &gt;&gt; બળ</span>
+</div>
+</div>
+
+<!-- ============ PART 01 ============ -->
+<div class="part" id="p1">
+<h2><span class="num">01</span>આંતરઆણ્વિક બળ વિરુદ્ધ ઉષ્મીય ઊર્જા</h2>
+
+<div class="tblwrap">
+<table>
+<tr><th></th><th>ઘન</th><th>પ્રવાહી</th><th>વાયુ</th></tr>
+<tr><td class="rowlabel">આકાર</td><td>નિશ્ચિત</td><td>પાત્ર મુજબ</td><td>પાત્ર મુજબ</td></tr>
+<tr><td class="rowlabel">કદ</td><td>નિશ્ચિત</td><td>નિશ્ચિત</td><td>પાત્ર ભરે</td></tr>
+<tr><td class="rowlabel">અણુઓની ગતિ</td><td>માત્ર કંપન</td><td>સરકે</td><td>મુક્ત, ઝડપી</td></tr>
+<tr><td class="rowlabel">સંકોચનક્ષમતા</td><td>ખૂબ ઓછી</td><td>ઓછી</td><td>ખૂબ વધારે</td></tr>
+</table>
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula &mdash; must memorize</span>
+  <div class="f">ગતિજ ઊર્જા ∝ T &nbsp;(પ્રતિ અણુ સરેરાશ: 3/2 kT)</div>
+  <div class="meaning">k = બોલ્ટ્ઝમાન અચળાંક = R/N<sub>A</sub> = 1.38 × 10<sup>-23</sup> J/K. તાપમાન વધે તો ઊર્જા વધે; ઊર્જા બળ સામે જીતે ત્યારે અવસ્થા બદલાય.</div>
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  &quot;કયા પરિબળો વાયુને પ્રવાહીમાં ફેરવવામાં મદદ કરે?&quot; &mdash; તાપમાન ઘટાડવું અને દબાણ વધારવું. બંને અણુઓને નજીક લાવે છે અથવા તેમની ઊર્જા ઘટાડે છે.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  &quot;પ્રવાહીમાં આંતરઆણ્વિક બળ નથી&quot; એવું લખવું ખોટું છે. બળ હાજર છે, માત્ર ઊર્જા એટલી છે કે અણુઓ ફરી શકે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  એક જ પદાર્થ ઠંડો કરતાં કઈ ક્રમમાં અવસ્થા બદલાય? અને તે ક્રમ કયા બળ–ઊર્જા ગુણોત્તર પર આધારિત છે?
+</div>
+<div class="next-line">→ <b>Next:</b> બળ ઊર્જા પર ભારે પડે ત્યારે વાયુના દબાણ, કદ અને તાપમાન વચ્ચેના નિયમો.</div>
+</div>
+
+<!-- ============ PART 02 ============ -->
+<div class="part" id="p2">
+<h2><span class="num">02</span>વાયુના નિયમો</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  બે ચલ સ્થિર રાખીને ત્રીજો ચલ કેવી રીતે બદલાય તે કહેવું, અને ચાર નિયમોને એક સૂત્રમાં ભેગા કરવા.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">Boyle (T, n સ્થિર): PV = સ્થિર</div>
+  <div class="f">Charles (P, n સ્થિર): V/T = સ્થિર</div>
+  <div class="f">Gay-Lussac (V, n સ્થિર): P/T = સ્થિર</div>
+  <div class="f">Avogadro (P, T સ્થિર): V/n = સ્થિર</div>
+  <div class="meaning">ચારેયને એક સૂત્રમાં લખીએ તો: PV/(nT) = સ્થિર = R (ગૅસ અચળાંક)</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  Charles અને Gay-Lussac માં તાપમાન <b>કેલ્વિન</b>માં લેવું જ પડે. સેલ્સિયસમાં લેવાથી 0 °C પર V = 0 થાય નહીં; એ ખોટું છે કારણ કે 0 K ના સંદર્ભ બિંદુએ જ ગુણોત્તર સમજાય છે.
+</div>
+
+<div class="example">
+  <span class="label">worked example — P, V, T ના ફેરફાર</span>
+  <div class="step"><b>આપેલ</b> — 2 L ગેસ, 1 atm, 300 K. હવે તે 4 L માં ફેલાય છે અને તાપમાન 600 K થાય છે (n સ્થિર).</div>
+  <div class="step"><b>પગલું 1</b> — P<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>/T<sub>2</sub></div>
+  <div class="step"><b>પગલું 2</b> — 1 × 2 / 300 = P<sub>2</sub> × 4 / 600</div>
+  <div class="step"><b>પગલું 3</b> — P<sub>2</sub> = (2/300) × (600/4) = 1 atm</div>
+  <div class="step"><b>તપાસ</b> — V બમણું અને T બમણું, એટલે P સરખું રહે. જવાબ તર્ક સાથે બંધબેસે છે.</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  બે બાજુનાં એકમો અલગ લેવા. P<sub>1</sub> atm માં હોય અને P<sub>2</sub> mm Hg માં, તો સૂત્ર ખોટું પડે. બંને બાજુ એક જ એકમ વાપરો.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  જો દબાણ બમણું કરીએ અને તાપમાન સ્થિર રાખીએ, તો કદ કેટલું થાય? (જવાબ: અડધું)
+</div>
+<div class="next-line">→ <b>Next:</b> ચારેય નિયમોને એક સૂત્ર PV = nRT માં બાંધવું.</div>
+</div>
+
+<!-- ============ PART 03 ============ -->
+<div class="part" id="p3">
+<h2><span class="num">03</span>આદર્શ વાયુ સમીકરણ PV = nRT</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  P, V, T, n માંથી કોઈ પણ ત્રણ આપેલ હોય તો ચોથો શોધવો, અને ઘનતા પરથી મોલર દળ કાઢવું.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">PV = nRT &nbsp;&nbsp; n = m/M</div>
+  <div class="f">d = PM / RT &nbsp;&nbsp; ⇒ &nbsp; M = dRT / P</div>
+  <div class="meaning">R = 0.0821 L·atm/(mol·K) = 8.314 J/(mol·K). એકમ પ્રશ્ન પ્રમાણે પસંદ કરો. n = મોલ સંખ્યા, M = મોલર દળ (g/mol), d = ઘનતા (g/L).</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — ગેસનું દબાણ</span>
+  <div class="step"><b>આપેલ</b> — n = 0.5 mol, V = 5 L, T = 300 K, R = 0.0821.</div>
+  <div class="step"><b>પગલું 1</b> — P = nRT / V = 0.5 × 0.0821 × 300 / 5</div>
+  <div class="step"><b>પગલું 2</b> — = 12.315 / 5 = <b>2.463 atm</b></div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — મોલર દળ ઘનતા પરથી</span>
+  <div class="step"><b>આપેલ</b> — ગેસની ઘનતા 1.25 g/L, 273 K, 1 atm.</div>
+  <div class="step"><b>પગલું 1</b> — M = dRT / P = 1.25 × 0.0821 × 273 / 1</div>
+  <div class="step"><b>પગલું 2</b> — = 1.25 × 22.41 = <b>28.0 g/mol</b> (N<sub>2</sub> કે CO જેવું)</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  R ની કિંમત લેતી વખતે P ના એકમ સાથે મેળ ન બેસાડવો. atm સાથે 0.0821 વાપરો; Pa સાથે 8.314 વાપરો. મિશ્રણ કરો તો જવાબ હજાર ગણો ખોટો આવે.
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  ઘનતા પરથી M અને M પરથી ઘનતા &mdash; બંને દિશામાં પૂછાય છે. d = PM/RT નો ઉપયોગ બંને દિશામાં કરો.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  STP (273 K, 1 atm) પર 1 mol ગેસનું કદ કેટલું? (જવાબ: 22.4 L; R = 0.0821 થી 22.41 L)
+</div>
+<div class="next-line">→ <b>Next:</b> મિશ્રણમાં દરેક ઘટકનું દબાણ.</div>
+</div>
+
+<!-- ============ PART 04 ============ -->
+<div class="part" id="p4">
+<h2><span class="num">04</span>ડાલ્ટનનો આંશિક દબાણનો નિયમ</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  બિન-પ્રતિક્રિયાશીલ વાયુઓના મિશ્રણનું કુલ દબાણ અને દરેક ઘટકનું આંશિક દબાણ શોધવું.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">P<sub>કુલ</sub> = p<sub>1</sub> + p<sub>2</sub> + p<sub>3</sub> + …</div>
+  <div class="f">p<sub>i</sub> = x<sub>i</sub> × P<sub>કુલ</sub> &nbsp;&nbsp; (x<sub>i</sub> = n<sub>i</sub> / n<sub>કુલ</sub>)</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — મિશ્રણ</span>
+  <div class="step"><b>આપેલ</b> — 1 mol He અને 1 mol N<sub>2</sub>, કુલ દબાણ 2 atm.</div>
+  <div class="step"><b>પગલું 1</b> — x<sub>He</sub> = 1/2 = 0.5, x<sub>N2</sub> = 0.5</div>
+  <div class="step"><b>પગલું 2</b> — p<sub>He</sub> = 0.5 × 2 = <b>1 atm</b>, p<sub>N2</sub> = <b>1 atm</b></div>
+  <div class="step"><b>તપાસ</b> — 1 + 1 = 2 atm = કુલ દબાણ.</div>
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  પ્રતિ ઘટકનું આંશિક દબાણ ગણતી વખતે ઘટકનું <b>દળ</b> વાપરવું. ફક્ત <b>મોલ</b> (n) અથવા મોલ-અંશ (x) વાપરો.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  જો એક ઘટકનો મોલ-અંશ 0.2 હોય અને કુલ દબાણ 5 atm, તો તેનું આંશિક દબાણ કેટલું? (જવાબ: 1 atm)
+</div>
+<div class="next-line">→ <b>Next:</b> વાયુઓ કેટલી ઝડપે બહાર નીકળે છે, એ મોલર દળ પર કેવી રીતે આધારિત છે.</div>
+</div>
+
+<!-- ============ PART 05 ============ -->
+<div class="part" id="p5">
+<h2><span class="num">05</span>ગ્રેહામનો વિસરણ / effusion નિયમ</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  હલકો ગેસ ભારે ગેસ કરતાં કેટલી ગણી ઝડપથી બહાર નીકળે તે ગણવું.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">r<sub>1</sub> / r<sub>2</sub> = √(M<sub>2</sub> / M<sub>1</sub>)</div>
+  <div class="meaning">r = વિસરણ કે effusion નો દર. હલકો ગેસ (નાનું M) ઝડપી. દરને બદલે સમય વપરાય તો ગુણોત્તર ઊલટો થાય: t<sub>1</sub>/t<sub>2</sub> = √(M<sub>1</sub>/M<sub>2</sub>).</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — H<sub>2</sub> વિરુદ્ધ O<sub>2</sub></span>
+  <div class="step"><b>આપેલ</b> — M(H<sub>2</sub>) = 2, M(O<sub>2</sub>) = 32.</div>
+  <div class="step"><b>પગલું 1</b> — r<sub>H2</sub> / r<sub>O2</sub> = √(32/2) = √16 = <b>4</b></div>
+  <div class="step"><b>તપાસ</b> — H<sub>2</sub> લગભગ 4 ગણો ઝડપી. નાના M માટે મોટો દર, સાચો.</div>
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  &quot;સમાન કદ બહાર નીકળવામાં લાગતો સમય&quot; વાળા પ્રશ્નમાં ગુણોત્તર ઊલટો લો. ઝડપ ∝ 1/√M, સમય ∝ √M.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  M ના બદલે √M ગુણોત્તર સીધો લખવો (ખોટું: M ગુણોત્તર). વર્ગમૂળ લેવાનું ભૂલશો નહીં.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  CH<sub>4</sub> (M=16) અને SO<sub>2</sub> (M=64) માંથી કયો ઝડપી, અને કેટલા ગણો? (જવાબ: CH<sub>4</sub>, 2 ગણો)
+</div>
+<div class="next-line">→ <b>Next:</b> આ ઝડપો ખરેખર કઈ છે? ગતિજ સિદ્ધાંતથી તેને ગણવી.</div>
+</div>
+
+<!-- ============ PART 06 ============ -->
+<div class="part" id="p6">
+<h2><span class="num">06</span>ગતિજ સિદ્ધાંત અને અણુઓની ઝડપ</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  ગેસના અણુઓની ત્રણ પ્રકારની ઝડપ (u<sub>mp</sub>, u<sub>avg</sub>, u<sub>rms</sub>) ગણવી, તેમનો ક્રમ સમજવો, અને વિતરણનો આકાર ચિત્રમાં વાંચવો.
+</div>
+
+<div class="why-box box">
+  <span class="label">why it matters</span>
+  ગેસનું દબાણ એ દિવાલ સાથે અથડાતા અણુઓનું પરિણામ છે. તેથી દબાણ અને તાપમાનને <b>સરેરાશ ઝડપ</b> સાથે સીધો સંબંધ છે. આ સંબંધ જ બધા ગેસ-નિયમોને સમજાવે છે.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">PV = (1/3) m N ū<sup>2</sup> &nbsp; ⇒ &nbsp; PV = (1/3) M ū<sup>2</sup> (n = 1 mol માટે)</div>
+  <div class="f">u<sub>mp</sub> = √(2RT/M) &nbsp;&nbsp; u<sub>avg</sub> = √(8RT/πM) &nbsp;&nbsp; u<sub>rms</sub> = √(3RT/M)</div>
+  <div class="meaning">M = દળ kg/mol માં (SI). ઝડપ m/s માં. R = 8.314. ક્રમ: u<sub>mp</sub> &lt; u<sub>avg</sub> &lt; u<sub>rms</sub>, ગુણોત્તર 1.414 : 1.596 : 1.732.</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg">
+<line x1="60" y1="290" x2="610" y2="290" stroke="var(--ink-3)"/>
+<line x1="60" y1="290" x2="60" y2="50" stroke="var(--ink-3)"/>
+<text class="ts" x="60.0" y="306" text-anchor="middle">0</text>
+<text class="ts" x="151.7" y="306" text-anchor="middle">200</text>
+<text class="ts" x="243.3" y="306" text-anchor="middle">400</text>
+<text class="ts" x="335.0" y="306" text-anchor="middle">600</text>
+<text class="ts" x="426.7" y="306" text-anchor="middle">800</text>
+<text class="ts" x="518.3" y="306" text-anchor="middle">1000</text>
+<text class="ts" x="610.0" y="306" text-anchor="middle">1200</text>
+<text class="t" x="335.0" y="326" text-anchor="middle">ઝડપ u (m/s)</text>
+<text class="t" transform="translate(18,190) rotate(-90)" text-anchor="middle">અણુઓની સંખ્યા (સાપેક્ષ)</text>
+<path d="M60.0,290.0 L64.6,289.6 L69.2,288.4 L73.8,286.4 L78.3,283.6 L82.9,280.1 L87.5,275.9 L92.1,271.0 L96.7,265.4 L101.2,259.1 L105.8,252.4 L110.4,245.1 L115.0,237.3 L119.6,229.2 L124.2,220.7 L128.8,211.9 L133.3,202.9 L137.9,193.7 L142.5,184.4 L147.1,175.1 L151.7,165.8 L156.2,156.7 L160.8,147.7 L165.4,138.8 L170.0,130.3 L174.6,122.1 L179.2,114.2 L183.8,106.8 L188.3,99.8 L192.9,93.3 L197.5,87.3 L202.1,81.9 L206.7,77.0 L211.2,72.7 L215.8,69.1 L220.4,66.0 L225.0,63.6 L229.6,61.8 L234.2,60.6 L238.8,60.0 L243.3,60.0 L247.9,60.6 L252.5,61.8 L257.1,63.5 L261.7,65.7 L266.2,68.4 L270.8,71.6 L275.4,75.2 L280.0,79.2 L284.6,83.5 L289.2,88.3 L293.8,93.3 L298.3,98.6 L302.9,104.1 L307.5,109.8 L312.1,115.7 L316.7,121.7 L321.2,127.8 L325.8,134.0 L330.4,140.3 L335.0,146.5 L339.6,152.8 L344.2,159.0 L348.8,165.2 L353.3,171.3 L357.9,177.3 L362.5,183.1 L367.1,188.9 L371.7,194.5 L376.2,199.9 L380.8,205.2 L385.4,210.3 L390.0,215.2 L394.6,220.0 L399.2,224.5 L403.8,228.9 L408.3,233.0 L412.9,237.0 L417.5,240.7 L422.1,244.3 L426.7,247.7 L431.2,250.9 L435.8,253.9 L440.4,256.7 L445.0,259.4 L449.6,261.9 L454.2,264.2 L458.8,266.4 L463.3,268.4 L467.9,270.3 L472.5,272.0 L477.1,273.6 L481.7,275.1 L486.2,276.5 L490.8,277.8 L495.4,278.9 L500.0,280.0 L504.6,281.0 L509.2,281.9 L513.8,282.7 L518.3,283.4 L522.9,284.1 L527.5,284.7 L532.1,285.3 L536.7,285.8 L541.2,286.2 L545.8,286.7 L550.4,287.0 L555.0,287.4 L559.6,287.7 L564.2,287.9 L568.8,288.2 L573.3,288.4 L577.9,288.6 L582.5,288.8 L587.1,288.9 L591.7,289.0 L596.2,289.2 L600.8,289.3 L605.4,289.4 L610.0,289.4" fill="none" stroke="#1F4E42" stroke-width="2.5"/>
+<path d="M60.0,290.0 L64.6,289.8 L69.2,289.2 L73.8,288.2 L78.3,286.8 L82.9,285.0 L87.5,282.9 L92.1,280.3 L96.7,277.4 L101.2,274.2 L105.8,270.6 L110.4,266.7 L115.0,262.4 L119.6,257.9 L124.2,253.1 L128.8,248.0 L133.3,242.7 L137.9,237.2 L142.5,231.4 L147.1,225.5 L151.7,219.4 L156.2,213.2 L160.8,206.9 L165.4,200.5 L170.0,194.0 L174.6,187.4 L179.2,180.9 L183.8,174.3 L188.3,167.7 L192.9,161.2 L197.5,154.8 L202.1,148.4 L206.7,142.1 L211.2,136.0 L215.8,130.0 L220.4,124.2 L225.0,118.5 L229.6,113.0 L234.2,107.8 L238.8,102.7 L243.3,97.9 L247.9,93.4 L252.5,89.1 L257.1,85.1 L261.7,81.4 L266.2,77.9 L270.8,74.7 L275.4,71.9 L280.0,69.3 L284.6,67.1 L289.2,65.2 L293.8,63.5 L298.3,62.2 L302.9,61.2 L307.5,60.5 L312.1,60.1 L316.7,60.0 L321.2,60.2 L325.8,60.7 L330.4,61.4 L335.0,62.5 L339.6,63.8 L344.2,65.3 L348.8,67.2 L353.3,69.2 L357.9,71.5 L362.5,74.0 L367.1,76.7 L371.7,79.6 L376.2,82.7 L380.8,85.9 L385.4,89.3 L390.0,92.9 L394.6,96.6 L399.2,100.4 L403.8,104.3 L408.3,108.4 L412.9,112.5 L417.5,116.7 L422.1,120.9 L426.7,125.2 L431.2,129.6 L435.8,134.0 L440.4,138.4 L445.0,142.8 L449.6,147.2 L454.2,151.7 L458.8,156.1 L463.3,160.5 L467.9,164.8 L472.5,169.1 L477.1,173.4 L481.7,177.6 L486.2,181.8 L490.8,185.9 L495.4,189.9 L500.0,193.8 L504.6,197.7 L509.2,201.5 L513.8,205.2 L518.3,208.9 L522.9,212.4 L527.5,215.8 L532.1,219.2 L536.7,222.5 L541.2,225.6 L545.8,228.7 L550.4,231.6 L555.0,234.5 L559.6,237.3 L564.2,239.9 L568.8,242.5 L573.3,245.0 L577.9,247.4 L582.5,249.7 L587.1,251.9 L591.7,254.0 L596.2,256.0 L600.8,257.9 L605.4,259.8 L610.0,261.5" fill="none" stroke="#8B5E34" stroke-width="2.5"/>
+<line x1="241.0" y1="290" x2="241.0" y2="60" stroke="#1F4E42" stroke-dasharray="4 4"/>
+<text class="ts" x="247.0" y="74" fill="#1F4E42">u_mp=395 (300K)</text>
+<line x1="315.9" y1="290" x2="315.9" y2="60" stroke="#8B5E34" stroke-dasharray="4 4"/>
+<text class="ts" x="321.9" y="74" fill="#8B5E34">u_mp=558 (600K)</text>
+<text class="ts" x="490" y="30">— 300 K</text><text class="ts" x="490" y="48" fill="#8B5E34">— 600 K</text>
+</svg>
+<div class="diagram-cap">આકૃતિ 6.1 — O<sub>2</sub> (M = 0.032 kg/mol) માટે Maxwell વિતરણ. 600 K પર શિખર જમણે અને નીચે ખસે છે; વિસ્તાર (કુલ અણુ) સરખો રહે છે. ઊભી ધરી સાપેક્ષ છે.</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — O<sub>2</sub> ની u<sub>rms</sub> 300 K પર</span>
+  <div class="step"><b>આપેલ</b> — M = 0.032 kg/mol, T = 300 K, R = 8.314.</div>
+  <div class="step"><b>પગલું 1</b> — u<sub>rms</sub> = √(3 × 8.314 × 300 / 0.032)</div>
+  <div class="step"><b>પગલું 2</b> — = √(233,831) = <b>483.6 m/s</b></div>
+  <div class="step"><b>તપાસ</b> — u<sub>mp</sub> = √(2RT/M) = 394.8 m/s, અને 394.8 : 483.6 ≈ 1 : 1.225 = √(2/3), ક્રમ સાચો.</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  T વધારે તો ઝડપ વધે (√T), પણ M વધારે તો ઝડપ ઘટે (1/√M). Maxwell વિતરણમાં ઊંચી ઝડપના અણુઓનો હિસ્સો વધે, પણ શિખર ધીમે ધીમે જમણે જાય છે.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  M ને g/mol માં લઈને R = 8.314 સાથે વાપરવું. પછી ઝડપ 1000 ગણી ઓછી આવે. M ને kg/mol માં ફેરવો.
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  &quot;બે ગેસની ઝડપનો ગુણોત્તર&quot; પૂછાય ત્યારે ઊંચા T અને ભારે M માટે √(T/M) લો. દરેક ગેસ માટે અલગ ગણતરી કરવાની જરૂર નથી.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  ગેસની u<sub>rms</sub> જો 4 ગણી કરવી હોય, તો T કેટલા ગણું કરવું? (જવાબ: 16 ગણું, કારણ કે u ∝ √T)
+</div>
+
+<div class="remember">
+  <span class="label">remember — ગતિજ સિદ્ધાંત</span>
+  <ol>
+    <li>દબાણ = અથડામણનું પરિણામ; ઝડપ વધે તો દબાણ અને તાપમાન બંને વધે.</li>
+    <li>એક અણુની સરેરાશ KE = (3/2)kT, T પર માત્ર આધાર.</li>
+    <li>u<sub>rms</sub> : u<sub>avg</sub> : u<sub>mp</sub> = √3 : √(8/π) : √2.</li>
+  </ol>
+</div>
+<div class="next-line">→ <b>Next:</b> આદર્શ નિયમોથી વિચલન &mdash; વાસ્તવિક વાયુઓ.</div>
+</div>
+
+<!-- ============ PART 07 ============ -->
+<div class="part" id="p7">
+<h2><span class="num">07</span>વાસ્તવિક વાયુઓ</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  કયા દબાણે અને તાપમાને વાયુ આદર્શ જેવો વર્તે, Z ને ઓળખવો, અને van der Waals સુધારા સમજવા.
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — must memorize</span>
+  <div class="f">Z = PV / nRT &nbsp; (આદર્શ વાયુ માટે Z = 1)</div>
+  <div class="meaning">Z &lt; 1: આકર્ષણ પ્રભાવી (ઓછું કદ). Z &gt; 1: અણુનું કદ પ્રભાવી (વધુ કદ). ઓછું દબાણ અને ઊંચું T આદર્શ વર્તન આપે.</div>
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — van der Waals (board: સમજ; numeric ગણતરી ઓછી)</span>
+  <div class="f">(P + a n²/V²)(V − nb) = nRT</div>
+  <div class="meaning">a = આંતરઆણ્વિક આકર્ષણ માટે સુધારો (દબાણમાં ઉમેરો). b = અણુના કદ માટે સુધારો (કદમાંથી બાદ).</div>
+</div>
+
+<div class="formula-box box">
+  <span class="label">JEE extension — beyond board syllabus<span class="badge">JEE only</span></span>
+  <div class="f">T<sub>B</sub> = a / (Rb) &nbsp;&nbsp; V<sub>c</sub> = 3b &nbsp;&nbsp; P<sub>c</sub> = a / (27b²) &nbsp;&nbsp; T<sub>c</sub> = 8a / (27Rb)</div>
+  <div class="meaning">T<sub>B</sub> = Boyle તાપમાન (તે T પર નાના દબાણે વાયુ આદર્શ જેવો). T<sub>c</sub>, P<sub>c</sub>, V<sub>c</sub> = ક્રાંતિક બિંદુ.</div>
+</div>
+
+<div class="example">
+  <span class="label">worked example — CO<sub>2</sub> માટે (a = 3.6 L²·atm/mol², b = 0.0427 L/mol)</span>
+  <div class="step"><b>પગલું 1</b> — T<sub>c</sub> = 8 × 3.6 / (27 × 0.0821 × 0.0427) = 28.8 / 0.09465 = <b>304.3 K</b></div>
+  <div class="step"><b>પગલું 2</b> — P<sub>c</sub> = 3.6 / (27 × 0.0427²) = 3.6 / 0.04923 = <b>73.1 atm</b></div>
+  <div class="step"><b>પગલું 3</b> — V<sub>c</sub> = 3 × 0.0427 = <b>0.128 L/mol</b></div>
+  <div class="step"><b>તપાસ</b> — પ્રાયોગિક CO<sub>2</sub> T<sub>c</sub> ≈ 304 K, P<sub>c</sub> ≈ 72.8 atm. ગણતરી સાચી દિશામાં છે.</div>
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand</span>
+  T &gt; T<sub>c</sub> પર ગમે તેટલું દબાણ આપો, વાયુ <b>પ્રવાહી બનતો નથી</b>. ગેસને પ્રવાહી બનાવવા માટે પહેલાં તેનું T ઘટાડવું પડે.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  a અને b ના એકમો ભૂલવા. a ના એકમ L²·atm/mol² છે, b ના L/mol. ખોટા એકમથી T<sub>c</sub> ઘણો ખોટો આવે.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  Z = 1 એ કયા ઊંચા T અને નીચા P ની સ્થિતિ માટે સાચું પડે, અને શા માટે? (જવાબ: ઊંચું T, નીચું P, કારણ કે આકર્ષણ અને અણુ-કદ બંને નજીવા થાય)
+</div>
+<div class="next-line">→ <b>Next:</b> પ્રવાહીનાં ગુણધર્મો.</div>
+</div>
+
+<!-- ============ PART 08 ============ -->
+<div class="part" id="p8">
+<h2><span class="num">08</span>પ્રવાહી અવસ્થા</h2>
+
+<div class="outcome">
+  <span class="label">outcome</span>
+  બાષ્પદાબ, ઉકળવાનો અર્થ, પૃષ્ઠતાણ અને શ્યાનતાનો સંબંધ તાપમાન સાથે સમજાવવો.
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — બાષ્પદાબ અને ઉકળવું</span>
+  બંધ પાત્રમાં પ્રવાહીની ઉપર બનતો વરાળનો દબાણ એ <b>બાષ્પદાબ</b>. તાપમાન વધે તેમ બાષ્પદાબ વધે. જ્યારે બાષ્પદાબ = બહારનું દબાણ, ત્યારે પ્રવાહી <b>ઉકળે</b>. તેથી ઉકળવાનું તાપમાન બહારના દબાણ પર આધારિત છે: દબાણ ઘટે તો ઉકળવાનું તાપમાન ઘટે (ઊંચા પર્વત પર ચા જલદી ઊકળે).
+</div>
+
+<div class="concept-box box">
+  <span class="label">must understand — પૃષ્ઠતાણ અને શ્યાનતા</span>
+  <b>પૃષ્ઠતાણ</b> (γ): સપાટીના એકમ લંબાઈ દીઠ ખેંચાણ. આંતરઆણ્વિક આકર્ષણ વધારે તો પૃષ્ઠતાણ વધારે. તાપમાન વધે તો ઘટે.<br>
+  <b>શ્યાનતા</b> (η): વહેણનો પ્રતિકાર. આકર્ષણ વધારે તો શ્યાનતા વધારે. પ્રવાહીમાં તાપમાન વધે તો શ્યાનતા <b>ઘટે</b> (ગેસમાં ઊલટું વધે).
+</div>
+
+<div class="formula-box box">
+  <span class="label">formula — board</span>
+  <div class="f">η ∝ e<sup>E/RT</sup> (પ્રવાહી માટે; E = આકર્ષણ-ઊર્જા)</div>
+  <div class="meaning">T વધે તો η ઘટે. આ સંબંધ ફક્ત ગુણાત્મક સમજ માટે. સંખ્યાત્મક ગણતરી સામાન્ય રીતે નથી.</div>
+</div>
+
+<div class="exam-box box">
+  <span class="label">exam probability — high</span>
+  &quot;પ્રવાહીની શ્યાનતા તાપમાન વધતાં કેમ ઘટે?&quot; એવો ગુણાત્મક પ્રશ્ન પૂછાય છે. જવાબ: અણુઓની ઊર્જા વધે, તે આકર્ષણને જીતીને વધુ સરળતાથી સરકે.
+</div>
+
+<div class="mistake-box box">
+  <span class="label">common mistake</span>
+  પૃષ્ઠતાણ અને શ્યાનતાને એક ગણવા. પૃષ્ઠતાણ સપાટીનો ગુણ; શ્યાનતા વહેણનો ગુણ.
+</div>
+
+<div class="check-box box">
+  <span class="label">self-check</span>
+  પાણીમાં ડિટર્જન્ટ ઉમેરવાથી પૃષ્ઠતાણ કેમ ઘટે? (જવાબ: ડિટર્જન્ટ સપાટીના અણુઓનું આકર્ષણ તોડે)
+</div>
+
+<div class="remember">
+  <span class="label">remember — chapter summary</span>
+  <ol>
+    <li>બળ વિરુદ્ધ ઊર્જા નક્કી કરે કે પદાર્થ ઘન, પ્રવાહી કે વાયુ છે.</li>
+    <li>PV = nRT; ઘનતા d = PM/RT; મિશ્રણ માટે p<sub>i</sub> = x<sub>i</sub>P.</li>
+    <li>વિસરણ: r ∝ 1/√M. ઝડપ: u<sub>rms</sub> = √(3RT/M).</li>
+    <li>વાસ્તવિક વાયુ: Z = PV/nRT; van der Waals a અને b માં સુધારો.</li>
+    <li>T &gt; T<sub>c</sub> પર વાયુ પ્રવાહી બનતો નથી.</li>
+  </ol>
+</div>
+</div>
+
+</div>
